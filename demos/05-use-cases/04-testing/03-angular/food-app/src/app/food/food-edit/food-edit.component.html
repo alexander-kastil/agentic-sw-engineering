@@ -1,0 +1,18 @@
+<div class="form">
+  <div class="row">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="food.name" />
+  </div>
+  <div class="row">
+    <label>Price</label>
+    <input type="number" [(ngModel)]="food.price" />
+  </div>
+  <div class="row">
+    <label>Calories</label>
+    <input type="number" [(ngModel)]="food.calories" />
+  </div>
+  <div class="row">
+    <label>&nbsp;</label>
+    <button (click)="saveFood()">Save</button>
+  </div>
+</div>

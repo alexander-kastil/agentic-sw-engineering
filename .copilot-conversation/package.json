@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "visualize": "node ./scripts/visualize.js",
+    "consolidate": "node ./scripts/consolidate.mjs",
+    "test": "node --test ./scripts/test.mjs"
+  },
+  "version": "1.0.0"
+}

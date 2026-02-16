@@ -1,0 +1,12 @@
+# Background Agents
+
+Background agents run as independent processes on your machine, executing tasks in parallel without blocking your VS Code editor. This model provides a middle ground between local single-session execution and cloud-based remote execution. Multiple background agents can work simultaneously, limited only by your machine's resources.
+
+| Aspect           | Details                                                                                                                                                                                                                                  |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Best For         | Multiple independent tasks, test parallelism, parallel refactoring, resource efficiency, and efficient multi-core utilization. Strengths: parallel execution, local tool access, no setup overhead, Git integration, non-blocking editor |
+| Integration      | Full access to local tools, Git state, installed packages, environment variables; VS Code background process panel for monitoring                                                                                                        |
+| Parallelism      | Multiple concurrent agents on same workspace; ~4 agents on 8-core machine balances parallelism with editor responsiveness                                                                                                                |
+| Auth Context     | Full access to local authentication: inherits Azure CLI, Git, SSH, and all local credentials from your machine                                                                                                                           |
+| Online Resources | Yes, can interact with online resources through local tools and network: Azure DevOps MCP, GitHub API, cloud CLIs                                                                                                                        |
+| Limitations      | Competes for local resources; resource-constrained by machine capabilities                                                                                                                                                               |

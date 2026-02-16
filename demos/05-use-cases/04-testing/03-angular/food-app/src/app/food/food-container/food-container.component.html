@@ -1,0 +1,9 @@
+<app-food-list
+  [food]="food"
+  (foodSelected)="selectFood($event)"
+  (foodDeleted)="deleteFood($event)"
+></app-food-list>
+
+@if(selected){
+  <app-food-edit [food]="selected" (onFoodSave)="foodSaved($event)" ></app-food-edit>
+}

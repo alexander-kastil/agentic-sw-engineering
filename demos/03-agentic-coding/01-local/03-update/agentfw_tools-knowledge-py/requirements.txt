@@ -1,0 +1,12 @@
+# Core packages
+azure-identity==1.25.1
+python-dotenv>=1.0.0  # Provides `from dotenv import load_dotenv`
+requests>=2.31.0      # For REST API demos
+
+# Azure AI Foundry Agents SDKs used directly in code
+azure-ai-projects>=2.0.0b2
+# NOTE: Pinned to 1.2.0b5 because agent-framework-azure-ai 1.0.0b251120 requires azure-ai-agents==1.2.0b5.
+# If a newer agent-framework-azure-ai releases supporting >=1.2.0b6, update both lines accordingly.
+azure-ai-agents==1.2.0b5
+agent-framework==1.0.0b251120
+agent-framework-azure-ai==1.0.0b251120

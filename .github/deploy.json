@@ -1,0 +1,10 @@
+{
+    "Azure Service Connection (ARM)": "wi-az400-dev",
+    "Git Repo Url": "https://github.com/alexander-kastil/az-400",
+    "GitHub Service Connection ID": "231c44ad-d4a9-4055-bca6-40bab720370f",
+    "ADOOrg": "https://dev.azure.com/integrationsonline",
+    "ADOProject": "az-400",
+    "AzureContainerAppsEnvironment": "az400acaenv",
+    "AzureContainerRegistry": "az400acrdev",
+    "DockerRegistry": "scACR"
+}

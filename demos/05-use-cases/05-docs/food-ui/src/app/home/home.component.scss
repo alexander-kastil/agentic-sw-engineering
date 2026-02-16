@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    gap: 10px;
+}
+
+.webfont{
+    font-family: 'MuseoModerno', cursive;
+    font-size: 3rem;
+    border-bottom: 1rem;
+}

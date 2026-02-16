@@ -1,0 +1,19 @@
+{
+  "name": "password-validator",
+  "version": "1.0.0",
+  "description": "A password validator project",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "dependencies": {
+    "typescript": "^4.5.4",
+    "webpack": "^5.64.0",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.2.6",
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -1,0 +1,22 @@
+.navbar{
+  background-color: lavender;
+  height: 150px
+}
+
+.sidebar{
+  background-color: yellow;
+  min-width: 200px;
+  padding: 1rem;
+}
+
+.main{
+  background-color: whitesmoke;
+  width: calc(100vw - 200px);
+  padding: 1rem;
+}
+
+.mainrow{
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 150px);
+}

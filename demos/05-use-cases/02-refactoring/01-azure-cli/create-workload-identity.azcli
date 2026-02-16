@@ -1,0 +1,17 @@
+grp=az400-dev
+subscriptionId=78033352-805c-4acd-af80-f8f95083268d
+resourceGroupScope="/subscriptions/$subscriptionId/resourcegroups/$grp"
+identityName=scIdentityWorkload
+federatedCredentialName="AzureDevOps"
+audience="api://AzureADTokenExchange"
+issuerUrl="https://vstoken.dev.azure.com/99e5794d-47e1-4b9b-86eb-937aa20e4e11"
+subjectIdentifier="sc://integrations-development/az-400/scIdentityWorkload"
+contributorRoleId=b24988ac-6180-42a0-ab88-20f7382dd24c
+
+principalId=$(az identity create --name $identityName --resource-group $grp --query principalId -o tsv)
+clientId=$(az identity show --name $identityName --resource-group $grp --query clientId -o tsv)
+
+az role assignment create --assignee $principalId --role $contributorRoleId --scope $resourceGroupScope
+az identity federated-credential create --name $federatedCredentialName --identity-name $identityName --resource-group $grp --issuer $issuerUrl --subject $subjectIdentifier --audiences $audience
+
+echo "Service Principal Id: $clientId"

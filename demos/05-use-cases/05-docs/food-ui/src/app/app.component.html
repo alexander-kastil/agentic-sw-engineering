@@ -1,0 +1,17 @@
+<div class="grid">
+  <div class="gd-navbar">
+    <app-navbar></app-navbar></div>
+  <div class="gd-loading">    
+  </div>
+  <div class="gd-mainrow">
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav class="sidenav"
+      [opened]="navVisible()" [mode]="navPosition()">
+        <app-sidemenu></app-sidemenu>
+      </mat-sidenav>
+      <mat-sidenav-content [ngStyle]="workbenchMargin">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
