@@ -28,14 +28,14 @@ jobs:
 
           # Add all demo readmes
           find demos -type f -iname 'readme.md' 2>/dev/null | sort | while read file; do
-            echo "---" >> output/consolidated.md
+            echo "" >> output/consolidated.md
             cat "$file" >> output/consolidated.md
             echo "" >> output/consolidated.md
           done
 
           # Add all lab readmes
           find labs -type f -iname 'readme.md' 2>/dev/null | sort | while read file; do
-            echo "---" >> output/consolidated.md
+            echo "" >> output/consolidated.md
             cat "$file" >> output/consolidated.md
             echo "" >> output/consolidated.md
           done
