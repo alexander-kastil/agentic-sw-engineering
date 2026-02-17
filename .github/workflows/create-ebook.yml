@@ -1,0 +1,54 @@
+# .github/workflows/ebook.yml
+name: Build PDF ebook
+on:
+    push:
+        branches: [master]
+    workflow_dispatch: {}
+jobs:
+    build-pdf:
+        runs-on: ubuntu-24.04
+        env:
+            EBOOK_TITLE: "Master Class - Agentic Software Engineering using GitHub Copilot"
+        steps:
+            - uses: actions/checkout@v4
+            - name: Create consolidated markdown file
+              run: |
+                  mkdir -p output
+                  root_readme=$(ls -1 readme.md README.md 2>/dev/null | head -n 1)
+                  > output/consolidated.md
+
+                  echo "# ${{ env.EBOOK_TITLE }}" >> output/consolidated.md
+                  echo "" >> output/consolidated.md
+
+                  # Add root readme
+                  if [ -f "$root_readme" ]; then
+                    cat "$root_readme" >> output/consolidated.md
+                    echo "" >> output/consolidated.md
+                  fi
+
+                  # Add all demo readmes
+                  find demos -type f -iname 'readme.md' 2>/dev/null | sort | while read file; do
+                    echo "---" >> output/consolidated.md
+                    cat "$file" >> output/consolidated.md
+                    echo "" >> output/consolidated.md
+                  done
+
+                  # Add all lab readmes
+                  find labs -type f -iname 'readme.md' 2>/dev/null | sort | while read file; do
+                    echo "---" >> output/consolidated.md
+                    cat "$file" >> output/consolidated.md
+                    echo "" >> output/consolidated.md
+                  done
+
+                  filename=$(echo "${{ env.EBOOK_TITLE }}" | sed 's/[/:*?"<>|]//g')
+                  echo "EBOOK_FILENAME=${filename}.pdf" >> $GITHUB_ENV
+            - name: Convert to PDF
+              uses: cornelius/action-md-as-pdf@main
+              with:
+                  markdown_dir: output
+                  markdown_file: consolidated.md
+                  pdf_file: "${{ env.EBOOK_FILENAME }}"
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: ebook-pdf
+                  path: "${{ env.EBOOK_FILENAME }}"
