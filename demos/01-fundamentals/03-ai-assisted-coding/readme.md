@@ -13,7 +13,7 @@ Prompting Techniques:
 - Context-Based Prompting: Include relevant schema definitions, configuration files, or existing code to give Copilot a complete understanding of your project
 - Instruction-Based Prompting: Use clear, structured instructions combined with specifications to ensure Copilot produces consistent and predictable results
 
-## AI Assisted Coding - Techniques  
+## AI Assisted Coding - Techniques
 
 - Inline Suggestions: Leverage real-time code completions while typing by providing meaningful context through comments and clear patterns
 - Chat-Based Prompting: Use natural language in Copilot Chat with slash commands and context variables for targeted assistance
@@ -37,7 +37,7 @@ Add to your VS Code settings:
 }
 ```
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [Inline Suggestions](./01-inline-suggestions/): Real-time code completion with comments and patterns
 - [Prompt Samples](./02-prompt-with-samples/): Write prompts that reference code examples for better results

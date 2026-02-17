@@ -122,6 +122,6 @@ project? Summarize action items and blockers mentioned in
 conversations from the last week.
 ```
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [VS Code MCP Servers Documentation](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)

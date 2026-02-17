@@ -304,7 +304,7 @@ try {
 }
 ```
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [GitHub Copilot SDK Repository](https://github.com/github/copilot-sdk)
 - [Getting Started Guide](https://github.com/github/copilot-sdk/blob/main/docs/tutorials/first-app.md)

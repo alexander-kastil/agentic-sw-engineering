@@ -12,12 +12,12 @@ The GitHub Copilot SDK enables you to embed AI-powered agentic workflows directl
 
 ## Available Stacks
 
-| Language | Install Command |
-|----------|-----------------|
-| Node.js / TypeScript | `npm install @github/copilot-sdk` |
-| Python | `pip install github-copilot-sdk` |
-| Go | `go get github.com/github/copilot-sdk/go` |
-| .NET | `dotnet add package GitHub.Copilot.SDK` |
+| Language             | Install Command                           |
+| -------------------- | ----------------------------------------- |
+| Node.js / TypeScript | `npm install @github/copilot-sdk`         |
+| Python               | `pip install github-copilot-sdk`          |
+| Go                   | `go get github.com/github/copilot-sdk/go` |
+| .NET                 | `dotnet add package GitHub.Copilot.SDK`   |
 
 Community-maintained SDKs for Java, Rust, C++, and Clojure are also available but not officially supported by GitHub.
 
@@ -61,7 +61,7 @@ Copilot manages the entire agent lifecycle—when you define a tool, Copilot dec
 
 For a complete tutorial with examples, see the [Getting Started Guide](https://github.com/github/copilot-sdk/blob/main/docs/getting-started.md).
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [GitHub Copilot SDK Repository](https://github.com/github/copilot-sdk)
 - [Getting Started Guide](https://github.com/github/copilot-sdk/blob/main/docs/getting-started.md)

@@ -38,6 +38,6 @@ Focus your context on what matters most for each task. You do not need every fil
 
 > ProTip: Sometimes it makes sense to manually summarize your context in a feature-xxx.md file and continue with a new conversation and attach that file instead and benefit from a fresh context window with the most relevant information.
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [Context Engineering Guide](https://code.visualstudio.com/docs/copilot/guides/context-engineering-guide)

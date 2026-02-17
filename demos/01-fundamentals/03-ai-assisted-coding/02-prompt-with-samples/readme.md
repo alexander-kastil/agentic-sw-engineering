@@ -10,7 +10,7 @@ JavaScript — [prompts.js](01-java-script/prompts.js) demonstrates prompt-based
 
 Python — [greetings.py](02-python/greetings.py) uses examples and input/output comments to show Copilot how to generate time-based greeting logic, illustrating how contextual examples improve code generation accuracy.
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [Prompt Engineering Guide](https://www.promptingguide.ai/)
 - [Prompting Workshop](https://microsoft.github.io/Workshop-Interact-with-OpenAI-models/)

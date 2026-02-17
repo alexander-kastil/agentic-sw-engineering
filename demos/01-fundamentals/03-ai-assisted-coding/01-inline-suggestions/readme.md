@@ -62,7 +62,7 @@ Prompt:
 Convert the Math class to a literal type
 ```
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [Prompting Techniques Overview](../) - Master effective prompting strategies
 - [Prompt Samples](../02-prompt-with-samples/) - Reference existing code patterns for better results

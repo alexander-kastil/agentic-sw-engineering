@@ -10,7 +10,7 @@ Agents are specialized AI personas configured with specific tools, instructions,
 
 [03-claude-agents](03-claude-agents/) explains how to enable and use Claude agents powered by Anthropic's Claude for autonomous agentic workflows with their own built-in tool set.
 
-## Key Topics covered in this section
+## Links & Resources
 
 - [VS Code Custom Agents Documentation](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
 - [Third-party agents in Visual Studio Code](https://code.visualstudio.com/docs/copilot/agents/third-party-agents)

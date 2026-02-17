@@ -52,7 +52,7 @@ Pattern: Private fields like _userId, _configSettings, _apiKey
 Use: Code generation and refactoring automatically apply camelCase naming to new private members
 ```
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [GitHub Copilot Memory Concepts](https://docs.github.com/en/copilot/concepts/agents/copilot-memory)
 - [Enabling and Curating Copilot Memory](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/copilot-memory)

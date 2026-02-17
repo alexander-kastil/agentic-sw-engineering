@@ -34,7 +34,7 @@ Ensure Copilot Chat is enabled and prompt discovery is active:
 | [Scaffold App](/.github/prompts/scaffold-app.prompt.md)                    | Scaffolds new ASP.NET Core API projects with custom structure and conventions. Removes boilerplate, applies coding standards, adds custom controllers, and validates the application with browser testing. |
 | [Summarize Conversation](/.github/prompts/sumarize-copilot-conv.prompt.md) | Summarizes a GitHub Copilot chat session into markdown format for continuity and reference. Captures context window, user prompts, assistant responses, and all tool usage with outcomes.                  |
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [VS Code Prompt Files Documentation](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
 - [Awesome Copilot - Community Contributions](https://github.com/github/awesome-copilot)

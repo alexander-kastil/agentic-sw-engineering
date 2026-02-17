@@ -122,7 +122,7 @@ Sample prompts to trigger this skill:
 | [react-state-mgmt](/.github/skills/react-state-mgmt/SKILL.md)             | Manage React state across projects using modern patterns. Use when setting up global state management, choosing between Redux Toolkit, Zustand, or Jotai, managing server state with React Query, implementing optimistic updates, handling form state, debugging state issues, or migrating from legacy Redux patterns. |
 | [visualize-conversation](/.github/skills/visualize-conversation/SKILL.md) | Generate, update or delete Copilot conversation visualization markdown from session JSON data collected by Copilot hooks.                                                                                                                                                                                                |
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [VS Code Agent Skills Documentation](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
 - [Agent Skills Standard](https://agentskills.io/)

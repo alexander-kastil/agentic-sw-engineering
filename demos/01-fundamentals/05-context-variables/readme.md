@@ -60,6 +60,6 @@ In the folder create a readme.md with very short instructions for beginners to r
 
 A solution is available in the [maf-starter-solution](maf-starter-solution) folder.
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [GitHub Copilot Context Variables](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide#using-context-variables)

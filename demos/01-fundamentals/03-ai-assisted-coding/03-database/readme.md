@@ -10,7 +10,7 @@ The [01-sql-server](01-sql-server/) demo shows how to prompt Copilot to generate
 
 The [02-mongo-db](02-mongo-db/) demo uses the MongoDB for VS Code extension which includes a specialized Copilot Participant with slash commands for `/docs` (documentation search), `/query` (natural language to MongoDB queries), and `/schema` (collection schema analysis). It shows how to bootstrap a MongoDB instance and leverage Copilot agents specifically trained for MongoDB operations.
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [SQL Database Projects - VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.sql-database-projects-vscode)
 - [MSSQL - VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)

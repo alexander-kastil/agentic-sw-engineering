@@ -20,7 +20,7 @@ Build reusable skills that bundle workflows with code for team sharing and cross
 
 Claude Code integrates with VS Code's debugging and testing tools while working within your Copilot subscription. Hand off incomplete tasks from local agents to Claude Code for autonomous cloud execution, making it ideal for large-scale refactoring, code reviews, and security audits.
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [VS Code Claude Agent Preview](https://code.visualstudio.com/docs/copilot/agents/third-party-agents#_claude-agent-preview)
 - [Third-party Agents in VS Code](https://code.visualstudio.com/docs/copilot/agents/third-party-agents)

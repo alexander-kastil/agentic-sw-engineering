@@ -2,9 +2,9 @@
 
 Get started with GitHub Copilot — understand its capabilities, installation options, latest releases, and available extensions This module establishes the foundation for using AI-assisted coding in VS Code and GitHub workflows.
 
-GitHub Copilot operates in two complementary modes. AI Assisted Coding provides real-time completions and suggestions as you type, allowing you to accept or modify highlighted code snippets directly. In contrast, Agentic Software Engineering employs specialized agents that autonomously work toward assigned goals, orchestrating multiple tools and decisions to deliver complete solutions. 
+GitHub Copilot operates in two complementary modes. AI Assisted Coding provides real-time completions and suggestions as you type, allowing you to accept or modify highlighted code snippets directly. In contrast, Agentic Software Engineering employs specialized agents that autonomously work toward assigned goals, orchestrating multiple tools and decisions to deliver complete solutions.
 
->Note: Although this class quickly introduces AI Assisted Coding, it focuses on Agentic Software Engineering.
+> Note: Although this class quickly introduces AI Assisted Coding, it focuses on Agentic Software Engineering.
 
 GitHub Copilot Plans & Features provides an overview of available subscription tiers and the specific capabilities included in each plan, helping you choose the right option for your needs.
 
@@ -42,7 +42,7 @@ Enable core Copilot features in your VS Code `settings.json`:
 - **Workspace settings** ([.vscode/settings.json](/.vscode/settings.json)): Project-specific overrides for team consistency
 - **Dev Container settings** ([.devcontainer/devcontainer.json](/.devcontainer/devcontainer.json)): Standardized environments with pre-configured extensions and tools
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [GitHub Copilot Plans & Features](https://docs.github.com/en/copilot/get-started/plans)
 - [Visual Studio Code Updates](https://code.visualstudio.com/updates)

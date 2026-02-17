@@ -32,8 +32,6 @@ Ensure Copilot Chat is enabled in VS Code:
 
 ## Demos & Examples
 
-
-
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [GitHub Copilot Slash Commands](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide#using-slash-commands)

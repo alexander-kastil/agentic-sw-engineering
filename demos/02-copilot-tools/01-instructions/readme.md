@@ -122,6 +122,6 @@ If you then open a `.NET` service file, the loading automatically adjusts:
 - **Consult for Changes**: When modifying or extending instructions, ensure alignment between general and stack-specific layers
 - **Use as Reference**: Stack-specific instructions often include examples (Angular CLI commands, .NET naming patterns, Azure CLI resource composition)—reference these before asking Copilot
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [Use custom instructions in VS Code](https://code.visualstudio.com/docs/copilot/customization/custom-instructions)

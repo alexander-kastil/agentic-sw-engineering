@@ -2,19 +2,19 @@
 
 GitHub Copilot hooks allow you to extend and customize agent behavior by executing custom shell commands at key points during agent execution. Hooks run in response to specific events in the agent lifecycle, enabling you to implement logging, validation, notifications, and custom integrations without modifying the agent code.
 
->Note: As of 08 Feb 2026 hooks are only available in [VS Code Insiders](https://code.visualstudio.com/insiders/).
+> Note: As of 08 Feb 2026 hooks are only available in [VS Code Insiders](https://code.visualstudio.com/insiders/).
 
 ## Hook Types
 
-| Hook | Trigger | Description |
-|------|---------|-------------|
-| Session Start | When a new agent session begins or when resuming an existing session | Execute initialization logic, setup logging, or prepare your environment before the agent starts |
-| User Prompt Submit | When the user submits a prompt to the agent | Log user requests, validate input, or perform pre-processing before the agent processes the prompt |
-| Pre-Tool Use | Before the agent uses any tool | Validate tool parameters, log tool invocations, or conditionally block tool execution |
-| Post-Tool Use | After a tool completes execution successfully | Log results, update metrics, trigger notifications, or perform cleanup operations |
-| Subagent Start | When a subagent is started | Track subagent lifecycle and manage resources |
-| Subagent Stop | When a subagent stops | Log subagent completion or clean up state |
-| Stop | When the agent stops | Finalize logs, clean up resources, or trigger completion workflows |
+| Hook               | Trigger                                                              | Description                                                                                        |
+| ------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Session Start      | When a new agent session begins or when resuming an existing session | Execute initialization logic, setup logging, or prepare your environment before the agent starts   |
+| User Prompt Submit | When the user submits a prompt to the agent                          | Log user requests, validate input, or perform pre-processing before the agent processes the prompt |
+| Pre-Tool Use       | Before the agent uses any tool                                       | Validate tool parameters, log tool invocations, or conditionally block tool execution              |
+| Post-Tool Use      | After a tool completes execution successfully                        | Log results, update metrics, trigger notifications, or perform cleanup operations                  |
+| Subagent Start     | When a subagent is started                                           | Track subagent lifecycle and manage resources                                                      |
+| Subagent Stop      | When a subagent stops                                                | Log subagent completion or clean up state                                                          |
+| Stop               | When the agent stops                                                 | Finalize logs, clean up resources, or trigger completion workflows                                 |
 
 ## Use Cases
 
@@ -79,11 +79,11 @@ Here's the prompt that generated this recorded conversation:
 ```
 Navigate to src/ and execute: dotnet new webapi -n copilot-api
 Navigate to src/copilot-api and execute: dotnet new .gitignore
-In src/copilot-api i want you to apply my coding conventions for .NET and then remove all weather (controller) related data. 
-Next implement a InstructionsController with model name, description as a standalone controller and register it. 
+In src/copilot-api i want you to apply my coding conventions for .NET and then remove all weather (controller) related data.
+Next implement a InstructionsController with model name, description as a standalone controller and register it.
 Use Microsoft Learn MCP for planning.
-Provide Scalar UI in the root. 
-Build run and fix all errors. while keeping the .NET app running use your Chrome Dev Tools MCP visit the HTTP URL 
+Provide Scalar UI in the root.
+Build run and fix all errors. while keeping the .NET app running use your Chrome Dev Tools MCP visit the HTTP URL
 and port it is configured to run on an check the result. no need to use HTTPS
 ```
 
@@ -114,7 +114,7 @@ sequenceDiagram
     Note over User,GHCopilot: Conversation ends
 ```
 
-## Key Topics Covered in This Section
+## Links & Resources
 
 - [Using hooks with GitHub Copilot agents](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/use-hooks)
 - [Hooks configuration reference](https://docs.github.com/en/copilot/reference/hooks-configuration)
