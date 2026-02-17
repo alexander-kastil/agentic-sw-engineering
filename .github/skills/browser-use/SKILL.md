@@ -8,6 +8,7 @@ description: Automate browser interactions and tasks using CLI or Python. Use wh
 Powerful browser automation for testing, data extraction, and autonomous task completion. Run browser commands persistently across sessions or use AI agents for complex workflows.
 
 Use this skill when:
+
 - Testing web applications and UI workflows
 - Extracting data from websites
 - Automating form submissions and interactions
@@ -25,6 +26,7 @@ curl -fsSL https://browser-use.com/cli/install.sh | bash
 ```
 
 This interactive installer configures everything automatically. Choose installation mode:
+
 - Local-only: Fast, isolated Chromium (best for local development)
 - Remote-only: Cloud browser via API (best for CI, no GUI required)
 - Full: Both modes available (maximum flexibility)
@@ -55,6 +57,7 @@ browser-use init                          # Generate template files
 ```
 
 API key configuration (for cloud tasks):
+
 1. Set via `--api-key` flag during commands
 2. Set `BROWSER_USE_API_KEY` environment variable
 3. Save to `~/.config/browser-use/config.json`
@@ -96,6 +99,7 @@ browser-use --browser remote open <url>                # Cloud browser (API key 
 ```
 
 Mode characteristics:
+
 - chromium: Fast, clean, ideal for automation. No existing logins.
 - real: Uses your actual Chrome with cookies, extensions, logged-in sessions
 - remote: Cloud-hosted browser with proxy support, geographic flexibility
@@ -177,6 +181,7 @@ browser-use python --file script.py          # Execute Python file
 ```
 
 Browser object provides:
+
 - `browser.url` - Current page URL
 - `browser.title` - Page title
 - `browser.goto(url)` - Navigate to URL
@@ -199,6 +204,7 @@ browser-use run "Log into GitHub and create a new repository"
 ```
 
 Agent options:
+
 ```
 browser-use -b remote run "task" --llm gpt-4o             # Specify LLM model
 browser-use -b remote run "task" --proxy-country gb       # UK proxy
@@ -288,6 +294,7 @@ browser-use --browser remote open https://abc.trycloudflare.com  # Cloud browser
 ```
 
 Tunnel commands:
+
 ```
 browser-use tunnel <port>                    # Start tunnel
 browser-use tunnel list                      # Show active tunnels

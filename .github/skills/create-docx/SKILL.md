@@ -8,6 +8,7 @@ description: Create, edit, analyze, and validate Word documents (.docx files) pr
 Comprehensive guide for creating, editing, analyzing, and converting Word documents (.docx files) using JavaScript and XML manipulation.
 
 Use this skill when:
+
 - Generating reports or documents from data
 - Creating Word templates programmatically
 - Automating document workflows
@@ -303,6 +304,7 @@ new Table({
 ```
 
 Width calculation rules:
+
 - Always use `WidthType.DXA` (never PERCENTAGE - breaks in Google Docs)
 - Table width must equal sum of columnWidths
 - Cell width must match corresponding columnWidth
@@ -310,6 +312,7 @@ Width calculation rules:
 - Full-width table: use content width = page width minus left/right margins
 
 Example: US Letter with 1" margins
+
 ```
 Page width: 12240 DXA
 Left margin: 1440 DXA
@@ -407,6 +410,7 @@ new TableOfContents("Table of Contents", {
 ```
 
 Then use HeadingLevel in paragraphs:
+
 ```javascript
 new Paragraph({
   heading: HeadingLevel.HEADING_1,
@@ -435,6 +439,7 @@ python scripts/office/unpack.py input.docx unpacked/
 ```
 
 This:
+
 - Extracts XML files
 - Pretty-prints for readability
 - Merges adjacent runs
@@ -458,6 +463,7 @@ Smart quotes for professional typography:
 ```
 
 Common entities:
+
 - `&#x2018;` - ' (left single quote)
 - `&#x2019;` - ' (right single quote / apostrophe)
 - `&#x201C;` - " (left double quote)
@@ -468,6 +474,7 @@ Common entities:
 Track edits when modifying documents:
 
 Insertion:
+
 ```xml
 <w:ins w:id="1" w:author="Claude" w:date="2025-01-01T00:00:00Z">
   <w:r><w:t>inserted text</w:t></w:r>
@@ -475,6 +482,7 @@ Insertion:
 ```
 
 Deletion:
+
 ```xml
 <w:del w:id="2" w:author="Claude" w:date="2025-01-01T00:00:00Z">
   <w:r><w:delText>deleted text</w:delText></w:r>
@@ -500,6 +508,7 @@ Deleting entire paragraphs - mark both the content AND the paragraph mark:
 ```
 
 Minimal edits - only mark what changes:
+
 ```xml
 <w:r><w:t>The term is </w:t></w:r>
 <w:del w:id="1" w:author="Claude" w:date="...">
@@ -541,6 +550,7 @@ python scripts/office/pack.py unpacked/ output.docx --original input.docx
 ```
 
 This:
+
 - Validates XML with auto-repair
 - Auto-repair fixes common issues (`durableId`, missing `xml:space="preserve"`)
 - Won't fix: malformed XML, invalid nesting, missing relationships
@@ -552,11 +562,13 @@ Skip validation: `--validate false`
 ### Schema Compliance
 
 Element order matters. In `<w:pPr>` (paragraph properties):
+
 ```
 <w:pStyle> → <w:numPr> → <w:spacing> → <w:ind> → <w:jc> → <w:rPr> (last)
 ```
 
 Whitespace: Add `xml:space="preserve"` to `<w:t>` with leading/trailing spaces:
+
 ```xml
 <w:t xml:space="preserve">  indented text</w:t>
 ```
@@ -567,14 +579,19 @@ RSIDs: Must be 8-digit hex (e.g., `00AB1234`)
 
 1. Add image to `word/media/image1.png`
 2. Add relationship in `word/_rels/document.xml.rels`:
+
 ```xml
 <Relationship Id="rId5" Type=".../image" Target="media/image1.png"/>
 ```
+
 3. Add content type to `[Content_Types].xml`:
+
 ```xml
 <Default Extension="png" ContentType="image/png"/>
 ```
+
 4. Reference in document.xml:
+
 ```xml
 <w:drawing>
   <wp:inline>
@@ -593,32 +610,38 @@ RSIDs: Must be 8-digit hex (e.g., `00AB1234`)
 ## Conversions
 
 ### Convert DOCX to DOCX (clean/merge)
+
 ```bash
 python scripts/office/validate.py document.docx
 ```
 
 ### Convert DOCX to Markdown
+
 ```bash
 pandoc --track-changes=all document.docx -o output.md
 ```
 
 ### Convert DOCX to PDF
+
 ```bash
 python scripts/office/soffice.py --headless --convert-to pdf document.docx
 ```
 
 ### Convert DOCX to Images
+
 ```bash
 python scripts/office/soffice.py --headless --convert-to pdf document.docx
 pdftoppm -jpeg -r 150 document.pdf page
 ```
 
 ### Convert .doc to .docx
+
 ```bash
 python scripts/office/soffice.py --headless --convert-to docx document.doc
 ```
 
 ### Accept All Tracked Changes
+
 ```bash
 python scripts/accept_changes.py input.docx output.docx
 ```

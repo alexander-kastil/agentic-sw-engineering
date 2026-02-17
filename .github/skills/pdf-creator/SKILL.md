@@ -8,6 +8,7 @@ description: Create, edit, analyze, and validate PDF files and documents. Use wh
 Comprehensive guide for creating, manipulating, analyzing, and extracting data from PDF documents using Python and command-line tools.
 
 Use this skill when:
+
 - Creating PDFs dynamically from data or templates
 - Merging, splitting, or rotating PDF pages
 - Extracting text, tables, or metadata from PDFs
@@ -417,19 +418,19 @@ print(f"Is encrypted: {reader.is_encrypted}")
 
 ## Quick Reference
 
-| Task | Library | Code |
-|------|---------|------|
-| Merge PDFs | pypdf | PdfWriter + add_page() |
-| Split PDFs | pypdf | Loop and write individual pages |
-| Extract text | pdfplumber | page.extract_text() |
-| Extract tables | pdfplumber | page.extract_tables() |
-| Create PDFs | reportlab | Canvas or SimpleDocTemplate |
-| Rotate pages | pypdf | page.rotate() |
-| Merge PDF | qpdf CLI | qpdf --empty --pages ... |
-| Extract images | pdfimages CLI | pdfimages -j input.pdf prefix |
-| OCR scanned | pytesseract | Convert to image first |
-| Add watermark | pypdf | page.merge_page(watermark) |
-| Password protect | pypdf | writer.encrypt() |
+| Task             | Library       | Code                            |
+| ---------------- | ------------- | ------------------------------- |
+| Merge PDFs       | pypdf         | PdfWriter + add_page()          |
+| Split PDFs       | pypdf         | Loop and write individual pages |
+| Extract text     | pdfplumber    | page.extract_text()             |
+| Extract tables   | pdfplumber    | page.extract_tables()           |
+| Create PDFs      | reportlab     | Canvas or SimpleDocTemplate     |
+| Rotate pages     | pypdf         | page.rotate()                   |
+| Merge PDF        | qpdf CLI      | qpdf --empty --pages ...        |
+| Extract images   | pdfimages CLI | pdfimages -j input.pdf prefix   |
+| OCR scanned      | pytesseract   | Convert to image first          |
+| Add watermark    | pypdf         | page.merge_page(watermark)      |
+| Password protect | pypdf         | writer.encrypt()                |
 
 ## Installation
 
