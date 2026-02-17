@@ -1,0 +1,38 @@
+# .github/workflows/ebook.yml
+name: Build PDF ebook
+on:
+    push:
+        branches: [main]
+    workflow_dispatch: {}
+jobs:
+    build-pdf:
+        runs-on: ubuntu-24.04
+        steps:
+            - uses: actions/checkout@v4
+            - name: Create file list (order = root, demos, labs)
+              run: |
+                  echo "README.md" > files.txt
+                  find demos -type f -name 'README.md' | sort >> files.txt
+                  find labs -type f -name 'README.md' | sort >> files.txt
+            - name: Extract title from README
+              run: |
+                  title=$(grep -m 1 '^# ' README.md | sed 's/^# //')
+                  echo "EBOOK_TITLE=${title}" >> $GITHUB_ENV
+                  # Create safe filename from title (remove problematic chars, keep spaces)
+                  filename=$(echo "${title}" | sed 's/[/:*?"<>|]//g')
+                  echo "EBOOK_FILENAME=${filename}.pdf" >> $GITHUB_ENV
+            - name: Build PDF with Pandoc (LaTeX engine included)
+              uses: docker://pandoc/latex:3.8
+              with:
+                  args: >-
+                      --standalone
+                      --from=gfm
+                      --toc --toc-depth=3
+                      --metadata=title:"${{ env.EBOOK_TITLE }}"
+                      --pdf-engine=xelatex
+                      -o output/${{ env.EBOOK_FILENAME }}
+                      $(cat files.txt)
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: ebook-pdf
+                  path: output/${{ env.EBOOK_FILENAME }}
