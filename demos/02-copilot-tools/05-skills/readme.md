@@ -129,3 +129,4 @@ Sample prompts to trigger this skill:
 - [GitHub Awesome Copilot Community Skills](https://github.com/github/awesome-copilot)
 - [Skills.sh - A directory of open-source agent skills across platforms](https://skills.sh/)
 - [Awesome Skills](https://github.com/alexander-kastil/skills-collection)
+- [npx skills add](https://github.com/vercel-labs/skills)
