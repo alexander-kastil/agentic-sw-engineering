@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace SKFunctionCalling;
 
-public static class StudentPlugin
+public static class StudentTools
 {
   [Description("Retrieves detailed information about a specific student by their first and last name (case-insensitive). Returns null if student is not found.")]
   public static string? GetStudentDetails(

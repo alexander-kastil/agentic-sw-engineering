@@ -10,57 +10,51 @@ using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Read configuration from appsettings.json
 builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
-// Get Azure OpenAI configuration values directly
-var model = builder.Configuration["Model"] ?? throw new InvalidOperationException("Model configuration is missing");
-var endpoint = builder.Configuration["Endpoint"] ?? throw new InvalidOperationException("Endpoint configuration is missing");
+var model = builder.Configuration["Model"] ?? "gpt-4o";
+var endpoint = builder.Configuration["Endpoint"]
+    ?? throw new InvalidOperationException("Endpoint configuration is missing");
 
-// Use credential chain (e.g., Azure CLI / Managed Identity); ensure az login is done locally.
+builder.Services.AddLogging(logging =>
+{
+    logging.SetMinimumLevel(LogLevel.Information);
+    logging.AddConsole();
+});
+
 var openAIClient = new AzureOpenAIClient(new Uri(endpoint), new DefaultAzureCredential());
 var chatClient = openAIClient.GetChatClient(model);
 
-// Expose StudentPlugin functions as Agent Framework tools
 var studentTools = new[]
 {
-    AIFunctionFactory.Create(StudentPlugin.GetStudentDetails),
-    AIFunctionFactory.Create(StudentPlugin.GetStudentAge),
-    AIFunctionFactory.Create(StudentPlugin.GetStudentsBySchool),
-    AIFunctionFactory.Create(StudentPlugin.GetSchoolWithMostOrLeastStudents),
-    AIFunctionFactory.Create(StudentPlugin.GetStudentsInSchool)
+    AIFunctionFactory.Create(StudentTools.GetStudentDetails),
+    AIFunctionFactory.Create(StudentTools.GetStudentAge),
+    AIFunctionFactory.Create(StudentTools.GetStudentsBySchool),
+    AIFunctionFactory.Create(StudentTools.GetSchoolWithMostOrLeastStudents),
+    AIFunctionFactory.Create(StudentTools.GetStudentsInSchool)
 };
 
-var studentAgent = chatClient.CreateAIAgent(
+var studentAgent = chatClient.AsAIAgent(
     instructions: "You help answer student roster questions. Use the provided tools to fetch data rather than guessing.",
     name: "student-assistant",
     tools: studentTools);
 
-// Register agent for DI consumption in pages (expose as AIAgent)
 builder.Services.AddSingleton<AIAgent>(_ => studentAgent);
-
-// Add services to the container.
 builder.Services.AddRazorPages();
-
-// Add Entity Framework Core with SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
 
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapStaticAssets();
-
 app.MapRazorPages()
    .WithStaticAssets();
 

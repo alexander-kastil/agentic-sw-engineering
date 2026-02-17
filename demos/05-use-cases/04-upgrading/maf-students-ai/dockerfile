@@ -1,20 +1,17 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS build
 WORKDIR /build
 COPY . .
-RUN dotnet restore "sk-students-ai.csproj"
+RUN dotnet restore "af-students-ai.csproj"
 RUN dotnet publish -c Release -o /app
 
 # Runtime Image
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 COPY --from=build /app .
-ENTRYPOINT ["dotnet", "sk-students-ai.dll"]
+ENTRYPOINT ["dotnet", "af-students-ai.dll"]
 
 # Build Image
-# podman build --rm -f dockerfile -t sk-students-ai .
+# podman build --rm -f dockerfile -t af-students-ai .
 
-# Run Image without env vars
-# podman run -it --rm -p 5051:8080 sk-students-ai
-
-# Run Image with env vars
-# podman run -it --rm -p 5051:8080 sk-students-ai -e "ApiKey=<your_api_key>"
+# Run Image
+# podman run -it --rm -p 5051:8080 af-students-ai
