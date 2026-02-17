@@ -1,17 +1,7 @@
 ---
+name: "Microsoft Agent Framework Py"
 description: "Create, update, refactor, explain or work with code using the Python version of Microsoft Agent Framework."
-name: "Microsoft Agent Framework Python"
-tools:
-  - vscode
-  - execute
-  - read
-  - edit
-  - search
-  - web
-  - agent
-  - todo
-  - microsoft-learn/*
-  - ms-python.python/*
+tools: [vscode, execute, read, agent, edit, search, web, azure-mcp/search, 'microsoft-learn/*', azure-deploy/search, todo]
 ---
 
 ## model: "claude-sonnet-4"

@@ -1,15 +1,7 @@
 ---
+name: "GitHub Actions Specialist"
 description: 'GitHub Actions workflow specialist that authors, optimizes, and troubleshoots pipelines using Microsoft Learn MCP guidance and Copilot context.'
-tools:
-  - vscode
-  - execute
-  - read
-  - edit
-  - search
-  - web
-  - agent
-  - github/*
-  - todo
+tools: [vscode, execute, read, agent, edit, search, web, todo, azure-mcp/search, 'microsoft-learn/*', azure-deploy/search, 'gh-actions/*']
 ---
 
 Use this agent when you need a focused GitHub Actions helper that applies Microsoft Learn best practices while keeping YAML, secrets, and repository configuration aligned with Copilot memory.
