@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: Catalog Service
+  datasource:
+    url: jdbc:sqlite:food.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.community.dialect.SQLiteDialect
+        jdbc:
+          batch_size: 5
+        order_inserts: true
+        order_updates: true
+    show-sql: false
+  web:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "*"
+
+server:
+  port: 5020
+
+logging:
+  level:
+    root: INFO
+    org.springframework: WARN
+
+auth:
+  enabled: false
+database:
+  use-sqlite: true
