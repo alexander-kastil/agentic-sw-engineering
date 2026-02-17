@@ -20,82 +20,75 @@ export const ShopItem: React.FC<ShopItemProps> = ({
   }, [inCart]);
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const amount = parseInt(e.target.value, 10);
+    const amount = Math.max(0, parseInt(e.target.value, 10) || 0);
     setQuantity(amount);
-
-    const cartItem: CartItem = {
+    onAmountChange({
       id: food.id,
       name: food.name,
       price: food.price,
       quantity: amount,
-    };
-    onAmountChange(cartItem);
+    });
   };
 
   const handleIncrement = () => {
     const newQuantity = quantity + 1;
     setQuantity(newQuantity);
-
-    const cartItem: CartItem = {
+    onAmountChange({
       id: food.id,
       name: food.name,
       price: food.price,
       quantity: newQuantity,
-    };
-    onAmountChange(cartItem);
+    });
   };
 
   const handleDecrement = () => {
     if (quantity > 0) {
       const newQuantity = quantity - 1;
       setQuantity(newQuantity);
-
-      const cartItem: CartItem = {
+      onAmountChange({
         id: food.id,
         name: food.name,
         price: food.price,
         quantity: newQuantity,
-      };
-      onAmountChange(cartItem);
+      });
     }
   };
 
   return (
     <div className='shop-item'>
-      <div className='item-card'>
-        <div className='item-header'>
-          <h3>{food.name}</h3>
-          <span className='price'>€{food.price.toFixed(2)}</span>
+      <div className='item-header'>
+        <h3>
+          {food.name} - {food.price.toFixed(2)} €
+        </h3>
+      </div>
+      <div className='item-content'>
+        {food.pictureUrl && (
+          <img
+            src={`/assets/images/${food.pictureUrl}`}
+            alt={food.name}
+            className='item-image'
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
+          />
+        )}
+        <div className='text-section'>
+          <p className='description'>{food.description}</p>
         </div>
-        <div className='item-content'>
-          {food.pictureUrl && (
-            <div className='image-container'>
-              <img
-                src={`assets/images/${food.pictureUrl}`}
-                alt={food.name}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    'assets/images/placeholder.png';
-                }}
-              />
-            </div>
-          )}
-          <div className='description'>{food.description}</div>
-          <div className='quantity-controls'>
-            <button onClick={handleDecrement} className='btn'>
-              −
-            </button>
-            <input
-              type='number'
-              min='0'
-              value={quantity}
-              onChange={handleQuantityChange}
-              className='quantity-input'
-            />
-            <button onClick={handleIncrement} className='btn'>
-              +
-            </button>
-          </div>
+        <div className='controls-section'>
+          <button onClick={handleDecrement} className='icon-btn' title='Remove'>
+            ⊖
+          </button>
+          <input
+            type='number'
+            min='0'
+            value={quantity}
+            onChange={handleQuantityChange}
+            className='quantity-input'
+          />
+          <button onClick={handleIncrement} className='icon-btn' title='Add'>
+            ⊕
+          </button>
         </div>
       </div>
     </div>

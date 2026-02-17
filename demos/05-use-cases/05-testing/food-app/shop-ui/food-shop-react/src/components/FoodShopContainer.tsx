@@ -77,29 +77,43 @@ export const FoodShopContainer: React.FC<FoodShopContainerProps> = ({
     );
   }
 
+  const getTotalItems = (): number => {
+    return cart.reduce((sum, item) => sum + item.quantity, 0);
+  };
+
+  const getTotalPrice = (): number => {
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  };
+
   return (
     <div className='food-shop-container'>
-      <header>
-        <h1>Food Shop</h1>
-        <div className='cart-summary'>
-          <span>
-            Items in cart: {cart.reduce((sum, item) => sum + item.quantity, 0)}
-          </span>
+      <aside className='cart-sidebar'>
+        <button className='actions-button'>Actions</button>
+        <div className='cart-info'>
+          <div className='cart-items'>Items {getTotalItems()} in cart</div>
+          <div className='cart-total'>
+            Sum Total €{getTotalPrice().toFixed(2)}
+          </div>
         </div>
-      </header>
-      <div className='items-grid'>
-        {catalog.map((food) => (
-          <ShopItem
-            key={food.id}
-            food={food}
-            inCart={getItemsInCart(food.id)}
-            onAmountChange={updateCart}
-          />
-        ))}
-      </div>
-      {catalog.length === 0 && (
-        <div className='no-items'>No items available in catalog</div>
-      )}
+        <button className='checkout-btn' disabled>
+          Checkout
+        </button>
+      </aside>
+      <main className='items-container'>
+        <div className='shop-list'>
+          {catalog.map((food) => (
+            <ShopItem
+              key={food.id}
+              food={food}
+              inCart={getItemsInCart(food.id)}
+              onAmountChange={updateCart}
+            />
+          ))}
+        </div>
+        {catalog.length === 0 && (
+          <div className='no-items'>No items available in catalog</div>
+        )}
+      </main>
     </div>
   );
 };
