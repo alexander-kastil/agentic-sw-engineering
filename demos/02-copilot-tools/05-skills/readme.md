@@ -18,21 +18,7 @@ Enable skills discovery and auto-loading in VS Code:
 
 ## How Skills are Loaded
 
-Skills use progressive disclosure to efficiently load content in three levels: Copilot discovers available skills by reading their name and description from YAML frontmatter, then loads detailed instructions only when your request matches a skill's description. Additional resources like scripts and examples load on-demand, ensuring you can install many skills without consuming unnecessary context. This architecture means skills are automatically activated based on your prompt without manual selection.
-
-## Skills in This Repository
-
-| Skill                                                                     | Description                                                                                                                                                                   |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [copilot-sdk](/.github/skills/copilot-sdk/SKILL.md)                       | Build agentic applications with GitHub Copilot SDK in Python, TypeScript, Go, or .NET. Embed AI agents in apps, create custom tools, and connect to MCP servers.              |
-| [create-pptx](/.github/skills/create-pptx/SKILL.md)                       | Create, edit, analyze, and validate PowerPoint presentations from scratch or templates. Build presentations with design validation, slide thumbnails, and content extraction. |
-| [get-pipeline-logs](/.github/skills/get-pipeline-logs/SKILL.md)           | Retrieve logs from Azure DevOps pipeline runs using patterns that work reliably even with deleted builds.                                                                     |
-| [import-pipeline](/.github/skills/import-pipeline/SKILL.md)               | Automate Azure DevOps pipeline import and execution from YAML files using deployment metadata. Diagnoses errors and applies fixes automatically.                              |
-| [install-openclaw-raspi](/.github/skills/install-openclaw-raspi/SKILL.md) | Deploy OpenClaw AI assistant on Raspberry Pi 4 with Node.js 22+. Handles hardware requirements, OS installation, SSH setup, and full deployment.                              |
-| [net-cli](/.github/skills/net-cli/SKILL.md)                               | Master .NET CLI commands for project management, builds, tests, and package management. Supports hot reload, code formatting, and solution configuration.                     |
-| [react-skills](/.github/skills/react-skills/SKILL.md)                     | Build clean, accessible React components with TypeScript and Fluent UI. Create reusable UI patterns with WCAG 2.2 compliance and performance optimization.                    |
-| [react-state-mgmt](/.github/skills/react-state-mgmt/SKILL.md)             | Manage React state using Redux Toolkit, Zustand, Jotai, or React Query. Handle global state, server state synchronization, and optimistic updates.                            |
-| [visualize-conversation](/.github/skills/visualize-conversation/SKILL.md) | Generate Mermaid sequence diagrams from Copilot conversation session data collected by hooks. Visualize or delete conversations interactively.                                |
+Skills use progressive disclosure to efficiently load content in three levels: Copilot discovers available skills by reading their name and description from YAML frontmatter, then loads detailed instructions only when your request matches a skill's description. Additional resources like scripts and examples load on-demand, ensuring you can install many skills without consuming unnecessary context. This architecture means skills are automatically activated based on your prompt without manual selection. |
 
 ## Sample Skill YAML
 
@@ -113,6 +99,28 @@ Sample prompts to trigger this skill:
 - "Help me choose between Zustand and Jotai for state management"
 - "Implement React Query for server state management"
 - "Migrate from old Redux patterns to a modern approach"
+
+## Skills in This Repository
+
+| Skill | Description |
+|-------|-------------|
+| [azure-functions](/.github/skills/azure-functions/SKILL.md) | Expert patterns for Azure Functions development including isolated worker model, Durable Functions orchestration, cold start optimization, and production patterns. Covers .NET, Python, and Node.js programming models. |
+| [browser-use](/.github/skills/browser-use/SKILL.md) | Automate browser interactions and tasks using CLI or Python. Use when testing web applications, capturing screenshots, extracting data, automating workflows, testing forms, or running autonomous browser agents. Supports local (Chromium, real Chrome) and cloud (remote) browsers. |
+| [context7-auto-research](/.github/skills/context7-auto-research/SKILL.md) | Automatically fetch latest library/framework documentation for Claude Code via Context7 API. |
+| [copilot-sdk](/.github/skills/copilot-sdk/SKILL.md) | Build agentic applications with GitHub Copilot SDK. Use when embedding AI agents in apps, creating custom tools, implementing streaming responses, managing sessions, connecting to MCP servers, or creating custom agents. |
+| [create-docx](/.github/skills/create-docx/SKILL.md) | Create, edit, analyze, and validate Word documents (.docx files) programmatically. Use when generating reports, creating templates, automating document generation, editing existing documents with tracked changes, or converting documents to other formats. |
+| [create-pptx](/.github/skills/create-pptx/SKILL.md) | Create, edit, analyze, and validate PowerPoint presentations (PPTX files). Use when asked to build presentations from scratch, modify existing templates, visualize presentation content, convert slides to images, or verify design quality. |
+| [find-skills](/.github/skills/find-skills/SKILL.md) | Help users discover and install specialized skills that extend GitHub Copilot capabilities. Use when users ask how to do something, whether a skill exists for a task, or want to find tools and workflows. |
+| [frontend-design](/.github/skills/frontend-design/SKILL.md) | Create distinctive, production-grade frontend interfaces with exceptional aesthetic direction and full accessibility compliance. Covers design thinking, typography, color systems, animation, responsive layouts, and WCAG 2.2 accessibility standards. |
+| [get-pipeline-logs](/.github/skills/get-pipeline-logs/SKILL.md) | Get logs from the latest Azure DevOps pipeline run using patterns that actually work. |
+| [import-pipeline](/.github/skills/import-pipeline/SKILL.md) | Automate the import and execution of Azure DevOps pipelines from YAML files using deployment metadata. Use this when users need to import pipelines to Azure DevOps, run them, and fix any errors that occur during execution. |
+| [install-openclaw-raspi](/.github/skills/install-openclaw-raspi/SKILL.md) | Deploy OpenClaw AI assistant on Raspberry Pi 4 with Node.js 22+. Use when setting up personal AI assistant, deploying AI chatbot on Pi, configuring voice-enabled AI agent, or automating Raspberry Pi AI setup. |
+| [mermaid-expert](/.github/skills/mermaid-expert/SKILL.md) | Create Mermaid diagrams for flowcharts, sequences, ERDs, and architectures. Masters syntax for all diagram types and styling. Use proactively for visual documentation, system diagrams, or process flows. |
+| [net-cli](/.github/skills/net-cli/SKILL.md) | Master .NET CLI commands for project management. Use when building, testing, running projects, managing NuGet packages, formatting code, configuring solutions, using hot reload with watch mode, or troubleshooting build issues. |
+| [pdf-creator](/.github/skills/pdf-creator/SKILL.md) | Create, edit, analyze, and validate PDF files and documents. Use when generating reports, merging PDFs, extracting text and tables, creating documents dynamically, or processing scanned PDFs with OCR. |
+| [react-skills](/.github/skills/react-skills/SKILL.md) | Build clean, accessible React components with TypeScript and Fluent UI. Use when creating new React components, converting designs to code, building reusable UI patterns, optimizing component performance, implementing accessibility guidelines, or structuring React projects. |
+| [react-state-mgmt](/.github/skills/react-state-mgmt/SKILL.md) | Manage React state across projects using modern patterns. Use when setting up global state management, choosing between Redux Toolkit, Zustand, or Jotai, managing server state with React Query, implementing optimistic updates, handling form state, debugging state issues, or migrating from legacy Redux patterns. |
+| [visualize-conversation](/.github/skills/visualize-conversation/SKILL.md) | Generate, update or delete Copilot conversation visualization markdown from session JSON data collected by Copilot hooks. |
 
 ## Key Topics Covered in This Section
 
