@@ -1,8 +1,6 @@
 # .github/workflows/ebook.yml
 name: Build PDF ebook
 on:
-  push:
-    branches: [master]
   workflow_dispatch: {}
 jobs:
   build-pdf:
