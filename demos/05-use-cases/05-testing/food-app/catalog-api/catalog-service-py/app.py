@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 from decimal import Decimal
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from models import db, CatalogItem
 from config import Config
 from database import init_db
@@ -12,6 +13,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 db.init_app(app)
+CORS(app)
 
 def decimal_default(obj):
     if isinstance(obj, Decimal):

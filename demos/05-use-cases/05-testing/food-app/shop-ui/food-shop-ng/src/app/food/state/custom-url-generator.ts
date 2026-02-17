@@ -19,8 +19,8 @@ export class CustomUrlHttpGenerator extends DefaultHttpUrlGenerator {
     let resourceURLs = this.knownHttpResourceUrls[entityName];
     if (entityName == 'Food') {
       resourceURLs = {
-        collectionResourceUrl: `${environment.catalogApi}/food/`,
-        entityResourceUrl: `${environment.catalogApi}/food/`,
+        collectionResourceUrl: `${environment.catalogApi}/food`,
+        entityResourceUrl: `${environment.catalogApi}/food`,
       };
       this.registerHttpResourceUrls({ [entityName]: resourceURLs });
     }

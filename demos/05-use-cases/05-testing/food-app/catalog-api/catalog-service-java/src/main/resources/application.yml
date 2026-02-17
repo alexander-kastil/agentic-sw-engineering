@@ -21,7 +21,7 @@ spring:
       allowed-methods: "*"
 
 server:
-  port: 5020
+  port: 5000
 
 logging:
   level:

@@ -3,7 +3,7 @@ export const environment = {
   title: 'Food Shop',
   authEnabled: false,
   mockCheckout: true,
-  catalogApi: 'http://localhost:5001',
+  catalogApi: 'http://localhost:5000',
   ordersApi: 'http://localhost:5002',
   azure: {
     apimSubscriptionKey: "39fc8b24086a4346a6317d047869f983",
@@ -16,7 +16,7 @@ export const environment = {
       scopes: [
         ['https://graph.microsoft.com/v1.0/me', ['user.read']],
         [
-          'https://localhost:5001/food',
+          'http://localhost:5000/food',
           ['api://b509d389-361a-447b-afb2-97cc8131dad6/access_as_user'],
         ],
       ],
