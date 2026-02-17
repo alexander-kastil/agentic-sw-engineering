@@ -17,24 +17,20 @@ jobs:
               run: |
                   pwd
                   ls -la
-                  test -f README.md
+                  test -f readme.md
             - name: Create file list and metadata
               run: |
                   mkdir -p output
-                  # Create file list (order: root, demos, labs)
-                  echo "README.md" > files.txt
-                  find demos -type f -name 'README.md' | sort >> files.txt
-                  find labs -type f -name 'README.md' | sort >> files.txt
+                  echo "readme.md" > files.txt
+                  find demos -type f -name 'readme.md' | sort >> files.txt
+                  find labs -type f -name 'readme.md' | sort >> files.txt
 
-                  # Extract title from README
-                  title=$(grep -m 1 '^# ' README.md | sed 's/^# //')
+                  title=$(grep -m 1 '^# ' readme.md | sed 's/^# //')
                   echo "EBOOK_TITLE=${title}" >> $GITHUB_ENV
 
-                  # Create safe filename from title
                   filename=$(echo "${title}" | sed 's/[/:*?"<>|]//g')
                   echo "EBOOK_FILENAME=${filename}.pdf" >> $GITHUB_ENV
 
-                  # Debug: show what files will be processed
                   echo "Files to process:"
                   cat files.txt
             - name: Build PDF with Pandoc
