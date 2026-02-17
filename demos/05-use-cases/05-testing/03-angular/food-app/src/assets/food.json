@@ -1,6 +1,0 @@
-[
-  { "id": 1, "name": "Butter Chicken", "price": 9, "calories": 1200 },
-  { "id": 2, "name": "Wiener Schnitzel vom Schwein", "price": 12.7, "calories": 730 },
-  { "id": 3, "name": "Boeuf Stroganoff", "price": 18.3, "calories": 600 },
-  { "id": 4, "name": "Pad Ka Prao", "price": 16.3, "calories": 600 }
-]
