@@ -7,6 +7,8 @@ on:
 jobs:
     build-pdf:
         runs-on: ubuntu-24.04
+        env:
+            EBOOK_TITLE: "Master Class - Agentic Software Engineering using GitHub Copilot"
         steps:
             - uses: actions/checkout@v4
             - name: Install pandoc
@@ -17,18 +19,16 @@ jobs:
               run: |
                   pwd
                   ls -la
-                  test -f readme.md
+                  test -f readme.md || test -f README.md
             - name: Create file list and metadata
               run: |
                   mkdir -p output
-                  echo "readme.md" > files.txt
-                  find demos -type f -name 'readme.md' | sort >> files.txt
-                  find labs -type f -name 'readme.md' | sort >> files.txt
+                  root_readme=$(ls -1 readme.md README.md 2>/dev/null | head -n 1)
+                  echo "$root_readme" > files.txt
+                  find demos -type f -iname 'readme.md' 2>/dev/null | sort >> files.txt
+                  find labs -type f -iname 'readme.md' 2>/dev/null | sort >> files.txt
 
-                  title=$(grep -m 1 '^# ' readme.md | sed 's/^# //')
-                  echo "EBOOK_TITLE=${title}" >> $GITHUB_ENV
-
-                  filename=$(echo "${title}" | sed 's/[/:*?"<>|]//g')
+                  filename=$(echo "${EBOOK_TITLE}" | sed 's/[/:*?"<>|]//g')
                   echo "EBOOK_FILENAME=${filename}.pdf" >> $GITHUB_ENV
 
                   echo "Files to process:"
@@ -39,7 +39,7 @@ jobs:
                     --standalone \
                     --from=gfm \
                     --toc --toc-depth=3 \
-                    --metadata=title:"$EBOOK_TITLE" \
+                    --metadata=title="$EBOOK_TITLE" \
                     --pdf-engine=xelatex \
                     -o output/$EBOOK_FILENAME \
                     $(cat files.txt)
