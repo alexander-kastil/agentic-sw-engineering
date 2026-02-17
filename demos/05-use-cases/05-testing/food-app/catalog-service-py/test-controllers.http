@@ -1,4 +1,4 @@
-@baseUrl = https://localhost:5021
+@baseUrl = http://localhost:5000
 
 ### Config Controller Tests
 
@@ -8,10 +8,6 @@ Content-Type: application/json
 
 ### Get Environment Variables
 GET {{baseUrl}}/config/getEnvVars
-Content-Type: application/json
-
-### Get Feature Flags
-GET {{baseUrl}}/config/getFeatureFlags
 Content-Type: application/json
 
 ### Food Controller Tests
