@@ -9,6 +9,10 @@ jobs:
         runs-on: ubuntu-24.04
         steps:
             - uses: actions/checkout@v4
+            - name: Install pandoc
+              uses: pandoc/actions/setup@v1
+              with:
+                  version: 3.8
             - name: Create file list and metadata
               id: prepare
               run: |
@@ -25,19 +29,16 @@ jobs:
                   # Create safe filename from title
                   filename=$(echo "${title}" | sed 's/[/:*?"<>|]//g')
                   echo "EBOOK_FILENAME=${filename}.pdf" >> $GITHUB_ENV
-
-                  # Output files list for pandoc
-                  echo "files=$(printf '"%s" ' $(cat files.txt))" >> $GITHUB_OUTPUT
             - name: Build PDF with Pandoc
-              uses: docker://pandoc/latex:3.8
-              with:
-                  args: >-
-                      --standalone
-                      --from=gfm
-                      --toc --toc-depth=3
-                      --metadata=title:"${{ env.EBOOK_TITLE }}"
-                      --pdf-engine=xelatex
-                      -o output/${{ env.EBOOK_FILENAME }}
+              run: |
+                  pandoc \
+                    --standalone \
+                    --from=gfm \
+                    --toc --toc-depth=3 \
+                    --metadata=title:"${{ env.EBOOK_TITLE }}" \
+                    --pdf-engine=xelatex \
+                    -o output/${{ env.EBOOK_FILENAME }} \
+                    $(cat files.txt)
                       ${{ steps.prepare.outputs.files }}
             - uses: actions/upload-artifact@v4
               with:
