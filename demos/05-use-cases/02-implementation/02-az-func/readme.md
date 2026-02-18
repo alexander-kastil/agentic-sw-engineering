@@ -7,7 +7,7 @@ A serverless currency conversion service built with Azure Functions and TypeScri
 Key features:
 
 - HTTP-triggered Azure Function accepting GET requests with JSON payload containing source currency code and amount to convert; supports optional date parameter for historical exchange rates
-- Fetches live exchange rates from [Fixer.io](https://fixer.io/) API using the /latest endpoint (returns JSON object with success flag, timestamp, base currency, date, and rates map) and stores API key in local.settings.json
+- Fetches live exchange rates from [Fixer.io](https://fixer.io/) API using the /latest endpoint (returns JSON object with success flag, timestamp, base currency, date, and rates map) and stores API key in local.settings.json. Find details [documentation here](https://docs.apilayer.com/fixer/docs/api-documentation?utm_source=FixerHomePage&utm_medium=Referral)
 - Uses /convert endpoint for direct currency conversion (returns JSON object with success flag, query parameters, exchange rate info, and converted result amount)
 - Returns converted amount and the exchange rate used for transparency
 - Provides two conversion methods: real-time rates via /latest for current calculations and direct conversion via /convert for historical date support
@@ -26,6 +26,7 @@ To run this project locally and deploy to Azure, you need:
 - Azure Functions Core Tools v4.0.5382 or higher for local development
 - Azure Functions Runtime v4.25+ for cloud deployment
 - A Fixer.io API key (stored in local.settings.json for local development)
+- All scaffolding must be done using Azure Functions Core Tools to ensure correct project structure and configuration
 
 ## DevOps
 
