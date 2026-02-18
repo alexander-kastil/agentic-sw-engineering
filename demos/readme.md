@@ -8,6 +8,7 @@
 - [AI Assisted Coding](01-fundamentals/03-ai-assisted-coding/)
 - [Slash Commands](01-fundamentals/04-slash-commands/)
 - [Context Variables](01-fundamentals/05-context-variables/)
+- [Spec Driven Development](01-fundamentals/06-spec-driven-dev/)
 
 ## [Module 2: Copilot Artifacts & Tools](./02-copilot-tools/)
 

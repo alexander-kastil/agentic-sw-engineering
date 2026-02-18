@@ -12,3 +12,4 @@ Master the core capabilities and foundational concepts of GitHub Copilot — fro
 | **[AI Assisted Coding](./03-ai-assisted-coding/)**| Use prompting techniques and inline suggestions to guide Copilot toward accurate solutions.                |
 | **[Slash Commands](./04-slash-commands/)**      | Use chat slash commands for targeted actions like explain, fix, tests, and optimize.                        |
 | **[Context Variables](./05-context-variables/)** | Reference files, selections, and codebase context to ground chat requests.                                  |
+| **[Spec Driven Development](./06-spec-driven-dev/)** | Start with executable specifications using GitHub Spec Kit to guide coding agents through a structured four-phase process: specify, plan, break into tasks, and implement with focused code reviews. |
