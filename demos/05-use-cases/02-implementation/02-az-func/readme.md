@@ -11,34 +11,20 @@ Key features:
 - Uses /convert endpoint for direct currency conversion (returns JSON object with success flag, query parameters, exchange rate info, and converted result amount)
 - Returns converted amount and the exchange rate used for transparency
 
-## Implementation Details
-
-This project uses Azure Functions v4 with the TypeScript programming model, providing a modern, code-centric approach to function development with support for HTTP triggers and JSON-based configuration.
-
 Use the latest Azure Function Typescript programming model to define two HTTP-triggered functions:
 
 - real-time rates via /latest for current calculations (GetRates function)
 - direct conversion via /convert for historical date support (GetConvert function)
 
-Create a test-conversion.http rest client file with sample HTTP requests to validate both functions
+## Implementation Details and Rules
 
-## Requirements
+This project uses Azure Functions v4 with the TypeScript programming model, providing a modern, code-centric approach to function development with support for HTTP triggers and JSON-based configuration. Use Azure Function Core Tools (Typescript / v4) to scaffold the project and define two HTTP-triggered functions
 
-To run this project locally and deploy to Azure, you need:
+- real-time rates via /latest for current calculations (GetRates function)
+- direct conversion via /convert for historical date support (GetConvert function)
 
-- Node.js v18+ for runtime support
-- TypeScript v4+ for compilation
-- @azure/functions npm package v4.0.0 (included in package.json)
-- Azure Functions Core Tools v4.0.5382 or higher for local development
-- Azure Functions Runtime v4.25+ for cloud deployment
 - A Fixer.io API key (stored in local.settings.json for local development)
 
-## DevOps
+Create a test-conversion.http rest client file with sample HTTP requests to validate both functions
 
-This project follows modern cloud-native DevOps practices:
-
-- Flex Consumption plan for cost-effective, scalable serverless hosting with per-execution billing
-- Infrastructure as Code using Bicep templates to define and version all Azure resources
-- GitHub Actions workflows for automated CI/CD pipeline, enabling continuous integration and deployment to Azure
-- Workload Identity Federation for secure, keyless authentication between GitHub Actions and Azure resources
-- Deployed to Azure resource group rg-github-copilot for centralized resource management and organization
+The project structure as well as any artifacts should be generated using Azure Function Core Tools scaffolding commands, not manually created. Use Microsoft Lean MCP for best practices.
