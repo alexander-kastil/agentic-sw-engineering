@@ -5,6 +5,46 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dataDir = path.join(__dirname, '../data');
 
+// Debug log parsing
+function parseDebugLog(filePath) {
+  if (!fs.existsSync(filePath)) return [];
+
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const lines = content.split('\n');
+  const events = [];
+
+  for (const line of lines) {
+    if (!line.trim()) continue;
+
+    // Parse debug lines with timestamps and hook info
+    const hookMatch = line.match(/\[([^\]]+)\]\s*([\d\-T:.Z]+)\s*-?\s*(.*)/);
+    if (hookMatch) {
+      const [, hook, timestamp, message] = hookMatch;
+      
+      // Try to extract RAW JSON
+      const rawMatch = line.match(/RAW:\s*({.*})/);
+      let rawData = null;
+      if (rawMatch) {
+        try {
+          rawData = JSON.parse(rawMatch[1]);
+        } catch (e) {
+          // Skip malformed JSON
+        }
+      }
+
+      events.push({
+        timestamp,
+        hook,
+        message,
+        rawData,
+        fullLine: line
+      });
+    }
+  }
+
+  return events;
+}
+
 function sanitize(text) {
   if (!text) return '';
   return String(text)
@@ -266,7 +306,7 @@ function buildMetrics(tools) {
   return md;
 }
 
-function generateMarkdown(sessionId, history, tools, agents, level = 1) {
+function generateMarkdown(sessionId, history, tools, agents, debugEvents, level = 1) {
   const startTime = isValidString(history.startTime)
     ? history.startTime
     : 'N/A';
@@ -292,7 +332,50 @@ function generateMarkdown(sessionId, history, tools, agents, level = 1) {
     md += buildMetrics(tools);
   }
 
+  // Add debug logging section if available
+  if (debugEvents && debugEvents.length > 0) {
+    md += buildDebugSection(debugEvents);
+  }
+
   md += `---\n_Level: ${level}_\n`;
+  return md;
+}
+
+function buildDebugSection(debugEvents) {
+  let md = '## Debug Log\n\n';
+  
+  // Group events by hook type
+  const byHook = {};
+  debugEvents.forEach(evt => {
+    if (!byHook[evt.hook]) {
+      byHook[evt.hook] = [];
+    }
+    byHook[evt.hook].push(evt);
+  });
+
+  // Count events by type
+  md += '### Hook Events Summary\n\n';
+  md += '| Hook | Count | Status |\n|------|-------|--------|\n';
+  
+  Object.entries(byHook).forEach(([hook, events]) => {
+    const errors = events.filter(e => e.message && e.message.includes('ERROR')).length;
+    const warnings = events.filter(e => e.message && e.message.includes('WARNING')).length;
+    const status = errors > 0 ? `❌ ${errors} error(s)` : warnings > 0 ? `⚠️ ${warnings} warning(s)` : `✅ OK`;
+    md += `| ${hook} | ${events.length} | ${status} |\n`;
+  });
+  
+  md += '\n### Detailed Events\n\n';
+  md += '```\n';
+  
+  debugEvents.forEach(evt => {
+    const prefix = evt.message.includes('ERROR') ? '❌' : 
+                   evt.message.includes('WARNING') ? '⚠️' : 
+                   evt.message.includes('Created') || evt.message.includes('Updated') ? '✅' : '•';
+    md += `${prefix} [${evt.hook}] ${evt.timestamp} - ${evt.message}\n`;
+  });
+  
+  md += '```\n\n';
+  
   return md;
 }
 
@@ -408,6 +491,7 @@ function listAllSessions() {
 function processSession(sessionId, level = 1) {
   const historyPath = path.join(dataDir, `history-${sessionId}.json`);
   const toolsPath = path.join(dataDir, `tools-${sessionId}.json`);
+  const debugPath = path.join(dataDir, `debug-${sessionId}.log`);
 
   if (!fs.existsSync(historyPath)) {
     console.error(`History file not found: history-${sessionId}.json`);
@@ -428,7 +512,14 @@ function processSession(sessionId, level = 1) {
 
   const agents = findAgentFiles(sessionId);
 
-  const md = generateMarkdown(sessionId, history, tools, agents, level);
+  // Parse debug log for detailed debugging info
+  let debugEvents = [];
+  if (fs.existsSync(debugPath)) {
+    debugEvents = parseDebugLog(debugPath);
+    console.log(`  Parsed ${debugEvents.length} debug events`);
+  }
+
+  const md = generateMarkdown(sessionId, history, tools, agents, debugEvents, level);
   const conversationsDir = path.join(__dirname, '../conversations');
   fs.mkdirSync(conversationsDir, { recursive: true });
   const outPath = path.join(conversationsDir, `conv-${sessionId}.md`);

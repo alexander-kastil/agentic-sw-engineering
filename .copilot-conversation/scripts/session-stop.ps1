@@ -1,13 +1,24 @@
+$ErrorActionPreference = "Continue"
+
 $inputJson = [Console]::In.ReadToEnd()
 $hookData = $null
-try { $hookData = $inputJson | ConvertFrom-Json } catch { }
+try { 
+    $hookData = $inputJson | ConvertFrom-Json 
+} catch { }
 
 $metadataPath = Join-Path $PSScriptRoot "../../.copilot-conversation"
 $dataPath = Join-Path $metadataPath "data"
 $sessionFile = Join-Path $dataPath "current-session.txt"
 
-if (-not (Test-Path $sessionFile)) { exit 0 }
-$sessionId = (Get-Content $sessionFile -Raw).Trim()
+if (-not (Test-Path $sessionFile)) { 
+    exit 0 
+}
+
+try {
+    $sessionId = (Get-Content $sessionFile -Raw -ErrorAction Stop).Trim()
+} catch {
+    exit 0
+}
 
 function ConvertFrom-UnixMs($val) {
     try {
@@ -20,26 +31,47 @@ function ConvertFrom-UnixMs($val) {
 }
 
 $timestamp = ConvertFrom-UnixMs $hookData.timestamp
-
 $debugPath = Join-Path $dataPath "debug-$sessionId.log"
-"[sessionEnd] $(Get-Date -Format o)`nRAW: $inputJson`n" | Add-Content $debugPath
 
+"[sessionEnd] $(Get-Date -Format o)`nRAW: $inputJson`n" | Add-Content $debugPath -ErrorAction SilentlyContinue
+
+# Update history with end time
 $historyPath = Join-Path $dataPath "history-$sessionId.json"
 if (Test-Path $historyPath) {
-    $history = Get-Content $historyPath -Raw | ConvertFrom-Json
-    $history | Add-Member -NotePropertyName endTime -NotePropertyValue ([string]$timestamp) -Force
-    $history | Add-Member -NotePropertyName status -NotePropertyValue "completed" -Force
-    if ($hookData.reason) {
-        $history | Add-Member -NotePropertyName reason -NotePropertyValue ([string]$hookData.reason) -Force
+    try {
+        $history = Get-Content $historyPath -Raw -ErrorAction Stop | ConvertFrom-Json
+        $history | Add-Member -NotePropertyName endTime -NotePropertyValue ([string]$timestamp) -Force
+        $history | Add-Member -NotePropertyName status -NotePropertyValue "completed" -Force
+        if ($hookData.reason) {
+            $history | Add-Member -NotePropertyName reason -NotePropertyValue ([string]$hookData.reason) -Force
+        }
+        $history | ConvertTo-Json -Depth 10 | Set-Content -Path $historyPath -ErrorAction Stop
+        "[sessionEnd] Updated history with end time" | Add-Content $debugPath -ErrorAction SilentlyContinue
+    } catch {
+        "[sessionEnd] ERROR updating history: $_" | Add-Content $debugPath -ErrorAction SilentlyContinue
     }
-    $history | ConvertTo-Json -Depth 10 | Set-Content $historyPath
 }
 
+# Run visualization
 Push-Location $metadataPath
 try {
-    node scripts/visualize.mjs $sessionId 2>&1 | Out-Null
+    if (Test-Path "scripts/visualize.mjs") {
+        "[sessionEnd] Running visualization script..." | Add-Content $debugPath -ErrorAction SilentlyContinue
+        node scripts/visualize.mjs $sessionId 2>&1 | Out-Null
+        "[sessionEnd] Visualization completed" | Add-Content $debugPath -ErrorAction SilentlyContinue
+    } else {
+        "[sessionEnd] WARNING: visualize.mjs not found" | Add-Content $debugPath -ErrorAction SilentlyContinue
+    }
+} catch {
+    "[sessionEnd] ERROR running visualization: $_" | Add-Content $debugPath -ErrorAction SilentlyContinue
 } finally {
     Pop-Location
 }
 
-Remove-Item $sessionFile -ErrorAction SilentlyContinue
+# Clean up session file
+try {
+    Remove-Item $sessionFile -ErrorAction Stop
+    "[sessionEnd] Cleaned up session file" | Add-Content $debugPath -ErrorAction SilentlyContinue
+} catch {
+    "[sessionEnd] WARNING: Could not remove session file: $_" | Add-Content $debugPath -ErrorAction SilentlyContinue
+}

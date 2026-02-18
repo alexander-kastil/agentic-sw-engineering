@@ -3,18 +3,36 @@ param(
     [string]$Phase = "pre"
 )
 
+$ErrorActionPreference = "Continue"
+
 $inputJson = [Console]::In.ReadToEnd()
 $hookData = $null
-try { $hookData = $inputJson | ConvertFrom-Json } catch { exit 0 }
+try { 
+    $hookData = $inputJson | ConvertFrom-Json 
+} catch { 
+    exit 0 
+}
 
 $dataPath = Join-Path $PSScriptRoot "../../.copilot-conversation/data"
 $sessionFile = Join-Path $dataPath "current-session.txt"
 
-if (-not (Test-Path $sessionFile)) { exit 0 }
-$sessionId = (Get-Content $sessionFile -Raw).Trim()
+if (-not (Test-Path $sessionFile)) { 
+    exit 0 
+}
 
+try {
+    $sessionId = (Get-Content $sessionFile -Raw -ErrorAction Stop).Trim()
+} catch {
+    exit 0
+}
+
+$debugPath = Join-Path $dataPath "debug-$sessionId.log"
 $toolsPath = Join-Path $dataPath "tools-$sessionId.json"
-if (-not (Test-Path $toolsPath)) { exit 0 }
+
+if (-not (Test-Path $toolsPath)) { 
+    "[$Phase-tool] WARNING: Tools file not found at $toolsPath" | Add-Content $debugPath -ErrorAction SilentlyContinue
+    exit 0 
+}
 
 function ConvertFrom-UnixMs($val) {
     try {
@@ -29,8 +47,7 @@ function ConvertFrom-UnixMs($val) {
 $timestamp = ConvertFrom-UnixMs $hookData.timestamp
 $toolName = if ($hookData.tool_name) { [string]$hookData.tool_name } elseif ($hookData.toolName) { [string]$hookData.toolName } else { "unknown" }
 
-$debugPath = Join-Path $dataPath "debug-$sessionId.log"
-"[$Phase-tool] $(Get-Date -Format o) tool=$toolName`nRAW: $inputJson`n" | Add-Content $debugPath
+"[$Phase-tool] $(Get-Date -Format o) tool=$toolName`nRAW: $inputJson`n" | Add-Content $debugPath -ErrorAction SilentlyContinue
 
 $entry = [ordered]@{
     timestamp = [string]$timestamp
@@ -49,14 +66,19 @@ if ($Phase -eq "post") {
 $maxRetries = 3
 for ($i = 0; $i -lt $maxRetries; $i++) {
     try {
-        $toolsData = Get-Content $toolsPath -Raw | ConvertFrom-Json
+        $toolsData = Get-Content $toolsPath -Raw -ErrorAction Stop | ConvertFrom-Json
         if (-not $toolsData.tools) {
             $toolsData | Add-Member -NotePropertyName tools -NotePropertyValue @() -Force
         }
         $toolsData.tools += [pscustomobject]$entry
-        $toolsData | ConvertTo-Json -Depth 10 | Set-Content $toolsPath
-        break
+        $toolsData | ConvertTo-Json -Depth 10 | Set-Content -Path $toolsPath -ErrorAction Stop
+        "[$Phase-tool] Successfully recorded tool: $toolName" | Add-Content $debugPath -ErrorAction SilentlyContinue
+        exit 0
     } catch {
-        Start-Sleep -Milliseconds 50
+        if ($i -lt ($maxRetries - 1)) {
+            Start-Sleep -Milliseconds 50
+        } else {
+            "[$Phase-tool] ERROR after $maxRetries retries: $_" | Add-Content $debugPath -ErrorAction SilentlyContinue
+        }
     }
 }
