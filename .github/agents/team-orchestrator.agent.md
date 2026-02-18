@@ -1,7 +1,7 @@
 ---
-name: Orchestrator
-description: Sonnet, Codex, Gemini
-model: Claude Sonnet 4.5 (copilot)
+name: Team Orchestrator
+description: Coordinates complex projects by breaking down requests into tasks and delegating to specialist subagents. Focuses on project management and task orchestration, never implementing directly.
+model: Claude Sonnet 4.6 (copilot)
 tools: ['read/readFile', 'agent', 'memory']
 ---
 
