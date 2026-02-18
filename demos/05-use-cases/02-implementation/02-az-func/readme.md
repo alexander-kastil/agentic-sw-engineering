@@ -10,11 +10,15 @@ Key features:
 - Fetches live exchange rates from [Fixer.io](https://fixer.io/) API using the /latest endpoint (returns JSON object with success flag, timestamp, base currency, date, and rates map) and stores API key in local.settings.json. Find details [documentation here](https://docs.apilayer.com/fixer/docs/api-documentation?utm_source=FixerHomePage&utm_medium=Referral)
 - Uses /convert endpoint for direct currency conversion (returns JSON object with success flag, query parameters, exchange rate info, and converted result amount)
 - Returns converted amount and the exchange rate used for transparency
-- Provides two conversion methods: real-time rates via /latest for current calculations and direct conversion via /convert for historical date support
 
 ## Implementation Details
 
 This project uses Azure Functions v4 with the TypeScript programming model, providing a modern, code-centric approach to function development with support for HTTP triggers and JSON-based configuration.
+
+Use the latest Azure Function Typescript programming model to define two HTTP-triggered functions:
+
+- real-time rates via /latest for current calculations (GetRates function)
+- direct conversion via /convert for historical date support (GetConvert function)
 
 ## Requirements
 
@@ -26,7 +30,6 @@ To run this project locally and deploy to Azure, you need:
 - Azure Functions Core Tools v4.0.5382 or higher for local development
 - Azure Functions Runtime v4.25+ for cloud deployment
 - A Fixer.io API key (stored in local.settings.json for local development)
-- All scaffolding must be done using Azure Functions Core Tools to ensure correct project structure and configuration
 
 ## DevOps
 
