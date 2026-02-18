@@ -2,41 +2,39 @@
 
 Learn how providing code samples helps Copilot understand your intent and generate precise implementations. Each example shows a prompt paired with expected code output.
 
-## Example 1: API Data Retrieval
-
-Prompt:
+## Example: Object Creation with Sample Data
 
 ```prompt
-// Pass in user ids and retrieve user data from jsonplaceholder.typicode.com API, then return it as a JSON object
+create an array of users:
+name: 'John Doe', age: 30, city: 'New York'
+name: 'Jane Fonda', age: 25, city: 'Los Angeles'
+name: 'Jim the cat', age: 40, city: 'Chicago'
 ```
 
 Generated Code:
 
-```javascript
-async function getUserData(userId) {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    const data = await response.json();
-    return data;
+```
+const users = [
+  { name: 'John Doe', age: 30, city: 'New York' },
+  { name: 'Jane Fonda', age: 25, city: 'Los Angeles' },
+  { name: 'Jim the cat', age: 40, city: 'Chicago' }
+];
+```
+
+Prompt:
+
+```prompt
+Create a function to filter on of the users by name
+```
+
+Generated Code:
+
+function filterUserByName(name) {
+  return users.find(user => user.name === name);
 }
 ```
 
-## Example 2: Array Flattening and Mapping
-
-Prompt:
-
 ```prompt
-Map through an array of arrays of objects
-Example: Extract names from the data array
-Desired outcome: ['John', 'Jane', 'Bob']
+Call the function with 'Jane Fonda' and log it to the console
 ```
 
-Generated Code:
-
-```javascript
-const data = [
-[{ name: 'John', age: 25 }, { name: 'Jane', age: 30 }],
-[{ name: 'Bob', age: 40 }]
-];
-const mappedData = data.flatMap(sublist => sublist.map(person => person.name));
-console.log(mappedData);
-```
