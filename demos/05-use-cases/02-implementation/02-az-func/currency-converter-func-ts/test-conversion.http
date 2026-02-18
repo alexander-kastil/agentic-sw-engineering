@@ -1,0 +1,17 @@
+### Get exchange rates for EUR
+GET http://localhost:7071/api/GetRates?base=EUR
+
+### Convert 100 EUR to USD (current rate)
+GET http://localhost:7071/api/GetConvert?from=EUR&to=USD&amount=100
+
+### Convert 100 USD to EUR (current rate)
+GET http://localhost:7071/api/GetConvert?from=USD&to=EUR&amount=100
+
+### Convert 50 GBP to JPY (current rate)
+GET http://localhost:7071/api/GetConvert?from=GBP&to=JPY&amount=50
+
+### Convert 1000 EUR to CHF with historical date
+GET http://localhost:7071/api/GetConvert?from=EUR&to=CHF&amount=1000&date=2024-01-01
+
+### Convert 100 EUR to multiple currencies via GetRates
+GET http://localhost:7071/api/GetRates?base=EUR
