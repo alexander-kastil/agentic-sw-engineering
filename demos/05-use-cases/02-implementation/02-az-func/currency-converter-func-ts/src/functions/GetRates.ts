@@ -1,61 +1,69 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
+import { FixerClient } from "../utils/fixerClient";
+import { RatesProvider } from "../utils/ratesProvider";
+
+interface GetRatesRequest {
+    base?: string;
+    date?: string;
+}
 
 export async function GetRates(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     try {
         context.log(`GetRates function processed request for url "${request.url}"`);
 
-        const apiKey = process.env.FIXER_API_KEY;
-        if (!apiKey) {
-            return {
-                status: 400,
-                body: JSON.stringify({ error: 'FIXER_API_KEY not configured' })
-            };
+        const apiKey = FixerClient.validateApiKey(process.env.FIXER_API_KEY);
+
+        let body: GetRatesRequest = {};
+        try {
+            body = await request.json();
+        } catch {
+            body = {};
         }
 
-        const base = request.query.get('base') || 'EUR';
-        const url = `https://data.fixer.io/api/latest?access_key=${apiKey}&base=${base}`;
+        const base = body.base || 'EUR';
+        const date = body.date;
 
-        context.log(`Requesting: ${url.replace(apiKey, '***')}`);
+        FixerClient.validateDate(date);
 
-        const response = await fetch(url);
-        if (!response.ok) {
-            const errorBody = await response.text();
-            context.log(`API Error: ${response.status} ${response.statusText} - ${errorBody}`);
-            return {
-                status: response.status,
-                body: JSON.stringify({ error: `Fixer API error: ${response.statusText}`, details: errorBody })
-            };
-        }
-
-        const data = await response.json();
-        if (!data.success) {
-            context.log(`API Response Error: ${JSON.stringify(data)}`);
-            return {
-                status: 400,
-                body: JSON.stringify({ error: data.error?.info || 'Failed to fetch rates', details: data })
-            };
-        }
+        const provider = new RatesProvider(apiKey, context);
+        const rates = await provider.getRates(base, date);
 
         return {
             body: JSON.stringify({
                 success: true,
-                timestamp: data.timestamp,
-                base: data.base,
-                date: data.date,
-                rates: data.rates
+                timestamp: rates.timestamp,
+                base: rates.base,
+                date: rates.date,
+                rates: rates.rates
             })
         };
     } catch (error) {
         context.log(`Error: ${error}`);
+        const message = error instanceof Error ? error.message : 'Internal server error';
+
+        if (message.includes('FIXER_API_KEY')) {
+            return {
+                status: 400,
+                body: JSON.stringify({ error: message })
+            };
+        }
+
+        if (message.includes('Invalid date')) {
+            return {
+                status: 400,
+                body: JSON.stringify({ error: 'You have entered an invalid date. [Required format: date=YYYY-MM-DD]' })
+            };
+        }
+
         return {
             status: 500,
-            body: JSON.stringify({ error: 'Internal server error' })
+            body: JSON.stringify({ error: message })
         };
     }
 }
 
 app.http('GetRates', {
-    methods: ['GET', 'POST'],
+    methods: ['POST'],
     authLevel: 'anonymous',
     handler: GetRates
 });

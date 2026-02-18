@@ -15,8 +15,13 @@ A serverless currency conversion service built with Azure Functions and TypeScri
 Key features:
 
 - Two HTTP-triggered functions using the Fixer.io API via the /latest endpoint
+
 - GetRates: Retrieves current exchange rates for a base currency (default: EUR). Query parameter: `base`
+
 - GetConvert: Converts an amount from one currency to another using the /latest endpoint. Fetches the exchange rate and calculates the result by multiplying amount × rate. Query parameters: `from`, `to`, `amount`
+
+- Both functions should use POST method and accept parameters in the request body as JSON. There should be an optional Date parameter to specify the date for historical rates. If empty, take the latest rates, otherwise use the date parameter to fetch historical rates.
+
 - API key stored in local.settings.json. See [Fixer.io documentation](https://docs.apilayer.com/fixer/docs/api-documentation)
 
 ## Implementation Details and Rules

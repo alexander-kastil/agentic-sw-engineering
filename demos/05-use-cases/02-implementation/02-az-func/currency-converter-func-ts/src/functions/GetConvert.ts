@@ -1,89 +1,96 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
+import { FixerClient } from "../utils/fixerClient";
+import { RatesProvider } from "../utils/ratesProvider";
+import { RatesConverter } from "../utils/ratesConverter";
+
+interface GetConvertRequest {
+    from?: string;
+    to?: string;
+    amount?: number;
+    date?: string;
+}
 
 export async function GetConvert(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     try {
         context.log(`GetConvert function processed request for url "${request.url}"`);
 
-        const apiKey = process.env.FIXER_API_KEY;
-        if (!apiKey) {
-            return {
-                status: 400,
-                body: JSON.stringify({ error: 'FIXER_API_KEY not configured' })
-            };
+        const apiKey = FixerClient.validateApiKey(process.env.FIXER_API_KEY);
+
+        let body: GetConvertRequest = {};
+        try {
+            body = await request.json();
+        } catch {
+            body = {};
         }
 
-        const from = request.query.get('from') || 'EUR';
-        const to = request.query.get('to') || 'USD';
-        const amountStr = request.query.get('amount') || '1';
-        const amount = parseFloat(amountStr);
+        const from = body.from || 'EUR';
+        const to = body.to || 'USD';
+        const amount = FixerClient.validateAmount(body.amount);
+        const date = body.date;
 
-        if (isNaN(amount)) {
-            return {
-                status: 400,
-                body: JSON.stringify({ error: 'Invalid amount parameter' })
-            };
-        }
+        FixerClient.validateDate(date);
 
-        let url = `https://data.fixer.io/api/latest?access_key=${apiKey}&base=${from}&symbols=${to}`;
+        const provider = new RatesProvider(apiKey, context);
+        const rates = await provider.getRates('EUR', date);
 
-        context.log(`Requesting: ${url.replace(apiKey, '***')}`);
-
-        const response = await fetch(url);
-        if (!response.ok) {
-            const errorBody = await response.text();
-            context.log(`API Error: ${response.status} ${response.statusText} - ${errorBody}`);
-            return {
-                status: response.status,
-                body: JSON.stringify({ error: `Fixer API error: ${response.statusText}`, details: errorBody })
-            };
-        }
-
-        const data = await response.json();
-        if (!data.success) {
-            context.log(`API Response Error: ${JSON.stringify(data)}`);
-            return {
-                status: 400,
-                body: JSON.stringify({ error: data.error?.info || 'Failed to fetch exchange rates', details: data })
-            };
-        }
-
-        const rate = data.rates[to];
-        if (!rate) {
-            return {
-                status: 400,
-                body: JSON.stringify({ error: `Currency ${to} not found in rates` })
-            };
-        }
-
-        const result = amount * rate;
+        const result = RatesConverter.convert(amount, from, to, rates);
 
         return {
             body: JSON.stringify({
                 success: true,
                 query: {
-                    from,
-                    to,
-                    amount
+                    from: result.from,
+                    to: result.to,
+                    amount: result.amount
                 },
                 info: {
-                    rate,
-                    timestamp: data.timestamp,
-                    date: data.date
+                    timestamp: result.timestamp,
+                    date: result.date
                 },
-                result
+                result: result.result
             })
         };
     } catch (error) {
         context.log(`Error: ${error}`);
+        const message = error instanceof Error ? error.message : 'Internal server error';
+
+        if (message.includes('FIXER_API_KEY')) {
+            return {
+                status: 400,
+                body: JSON.stringify({ error: message })
+            };
+        }
+
+        if (message.includes('Invalid amount')) {
+            return {
+                status: 400,
+                body: JSON.stringify({ error: message })
+            };
+        }
+
+        if (message.includes('Invalid date')) {
+            return {
+                status: 400,
+                body: JSON.stringify({ error: 'You have entered an invalid date. [Required format: date=YYYY-MM-DD]' })
+            };
+        }
+
+        if (message.includes('not found in rates')) {
+            return {
+                status: 400,
+                body: JSON.stringify({ error: message })
+            };
+        }
+
         return {
             status: 500,
-            body: JSON.stringify({ error: 'Internal server error' })
+            body: JSON.stringify({ error: message })
         };
     }
 }
 
 app.http('GetConvert', {
-    methods: ['GET', 'POST'],
+    methods: ['POST'],
     authLevel: 'anonymous',
     handler: GetConvert
 });
