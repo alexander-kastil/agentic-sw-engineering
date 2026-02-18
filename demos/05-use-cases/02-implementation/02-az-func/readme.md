@@ -27,4 +27,4 @@ This project uses Azure Functions v4 with the TypeScript programming model, prov
 
 Create a test-conversion.http rest client file with sample HTTP requests to validate both functions
 
-The project structure as well as any artifacts should be generated using Azure Function Core Tools scaffolding commands, not manually created. Use Microsoft Lean MCP for best practices.
+The project structure as well as any artifacts should be generated using Azure Function Core Tools scaffolding commands, not manually created. Use Microsoft Lean MCP for best practices and respect my coding conventions.
