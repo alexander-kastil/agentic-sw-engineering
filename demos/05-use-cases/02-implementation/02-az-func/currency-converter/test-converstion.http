@@ -1,7 +1,0 @@
-POST http://localhost:7071/api/convertTo
-Content-Type: application/json
-
-{
-    "from": "THB",
-    "amount": 100
-}
