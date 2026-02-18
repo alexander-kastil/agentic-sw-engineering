@@ -20,6 +20,8 @@ Use the latest Azure Function Typescript programming model to define two HTTP-tr
 - real-time rates via /latest for current calculations (GetRates function)
 - direct conversion via /convert for historical date support (GetConvert function)
 
+Create a test-conversion.http rest client file with sample HTTP requests to validate both functions
+
 ## Requirements
 
 To run this project locally and deploy to Azure, you need:

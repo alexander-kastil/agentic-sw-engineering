@@ -19,6 +19,7 @@ description: This file describes the conventions for Azure Functions projects in
    - Use terminal commands to install dependencies and build
    - Let the tooling handle project structure and file generation
    - Always use visible terminal commands - never run commands in the background
+   - After scaffolding, unless specified otherwise, add "AzureWebJobsStorage": "UseDevelopmentStorage=true" to local.settings.json for local development
 4. Execute and verify - don't stop at "files created"
    - Start the local runtime using the appropriate development server command
    - Test the function with realistic requests
