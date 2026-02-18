@@ -5,8 +5,10 @@ Prompt:
 ```
 Implement the currency converter as azure function in demos\05-use-cases\02-implementation\02-az-func\currency-converter-func-ts according to the attached document.
 
-#fetch https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-typescript and use Azrue Function Core tools for all scaffolding
+#fetch https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-typescript and use Azure Function Core tools for all scaffolding
 ```
+
+> Note: If you are not familiar with Azure Functions, you can as well implement the same functionality with any other API framework or serverless platform of your choice.
 
 ## General Description
 
