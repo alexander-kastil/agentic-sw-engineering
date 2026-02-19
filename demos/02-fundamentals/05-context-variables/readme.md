@@ -45,7 +45,7 @@ fix #terminalLastCommand
 Build a working Microsoft Agent Framework application in Python 3.12 using slash commands and the #fetch tool. The #fetch tool retrieves official documentation from URLs so you can reference current docs while scaffolding code.
 
 ```
-In [demos/01-fundamentals/04-slash-commands](demos/01-fundamentals/04-slash-commands) create a folder maf-starter and use it
+In [demos/02-fundamentals/04-slash-commands](demos/02-fundamentals/04-slash-commands) create a folder maf-starter and use it
 
 #fetch https://learn.microsoft.com/en-us/agent-framework/tutorials/quick-start?pivots=programming-language-python and create a hello world python 3.12 app with the prompt of "tell me about the microsoft agent framework"
 

@@ -39,16 +39,16 @@ Features are numbered sequentially to track development order. For teams working
 
 ## Core commands and workflows
 
-| Command | Purpose | Use case |
-|---------|---------|----------|
-| /speckit.constitution | Establish project principles and constraints | Initialize project governance and architectural standards |
-| /speckit.specify | Generate detailed specifications | Transform feature descriptions into complete spec.md with user stories and acceptance criteria |
-| /speckit.clarify | Perform gap analysis | Identify ambiguities and missing details in specifications |
-| /speckit.analyze | Verify cross-artifact consistency | Ensure plan implements all spec requirements and tasks cover all plan elements |
-| /speckit.checklist | Generate quality validation checklists | Verify requirement completeness, clarity, and consistency before sharing with stakeholders |
-| /speckit.plan | Create implementation plans | Transform specifications into architectural and design approaches |
-| /speckit.tasks | Generate implementation tasks | Break down plan elements into actionable development steps |
-| /speckit.implement | Implement incrementally | Generate code following specification and task requirements |
+| Command               | Purpose                                      | Use case                                                                                       |
+| --------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| /speckit.constitution | Establish project principles and constraints | Initialize project governance and architectural standards                                      |
+| /speckit.specify      | Generate detailed specifications             | Transform feature descriptions into complete spec.md with user stories and acceptance criteria |
+| /speckit.clarify      | Perform gap analysis                         | Identify ambiguities and missing details in specifications                                     |
+| /speckit.analyze      | Verify cross-artifact consistency            | Ensure plan implements all spec requirements and tasks cover all plan elements                 |
+| /speckit.checklist    | Generate quality validation checklists       | Verify requirement completeness, clarity, and consistency before sharing with stakeholders     |
+| /speckit.plan         | Create implementation plans                  | Transform specifications into architectural and design approaches                              |
+| /speckit.tasks        | Generate implementation tasks                | Break down plan elements into actionable development steps                                     |
+| /speckit.implement    | Implement incrementally                      | Generate code following specification and task requirements                                    |
 
 The typical workflow progresses through specification, gap clarification, plan creation, consistency verification, task breakdown, and incremental implementation. However, at any point if requirements change, you can return to earlier phases—update the specification, regenerate downstream artifacts, and the system ensures changes propagate systematically rather than being patched into code without documentation.
 

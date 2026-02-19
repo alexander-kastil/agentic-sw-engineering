@@ -13,5 +13,5 @@ The primary distinction between agent types centers on where and how they execut
 | **[Local Agent](./01-local/)**              | Current VS Code session              | Single focused tasks with immediate feedback               | Single sequential task         | Minimal (shared workspace)   |
 | **[Cloud Agent](./02-cloud/)**              | Remote Azure environment             | Large-scale tasks exceeding local resources                | High (scalable infrastructure) | Excellent (remote isolation) |
 | **[Background Agent](./03-background/)**    | Isolated process on your machine     | Parallel tasks without blocking your editor                | Multiple concurrent tasks      | Good (separate process)      |
-| **[Sub-agents](./04-sub-agents/)**          | Delegated to specialized agents      | Orchestrating multi-step workflows with parallel execution | Parallel across sub-agents     | Depends on delegation target |
+| **[Sub-agents](./04-orchestration/)**       | Delegated to specialized agents      | Orchestrating multi-step workflows with parallel execution | Parallel across sub-agents     | Depends on delegation target |
 | **[Claude Code Agents](./05-claude-code/)** | Desktop app with VS Code integration | Large-scale refactoring, code review, security audits      | Task-dependent                 | Configurable permissions     |
