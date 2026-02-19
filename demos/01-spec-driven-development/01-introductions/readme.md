@@ -6,6 +6,13 @@ Spec-driven development reverses the traditional code-first approach by starting
 
 GitHub Spec Kit provides a structured four-phase process that turns specifications into working code. You begin by specifying your requirements from the user perspective, then create a technical plan with your desired stack and constraints, break it down into concrete tasks, and finally implement them with focused code reviews. Each phase has explicit checkpoints where you verify the artifacts before moving forward, keeping the coding agent aligned with your actual needs throughout the project.
 
+The four-phase SDD workflow:
+
+- Specify: Define what the software should do and why—user stories, acceptance criteria, requirements, and edge cases.
+- Plan: Decide how to build it—architecture, technology stack, and implementation approach.
+- Tasks: Break down the plan into discrete, actionable development tasks organized by phase.
+- Implement: Write code guided by the spec, plan, and task list, verifying each task against the specification.
+
 ## Getting Started with GitHub Spec Kit
 
 To try spec-driven development, install the Spec Kit CLI tool:
@@ -27,4 +34,3 @@ A minimal 10-minute implementation flow: create a simple project spec for a spec
 
 - [GitHub Spec Kit Repository](https://github.com/github/spec-kit)
 - [Spec-Driven Development with AI Guide](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/)
-
