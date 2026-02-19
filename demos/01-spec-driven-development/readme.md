@@ -1,30 +1,18 @@
-# Spec Driven Development
+# Module 1: Spec-Driven Development Foundations
 
-## Introduction to Spec Driven Development
+## Overview
 
-Spec-driven development reverses the traditional code-first approach by starting with a specification that acts as an executable contract between your intent and the implementation. Instead of writing vague prompts and hoping for the right output, you provide a clear specification that becomes the source of truth for what gets built, tested, and validated. This approach eliminates guesswork and ensures that coding agents like GitHub Copilot understand exactly what you want before they start writing code.
+Spec-driven development (SDD) transforms how you work with AI coding assistants by placing specifications at the center of your development process. Instead of vague prompts and hope, you provide clear specifications that become the executable contract between your intent and the implementation. This approach eliminates guesswork and ensures GitHub Copilot and other AI partners understand exactly what you're building before they start writing code.
 
-GitHub Spec Kit provides a structured four-phase process that turns specifications into working code. You begin by specifying your requirements from the user perspective, then create a technical plan with your desired stack and constraints, break it down into concrete tasks, and finally implement them with focused code reviews. Each phase has explicit checkpoints where you verify the artifacts before moving forward, keeping the coding agent aligned with your actual needs throughout the project.
+The GitHub Spec Kit toolkit provides a structured four-phase process that turns specifications into working implementations. You begin by specifying requirements from the user perspective, create a technical plan with your desired stack and constraints, break it down into concrete tasks, and finally implement them with focused code reviews. Each phase has explicit checkpoints where you verify artifacts before moving forward, keeping AI-assisted development aligned with your actual needs throughout the project.
 
-## Getting Started with GitHub Spec Kit
+## Module Structure
 
-To try spec-driven development, install the Spec Kit CLI tool:
-
-```
-uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
-```
-
-Once initialized, use these commands to guide your coding agent:
-
-- `/specify` - Describe what you're building and why (user experience focused)
-- `/plan` - Provide technical direction and constraints
-- `/tasks` - Break down the specification into actionable work items
-- `/implement` - Let the coding agent tackle tasks with clear, reviewable changes
-
-A minimal 10-minute implementation flow: create a simple project spec for a specific feature, generate a plan for a small service, create focused tasks, and let Copilot implement one or two tasks to see how the process works in practice.
-
-## Key Topics Covered in This Module
-
-- [GitHub Spec Kit Repository](https://github.com/github/spec-kit)
-- [Spec-Driven Development with AI Guide](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/)
-
+| Module                                                | Topic                                                                  |
+| ----------------------------------------------------- | ---------------------------------------------------------------------- |
+| [01-introductions](./01-introductions/)               | Core concepts and principles of spec-driven development                |
+| [02-spec-driven-workflow](./02-spec-driven-workflow/) | GitHub Spec Kit toolkit, CLI commands, and version control integration |
+| [03-constitution](./03-constitution/)                 | Constitution, specification, and technical plan artifacts              |
+| [04-tasks](./04-tasks/)                               | Task breakdown, sequencing, and implementation guidance                |
+| [05-getting-started](./05-getting-started/)           | Installation, quick start, and minimal workflow examples               |
+| [06-exercise](./06-exercise/)                         | Hands-on lab implementing a complete feature using Spec Kit            |

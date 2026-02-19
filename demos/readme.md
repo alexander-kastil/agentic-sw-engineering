@@ -4,8 +4,8 @@
 
 - [Introductions](01-spec-driven-development/01-introductions/)
 - [Spec-Driven Workflow](01-spec-driven-development/02-spec-driven-workflow/)
-- [Constitution](01-spec-driven-development/03-constitution/)
-- [Tasks](01-spec-driven-development/04-tasks/)
+- [Constitution, Specification and Technical Plan](01-spec-driven-development/03-constitution/)
+- [Tasks & Implementation](01-spec-driven-development/04-tasks/)
 - [Getting Started](01-spec-driven-development/05-getting-started/)
 - [Exercise](01-spec-driven-development/06-exercise/)
 
