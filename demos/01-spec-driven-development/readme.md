@@ -2,9 +2,9 @@
 
 ## Overview
 
-Spec-driven development (SDD) transforms how you work with AI coding assistants by placing specifications at the center of your development process. Instead of vague prompts and hope, you provide clear specifications that become the executable contract between your intent and the implementation. This approach eliminates guesswork and ensures GitHub Copilot and other AI partners understand exactly what you're building before they start writing code.
+Spec-driven development (SDD) is vital to agentic software engineering because coding agents excel at generating new functionality but often inadvertently refactor or break working code. Specifications solve this by establishing executable contracts that guide agents toward solutions that improve your codebase without destroying what's already stable.
 
-The GitHub Spec Kit toolkit provides a structured four-phase process that turns specifications into working implementations. You begin by specifying requirements from the user perspective, create a technical plan with your desired stack and constraints, break it down into concrete tasks, and finally implement them with focused code reviews. Each phase has explicit checkpoints where you verify artifacts before moving forward, keeping AI-assisted development aligned with your actual needs throughout the project.
+The GitHub Spec Kit toolkit provides a structured four-phase process: specify requirements, plan implementation, break work into tasks, and implement with verification. Checkpoints at each phase validate artifacts and prevent costly rewrites of working functionality.
 
 ## Module Structure
 

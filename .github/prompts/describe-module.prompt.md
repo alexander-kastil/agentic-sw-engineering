@@ -35,5 +35,5 @@ If the readme contains links add them to the bottom under a "## Key Topics cover
 - If there are code snippets, check if they are relevant to the description and include them if they add value. If they are outdated, update them. Render them in markdown code blocks.
 - Do not touch "## Links & Resources" sections unless specified.
 - Do not use **bold** or _italic_ formatting in the descriptions.
-- Do not write more than 2-3 sentences per paragraph. Be concise and informative but to not flood the reader with information.
+- Never use more than 3 sentences per paragraph. Shorter paragraphs are easier to scroll over and digest quickly, improving readability and making content more scannable.
 - When asked to add prompts always add them in a markdown code block.
