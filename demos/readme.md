@@ -11,7 +11,7 @@
 
 ## [Module 2: Copilot Artifacts & Tools](./02-copilot-tools/)
 
-- [Instructions](02-copilot-tools/01-instructions/)
+- [Instructions](02-copilot-tools/01-instruction/)
 - [Prompt Files](02-copilot-tools/02-prompts/)
 - [Model Context Protocol (MCP)](02-copilot-tools/03-mcp/)
 - [Custom Agents](02-copilot-tools/04-agents/)
@@ -37,7 +37,7 @@
 
 ## [Module 5: Spec-Driven Development Foundations](./05-spec-driven-dev/)
 
-- [Introductions](05-spec-driven-dev/01-introductions/)
+- [Introductions](05-spec-driven-dev/01-introduction/)
 - [Spec-Driven Workflow](05-spec-driven-dev/02-spec-driven-workflow/)
 - [Constitution, Specification and Technical Plan](05-spec-driven-dev/03-constitution/)
 - [Tasks & Implementation](05-spec-driven-dev/04-tasks/)

@@ -10,7 +10,7 @@ The GitHub Spec Kit toolkit provides a structured four-phase process: specify re
 
 | Module                                                | Topic                                                                  |
 | ----------------------------------------------------- | ---------------------------------------------------------------------- |
-| [01-introductions](./01-introductions/)               | Core concepts and principles of spec-driven development                |
+| [01-introductions](./01-introduction/)                | Core concepts and principles of spec-driven development                |
 | [02-spec-driven-workflow](./02-spec-driven-workflow/) | GitHub Spec Kit toolkit, CLI commands, and version control integration |
 | [03-constitution](./03-constitution/)                 | Constitution, specification, and technical plan artifacts              |
 | [04-tasks](./04-tasks/)                               | Task breakdown, sequencing, and implementation guidance                |
