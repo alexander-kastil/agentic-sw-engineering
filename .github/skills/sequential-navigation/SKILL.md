@@ -29,25 +29,25 @@ Use sequential-navigation when you have:
 
 ### The Three Navigation Link Types
 
-#### 1. Internal Navigation (↑ Back to top)
+#### 1. Contextual Navigation (← Back to Hub)
 
-Placed at the bottom of each file, allows users to instantly return to the file's beginning.
-
-```markdown
-[↑ Back to top](#main-heading)
-```
-
-#### 2. Contextual Navigation (← Back to Hub)
-
-Appears at the top and bottom of each file, provides a permanent link back to the central documentation hub.
+Appears at the top and throughout each file, provides a permanent link back to the central documentation hub.
 
 ```markdown
 [← Back to Exercise Instructions](../readme.md#exercise-instructions)
 ```
 
+#### 2. Internal Navigation (↑ Back to top)
+
+Allows users to instantly return to the file's beginning from the navigation bar.
+
+```markdown
+[↑ Back to top](#main-heading)
+```
+
 #### 3. Sequential Navigation (→ Next Section)
 
-Placed before the contextual link at the bottom, guides users to the next file in the workflow.
+Guides users to the next file in the workflow, displayed in the navigation bar.
 
 ```markdown
 [→ Next: Section Name](next-file.md)
@@ -121,24 +121,31 @@ Now add the three navigation types to each file:
 **Table of Contents:**
 - [Section 1](#section-1)
 - [Section 2](#section-2)
+
+---
 ```
 
-**At the bottom of each file (except the last):**
+**At the bottom of each file (except the last), use a full-width navigation bar:**
 
-```markdown
-[↑ Back to top](#file-title)
+```html
+---
 
-[→ Next: Next File Title](next-file.md)
-
-[← Back to Exercise Instructions](../readme.md#exercise-instructions)
+<div style="display: flex; justify-content: space-between; padding: 1rem 0; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+  <a href="../readme.md#exercise-instructions">← Back to Exercise Instructions</a>
+  <a href="#file-title">↑ Back to top</a>
+  <a href="next-file.md">→ Next: Next File Title</a>
+</div>
 ```
 
-**At the bottom of the last file:**
+**At the bottom of the last file, use:**
 
-```markdown
-[↑ Back to top](#file-title)
+```html
+---
 
-[← Back to Exercise Instructions](../readme.md#exercise-instructions)
+<div style="display: flex; justify-content: space-between; padding: 1rem 0; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+  <a href="../readme.md#exercise-instructions">← Back to Exercise Instructions</a>
+  <a href="#file-title">↑ Back to top</a>
+</div>
 ```
 
 ---
@@ -181,11 +188,11 @@ Verify the installation is correct...
 
 ---
 
-[↑ Back to top](#set-up-the-project)
-
-[→ Next: Configure your environment](configuration.md)
-
-[← Back to Exercise Instructions](../readme.md#exercise-instructions)
+<div style="display: flex; justify-content: space-between; padding: 1rem 0; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+  <a href="../readme.md#exercise-instructions">← Back to Exercise Instructions</a>
+  <a href="#set-up-the-project">↑ Back to top</a>
+  <a href="configuration.md">→ Next: Configure your environment</a>
+</div>
 ```
 
 ### Sample File: instructions/configuration.md (last file)
@@ -211,9 +218,10 @@ Verify your configuration...
 
 ---
 
-[↑ Back to top](#configure-your-environment)
-
-[← Back to Exercise Instructions](../readme.md#exercise-instructions)
+<div style="display: flex; justify-content: space-between; padding: 1rem 0; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+  <a href="../readme.md#exercise-instructions">← Back to Exercise Instructions</a>
+  <a href="#configure-your-environment">↑ Back to top</a>
+</div>
 ```
 
 ## Best Practices
