@@ -1,5 +1,6 @@
 namespace FoodApp
 {
+
     public class AppConfig
     {
         public string Title { get; set; }
