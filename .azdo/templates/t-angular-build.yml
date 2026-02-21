@@ -1,0 +1,54 @@
+parameters:
+  - name: nodeVersion
+    type: string
+    default: "22.12.0"
+  - name: appLocation
+    type: string
+    default: "src/ui"
+  - name: distFolder
+    type: string
+    default: "app"
+  - name: buildConfiguration
+    type: string
+    default: "production"
+  - name: artifactName
+    type: string
+    default: "app-build"
+  - name: publishOutputPath
+    type: string
+    default: "$(appLocation)/dist/$(distFolder)/browser"
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: ${{ parameters.nodeVersion }}
+    displayName: "Install Node.js"
+
+  - task: Cache@2
+    inputs:
+      key: 'npm | "$(Agent.OS)" | ${{ parameters.appLocation }}/package-lock.json'
+      path: "${{ parameters.appLocation }}/node_modules"
+      cacheHitVar: "npmCacheHit"
+      displayName: "Cache npm packages"
+
+  - task: Npm@1
+    displayName: "Install Dependencies"
+    inputs:
+      command: "custom"
+      customCommand: "install --legacy-peer-deps"
+      workingDir: ${{ parameters.appLocation }}
+    condition: ne(variables.npmCacheHit, 'true')
+
+  - task: Npm@1
+    displayName: "Build Angular App"
+    inputs:
+      command: "custom"
+      workingDir: ${{ parameters.appLocation }}
+      customCommand: "run build --configuration=${{ parameters.buildConfiguration }}"
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "${{ parameters.publishOutputPath }}"
+      ArtifactName: "${{ parameters.artifactName }}"
+      publishLocation: "Container"
+    displayName: "Publish Artifacts"
