@@ -8,6 +8,8 @@
 - [AI Assisted Coding](01-fundamentals/03-ai-assisted-coding/)
 - [Slash Commands](01-fundamentals/04-slash-commands/)
 - [Context Variables](01-fundamentals/05-context-variables/)
+- [Pull Requests & Code Reviews](01-fundamentals/06-pr-code-review/)
+- [Management and Settings](01-fundamentals/07-mgmt-settings/)
 
 ## [Module 2: Copilot Artifacts & Tools](./02-copilot-tools/)
 

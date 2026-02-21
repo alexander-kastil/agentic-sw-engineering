@@ -1,4 +1,4 @@
-# Models
+# Selecting Models
 
 GitHub Copilot offers access to multiple language models through the Language Models editor in VS Code, allowing you to select the optimal model for your specific tasks. Each model has distinct characteristics including context window sizes, output capabilities, and performance profiles suited for different coding scenarios.
 

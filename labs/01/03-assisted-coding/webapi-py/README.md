@@ -15,7 +15,7 @@ Gain more practical experience by using this repository that contains a Python W
 ## Run the application
 
 ```
-cd labs\01\04-advanced
+cd labs\01\03-assisted-coding\webapi-py
  .\venv\Scripts\Activate.ps1;
 pip install -r requirements.txt
 uvicorn main:app --reload
