@@ -81,7 +81,7 @@ public class ConsoleApp
         {
             Console.Write("Enter a string to search for patrons by name: ");
             searchInput = Console.ReadLine();
-            
+
             if (searchInput == null)
             {
                 searchInput = string.Empty;
