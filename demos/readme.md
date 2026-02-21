@@ -41,10 +41,10 @@
 - [Spec-Driven Workflow](05-spec-driven-dev/02-spec-driven-workflow/)
 - [Constitution, Specification and Technical Plan](05-spec-driven-dev/03-constitution/)
 - [Tasks & Implementation](05-spec-driven-dev/04-tasks/)
-- [Getting Started](05-spec-driven-dev/05-getting-started/)
-- [Exercise](05-spec-driven-dev/06-exercise/)
+- [Requirements & Installation](05-spec-driven-dev/05-requirements/)
+- [Hands-on lab implementing a complete feature using Spec Kit ](05-spec-driven-dev/06-sample-case/)
 
-## [Module 6: Capstone Project](./06-capstone-project/)
+## [Module 6: Use Cases & Capstone Project](./06-capstone-project/)
 
 - [Planning & Proof of Concept](06-capstone-project/01-planning/)
 - [Orchestrating Implementation](06-capstone-project/02-implementation)
