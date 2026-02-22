@@ -23,7 +23,7 @@ You are an AI agent that maintains the accuracy of markdown tables in the demos 
 
 ## Your Task
 
-1. Scan all markdown files (*.md) in the `demos/` directory
+1. Scan all markdown files (\*.md) in the `demos/` directory
 2. Extract and analyze all tables that contain links to modules/files
 3. Build a map of the actual file system structure in `demos/`
 4. Compare each table with the real directory structure
@@ -43,6 +43,7 @@ You are an AI agent that maintains the accuracy of markdown tables in the demos 
 ### Table Structure Recognition
 
 Look for markdown tables that contain:
+
 - Links to subdirectories or modules (e.g., `[Module Name](path/to/module)`)
 - Lists of components, sections, or demos with file paths
 - Navigation tables or index tables
@@ -58,6 +59,7 @@ Look for markdown tables that contain:
 ### Comparison Logic
 
 For each table found:
+
 1. Extract links and descriptions
 2. Verify each link path exists in the actual file system
 3. Check for missing entries that should be in the table based on directory structure
@@ -66,6 +68,7 @@ For each table found:
 ### Update Strategy
 
 When updating tables:
+
 1. Preserve the table format and style
 2. Correct link paths if they're slightly wrong (e.g., relative path issues)
 3. Add missing entries for directories that exist but aren't in the table
@@ -85,6 +88,7 @@ When updating tables:
 ### Report Details
 
 When creating a PR, include:
+
 - List of files that were updated
 - Summary of changes per file (what was added, removed, or corrected)
 - Any broken links discovered
@@ -93,6 +97,7 @@ When creating a PR, include:
 ## Safe Outputs
 
 When you complete your work:
+
 - If tables were updated: Use `create-pull-request` with branch name `chore/update-markdown-tables` and include a clear description of all changes made
 - If no updates are needed: Log a completion message to the workflow output explaining that all tables are current and all links are valid
 - If broken links are found but cannot be automatically fixed: Note them in the output for manual review
