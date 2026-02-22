@@ -13,7 +13,7 @@
 
 ## [Module 2: Copilot Artifacts & Tools](./02-copilot-tools/)
 
-- [Instructions](02-copilot-tools/01-instruction/)
+- [Instructions](02-copilot-tools/01-instructions/)
 - [Prompt Files](02-copilot-tools/02-prompts/)
 - [Model Context Protocol (MCP)](02-copilot-tools/03-mcp/)
 - [Custom Agents](02-copilot-tools/04-agents/)
@@ -32,10 +32,11 @@
 
 ## [Module 4: GitHub Copilot CLI & Copilot SDK](./04-copilot-cli/)
 
-- [GitHub Copilot CLI](04-copilot-cli/01-copilot-cli/)
-- [Copilot CLI Demos](04-copilot-cli/02-copilot-cli-demos/)
-- [GitHub Copilot SDK](04-copilot-cli/03-copilot-sdk/)
-- [Copilot SDK Demos](04-copilot-cli/04-copilot-sdk-demos/)
+- [GitHub Copilot CLI](04-copilot-cli/01-cli-intro/)
+- [CLI Business Case](04-copilot-cli/02-cli-business-case/)
+- [Agentic Workflows](04-copilot-cli/03-agentic-wf/)
+- [GitHub Copilot SDK](04-copilot-cli/04-sdk/)
+- [Copilot SDK Demos](04-copilot-cli/05-sdk-demos/)
 
 ## [Module 5: Spec-Driven Development Foundations](./05-spec-driven-dev/)
 
@@ -46,12 +47,17 @@
 - [Requirements & Installation](05-spec-driven-dev/05-requirements/)
 - [Hands-on lab implementing a complete feature using Spec Kit ](05-spec-driven-dev/06-sample-case/)
 
-## [Module 6: Use Cases & Capstone Project](./06-capstone-project/)
+## [Module 6: Agentic DevOps](./06-agentic-devops/)
 
-- [Planning & Proof of Concept](06-capstone-project/01-planning/)
-- [Orchestrating Implementation](06-capstone-project/02-implementation)
-- [PullRequest & Code Review](06-capstone-project/03-fixing-ci/)
-- [Upgrading & Modernization](06-capstone-project/04-upgrading/)
-- [Unit- & Integration Testing](06-capstone-project/05-testing/)
-- [Project Documentation](06-capstone-project/06-docs/)
-- [IaC & Deployment using DevOps](06-capstone-project/07-devops/)
+- [Azure CLI](06-agentic-devops/01-azure-cli/)
+- [Pipelines](06-agentic-devops/02-pipelines/)
+- [Infrastructure as Code](06-agentic-devops/03-IaC/)
+- [Spec-Driven DevOps](06-agentic-devops/04-spec-driven/)
+
+## [Module 7: Capstone Project](./07-capstone-project/)
+
+- [Planning & Proof of Concept](07-capstone-project/01-planning/)
+- [Orchestrating Implementation](07-capstone-project/02-implementation/)
+- [Upgrading & Modernization](07-capstone-project/03-upgrading/)
+- [Unit- & Integration Testing](07-capstone-project/04-testing/)
+- [Project Documentation](07-capstone-project/05-docs/)
