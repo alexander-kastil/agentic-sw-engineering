@@ -4,11 +4,11 @@ Agents are specialized AI personas configured with specific tools, instructions,
 
 ## Topics
 
-| Topic                                                    | Description                                                                                          |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| **[Agents Overview](./01-agents-overview/)**             | Understand agent fundamentals, why to use them, and how handoffs enable guided multi-step workflows. |
-| **[Custom Agents used in this Class](./02-repo-agents/)** | Explore custom agents configured in this repository, each optimized for specific development tasks. |
-| **[Anthropic Claude Agents](./03-claude-agents/)**       | Enable and use Claude agents powered by Anthropic's Claude for autonomous agentic workflows.         |
+| Topic                                                     | Description                                                                                          |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| **[Agents Overview](./01-agents-overview/)**              | Understand agent fundamentals, why to use them, and how handoffs enable guided multi-step workflows. |
+| **[Custom Agents used in this Class](./02-repo-agents/)** | Explore custom agents configured in this repository, each optimized for specific development tasks.  |
+| **[Anthropic Claude Agents](./03-claude-agents/)**        | Enable and use Claude agents powered by Anthropic's Claude for autonomous agentic workflows.         |
 
 ## Links & Resources
 
