@@ -1,4 +1,4 @@
-# Orchestration & Sub-Agents
+# Multi Agent Orchestration
 
 Sub-agents enable one agent to delegate work to specialized agents, keeping the main agent's context window focused. The Orchestrator coordinates between specialists—Planner, Coder, and Frontend—breaking down complex requests into parallel work phases. This prevents context bloat while enabling simultaneous execution of independent tasks.
 

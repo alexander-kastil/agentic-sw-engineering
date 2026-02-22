@@ -1,4 +1,4 @@
-# Background Agents
+# Using Background Agents
 
 Background agents run as independent processes on your machine, executing tasks in parallel without blocking your VS Code editor. This model provides a middle ground between local single-session execution and cloud-based remote execution. Multiple background agents can work simultaneously, limited only by your machine's resources.
 

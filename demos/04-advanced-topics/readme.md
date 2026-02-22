@@ -12,3 +12,4 @@ Harness AI capabilities at the command line and embed them into your application
 | **[GitHub Copilot SDK](./04-sdk/)**              | Embed AI-powered agentic workflows directly into your applications. Available in Python, TypeScript, Go, and .NET.                     |
 | **[Copilot SDK Demos](./05-sdk-buiness-case/)**  | Build intelligent agents using the Copilot SDK with practical examples including weather assistants, code reviewers, and custom tools. |
 | **[MCP Apps](./06-mcp-apps/)**                   | Model Context Protocol applications that extend Copilot capabilities through custom tools and integrations.                            |
+| **[Copilot Spaces](./07-copilot-spaces/)**       | Collaborate with AI through Copilot Spaces, enabling team-based agentic workflows and shared development environments.                 |

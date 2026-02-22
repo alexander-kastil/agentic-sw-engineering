@@ -1,4 +1,4 @@
-# Claude Code Agents
+# Using Anthropic Claude Code Agents
 
 Claude Code is a desktop application powered by Anthropic's Claude Agent SDK that operates autonomously within VS Code. Unlike browser-based chat, it has direct access to your file system and can read, modify, and execute code in your workspace.
 
