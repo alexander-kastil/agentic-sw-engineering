@@ -76,7 +76,9 @@ The `gh aw` CLI provides essential commands for managing agentic workflows. Here
 | `gh aw enable/disable (workflow)` | Enable or disable one or more workflows                         |
 | `gh aw update (workflow)`         | Update workflows based on source field with merge strategy      |
 
-For detailed documentation, see the [GitHub Agentic Workflows CLI Commands](https://github.github.com/gh-aw/setup/cli/) reference.
+> Note: Example trigger a wf run
+
+![trigger-wf](./_images/trigger-wf.jpg)
 
 ## Links & Resources
 
