@@ -47,3 +47,7 @@ Create a workflow for GitHub Agentic Workflows using https://raw.githubuserconte
 
 The purpose of the workflow is to use check all markdown files under demos and make sure that all tables with links reflect the modules in in the file system. If there are any discrepancies, the workflow should update the tables in the markdown files to reflect the current state of the file system and make sure there are no broken links.
 ```
+
+## Links & Resources
+
+[GitHub Agentic Workflows Documentation](https://github.github.com/gh-aw/introduction/overview/)
