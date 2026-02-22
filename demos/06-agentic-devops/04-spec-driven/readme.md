@@ -1,1 +1,0 @@
-# DevOps & Spec-Driven Development

@@ -1,4 +1,4 @@
-# Infrastructure as Code (IaC)
+# Infrastructure as Code (IaC) - Bicep & Terraform
 
 [Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/)
 

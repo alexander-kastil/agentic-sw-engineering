@@ -1,3 +1,3 @@
-# Azure CLI 
+# Automation using Azure CLI
 
 - Translate a script from bash to powershell
