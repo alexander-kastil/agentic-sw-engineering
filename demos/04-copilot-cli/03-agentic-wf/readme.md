@@ -42,7 +42,7 @@ The output will be shown as [Issue](https://github.com/alexander-kastil/agentic-
 
 You can create your own workflow using the [GitHub Agentic Workflows Wizard](https://raw.githubusercontent.com/github/gh-aw/main/create.md). The wizard will guide you through the process of creating a workflow and will help you with the configuration.
 
-```
+```md wrap
 Create a workflow for GitHub Agentic Workflows using https://raw.githubusercontent.com/github/gh-aw/main/create.md
 
 The purpose of the workflow is to use check all markdown files under demos and make sure that all tables with links reflect the modules in in the file system. If there are any discrepancies, the workflow should update the tables in the markdown files to reflect the current state of the file system and make sure there are no broken links.
