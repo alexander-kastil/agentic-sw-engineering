@@ -37,8 +37,10 @@ Add to your VS Code settings:
 }
 ```
 
-## Links & Resources
+## Topics
 
-- [Inline Suggestions](./01-inline-suggestions/): Real-time code completion with comments and patterns
-- [Prompt Samples](./02-prompt-with-samples/): Write prompts that reference code examples for better results
-- [Database Patterns](./03-database/): Use query and schema patterns to improve AI understanding
+| Topic                                                 | Description                                                                                  |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **[Inline Suggestions](./01-inline-suggestions/)**    | Master real-time code completion by leveraging inline suggestions with meaningful context.   |
+| **[Prompts with Samples](./02-prompt-with-samples/)** | Learn how providing code samples helps Copilot understand intent and generate precise code.  |
+| **[Using Copilot for Databases](./03-database/)**     | Leverage Copilot to generate database code, schemas, and queries across different platforms. |

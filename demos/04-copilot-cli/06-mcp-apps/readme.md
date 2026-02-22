@@ -8,6 +8,12 @@ This solves a critical gap: MCP provides the tools and data access, while MCP Ap
 
 ![MCP Apps demonstration showing interactive UI rendered in chat](./_images/mcp-app.jpg)
 
+## MCP Server Implementations
+
+| Server                                 | Description                                                           |
+| -------------------------------------- | --------------------------------------------------------------------- |
+| **[QR Code MCP Server](./qr-server/)** | Generate QR codes from URLs and text directly in GitHub Copilot Chat. |
+
 ## How MCP Apps Work
 
 MCP Apps are built on standardized specifications and SDKs maintained at the official Model Context Protocol repository. The protocol works through a clean separation of concerns:

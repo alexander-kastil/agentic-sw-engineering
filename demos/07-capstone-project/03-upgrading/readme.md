@@ -2,7 +2,12 @@
 
 This module demonstrates both the Semantic Kernel version (sk-students-ai) and the modernized Microsoft Agent Framework version (maf-students-ai), showing side-by-side how the same RAG-based student roster application evolves with the new framework.
 
-sk-students-ai is an ai solution demonstrating RAG (Retrieval Augmented Generation) using Semantic Kernel. In September 2025 Semantic Kernel has been replaced by Microsoft Agent Framework.
+## Migration Implementations
+
+| Implementation                                                      | Description                                                                                    |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **[Semantic Kernel Version (sk-students-ai)](./sk-students-ai/)**   | RAG-based student roster application using Microsoft Semantic Kernel (legacy approach).        |
+| **[Agent Framework Version (maf-students-ai)](./maf-students-ai/)** | Modernized same application using Microsoft Agent Framework with new tools-based architecture. |
 
 Microsoft Agent Framework is a unified platform for building agentic AI applications with native support for multi-turn conversations, function calling, and tool orchestration. The framework replaces the earlier Semantic Kernel approach with a streamlined agent-centric model that makes it easier to build AI-powered applications.
 

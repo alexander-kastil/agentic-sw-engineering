@@ -2,8 +2,8 @@
 
 ## [Module 1: GitHub Copilot Fundamentals](./01-fundamentals/)
 
-- [GitHub Codespaces](01-fundamentals/00-codespaces/)
-- [Introduction](01-fundamentals/01-intro/)
+- [GitHub Codespaces / Dev Containers](01-fundamentals/00-codespaces/)
+- [GitHub Copilot Introduction](01-fundamentals/01-intro/)
 - [Selecting Models](01-fundamentals/02-models/)
 - [AI Assisted Coding](01-fundamentals/03-ai-assisted-coding/)
 - [Slash Commands](01-fundamentals/04-slash-commands/)
@@ -13,16 +13,19 @@
 
 ## [Module 2: Copilot Artifacts & Tools](./02-copilot-tools/)
 
-- [Instructions](02-copilot-tools/01-instructions/)
+- [Copilot Instructions](02-copilot-tools/01-instructions/)
 - [Prompt Files](02-copilot-tools/02-prompts/)
-- [Model Context Protocol (MCP)](02-copilot-tools/03-mcp/)
-- [Custom Agents](02-copilot-tools/04-agents/)
+- [Model Context Protocol](02-copilot-tools/03-mcp/)
+- [Agents](02-copilot-tools/04-agents/)
+  - [Agents Overview](02-copilot-tools/04-agents/01-agents-overview/)
+  - [Repository Agents](02-copilot-tools/04-agents/02-repo-agents/)
+  - [Claude Agents](02-copilot-tools/04-agents/03-claude-agents/)
 - [Agent Skills](02-copilot-tools/05-skills/)
-- [GitHub Copilot Memory](02-copilot-tools/06-memory/)
-- [Context Engineering](02-copilot-tools/07-context-engineering/)
-- [Hooks](02-copilot-tools/08-hooks/)
+- [Copilot Memory](02-copilot-tools/06-memory/)
+- [Understanding and Shaping GitHub Copilot's Context Window](02-copilot-tools/07-context-window/)
+- [GitHub Copilot Hooks](02-copilot-tools/08-hooks/)
 
-## [Module 3: Agentic Coding & Orchestration](./03-agentic-coding/)
+## [Module 3: Agent Types](./03-agentic-coding/)
 
 - [Local Agents](03-agentic-coding/01-local/)
 - [Cloud Agents](03-agentic-coding/02-cloud/)
@@ -30,34 +33,35 @@
 - [Orchestration & Sub-Agents](03-agentic-coding/04-orchestration/)
 - [Claude Code Agents](03-agentic-coding/05-claude-code/)
 
-## [Module 4: GitHub Copilot CLI & Copilot SDK](./04-copilot-cli/)
+## [Module 4: Copilot CLI & Copilot SDK](./04-copilot-cli/)
 
 - [GitHub Copilot CLI](04-copilot-cli/01-cli-intro/)
-- [CLI Business Case](04-copilot-cli/02-cli-business-case/)
-- [Agentic Workflows](04-copilot-cli/03-agentic-wf/)
+- [Business Case: HR Document Updates Automation](04-copilot-cli/02-cli-business-case/)
+- [GitHub Agentic Workflows](04-copilot-cli/03-agentic-wf/)
 - [GitHub Copilot SDK](04-copilot-cli/04-sdk/)
-- [Copilot SDK Demos](04-copilot-cli/05-sdk-demos/)
+- [Copilot SDK Demos](04-copilot-cli/05-sdk-buiness-case/)
+- [MCP Apps](04-copilot-cli/06-mcp-apps/)
 
 ## [Module 5: Spec-Driven Development Foundations](./05-spec-driven-dev/)
 
-- [Introductions](05-spec-driven-dev/01-introduction/)
-- [Spec-Driven Workflow](05-spec-driven-dev/02-spec-driven-workflow/)
+- [Spec Driven Development](05-spec-driven-dev/01-introduction/)
+- [Spec-driven workflow](05-spec-driven-dev/02-spec-driven-workflow/)
 - [Constitution, Specification and Technical Plan](05-spec-driven-dev/03-constitution/)
 - [Tasks & Implementation](05-spec-driven-dev/04-tasks/)
-- [Requirements & Installation](05-spec-driven-dev/05-requirements/)
-- [Hands-on lab implementing a complete feature using Spec Kit ](05-spec-driven-dev/06-sample-case/)
+- [Getting Started with GitHub Spec Kit](05-spec-driven-dev/05-requirements/)
+- [Exercise: Implement a product feature using GitHub Spec Kit](05-spec-driven-dev/06-sample-case/)
 
 ## [Module 6: Agentic DevOps](./06-agentic-devops/)
 
 - [Azure CLI](06-agentic-devops/01-azure-cli/)
-- [Pipelines](06-agentic-devops/02-pipelines/)
-- [Infrastructure as Code](06-agentic-devops/03-IaC/)
-- [Spec-Driven DevOps](06-agentic-devops/04-spec-driven/)
+- [Azure DevOps Pipelines & GitHub Actions](06-agentic-devops/02-pipelines/)
+- [Infrastructure as Code (IaC)](06-agentic-devops/03-IaC/)
+- [DevOps & Spec-Driven Development](06-agentic-devops/04-spec-driven/)
 
-## [Module 7: Capstone Project](./07-capstone-project/)
+## [Module 7: Capstone Project: End-to-End Agentic Development](./07-capstone-project/)
 
 - [Planning & Proof of Concept](07-capstone-project/01-planning/)
-- [Orchestrating Implementation](07-capstone-project/02-implementation/)
+- [Orchestrating & Implementation](07-capstone-project/02-implementation/)
 - [Upgrading & Modernization](07-capstone-project/03-upgrading/)
-- [Unit- & Integration Testing](07-capstone-project/04-testing/)
-- [Project Documentation](07-capstone-project/05-docs/)
+- [Testing using Copilot](07-capstone-project/04-testing/)
+- [Using Copilot for Documentation](07-capstone-project/05-docs/)

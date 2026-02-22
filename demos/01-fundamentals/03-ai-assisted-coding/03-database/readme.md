@@ -2,13 +2,12 @@
 
 Leverage Copilot to generate database code, schemas, and queries across different database platforms.
 
-## SQL Server
+## Database Platforms
 
-The [01-sql-server](01-sql-server/) demo shows how to prompt Copilot to generate T-SQL code including table definitions from TypeScript types, views, and stored procedures. It demonstrates creating table structures, filtering views, CRUD stored procedures, and populating sample data—all through natural language prompts.
-
-## MongoDB
-
-The [02-mongo-db](02-mongo-db/) demo uses the MongoDB for VS Code extension which includes a specialized Copilot Participant with slash commands for `/docs` (documentation search), `/query` (natural language to MongoDB queries), and `/schema` (collection schema analysis). It shows how to bootstrap a MongoDB instance and leverage Copilot agents specifically trained for MongoDB operations.
+| Platform                                  | Description                                                                                                          |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **[Prompting for SQL](./01-sql-server/)** | Generate T-SQL code including table definitions, views, stored procedures, and sample data through natural language. |
+| **[Mongo DB](./02-mongo-db/)**            | Use MongoDB for VS Code extension with specialized Copilot Participant for MongoDB queries and schema analysis.      |
 
 ## Links & Resources
 

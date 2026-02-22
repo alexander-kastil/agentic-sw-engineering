@@ -63,13 +63,9 @@ For a complete tutorial with examples, see the [Getting Started Guide](https://g
 
 ## Demo
 
-The [copilot-sdk-console](./copilot-sdk-console) is a simple .NET console application that demonstrates how to use the GitHub Copilot SDK to create a session, send a prompt, and display the AI response. It loads configuration from `appsettings.json` and includes error handling for missing responses.
-
-It was created using the following prompt:
-
-```
-In demos\04-copilot-cli\04-sdk\copilot-sdk-console create a simple copilot sdk console in .net 10 that uses GPT-5-mini (taken from appsettings.json ->model) that calls copilotclient asking "What are the use cases for Copilot Slient SDK" (also appsettings.json -> prompt). Use the microsoft learn mcp to check for the latest version
-```
+| Name                                                   | Description                                                                                 |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| **[Copilot SDK Console Demo](./copilot-sdk-console/)** | Simple .NET 10 console application demonstrating the GitHub Copilot SDK with OpenAI models. |
 
 ## Links & Resources
 

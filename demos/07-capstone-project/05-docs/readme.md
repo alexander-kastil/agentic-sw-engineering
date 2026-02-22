@@ -1,10 +1,14 @@
-# Using Copilot for Documentation​
+# Using Copilot for Documentation
 
-- .NET Api
-- Angular UI
-- Blob Console Spring
+Document architecture, APIs, deployment guides, and operational runbooks for production readiness.
 
-## Possible Prompts
+## Topics
+
+| Topic                                             | Description                                                                      |
+| ------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **[Blob Console Spring](./blob-console-spring/)** | Spring Boot console application documentation for Azure Blob Storage operations. |
+| **[Food UI](./food-ui/)**                         | React-based UI documentation for the food shop application.                      |
+| **[NET API](./net-api/)**                         | .NET API documentation and deployment guides.                                    |
 
 ```bash
 @workspace Explain this project
@@ -55,4 +59,3 @@ The FoodController class is part of the FoodApp namespace and is responsible for
 - DeleteFood: Deletes a food item from the database by its ID.
 
 This controller uses dependency injection to receive an instance of FoodDBContext for database operations and an instance of AILogger for logging purposes. The routes are defined using attributes, making it easy to map HTTP requests to the corresponding action methods.
-

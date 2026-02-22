@@ -5,3 +5,9 @@ Effective planning and proof of concept phases are critical in software engineer
 Proof of concepts validate architectural decisions, technology choices, and feasibility before committing significant resources to implementation.
 
 GitHub Copilot accelerates these planning phases by assisting with requirement analysis, architectural documentation, and prototype code generation. This module demonstrates how AI-assisted development can streamline the planning process and help teams build meaningful prototypes quickly.
+
+## Topics
+
+| Topic                                                   | Description                                                                  |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **[Scaffold a React Markdown Editor](./01-md-editor/)** | Prototype a React markdown editor demonstrating proof of concept principles. |
