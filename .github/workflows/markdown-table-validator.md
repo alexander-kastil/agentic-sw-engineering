@@ -1,5 +1,5 @@
 ---
-description: Validates and updates markdown tables in demos to reflect current file system structure and check for broken links
+description: Checks for commits in the last 24 hours. If commits exist, validates and updates markdown tables in demos to reflect current file system structure and check for broken links. If no commits, exits successfully.
 on:
   workflow_dispatch:
   schedule: daily on weekdays
@@ -23,19 +23,23 @@ You are an AI agent that maintains the accuracy of markdown tables in the demos 
 
 ## Your Task
 
-1. Scan all markdown files (\*.md) in the `demos/` directory
-2. Extract and analyze all tables that contain links to modules/files
-3. Build a map of the actual file system structure in `demos/`
-4. Compare each table with the real directory structure
-5. Identify discrepancies:
+1. Check if there have been any commits in the last 24 hours
+   - If no commits found: Call noop to report success and exit
+   - If commits found: Continue with steps below
+
+2. Scan all markdown files (\*.md) in the `demos/` directory
+3. Extract and analyze all tables that contain links to modules/files
+4. Build a map of the actual file system structure in `demos/`
+5. Compare each table with the real directory structure
+6. Identify discrepancies:
    - Missing entries in tables for existing directories/files
    - Entries in tables that no longer exist
    - Broken/incorrect link paths
-6. If discrepancies are found:
+7. If discrepancies are found:
    - Update the markdown files with corrected tables reflecting the current structure
    - Create a pull request with all updates
    - Include a summary of what was changed
-7. If no discrepancies are found:
+8. If no discrepancies are found:
    - Call noop to indicate successful completion with no changes needed
 
 ## Guidelines

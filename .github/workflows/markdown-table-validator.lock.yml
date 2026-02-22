@@ -21,9 +21,9 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# Validates and updates markdown tables in demos to reflect current file system structure and check for broken links
+# Checks for commits in the last 24 hours. If commits exist, validates and updates markdown tables in demos to reflect current file system structure and check for broken links. If no commits, exits successfully.
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"dc583859fb66faa60f765906eea92114672f0b0d0715f51309e721601956f385","compiler_version":"v0.48.2"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"b25bddecf10f1b78877710b256bf83fec029b311c86a63950c61c84c920b56ff","compiler_version":"v0.48.2"}
 
 name: "Markdown Table Validator"
 "on":
@@ -1000,7 +1000,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "Markdown Table Validator"
-          WORKFLOW_DESCRIPTION: "Validates and updates markdown tables in demos to reflect current file system structure and check for broken links"
+          WORKFLOW_DESCRIPTION: "Checks for commits in the last 24 hours. If commits exist, validates and updates markdown tables in demos to reflect current file system structure and check for broken links. If no commits, exits successfully."
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |
