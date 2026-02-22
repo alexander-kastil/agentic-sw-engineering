@@ -1,4 +1,4 @@
-# Copilot Artifacts & Tools
+# GitHub Copilot Artifacts & Tools
 
 ## Copilot Customization Overview
 

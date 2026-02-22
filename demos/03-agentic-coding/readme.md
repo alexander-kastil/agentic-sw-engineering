@@ -10,7 +10,7 @@ The primary distinction between agent types centers on where and how they execut
 
 | Agent Type                                                  | Execution Context                    | Best For                                                   | Parallelism                    | Resource Isolation           |
 | ----------------------------------------------------------- | ------------------------------------ | ---------------------------------------------------------- | ------------------------------ | ---------------------------- |
-| **[Using Local Agents akn Agent Mode](./01-local/)**        | Current VS Code session              | Single focused tasks with immediate feedback               | Single sequential task         | Minimal (shared workspace)   |
+| **[Using Local Agents in Agent Mode](./01-local/)**         | Current VS Code session              | Single focused tasks with immediate feedback               | Single sequential task         | Minimal (shared workspace)   |
 | **[Delegating Tasks to Cloud Agents](./02-cloud/)**         | Remote Azure environment             | Large-scale tasks exceeding local resources                | High (scalable infrastructure) | Excellent (remote isolation) |
 | **[Using Background Agents](./03-background/)**             | Isolated process on your machine     | Parallel tasks without blocking your editor                | Multiple concurrent tasks      | Good (separate process)      |
 | **[Multi Agent Orchestration](./04-orchestration/)**        | Delegated to specialized agents      | Orchestrating multi-step workflows with parallel execution | Parallel across sub-agents     | Depends on delegation target |

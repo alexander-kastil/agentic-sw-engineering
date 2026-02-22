@@ -12,5 +12,5 @@ Master the core capabilities and foundational concepts of GitHub Copilot — fro
 | **[AI Assisted Coding](./03-ai-assisted-coding/)**         | Use prompting techniques and inline suggestions to guide Copilot toward accurate solutions.                               |
 | **[Slash Commands](./04-slash-commands/)**                 | Use chat slash commands for targeted actions like explain, fix, tests, and optimize.                                      |
 | **[Context Variables](./05-context-variables/)**           | Reference files, selections, and codebase context to ground chat requests.                                                |
-| **[PR Code Review](./06-pr-code-review/)**                 | Generate PR descriptions automatically and enhance code reviews with intelligent suggestions and best practice feedback.  |
-| **[Mgmt Settings](./07-mgmt-settings/)**                   | Configure Copilot policies at organization, repository, or user level to control features and set governance guardrails.  |
+| **[Pull Requests & Code Reviews](./06-pr-code-review/)**   | Generate PR descriptions automatically and enhance code reviews with intelligent suggestions and best practice feedback.  |
+| **[Management and Settings](./07-mgmt-settings/)**         | Configure Copilot policies at organization, repository, or user level to control features and set governance guardrails.  |

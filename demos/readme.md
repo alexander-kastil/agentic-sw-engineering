@@ -11,7 +11,7 @@
 - [Pull Requests & Code Reviews](01-fundamentals/06-pr-code-review/)
 - [Management and Settings](01-fundamentals/07-mgmt-settings/)
 
-## [Module 2: Copilot Artifacts & Tools](./02-copilot-tools/)
+## [Module 2: GitHub Copilot Artifacts & Tools](./02-copilot-tools/)
 
 - [Copilot Instructions](02-copilot-tools/01-instructions/)
 - [Prompt Files](02-copilot-tools/02-prompts/)
@@ -33,7 +33,7 @@
 - [Multi Agent Orchestration](03-agentic-coding/04-orchestration/)
 - [Using Anthropic Claude Code Agents](03-agentic-coding/05-claude-code/)
 
-## [Module 4: Copilot CLI, SDK and Advanced Topics](./04-advanced-topics/)
+## [Module 4: GitHub Copilot CLI, SDK and Advanced Topics](./04-advanced-topics/)
 
 - [GitHub Copilot CLI](04-advanced-topics/01-cli-intro/)
 - [Business Case: HR Document Updates Automation](04-advanced-topics/02-cli-business-case/)
