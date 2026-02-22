@@ -1,4 +1,4 @@
-# Claude Agents
+# Anthropic Claude Agents
 
 Claude agents are third-party AI agents powered by Anthropic's Claude that run directly in VS Code. Unlike custom agents defined in your repository, Claude agents are cloud-based or local sessions that provide autonomous agentic capabilities with built-in tools.
 

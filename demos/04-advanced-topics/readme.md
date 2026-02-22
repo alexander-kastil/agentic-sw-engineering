@@ -1,4 +1,4 @@
-# Copilot CLI & Copilot SDK
+# Copilot CLI, SDK and Advanced Topics
 
 ## AI-Powered Terminal & Application Development
 

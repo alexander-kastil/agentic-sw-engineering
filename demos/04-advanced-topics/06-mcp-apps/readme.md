@@ -1,4 +1,4 @@
-# MCP Apps
+# Implementing & using MCP Apps
 
 ## What are MCP Apps?
 

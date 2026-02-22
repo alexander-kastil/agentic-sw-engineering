@@ -1,4 +1,4 @@
-# Repository Agents
+# Custom Agents used in this Class
 
 These agents are configured in this repository and optimized for specific development tasks within the AZ-400 DevOps training environment.
 

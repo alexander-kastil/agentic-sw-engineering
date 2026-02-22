@@ -33,14 +33,15 @@
 - [Orchestration & Sub-Agents](03-agentic-coding/04-orchestration/)
 - [Claude Code Agents](03-agentic-coding/05-claude-code/)
 
-## [Module 4: Copilot CLI & Copilot SDK](./04-copilot-cli/)
+## [Module 4: Copilot CLI, SDK and Advanced Topics](./04-copilot-cli/)
 
 - [GitHub Copilot CLI](04-copilot-cli/01-cli-intro/)
 - [Business Case: HR Document Updates Automation](04-copilot-cli/02-cli-business-case/)
 - [GitHub Agentic Workflows](04-copilot-cli/03-agentic-wf/)
 - [GitHub Copilot SDK](04-copilot-cli/04-sdk/)
 - [Copilot SDK Demos](04-copilot-cli/05-sdk-buiness-case/)
-- [MCP Apps](04-copilot-cli/06-mcp-apps/)
+- [Implementing & using MCP Apps](04-copilot-cli/06-mcp-apps/)
+- [Copilot Spaces](04-copilot-cli/07-copilot-spaces/)
 
 ## [Module 5: Spec-Driven Development Foundations](./05-spec-driven-dev/)
 
