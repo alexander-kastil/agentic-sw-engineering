@@ -1,5 +1,14 @@
 {
 	"servers": {
+		"qr-code": {
+			"type": "stdio",
+			"command": "uv",
+			"args": [
+				"run",
+				"demos/04-copilot-cli/06-mcp-apps/qr-server/server.py",
+				"--stdio"
+			]
+		},
 		"context7": {
 			"type": "http",
 			"url": "https://mcp.context7.com/mcp"
