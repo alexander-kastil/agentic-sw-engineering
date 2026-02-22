@@ -41,7 +41,6 @@
 - [GitHub Copilot SDK](04-advanced-topics/04-sdk/)
 - [Copilot SDK Demos](04-advanced-topics/05-sdk-buiness-case/)
 - [Implementing & using MCP Apps](04-advanced-topics/06-mcp-apps/)
-- [Copilot Spaces](04-advanced-topics/07-copilot-spaces/)
 
 ## [Module 5: Spec-Driven Development Foundations](./05-spec-driven-dev/)
 
