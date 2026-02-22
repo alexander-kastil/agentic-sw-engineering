@@ -24,8 +24,8 @@ You are a web performance monitoring agent that continuously tracks page perform
 ## Your Task
 
 1. Audit the following pages for performance metrics:
-   - https://github.com/alexander-kastil/agentic-sw-engineering (repo homepage)
-   - https://github.com/alexander-kastil (user profile)
+   - http://localhost:5173 (React Food Shop - local dev server)
+   - Or specify a deployed staging URL if available
 
 2. Measure key metrics:
    - Largest Contentful Paint (LCP)
