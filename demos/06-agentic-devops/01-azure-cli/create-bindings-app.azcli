@@ -17,6 +17,10 @@ conStr=$(az storage account show-connection-string -n $storage -g $grp --query c
 az storage container create -n $source --account-name $storage --account-key $key
 az storage container create -n $target --account-name $storage --account-key $key
 
+# Upload pictures for local debugging
+az storage blob upload-batch --account-name $storage --account-key $key -s $path -d $source
+
+# Create the function app for hosting the image optimizer function
 az functionapp create -n $app -g $grp -s $storage --consumption-plan-location $loc --functions-version 4 --runtime dotnet-isolated --runtime-version 10.0
 az functionapp config appsettings set -n $app -g $grp --settings "$connStrVar=$conStr"
 
@@ -28,6 +32,3 @@ echo "storage-connectionString: " $conStr
 cd picture-optimizer
 func azure functionapp publish $app --csharp
 cd ..
-
-# Upload pictures for local debugging
-az storage blob upload-batch --account-name $storage --account-key $key -s $path -d $source
