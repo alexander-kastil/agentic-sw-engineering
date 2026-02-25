@@ -1,0 +1,43 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Edit</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="saveFood(form)" novalidate>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      @if ( form.controls['name'].touched && form.controls['name'].errors !=
+      undefined ) {
+      <mat-error> Name is required & must be more than 3 chars </mat-error>
+      }
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Price"
+          formControlName="price"
+        />
+      </mat-form-field>
+      @if ( form.controls['price'].touched && form.controls['price'].errors !=
+      undefined ) {
+      <mat-error> Price must be greater than 1€ </mat-error>
+      }
+      <mat-form-field>
+        <mat-label>Items</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Items"
+          formControlName="items"
+        />
+      </mat-form-field>
+      <div class="actions" align="end">
+        <button mat-raised-button color="primary" (click)="cancelEdit()" >Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid" >Save</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

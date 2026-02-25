@@ -1,0 +1,77 @@
+name: 03-02-react-ci-cd-swa
+
+# trigger:
+#   branches:
+#     include:
+#       - master
+
+trigger: none
+pr: none
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  nodeVersion: "22.14.0"
+  appRoot: src/react/react-devops
+  distFolder: "dist"
+  deploymentToken: "<deployment-token>"
+  environment: "03-02-react-ci-cd-swa"
+  serviceConnection: "wi-az400-dev"
+
+stages:
+  - stage: Build
+    displayName: Build React App
+    jobs:
+      - job: Build
+        displayName: Build React App
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: $(nodeVersion)
+            displayName: "Install Node.js"
+
+          - task: Cache@2
+            inputs:
+              key: 'npm | "$(Agent.OS)" | $(appRoot)/package-lock.json'
+              path: "$(appRoot)/node_modules"
+              cacheHitVar: "npmCacheHit"
+            displayName: "Cache npm packages"
+
+          - task: Npm@1
+            displayName: "Install Dependencies"
+            inputs:
+              command: "custom"
+              customCommand: "install"
+              workingDir: $(appRoot)
+            condition: ne(variables.npmCacheHit, 'true')
+
+          - task: Npm@1
+            displayName: "Build React App"
+            inputs:
+              command: "custom"
+              workingDir: $(appRoot)
+              customCommand: "run build"
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: "$(appRoot)/$(distFolder)"
+              ArtifactName: "app-build"
+              publishLocation: "Container"
+            displayName: "Publish Build Artifacts"
+
+  - stage: Deploy
+    displayName: Deploy to Static Web App
+    jobs:
+      - template: templates/t-angular-static-web-app-deploy.yml
+        parameters:
+          artifactName: "app-build"
+          targetPath: "$(Pipeline.Workspace)/app-build"
+          deploymentToken: "$(deploymentToken)"
+          appLocation: "/"
+          outputLocation: "/"
+          skipAppBuild: true
+          skipApiBuild: true
+          isStaticExport: true
+          workingDirectory: "$(Pipeline.Workspace)/app-build"
+          environmentName: "$(environment)"

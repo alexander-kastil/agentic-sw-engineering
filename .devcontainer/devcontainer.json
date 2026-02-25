@@ -1,0 +1,168 @@
+{
+  "name": "General Dev",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/dotnet:2.4.2": {
+      "version": "10.0"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "git config core.autocrlf false && git config core.eol lf",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // .NET extensions
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "aliasadidev.nugetpackagemanagergui",
+        // Angular & Node development
+        "angular.ng-template",
+        "esbenp.prettier-vscode",
+        // Azure & DevOps
+        "ms-azuretools.vscode-bicep",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.azurecli",
+        // Python development
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        // General development
+        "mdickin.markdown-shortcuts",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.vscode-pull-request-github",
+        "streetsidesoftware.code-spell-checker",
+        "humao.rest-client",
+        "bierner.markdown-mermaid"
+      ],
+      "settings": {
+        "settings.sync.enabled": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+        },
+        "typescript.preferences.quoteStyle": "single",
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "typescript.preferences.importModuleSpecifier": "relative",
+        "csharp.format.enable": true,
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[csharp]": {
+          "editor.defaultFormatter": "ms-dotnettools.csharp"
+        },
+        // ====================================
+        // GitHub Copilot & AI Features
+        // ====================================
+        "chat.agent.enabled": true,
+        "chat.mcp.discovery.enabled": {
+          "claude-desktop": true,
+          "windsurf": true,
+          "cursor-global": true,
+          "cursor-workspace": true
+        },
+        "chat.mcp.autostart": "newAndOutdated",
+        "chat.mcp.gallery.enabled": true,
+        "chat.detectParticipant.enabled": true,
+        "chat.agent.maxRequests": 60,
+        "chat.editing.confirmEditRequestRemoval": false,
+        "chat.instructionsFilesLocations": {
+          ".github/instructions": true
+        },
+        "chat.mcp.serverSampling": {
+          "Azure MCP Server Provider: Azure MCP": {
+            "allowedDuringChat": false
+          }
+        },
+        "chat.tools.urls.autoApprove": {
+          "https://learn.microsoft.com": {
+            "approveRequest": false,
+            "approveResponse": true
+          }
+        },
+        "chat.tools.terminal.enableAutoApprove": true,
+        "chat.tools.terminal.autoApprove": {
+          "^dotnet": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^git": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^npm": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^(python|pip|uv)": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^(func|az)": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^(winget|ng|wsl)": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^(mkdir|cp|mv|rm)": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^(whoami|nslookup|ping|curl)": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "^npx": {
+            "approve": true,
+            "matchCommandLine": true
+          },
+          "/^Expand-Archive -Path food-catalog-logs\\.zip -DestinationPath food-catalog-logs -Force$/": {
+            "approve": true,
+            "matchCommandLine": true
+          }
+        },
+        "github.copilot.enable": {
+          "*": true,
+          "markdown": true,
+          "plaintext": false,
+          "scminput": false,
+          "yaml": true
+        },
+        "github.copilot.chat.codesearch.enabled": true,
+        "github.copilot.chat.generateTests.codeLens": true,
+        "github.copilot.chat.languageContext.typescript.enabled": true,
+        "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+          {
+            "text": "Describe the pull request in detail, including the purpose of the changes and any relevant context in a list format."
+          }
+        ],
+        "github.copilot.chat.commitMessageGeneration.instructions": [
+          {
+            "text": "Be extremely detailed with the file changes and the reason for the change in a list format."
+          }
+        ],
+        "github.copilot.nextEditSuggestions.fixes": false,
+        "githubPullRequests.codingAgent.uiIntegration": true,
+        "githubPullRequests.codingAgent.promptForConfirmation": false,
+        "terminal.integrated.suggest.enabled": true,
+        "chat.useAgentSkills": true,
+        "github.copilot.chat.customAgents.showOrganizationAndEnterpriseAgents": true,
+        "github.copilot.chat.cli.customAgents.enabled": true,
+        "chat.customAgentInSubagent.enabled": true,
+        "inlineChat.enableV2": true
+      }
+    }
+  },
+  "forwardPorts": [
+    4200
+  ]
+}

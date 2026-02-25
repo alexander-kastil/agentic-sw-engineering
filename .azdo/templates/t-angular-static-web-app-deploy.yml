@@ -1,0 +1,57 @@
+parameters:
+  - name: artifactName
+    type: string
+    default: "app-build"
+  - name: targetPath
+    type: string
+    default: "$(Pipeline.Workspace)/app-build"
+  - name: deploymentToken
+    type: string
+  - name: appLocation
+    type: string
+    default: "/"
+  - name: outputLocation
+    type: string
+    default: "/"
+  - name: skipAppBuild
+    type: boolean
+    default: true
+  - name: skipApiBuild
+    type: boolean
+    default: true
+  - name: isStaticExport
+    type: boolean
+    default: true
+  - name: workingDirectory
+    type: string
+    default: "$(Pipeline.Workspace)/app-build"
+  - name: environmentName
+    type: string
+
+jobs:
+  - deployment: DeployStaticWebApp
+    displayName: Deploy to Static Web App
+    environment: ${{ parameters.environmentName }}
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - checkout: none
+
+            - task: DownloadPipelineArtifact@2
+              inputs:
+                buildType: "current"
+                artifactName: "${{ parameters.artifactName }}"
+                targetPath: "${{ parameters.targetPath }}"
+              displayName: "Download Build Artifacts"
+
+            - task: AzureStaticWebApp@0
+              inputs:
+                azure_static_web_apps_api_token: "${{ parameters.deploymentToken }}"
+                app_location: "${{ parameters.appLocation }}"
+                output_location: "${{ parameters.outputLocation }}"
+                skip_app_build: ${{ parameters.skipAppBuild }}
+                skip_api_build: ${{ parameters.skipApiBuild }}
+                is_static_export: ${{ parameters.isStaticExport }}
+                workingDirectory: "${{ parameters.workingDirectory }}"
+              displayName: "Deploy to Static Web App"

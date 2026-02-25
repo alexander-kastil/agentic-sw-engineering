@@ -1,0 +1,61 @@
+{
+	"version": 1,
+	"hooks": {
+		"sessionStart": [
+			{
+				"type": "command",
+				"powershell": ".\\session-start.ps1",
+				"cwd": ".copilot-conversation/scripts",
+				"timeoutSec": 10
+			}
+		],
+		"userPromptSubmitted": [
+			{
+				"type": "command",
+				"powershell": ".\\log-prompt.ps1",
+				"cwd": ".copilot-conversation/scripts",
+				"timeoutSec": 10
+			}
+		],
+		"preToolUse": [
+			{
+				"type": "command",
+				"powershell": ".\\track-tool.ps1 -Phase pre",
+				"cwd": ".copilot-conversation/scripts",
+				"timeoutSec": 10
+			}
+		],
+		"postToolUse": [
+			{
+				"type": "command",
+				"powershell": ".\\track-tool.ps1 -Phase post",
+				"cwd": ".copilot-conversation/scripts",
+				"timeoutSec": 10
+			}
+		],
+		"subagentStarted": [
+			{
+				"type": "command",
+				"powershell": ".\\track-agent.ps1 -Phase start",
+				"cwd": ".copilot-conversation/scripts",
+				"timeoutSec": 10
+			}
+		],
+		"subagentStopped": [
+			{
+				"type": "command",
+				"powershell": ".\\track-agent.ps1 -Phase stop",
+				"cwd": ".copilot-conversation/scripts",
+				"timeoutSec": 10
+			}
+		],
+		"sessionEnd": [
+			{
+				"type": "command",
+				"powershell": ".\\session-stop.ps1",
+				"cwd": ".copilot-conversation/scripts",
+				"timeoutSec": 30
+			}
+		]
+	}
+}

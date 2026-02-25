@@ -1,0 +1,87 @@
+# ------------------------------------
+# Python 3.12 .gitignore
+# ------------------------------------
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+# PyInstaller
+# Typically includes temp build files
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.cache/
+pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Pyre / pytype / mypy
+.pyre/
+.pytype/
+.mypy_cache/
+
+# Pylint
+pylint.log
+
+# Django / Flask stuff
+*.log
+local_settings.py
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx docs
+docs/_build/
+
+# VSCode / PyCharm / IDEs
+.vscode/
+.idea/
+*.iml
+
+# Environment variables / secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

@@ -1,0 +1,14 @@
+{
+    "chat.mcp.serverSampling": {
+        "github-copilot/.vscode/mcp.json: azure-deploy": {
+            "allowedDuringChat": true
+        }
+    },
+    "azureFunctions.deploySubpath": "demos\\05-use-cases\\02-implementation\\02-az-func\\currency-converter-func-ts",
+    "azureFunctions.postDeployTask": "npm install (functions)",
+    "azureFunctions.projectLanguage": "TypeScript",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectLanguageModel": 4,
+    "azureFunctions.preDeployTask": "npm prune (functions)"
+}

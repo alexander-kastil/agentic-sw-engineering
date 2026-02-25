@@ -1,0 +1,47 @@
+name: "catalog-ci-pipeline"
+
+trigger:
+  - master
+
+pr: none
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  buildConfiguration: "Release"
+
+stages:
+  - stage: "Build"
+    jobs:
+      - job: "Build"
+        displayName: "Build Api"
+
+        steps:
+          - task: UseDotNet@2
+            displayName: "Install .NET SDK"
+            inputs:
+              packageType: "sdk"
+              version: "10.x"
+
+          - task: DotNetCoreCLI@2
+            displayName: dotnet build (catalog service)
+            inputs:
+              command: build
+              projects: "src/food-app/catalog-service/api/catalog-service.csproj"
+              arguments: "--configuration $(buildConfiguration)"
+
+          - task: DotNetCoreCLI@2
+            displayName: dotnet publish (catalog service)
+            inputs:
+              command: "publish"
+              projects: "src/food-app/catalog-service/api/catalog-service.csproj"
+              publishWebProjects: false
+              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
+
+          - task: PublishPipelineArtifact@1
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+            inputs:
+              artifactName: drop
+              targetPath: "$(Build.ArtifactStagingDirectory)"
+            displayName: "Publish Artifact: drop"

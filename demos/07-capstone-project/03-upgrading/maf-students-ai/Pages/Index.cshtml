@@ -1,0 +1,73 @@
+﻿@page
+@model SKFunctionCalling.IndexModel
+
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col">
+            <h4 class="display-6 text-center mb-3">Be informed about students</h4>
+            <form method="post" class="mb-3" id="promptForm">
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" id="promptInput" name="prompt"
+                        placeholder="Ask about students, schools, counts..." required />
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+                <div id="loadingBox" class="alert alert-primary d-none py-2 px-3 mt-2 mb-0">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div>
+                        <span>Processing your request...</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row g-3 align-items-stretch">
+        <div class="col-lg-6 d-flex">
+            <div class="card shadow-sm w-100 h-100">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Example prompts</h5>
+                    <p class="text-muted small mb-3" id="promptHint">Click an example to auto-fill the prompt.</p>
+                    <ul class="list-group list-group-flush" id="examplePrompts">
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="Which school does Mat Tan go to?">Which school does Mat Tan go to?</button></li>
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="Which school has the most students?">Which school has the most students?</button></li>
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="Which school has the least students?">Which school has the least students?</button></li>
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="Get the count of students in each school.">Get the count of students in each school.</button></li>
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="How many students are there in the school of Mining?">How many students are there in the school of Mining?</button></li>
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="What is the ID of Jan Fry and which school does she go to?">What is the ID of Jan Fry and which school does she go to?</button></li>
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="Which students belong to the school of Business? Respond only in JSON format.">Which students belong to the school of Business? Respond only in JSON format.</button></li>
+                        <li class="list-group-item px-0"><button type="button" class="btn btn-outline-secondary w-100 text-start example-btn" data-prompt="Which students in the school of Nursing have their first or last name start with the letter 'J'?"><span aria-hidden="true">Which students in the school of Nursing have their first or last name start with the letter 'J'?</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 d-flex">
+            <div class="alert alert-success shadow-sm w-100 h-100 mb-0 d-flex align-items-start" id="reply">
+                @(Model.Reply ?? "Ask a question to see the answer here.")
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (() => {
+        const input = document.getElementById('promptInput');
+        const form = document.getElementById('promptForm');
+        const loadingBox = document.getElementById('loadingBox');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        document.querySelectorAll('#examplePrompts .example-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const promptText = btn.dataset.prompt ?? btn.textContent;
+                input.value = promptText.trim().replace(/\s+/g, ' ');
+                input.focus();
+            });
+        });
+
+        form.addEventListener('submit', () => {
+            submitBtn.setAttribute('disabled', 'disabled');
+            input.setAttribute('readonly', 'readonly');
+            loadingBox.classList.remove('d-none');
+        });
+    })();
+</script>

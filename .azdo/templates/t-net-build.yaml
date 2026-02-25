@@ -1,0 +1,47 @@
+parameters:
+  - name: cfg
+    type: string
+    default: "Release"
+
+  - name: folder
+    type: string
+    default: ""
+
+  - name: project
+    type: string
+    default: "*"
+
+steps:
+  - task: UseDotNet@2
+    displayName: "Install .NET 10 SDK"
+    inputs:
+      packageType: "sdk"
+      version: "10.0.x"
+
+  - task: DotNetCoreCLI@2
+    displayName: "Restore project dependencies"
+    inputs:
+      command: "restore"
+      projects: "${{ parameters.folder }}/${{ parameters.project }}.csproj"
+
+  - task: DotNetCoreCLI@2
+    displayName: "Build the project - ${{ parameters.cfg }}"
+    inputs:
+      command: "build"
+      arguments: "--no-restore --configuration ${{ parameters.cfg }}"
+      projects: "${{ parameters.folder }}/${{ parameters.project }}.csproj"
+
+  - task: DotNetCoreCLI@2
+    displayName: "Publish the project - ${{ parameters.cfg }}"
+    inputs:
+      command: "publish"
+      projects: "${{ parameters.folder }}/${{ parameters.project }}.csproj"
+      publishWebProjects: false
+      arguments: "--no-build --configuration ${{ parameters.cfg }} --output $(Build.ArtifactStagingDirectory)/${{ parameters.cfg }}"
+      zipAfterPublish: true
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+      ArtifactName: "drop"
+      publishLocation: "Container"

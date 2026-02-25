@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: azd-intro
+metadata:
+    template: azd-init@1.22.5
+services:
+    simple-api:
+        project: src/simple-api
+        host: containerapp
+        language: dotnet
+resources:
+    simple-api:
+        type: host.containerapp
+        port: 8080

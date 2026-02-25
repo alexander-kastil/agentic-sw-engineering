@@ -1,0 +1,6 @@
+bin/
+obj/
+*.user
+.vscode/
+.DS_Store
+.env.local

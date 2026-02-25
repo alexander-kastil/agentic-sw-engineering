@@ -1,0 +1,110 @@
+grp="rg-ado"
+devOpsOrg="integrationsonline"
+project="ado-samples"
+loc="westeurope"
+wfIdentity="wi-"$grp
+subscriptionId="<your-subscription-id>"
+issuer="99e5794d-47e1-4b9b-86eb-937aa20e4e11"
+
+resourceGroupScope="/subscriptions/$subscriptionId/resourcegroups/$grp"
+federatedCredentialName="AzureDevOps"
+audience="api://AzureADTokenExchange"
+issuerUrl="https://vstoken.dev.azure.com/$issuer"
+subjectIdentifier="sc://$devOpsOrg/$project/$wfIdentity"
+contributorRoleId="b24988ac-6180-42a0-ab88-20f7382dd24c"
+orgUrl="https://dev.azure.com/$devOpsOrg"
+serviceConnectionName="$wfIdentity"
+
+az devops configure --defaults organization=$orgUrl project=$project
+
+# Create resource group
+az group create -n $grp -l $loc
+
+# Create a managed identity
+az identity create --name $wfIdentity --resource-group $grp
+principalId=$(az identity show --name $wfIdentity --resource-group $grp --query principalId -o tsv)
+clientId=$(az identity show --name $wfIdentity --resource-group $grp --query clientId -o tsv)
+
+sleep 15
+
+# Assign Contributor role to the managed identity on the resource group
+az role assignment create --assignee $principalId --role $contributorRoleId --scope $resourceGroupScope
+
+# Azure DevOps service connection (Workload Identity Federation)
+subscriptionName=$(az account show --subscription $subscriptionId --query name -o tsv)
+tenantId=$(az account show --subscription $subscriptionId --query tenantId -o tsv)
+projectId=$(az devops project show --project $project --query id -o tsv)
+
+# Create service connection via REST
+payloadFile=$(mktemp)
+
+cat <<EOF > $payloadFile
+{
+  "name": "$serviceConnectionName",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "authorization": {
+    "parameters": {
+      "serviceprincipalid": "$clientId",
+      "tenantid": "$tenantId",
+      "scope": "$resourceGroupScope"
+    },
+    "scheme": "WorkloadIdentityFederation"
+  },
+  "data": {
+    "subscriptionId": "$subscriptionId",
+    "subscriptionName": "$subscriptionName",
+    "environment": "AzureCloud",
+    "scopeLevel": "Subscription",
+    "creationMode": "WorkloadIdentityFederation"
+  },
+  "serviceEndpointProjectReferences": [
+    {
+      "projectReference": {
+        "id": "$projectId",
+        "name": "$project"
+      },
+      "name": "$serviceConnectionName"
+    }
+  ]
+}
+EOF
+
+echo "Creating service connection..."
+endpointId=$(az devops invoke \
+  --area serviceendpoint \
+  --resource endpoints \
+  --route-parameters project=$project \
+  --api-version 7.1-preview \
+  --in-file $payloadFile \
+  --http-method POST \
+  --query id -o tsv)
+
+rm $payloadFile
+
+# Get the auto-generated issuer and subject from the service connection
+scDetailsFile=$(mktemp)
+az devops invoke \
+  --area serviceendpoint \
+  --resource endpoints \
+  --route-parameters project=$project endpointId=$endpointId \
+  --api-version 7.1-preview \
+  --http-method GET > $scDetailsFile
+
+actualIssuer=$(grep -oP '"workloadIdentityFederationIssuer":\s*"\K[^"]+' $scDetailsFile)
+actualSubject=$(grep -oP '"workloadIdentityFederationSubject":\s*"\K[^"]+' $scDetailsFile)
+rm $scDetailsFile
+
+# Create the federated credential to match Azure DevOps
+echo "Creating managed identity federated credential to match..."
+az identity federated-credential create \
+  --name $federatedCredentialName \
+  --identity-name $wfIdentity \
+  --resource-group $grp \
+  --issuer $actualIssuer \
+  --subject $actualSubject \
+  --audiences $audience
+
+# Share with all pipelines
+echo "Sharing service connection with all pipelines..."
+az devops service-endpoint update --id $endpointId --enable-for-all true >/dev/null
