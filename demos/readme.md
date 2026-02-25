@@ -42,21 +42,20 @@
 - [Copilot SDK Demos](04-advanced-topics/05-sdk-buiness-case/)
 - [Implementing & using MCP Apps](04-advanced-topics/06-mcp-apps/)
 
-## [Module 5: Spec-Driven Development Foundations](./05-spec-driven-dev/)
+## [Module 5: Agentic DevOps](./05-agentic-devops/)
 
-- [Spec Driven Development](05-spec-driven-dev/01-introduction/)
-- [Spec-driven workflow](05-spec-driven-dev/02-spec-driven-workflow/)
-- [Constitution, Specification and Technical Plan](05-spec-driven-dev/03-constitution/)
-- [Tasks & Implementation](05-spec-driven-dev/04-tasks/)
-- [Getting Started with GitHub Spec Kit](05-spec-driven-dev/05-requirements/)
-- [Exercise: Implement a product feature using GitHub Spec Kit](05-spec-driven-dev/06-sample-case/)
+- [Automation using Azure CLI](05-agentic-devops/01-azure-cli/)
+- [Infrastructure as Code (IaC) - Bicep & Terraform](05-agentic-devops/02-IaC/)
+- [Azure DevOps Pipelines & GitHub Actions](05-agentic-devops/03-pipelines/)
 
-## [Module 6: Agentic DevOps](./06-agentic-devops/)
+## [Module 6: Spec-Driven Development Foundations](./06-spec-driven-dev/)
 
-- [Automation using Azure CLI](06-agentic-devops/01-azure-cli/)
-- [Infrastructure as Code (IaC) - Bicep & Terraform](06-agentic-devops/02-IaC/)
-- [Azure DevOps Pipelines & GitHub Actions](06-agentic-devops/03-pipelines/)
-- [DevOps & Spec-Driven Development](06-agentic-devops/04-spec-driven/)
+- [Spec Driven Development](06-spec-driven-dev/01-introduction/)
+- [Spec-driven workflow](06-spec-driven-dev/02-spec-driven-workflow/)
+- [Constitution, Specification and Technical Plan](06-spec-driven-dev/03-constitution/)
+- [Tasks & Implementation](06-spec-driven-dev/04-tasks/)
+- [Getting Started with GitHub Spec Kit](06-spec-driven-dev/05-requirements/)
+- [Exercise: Implement a product feature using GitHub Spec Kit](06-spec-driven-dev/06-sample-case/)
 
 ## [Module 7: Capstone Project: End-to-End Agentic Development](./07-capstone-project/)
 
