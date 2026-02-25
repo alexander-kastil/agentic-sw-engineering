@@ -56,7 +56,7 @@
 - [Automation using Azure CLI](06-agentic-devops/01-azure-cli/)
 - [Infrastructure as Code (IaC) - Bicep & Terraform](06-agentic-devops/02-IaC/)
 - [Azure DevOps Pipelines & GitHub Actions](06-agentic-devops/03-pipelines/)
-- [DevOps & Spec-Driven Development](06-agentic-devops/04-spec-driven/)
+- [DevOps & Spec-Driven Development](06-agentic-devops/04-spec-driven-devops/)
 
 ## [Module 7: Capstone Project: End-to-End Agentic Development](./07-capstone-project/)
 
