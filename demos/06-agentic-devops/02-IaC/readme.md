@@ -20,8 +20,4 @@ Execute this script before deploying resources with the demonstrations below to 
 
 ## Links & Resources
 
-[GitHub Copilot coding agent & Microsoft Foundry](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/extensions/azure-ai-foundry-extension)
-
 [Azure Workload Identity Federation Overview](https://learn.microsoft.com/en-us/azure/active-directory/workload-identities/workload-identity-federation)
-
-[Azure Developer CLI Documentation](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/)
