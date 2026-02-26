@@ -18,6 +18,7 @@ namespace FoodApp
         }
 
         public DbSet<CatalogItem> Food { get; set; }
+        public DbSet<Cat> Cats { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +36,14 @@ namespace FoodApp
                 new CatalogItem { ID = 5, Name = "Pizza Tartufo", InStock = 4, Price = 24, PictureUrl="pizza.jpg", Description = "Pizza truffle is well tasting, exclusive joy for your taste bud. A delight of white pizza where the protagonist is our cheese with truffle flakes." },
             };
             modelBuilder.Entity<CatalogItem>().HasData(list.ToArray());
+
+            List<Cat> cats = new List<Cat>
+            {
+                new Cat { ID = 1, Name = "Whiskers", Breed = "Persian", Age = 3, PictureUrl = "persian.jpg", Description = "A fluffy Persian cat with a calm and affectionate temperament." },
+                new Cat { ID = 2, Name = "Shadow", Breed = "British Shorthair", Age = 5, PictureUrl = "british-shorthair.jpg", Description = "A sturdy British Shorthair with a dense coat and easy-going nature." },
+                new Cat { ID = 3, Name = "Luna", Breed = "Siamese", Age = 2, PictureUrl = "siamese.jpg", Description = "A vocal and sociable Siamese cat with striking blue eyes." },
+            };
+            modelBuilder.Entity<Cat>().HasData(cats.ToArray());
         }
     }
 }
