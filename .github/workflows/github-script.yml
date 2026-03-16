@@ -1,4 +1,4 @@
-name: process issues - github script sample
+name: Respond to new Issue - GitHub Script Sample
 
 on:
   issues:
