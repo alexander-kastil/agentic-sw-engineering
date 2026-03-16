@@ -2,6 +2,9 @@
 
 Companion Material for Class Delivery by [Alexander Kastil](https://www.integrations.at/kontakt-impressum.aspx)
 
+> 📚 **[View the Full Documentation →](./docs/README.md)**
+> Comprehensive guides, course modules, repository structure, and getting-started instructions.
+
 ## License & Re-Use
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
