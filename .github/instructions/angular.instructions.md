@@ -1,4 +1,5 @@
 ---
+name: Angular Conventions
 description: This file describes the conventions for Angular projects in this repository
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: Azure CLI Conventions
 description: General instructions for Azure CLI usage in this repository
 ---
 

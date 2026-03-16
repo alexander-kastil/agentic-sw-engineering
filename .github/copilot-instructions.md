@@ -1,6 +1,6 @@
-# AZ-400 Training Repository - AI Coding Agent Instructions
+# Agentic Software Engineering Repository - Developer & Agent Guide
 
-This repository contains training materials, demos, and infrastructure for Microsoft AZ-400 (DevOps Solutions) certification. It's a **teaching repository** - not a production application - designed to demonstrate DevOps concepts through hands-on examples.
+This repository contains training materials, demos, and infrastructure for Microsoft AZ-400 (DevOps Solutions) certification and agentic software engineering patterns. It's a **teaching repository** - not a production application - designed to demonstrate DevOps concepts and AI-driven development through hands-on examples.
 
 ## Repository Purpose & Structure
 
@@ -8,10 +8,15 @@ This repository contains training materials, demos, and infrastructure for Micro
 
 ### Key Directories
 
-- **`.azdo/`** - Azure DevOps (ADO) pipeline definitions (50+ pipelines covering CI/CD patterns)
-- **`demos/`** - Module-organized demonstrations (8 modules covering entire AZ-400 curriculum)
-- **`src/`** - Sample applications (Angular, React, .NET, Python, Java, SPFx)
-- **`infra/`** - Infrastructure as Code (Bicep, Terraform, Azure CLI)
+**`.azdo/`** - Azure DevOps (ADO) pipeline definitions containing 50+ pipelines demonstrating CI/CD patterns, both classic and YAML formats. Includes reusable templates for build, release, and deployment strategies aligned with AZ-400 curriculum. Also stores service connection setup scripts using Workload Identity Federation.
+
+**`demos/`** - Instructor-led demonstrations organized into 7 progressive modules covering the entire AZ-400 curriculum. Each module combines theory with hands-on examples, from fundamental DevOps concepts through advanced agentic development, IaC patterns, and specification-driven workflows.
+
+**`src/`** - Sample applications spanning multiple technology stacks including Angular (standalone components), React, .NET (APIs and Azure Functions), Python, Java, and SharePoint Framework. These apps serve as deployment targets for CI/CD pipelines and showcase real-world patterns for different platform capabilities.
+
+**`infra/`** - Infrastructure as Code templates using Bicep (preferred for new projects), Terraform, and Azure CLI scripts. Demonstrates declarative infrastructure management, modularization patterns, and cross-cloud deployment strategies.
+
+**`labs/`** - Hands-on lab exercises with guided walkthroughs. Provides structured practice environments for learners to apply concepts from demo modules in isolation.
 
 Always start applications from their respective project folders and not the repository root.
 
@@ -27,55 +32,24 @@ Always start applications from their respective project folders and not the repo
 
 **Never hardcode these values** - always read from `deploy.json` when creating/importing pipelines.
 
+## Demo Modules Overview
+
+The `demos/` folder is structured by learning progression:
+
+**Module 01: Fundamentals** (Copilot Essentials) - Introduces core Copilot features including inline suggestions, slash commands, context variables, and prompt engineering. Includes basic AI-assisted coding patterns and code review workflows.
+
+**Module 02: Copilot Tools** (Advanced Features) - Covers instructions, prompts, MCP servers, agents, skills, plugins, memory, and context window optimization. Foundation for understanding how to extend and customize Copilot capabilities.
+
+**Module 03: Agentic Coding** (Agent Patterns) - Explores local agents, cloud agents, background tasks, orchestration patterns, and Claude Code integration. Demonstrates autonomous agent workflows and multi-step task automation.
+
+**Module 04: Advanced Topics** (Expert Patterns) - Deep dives into CLI patterns, agentic workflows, SDK integration, MCP app development, and business case analysis. For experienced developers building sophisticated AI solutions.
+
+**Module 05: Agentic DevOps** (Infrastructure & CI/CD) - Applies agentic patterns to DevOps scenarios including Azure CLI automation, Infrastructure as Code, and pipeline intelligence. Bridges DevOps practices with agent-driven workflows.
+
+**Module 06: Spec-Driven Development** (Quality & Process) - Covers specification-driven workflows, requirement analysis, constitution mapping, and systematic task decomposition. Teaches structured approaches to complex feature development.
+
+**Module 07: Capstone Project** (Synthesis & Application) - Integrates all concepts through planning, implementation, upgrading, testing, and documentation of a complete project. Demonstrates end-to-end patterns from design through deployment.
+
 ## Pipeline Architecture & Patterns
 
-Pipelines might use reusable templates from `.azdo/templates/`:
-
-### Pipeline Naming Convention
-
-Format: `<module>-<demo>-<description>` (from YAML `name:` attribute)
-
-- Examples: `03-02-angular-cd-aca`, `02-01-03-pipeline-basics`
-- Module numbers align with demos folder structure
-
-## Authentication & Security
-
-### Workload Identity Federation (Preferred)
-
-**All new pipelines must use WIF** instead of service principals with secrets.
-
-**Creation Script**: `demos/03-release-strategy/01-release-pipelines/01-service-connections/create-workload-identity.ps1`
-
-**What it does:**
-
-1. Creates managed identity + resource group
-2. Assigns Contributor role with retry logic (eventual consistency)
-3. Creates Azure DevOps service connection via REST API
-4. Queries auto-generated OIDC issuer/subject from Azure DevOps
-5. Syncs federated credentials to match Azure DevOps values
-6. Shares connection with all pipelines
-
-**Critical:** You cannot set custom issuer/subject - Azure DevOps generates these. Scripts use a two-phase approach:
-
-1. Create connection (ADO auto-generates values)
-2. Query connection to get actual issuer/subject
-3. Update federated credential to match
-
-## Application Stack & Technologies
-
-### Multi-Language Support
-
-- **.NET** (Azure Functions, APIs) - See `src/az-functions/`, `src/services/`
-- **Angular** - `src/angular/food-shop/` (18.x with standalone components)
-- **React** - `src/react/` (Static Web Apps demos)
-- **Python** - Azure Functions (`src/az-functions/payment-py/`)
-- **Java** - Jobs and services (`src/jobs/blob-java/`)
-- **SPFx** - SharePoint Framework (`src/spfx/food-list/`)
-
-For dockerfiles we use the convention `dockerfile` (all lowercase) to avoid issues on case-sensitive systems.
-
-### Infrastructure Technologies
-
-- **Bicep** - Modular templates in `infra/bicep/` (preferred for new IaC)
-- **Terraform** - `infra/terraform/` (cross-cloud examples)
-- **Azure CLI** - `infra/cli/` (scripting demos)
+Pipelines use reusable templates from `.azdo/templates/` with naming convention: `<module>-<demo>-<description>` aligned with the demos folder structure. All new pipelines use Workload Identity Federation for secure authentication with Azure resources.

@@ -1,4 +1,5 @@
 ---
+name: .NET Coding Conventions
 description: This file describes the .NET coding conventions for the project.
 ---
 

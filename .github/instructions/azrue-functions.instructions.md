@@ -1,4 +1,5 @@
 ---
+name: Azure Functions Conventions
 description: This file describes the conventions for Azure Functions projects in this repository
 ---
 

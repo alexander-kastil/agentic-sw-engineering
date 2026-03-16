@@ -1,4 +1,5 @@
 ---
+name: Azure DevOps Pipeline Conventions
 description: Coding conventions and best practices for Azure DevOps pipelines in this repository
 ---
 

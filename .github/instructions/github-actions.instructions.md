@@ -1,4 +1,5 @@
 ---
+name: GitHub Actions Workflow Conventions
 description: Coding conventions and best practices for GitHub Actions workflows in this repository
 ---
 
