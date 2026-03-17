@@ -51,20 +51,18 @@ The capstone experience, End-to-End Agentic Development, brings all learning tog
   - [Repository Agents](02-copilot-tools/04-agents/02-repo-agents/)
   - [Claude Agents](02-copilot-tools/04-agents/03-claude-agents/)
 - [Agent Skills](02-copilot-tools/05-skills/)
-- [Copilot Memory](02-copilot-tools/06-memory/)
-- [Understanding and Shaping GitHub Copilot's Context Window](02-copilot-tools/07-context-window/)
-- [GitHub Copilot Hooks](02-copilot-tools/08-hooks/)
-- [Agent Plugins](02-copilot-tools/09-agent-plugins/)
+- [Agent Plugins](02-copilot-tools/06-plugins/)
+- [Copilot Memory](02-copilot-tools/07-memory/)
+- [Understanding and Shaping GitHub Copilot's Context Window](02-copilot-tools/08-context-window/)
+- [GitHub Copilot Hooks](02-copilot-tools/09-hooks/)
 
 ## [Module 3: Implementing Agentic Coding](./03-agentic-coding/)
 
-- [Using Local Agents akn Agent Mode](03-agentic-coding/01-local/)
+- [Using Local Agents in Agent Mode](03-agentic-coding/01-local/)
 - [Delegating Tasks to Cloud Agents](03-agentic-coding/02-cloud/)
 - [Using Background Agents](03-agentic-coding/03-background/)
 - [Multi Agent Orchestration](03-agentic-coding/04-orchestration/)
-- [Agent Debug Panel](02-copilot-tools/10-debug-panel/)
 - [Using Anthropic Claude Code Agents](03-agentic-coding/05-claude-code/)
-- [Agentic Browser Automation](03-agentic-coding/06-browser-tools/)
 
 ## [Module 4: GitHub Copilot CLI, SDK and Advanced Topics](./04-advanced-topics/)
 
@@ -78,7 +76,6 @@ The capstone experience, End-to-End Agentic Development, brings all learning tog
 ## [Module 5: Agentic DevOps](./05-agentic-devops/)
 
 - [Automation using Azure CLI](05-agentic-devops/01-azure-cli/)
-- [Azure Developer CLI (azd) agentic mode](05-agentic-devops/01-azd-agentic/)
 - [Infrastructure as Code (IaC) - Bicep & Terraform](05-agentic-devops/02-IaC/)
 - [Azure DevOps Pipelines & GitHub Actions](05-agentic-devops/03-pipelines/)
 
