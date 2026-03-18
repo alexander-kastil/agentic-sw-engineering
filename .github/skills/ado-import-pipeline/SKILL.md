@@ -1,5 +1,5 @@
 ---
-name: import-pipeline
+name: ado-import-pipeline
 description: Automate the import and execution of Azure DevOps pipelines from YAML files using deployment metadata. Use this when users need to import pipelines to Azure DevOps, run them, and fix any errors that occur during execution.
 license: MIT
 ---

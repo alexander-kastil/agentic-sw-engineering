@@ -1,5 +1,5 @@
 ---
-name: get-pipeline-logs
+name: ado-get-pipeline-logs
 description: Get logs from the latest Azure DevOps pipeline run using patterns that actually work.
 license: MIT
 ---
