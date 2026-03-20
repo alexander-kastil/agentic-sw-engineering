@@ -20,15 +20,15 @@ GitHub Copilot hooks allow you to extend and customize agent behavior by executi
 
 Agent-scoped hooks were introduced in VS Code 1.111 (Preview). They use the same lifecycle events as session hooks, but only run when the specific custom agent is selected or invoked via `runSubagent`.
 
-| Agent Hook         | Trigger                                                              | Description                                                                                                                           |
-| ------------------ | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Session Start      | When a new session starts with that agent                            | Run agent-specific initialization logic, such as loading context or creating agent-local state                                       |
-| User Prompt Submit | When a user submits a prompt while that agent is active              | Capture or validate prompts for that agent without affecting other agents                                                             |
-| Pre-Tool Use       | Before that agent invokes any tool                                   | Enforce agent-specific tool policies, parameter checks, or telemetry                                                                  |
-| Post-Tool Use      | After a tool call from that agent succeeds                           | Record outcomes, collect agent-level metrics, or trigger follow-up processing                                                         |
-| Subagent Start     | When that agent starts a subagent                                    | Track subagent delegation initiated by that specific agent                                                                             |
-| Subagent Stop      | When that agent's subagent stops                                     | Finalize subagent tracking and cleanup for that agent workflow                                                                        |
-| Stop               | When that active agent session ends                                  | Run agent-specific finalization, such as flushing logs or post-processing output                                                      |
+| Agent Hook         | Trigger                                                 | Description                                                                                    |
+| ------------------ | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Session Start      | When a new session starts with that agent               | Run agent-specific initialization logic, such as loading context or creating agent-local state |
+| User Prompt Submit | When a user submits a prompt while that agent is active | Capture or validate prompts for that agent without affecting other agents                      |
+| Pre-Tool Use       | Before that agent invokes any tool                      | Enforce agent-specific tool policies, parameter checks, or telemetry                           |
+| Post-Tool Use      | After a tool call from that agent succeeds              | Record outcomes, collect agent-level metrics, or trigger follow-up processing                  |
+| Subagent Start     | When that agent starts a subagent                       | Track subagent delegation initiated by that specific agent                                     |
+| Subagent Stop      | When that agent's subagent stops                        | Finalize subagent tracking and cleanup for that agent workflow                                 |
+| Stop               | When that active agent session ends                     | Run agent-specific finalization, such as flushing logs or post-processing output               |
 
 ## Use Cases
 
