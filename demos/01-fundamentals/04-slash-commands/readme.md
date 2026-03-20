@@ -4,7 +4,7 @@ Slash commands provide quick shortcuts for common tasks in GitHub Copilot Chat, 
 
 Available in VS Code, GitHub.com, and JetBrains IDEs, slash commands streamline your workflow by routing your intent directly to the most appropriate AI capabilities. Use them in chat to complement natural language queries, or combine them with code selection for context-aware assistance.
 
-## Enable Copilot Chat for Slash Commands
+## Enable Copilot Chat for Slash Commands x
 
 Ensure Copilot Chat is enabled in VS Code:
 
