@@ -39,13 +39,13 @@ Management policies allow administrators to set guardrails for how users can int
 
 GitHub Copilot does not have built-in credential or environment variable blacklist/whitelist features. However, you can control what Copilot accesses through these approaches:
 
-| Method | Scope | Control Level |
-|--------|-------|---------------|
-| `.gitignore` exclusion | Workspace | Prevents secrets from being tracked or shared |
-| VS Code file disabling | Editor | Disables Copilot for specific file patterns (`.env`, `*.secrets`) |
-| Custom instructions | Agent behavior | Add explicit security guidelines to prevent credential inclusion |
-| Workspace trust | IDE level | Untrusted workspaces limit extension functionality |
-| Environment isolation | System level | Secrets stored separately from workspace context |
+| Method                 | Scope          | Control Level                                                     |
+| ---------------------- | -------------- | ----------------------------------------------------------------- |
+| `.gitignore` exclusion | Workspace      | Prevents secrets from being tracked or shared                     |
+| VS Code file disabling | Editor         | Disables Copilot for specific file patterns (`.env`, `*.secrets`) |
+| Custom instructions    | Agent behavior | Add explicit security guidelines to prevent credential inclusion  |
+| Workspace trust        | IDE level      | Untrusted workspaces limit extension functionality                |
+| Environment isolation  | System level   | Secrets stored separately from workspace context                  |
 
 ### Best Practices
 
@@ -55,6 +55,7 @@ GitHub Copilot does not have built-in credential or environment variable blackli
    - Use VS Code's Secrets Storage API for extensions
 
 2. **Configure workspace settings**
+
    ```json
    {
      "github.copilot.enable": {
