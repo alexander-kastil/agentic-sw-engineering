@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 
 async def main() -> None:
     load_dotenv()
-    project_endpoint = os.getenv("PROJECT_ENDPOINT")
-    model_deployment = os.getenv("MODEL_DEPLOYMENT")
+    project_endpoint = os.getenv("AZURE_PROJECT_ENDPOINT")
+    model_deployment = os.getenv("AZURE_MODEL_DEPLOYMENT")
 
     if not project_endpoint or not model_deployment:
         print("Set PROJECT_ENDPOINT and MODEL_DEPLOYMENT in .env before running.")
