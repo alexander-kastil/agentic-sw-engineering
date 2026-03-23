@@ -2,13 +2,13 @@
 
 GitHub Copilot offers access to multiple language models through the Language Models editor in VS Code, allowing you to select the optimal model for your specific tasks. Each model has distinct characteristics including context window sizes, output capabilities, and performance profiles suited for different coding scenarios.
 
-| Model                | Description                                                                                                                               | Factor |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| **Claude Haiku 4.5** | Lightweight and fast. Ideal for quick code completions, refactoring, and explanations with 200K context window.                           | 0.33x  |
-| **Claude Opus 4.6**  | Maximum reasoning power for intricate algorithms, system design, and debugging complex codebases. 200K context window.                    | 3x     |
-| **Gemini 2.5 Pro**   | Google's latest with 128K context window. Strong at reasoning tasks, code analysis, and working with large codebases.                     | 1x     |
-| **Gemini 3.1 Pro**   | Google's enhanced reasoning model with 128K context. Excellent for complex analysis, multimodal understanding, and large-scale codebases. | 1x     |
-| **GPT 5.4**          | OpenAI's latest reasoning model with 128K context. Superior for complex code generation, multi-file analysis, and architectural design.   | 1x     |
+| Model                 | Description                                                                                                                               | Factor |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| **Claude Haiku 4.5**  | Lightweight and fast. Ideal for quick code completions, refactoring, and explanations with 200K context window.                           | 0.33x  |
+| **Claude Sonnet 4.6** | Balanced performance and speed. Great for general-purpose coding, code reviews, and multi-step reasoning with 200K context window.        | 1x     |
+| **Claude Opus 4.6**   | Maximum reasoning power for intricate algorithms, system design, and debugging complex codebases. 200K context window.                    | 3x     |
+| **Gemini 3.1 Pro**    | Google's enhanced reasoning model with 128K context. Excellent for complex analysis, multimodal understanding, and large-scale codebases. | 1x     |
+| **GPT 5.4**           | OpenAI's latest reasoning model with 128K context. Superior for complex code generation, multi-file analysis, and architectural design.   | 1x     |
 
 ## Premium Requests
 
