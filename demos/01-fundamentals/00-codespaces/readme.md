@@ -1,6 +1,6 @@
 # GitHub Codespaces / Dev Containers
 
-Standardize development environments and enable instant, cloud-based coding. Dev Containers are Docker-based configurations stored in your repository that define consistent development environments, while GitHub Codespaces automatically uses these configurations to spin up pre-configured cloud environments in seconds. You can start coding immediately in your browser or VS Code without any local setup—just click a button and your full development environment is ready.
+Standardize development environments and enable instant, cloud-based coding. Dev Containers are Docker-based configurations stored in your repository that define consistent development environments, while GitHub Codespaces automatically uses these configurations to spin up pre-configured cloud environments in seconds. You can start coding immediately in your browser or VS Code without any local setup—just click a button and your full development environment is ready. xxx
 
 ![codespace.png](./_images/codespace.png)
 
