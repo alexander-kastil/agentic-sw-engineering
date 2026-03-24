@@ -17,22 +17,26 @@ graph TB
     Planner["📋 Planner<br/>Creates strategy<br/>Researches codebase"]
     Coder["💻 Coder<br/>Writes implementation<br/>Follows principles"]
     Frontend["🎨 Frontend<br/>Designs & implements UI<br/>React + UX"]
+    Playwright["🎭 Playwright<br/>E2E tests only<br/>Explicit request only"]
 
     User -->|Submit request| Orchestrator
     Orchestrator -->|Get strategy| Planner
     Planner -->|Returns plan| Orchestrator
     Orchestrator -->|Delegate tasks| Coder
     Orchestrator -->|Delegate tasks| Frontend
+    Orchestrator -.->|Explicit request only| Playwright
 
     Coder -.->|Parallel<br/>execution| Frontend
     Coder -->|Report completion| Orchestrator
     Frontend -->|Report completion| Orchestrator
+    Playwright -->|Report completion| Orchestrator
     Orchestrator -->|Verify & report| User
 
     style Orchestrator fill:#4A90E2,stroke:#333,stroke-width:2px,color:#fff
     style Planner fill:#7B5BA5,stroke:#333,stroke-width:2px,color:#fff
     style Coder fill:#F5A623,stroke:#333,stroke-width:2px,color:#fff
     style Frontend fill:#50E3C2,stroke:#333,stroke-width:2px,color:#fff
+    style Playwright fill:#E2574A,stroke:#333,stroke-width:2px,color:#fff
     style User fill:#B8E986,stroke:#333,stroke-width:2px,color:#333
 ```
 

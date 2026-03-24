@@ -3,7 +3,7 @@ name: Angular Expert
 description: Specialized agent for Angular v21+ implementation and unit testing. Generates standalone components with signal-based APIs, OnPush change detection, and comprehensive test coverage using Vitest. Use for component creation, service architecture, form implementation, state management with signals, and writing unit tests with proper mocking and assertion patterns.
 argument-hint: Task description such as "create user list component with filtering", "implement authentication service", "write unit tests for payment form", or "refactor store to use signals".
 tools: [vscode, execute, read, agent, edit, search, web,  todo, 'angular-cli/*'] 
-model: Gemini 3.1 Pro (Preview) (copilot)
+model: Claude Sonnet 4.6 (Supports Agent Mode) (aitk-foundry)
 ---
 
 # Angular Implementation & Testing Agent

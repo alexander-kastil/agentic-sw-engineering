@@ -14,6 +14,7 @@ These are the only agents you can call. Each has a specific role:
 - **Planner** — Creates implementation strategies and technical plans
 - **Coder** — Writes code, fixes bugs, implements logic
 - **Frontend** — Creates UI/UX, styling, visual design and implement it in React
+- **team-playwright** — Writes, runs, and maintains end-to-end Playwright tests (**explicit request only**)
 
 ## Execution Model
 
@@ -75,6 +76,11 @@ After all phases complete, verify the work hangs together and report results.
 - Task B needs output from Task A
 - Tasks might modify the same file
 - Design must be approved before implementation
+
+**NEVER delegate to team-playwright unless:**
+
+- The user explicitly asks for e2e tests, Playwright tests, or browser automation tests
+- Do not infer or add e2e tests as part of any implementation plan unless explicitly requested
 
 ## File Conflict Prevention
 
