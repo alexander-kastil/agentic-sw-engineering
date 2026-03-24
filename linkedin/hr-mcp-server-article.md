@@ -172,4 +172,4 @@ The interesting question, for most teams, isn't whether to adopt MCP. It's which
 
 ---
 
-*The HR MCP Server referenced in this article is part of the [Agentic Software Engineering](https://github.com/alexander-kastil/agentic-sw-engineering) teaching repository. The full source is available to explore, fork, and adapt.*
+_The HR MCP Server referenced in this article is part of the [Agentic Software Engineering](https://github.com/alexander-kastil/agentic-sw-engineering) teaching repository. The full source is available to explore, fork, and adapt._
