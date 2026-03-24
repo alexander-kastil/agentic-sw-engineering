@@ -1,6 +1,10 @@
 {
 	"servers": {
 		"qr-code": {
+			"type": "http",
+			"url": "http://localhost:3001/mcp"
+		},
+		"qr-code-python": {
 			"type": "stdio",
 			"command": "uv",
 			"args": [

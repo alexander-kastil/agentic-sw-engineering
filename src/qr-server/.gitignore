@@ -23,3 +23,8 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# .NET build artifacts
+bin/
+obj/
+*.user
