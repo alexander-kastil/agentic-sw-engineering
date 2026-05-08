@@ -42,7 +42,7 @@ export function FoodEdit({ food, onSave }: Props) {
               fullWidth
               error={nameError}
             />
-            {nameError && <FormHelperText error>Name is required &amp; must be more than 3 chars</FormHelperText>}
+            {nameError && <FormHelperText error>Name is required and must be at least 3 characters long</FormHelperText>}
           </Box>
           <Box>
             <TextField
