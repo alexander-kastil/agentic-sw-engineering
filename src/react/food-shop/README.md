@@ -1,11 +1,31 @@
-# React + TypeScript + Vite
+# React Food Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A 1-to-1 React version of the Angular food-shop app. Built with Vite + React + TypeScript + MUI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Food Shop** (`/food`) – Browse food items with a number picker to add to cart
+- **Food Catalog** (`/food/catalog`) – CRUD table for managing food items
+- **Checkout** (`/food/checkout`) – Order form with cart items summary
+- **Cart** – Persistent cart state via localStorage with item count and total in the sidebar
+- **Collapsible Sidebar** – Hamburger menu toggles the sidebar
+
+## Running
+
+```bash
+npm install
+npm run dev
+```
+
+The app expects the catalog API at `http://localhost:5001` and orders API at `http://localhost:5002` (configurable via `.env`).
+
+## Tech Stack
+
+- React 19 + TypeScript
+- React Router v7
+- MUI (Material UI) v9
+- Vite v8
+- Cart state: React Context + useReducer + localStorage
 
 ## React Compiler
 

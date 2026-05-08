@@ -54,7 +54,7 @@ export function FoodEdit({ food, onSave }: Props) {
               fullWidth
               error={priceError}
             />
-            {priceError && <FormHelperText error>Price must be greater than 1€</FormHelperText>}
+            {priceError && <FormHelperText error>Price must be at least 1€</FormHelperText>}
           </Box>
           <TextField
             label="In stock"
