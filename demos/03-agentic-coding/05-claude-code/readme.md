@@ -1,10 +1,20 @@
 # Using Anthropic Claude Code Agents
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Slash Commands](#slash-commands)
+- [Links & Resources](#links--resources)
+
+## Overview
+
 Claude Code is a desktop application powered by Anthropic's Claude Agent SDK that operates autonomously within VS Code. Unlike browser-based chat, it has direct access to your file system and can read, modify, and execute code in your workspace.
 
 Configure permission modes to control how the agent applies changes: automatically, with your approval, or by outlining a plan first. This gives you full control over how aggressively Claude Code operates in your workspace.
 
 Claude Code manages context efficiently through persistent markdown files and parallel sub-agent execution. Each sub-agent operates in its own context window, preventing the main agent from becoming overwhelmed during complex tasks.
+
+## Slash Commands
 
 Use specialized slash commands for advanced workflows:
 
