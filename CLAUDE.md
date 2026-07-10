@@ -10,7 +10,7 @@ This repo is the companion material for **"Agentic Software Engineering using Gi
 
 ## Brand Voice
 
-All `readme.md` files in `demos/` must pass the brand-voice rules in `.claude/skills/brand-voice-cowork/references/rules.md`. Run the `brand-voice-cowork` skill after writing or significantly editing any README. Brand voice stays a repo-local skill (the Cowork audience differs from a Claude Code class); the `create-class` master discovers it by globbing `.claude/skills/brand-voice-*`.
+All `readme.md` files in `demos/` must pass the brand-voice rules in `.claude/skills/brand-voice-gh-copilot/references/rules.md`. Run the `brand-voice-gh-copilot` skill after writing or significantly editing any README. Brand voice stays a repo-local skill (this GitHub Copilot masterclass writes for a software-engineer audience, unlike other classes); the `create-class` master discovers it by globbing `.claude/skills/brand-voice-*`.
 
 The four rules in short:
 - No em dashes in prose — replace with `,` `;` `:` or `()`

@@ -14,7 +14,6 @@ description: >-
   what's missing, setup dashboard, show status, update class status, test dashboard,
   publish class dashboard, github pages dashboard, evaluate guide, run guide, test guide,
   enhance for business owner, business demos.
-disable-model-invocation: true
 license: CC-BY-NC-SA-4.0
 ---
 
@@ -29,7 +28,7 @@ that delegates to leaf references under `references/`.
 
 This skill is intentionally generic and audience-neutral, so it can live at the personal
 (global) level and be reused across different classes. Brand voice is the one capability it
-does NOT bundle: a Cowork class and a Claude Code class write for different audiences, so brand
+does NOT bundle: a GitHub Copilot class and a Cowork class write for different audiences, so brand
 voice stays a repo-local skill. The master discovers it at run time by globbing
 `.claude/skills/brand-voice-*` in the current repo and invokes that skill. Never globalize brand
 voice and never fold it back into this master.
@@ -45,52 +44,52 @@ walk the phases in order, loading each leaf as you reach it.
 
 ### Phase 1 - Scaffold the layout
 
-| Task | Leaf |
-|------|------|
+| Task                                                                                        | Leaf                                             |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------ |
 | Bootstrap a whole course from an outline file; create numbered topic folders under a module | [references/scaffold.md](references/scaffold.md) |
 
 ### Phase 2 - Author content
 
-| Task | Leaf |
-|------|------|
-| Write a demo or lab guide file (`demo-NN-slug.md` / `lab-NN-slug.md`) with companion assets | [references/author-guide.md](references/author-guide.md) |
-| Turn a topic readme into Gamma-ready slide spec files in `pptx/` | [references/author-slides.md](references/author-slides.md) |
+| Task                                                                                              | Leaf                                                       |
+| ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Write a demo or lab guide file (`demo-NN-slug.md` / `lab-NN-slug.md`) with companion assets       | [references/author-guide.md](references/author-guide.md)   |
+| Turn a topic readme into Gamma-ready slide spec files in `pptx/`                                  | [references/author-slides.md](references/author-slides.md) |
 | Enrich a module README with a use-case intro, a topic-specific slash-command table, and key links | [references/enrich-module.md](references/enrich-module.md) |
 
 ### Phase 3 - Quality and polish
 
-| Task | Leaf |
-|------|------|
-| Audit and fix Markdown for brand voice (em dashes, Mermaid labels, paragraph length, slash tables) | Repo-local `brand-voice-*` skill (see note below) |
-| Rewrite H1 headings across `demos/` to be verb-first | [references/polish-slug.md](references/polish-slug.md) |
+| Task                                                                                               | Leaf                                                   |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Audit and fix Markdown for brand voice (em dashes, Mermaid labels, paragraph length, slash tables) | Repo-local `brand-voice-*` skill (see note below)      |
+| Rewrite H1 headings across `demos/` to be verb-first                                               | [references/polish-slug.md](references/polish-slug.md) |
 
 Brand voice is not a leaf of this skill. Discover the repo-local skill with Glob
-`.claude/skills/brand-voice-*` and invoke it (for example `brand-voice-cowork` or
-`brand-voice-code`). If no `brand-voice-*` skill exists in the repo, report that and skip the
-brand-voice step rather than applying a generic ruleset.
+`.claude/skills/brand-voice-*` and invoke it (in this repo, `brand-voice-gh-copilot`). If no
+`brand-voice-*` skill exists in the repo, report that and skip the brand-voice step rather than
+applying a generic ruleset.
 
 ### Phase 4 - Track completeness
 
-| Task | Leaf |
-|------|------|
+| Task                                                                          | Leaf                                               |
+| ----------------------------------------------------------------------------- | -------------------------------------------------- |
 | Set up, evaluate, render, show, test, or publish the class progress dashboard | [references/dashboard.md](references/dashboard.md) |
 
 ### Phase 5 - Evaluate and enhance
 
-| Task | Leaf |
-|------|------|
-| Run a demo guide as a real user in the live Claude Desktop app and fix it from what actually worked | [references/evaluate-guide.md](references/evaluate-guide.md) |
-| Audit all demos, rank business enhancements by wow-factor, and implement the top picks | [references/enhance-business.md](references/enhance-business.md) |
+| Task                                                                                                | Leaf                                                             |
+| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Run a demo guide as a real user in the live Claude Desktop app and fix it from what actually worked | [references/evaluate-guide.md](references/evaluate-guide.md)     |
+| Audit all demos, rank business enhancements by wow-factor, and implement the top picks              | [references/enhance-business.md](references/enhance-business.md) |
 
 ## Templates
 
 Shared template assets live under `templates/`:
 
-| Path | Used by |
-|------|---------|
-| `templates/scaffold/` | scaffold leaf (module, topic, lab, labs-index, CLAUDE.md, dashboard.json stubs) |
-| `templates/dashboard/` | dashboard leaf (static web app + evaluator/render/test scripts) |
-| `templates/update-class-dashboard.yml` | dashboard leaf (GitHub Pages workflow) |
+| Path                                   | Used by                                                                         |
+| -------------------------------------- | ------------------------------------------------------------------------------- |
+| `templates/scaffold/`                  | scaffold leaf (module, topic, lab, labs-index, CLAUDE.md, dashboard.json stubs) |
+| `templates/dashboard/`                 | dashboard leaf (static web app + evaluator/render/test scripts)                 |
+| `templates/update-class-dashboard.yml` | dashboard leaf (GitHub Pages workflow)                                          |
 
 ## Cross-cutting rules
 

@@ -38,7 +38,7 @@ Ensure Copilot Chat is enabled and prompt discovery is active:
 
 | Demo                                                             | Description                                                           |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------- |
-| **[GitHub Codespaces / Dev Containers](./01-transform-readme/)** | Transform and enhance markdown documentation for repository modules.  |
+| **[Transform & Enhance a Module README](./01-transform-readme/)** | Transform and enhance markdown documentation for repository modules.  |
 | **[Create Unit Tests with XUnit](./02-create-test/)**            | Generate comprehensive unit tests using XUnit testing best practices. |
 
 ## Links & Resources

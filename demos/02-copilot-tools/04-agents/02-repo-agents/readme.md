@@ -6,7 +6,6 @@ These agents are configured in this repository and optimized for specific develo
 | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Azure DevOps Specialist](/.github/agents/AzDevOps.agent.md)                                        | Azure DevOps pipeline specialist that writes, imports, and runs pipelines using best practices from Microsoft Learn MCP and configuration values from Copilot memory. Diagnoses pipeline issues and manages service connections. |
 | [Azure Deployment Specialist](/.github/agents/AzureDeployment.agent.md)                             | Expert Azure deployment agent specializing in Azure CLI operations, infrastructure provisioning, deployment orchestration, and log analysis using official Microsoft documentation.                                              |
-| [Codespaces](/.github/agents/Codespaces.agent.md)                                                   | Analyzes any repository to propose and scaffold an optimized GitHub Codespaces and Devcontainer setup. Auto-detects languages/frameworks, recommends VS Code extensions, and tunes devcontainer features for fast startup.       |
 | [GH Actions](/.github/agents/GH%20Actions.agent.md)                                                 | GitHub Actions workflow specialist that authors, optimizes, and troubleshoots pipelines using Microsoft Learn MCP guidance and Copilot context.                                                                                  |
 | [Microsoft Agent Framework Python](/.github/agents/microsoft-agent-framework-python.agent.md)       | Create, update, refactor, explain or work with code using the Python version of Microsoft Agent Framework.                                                                                                                       |
 | [RaspiExpert](/.github/agents/RaspiExpert.agent.md)                                                 | Expert assistant for Raspberry Pi development, configuration, and remote management via SSH.                                                                                                                                     |
@@ -64,7 +63,6 @@ Can I install OpenClaw on my Raspberry Pi 4? Check if OpenClaw is available in t
 - [Azure DevOps REST API](https://learn.microsoft.com/en-us/azure/devops/integrate/concepts/rest-api-overview)
 - [Azure CLI Documentation](https://learn.microsoft.com/en-us/cli/azure/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [GitHub Codespaces](https://docs.github.com/en/codespaces)
 - [Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/)
 - [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 - [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)

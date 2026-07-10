@@ -25,7 +25,7 @@ The class-builder plugin provides these commands:
 
 ## Brand Voice
 
-All `readme.md` files in `demos/` should pass the brand-voice rules in the plugin's `skills/brand-voice-cowork/references/rules.md`. Run the `brand-voice-cowork` skill after writing or significantly editing any README.
+All `readme.md` files in `demos/` should pass this repo's brand-voice rules. Discover the repo-local brand-voice skill by globbing `.claude/skills/brand-voice-*` and run it after writing or significantly editing any README.
 
 ## Hard Rules
 
