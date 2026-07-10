@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Class Progress · Agentic Software Engineering with Claude Code</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="page-header">
+  <div class="container">
+    <div class="crumbs">
+      <span class="crumb-icon">📊</span>
+      <span class="crumb-text">Projects</span>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-current" id="project-title">Class Progress</span>
+    </div>
+    <h1 id="title">Class Progress</h1>
+    <p class="summary" id="summary">Loading…</p>
+    <p class="project-link-row">
+      <a id="project-link" target="_blank" rel="noopener">Open in GitHub →</a>
+    </p>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <p>Great software no longer has to cost a fortune or consume every hour of your day. With Claude Code, you get an engineering partner that plans, builds, tests, and ships alongside you at a fraction of the time and cost. This isn't about prompting an AI. It's about designing systems that multiply what you can deliver. Welcome to the new standard.</p>
+    <p>Agentic software engineering is a discipline shift, and once you experience it, there's no going back. Instead of spending days on tasks that take agents minutes, you orchestrate workflows that reduce cost, eliminate repetition, and scale your output without scaling your team. The developers who master this don't just move faster. They do more with less, and they do it consistently.</p>
+    <p>Across 11 hands-on modules, you'll go from Claude Code fundamentals to production-grade multi-agent pipelines. You'll design composable skills, build MCP tools that connect agents to real systems, architect parallel sub-agent workflows, and harden everything for real-world conditions. Every module is built around genuine engineering decisions, because the goal was never to write more code. It was always to build software that matters.</p>
+  </div>
+</section>
+
+<section class="contributors-section">
+  <div class="container">
+    <h2 class="contributors-heading">Contributors</h2>
+    <div class="contributors-list" id="contributors-list"></div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="toolbar">
+    <input type="search" id="filter" placeholder="🔍  Filter by keyword…" aria-label="Filter by keyword" />
+    <div class="toolbar-divider"></div>
+    <select id="status-filter" aria-label="Filter by status">
+      <option value="">All statuses</option>
+      <option value="done">Done</option>
+      <option value="almost">Almost</option>
+      <option value="doing">Doing</option>
+      <option value="planned">Planned</option>
+    </select>
+    <div class="toolbar-actions">
+      <button id="expand-all" type="button">Expand all</button>
+      <button id="collapse-all" type="button">Collapse all</button>
+    </div>
+  </div>
+
+  <table class="modules-table" id="modules">
+    <thead>
+      <tr>
+        <th class="col-num">#</th>
+        <th class="col-title">Title</th>
+        <th class="col-assignee">Assignees</th>
+        <th class="col-progress">Sub-issues progress</th>
+        <th class="col-status">Status</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <p class="empty" id="empty" hidden>No modules match the current filters.</p>
+</main>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="https://www.integrations.at" target="_blank" rel="noopener">
+        <div class="footer-brand">
+          <img src="https://www.integrations.at/images/integrations-logo-text.png" alt="Integrations logo" width="424" height="117" style="width:140px;height:auto;display:block;">
+          <span>Agentic Class Builder</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- DATA:START -->
+<script>window.DASHBOARD_DATA = {
+  "project": {
+    "title": "Agentic Software Engineering with Claude Code",
+    "repo": "alexander-kastil/masterclass-claude-code",
+    "projectUrl": "https://github.com/users/alexander-kastil/projects/24",
+    "pagesUrl": "https://alexander-kastil.github.io/masterclass-claude-code/"
+  },
+  "modules": [
+    {
+      "num": "01",
+      "name": "Claude Code Fundamentals",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 648
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 649
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 650
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 651
+        }
+      ],
+      "issueNumber": 647,
+      "path": "demos/01-fundamentals",
+      "fullName": "Claude Code Fundamentals",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-intro",
+          "title": "Get Started with Claude Code",
+          "path": "demos/01-fundamentals/01-intro",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-setup",
+          "title": "Install and Configure Claude Code",
+          "path": "demos/01-fundamentals/02-setup",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-editors",
+          "title": "Choose Your Editor",
+          "path": "demos/01-fundamentals/03-editors",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-constitution",
+          "title": "Write a CLAUDE.md Constitution",
+          "path": "demos/01-fundamentals/04-constitution",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-prompting-techniques",
+          "title": "Master Prompting Techniques",
+          "path": "demos/01-fundamentals/05-prompting-techniques",
+          "contributors": []
+        },
+        {
+          "number": 6,
+          "slug": "06-model-selection",
+          "title": "Select the Right Model",
+          "path": "demos/01-fundamentals/06-model-selection",
+          "contributors": []
+        },
+        {
+          "number": 7,
+          "slug": "07-permissions",
+          "title": "Configure the Permission Model",
+          "path": "demos/01-fundamentals/07-permissions",
+          "contributors": []
+        },
+        {
+          "number": 8,
+          "slug": "08-git-worktrees",
+          "title": "Run Parallel Agents with Git Worktrees",
+          "path": "demos/01-fundamentals/08-git-worktrees",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-prompting-techniques",
+          "title": "Master Prompting Techniques",
+          "path": "demos/01-fundamentals/01-demo-prompting-techniques.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-worktrees-intro",
+          "title": "Explore Git Worktrees and the Agents View",
+          "path": "demos/01-fundamentals/02-demo-worktrees-intro.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "01-setup-claude",
+          "title": "Lab 01 — Install & Setup",
+          "path": "labs/01-fundamentals/01-setup-claude",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "02-hello-claude",
+          "title": "Lab 02 — Task Tracking App",
+          "path": "labs/01-fundamentals/02-hello-claude",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "name": "Claude Code Configure Harness",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 653
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 654
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 655
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 656
+        }
+      ],
+      "issueNumber": 652,
+      "path": "demos/02-harness",
+      "fullName": "Claude Code Configure Harness",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-intro",
+          "title": "Understand the Claude Code Harness",
+          "path": "demos/02-harness/01-intro",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-commands",
+          "title": "Build Custom Slash Commands",
+          "path": "demos/02-harness/02-commands",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-hooks",
+          "title": "Automate Workflows with Hooks",
+          "path": "demos/02-harness/03-hooks",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-mcp",
+          "title": "Connect MCP Servers to the Harness",
+          "path": "demos/02-harness/04-mcp",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-skills",
+          "title": "Create Reusable Skills",
+          "path": "demos/02-harness/05-skills",
+          "contributors": []
+        },
+        {
+          "number": 6,
+          "slug": "06-plugins",
+          "title": "Package and Distribute Plugins",
+          "path": "demos/02-harness/06-plugins",
+          "contributors": []
+        },
+        {
+          "number": 7,
+          "slug": "07-memory",
+          "title": "Persist Context with Memory",
+          "path": "demos/02-harness/07-memory",
+          "contributors": []
+        },
+        {
+          "number": 8,
+          "slug": "08-checkpoints",
+          "title": "Checkpoint and Resume Long Sessions",
+          "path": "demos/02-harness/08-checkpoints",
+          "contributors": []
+        },
+        {
+          "number": 9,
+          "slug": "09-subagents",
+          "title": "Delegate Work to Sub-Agents",
+          "path": "demos/02-harness/09-subagents",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-maf-foundry-migration",
+          "title": "Upgrade Microsoft Agent Framework Starter using the Microsoft Learn MCP",
+          "path": "demos/02-harness/01-demo-maf-foundry-migration.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-docx-invoice",
+          "title": "Use a DOCX Skill to create an Invoice Generator",
+          "path": "demos/02-harness/02-demo-docx-invoice.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-react-skill",
+          "title": "Lab 01 — Install a React Agent Skill",
+          "path": "labs/02-harness/lab-01-react-skill.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-fix-the-react-food-shop",
+          "title": "Lab 02 — Harness Configuration in Practice",
+          "path": "labs/02-harness/lab-02-fix-the-react-food-shop.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "name": "Creating & Managing Skills",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 658
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 659
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 660
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 661
+        }
+      ],
+      "issueNumber": 657,
+      "path": "demos/03-skills",
+      "fullName": "Creating & Managing Skills",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-intro",
+          "title": "Understand Skills vs Slash Commands",
+          "path": "demos/03-skills/01-intro",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-creating",
+          "title": "Create a Skill from Scratch",
+          "path": "demos/03-skills/02-creating",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-composite",
+          "title": "Compose Skills into Workflows",
+          "path": "demos/03-skills/03-composite",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-pubishing",
+          "title": "Test and Publish Skills",
+          "path": "demos/03-skills/04-pubishing",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-evolution",
+          "title": "Evolve Skills with Metrics",
+          "path": "demos/03-skills/05-evolution",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "demo-01-skill-from-conversation",
+          "title": "Create a Skill from a Proven Claude Code Chat",
+          "path": "demos/03-skills/demo-01-skill-from-conversation.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "demo-02-tuning-code-reviewer",
+          "title": "Tune a Skill to Close a Behavior Gap",
+          "path": "demos/03-skills/demo-02-tuning-code-reviewer.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-authoring-an-mcp-python-skill",
+          "title": "Lab 01 — Wrap a Python MCP App in a Custom Skill",
+          "path": "labs/03-skills/lab-01-authoring-an-mcp-python-skill.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "name": "Consuming & Designing MCP Tools",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 714
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 715
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 716
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 717
+        }
+      ],
+      "issueNumber": 713,
+      "path": "demos/04-mcp",
+      "fullName": "Consuming & Designing MCP Tools",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-intro",
+          "title": "Master the Model Context Protocol",
+          "path": "demos/04-mcp/01-intro",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-mcp",
+          "title": "Build a Custom MCP Server in C#",
+          "path": "demos/04-mcp/02-mcp",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-mcp-apps",
+          "title": "Implement and Use MCP Applications",
+          "path": "demos/04-mcp/03-mcp-apps",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-modernizing-angular-mcp",
+          "title": "Lab 01 — Modernizing Angular with the Angular MCP",
+          "path": "labs/04-mcp/lab-01-modernizing-angular-mcp.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-eventtrack-mcp-server",
+          "title": "Lab 02 — EventTrack: Event Registration MCP Server",
+          "path": "labs/04-mcp/lab-02-eventtrack-mcp-server.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 3,
+          "slug": "lab-03-pdf-viewer-mcp-app",
+          "title": "Lab 03 — Interactive PDF Viewer with MCP Apps",
+          "path": "labs/04-mcp/lab-03-pdf-viewer-mcp-app.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 4,
+          "slug": "lab-04-map-mcp-app",
+          "title": "Lab 04 — Interactive Map Viewer with MCP Apps",
+          "path": "labs/04-mcp/lab-04-map-mcp-app.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "name": "Programmable automation using the Claude Code CLI.",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 668
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 669
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 670
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 671
+        }
+      ],
+      "issueNumber": 667,
+      "path": "demos/05-cli",
+      "fullName": "Programmable automation using the Claude Code CLI.",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-intro",
+          "title": "Run Claude Code in Headless Mode",
+          "path": "demos/05-cli/01-intro",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-worktrees",
+          "title": "Parallelize Work with Git Worktrees",
+          "path": "demos/05-cli/02-worktrees",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-ci-gate",
+          "title": "Gate CI Pipelines with Sentinel Tokens",
+          "path": "demos/05-cli/03-ci-gate",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-parallel-hooks",
+          "title": "Enforce Policy Hooks Across Parallel Worktrees",
+          "path": "demos/05-cli/04-parallel-hooks",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-always-on",
+          "title": "Build agents that loop until a verifiable goal is met",
+          "path": "demos/05-cli/05-always-on",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-worktrees",
+          "title": "Launch two Claude agents simultaneously without branch conflicts",
+          "path": "demos/05-cli/01-demo-worktrees.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-ci-gates",
+          "title": "Build a Claude-powered lint gate that fails the build on real issues",
+          "path": "demos/05-cli/02-demo-ci-gates.md",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-demo-parallel-hooks",
+          "title": "Block destructive commands with hook-level policy across parallel agents",
+          "path": "demos/05-cli/03-demo-parallel-hooks.md",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-demo-always-on",
+          "title": "Drive an agent to keep fixing code until tests go green",
+          "path": "demos/05-cli/04-demo-always-on.md",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-demo-parallel-feature-agents",
+          "title": "Ship two features simultaneously with isolated worktree agents",
+          "path": "demos/05-cli/05-demo-parallel-feature-agents.md",
+          "contributors": []
+        },
+        {
+          "number": 6,
+          "slug": "06-demo-worktree-orchestration",
+          "title": "Automate the full worktree lifecycle with a single shell script",
+          "path": "demos/05-cli/06-demo-worktree-orchestration.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-headless-and-worktrees",
+          "title": "Lab 01 — Headless Mode and Parallel Worktrees",
+          "path": "labs/05-cli/lab-01-headless-and-worktrees.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-hooks-actions-and-cli-comparison",
+          "title": "Lab 02 — Hooks, GitHub Actions, and the Agent-CLI Landscape",
+          "path": "labs/05-cli/lab-02-hooks-actions-and-cli-comparison.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 3,
+          "slug": "lab-03-always-on-and-fleet",
+          "title": "Lab 03 — Always-On Agent Patterns",
+          "path": "labs/05-cli/lab-03-always-on-and-fleet.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "name": "Plan and decompose for maximum agentic effectiveness",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 673
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 674
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 675
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 676
+        }
+      ],
+      "issueNumber": 672,
+      "path": "demos/06-planning",
+      "fullName": "Plan and decompose for maximum agentic effectiveness",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-plan-mode",
+          "title": "Enter Plan Mode for Complex Tasks",
+          "path": "demos/06-planning/01-plan-mode",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-extended-thinking",
+          "title": "Reason deeply with Extended Thinking and persist decisions in STATE.md",
+          "path": "demos/06-planning/02-extended-thinking",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-spec-frameworks",
+          "title": "Drive Specs with Spec Kit and BMAD",
+          "path": "demos/06-planning/03-spec-frameworks",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-plan-mode-constraint-ratchet",
+          "title": "Lock design decisions incrementally with Plan Mode",
+          "path": "demos/06-planning/01-demo-plan-mode-constraint-ratchet.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-extended-thinking",
+          "title": "Apply Extended Thinking to Hard Design Decisions",
+          "path": "demos/06-planning/02-demo-extended-thinking.md",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-demo-authoring-state",
+          "title": "Capture a planning session in STATE.md",
+          "path": "demos/06-planning/03-demo-authoring-state.md",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-demo-sub-agent-decomposition",
+          "title": "Decompose a Spec into Sub-Agent Packages",
+          "path": "demos/06-planning/04-demo-sub-agent-decomposition.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-spec-driven-from-scratch",
+          "title": "Lab 01 — Spec-Driven Feature Development with Plan Mode",
+          "path": "labs/06-planning/lab-01-spec-driven-from-scratch.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-spec-kit-and-bmad",
+          "title": "Lab 02 — Spec-Kit and BMAD-METHOD",
+          "path": "labs/06-planning/lab-02-spec-kit-and-bmad.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "07",
+      "name": "Scale task execution with sub-agents",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 678
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 679
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 680
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 681
+        }
+      ],
+      "issueNumber": 677,
+      "path": "demos/07-subagents",
+      "fullName": "Scale task execution with sub-agents",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-introduction",
+          "title": "Explore sub-agent architecture and context isolation",
+          "path": "demos/07-subagents/01-introduction",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-backend",
+          "title": "Implement a backend sub-agent for .NET",
+          "path": "demos/07-subagents/02-backend",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-frontend",
+          "title": "Configure a frontend sub-agent for Angular",
+          "path": "demos/07-subagents/03-frontend",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-qa-agent",
+          "title": "Configure a qa-agent for browser verification",
+          "path": "demos/07-subagents/04-qa-agent",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-testing-agent-performace",
+          "title": "Unit-test your agent's performance",
+          "path": "demos/07-subagents/05-testing-agent-performace",
+          "contributors": []
+        },
+        {
+          "number": 6,
+          "slug": "06-orchestration",
+          "title": "Orchestrate sub-agents with decomposition patterns",
+          "path": "demos/07-subagents/06-orchestration",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "demo-01-add-food-item-endpoint",
+          "title": "Demo 01 — Add a Search Endpoint with net-agent",
+          "path": "demos/07-subagents/demo-01-add-food-item-endpoint.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "demo-02-test-food-controller",
+          "title": "Unit Test with a Permission-Locked Agent",
+          "path": "demos/07-subagents/demo-02-test-food-controller.md",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "demo-03-fan-out-orchestration",
+          "title": "Demo 03 — Fan-Out Orchestration",
+          "path": "demos/07-subagents/demo-03-fan-out-orchestration.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-specialized-agents",
+          "title": "Build a specialized documentation agent with brand-voice enforcement",
+          "path": "labs/07-subagents/lab-01-specialized-agents.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-unit-testing-agent",
+          "title": "Build a scoped unit-testing agent with minimal permissions",
+          "path": "labs/07-subagents/lab-02-unit-testing-agent.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 3,
+          "slug": "lab-03-agentic-team",
+          "title": "Orchestrate an agentic team to deliver customer data persistence",
+          "path": "labs/07-subagents/lab-03-agentic-team.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "08",
+      "name": "Optimizing the Agentic Harness & Continuous Learning",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 683
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 684
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 685
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 686
+        }
+      ],
+      "issueNumber": 682,
+      "path": "demos/08-optimize",
+      "fullName": "Optimizing the Agentic Harness & Continuous Learning",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-intro",
+          "title": "Optimize the Agentic Harness",
+          "path": "demos/08-optimize/01-intro",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-caveman-compression",
+          "title": "Compress Context with the Caveman Technique",
+          "path": "demos/08-optimize/02-caveman-compression",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-autoresearch-loop",
+          "title": "Build an Autoresearch Loop",
+          "path": "demos/08-optimize/03-autoresearch-loop",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-memory-architectures",
+          "title": "Design Memory Architectures",
+          "path": "demos/08-optimize/04-memory-architectures",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-obsidian-second-brain",
+          "title": "Build a Second Brain with Obsidian",
+          "path": "demos/08-optimize/05-obsidian-second-brain",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-caveman-compression",
+          "title": "Compress Context with Caveman Prompts",
+          "path": "demos/08-optimize/01-demo-caveman-compression.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-autoresearch-loop",
+          "title": "Build an Autoresearch Loop in Claude Code",
+          "path": "demos/08-optimize/02-demo-autoresearch-loop.md",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-demo-memory-architectures",
+          "title": "Design a Memory Architecture for Long Sessions",
+          "path": "demos/08-optimize/03-demo-memory-architectures.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-caveman-compress",
+          "title": "Lab 01 — Caveman Compression",
+          "path": "labs/08-optimize/lab-01-caveman-compress.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-evolve-via-metrics",
+          "title": "Lab 02 — Evolving a Skill via Deterministic Experiments",
+          "path": "labs/08-optimize/lab-02-evolve-via-metrics.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 3,
+          "slug": "lab-03-memory-architectures",
+          "title": "Lab 04 — Memory Architectures: In-Context vs. Statefile vs. Knowledge Graph",
+          "path": "labs/08-optimize/lab-03-memory-architectures.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "09",
+      "name": "Deploy autonomous action using Managed Agents",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 688
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 689
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 690
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 691
+        }
+      ],
+      "issueNumber": 687,
+      "path": "demos/09-managed-agents",
+      "fullName": "Deploy autonomous action using Managed Agents",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-foundations",
+          "title": "Understand the Managed Agents Mental Model",
+          "path": "demos/09-managed-agents/01-foundations",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-sessions-streaming",
+          "title": "Build Your First Managed Agent",
+          "path": "demos/09-managed-agents/02-sessions-streaming",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-production-features",
+          "title": "Add Production Features to Managed Agents",
+          "path": "demos/09-managed-agents/03-production-features",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-human-in-the-loop",
+          "title": "Add Human-in-the-Loop Controls",
+          "path": "demos/09-managed-agents/04-human-in-the-loop",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-first-agent",
+          "title": "Build a Managed Agent End to End",
+          "path": "demos/09-managed-agents/01-demo-first-agent.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-approval-gate",
+          "title": "Add an Approval Gate to a Managed Agent",
+          "path": "demos/09-managed-agents/02-demo-approval-gate.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-managed-agent-codebase-triage",
+          "title": "Lab 01 — Build a Managed Agent for Codebase Triage",
+          "path": "labs/09-managed-agents/lab-01-managed-agent-codebase-triage.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "10",
+      "name": "Security, Hardening & Observability",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 693
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 694
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 695
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 696
+        }
+      ],
+      "issueNumber": 692,
+      "path": "demos/10-observability",
+      "fullName": "Security, Hardening & Observability",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-threat-model",
+          "title": "Map the Agent Threat Model",
+          "path": "demos/10-observability/01-threat-model",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-guardrails",
+          "title": "Apply Guardrails and Least Privilege",
+          "path": "demos/10-observability/02-guardrails",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-secrets",
+          "title": "Secure Secrets and Credentials",
+          "path": "demos/10-observability/03-secrets",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-observability",
+          "title": "Trace Agents and Diagnose Failures",
+          "path": "demos/10-observability/04-observability",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-prompt-injection-quarantine",
+          "title": "Quarantine Prompt Injection with Sub-Agent Isolation",
+          "path": "demos/10-observability/01-demo-prompt-injection-quarantine.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-hook-guardrails",
+          "title": "Enforce Least Privilege with Hook Guardrails",
+          "path": "demos/10-observability/02-demo-hook-guardrails.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-harden-newsletter",
+          "title": "Lab 01 — Harden a Newsletter Drafting Agent",
+          "path": "labs/10-observability/lab-01-harden-newsletter.md",
+          "contributors": [
+            "alexander-kastil",
+            "tikket1"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "11",
+      "name": "Build multi-agent pipelines using the Agent SDK",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 698
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 699
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 700
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 701
+        }
+      ],
+      "issueNumber": 697,
+      "path": "demos/11-claude-sdk",
+      "fullName": "Build multi-agent pipelines using the Agent SDK",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-positioning",
+          "title": "Understand the Claude Agent SDK",
+          "path": "demos/11-claude-sdk/01-positioning",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-api-surface",
+          "title": "Call the Claude Agent SDK",
+          "path": "demos/11-claude-sdk/02-api-surface",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-parallel-agents",
+          "title": "Run Parallel Agents with the SDK",
+          "path": "demos/11-claude-sdk/03-parallel-agents",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-messages-api-to-sdk",
+          "title": "Migrate from Messages API to Agent SDK",
+          "path": "demos/11-claude-sdk/01-demo-messages-api-to-sdk.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-demo-parallel-reviewers",
+          "title": "Orchestrate Three Parallel Code Reviewers",
+          "path": "demos/11-claude-sdk/02-demo-parallel-reviewers.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-embed-claude",
+          "title": "Lab 01 — Embed Claude in a TypeScript Program",
+          "path": "labs/11-claude-sdk/lab-01-embed-claude.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-parallel-sdk-agents",
+          "title": "Lab 02 — Parallel SDK Agents With Session Isolation",
+          "path": "labs/11-claude-sdk/lab-02-parallel-sdk-agents.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "12",
+      "name": "Bundling & Distributing Plugins",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 703
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 704
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 705
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 706
+        }
+      ],
+      "issueNumber": 702,
+      "path": "demos/12-distribution",
+      "fullName": "Bundling & Distributing Plugins",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-why-plugins",
+          "title": "Understand Why Plugins Exist",
+          "path": "demos/12-distribution/01-why-plugins",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-plugin-anatomy",
+          "title": "Inspect Plugin Anatomy",
+          "path": "demos/12-distribution/02-plugin-anatomy",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-config-to-plugin",
+          "title": "Convert a .claude/ Config to a Plugin",
+          "path": "demos/12-distribution/03-config-to-plugin",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-marketplaces",
+          "title": "Publish Plugins to Marketplaces",
+          "path": "demos/12-distribution/04-marketplaces",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "01-demo-config-to-plugin",
+          "title": "Package, Validate, and Publish a Plugin",
+          "path": "demos/12-distribution/01-demo-config-to-plugin.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-build-a-plugin",
+          "title": "Lab 01 — Build a Plugin From a `.claude/` Configuration",
+          "path": "labs/12-distribution/lab-01-build-a-plugin.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-plugin-security",
+          "title": "Lab 02 — Plugin Security: Auditing What You Install",
+          "path": "labs/12-distribution/lab-02-plugin-security.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    },
+    {
+      "num": "13",
+      "name": "Agentic DevOps & Deployment",
+      "assignee": "alexander-kastil",
+      "status": "almost",
+      "progress": {
+        "done": 3,
+        "total": 4,
+        "percent": 75
+      },
+      "subItems": [
+        {
+          "key": "theory",
+          "label": "Theory",
+          "status": "done",
+          "issueNumber": 708
+        },
+        {
+          "key": "demos",
+          "label": "Code Demos",
+          "status": "done",
+          "issueNumber": 709
+        },
+        {
+          "key": "labs",
+          "label": "Labs",
+          "status": "done",
+          "issueNumber": 710
+        },
+        {
+          "key": "slides",
+          "label": "Slides",
+          "status": "planned",
+          "issueNumber": 711
+        }
+      ],
+      "issueNumber": 707,
+      "path": "demos/13-agentic-devops",
+      "fullName": "Agentic DevOps & Deployment",
+      "topics": [
+        {
+          "number": 1,
+          "slug": "01-devops-agent",
+          "title": "Deploy with the Azure GitHub DevOps Agent",
+          "path": "demos/13-agentic-devops/01-devops-agent",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "02-azure-deployment",
+          "title": "Deploy to Azure with GitHub Actions",
+          "path": "demos/13-agentic-devops/02-azure-deployment",
+          "contributors": []
+        },
+        {
+          "number": 3,
+          "slug": "03-azd",
+          "title": "Automate Deployments with Azure Developer CLI",
+          "path": "demos/13-agentic-devops/03-azd",
+          "contributors": []
+        },
+        {
+          "number": 4,
+          "slug": "04-iac",
+          "title": "Provision Infrastructure with Bicep and Terraform",
+          "path": "demos/13-agentic-devops/04-iac",
+          "contributors": []
+        },
+        {
+          "number": 5,
+          "slug": "05-cli",
+          "title": "Drive the Azure CLI from Claude Code",
+          "path": "demos/13-agentic-devops/05-cli",
+          "contributors": []
+        }
+      ],
+      "demos": [
+        {
+          "number": 1,
+          "slug": "demo-01-deploy-with-devops-agent",
+          "title": "Deploy to Azure with the DevOps Agent",
+          "path": "demos/13-agentic-devops/demo-01-deploy-with-devops-agent.md",
+          "contributors": []
+        },
+        {
+          "number": 2,
+          "slug": "demo-02-iac-bicep-azd",
+          "title": "Deploy Azure Resources with azd, Bicep & Terraform",
+          "path": "demos/13-agentic-devops/demo-02-iac-bicep-azd.md",
+          "contributors": []
+        }
+      ],
+      "labs": [
+        {
+          "number": 1,
+          "slug": "lab-01-hugo-blog-github-pages",
+          "title": "Lab 01 — Deploy a Hugo Blog to GitHub Pages",
+          "path": "labs/13-agentic-devops/lab-01-hugo-blog-github-pages.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        },
+        {
+          "number": 2,
+          "slug": "lab-02-react-vite-github-pages",
+          "title": "Lab 02 — Deploy a React + Vite App to GitHub Pages",
+          "path": "labs/13-agentic-devops/lab-02-react-vite-github-pages.md",
+          "contributors": [
+            "alexander-kastil"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalModules": 13,
+    "totalSubs": 52,
+    "done": 39,
+    "percent": 75
+  },
+  "contributors": [
+    {
+      "name": "Alexander Kastil",
+      "github": "alexander-kastil",
+      "commits": 86,
+      "linesAdded": 326897,
+      "percent": 98
+    },
+    {
+      "name": "Tikket",
+      "github": "Tikket",
+      "commits": 4,
+      "linesAdded": 6636,
+      "percent": 2
+    },
+    {
+      "name": "github-actions[bot]",
+      "github": "",
+      "commits": 2,
+      "linesAdded": 161,
+      "percent": 0
+    }
+  ]
+};</script>
+<!-- DATA:END -->
+<script src="app.js"></script>
+</body>
+</html>

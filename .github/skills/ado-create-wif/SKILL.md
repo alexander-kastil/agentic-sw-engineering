@@ -1,5 +1,5 @@
 ---
-name: create-wi
+name: ado-create-wif
 description: Automate creation of Azure DevOps workload identity federation service connections with deployment metadata from deploy.json. Use when users need to create or delete Azure service connections with workload identity federation for secure, passwordless authentication.
 license: MIT
 ---

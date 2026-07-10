@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "qr-code-cs": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": ["run", "--project", "${workspaceFolder}/src/qr-server-cs", "--", "--stdio"]
+    }
+  }
+}

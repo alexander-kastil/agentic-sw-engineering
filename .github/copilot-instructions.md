@@ -1,16 +1,18 @@
 # Agentic Software Engineering Repository
 
-**Teaching repository** for Microsoft AZ-400 certification and agentic software engineering patterns. See [readme.md](../../readme.md) for full details and license information.
+**Teaching repository** for Microsoft AZ-400 certification and agentic software engineering patterns. See [readme.md](../readme.md) for full details and license information.
 
 ## Structure
 
-| Folder     | Purpose                                                                     |
-| ---------- | --------------------------------------------------------------------------- |
-| **demos/** | 7-module curriculum covering Copilot fundamentals through capstone projects |
-| **src/**   | Sample applications (Angular, React, .NET, Python) as deployment targets    |
-| **infra/** | Infrastructure as Code (Bicep, Terraform)                                   |
-| **.azdo/** | Azure DevOps pipelines using Workload Identity Federation                   |
-| **labs/**  | Hands-on exercises complementing demo modules                               |
+| Folder        | Purpose                                                                              |
+| ------------- | ------------------------------------------------------------------------------------ |
+| **demos/**    | 7-module curriculum (01-fundamentals → 07-capstone-project)                          |
+| **src/**      | Sample apps: `angular/`, `react/`, `copilot-api/`, `hr-mcp-server/`, `qr-server/`, `food-app/`, `tasks-api-py/`, `tasks-ui/`, `tasks-lab/` |
+| **infra/**    | Infrastructure as Code (Bicep — `main.bicep`)                                        |
+| **.azdo/**    | Azure DevOps pipelines and reusable templates in `.azdo/templates/`                  |
+| **.github/**  | Workflows, instructions, skills, prompts, agents, hooks, and `deploy.json`           |
+| **labs/**     | Hands-on exercises complementing demo modules                                        |
+| **docs/**     | Specs and architecture documents                                                      |
 
 ## Key Rules
 
@@ -22,4 +24,4 @@
 
 ## Pipelines
 
-Use reusable templates from `.azdo/templates/` with naming: `<module>-<demo>-<description>`. All pipelines use Workload Identity Federation for secure Azure authentication.
+Pipeline files live in `.azdo/` with reusable templates in `.azdo/templates/`. Naming convention: `<module>-<demo>-<description>`. All pipelines use Workload Identity Federation for secure Azure authentication.

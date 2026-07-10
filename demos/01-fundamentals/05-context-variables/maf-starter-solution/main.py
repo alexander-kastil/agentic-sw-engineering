@@ -1,8 +1,9 @@
 import asyncio
 import os
 
-from agent_framework.azure import AzureAIClient
-from azure.identity.aio import AzureCliCredential
+from agent_framework import Agent
+from agent_framework.foundry import FoundryChatClient
+from azure.identity import AzureCliCredential
 from dotenv import load_dotenv
 
 
@@ -12,22 +13,22 @@ async def main() -> None:
     model_deployment = os.getenv("AZURE_MODEL_DEPLOYMENT")
 
     if not project_endpoint or not model_deployment:
-        print("Set PROJECT_ENDPOINT and MODEL_DEPLOYMENT in .env before running.")
+        print("Set AZURE_PROJECT_ENDPOINT and AZURE_MODEL_DEPLOYMENT in .env before running.")
         return
 
-    async with (
-        AzureCliCredential() as credential,
-        AzureAIClient(
-            project_endpoint=project_endpoint,
-            model_deployment_name=model_deployment,
-            credential=credential,
-        ).as_agent(
-            name="HelloAgent",
-            instructions="You are a helpful assistant.",
-        ) as agent,
-    ):
-        result = await agent.run("tell me about the microsoft agent framework")
-        print(result.text)
+    client = FoundryChatClient(
+        project_endpoint=project_endpoint,
+        model=model_deployment,
+        credential=AzureCliCredential(),
+    )
+    agent = Agent(
+        client=client,
+        name="HelloAgent",
+        instructions="You are a helpful assistant.",
+    )
+
+    result = await agent.run("tell me about the microsoft agent framework")
+    print(f"Agent: {result}")
 
 
 if __name__ == "__main__":

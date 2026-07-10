@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "qr-server-cs": {
+      "type": "streamable-http",
+      "url": "http://localhost:3001",
+      "note": "Local QR MCP Server (C#)"
+    }
+  }
+}

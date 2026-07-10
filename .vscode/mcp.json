@@ -76,14 +76,6 @@
 				"mcp"
 			]
 		},
-		"chrome-devtools": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"chrome-devtools-mcp@latest"
-			],
-			"type": "stdio"
-		},
 		"devcontainers": {
 			"command": "npx",
 			"args": [
@@ -97,6 +89,24 @@
 				"-y",
 				"@angular/cli",
 				"mcp"
+			]
+		},
+		"chrome-devtools": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"chrome-devtools-mcp@latest"
+			]
+		},
+		"microsoft-foundry": {
+			"type": "stdio",
+			"command": "uvx",
+			"args": [
+				"--prerelease=allow",
+				"--from",
+				"git+https://github.com/azure-ai-foundry/mcp-foundry.git",
+				"run-azure-ai-foundry-mcp"
 			]
 		}
 	},

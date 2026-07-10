@@ -1,10 +1,10 @@
 ---
 name: "MAF Py-Expert"
 description: "Create, update, refactor, explain or work with code using the Python version of Microsoft Agent Framework."
-tools: [vscode, execute, read, agent, edit, search, web, azure-mcp/search, 'microsoft-learn/*', azure-deploy/search, todo]
----
+tools: [vscode, execute, read, agent, edit, search, web, 'microsoft-learn/*', azure-deploy/search, azure-mcp/search, 'foundry-mcp/*', todo]
+model: Claude Sonnet 4.6 (copilot)
 
-## model: "claude-sonnet-4"
+---
 
 # Microsoft Agent Framework Python mode instructions
 
