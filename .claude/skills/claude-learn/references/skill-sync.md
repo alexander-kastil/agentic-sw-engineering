@@ -21,13 +21,15 @@ Two directions, four operations:
 ## Shared procedure (applies to every operation)
 
 1. **Resolve paths.** Global root `~/.claude/skills` (`$HOME/.claude/skills` in Bash). Local root `<repo-root>/.claude/skills`, repo root via `git rev-parse --show-toplevel`.
-2. **Inputs / no-argument auto-discovery.** Accept one or more skill names. With **no argument**, discover candidates: `git status --short .claude/skills/` → the modified/untracked top-level skill folders, intersected with folders that also exist under `~/.claude/skills/`; confirm the list via `AskUserQuestion` (multiSelect) — never operate on all shared-name folders silently. This is claude-learn's integration point: approved skill edits show up here as an ordinary git diff.
+2. **Inputs / no-argument auto-discovery.** Accept one or more skill names. With **no argument**, discover candidates: `git status --short .claude/skills/` → the modified/untracked top-level skill folders. **Do NOT intersect with folders that already exist in global** — a brand-new local skill (no global counterpart yet) is a *prime* Push candidate, and the whole point of Push is to promote it up; the intersection filter belongs to Pull only (Pull needs a global source to mirror from). Include local-only new folders in the Push/Reconcile candidate list. Confirm the list via `AskUserQuestion` (multiSelect) — never operate on all folders silently. This is claude-learn's integration point: approved skill edits show up here as an ordinary git diff.
+   - **A skill is its whole folder tree.** When a candidate is selected, the unit of sync is the entire folder — every `SKILL.md`, every nested subskill folder, every `references/*.md` and `templates/*` file, at any depth. Never sync only the top-level `SKILL.md`. If the skill is new to global, create the full tree; if it exists, cover every file (added, differing, and one-sided) per the operation's rules below.
 3. **Collision guard.** Compare `description:` frontmatter on both sides before touching anything. A shared folder name is not proof it's the same skill — if the two clearly describe unrelated capabilities, stop and warn (for the read-only list, just annotate `⚠ possible name collision`).
 4. **Recursive, subskill-aware diff** — never just the top-level `SKILL.md`:
    ```bash
    diff -rq "<global-path>" "<local-path>"
    ```
    A skill's value is the *full proven pattern*, and the detail lives in `references/*.md` / leaf files. Every operation covers the **whole folder tree**.
+   - **Ignore line-ending-only differences.** git normalizes local files to LF while a global copy may carry CRLF, so `diff -rq` flags byte differences that are not real content divergence. Confirm before treating a file as diverged: `diff -q <(tr -d '\r' < A) <(tr -d '\r' < B)` — if that is clean, the files are content-identical; skip them (do not rewrite the global copy just to flip line endings).
 5. **Back up global before ANY write to it** (global has no version control — mandatory, not optional):
    ```bash
    mkdir -p "$HOME/.claude/skills/.skill-sync-backups/<name>/<timestamp>"   # date +%Y%m%d-%H%M%S
