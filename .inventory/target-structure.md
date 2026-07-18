@@ -6,7 +6,7 @@ Agreed target for the modernized course: **4 days, 9 modules, no capstone**. Thi
 
 ```text
 01-fundamentals                    Copilot Fundamentals
-02-copilot-tools                   Copilot Artifacts & Tools
+02-agentic-harness                   Copilot Artifacts & Tools
 03-agent-sessions                  Agent Sessions & Agents Window   (NEW)
 04-agentic-coding                  Implementing Agentic Coding
 05-cli-sdk                         Copilot CLI & SDK
@@ -38,7 +38,7 @@ Also update module prerequisites (H7): a Copilot license with credit allowance, 
 
 ---
 
-## Module 2: Copilot Artifacts & Tools `02-copilot-tools`
+## Module 2: Copilot Artifacts & Tools `02-agentic-harness`
 
 Keep the current on-disk numbering `01-instructions ... 09-hooks`. Fix the `demos/readme.md` TOC to match disk.
 
@@ -168,8 +168,8 @@ Old `06-spec-driven-dev` plus the relocated Testing and Documentation phases fro
 | `01-fundamentals/00-codespaces/` | (deleted) | remove |
 | `01-fundamentals/*` (01 to 07) | `01-fundamentals/*` | keep/edit/rewrite per table |
 | (none) | `01-fundamentals/08-terminal/` | new |
-| `02-copilot-tools/*` | `02-copilot-tools/*` | keep, fix TOC |
-| `02-copilot-tools/10-debug-panel` (TOC only) | `03-agent-sessions/08-troubleshooting/` | new, replaces dangling link |
+| `02-agentic-harness/*` | `02-agentic-harness/*` | keep, fix TOC |
+| `02-agentic-harness/10-debug-panel` (TOC only) | `03-agent-sessions/08-troubleshooting/` | new, replaces dangling link |
 | `03-agentic-coding/03-background/` | `03-agent-sessions/` (folded) | relocate into new module |
 | `03-agentic-coding/01-local` | `04-agentic-coding/01-local` | keep |
 | `03-agentic-coding/02-cloud` | `04-agentic-coding/02-cloud` | edit |

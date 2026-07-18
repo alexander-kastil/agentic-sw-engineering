@@ -40,11 +40,11 @@ Ranked by the brief. Full source anchors live in [target-structure.md](target-st
 
 | Where (new path) | Add |
 |------------------|-----|
-| `02-copilot-tools/03-mcp/` | GitHub MCP Registry (github.com/mcp) as the discovery surface |
+| `02-agentic-harness/03-mcp/` | GitHub MCP Registry (github.com/mcp) as the discovery surface |
 | `01-fundamentals/01-intro/` | Copilot Vision GA: images and PDFs into chat by paste, drag, or tool call |
 | `01-fundamentals/08-terminal/` | `VSCODE_AGENT` env var; terminal output compression for test runners, build tools, linters, Docker, package managers |
 | `09-spec-driven-dev/08-documentation/` | Mermaid built into Markdown preview, notebooks, chat; Markdown preview for diffs |
-| `02-copilot-tools/06-plugins/` | `copilot plugin install` auto-discovery (one install covers CLI + editor), cross-link M8 plugin governance |
+| `02-agentic-harness/06-plugins/` | `copilot plugin install` auto-discovery (one install covers CLI + editor), cross-link M8 plugin governance |
 | `05-cli-sdk/04-sdk/` | Explicit "the agent host is built on the Copilot SDK" statement, cross-link M3 AHP |
 
 ## Priority 4: expand thin content already present

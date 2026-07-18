@@ -27,11 +27,11 @@ Depth: `stub` / `partial` / `full`. Runnable = actual source project files beyon
 
 ---
 
-## Module 2: `demos/02-copilot-tools/`
+## Module 2: `demos/02-agentic-harness/`
 
 | Path | readme | Depth | Runnable | Covers |
 |------|:---:|:---:|:---:|--------|
-| `02-copilot-tools/` | Y | full | N | Module index, 9 features |
+| `02-agentic-harness/` | Y | full | N | Module index, 9 features |
 | `01-instructions/` | Y | full | N | Instruction layers, VS Code enablement, load order |
 | `02-prompts/` | Y | full | N | `.prompt.md` catalog + topics table |
 | `02-prompts/01-transform-readme/` | Y | stub | N | 9 lines, Codespaces links + one prompt |
@@ -141,7 +141,7 @@ Depth: `stub` / `partial` / `full`. Runnable = actual source project files beyon
 
 ## Repo-wide verification greps (2026-07-10)
 
-- `codespace` (case-insensitive) in `demos/`: 6 files (the folder plus references in `demos/readme.md`, `01-fundamentals/readme.md`, `02-copilot-tools/02-prompts/readme.md` and `.../01-transform-readme/`, `02-copilot-tools/04-agents/02-repo-agents/`).
+- `codespace` (case-insensitive) in `demos/`: 6 files (the folder plus references in `demos/readme.md`, `01-fundamentals/readme.md`, `02-agentic-harness/02-prompts/readme.md` and `.../01-transform-readme/`, `02-agentic-harness/04-agents/02-repo-agents/`).
 - `yolo|autoApprove`: one hit only, `demos/readme.md` line 5 (intro prose). No slash-command lesson uses them.
 - `edit mode|editMode`: hits are all legitimate code identifiers (React `aria-label` string, C# `EditModel` page classes). No lesson content teaches the deprecated Edit mode, so R4 is effectively already satisfied; only verify no new content reintroduces it.
 - `background agent`: 4 files (`demos/readme.md`, `03-agentic-coding/readme.md`, `.../03-background/`, `.../02-cloud/`).

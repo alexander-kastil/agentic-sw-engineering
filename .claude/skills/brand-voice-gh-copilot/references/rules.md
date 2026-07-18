@@ -189,7 +189,7 @@ Module READMEs that surface a GitHub Copilot slash command table must keep the c
 |---|---|
 | Fundamentals / getting started (`01-fundamentals`) | `/help`, `/explain`, `@workspace` |
 | Slash commands (`01-fundamentals/04-slash-commands`) | `/explain`, `/fix`, `/tests`, `/doc`, `/optimize` |
-| Copilot tools (`02-copilot-tools`) | `/explain`, `/fix`, `@workspace`, `@terminal` |
+| Copilot tools (`02-agentic-harness`) | `/explain`, `/fix`, `@workspace`, `@terminal` |
 | Agentic coding (`03-agentic-coding`) | `/fix`, `/tests`, `@workspace`, `@github` |
 | Claude Code in Module 3 (`03-agentic-coding/05-claude-code`) | `/init`, `/review`, `/help` |
 | Advanced topics / CLI (`04-advanced-topics`) | `/explain`, `/fix`, `@terminal` |

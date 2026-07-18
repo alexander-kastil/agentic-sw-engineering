@@ -1,4 +1,4 @@
-# GitHub Copilot Introduction
+# Getting Started with Copilot & Vision
 
 Get started with GitHub Copilot — understand its capabilities, installation options, latest releases, and available extensions This module establishes the foundation for using AI-assisted coding in VS Code and GitHub workflows.
 
