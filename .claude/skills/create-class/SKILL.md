@@ -3,12 +3,14 @@ name: create-class
 description: >-
   Master skill for authoring a hands-on course or masterclass repository end to end,
   for any audience (developer, low-code maker, business user). It is the single entry
-  point that delegates to standalone peer skills: scaffold, create-teaching,
-  create-guide, create-slides, dashboard, run-demo, run-foundry-demo, run-guide-browser,
-  and the repo-local brand-voice-* skill. Use when building or maintaining any course
-  repo organized as numbered modules under demos/ and labs/. Trigger phrases: create a
-  class, build a class, author a course, scaffold a new class, bootstrap course layout,
-  generate modules from outline, write a demo, author a lab, create slides, topic to
+  point that delegates to standalone peer skills: module-toc-conception, scaffold,
+  create-teaching, create-guide, create-slides, dashboard, run-demo, run-foundry-demo,
+  run-guide-browser, and the repo-local brand-voice-* skill. Use when building or
+  maintaining any course repo organized as numbered modules under demos/ and labs/.
+  Trigger phrases: create a class, build a class, author a course, scaffold a new class,
+  bootstrap course layout, generate modules from outline, conceive the toc, order the
+  modules, name a topic, engaging titles, restructure demos, write a demo, author a lab,
+  create slides, topic to
   slides, enrich module readme, class dashboard, module status, whats missing, run demo,
   verify code demo, run guide in browser, evaluate guide, brand voice check, quality
   check, business class, maker class, code class.
@@ -37,10 +39,11 @@ job here; delegate to it.
 
 ## Phases and peer skills
 
-### Phase 1 - Scaffold the layout
+### Phase 1 - Conceive and scaffold the layout
 
 | Task | Peer skill |
 |------|-----------|
+| Conceive the module and topic structure: naming, ordering, sizing, one-capability-per-module, and the master-TOC format; also restructuring, retitling, splitting, or reordering an existing course | `module-toc-conception` |
 | Bootstrap a base repo from questions or an outline; create numbered module and topic folders under `demos/` and `labs/` | `scaffold` |
 
 ### Phase 2 - Author content
@@ -108,6 +111,7 @@ These apply across every phase and override any looser guidance in a peer skill:
 - Max 4 sentences per paragraph.
 - Mermaid node labels use `"quoted<br/>labels"`, never `\n`.
 - Slash-command tables are topic-specific, never the same generic set in every module.
+- The master TOC is bare keyword links; topic descriptions live in module tables, never in the TOC. A topic title appears in the TOC bullet, the topic H1, and the module table, and must stay in sync. Titles must earn attendance, never `Overview` / `Demos` / a bare noun. See `module-toc-conception`.
 - Code fences must declare a language.
 - Internal links use relative paths; anchors use `#heading-name`.
 - Demos and labs meet the substance bar in `create-guide` (see "What makes a guide worth shipping"): a demo teaches a real capability, a lab is a genuine 20+ minute build, both concept-first with copy-paste inputs and a described Expected result at every step. Setup or navigation is never a demo.
