@@ -1,17 +1,16 @@
 # Implementing Agentic Coding
 
-## Coding Agent Fundamentals
+## Putting Agents to Work
 
-Coding agents extend GitHub Copilot with specialized execution capabilities, enabling autonomous multi-step workflows for development tasks. Unlike chat-based interactions, coding agents can spawn terminals, modify files, run tests, and coordinate multiple tools to accomplish complex objectives. Understanding the different agent types and their execution models is essential for choosing the right approach for your development workflow.
+The fastest way to learn agents is to put them to work. This module builds up from the simplest delegation to the most ambitious: hand a slice of a task to a subagent, run a read-only research agent, coordinate several specialists at once, delegate a heavy job to the cloud, let an agent verify its own web changes, and close with an agent-led modernization. Each topic is a different way to get real work done, so you leave able to pick the right one for the job.
 
-The primary distinction between agent types centers on where and how they execute: locally within your current VS Code environment, in the background as isolated parallel processes, or in cloud environments for resource-intensive tasks. Each model offers different tradeoffs between resource requirements, isolation, throughput, and integration with your development tools.
+You start small and local with subagents and read-only research, then scale to multi-agent orchestration and cloud delegation, and finish with browser automation and a framework migration. The session mechanics that run underneath all of this, the Agents window, persistence, and troubleshooting, come next in Agent Sessions.
 
-## Agent Type Comparison
-
-| Agent Type                                                  | Execution Context                    | Best For                                                   | Parallelism                    | Resource Isolation           |
-| ----------------------------------------------------------- | ------------------------------------ | ---------------------------------------------------------- | ------------------------------ | ---------------------------- |
-| **[Using Local Agents in Agent Mode](./01-local/)**         | Current VS Code session              | Single focused tasks with immediate feedback               | Single sequential task         | Minimal (shared workspace)   |
-| **[Delegating Tasks to Cloud Agents](./02-cloud/)**         | Remote Azure environment             | Large-scale tasks exceeding local resources                | High (scalable infrastructure) | Excellent (remote isolation) |
-| **[Using Background Agents](./03-background/)**             | Isolated process on your machine     | Parallel tasks without blocking your editor                | Multiple concurrent tasks      | Good (separate process)      |
-| **[Multi Agent Orchestration](./04-orchestration/)**        | Delegated to specialized agents      | Orchestrating multi-step workflows with parallel execution | Parallel across sub-agents     | Depends on delegation target |
-| **[Using Anthropic Claude Code Agents](./05-claude-code/)** | Desktop app with VS Code integration | Large-scale refactoring, code review, security audits      | Task-dependent                 | Configurable permissions     |
+| Topic | Description |
+|-------|-------------|
+| [Subagents as Subject-Matter Experts](./01-subagents/) | Delegate a slice of work to a custom agent that acts as a domain expert, with its own instructions, curated tools, and model, observed read-only and costed per subagent. |
+| [Deep Research with /research](./02-research/) | Run a read-only deep-research agent that produces a cited Markdown report before you touch any code. |
+| [Multi-Agent Orchestration](./03-orchestration/) | Coordinate specialized agents for multi-step workflows with parallel execution. |
+| [Delegating Tasks to Cloud Agents](./04-cloud/) | Hand large-scale tasks to a remote Azure environment that exceeds local resources. |
+| [Agentic Browser Automation](./05-browser-tools/) | Built-in browser tools that let agents open pages, read console errors, and verify their own web changes. |
+| [Upgrading & Modernization](./06-upgrading/) | Agent-led framework migration, such as Semantic Kernel to the Microsoft Agent Framework. |
