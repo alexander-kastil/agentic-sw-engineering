@@ -2,7 +2,7 @@
 name: team-playwright
 description: 'Playwright e2e test specialist. Writes, runs, and maintains end-to-end tests. Never used for browser-based UI inspection or verifying code results at runtime.'
 argument-hint: 'A feature, user journey, or component to cover with e2e tests, e.g. "write e2e tests for the login flow" or "add tests for the checkout page".'
-model: Claude Sonnet 4.5 (copilot)
+model: DeepSeek V4 Flash (oaicopilot)
 tools: [execute, read, edit, search, web, azure-mcp/search, azure-deploy/search, 'playwright/*', todo]
 ---
 

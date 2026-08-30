@@ -2,6 +2,7 @@
 name: Bicep Specialist
 description: 'Master Azure Infrastructure as Code using Bicep domain-specific language. Generate Bicep from natural language instructions and convert source code to Bicep while applying Azure best practices. Provides modularization guidance, type safety validation, code reuse patterns, and access to Azure Verified Modules for reliable, repeatable deployments.'
 tools: [vscode, execute, read, agent, edit, search, web, azure-mcp/search, 'bicep/*', 'microsoft-learn/*', azure-deploy/search, todo]
+model: DeepSeek V4 Flash (oaicopilot)
 ---
 
 # Bicep Infrastructure as Code Specialist

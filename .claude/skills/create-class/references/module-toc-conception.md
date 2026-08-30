@@ -75,11 +75,12 @@ author's call.
 
 ## Structural changes ripple
 
-Renaming, reordering, splitting, or merging a module is never a one-file edit. It requires: renumber
-the affected folders with `git mv` to preserve history, fix every internal link that pointed at a
-moved path, update the master TOC and the affected module READMEs, and update the schedule table and
-the narrative "story" in `demos/readme.md`. After any structural change, verify zero broken relative
-links across the tree before reporting done.
+Renaming, reordering, splitting, or merging a module is never a one-file edit. It ripples into the
+folder names, every internal link that pointed at a moved path, the master TOC, the affected module
+READMEs, the schedule table and the narrative "story" in `demos/readme.md`. Deciding the new shape is
+this leaf's job; carrying it out is [restructure-execute](restructure-execute.md), which owns the
+crosswalk, the cycle-safe `git mv` pass, the Windows build-lock recovery, the link verification and
+the no-content-lost receipt. Read it before moving anything.
 
 Before writing or repointing a cross-module link, confirm the target folder's CURRENT name in the
 working tree (glob or `ls`), never the name from the session-start git snapshot: that snapshot is

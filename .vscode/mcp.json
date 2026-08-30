@@ -48,10 +48,6 @@
 			"type": "http",
 			"url": "https://learn.microsoft.com/api/mcp"
 		},
-		"figma": {
-			"url": "https://mcp.figma.com/mcp",
-			"type": "http"
-		},
 		"ssh-mcp": {
 			"type": "stdio",
 			"command": "npx",
@@ -68,7 +64,7 @@
 				"--maxChars=none"
 			]
 		},
-		"workiq": {
+		"work-iq": {
 			"command": "npx",
 			"args": [
 				"-y",

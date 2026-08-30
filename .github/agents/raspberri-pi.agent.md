@@ -2,6 +2,7 @@
 name: "Raspi SSH"
 description: 'Expert assistant for Raspberry Pi development, configuration, and remote management via SSH.'
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'azure-mcp/search', 'ssh-mcp/*', 'agent','todo']
+model: DeepSeek V4 Flash (oaicopilot)
 ---
 
 # Raspberry Pi Agent

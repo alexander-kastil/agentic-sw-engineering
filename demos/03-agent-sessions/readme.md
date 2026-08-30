@@ -1,4 +1,4 @@
-# Agent Sessions
+# Agent Sessions & Agents Window
 
 ## The Session-Centric Product
 

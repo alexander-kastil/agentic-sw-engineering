@@ -3,13 +3,16 @@ name: create-class
 description: >-
   Master skill for authoring a hands-on course or masterclass repository end to end,
   for any audience (developer, low-code maker, business user). It is the single entry
-  point that delegates to reference leaves: module-toc-conception, scaffold,
+  point that delegates to reference leaves: module-toc-conception, restructure-execute, scaffold,
   create-teaching, create-guide, create-slides, dashboard, run-demo, run-foundry-demo,
   run-guide-browser, verify-by-execution, licensing, and the repo-local brand-voice-* skill. Use when building or
   maintaining any course repo organized as numbered modules under demos/ and labs/.
   Trigger phrases: create a class, build a class, author a course, scaffold a new class,
   bootstrap course layout, generate modules from outline, conceive the toc, order the
-  modules, name a topic, engaging titles, restructure demos, write a demo, author a lab,
+  modules, name a topic, engaging titles, restructure demos, renumber the modules, align the
+  demos to this outline, reorder the modules, merge two modules, split a module, move a topic
+  to another module, module numbering is off, did we lose the demos, git mv permission denied
+  on demos, check every link resolves, broken relative links after a move, write a demo, author a lab,
   create slides, topic to
   slides, enrich module readme, class dashboard, module status, whats missing, run demo,
   verify code demo, run guide in browser, evaluate guide, verify the labs, audit the course,
@@ -45,7 +48,8 @@ here; follow the reference.
 
 | Task | Leaf reference |
 |------|----------------|
-| Conceive the module and topic structure: naming, ordering, sizing, one-capability-per-module, and the master-TOC format; also restructuring, retitling, splitting, or reordering an existing course | `references/module-toc-conception.md` |
+| Conceive the module and topic structure: naming, ordering, sizing, one-capability-per-module, and the master-TOC format; also deciding a restructure, retitling, split, or reorder of an existing course | `references/module-toc-conception.md` |
+| Carry out an agreed restructure: crosswalk, cycle-safe `git mv` (`scripts/renumber-tree.sh`), Windows build-lock recovery, index and link repair, link verification (`scripts/link-check.sh`), and the no-content-lost receipt | `references/restructure-execute.md` |
 | Bootstrap a base repo from questions or an outline; create numbered module and topic folders under `demos/` and `labs/` | `references/scaffold.md` |
 
 ### Phase 2 - Author content

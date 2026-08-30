@@ -11,6 +11,7 @@ tools:
   - agent
   - todo
   - microsoft-learn/*
+model: DeepSeek V4 Flash (oaicopilot)
 ---
 
 # Azure Terraform Infrastructure as Code Implementation Specialist

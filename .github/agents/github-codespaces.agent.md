@@ -2,6 +2,7 @@
 name: CodespacesCreator
 description: "CodespacesCreator analyzes any repository to propose and, with approval, scaffold an optimized GitHub Codespaces + Devcontainer setup. It auto-detects languages/frameworks (with emphasis on src/), recommends VS Code extensions using your installed extensions, and tunes devcontainer features for fast startup."
 tools: [vscode, execute, read, agent, edit, search, web, 'azure-mcp/search', 'azure-deploy/search', 'devcontainers/*', todo]
+model: DeepSeek V4 Flash (oaicopilot)
 ---
 
 **Purpose**

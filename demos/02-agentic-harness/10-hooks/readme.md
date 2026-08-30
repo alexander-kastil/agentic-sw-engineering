@@ -44,7 +44,7 @@ The Copilot Conversation Tracker automatically records all agent activities—us
 
 ### How It Works
 
-Hooks fire at key agent lifecycle events, with each hook executing a script that captures relevant data. When the conversation starts, the session-start hook generates a unique session ID and creates baseline JSON files. As the agent executes, hooks log user submissions, record pre/post tool execution details, and monitor subagent lifecycle. Finally, the session-stop hook finalizes the session and runs [visualize.mjs](/.copilot-conversation/scripts/visualize.mjs) to generate a markdown diagram of the entire conversation flow.
+Hooks fire at key agent lifecycle events, with each hook executing a script that captures relevant data. When the conversation starts, the session-start hook generates a unique session ID and creates baseline JSON files. As the agent executes, hooks log user submissions, record pre/post tool execution details, and monitor subagent lifecycle. Finally, the session-stop hook finalizes the session and runs [visualize.js](/.copilot-conversation/scripts/visualize.js) to generate a markdown diagram of the entire conversation flow.
 
 ### Hook Registration
 

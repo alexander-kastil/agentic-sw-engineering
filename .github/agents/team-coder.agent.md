@@ -1,7 +1,7 @@
 ---
 name: Coder
 description: Writes code following mandatory coding principles.
-model: GPT-5.3-Codex (copilot)
+model: DeepSeek V4 Flash (oaicopilot)
 tools: ['vscode', 'execute', 'read', 'agent', 'microsoft-learn/*', 'github/*', 'edit', 'search', 'web', 'memory', 'todo']
 ---
 

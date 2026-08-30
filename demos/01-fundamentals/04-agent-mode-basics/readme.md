@@ -1,4 +1,4 @@
-# Using Local Agents akn Agent Mode
+# Agent Mode Basics
 
 Local agents execute within your current VS Code session with real-time feedback and full integration with your editor, terminal, and files. Execution is synchronous and blocking, making them ideal for focused single-task interactive agentic coding workflows.
 

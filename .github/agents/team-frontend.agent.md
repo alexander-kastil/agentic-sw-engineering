@@ -1,7 +1,7 @@
 ---
 name: Frontend
 description: Handles all UI/UX design tasks.
-model: Gemini 3 Pro (Preview) (copilot)
+model: DeepSeek V4 Flash (oaicopilot)
 tools: [vscode, execute, read, agent, edit, search, web, azure-mcp/search, azure-deploy/search, 'figma/*', 'context7/*', 'chrome-devtools/*', memory, todo]
 ---
 

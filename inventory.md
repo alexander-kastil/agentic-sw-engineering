@@ -8,8 +8,8 @@ Every topic metro.md names has a folder and a `readme.md` on disk. Two of those 
 
 | Module | Topic (metro title) | Folder | State | Notes |
 | --- | --- | --- | --- | --- |
-| 2 GitHub Copilot Harness | Consuming & Implementing MCPs | [demos/02-agentic-harness/04-consuming-mcps/](demos/02-agentic-harness/04-consuming-mcps/) | Stub, 3 lines | H1 plus one intro paragraph linking to `03-mcp`. No demo steps, no Exercise, no Links & Resources. Folder is untracked in git. |
-| 4 Implementing Agentic Coding | Using Local Agents and Agent Mode | [demos/04-agentic-coding/01-local-agents/](demos/04-agentic-coding/01-local-agents/) | Stub, 3 lines | H1 plus one intro paragraph linking to `03-orchestration` and `02-cloud`. No demo steps, no Exercise, no Links & Resources. Folder is untracked in git. Module 1 carries a separate topic with a near-identical title at [demos/01-fundamentals/04-agent-mode-basics/](demos/01-fundamentals/04-agent-mode-basics/). |
+| 2 GitHub Copilot Harness | Consuming & Implementing MCPs | [demos/02-agentic-harness/04-consuming-mcps/](demos/02-agentic-harness/04-consuming-mcps/) | Stub, 3 lines | H1 plus one intro paragraph linking to `03-mcp`. No demo steps, no Exercise, no Links & Resources. |
+| 4 Implementing Agentic Coding | Using Local Agents and Agent Mode | [demos/04-agentic-coding/01-local-agents/](demos/04-agentic-coding/01-local-agents/) | Stub, 3 lines | H1 plus one intro paragraph linking to `03-orchestration` and `02-cloud`. No demo steps, no Exercise, no Links & Resources. |
 
 ## On disk but not in metro.md
 
@@ -41,7 +41,7 @@ Topic-level folders whose `readme.md` is under roughly 30 lines, plus topics wit
 | Module | Topic | Folder | readme lines | What is missing |
 | --- | --- | --- | --- | --- |
 | 1 | Pull Requests & Code Reviews | [demos/01-fundamentals/05-pr-code-review/](demos/01-fundamentals/05-pr-code-review/) | 11 | Prose only, two short sections. No demo steps, no Exercise, no Links & Resources |
-| 1 | Using Local Agents akn Agent Mode | [demos/01-fundamentals/04-agent-mode-basics/](demos/01-fundamentals/04-agent-mode-basics/) | 24 | Index readme with a table linking its three subtopics, no Exercise. The H1 contains the typo "akn" |
+| 1 | Agent Mode Basics | [demos/01-fundamentals/04-agent-mode-basics/](demos/01-fundamentals/04-agent-mode-basics/) | 24 | Index readme with a table linking its three subtopics, no Exercise |
 | 2 | Consuming & Implementing MCPs | [demos/02-agentic-harness/04-consuming-mcps/](demos/02-agentic-harness/04-consuming-mcps/) | 3 | Everything past the intro paragraph |
 | 3 | Agent Host Protocol (AHP vs ACP) | [demos/03-agent-sessions/02-host-protocol/](demos/03-agent-sessions/02-host-protocol/) | 34 | No Exercise section. The other seven topics in module 3 all have one |
 | 4 | Using Local Agents and Agent Mode | [demos/04-agentic-coding/01-local-agents/](demos/04-agentic-coding/01-local-agents/) | 3 | Everything past the intro paragraph |
@@ -52,7 +52,7 @@ Topic-level folders whose `readme.md` is under roughly 30 lines, plus topics wit
 | 5 | Building a Multi-Agent System | [demos/05-cli-sdk/02-sdk/05-multi-agent/](demos/05-cli-sdk/02-sdk/05-multi-agent/) | 22 | Under the 30-line mark. Intro, two sections, Exercise and Links & Resources are all present |
 | 6 | Meet the Desktop Agents App | [demos/06-copilot-app/01-overview/](demos/06-copilot-app/01-overview/) | 36 | No Exercise section. `02-sessions`, `03-validation-loop` and `04-automations` each have one |
 | 6 | Syncing Skills & MCP Servers | [demos/06-copilot-app/05-sync/](demos/06-copilot-app/05-sync/) | 35 | No Exercise section. `02-sessions`, `03-validation-loop` and `04-automations` each have one |
-| 7 | Automation using Azure CLI | [demos/07-agentic-devops/01-azure-cli/](demos/07-agentic-devops/01-azure-cli/) | 23 | No Exercise, no Links & Resources. The embedded prompt block still names the pre-renumbering path `demos\07-agentic-devops\03-azure-cli\picture-optimizer` |
+| 7 | Automation using Azure CLI | [demos/07-agentic-devops/01-azure-cli/](demos/07-agentic-devops/01-azure-cli/) | 23 | No Exercise, no Links & Resources |
 | 7 | Infrastructure as Code (IaC) | [demos/07-agentic-devops/02-IaC/](demos/07-agentic-devops/02-IaC/) | 23 | Index readme with a demos table for its three subtopics, no Exercise |
 | 7 | Azure DevOps Pipelines & GitHub Actions | [demos/07-agentic-devops/03-pipelines/](demos/07-agentic-devops/03-pipelines/) | 19 | Two prose sections and one skills table. No demo steps, no Exercise, no Links & Resources |
 | 7 | Testing using Copilot | [demos/07-agentic-devops/04-testing/](demos/07-agentic-devops/04-testing/) | 9 | One-line intro and a topics table listing only `food-app`. The `01-unit-tests` and `02-e2e` subtopics are not linked. No Exercise |

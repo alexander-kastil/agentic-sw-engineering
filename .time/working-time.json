@@ -1,0 +1,48 @@
+{
+  "repo": "agentic-sw-engineering",
+  "origin": "https://github.com/alexander-kastil/agentic-sw-engineering",
+  "sessions": [
+    {
+      "date": "2026-08-30",
+      "from": "22:01",
+      "to": "22:12",
+      "sessionId": "7e8faa5e-17a7-455a-93a9-2a4bfc635095",
+      "branch": "metro",
+      "commits": [],
+      "surfaces": [".github/agents"],
+      "files": [
+        ".github/agents/team-orchestrator.agent.md",
+        ".github/agents/team-coder.agent.md",
+        ".github/agents/team-frontend.agent.md",
+        ".github/agents/team-planner.agent.md",
+        "tasks/lessons.md"
+      ],
+      "mechanism": {
+        "takes": "a folder of VS Code custom agent definitions pinned to assorted frontier models, plus one OpenAI-compatible model registered through a BYOK bridge extension",
+        "does": "resolves the picker label the frontmatter needs by reading the bridge extension's own manifest for its vendor id rather than inferring it from the model JSON, rewrites or inserts the model line across every agent file without touching another byte, then proves the swap with a fan-out task that forces real subagent handoffs and is graded on tool calls and files rather than on the plan the orchestrator prints",
+        "returns": "an agent team running end to end on a low-cost open model, an idempotent script that repoints the folder at any other model, and a reusable test for whether a bridged model can delegate at all"
+      },
+      "portsAsIs": [
+        "the vendor-id resolution rule for any BYOK provider extension",
+        "the frontmatter sweep script and its idempotency check",
+        "the delegation test shape: forced fan-out, graded on tool calls not narration"
+      ],
+      "perCustomer": [
+        "which model and provider the team is pointed at",
+        "the agent roster and its tool grants"
+      ],
+      "evidence": [
+        ".time/working-time.md",
+        "tasks/lessons.md"
+      ],
+      "toolchain": {
+        "skills": ["copilot-model", "claude-learn"],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "developer training, AI-assisted engineering practice",
+      "status": "Built and running in-house",
+      "catalogue": { "action": "none", "item": null }
+    }
+  ]
+}
