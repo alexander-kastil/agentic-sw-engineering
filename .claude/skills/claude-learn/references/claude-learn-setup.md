@@ -1,10 +1,10 @@
-# claude-learn-setup — First-Use Bootstrap
+# claude-learn-setup: first-use bootstrap (optional)
 
-Run this check the first time `claude-learn` is invoked in a repo. If tracking is already wired, skip silently and continue with the requested leaf.
+Run this check the first time `claude-learn` is invoked in a repo. Already wired -> skip silently, continue with the requested leaf.
 
 ## Detection
 
-Setup is needed when either is true:
+Setup is needed when either holds:
 
 1. `.conversations-claude/hooks/claude-hook.sh` does not exist in the repo root
 2. `.claude/settings.json` has no hook entry containing `claude-hook.sh`
@@ -13,7 +13,7 @@ Setup is needed when either is true:
 test -f .conversations-claude/hooks/claude-hook.sh && grep -q "claude-hook.sh" .claude/settings.json && echo WIRED || echo SETUP-NEEDED
 ```
 
-## Setup Steps
+## Setup steps
 
 ### 1. Install the hook scripts
 
@@ -21,14 +21,17 @@ Copy the bundled scripts from this skill into the repo root:
 
 ```bash
 mkdir -p .conversations-claude/hooks
-cp .claude/skills/claude-learn/scripts/hooks/* .conversations-claude/hooks/
+cp .claude/skills/claude-learn/scripts/hooks/* .conversations-claude/hooks/ 2>/dev/null \
+  || cp ~/.claude/skills/claude-learn/scripts/hooks/* .conversations-claude/hooks/
 ```
 
-The scripts must live at `.conversations-claude/hooks/` — `hook-utils.js` resolves the repo root as two directories above its own location, and `claude-hook.sh` hardcodes that path. Do not run them from the skill folder.
+The repo-local source only resolves when the skill was pulled into the repo; otherwise the global copy is the source.
+
+The scripts must live at `.conversations-claude/hooks/`: `hook-utils.js` resolves the repo root as two directories above its own location, and `claude-hook.sh` hardcodes that path. Never run them from the skill folder.
 
 ### 2. Register the hooks in `.claude/settings.json`
 
-Merge these entries into the existing `hooks` object (create the file with an empty `permissions` block if it does not exist; never overwrite entries already present):
+Merge these entries into the existing `hooks` object. Create the file with an empty `permissions` block if it does not exist. Never overwrite entries already present.
 
 ```json
 {
@@ -81,9 +84,9 @@ Merge these entries into the existing `hooks` object (create the file with an em
 }
 ```
 
-The matchers mirror what `claude-hook.js` acts on: `preToolUse` only captures Skill invocations; `postToolUse` only captures file edits, shell commands, and agent dispatches.
+The matchers mirror what `claude-hook.js` acts on: `preToolUse` captures Skill invocations only; `postToolUse` captures file edits, shell commands, and agent dispatches only.
 
-### 3. Add the data directory to `.gitignore`
+### 3. Gitignore the data directories
 
 ```bash
 grep -q "^\.conversations-claude/" .gitignore 2>/dev/null || printf '.conversations-claude/raw/\n.conversations-claude/state/\n.conversations-claude/analysis/\n' >> .gitignore
@@ -97,15 +100,15 @@ Hook scripts stay tracked; raw session data, state, and analysis output do not.
 echo '{"session_id":"setup-check","tool_name":"Skill","tool_input":{"skill":"claude-learn","description":"setup check"}}' | bash .conversations-claude/hooks/claude-hook.sh preToolUse && tail -1 .conversations-claude/analysis/decisions.jsonl
 ```
 
-Expect a JSON decision record with `"session":"setup-check"`. Then remove the test artifacts:
+Expect a JSON decision record with `"session":"setup-check"`. Then clear the test artifacts:
 
 ```bash
 rm -f .conversations-claude/analysis/decisions.jsonl .conversations-claude/state/current-session.json .conversations-claude/raw/*.jsonl
 ```
 
-Tell the user hooks take effect on the next session start (Claude Code snapshots hooks at startup).
+Tell the user hooks take effect at the next session start (Claude Code snapshots hooks at startup).
 
-## What the Hooks Produce
+## What the hooks produce
 
 | Output | Written by | Contains |
 | --- | --- | --- |
