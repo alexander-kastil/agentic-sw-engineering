@@ -75,7 +75,7 @@ New model providers install from the Marketplace, so adding a provider Copilot d
 
 ## Cost in the model picker
 
-The model picker surfaces the cost of each model alongside its name, so the budget impact of your choice is visible at the moment you make it. Because context size and reasoning effort both raise cost, the picker is where model selection becomes a spending decision. Governance, credit accounting, and per-session cost are covered in [Governance: Cost](../../09-governance/02-cost/).
+The model picker surfaces the cost of each model alongside its name, so the budget impact of your choice is visible at the moment you make it. Because context size and reasoning effort both raise cost, the picker is where model selection becomes a spending decision. Governance, credit accounting, and per-session cost are covered in [Governance: Cost](../../08-governance/02-cost/).
 
 ## Exercise
 

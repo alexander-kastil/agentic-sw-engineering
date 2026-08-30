@@ -4,15 +4,15 @@ Embark on a transformative four-day journey into agentic software engineering wi
 
 Your journey begins with Fundamentals and Agent Mode Basics, a solid foundation in AI-assisted coding through prompting, inline suggestions, slash commands, context variables, and code review on pull requests. You select and configure models with confidence, from hosted frontier models to bring-your-own-key endpoints, and see how Copilot Vision brings images and PDFs into chat. You move into Agent Mode early, driving a local agent through real, multi-step work, and learn to work in the terminal the way agents do.
 
-You then assemble the GitHub Copilot Agentic Harness, extending Copilot through instructions, prompt files, and the Model Context Protocol, with the MCP Registry as your discovery surface. This module adds custom agents, reusable skills, Copilot memory, and hooks, teaches you to optimize the context window with prompt caching, and installs prepackaged plugins that work across the CLI and editor from a single install.
+You then assemble the GitHub Copilot Harness, extending Copilot through instructions, prompt files, and the Model Context Protocol, with the MCP Registry as your discovery surface. This module adds custom agents, reusable skills, Copilot memory, and hooks, teaches you to optimize the context window with prompt caching, and installs prepackaged plugins that work across the CLI and editor from a single install.
 
-In Implementing Agentic Coding you put agents to work, building up from the simplest delegation. You hand a slice of a task to a subject-matter-expert subagent, run the read-only `/research` agent for a cited report, coordinate multi-agent orchestration for intricate challenges, and delegate large jobs to cloud agents. You drive built-in browser tools that let agents open pages, read console errors, and verify their own web changes, then close with an agent-led modernization from Semantic Kernel to the Microsoft Agent Framework.
+Agent Sessions then covers the infrastructure underneath, the abstraction the product is now built around. You run agents across multiple projects in a dedicated companion window, understand how the Agent Host Protocol keeps session state authoritative on a long-lived host, and drive remote sessions over SSH and dev tunnels. You manage sessions at scale with groups, background sends, and one-click banners that fix failing CI checks, hand a slice of a task to a subject-matter-expert subagent, run the read-only `/research` agent for a cited report, then troubleshoot a stalled session with `/troubleshoot`.
 
-Agent Sessions then covers the infrastructure underneath, the abstraction the product is now built around. You run agents across multiple projects in a dedicated companion window, understand how the Agent Host Protocol keeps session state authoritative on a long-lived host, and drive remote sessions over SSH and dev tunnels. You manage sessions at scale with groups, background sends, and one-click banners that fix failing CI checks, then troubleshoot a stalled session with `/troubleshoot`.
+In Implementing Agentic Coding you put agents to work, building up from the simplest delegation. You drive local agents in agent mode, delegate large jobs to cloud agents, and coordinate multi-agent orchestration for intricate challenges. You drive built-in browser tools that let agents open pages, read console errors, and verify their own web changes, then close with an agent-led modernization from Semantic Kernel to the Microsoft Agent Framework.
 
 The GitHub Copilot CLI brings the agent to the command line. You install it, drive the interactive shell with slash commands and natural language, switch models on the fly, and hand multi-step work to Autopilot. A real HR document-automation business case over Work IQ and SharePoint MCP servers shows the payoff, and GitHub Agentic Workflows turn those jobs into versioned, scheduled runs that open pull requests.
 
-The GitHub Copilot SDK embeds those capabilities into your own applications. Running on the same production runtime as the CLI, it is available in Technical Preview for Python, TypeScript, Go, and .NET, so you create a session and define custom tools while Copilot handles planning and execution. You build runnable agents, deploy one to Azure, and extend them with MCP Apps that render interactive UIs inline in chat.
+The same module continues with the GitHub Copilot SDK, which embeds those capabilities into your own applications. Running on the same production runtime as the CLI, it is available in Technical Preview for Python, TypeScript, Go, and .NET, so you create a session and define custom tools while Copilot handles planning and execution. You build runnable agents, deploy one to Azure, and extend them with MCP Apps that render interactive UIs inline in chat.
 
 The course then steps outside the editor with the GitHub Copilot app, the desktop agents view for macOS, Windows, and Linux. You start sessions from a GitHub issue, a freeform prompt, or an in-flight pull request, each in its own isolated worktree, drive a validation loop that reviews diffs and merges the pull request, and turn skills and prompts into scheduled automations.
 
@@ -46,90 +46,91 @@ The course closes with Spec-Driven Development and Delivery. You learn specifica
 - [Configuring & Governing Copilot](01-fundamentals/06-mgmt-settings/)
 - [Working in the Terminal](01-fundamentals/07-terminal/)
 
-## [Module 2: GitHub Copilot Agentic Harness](./02-agentic-harness/)
+## [Module 2: GitHub Copilot Harness](./02-agentic-harness/)
 
-- [Shaping Copilot with Instructions](02-agentic-harness/01-instructions/)
-- [Reusable Prompt Workflows](02-agentic-harness/02-prompts/)
+- [Copilot Instructions](02-agentic-harness/01-instructions/)
+- [Prompt Files](02-agentic-harness/02-prompts/)
 - [Model Context Protocol & MCP Registry](02-agentic-harness/03-mcp/)
-- [Custom Agents](02-agentic-harness/04-agents/)
-  - [Agents Overview](02-agentic-harness/04-agents/01-agents-overview/)
-  - [Repository Agents](02-agentic-harness/04-agents/02-repo-agents/)
-  - [Claude Agents](02-agentic-harness/04-agents/03-claude-agents/)
-- [Reusable Domain Knowledge with Skills](02-agentic-harness/05-skills/)
-- [Distributing Capabilities with Plugins](02-agentic-harness/06-plugins/)
-- [Giving Copilot Memory](02-agentic-harness/07-memory/)
-- [Context Window Optimization & Prompt Caching](02-agentic-harness/08-context-window/)
-- [GitHub Copilot Hooks](02-agentic-harness/09-hooks/)
+- [Consuming & Implementing MCPs](02-agentic-harness/04-consuming-mcps/)
+- [Custom Agents](02-agentic-harness/05-agents/)
+  - [Agents Overview](02-agentic-harness/05-agents/01-agents-overview/)
+  - [Repository Agents](02-agentic-harness/05-agents/02-repo-agents/)
+  - [Claude Agents](02-agentic-harness/05-agents/03-claude-agents/)
+- [Agent Skills](02-agentic-harness/06-skills/)
+- [Agent Plugins](02-agentic-harness/07-plugins/)
+- [Copilot Memory](02-agentic-harness/08-memory/)
+- [Shaping the Context Window](02-agentic-harness/09-context-window/)
+- [GitHub Copilot Hooks](02-agentic-harness/10-hooks/)
 
-## [Module 3: Implementing Agentic Coding](./03-agentic-coding/)
+## [Module 3: Agent Sessions & Agents Window](./03-agent-sessions/)
 
-- [Subagents as Subject-Matter Experts](03-agentic-coding/01-subagents/)
-- [Deep Research with /research](03-agentic-coding/02-research/)
-- [Multi-Agent Orchestration](03-agentic-coding/03-orchestration/)
-- [Delegating Tasks to Cloud Agents](03-agentic-coding/04-cloud/)
-- [Agentic Browser Automation](03-agentic-coding/05-browser-tools/)
-- [Upgrading & Modernization](03-agentic-coding/06-upgrading/)
+- [The Agents Window](03-agent-sessions/01-agents-window/)
+- [Agent Host Protocol (AHP vs ACP)](03-agent-sessions/02-host-protocol/)
+- [Remote Agent Sessions over SSH & Dev Tunnels](03-agent-sessions/03-remote-sessions/)
+- [Session Management](03-agent-sessions/04-session-management/)
+- [Session Persistence & /chronicle](03-agent-sessions/05-persistence/)
+- [Subagents](03-agent-sessions/06-subagents/)
+- [Deep Research with /research](03-agent-sessions/07-research/)
+- [Troubleshooting Agent Sessions](03-agent-sessions/08-troubleshooting/)
 
-## [Module 4: Agent Sessions](./04-agent-sessions/)
+## [Module 4: Implementing Agentic Coding](./04-agentic-coding/)
 
-- [The Agents Window](04-agent-sessions/01-agents-window/)
-- [Agent Host Protocol (AHP vs ACP)](04-agent-sessions/02-host-protocol/)
-- [Remote Agent Sessions over SSH & Dev Tunnels](04-agent-sessions/03-remote-sessions/)
-- [Session Management](04-agent-sessions/04-session-management/)
-- [Session Persistence & /chronicle](04-agent-sessions/05-persistence/)
-- [Troubleshooting Agent Sessions](04-agent-sessions/06-troubleshooting/)
+- [Using Local Agents and Agent Mode](04-agentic-coding/01-local-agents/)
+- [Delegating Tasks to Cloud Agents](04-agentic-coding/02-cloud/)
+- [Multi-Agent Orchestration](04-agentic-coding/03-orchestration/)
+- [Agentic Browser Automation](04-agentic-coding/04-browser-tools/)
+- [Upgrading & Modernization](04-agentic-coding/05-upgrading/)
 
-## [Module 5: GitHub Copilot CLI](./05-cli/)
+## [Module 5: GitHub Copilot CLI & SDK](./05-cli-sdk/)
 
-- [GitHub Copilot CLI](05-cli/01-cli-intro/)
-- [Business Case: HR Document Updates Automation](05-cli/02-cli-business-case/)
-- [GitHub Agentic Workflows](05-cli/03-agentic-wf/)
-- [Extending the CLI with MCP Servers & Skills](05-cli/04-mcp-skills/)
-- [Codebase Q&A and Onboarding](05-cli/05-codebase-qa/)
+- [Part 1: GitHub Copilot CLI](05-cli-sdk/01-cli/)
+  - [GitHub Copilot CLI](05-cli-sdk/01-cli/01-cli-intro/)
+  - [Business Case: HR Document Updates Automation](05-cli-sdk/01-cli/02-cli-business-case/)
+  - [GitHub Agentic Workflows](05-cli-sdk/01-cli/03-agentic-wf/)
+  - [Extending the CLI with MCP Servers & Skills](05-cli-sdk/01-cli/04-mcp-skills/)
+  - [Codebase Q&A and Onboarding](05-cli-sdk/01-cli/05-codebase-qa/)
+- [Part 2: GitHub Copilot SDK](05-cli-sdk/02-sdk/)
+  - [GitHub Copilot SDK](05-cli-sdk/02-sdk/01-sdk/)
+  - [Copilot SDK Demos](05-cli-sdk/02-sdk/02-sdk-demos/)
+  - [Implementing & Using MCP Apps](05-cli-sdk/02-sdk/03-mcp-apps/)
+  - [Deploying an SDK Agent to Azure](05-cli-sdk/02-sdk/04-deploy-azure/)
+  - [Building a Multi-Agent System](05-cli-sdk/02-sdk/05-multi-agent/)
 
-## [Module 6: GitHub Copilot SDK](./06-sdk/)
+## [Module 6: GitHub Copilot App](./06-copilot-app/)
 
-- [GitHub Copilot SDK](06-sdk/01-sdk/)
-- [Building Agents with Custom Tools](06-sdk/02-sdk-demos/)
-- [Implementing & Using MCP Apps](06-sdk/03-mcp-apps/)
-- [Deploying an SDK Agent to Azure](06-sdk/04-deploy-azure/)
-- [Building a Multi-Agent System](06-sdk/05-multi-agent/)
+- [Meet the Desktop Agents App](06-copilot-app/01-overview/)
+- [Sessions from Issues, Prompts & Pull Requests](06-copilot-app/02-sessions/)
+- [The Validation Loop](06-copilot-app/03-validation-loop/)
+- [Scheduled Automations](06-copilot-app/04-automations/)
+- [Syncing Skills & MCP Servers](06-copilot-app/05-sync/)
 
-## [Module 7: GitHub Copilot App](./07-copilot-app/)
+## [Module 7: Agentic DevOps](./07-agentic-devops/)
 
-- [Meet the Desktop Agents App](07-copilot-app/01-overview/)
-- [Sessions from Issues, Prompts & Pull Requests](07-copilot-app/02-sessions/)
-- [The Validation Loop](07-copilot-app/03-validation-loop/)
-- [Scheduled Automations](07-copilot-app/04-automations/)
-- [Syncing Skills & MCP Servers](07-copilot-app/05-sync/)
+- [Automation using Azure CLI](07-agentic-devops/01-azure-cli/)
+- [Infrastructure as Code (azd, Bicep & Terraform)](07-agentic-devops/02-IaC/)
+- [Azure DevOps Pipelines & GitHub Actions](07-agentic-devops/03-pipelines/)
+- [Testing using Copilot](07-agentic-devops/04-testing/)
+- [Documentation using Copilot](07-agentic-devops/05-documentation/)
 
-## [Module 8: Agentic DevOps](./08-agentic-devops/)
+## [Module 8: Governance, Cost & Observability](./08-governance/)
 
-- [Testing using Copilot](08-agentic-devops/01-testing/)
-- [Documentation using Copilot](08-agentic-devops/02-documentation/)
-- [Automation using Azure CLI](08-agentic-devops/03-azure-cli/)
-- [Infrastructure as Code (azd, Bicep & Terraform)](08-agentic-devops/04-IaC/)
-- [Azure DevOps Pipelines & GitHub Actions](08-agentic-devops/05-pipelines/)
+- [Trust, Safety & the Permission Model](08-governance/01-permissions/)
+- [Cost Model & AI Credits](08-governance/02-cost/)
+- [Enterprise Policy & Managed Settings](08-governance/03-enterprise-policy/)
+- [Observability with OpenTelemetry](08-governance/04-observability/)
+- [Cutting Token Cost with Open-Source Models](08-governance/05-open-source-models/)
+  - [Using Open-Source Models in VS Code](08-governance/05-open-source-models/01-vscode/)
+  - [Using Open-Source Models in the Copilot CLI](08-governance/05-open-source-models/02-copilot-cli/)
+- [EU AI Act, GDPR & Accessibility Compliance](08-governance/06-compliance/)
 
-## [Module 9: Governance, Cost & Observability](./09-governance/)
+## [Module 9: Spec-Driven Development & Delivery](./09-spec-driven-dev/)
 
-- [Trust, Safety & the Permission Model](09-governance/01-permissions/)
-- [Cost Model & AI Credits](09-governance/02-cost/)
-- [Cutting Token Cost with Open-Source Models](09-governance/03-open-source-models/)
-  - [Using Open-Source Models in VS Code](09-governance/03-open-source-models/01-vscode/)
-  - [Using Open-Source Models in the Copilot CLI](09-governance/03-open-source-models/02-copilot-cli/)
-- [Enterprise Policy & Managed Settings](09-governance/04-enterprise-policy/)
-- [Observability with OpenTelemetry](09-governance/05-observability/)
-- [EU AI Act, GDPR & Accessibility Compliance](09-governance/06-compliance/)
-
-## [Module 10: Spec-Driven Development & Delivery](./10-spec-driven-dev/)
-
-- [Why Spec-Driven Development](10-spec-driven-dev/01-introduction/)
-- [Spec-Driven Workflow](10-spec-driven-dev/02-spec-driven-workflow/)
-- [Constitution, Specification and Technical Plan](10-spec-driven-dev/03-constitution/)
-- [From Tasks to Working Code](10-spec-driven-dev/04-tasks/)
-- [Getting Started with GitHub Spec Kit](10-spec-driven-dev/05-requirements/)
-- [Sample Case: Implement a Product Feature](10-spec-driven-dev/06-sample-case/)
+- [Spec Driven Development](09-spec-driven-dev/01-introduction/)
+- [Spec-Driven Workflow](09-spec-driven-dev/02-spec-driven-workflow/)
+- [Constitution, Specification and Technical Plan](09-spec-driven-dev/03-constitution/)
+- [Tasks & Implementation](09-spec-driven-dev/04-tasks/)
+- [Sample Case: Implement a Product Feature](09-spec-driven-dev/05-sample-case/)
+- [Getting Started with GitHub Spec Kit](09-spec-driven-dev/06-requirements/)
 
 ---
 
@@ -138,18 +139,17 @@ The course closes with Spec-Driven Development and Delivery. You learn specifica
 **Total duration: 4 days · 27.5 hours**
 **Split: 69% instruction & demos (~19h) · 31% labs (~8.5h)**
 
-| Day       | Modules                                     | Instruction & Demos |     Labs |     Total |
-| --------- | ------------------------------------------- | ------------------: | -------: | --------: |
-| **Day 1** | Module 1: Fundamentals & Agent Mode Basics  |                2.5h |     1.0h |      3.5h |
-|           | Module 2: Agentic Harness                   |                3.0h |     1.5h |      4.5h |
-| **Day 2** | Module 3: Implementing Agentic Coding       |                2.5h |     1.5h |      4.0h |
-|           | Module 4: Agent Sessions                    |                2.0h |     1.0h |      3.0h |
-| **Day 3** | Module 5: GitHub Copilot CLI                |                0.5h |     0.5h |      1.0h |
-|           | Module 6: GitHub Copilot SDK                |                1.0h |     0.5h |      1.5h |
-|           | Module 7: GitHub Copilot App                |                1.5h |     0.5h |      2.0h |
-|           | Module 8: Agentic DevOps                    |                2.5h |     0.5h |      3.0h |
-| **Day 4** | Module 9: Governance, Cost & Obs.           |                1.5h |     0.5h |      2.0h |
-|           | Module 10: Spec-Driven Dev & Delivery       |                2.0h |     1.0h |      3.0h |
-| **Total** |                                             |           **19.0h** | **8.5h** | **27.5h** |
+| Day       | Modules                                    | Instruction & Demos |     Labs |     Total |
+| --------- | ------------------------------------------ | ------------------: | -------: | --------: |
+| **Day 1** | Module 1: Fundamentals & Agent Mode Basics |                2.5h |     1.0h |      3.5h |
+|           | Module 2: GitHub Copilot Harness           |                3.0h |     1.5h |      4.5h |
+| **Day 2** | Module 3: Agent Sessions & Agents Window   |                2.0h |     1.0h |      3.0h |
+|           | Module 4: Implementing Agentic Coding      |                2.5h |     1.5h |      4.0h |
+| **Day 3** | Module 5: GitHub Copilot CLI & SDK         |                1.5h |     1.0h |      2.5h |
+|           | Module 6: GitHub Copilot App               |                1.5h |     0.5h |      2.0h |
+|           | Module 7: Agentic DevOps                   |                2.5h |     0.5h |      3.0h |
+| **Day 4** | Module 8: Governance, Cost & Obs.          |                1.5h |     0.5h |      2.0h |
+|           | Module 9: Spec-Driven Dev & Delivery       |                2.0h |     1.0h |      3.0h |
+| **Total** |                                            |           **19.0h** | **8.5h** | **27.5h** |
 
 > Labs are hands-on exercises embedded at the end of each module. The lowest-risk first lab is the read-only `/research` agent in Module 3; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.
