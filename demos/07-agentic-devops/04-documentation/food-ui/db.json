@@ -1,0 +1,45 @@
+{
+  "food": [
+    {
+      "id": "1",
+      "name": "Butter Chicken",
+      "price": 9,
+      "items": 1200
+    },
+    {
+      "id": "2",
+      "name": "Wiener Schnitzel vom Schwein",
+      "price": 12.7,
+      "items": 730
+    },
+    {
+      "id": "3",
+      "name": "Boeuf Stroganoff",
+      "price": 18.3,
+      "items": 0
+    },
+    {
+      "id": "4",
+      "name": "Pad Ka Prao",
+      "price": 16.3,
+      "items": 0
+    }
+  ],
+  "menu-items": [
+    {
+      "title": "Home",
+      "url": "/",
+      "id": "d997"
+    },
+    {
+      "title": "Food",
+      "url": "/food",
+      "id": "bc63"
+    },
+    {
+      "title": "About",
+      "url": "/about",
+      "id": "1511"
+    }
+  ]
+}

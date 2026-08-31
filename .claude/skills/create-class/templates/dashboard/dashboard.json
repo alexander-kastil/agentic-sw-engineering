@@ -1,0 +1,9 @@
+{
+  "project": {
+    "title": "Your Course Title",
+    "repo": "your-org/your-course",
+    "projectUrl": "https://github.com/users/your-org/projects/1",
+    "pagesUrl": "https://your-org.github.io/your-course/"
+  },
+  "modules": []
+}

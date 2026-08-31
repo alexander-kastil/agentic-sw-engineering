@@ -1,0 +1,74 @@
+name: Catalog Service CI/CD
+
+on:
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - src/services/catalog-service/api/**
+  #     - .github/workflows/catalog-api-cicd.yml
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: "10.0.x"
+  PROJECT_PATH: src/services/catalog-service/api/catalog-service.csproj
+  BUILD_OUTPUT: ${{ github.workspace }}/build-output
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      artifact-path: ${{ steps.publish.outputs.artifact-path }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Build and Publish
+        run: dotnet publish ${{ env.PROJECT_PATH }} --configuration Release --output ${{ env.BUILD_OUTPUT }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-api-build
+          path: ${{ env.BUILD_OUTPUT }}
+          retention-days: 7
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: catalog-api-build
+          path: ${{ env.BUILD_OUTPUT }}
+
+      - name: Azure Login
+        uses: Azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Deploy to App Service
+        uses: Azure/webapps-deploy@v3
+        with:
+          app-name: catalog-api-gh-actions-dev
+          package: ${{ env.BUILD_OUTPUT }}
+
+      - name: Logout from Azure
+        run: az logout

@@ -1,0 +1,50 @@
+{
+    "invoice": {
+        "vendor": {
+            "name": "Billa AG",
+            "address": "3400 KLOSTERNEUBURG, AUFELDGASSE 45-49",
+            "telephone": "059915-03357",
+            "tax_id": "ATU 15255907"
+        },
+        "date": "04.03.2026",
+        "items": [
+            {
+                "name": "Ja! Bio Spitzpaprika 200g",
+                "price": 2.29
+            },
+            {
+                "name": "Ja! Schmalz",
+                "price": 4.19
+            },
+            {
+                "name": "Pfl.Himbeer-Vanillekuchen",
+                "price": 2.99
+            },
+            {
+                "name": "Clever Cheddar gerieben",
+                "price": 2.99
+            },
+            {
+                "name": "Clever Sardinen S.öl 0HoG",
+                "price": 1.49
+            },
+            {
+                "name": "LOYS FLECKSTANGERL GETROC",
+                "category": "C",
+                "price": 7.99
+            },
+            {
+                "name": "Loys Rindermuskelfleisch",
+                "price": 7.99
+            },
+            {
+                "name": "Loys Rindfleischwürste ge",
+                "price": 4.99
+            }
+        ],
+        "total": {
+            "currency": "EUR",
+            "amount": 34.92
+        }
+    }
+}

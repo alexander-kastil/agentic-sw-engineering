@@ -1,0 +1,16 @@
+.mat-mdc-card-title {
+  display: block;
+  margin: 0;
+  color: gainsboro;
+  margin-bottom: 1rem;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin-bottom: 1rem;
+  width: 100%;
+}

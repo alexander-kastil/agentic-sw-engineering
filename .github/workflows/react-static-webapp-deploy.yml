@@ -1,0 +1,199 @@
+name: Deploy React Static Web App
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    #     paths:
+    #         - "src/react/react-devops/**"
+    #         - ".github/workflows/react-static-webapp-deploy.yml"
+    workflow_dispatch:
+        inputs:
+            reason:
+                description: "Optional note explaining the manual deployment trigger"
+                required: false
+
+env:
+    APP_LOCATION: src/react/react-devops
+    OUTPUT_LOCATION: dist
+    AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+    AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+    AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+    GH_REPO: alexander-kastil/az-400
+    ENV_NAME: dev
+    RESOURCE_GROUP: az400-dev
+    APP_NAME: react-devops-dev
+
+permissions:
+    id-token: write
+    contents: read
+    checks: write
+
+jobs:
+    provision:
+        name: Provision Infrastructure
+        runs-on: ubuntu-latest
+        steps:
+            - name: Azure login with federated identity
+              uses: azure/login@v2
+              with:
+                  client-id: ${{ env.AZURE_CLIENT_ID }}
+                  tenant-id: ${{ env.AZURE_TENANT_ID }}
+                  subscription-id: ${{ env.AZURE_SUBSCRIPTION_ID }}
+            - name: Create resource group
+              run: |
+                  az group create \
+                    -n ${{ env.RESOURCE_GROUP }} \
+                    -l westeurope \
+                    --tags environment=${{ env.ENV_NAME }}
+            - name: Create Static Web App
+              run: |
+                  if ! az staticwebapp show \
+                    -n ${{ env.APP_NAME }} \
+                    -g ${{ env.RESOURCE_GROUP }} &>/dev/null; then
+                    az staticwebapp create \
+                      -n ${{ env.APP_NAME }} \
+                      -g ${{ env.RESOURCE_GROUP }} \
+                      -l westeurope \
+                      --tags environment=${{ env.ENV_NAME }}
+                  else
+                    echo "Static Web App already exists"
+                  fi
+            - name: Azure logout
+              run: az logout
+
+    validate:
+        name: Lint and Validate
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "22.x"
+                  cache: npm
+                  cache-dependency-path: ${{ env.APP_LOCATION }}/package-lock.json
+            - name: Install dependencies
+              working-directory: ${{ env.APP_LOCATION }}
+              run: npm ci
+            - name: Lint code
+              working-directory: ${{ env.APP_LOCATION }}
+              run: npm run lint
+
+    build:
+        name: Build Application
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "22.x"
+                  cache: npm
+                  cache-dependency-path: ${{ env.APP_LOCATION }}/package-lock.json
+            - name: Install dependencies
+              working-directory: ${{ env.APP_LOCATION }}
+              run: npm ci
+            - name: Build app
+              working-directory: ${{ env.APP_LOCATION }}
+              run: npm run build
+            - name: Verify build output
+              run: |
+                  if [ ! -d "${{ env.APP_LOCATION }}/${{ env.OUTPUT_LOCATION }}" ]; then
+                    echo "Build output directory not found: ${{ env.APP_LOCATION }}/${{ env.OUTPUT_LOCATION }}"
+                    ls -la ${{ env.APP_LOCATION }}/
+                    exit 1
+                  fi
+                  echo "Build output verified:"
+                  ls -la ${{ env.APP_LOCATION }}/${{ env.OUTPUT_LOCATION }}/
+            - name: Upload build artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: app-build
+                  path: ${{ env.APP_LOCATION }}/${{ env.OUTPUT_LOCATION }}
+                  retention-days: 1
+                  if-no-files-found: error
+
+    test:
+        name: E2E Tests
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "22.x"
+                  cache: npm
+                  cache-dependency-path: ${{ env.APP_LOCATION }}/package-lock.json
+            - name: Install dependencies
+              working-directory: ${{ env.APP_LOCATION }}
+              run: npm ci
+            - name: Install Playwright browsers
+              working-directory: ${{ env.APP_LOCATION }}
+              run: npx playwright install chromium msedge --with-deps
+            - name: Run E2E tests
+              working-directory: ${{ env.APP_LOCATION }}
+              run: npm run test:e2e
+            - name: Upload test report
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: playwright-report
+                  path: ${{ env.APP_LOCATION }}/playwright-report
+                  retention-days: 7
+            - name: Publish Test Results
+              if: always()
+              uses: dorny/test-reporter@v1
+              with:
+                  name: Playwright Test Results
+                  path: ${{ env.APP_LOCATION }}/test-results/junit.xml
+                  reporter: java-junit
+                  fail-on-error: false
+    deploy:
+        name: Deploy to Static Web App
+        needs: [provision, build, test]
+        runs-on: ubuntu-latest
+        environment: dev
+        steps:
+            - uses: actions/checkout@v4
+            - name: Create app structure for deployment
+              run: mkdir -p ${{ env.APP_LOCATION }}/${{ env.OUTPUT_LOCATION }}
+            - name: Download build artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: app-build
+                  path: ${{ env.APP_LOCATION }}/${{ env.OUTPUT_LOCATION }}
+            - name: Verify artifact
+              run: |
+                  echo "Artifact contents:"
+                  ls -la ${{ env.APP_LOCATION }}/${{ env.OUTPUT_LOCATION }}/
+            - name: Azure login with federated identity
+              uses: azure/login@v2
+              with:
+                  client-id: ${{ env.AZURE_CLIENT_ID }}
+                  tenant-id: ${{ env.AZURE_TENANT_ID }}
+                  subscription-id: ${{ env.AZURE_SUBSCRIPTION_ID }}
+            - name: Get Static Web App deployment token
+              id: swa-token
+              run: |
+                  token=$(az staticwebapp secrets list \
+                    -n ${{ env.APP_NAME }} \
+                    -g ${{ env.RESOURCE_GROUP }} \
+                    --query 'properties.apiKey' -o tsv)
+                  echo "::add-mask::$token"
+                  echo "token=$token" >> $GITHUB_OUTPUT
+            - name: Deploy Static Web App
+              uses: azure/static-web-apps-deploy@v1
+              with:
+                  action: upload
+                  azure_static_web_apps_api_token: ${{ steps.swa-token.outputs.token }}
+                  app_location: ${{ env.APP_LOCATION }}
+                  output_location: ${{ env.OUTPUT_LOCATION }}
+            - name: Post deployment verification
+              run: |
+                  echo "✓ Deployment to ${{ env.ENV_NAME }} environment complete"
+                  swa_url=$(az staticwebapp show \
+                    -n ${{ env.APP_NAME }} \
+                    -g ${{ env.RESOURCE_GROUP }} \
+                    --query 'defaultHostname' -o tsv)
+                  echo "Application URL: https://$swa_url"
+            - name: Azure logout
+              run: az logout

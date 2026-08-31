@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "generate:metadata": "node ./.copilot-metadata/generate.mjs",
+    "release": "commit-and-tag-version"
+  },
+  "devDependencies": {
+    "commit-and-tag-version": "^12.2.0",
+    "glob": "^10.5.0"
+  },
+  "version": "0.0.0",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Temperature Converter</h1>
+    <p class="description">Type a temperature in either field to convert between Celsius and Fahrenheit.</p>
+    <section class="converter" aria-label="Temperature input fields">
+      <div class="field">
+        <label for="celsius-input">Celsius</label>
+        <input type="text" id="celsius-input">
+      </div>
+      <div class="field">
+        <label for="fahrenheit-input">Fahrenheit</label>
+        <input type="text" id="fahrenheit-input">
+      </div>
+    </section>
+    <p class="status"><span id="message" aria-live="polite"></span></p>
+  </main>
+  <script src="converter.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

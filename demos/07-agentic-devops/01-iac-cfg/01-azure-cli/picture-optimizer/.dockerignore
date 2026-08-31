@@ -1,0 +1,7 @@
+bin/
+obj/
+drop/
+processed/
+.vscode/
+appsettings.Development.json
+appsettings.Local.json

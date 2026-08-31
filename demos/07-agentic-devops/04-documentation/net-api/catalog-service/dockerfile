@@ -1,0 +1,38 @@
+# Build Image
+FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
+WORKDIR /app
+
+COPY ["catalog-service/catalog-service.csproj", "catalog-service/"]
+COPY ["food-app-common/food-app-common.csproj", "food-app-common/"] 
+
+RUN dotnet restore "catalog-service/catalog-service.csproj"
+COPY . .
+WORKDIR "/app/catalog-service"
+
+RUN dotnet build "catalog-service.csproj" -c Release -o /app/build
+FROM build as publish
+RUN dotnet publish "catalog-service.csproj" -c Release -o /app/publish
+
+# Runtime Image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-jammy-chiseled AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "catalog-service.dll"]
+
+# Build Image
+# docker build --rm -f dockerfile -t catalog-service .
+
+# Run Image without env vars
+# docker run -it --rm -p 5051:80 catalog-service
+
+# Run Image with env vars
+# docker run -it --rm -p 5051:80 catalog-service -e "App:UserSQLite=true" -e "App:ConnectionStrings:SQLServerConnection=<SQLSERVER_CONNECTION_STRING>"
+
+# Browse using: 
+# http://localhost:5051
+# http://localhost:5051/food
+# http://localhost:5051/config
+
+# Publish Image to dockerhub
+# docker tag catalog-service arambazamba/catalog-service
+# docker push arambazamba/catalog-service

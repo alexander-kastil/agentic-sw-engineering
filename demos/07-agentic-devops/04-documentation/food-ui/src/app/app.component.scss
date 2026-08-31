@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  gap: 0.5rem;
+  grid-template-rows: 70px 10px calc(100vh - 100px);
+  grid-template-columns: auto;
+  grid-template-areas:
+    "navbar"
+    "loading"
+    "mainrow";
+}
+
+.gd-navbar {
+  grid-area: navbar;
+}
+
+.gd-loading {
+  grid-area: loading;
+}
+
+.gd-mainrow {
+  grid-area: mainrow;
+  background-color: lightgray;
+}
+
+.sidenav{
+  height: 80vh;
+}
+

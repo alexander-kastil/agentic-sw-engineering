@@ -1,0 +1,23 @@
+.DS_Store
+node_modules/
+.raspi-config.json
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# .NET
+bin/
+obj/
+# Spec Kit lab scratch project (labs/06-spec-driven)
+labs/06-spec-driven/meeting-cost/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12

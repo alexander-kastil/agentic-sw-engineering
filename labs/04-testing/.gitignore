@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+
+# .NET / C#
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.log
+*.sln
+TestResults/
+.vscode/
+
+
+
