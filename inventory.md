@@ -8,8 +8,7 @@ Every topic metro.md names has a folder and a `readme.md` on disk. Two of those 
 
 | Module | Topic (metro title) | Folder | State | Notes |
 | --- | --- | --- | --- | --- |
-| 2 GitHub Copilot Harness | Consuming & Implementing MCPs | [demos/02-agentic-harness/04-consuming-mcps/](demos/02-agentic-harness/04-consuming-mcps/) | Stub, 3 lines | H1 plus one intro paragraph linking to `03-mcp`. No demo steps, no Exercise, no Links & Resources. |
-| 4 Implementing Agentic Coding | Using Local Agents and Agent Mode | [demos/04-agentic-coding/01-local-agents/](demos/04-agentic-coding/01-local-agents/) | Stub, 3 lines | H1 plus one intro paragraph linking to `03-orchestration` and `02-cloud`. No demo steps, no Exercise, no Links & Resources. |
+| 3 Implementing Agentic Coding | Using Local Agents and Agent Mode | [demos/03-agentic-coding/01-local-agents/](demos/03-agentic-coding/01-local-agents/) | Stub, 3 lines | H1 plus one intro paragraph linking to `03-orchestration` and `02-cloud`. No demo steps, no Exercise, no Links & Resources. |
 
 ## On disk but not in metro.md
 
@@ -42,10 +41,9 @@ Topic-level folders whose `readme.md` is under roughly 30 lines, plus topics wit
 | --- | --- | --- | --- | --- |
 | 1 | Pull Requests & Code Reviews | [demos/01-fundamentals/05-pr-code-review/](demos/01-fundamentals/05-pr-code-review/) | 11 | Prose only, two short sections. No demo steps, no Exercise, no Links & Resources |
 | 1 | Agent Mode Basics | [demos/01-fundamentals/04-agent-mode-basics/](demos/01-fundamentals/04-agent-mode-basics/) | 24 | Index readme with a table linking its three subtopics, no Exercise |
-| 2 | Consuming & Implementing MCPs | [demos/02-agentic-harness/04-consuming-mcps/](demos/02-agentic-harness/04-consuming-mcps/) | 3 | Everything past the intro paragraph |
-| 3 | Agent Host Protocol (AHP vs ACP) | [demos/03-agent-sessions/02-host-protocol/](demos/03-agent-sessions/02-host-protocol/) | 34 | No Exercise section. The other seven topics in module 3 all have one |
-| 4 | Using Local Agents and Agent Mode | [demos/04-agentic-coding/01-local-agents/](demos/04-agentic-coding/01-local-agents/) | 3 | Everything past the intro paragraph |
-| 4 | Delegating Tasks to Cloud Agents | [demos/04-agentic-coding/02-cloud/](demos/04-agentic-coding/02-cloud/) | 12 | One paragraph and one comparison table. No demo steps, no Exercise, no Links & Resources |
+| 4 | Agent Host Protocol (AHP vs ACP) | [demos/04-agent-sessions/02-host-protocol/](demos/04-agent-sessions/02-host-protocol/) | 34 | No Exercise section. The other six topics in module 4 all have one |
+| 3 | Using Local Agents and Agent Mode | [demos/03-agentic-coding/01-local-agents/](demos/03-agentic-coding/01-local-agents/) | 3 | Everything past the intro paragraph |
+| 3 | Delegating Tasks to Cloud Agents | [demos/03-agentic-coding/02-cloud/](demos/03-agentic-coding/02-cloud/) | 12 | One paragraph and one comparison table. No demo steps, no Exercise, no Links & Resources |
 | 5 | Extending the CLI with MCP Servers & Skills | [demos/05-cli-sdk/01-cli/04-mcp-skills/](demos/05-cli-sdk/01-cli/04-mcp-skills/) | 22 | Under the 30-line mark. Intro, two sections, Exercise and Links & Resources are all present |
 | 5 | Codebase Q&A and Onboarding | [demos/05-cli-sdk/01-cli/05-codebase-qa/](demos/05-cli-sdk/01-cli/05-codebase-qa/) | 22 | Under the 30-line mark. Intro, two sections, Exercise and Links & Resources are all present |
 | 5 | Deploying an SDK Agent to Azure | [demos/05-cli-sdk/02-sdk/04-deploy-azure/](demos/05-cli-sdk/02-sdk/04-deploy-azure/) | 22 | Under the 30-line mark. Intro, two sections, Exercise and Links & Resources are all present |

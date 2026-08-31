@@ -482,3 +482,8 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Local SQLite database created on first run
+hr-data.db
+hr-data.db-shm
+hr-data.db-wal

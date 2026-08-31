@@ -6,9 +6,9 @@ Your journey begins with Fundamentals and Agent Mode Basics, a solid foundation 
 
 You then assemble the GitHub Copilot Harness, extending Copilot through instructions, prompt files, and the Model Context Protocol, with the MCP Registry as your discovery surface. This module adds custom agents, reusable skills, Copilot memory, and hooks, teaches you to optimize the context window with prompt caching, and installs prepackaged plugins that work across the CLI and editor from a single install.
 
-Agent Sessions then covers the infrastructure underneath, the abstraction the product is now built around. You run agents across multiple projects in a dedicated companion window, understand how the Agent Host Protocol keeps session state authoritative on a long-lived host, and drive remote sessions over SSH and dev tunnels. You manage sessions at scale with groups, background sends, and one-click banners that fix failing CI checks, hand a slice of a task to a subject-matter-expert subagent, run the read-only `/research` agent for a cited report, then troubleshoot a stalled session with `/troubleshoot`.
+In Implementing Agentic Coding you put agents to work, building up from the simplest delegation. You drive local agents in agent mode, delegate large jobs to cloud agents, and coordinate a team of subject-matter-expert subagents through an orchestrator that runs independent work in parallel. You drive built-in browser tools that let agents open pages, read console errors, and verify their own web changes, then close with an agent-led modernization from Semantic Kernel to the Microsoft Agent Framework.
 
-In Implementing Agentic Coding you put agents to work, building up from the simplest delegation. You drive local agents in agent mode, delegate large jobs to cloud agents, and coordinate multi-agent orchestration for intricate challenges. You drive built-in browser tools that let agents open pages, read console errors, and verify their own web changes, then close with an agent-led modernization from Semantic Kernel to the Microsoft Agent Framework.
+Agent Sessions then covers the infrastructure underneath the runs you just drove, the abstraction the product is now built around. You run agents across multiple projects in a dedicated companion window, understand how the Agent Host Protocol keeps session state authoritative on a long-lived host, and drive remote sessions over SSH and dev tunnels. You manage sessions at scale with groups, background sends, and one-click banners that fix failing CI checks, run the read-only `/research` agent for a cited report, then troubleshoot a stalled session with `/troubleshoot`.
 
 The GitHub Copilot CLI brings the agent to the command line. You install it, drive the interactive shell with slash commands and natural language, switch models on the fly, and hand multi-step work to Autopilot. A real HR document-automation business case over Work IQ and SharePoint MCP servers shows the payoff, and GitHub Agentic Workflows turn those jobs into versioned, scheduled runs that open pull requests.
 
@@ -51,35 +51,34 @@ The course closes with Spec-Driven Development and Delivery. You learn specifica
 - [Copilot Instructions](02-agentic-harness/01-instructions/)
 - [Prompt Files](02-agentic-harness/02-prompts/)
 - [Model Context Protocol & MCP Registry](02-agentic-harness/03-mcp/)
-- [Consuming & Implementing MCPs](02-agentic-harness/04-consuming-mcps/)
+  - [MCP Basics & the MCP Registry](02-agentic-harness/03-mcp/01-basics/)
+  - [Implementing MCP Servers](02-agentic-harness/03-mcp/02-implementing/)
+- [Agent Skills](02-agentic-harness/04-skills/)
 - [Custom Agents](02-agentic-harness/05-agents/)
   - [Agents Overview](02-agentic-harness/05-agents/01-agents-overview/)
   - [Repository Agents](02-agentic-harness/05-agents/02-repo-agents/)
-  - [Claude Agents](02-agentic-harness/05-agents/03-claude-agents/)
-- [Agent Skills](02-agentic-harness/06-skills/)
-- [Agent Plugins](02-agentic-harness/07-plugins/)
-- [Copilot Memory](02-agentic-harness/08-memory/)
-- [Shaping the Context Window](02-agentic-harness/09-context-window/)
-- [GitHub Copilot Hooks](02-agentic-harness/10-hooks/)
+- [Agent Plugins](02-agentic-harness/06-plugins/)
+- [Copilot Memory](02-agentic-harness/07-memory/)
+- [Shaping the Context Window](02-agentic-harness/08-context-window/)
+- [GitHub Copilot Hooks](02-agentic-harness/09-hooks/)
 
-## [Module 3: Agent Sessions & Agents Window](./03-agent-sessions/)
+## [Module 3: Implementing Agentic Coding](./03-agentic-coding/)
 
-- [The Agents Window](03-agent-sessions/01-agents-window/)
-- [Agent Host Protocol (AHP vs ACP)](03-agent-sessions/02-host-protocol/)
-- [Remote Agent Sessions over SSH & Dev Tunnels](03-agent-sessions/03-remote-sessions/)
-- [Session Management](03-agent-sessions/04-session-management/)
-- [Session Persistence & /chronicle](03-agent-sessions/05-persistence/)
-- [Subagents](03-agent-sessions/06-subagents/)
-- [Deep Research with /research](03-agent-sessions/07-research/)
-- [Troubleshooting Agent Sessions](03-agent-sessions/08-troubleshooting/)
+- [Using Local Agents and Agent Mode](03-agentic-coding/01-local-agents/)
+- [Delegating Tasks to Cloud Agents](03-agentic-coding/02-cloud/)
+- [Multi-Agent Orchestration with Subagents](03-agentic-coding/03-orchestration/)
+- [Agentic Browser Automation](03-agentic-coding/04-browser-tools/)
+- [Upgrading & Modernization](03-agentic-coding/05-upgrading/)
 
-## [Module 4: Implementing Agentic Coding](./04-agentic-coding/)
+## [Module 4: Agent Sessions & Agents Window](./04-agent-sessions/)
 
-- [Using Local Agents and Agent Mode](04-agentic-coding/01-local-agents/)
-- [Delegating Tasks to Cloud Agents](04-agentic-coding/02-cloud/)
-- [Multi-Agent Orchestration](04-agentic-coding/03-orchestration/)
-- [Agentic Browser Automation](04-agentic-coding/04-browser-tools/)
-- [Upgrading & Modernization](04-agentic-coding/05-upgrading/)
+- [The Agents Window](04-agent-sessions/01-agents-window/)
+- [Agent Host Protocol (AHP vs ACP)](04-agent-sessions/02-host-protocol/)
+- [Remote Agent Sessions over SSH & Dev Tunnels](04-agent-sessions/03-remote-sessions/)
+- [Session Management](04-agent-sessions/04-session-management/)
+- [Session Persistence & /chronicle](04-agent-sessions/05-persistence/)
+- [Deep Research with /research](04-agent-sessions/06-research/)
+- [Troubleshooting Agent Sessions](04-agent-sessions/07-troubleshooting/)
 
 ## [Module 5: GitHub Copilot CLI & SDK](./05-cli-sdk/)
 
@@ -143,8 +142,8 @@ The course closes with Spec-Driven Development and Delivery. You learn specifica
 | --------- | ------------------------------------------ | ------------------: | -------: | --------: |
 | **Day 1** | Module 1: Fundamentals & Agent Mode Basics |                2.5h |     1.0h |      3.5h |
 |           | Module 2: GitHub Copilot Harness           |                3.0h |     1.5h |      4.5h |
-| **Day 2** | Module 3: Agent Sessions & Agents Window   |                2.0h |     1.0h |      3.0h |
-|           | Module 4: Implementing Agentic Coding      |                2.5h |     1.5h |      4.0h |
+| **Day 2** | Module 3: Implementing Agentic Coding      |                2.5h |     1.5h |      4.0h |
+|           | Module 4: Agent Sessions & Agents Window   |                2.0h |     1.0h |      3.0h |
 | **Day 3** | Module 5: GitHub Copilot CLI & SDK         |                1.5h |     1.0h |      2.5h |
 |           | Module 6: GitHub Copilot App               |                1.5h |     0.5h |      2.0h |
 |           | Module 7: Agentic DevOps                   |                2.5h |     0.5h |      3.0h |
@@ -152,4 +151,4 @@ The course closes with Spec-Driven Development and Delivery. You learn specifica
 |           | Module 9: Spec-Driven Dev & Delivery       |                2.0h |     1.0h |      3.0h |
 | **Total** |                                            |           **19.0h** | **8.5h** | **27.5h** |
 
-> Labs are hands-on exercises embedded at the end of each module. The lowest-risk first lab is the read-only `/research` agent in Module 3; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.
+> Labs are hands-on exercises embedded at the end of each module. The lowest-risk first lab is the read-only `/research` agent in Module 4; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.

@@ -2,33 +2,31 @@ Module 2: GitHub Copilot Harness
 
 Copilot Instructions
 Prompt Files
-Model Context Protocol & MCP Registry
-Consuming & Implementing MCPs
-Custom Agents (Overview, Repository Agents, Claude Agents)
+Model Context Protocol & MCP Registry (Basics, Implementing MCP Servers)
 Agent Skills
+Custom Agents (Overview, Repository Agents)
 Agent Plugins
 Copilot Memory
 Shaping the Context Window
 GitHub Copilot Hooks
 
-Module 3: Agent Sessions & Agents Window
+Module 3: Implementing Agentic Coding
+
+Using Local Agents and Agent Mode
+Delegating Tasks to Cloud Agents
+Multi-Agent Orchestration with Subagents
+Agentic Browser Automation
+Upgrading & Modernization
+
+Module 4: Agent Sessions & Agents Window
 
 The Agents Window
 Agent Host Protocol (AHP vs ACP)
 Remote Agent Sessions over SSH & Dev Tunnels
 Session Management
 Session Persistence & /chronicle
-Subagents
 Deep Research with /research
 Troubleshooting Agent Sessions
-
-Module 4: Implementing Agentic Coding
-
-Using Local Agents and Agent Mode
-Delegating Tasks to Cloud Agents
-Multi-Agent Orchestration
-Agentic Browser Automation
-Upgrading & Modernization
 
 Module 5: GitHub Copilot CLI & SDK
 

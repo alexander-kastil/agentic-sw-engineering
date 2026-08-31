@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configure SQL Server-backed employee database
 builder.Services.AddDbContext<EmployeeDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDatabase")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("EmployeeDatabase")));
 
 // Register the employee service
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();

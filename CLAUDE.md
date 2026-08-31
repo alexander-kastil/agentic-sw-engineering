@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This repo is the companion material for **"Agentic Software Engineering using GitHub Copilot"**, a 4-day, 9-module masterclass by Alexander Kastil (see `readme.md`, `demos/readme.md`). The `.claude/` harness in this repo (agents, skills, `.mcp.json`) is the author's own tooling for authoring and maintaining the class content with Claude Code — it is not the subject of the class. GitHub Copilot is the subject; Claude appears only as one topic inside Module 2 (`demos/02-agentic-harness/05-agents/03-claude-agents/`) and as the parallel `.github/` Copilot-facing config this repo also carries on purpose (skills, agents, instructions, prompts) — do not treat `.github/` as dead weight to remove.
+This repo is the companion material for **"Agentic Software Engineering using GitHub Copilot"**, a 4-day, 9-module masterclass by Alexander Kastil (see `readme.md`, `demos/readme.md`). The `.claude/` harness in this repo (agents, skills, `.mcp.json`) is the author's own tooling for authoring and maintaining the class content with Claude Code — it is not the subject of the class. GitHub Copilot is the subject; the parallel `.github/` Copilot-facing config this repo carries is on purpose (skills, agents, instructions, prompts) — do not treat `.github/` as dead weight to remove.
 
 ## Repository Layout
 
-- `demos/01-` … `demos/09-` — the 9 sequential modules (fundamentals → agentic-harness → agent-sessions → agentic-coding → cli-sdk → copilot-app → agentic-devops → governance → spec-driven-dev). Numbered prefix = learning order. Do not reorganize.
+- `demos/01-` … `demos/09-` — the 9 sequential modules (fundamentals → agentic-harness → agentic-coding → agent-sessions → cli-sdk → copilot-app → agentic-devops → governance → spec-driven-dev). Numbered prefix = learning order. Do not reorganize.
 - Each module: `readme.md` plus numbered topic subfolders, each usually with its own `readme.md` and copy-paste templates (`.md`, `.json`, `.sh`); several subfolders (notably in Modules 1, 4, and 7) also hold runnable demo/lab code directly. Hands-on exercises are embedded as "Exercise" sections inside a topic's `readme.md`, not a separate `labs/` folder.
 - `src/` — standalone runnable projects referenced across modules (e.g. `qr-server` / `qr-server-cs`, `hr-mcp-server`, `doubler-api`, `tasks-api-py`, `tasks-ui`, `food-app`, `angular`, `react`).
 

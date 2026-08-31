@@ -19,7 +19,7 @@ public class EmployeeDbContextFactory : IDesignTimeDbContextFactory<EmployeeDbCo
             ?? throw new InvalidOperationException("Connection string 'EmployeeDatabase' not found.");
 
         var optionsBuilder = new DbContextOptionsBuilder<EmployeeDbContext>();
-        optionsBuilder.UseSqlServer(connectionString);
+        optionsBuilder.UseSqlite(connectionString);
 
         return new EmployeeDbContext(optionsBuilder.Options);
     }

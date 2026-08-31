@@ -40,10 +40,10 @@ public class EmployeeDbContext : DbContext
 
         employeeEntity.Property(c => c.SpokenLanguagesData)
             .IsRequired()
-            .HasColumnType("nvarchar(max)");
+            .HasColumnType("TEXT");
 
         employeeEntity.Property(c => c.SkillsData)
             .IsRequired()
-            .HasColumnType("nvarchar(max)");
+            .HasColumnType("TEXT");
     }
 }

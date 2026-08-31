@@ -29,9 +29,9 @@ flowchart LR
 
 ## Exercise
 
-Promote the Agent Skill from the [Artifacts & Tools module](../../02-agentic-harness/06-skills/) into a scheduled automation.
+Promote the Agent Skill from the [Artifacts & Tools module](../../02-agentic-harness/04-skills/) into a scheduled automation.
 
-1. Pick one skill from the [`02-agentic-harness/06-skills/`](../../02-agentic-harness/06-skills/) topic that describes recurring work, for example a documentation or code-quality skill, and confirm its `SKILL.md` has a clear `name` and `description`.
+1. Pick one skill from the [`02-agentic-harness/04-skills/`](../../02-agentic-harness/04-skills/) topic that describes recurring work, for example a documentation or code-quality skill, and confirm its `SKILL.md` has a clear `name` and `description`.
 2. Confirm the skill lives in the repository you will connect, so it syncs to the app; the next topic on [sync](../05-sync/) covers why repository skills and MCP servers become available automatically.
 3. In the Copilot desktop app, open the repository and start a one-off session that invokes the skill by a prompt matching its description; verify it does the work you expect and produces a reviewable change.
 4. Create a **scheduled automation** from that same skill or prompt, and set a recurring interval such as daily or weekly.
