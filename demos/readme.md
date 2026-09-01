@@ -62,7 +62,7 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
 - [Agent Plugins](02-agentic-harness/06-plugins/)
 - [Copilot Memory](02-agentic-harness/07-memory/)
 - [GitHub Copilot Hooks](02-agentic-harness/08-hooks/)
-- [Agent Interop](02-agentic-harness/09-agent-interop/) (optional)
+- [Agent Interop](02-agentic-harness/09-agent-interop/)
 
 ## [Module 3: Implementing Agentic Coding](./03-agentic-coding/)
 
