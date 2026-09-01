@@ -15,3 +15,7 @@ This will open the repository in a cloud-based IDE where you can immediately sta
 If GitHub Codespaces is not enabled in your organization, you can enable it by following the instructions [here](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-or-disabling-github-codespaces-for-your-organization).
 
 Alternatively, you can create a free personal GitHub account [here](https://github.com/signup) which includes 120 core hours per month and 15 GB of storage for Codespaces.
+
+## Exercise - Develop with AI-powered code suggestions by using GitHub Copilot and VS Code
+
+[Exercise - Develop with AI-powered code suggestions by using GitHub Copilot and VS Code](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot/5-exercise)
