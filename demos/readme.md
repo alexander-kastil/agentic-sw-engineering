@@ -135,20 +135,70 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
 
 ## Schedule
 
-**Total duration: 4 days · 28.0 hours**
-**Split: 70% instruction & demos (~19.5h) · 30% labs (~8.5h)**
+**Total duration: 4 days · 28.0 hours** · 70% instruction & demos (~19.5h) · 30% labs (~8.5h)
 
-| Day       | Modules                                    | Instruction & Demos |     Labs |     Total |
-| --------- | ------------------------------------------ | ------------------: | -------: | --------: |
-| **Day 1** | Module 1: Fundamentals & Agent Mode Basics |                2.5h |     1.0h |      3.5h |
-|           | Module 2: GitHub Copilot Harness           |                3.0h |     1.5h |      4.5h |
-| **Day 2** | Module 3: Implementing Agentic Coding      |                2.5h |     1.5h |      4.0h |
-|           | Module 4: Agent Sessions & Agents Window   |                2.0h |     1.0h |      3.0h |
-| **Day 3** | Module 5: GitHub Copilot CLI & SDK         |                1.5h |     1.0h |      2.5h |
-|           | Module 6: GitHub Copilot App               |                2.0h |     0.5h |      2.5h |
-|           | Module 7: Agentic DevOps                   |                2.5h |     0.5h |      3.0h |
-| **Day 4** | Module 8: Governance, Cost & Obs.          |                1.5h |     0.5h |      2.0h |
-|           | Module 9: Spec-Driven Dev & Delivery       |                2.0h |     1.0h |      3.0h |
-| **Total** |                                            |           **19.5h** | **8.5h** | **28.0h** |
+| Day       | Modules                              |     Demos |     Labs |     Total |
+| --------- | ------------------------------------ | --------: | -------: | --------: |
+| **Day 1** | Module 1 · Module 2                  |      6.0h |     1.0h |      7.0h |
+| **Day 2** | Module 2 (lab) · Module 3 · Module 4 |      4.5h |     2.5h |      7.0h |
+| **Day 3** | Module 4 · Module 5 · Module 6       |      4.0h |     3.0h |      7.0h |
+| **Day 4** | Module 7 · Module 8 · Module 9       |      5.0h |     2.0h |      7.0h |
+| **Total** |                                      | **19.5h** | **8.5h** | **28.0h** |
 
-> Labs are hands-on exercises embedded at the end of each module. The lowest-risk first lab is the read-only `/research` agent in Module 4; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.
+Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, and a 15-minute afternoon break.
+
+### Day 1: Fundamentals and the Harness
+
+| Time        |  Dur. | Type  | Content                                                                                                                                                            |
+| ----------- | ----: | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 09:00-10:30 |  1.5h | Demos | [M1](01-fundamentals/) Getting Started with Copilot & Vision · Selecting & Configuring Models · Shaping the Context Window                                          |
+| 10:30-10:45 | 0.25h | Break |                                                                                                                                                                    |
+| 10:45-11:45 |  1.0h | Demos | [M1](01-fundamentals/) AI-Assisted Coding Essentials · Agent Mode Basics · Pull Requests & Code Reviews · Configuring & Governing Copilot · Working in the Terminal |
+| 11:45-12:45 |  1.0h | Labs  | [Lab 01: Getting started](../labs/01-get-started/) · [Lab 02: Update a web API with Copilot](../labs/02-assisted-coding/)                                           |
+| 12:45-13:30 | 0.75h | Lunch |                                                                                                                                                                    |
+| 13:30-15:00 |  1.5h | Demos | [M2](02-agentic-harness/) Copilot Instructions · Prompt Files · MCP Basics & the MCP Registry · Implementing MCP Servers                                            |
+| 15:00-15:15 | 0.25h | Break |                                                                                                                                                                    |
+| 15:15-17:15 |  2.0h | Demos | [M2](02-agentic-harness/) Agent Skills · Custom Agents (overview, repository agents) · Agent Plugins · Copilot Memory · Hooks · Agent Interop                       |
+
+### Day 2: Agentic Coding and Agent Sessions
+
+| Time        |  Dur. | Type  | Content                                                                                                                         |
+| ----------- | ----: | ----- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 09:00-10:30 |  1.5h | Lab   | [Lab 03: Copilot instructions & custom agents](../labs/03-harness/)                                                             |
+| 10:30-10:45 | 0.25h | Break |                                                                                                                                 |
+| 10:45-12:45 |  2.0h | Demos | [M3](03-agentic-coding/) Local Agents & Agent Mode · Delegating Tasks to Cloud Agents · Multi-Agent Orchestration with Subagents |
+| 12:45-13:30 | 0.75h | Lunch |                                                                                                                                 |
+| 13:30-14:30 |  1.0h | Demos | [M3](03-agentic-coding/) Agentic Browser Automation · Upgrading & Modernization                                                  |
+| 14:30-14:45 | 0.25h | Break |                                                                                                                                 |
+| 14:45-15:45 |  1.0h | Lab   | [Lab 04: Orchestrate a multi-agent build with one prompt](../labs/04-orchestration/)                                            |
+| 15:45-17:15 |  1.5h | Demos | [M4](04-agent-sessions/) The Agents Window · Agent Host Protocol (AHP vs ACP) · Remote Agent Sessions over SSH & Dev Tunnels     |
+
+### Day 3: CLI, SDK and the Copilot App
+
+| Time        |  Dur. | Type  | Content                                                                                                                                                                         |
+| ----------- | ----: | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 09:00-09:30 |  0.5h | Demos | [M4](04-agent-sessions/) Session Management · Session Persistence & /chronicle · Deep Research with /research · Troubleshooting · A Second Opinion with /rubber-duck              |
+| 09:30-10:30 |  1.0h | Lab   | [Lab 05: Run two isolated agent sessions](../labs/05-agent-sessions/)                                                                                                            |
+| 10:30-10:45 | 0.25h | Break |                                                                                                                                                                                 |
+| 10:45-12:45 |  2.0h | Demos | [M5](05-cli-sdk/) CLI · HR Automation Business Case · Agentic Workflows · MCP Servers & Skills · Codebase Q&A · SDK · SDK Demos · MCP Apps · Deploy to Azure · Multi-Agent System |
+| 12:45-13:30 | 0.75h | Lunch |                                                                                                                                                                                 |
+| 13:30-14:30 |  1.0h | Lab   | [Lab 06: Integrate an AI agent using the Copilot SDK](../labs/06-copilot-sdk/)                                                                                                   |
+| 14:30-14:45 | 0.25h | Break |                                                                                                                                                                                 |
+| 14:45-16:15 |  1.5h | Demos | [M6](06-copilot-app/) Desktop Agents App · Sessions from Issues, Prompts & PRs · Validation Loop · Scheduled Automations · Syncing Skills & MCP Servers · Configuration           |
+| 16:15-17:15 |  1.0h | Lab   | [Lab 07: Ship a verified pull request from the desktop app](../labs/07-copilot-app/)                                                                                             |
+
+### Day 4: DevOps, Governance and Spec-Driven Delivery
+
+| Time        |  Dur. | Type  | Content                                                                                                                                                                    |
+| ----------- | ----: | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 09:00-10:30 |  1.5h | Demos | [M7](07-agentic-devops/) IaC & Configuration (Azure CLI, SSH, Bicep & Terraform) · CI/CD with GitHub Actions                                                                |
+| 10:30-10:45 | 0.25h | Break |                                                                                                                                                                            |
+| 10:45-11:15 |  0.5h | Demos | [M7](07-agentic-devops/) Testing using Copilot · Documentation using Copilot                                                                                                |
+| 11:15-12:15 |  1.0h | Lab   | [Lab 08: Resolve GitHub issues using Copilot](../labs/08-devops/)                                                                                                           |
+| 12:15-13:00 | 0.75h | Lunch |                                                                                                                                                                            |
+| 13:00-14:30 |  1.5h | Demos | [M8](08-governance/) Permission Model · Cost & AI Credits · Enterprise Policy · Observability with OpenTelemetry · Open-Source Models · EU AI Act, GDPR & Accessibility     |
+| 14:30-14:45 | 0.25h | Break |                                                                                                                                                                            |
+| 14:45-16:15 |  1.5h | Demos | [M9](09-spec-driven-dev/) Why Spec-Driven Development · The Spec-Driven Workflow · Sample Case: Implement a Product Feature                                                 |
+| 16:15-17:15 |  1.0h | Lab   | [Lab 09: Ship a feature with GitHub Spec Kit](../labs/09-spec-driven/)                                                                                                      |
+
+> Labs live in [`labs/`](../labs/) and run at the point in the schedule shown above. The lowest-risk first lab is the read-only `/research` session in Lab 05; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.
