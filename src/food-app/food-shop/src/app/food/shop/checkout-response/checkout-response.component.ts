@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges, inject } from '@angular/core';
+import { Component, Input, SimpleChanges, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { OrderEventResponse } from '../order/order-event-response';
 import { MatCardModule } from '@angular/material/card';
@@ -9,6 +9,7 @@ import { AILoggerService } from 'src/app/logger/ai-logger.service';
   standalone: true,
   imports: [MatCardModule],
   templateUrl: './checkout-response.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./checkout-response.component.scss']
 })
 export class CheckoutResponseComponent {

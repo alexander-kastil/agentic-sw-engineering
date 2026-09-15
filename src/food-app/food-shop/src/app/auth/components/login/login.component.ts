@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   MsalGuardConfiguration,
   MsalService,
@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatButtonModule],
 })
 export class LoginComponent implements OnInit {

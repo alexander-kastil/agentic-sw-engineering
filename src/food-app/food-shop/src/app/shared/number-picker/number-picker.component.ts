@@ -2,7 +2,8 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output
+  Output,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import {
   AbstractControl,
@@ -31,6 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
     },
   ],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [MatIconModule],
 })
 export class NumberPickerComponent implements ControlValueAccessor, Validator {

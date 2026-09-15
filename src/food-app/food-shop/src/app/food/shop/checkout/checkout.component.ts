@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { combineLatest, map } from 'rxjs';
 import { CartFacade } from '../../state/cart/cart.facade';
@@ -15,6 +15,7 @@ import { CheckoutResponseComponent } from '../checkout-response/checkout-respons
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CheckoutFormComponent, CheckoutResponseComponent],
 })
 export class CheckoutComponent {

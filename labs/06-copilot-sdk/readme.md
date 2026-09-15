@@ -13,7 +13,7 @@ This exercise should take approximately **60** minutes to complete.
 Your lab environment MUST include the following resources:
 
 - Git 2.48 or later.
-- The .NET SDK version 9.0 or later.
+- The .NET SDK version 10.0 or later.
 - Access to a GitHub account with GitHub Copilot enabled.
 - Visual Studio Code (version 1.116 or later) with the C# Dev Kit extension.
 - GitHub Copilot CLI installed and authenticated with your GitHub account.
@@ -179,7 +179,7 @@ Use the following steps to complete this task:
     dotnet build
     ```
 
-    > **IMPORTANT**: The project uses .NET 8 by default. If you have the .NET 9 or .NET 10 SDK installed, but not .NET 8, you need to update the project to target the version of .NET that you have installed. For AI assistance with updating to a later version of .NET, open the GitHub Copilot Chat view and ask GitHub Copilot to update your project files to the version of .NET that you have installed in your environment. For example, you can ask: "I need to update this .NET 8 project to target .NET 10. Please: 1. Update all .csproj files to target net10.0; 2. Update all NuGet packages to .NET 10-compatible versions; 3. Update global.json (if present); 4. Address any breaking changes or deprecated APIs between .NET 8 and .NET 10; 5. Ensure ALL projects in the solution build successfully. Please explain any significant changes or potential issues I should be aware of." When you enter your prompt, the AI assistant should update your codebase and explain what was changed.
+    > **IMPORTANT**: The project targets .NET 8 by default, so update it to target .NET 10 before you build. For AI assistance, open the GitHub Copilot Chat view and ask GitHub Copilot to update your project files to .NET 10. For example, you can ask: "I need to update this .NET 8 project to target .NET 10. Please: 1. Update all .csproj files to target net10.0; 2. Update all NuGet packages to .NET 10-compatible versions; 3. Update global.json (if present); 4. Address any breaking changes or deprecated APIs between .NET 8 and .NET 10; 5. Ensure ALL projects in the solution build successfully. Please explain any significant changes or potential issues I should be aware of." When you enter your prompt, the AI assistant should update your codebase and explain what was changed.
 
     The build should complete successfully without errors (there might be warnings).
 

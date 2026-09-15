@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { SidenavFacade } from '../../state/sidenav/sidenav.facade';
 import { NavItem } from './nav-item.model';
 import { RouterLinkActive, RouterLink } from '@angular/router';
@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     MatToolbarModule,
     MatIconModule,

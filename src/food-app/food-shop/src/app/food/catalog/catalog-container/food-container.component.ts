@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CatalogItem } from '../../catalog-item.model';
 import { FoodEntityService } from '../../state/catalog/food-entity.service';
 import { FoodEditComponent } from '../food-edit/food-edit.component';
@@ -11,6 +11,7 @@ import { AILoggerService } from '../../../logger/ai-logger.service';
   templateUrl: './food-container.component.html',
   styleUrls: ['./food-container.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     FoodListComponent,
     FoodEditComponent,

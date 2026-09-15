@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MsalAuthFacade } from '../../state/auth.facade';
 import { AsyncPipe } from '@angular/common';
 
@@ -7,6 +7,7 @@ import { AsyncPipe } from '@angular/common';
     templateUrl: './current-user.component.html',
     styleUrls: ['./current-user.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [AsyncPipe],
 })
 export class CurrentUserComponent {

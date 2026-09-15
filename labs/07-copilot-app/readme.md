@@ -26,7 +26,7 @@ flowchart LR
 
 - The GitHub Copilot desktop app installed on macOS (Apple Silicon), Windows, or Linux, signed in with a GitHub account on any Copilot plan, or configured against a bring-your-own-key endpoint
 - Your own fork of this class repository, cloned locally, so the pull request you open is yours to merge
-- Node.js and `npm` on your PATH, since the Food Shop app is an Angular project the session builds and serves
+- Node.js 24 or later and `npm` on your PATH, since the Food Shop app is an Angular project the session builds and serves
 - Git on your PATH, because two steps read worktree state from your own terminal rather than from the app
 - VS Code 1.135 or later for the final step, which continues an app session in the editor
 

@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   Subscription,
@@ -20,6 +20,7 @@ import { AILoggerService } from 'src/app/logger/ai-logger.service';
   templateUrl: './food-shop-container.component.html',
   styleUrls: ['./food-shop-container.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ShopItemComponent,
     AsyncPipe

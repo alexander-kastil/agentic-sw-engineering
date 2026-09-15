@@ -21,7 +21,7 @@ flowchart TD
 
 - GitHub Copilot enabled in VS Code, with agent mode available
 - `uv` installed, which provides the `uvx` command used to run the Spec Kit CLI
-- Python 3.11 or later, or Node 20 or later, depending on which stack you choose in step 4
+- Python 3.11 or later, or Node.js 24 or later, depending on which stack you choose in step 4
 
 ## Step 1: Initialize the project (8 minutes)
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { CatalogItem } from '../../catalog-item.model';
 import { CartItem } from '../cart-item.model';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './shop-item.component.html',
   styleUrls: ['./shop-item.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     MatCardModule,
     NumberPickerComponent,

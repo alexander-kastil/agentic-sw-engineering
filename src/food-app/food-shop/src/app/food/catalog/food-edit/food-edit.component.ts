@@ -6,6 +6,7 @@ import {
   Output,
   SimpleChanges,
   inject,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CatalogItem } from '../../catalog-item.model';
@@ -20,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
     templateUrl: './food-edit.component.html',
     styleUrls: ['./food-edit.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     ReactiveFormsModule,
     MatCardModule,

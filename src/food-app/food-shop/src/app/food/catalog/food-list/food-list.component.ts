@@ -5,6 +5,7 @@ import {
   OnChanges,
   Output,
   SimpleChanges,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { CatalogItem } from '../../catalog-item.model';
@@ -19,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     templateUrl: './food-list.component.html',
     styleUrls: ['./food-list.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         MatToolbarModule,
         MatButtonModule,
