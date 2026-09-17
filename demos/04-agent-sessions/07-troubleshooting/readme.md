@@ -1,5 +1,7 @@
 # Troubleshooting Agent Sessions
 
+[← Previous: Deep Research with /research](../06-research/readme.md) | [Back to Agent Sessions](../readme.md) | [Next: A Second Opinion with /rubber-duck →](../08-rubber-duck/readme.md)
+
 The `/troubleshoot` command, available since VS Code 1.127, analyzes session logs to diagnose problems in an agent session. It reads what actually happened, the prompts, the tool calls, and the failures, and reports back what went wrong and where. It is the successor to the older Agent Debug Panel, reworked as a command that goes wherever your session runs.
 
 That last point matters most. A session can execute locally in your editor or on a remote agent host reached over SSH or a dev tunnel, and `/troubleshoot` works the same way in both cases. Instead of a panel bound to one execution surface, you get a single command that inspects local and remote agent-host sessions alike. Reach for it when a session stalls, a tool call fails, or a remote host behaves in a way the transcript alone does not explain.

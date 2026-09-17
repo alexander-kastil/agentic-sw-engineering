@@ -1,5 +1,7 @@
 # The Spec-Driven Workflow
 
+[← Previous: Why Spec-Driven Development](../01-introduction/readme.md) | [Back to Spec-Driven Development](../readme.md) | [Next: Sample Case: Implement a Product Feature →](../03-sample-case/readme.md)
+
 GitHub Spec Kit is an open-source toolkit that wires spec-driven development into AI coding assistants such as GitHub Copilot and Claude Code. Everything it produces is plain Markdown stored next to your code, so specifications, plans, and tasks live in Git with the same review and history as the implementation.
 
 Because the artifacts are versioned files, a feature branch carries both the requirements and the code that satisfies them. Include `spec.md`, `plan.md`, and `tasks.md` in the pull request so a reviewer sees what was built and why.

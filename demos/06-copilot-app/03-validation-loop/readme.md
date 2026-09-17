@@ -1,5 +1,7 @@
 # The Validation Loop
 
+[← Previous: Sessions from Issues, Prompts & Pull Requests](../02-sessions/readme.md) | [Back to Copilot App](../readme.md) | [Next: Scheduled Automations →](../04-automations/readme.md)
+
 The Copilot app builds validation into each session so you can confirm an agent's work before it lands. Instead of switching to another tool to check a diff or run the app, the session gives you the diff view, an in-app browser, and a terminal in one place. When you are satisfied, you merge the pull request directly from inside the session.
 
 These capabilities map to the questions you actually ask when reviewing agentic work. The diff answers "what changed", the terminal answers "does it build and pass", the in-app browser answers "does it behave", and the merge answers "ship it". Keeping them in one surface removes the context-switch tax that otherwise makes reviewing agent output slower than writing the code yourself.

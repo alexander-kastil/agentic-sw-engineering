@@ -1,5 +1,7 @@
 # A Second Opinion with /rubber-duck
 
+[← Previous: Troubleshooting Agent Sessions](../07-troubleshooting/readme.md) | [Back to Agent Sessions](../readme.md)
+
 An agent that just spent twenty turns on a problem is the worst available reviewer of that problem, because the reasoning that produced the code also produces the review. The `/rubber-duck` command, experimental in VS Code 1.135, answers that by handing the session to a complementary model for a second opinion. It reads what the session did and reports what it thinks was missed: a skipped edge case, an assumption nobody checked, a requirement that quietly dropped out. It is a review step rather than a fix step, so nothing changes on disk when you run it.
 
 The value comes from the reviewing model being a different one. A second pass from the same model tends to confirm its own reasoning, while a different model brings different priors and catches different things. Run it at the point where you would otherwise say "looks right, ship it".

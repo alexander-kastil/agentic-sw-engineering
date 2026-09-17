@@ -1,5 +1,7 @@
 # The Agents Window
 
+[← Back to Agent Sessions](../readme.md) | [Next: Agent Host Protocol (AHP vs ACP) →](../02-host-protocol/readme.md)
+
 The Agents window is a dedicated companion window for running agents across multiple projects at once. It arrived as a preview in VS Code 1.120 and has since become the primary surface for agent work rather than an experiment beside it. It sits beside your editor rather than inside it, so agent work no longer competes with the file you are reading for screen space. Each window is independent: you can point one at a different model, a different project, or a different execution host while the others keep running.
 
 The window matters because agentic work is no longer a single blocking conversation in the sidebar. A selectable agent harness lets you choose which backend runs a given session, remote execution lets that session run away from your laptop, and per-window setting overrides let each window carry its own configuration. Extensions opt in to appearing in the window through the `extensions.supportAgentsWindow` capability, so tools you already use can surface their agent surfaces here.

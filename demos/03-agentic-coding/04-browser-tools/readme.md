@@ -1,5 +1,7 @@
 # Agentic Browser Automation
 
+[← Previous: Multi-Agent Orchestration with Subagents](../03-orchestration/readme.md) | [Back to Agentic Coding](../readme.md) | [Next: Upgrading & Modernization →](../05-upgrading/readme.md)
+
 Browser tools went GA and on-by-default in VS Code 1.127, letting agents open pages, read console errors, take screenshots, click, type, and navigate without any external MCP server. Before this, driving a browser meant wiring up a Playwright or Chrome DevTools MCP server and managing its lifecycle yourself. Now the capability ships inside the agent, so the moment an agent finishes editing a web app it can open the running site and confirm the change actually rendered. This closes the loop for web work: the same agent that writes the code also verifies it in a real browser.
 
 The tools are governed by the `BrowserChatTools` policy, which an administrator can set to control whether agents may reach the browser at all. That policy lives with the other managed settings covered in the [Governance module](../../08-governance/03-enterprise-policy/), alongside `ChatAgentNetworkFilter` for outbound network control. When the policy allows browser access, the defaults still keep you in the loop through per-site permission prompts and an explicit tab-sharing model. Nothing is shared with the agent silently.

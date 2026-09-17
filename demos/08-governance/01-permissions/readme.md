@@ -1,5 +1,7 @@
 # Trust, Safety & the Permission Model
 
+[← Back to Governance](../readme.md) | [Next: Cost Model & AI Credits →](../02-cost/readme.md)
+
 Auto-approval used to be something you triggered with a slash command. It is now a permission level that the agent respects on every action, which makes the safety posture a setting you govern rather than a habit each user remembers. Autopilot has been the default level since VS Code 1.124, so labs in this course assume the agent already runs most safe actions without prompting. Two settings anchor the model: `chat.permissions.default` picks the level for a workspace, and the org-controlled `chat.tools.global.autoApprove` decides whether that autonomy is even available to the user.
 
 The permission level answers one question: when does the agent act on its own, and when does it stop and ask. Restricted Mode is the default for any newly opened folder, so an untrusted checkout starts locked down until you grant trust. Once trusted, Autopilot runs actions the model rates as safe and pauses on the rest, while Advanced Autopilot is the escalated tier for teams that want broader hands-off execution. Claude Auto mode maps the same idea onto the Claude harness, and the `allowDangerouslySkipPermissions` escape hatch exists but should be treated as a break-glass option, not a daily setting.

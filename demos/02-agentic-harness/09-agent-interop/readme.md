@@ -1,5 +1,7 @@
 # Agent Interop: One Repository, Several Harnesses
 
+[← Previous: GitHub Copilot Hooks](../08-hooks/readme.md) | [Back to Agentic Harness](../readme.md)
+
 Everything earlier in this module is written in GitHub Copilot's own dialect: `.github/copilot-instructions.md`, `.instructions.md` files with an `applyTo` glob, `.prompt.md` files, `hooks.json`. That dialect is fine while Copilot is the only agent in the repository. It stops being fine the moment a colleague runs Claude Code on the same checkout, or a pipeline hands the branch to a different coding agent, because none of those files mean anything to a tool that was not built to read them.
 
 `AGENTS.md` is the answer the ecosystem converged on. It is a plain Markdown file at the repository root, with no frontmatter and no schema, that every major agent reads as always-on context. VS Code, Claude Code, the Codex CLI, Cursor, and the GitHub Copilot coding agent all pick it up.

@@ -1,5 +1,7 @@
 # Sample Case: Implement a Product Feature
 
+[← Previous: The Spec-Driven Workflow](../02-spec-driven-workflow/readme.md) | [Back to Spec-Driven Development](../readme.md)
+
 The two previous topics described the spec-driven loop. This one describes what it feels like to run it, so you know what the hands-on lab asks of you before you open it.
 
 The scenario is a meeting cost calculator: an organizer enters a duration and a list of attendee hourly rates, and the tool returns the total salary cost with a per attendee breakdown. It is deliberately small. A feature you can hold in your head is the only kind where you can see clearly what the process added, rather than attributing the result to the size of the problem.

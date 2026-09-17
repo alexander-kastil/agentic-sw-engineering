@@ -1,5 +1,7 @@
 # Sessions from Issues, Prompts & Pull Requests
 
+[← Previous: Meet the Desktop Agents App](../01-overview/readme.md) | [Back to Copilot App](../readme.md) | [Next: The Validation Loop →](../03-validation-loop/readme.md)
+
 A session in the Copilot app starts from one of three entry points: a GitHub issue, a freeform prompt, or a pull request already in flight. This mirrors how real work arrives, so you open a session from the artifact you already have rather than describing the task from scratch. An issue carries the acceptance criteria, a PR carries the diff and review comments, and a prompt is the escape hatch for work that does not yet have a tracking artifact.
 
 Each session runs in an isolated space with its own branch and files, so parallel sessions never interfere with each other. When you open a session you choose how that space is created: a new worktree, or a local repository clone. This isolation is what makes it safe to run several agents against the same repository at the same time, which is the whole reason to work in a dedicated agents view.

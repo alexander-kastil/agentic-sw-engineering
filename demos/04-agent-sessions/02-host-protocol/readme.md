@@ -1,5 +1,7 @@
 # Agent Host Protocol (AHP vs ACP)
 
+[← Previous: The Agents Window](../01-agents-window/readme.md) | [Back to Agent Sessions](../readme.md) | [Next: Remote Agent Sessions over SSH & Dev Tunnels →](../03-remote-sessions/readme.md)
+
 The Agent Host Protocol (AHP), shipped in VS Code 1.121, is an open specification where authoritative session state lives on a long-lived host and synchronizes out to one or more clients. Because the host outlives any single client, sessions survive disconnects and reconnect cleanly. This is an architect-track topic: the point is the boundary between where state lives and where you view it, not a set of buttons to click.
 
 The design contrast worth internalizing is AHP against the Agent Client Protocol (ACP). Under a client-authoritative model, the session lives with the client, so closing the client risks losing the running work. Under AHP, the host is authoritative, the client is a view, and the same session can be attached from more than one place. The agent host is built on the Copilot SDK, which makes the SDK load-bearing for this whole module and links directly to [Module 5](../../05-cli-sdk/02-sdk/01-sdk/).

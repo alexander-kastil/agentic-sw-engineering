@@ -1,5 +1,7 @@
 # Configuring the App: Customize, Permissions & Models
 
+[← Previous: Syncing Skills & MCP Servers](../05-sync/readme.md) | [Back to Copilot App](../readme.md)
+
 Everything the app can reach and everything it is allowed to do is configured in three places: Customize for capabilities, the permission mode for authority, and the composer menu for the model. Sessions and automations inherit all three, so a setting you get wrong here shows up as an agent that lacks a tool, stalls on an approval prompt, or burns budget on the wrong model. This topic covers the surfaces you touch before the first session, not the session itself.
 
 Customize is the single management view for plugins, skills, MCP servers, and canvases. It is available to everyone rather than behind a flag, and it is where personal skills are created, edited, and removed with Markdown preview and validation. Plugins installed there can be updated one at a time or in bulk, and can keep themselves current with auto-update.

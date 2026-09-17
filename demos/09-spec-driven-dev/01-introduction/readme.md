@@ -1,5 +1,7 @@
 # Why Spec-Driven Development
 
+[← Back to Spec-Driven Development](../readme.md) | [Next: The Spec-Driven Workflow →](../02-spec-driven-workflow/readme.md)
+
 Spec-driven development (SDD) reverses the code-first approach by starting with a specification that acts as an executable contract between your intent and the implementation. Instead of writing a vague prompt and hoping for the right output, you hand the agent a specification that becomes the source of truth for what gets built, tested, and validated.
 
 This matters because coding agents are good at generating new functionality and bad at leaving working code alone. A specification gives the agent a boundary: it states what must be true when the work is done, so the agent improves the codebase instead of rewriting parts of it that were already stable.

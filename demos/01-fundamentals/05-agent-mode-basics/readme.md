@@ -1,5 +1,7 @@
 # Agent Mode Basics
 
+[← Previous: AI-Assisted Coding Essentials](../04-ai-assisted-coding/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Pull Requests & Code Reviews →](../06-pr-code-review/readme.md)
+
 Local agents execute within your current VS Code session with real-time feedback and full integration with your editor, terminal, and files. Execution is synchronous and blocking, making them ideal for focused single-task interactive agentic coding workflows.
 
 > Note: Currently in VS Code Insiders, there is a an option to Queue or steer messages to the agent. Queuing allows you to stack up multiple messages for the agent to process sequentially, while steering lets you adjust the agent's behavior or focus in real-time based on the conversation flow.

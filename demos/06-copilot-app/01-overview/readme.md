@@ -1,5 +1,7 @@
 # Meet the Desktop Agents App
 
+[← Back to Copilot App](../readme.md) | [Next: Sessions from Issues, Prompts & Pull Requests →](../02-sessions/readme.md)
+
 The GitHub Copilot app is a standalone desktop application for macOS (Apple Silicon), Windows, and Linux that runs Copilot agents outside the editor. It is the only desktop experience for agent-driven development built natively on GitHub, so it carries deep GitHub context: your code, pull requests, issues, and search. Think of it as a dedicated agents view: a place to launch, watch, and validate agentic work that complements, rather than replaces, your editor sessions.
 
 Because the app is not bound to an IDE, it works with every GitHub Copilot plan (Free, Pro, Pro+, and Max) and supports a bring-your-own-key endpoint. That means the same person can drive a licensed Copilot session on one machine and a BYOK session on another, and the app behaves the same way in both. The point of a separate surface is parallelism: you can open work from real issues, pull requests, or freeform prompts and let several agents run at once without switching between tools.

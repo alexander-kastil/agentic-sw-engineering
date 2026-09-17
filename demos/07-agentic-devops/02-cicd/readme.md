@@ -1,5 +1,7 @@
 # CI/CD with GitHub Actions
 
+[← Previous: IaC & Configuration](../01-iac-cfg/readme.md) | [Back to Agentic DevOps](../readme.md) | [Next: Testing using Copilot →](../03-testing/readme.md)
+
 GitHub Actions is where the infrastructure from the previous topic gets deployed on every push. The [GitHub Actions agent](/.github/agents/github-actions.agent.md) writes and maintains those workflows using Microsoft Learn best practices, covering authoring, optimization, troubleshooting, and security posture. It creates production-ready YAML for single and multi-job workflows, manages environments and secrets, and integrates third-party marketplace actions securely.
 
 The agent designs workflows that match your repository structure, evaluates and locks down action dependencies, and diagnoses failures with detailed root cause analysis. It enforces least-privilege token scopes and helps you adopt reusable workflows and OpenID Connect federation for cloud deployments.

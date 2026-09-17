@@ -1,5 +1,7 @@
 # Giving Copilot Memory
 
+[← Previous: Distributing Capabilities with Plugins](../06-plugins/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: GitHub Copilot Hooks →](../08-hooks/readme.md)
+
 ## What is Copilot Memory?
 
 Copilot Memory enables Copilot to build a persistent, repository-specific understanding by storing tightly scoped information about your codebase that it deduces through interactions. Memories are validated against current code citations, automatically deleted after 28 days if unused, and kept completely repository-scoped to ensure privacy and security. This persistent knowledge reduces the burden of repeatedly explaining coding conventions and maintaining custom instruction files, allowing Copilot to adapt to your repository's patterns and deliver increasingly better results over time.

@@ -1,5 +1,7 @@
 # Scheduled Automations
 
+[← Previous: The Validation Loop](../03-validation-loop/readme.md) | [Back to Copilot App](../readme.md) | [Next: Syncing Skills & MCP Servers →](../05-sync/readme.md)
+
 Scheduled automations turn skills and prompts into repeatable work that the Copilot app runs on a regular basis, without you starting each session by hand. This is the natural next step for a skill you authored earlier: promote it from an on-demand tool into an unattended, repeating job. Session automations are available by default, so a scheduled prompt runs without a feature flag to find first.
 
 The value comes from pairing a stable capability with a schedule. A skill is a portable folder of instructions the agent already knows how to run, and a prompt is a reusable instruction; either becomes an automation once it has a trigger time attached. Recurring maintenance work is the obvious fit: a nightly dependency check, a weekly documentation sweep, a scheduled triage of new issues.

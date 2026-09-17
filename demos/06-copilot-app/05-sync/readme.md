@@ -1,5 +1,7 @@
 # Syncing Skills & MCP Servers
 
+[← Previous: Scheduled Automations](../04-automations/readme.md) | [Back to Copilot App](../readme.md) | [Next: Configuring the App: Customize, Permissions & Models →](../06-configuration/readme.md)
+
 The Copilot app syncs a repository's MCP servers and skills automatically, so the tools an agent has in the editor are the same tools it has in the app. You do not reconfigure integrations per surface: connect the repository once and its capabilities follow. This keeps behavior consistent whether an agent runs in VS Code or in the desktop app.
 
 Two kinds of capability sync from the repository. MCP servers sync automatically to sessions, so an agent can reach the external data and tools those servers expose. Custom Copilot skills sync across sessions, so a skill you authored is available to every session in that repository. Because both are defined in the repository rather than on a single machine, the connection travels with the repo.

@@ -1,5 +1,7 @@
 # IaC & Configuration
 
+[← Back to Agentic DevOps](../readme.md) | [Next: CI/CD with GitHub Actions →](../02-cicd/readme.md)
+
 Infrastructure as Code enables repeatable, version-controlled deployments through scripts and declarative templates. This topic walks the full spectrum, starting with imperative Azure CLI automation, moving through remote host configuration over SSH, and ending with the declarative templates used by Bicep and Terraform.
 
 Copilot is useful at every point on that spectrum. It reads application source code to derive the resources an app actually needs, translates scripts between shells and template languages, scaffolds module layouts that follow azd conventions, and drives a shell on a remote host through an MCP server.

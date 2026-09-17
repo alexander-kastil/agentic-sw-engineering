@@ -1,5 +1,7 @@
 # Working in the Terminal
 
+[← Previous: Configuring & Governing Copilot](../07-mgmt-settings/readme.md) | [Back to Fundamentals](../readme.md)
+
 Agents interact with your shell differently from humans, and two features make that interaction efficient. The `VSCODE_AGENT` environment variable lets command-line tools detect when they are invoked by an agent and switch to machine-readable output. Terminal output compression condenses the verbose output of test runners, build tools, linters, Docker, and package managers so it fits the model's context without losing the signal.
 
 ## The VSCODE_AGENT environment variable

@@ -1,5 +1,7 @@
 # Selecting Models
 
+[← Previous: Getting Started with Copilot & Vision](../01-intro/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Shaping the Context Window →](../03-context-window/readme.md)
+
 GitHub Copilot lets you drive chat and agent sessions with more than one model, and the right choice is a capability decision rather than a brand-name decision. What matters for a given task is the model's context size, its reasoning depth, and its cost per request, not which vendor shipped it. VS Code exposes these tradeoffs directly in the model picker, so you can match a fast, cheap model to routine edits and a deeper model to architectural work. This topic covers how models reach Copilot, how you tune them, and the settings that keep background tasks like commit messages and titles working.
 
 > Note: The paths below describe VS Code. In Visual Studio and JetBrains IDEs the equivalent model controls live under the Copilot settings for that IDE.

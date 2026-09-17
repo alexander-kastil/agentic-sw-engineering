@@ -1,5 +1,7 @@
 # Cost Model & AI Credits
 
+[← Previous: Trust, Safety & the Permission Model](../01-permissions/readme.md) | [Back to Governance](../readme.md) | [Next: Enterprise Policy & Managed Settings →](../03-enterprise-policy/readme.md)
+
 GitHub Copilot has moved to usage-based billing, so every interaction draws down AI credits rather than sitting inside a flat monthly allowance. The credit cost of a turn is a function of four things: the input tokens you send, the output tokens the model returns, the cached tokens it can reuse, and the model you picked. The first three grow with the size of your context and the length of the answer, which is why a tight prompt against a focused workspace is cheaper than a sprawling one. The fourth, model choice, is now the largest lever an architect controls, because a premium model can cost several times what a lighter model costs for the same task.
 
 The tooling makes cost visible at the exact moment you make a decision. The model picker now shows cost next to each model, so choosing a model is a budget decision at the point of choice, not a surprise on the invoice. The session dashboard surfaces session-level cost and an additional-spend percentage as work proceeds, and per-subagent credit cost appears on hover so a fan-out of subagents does not hide where the credits went. Read this topic alongside the [Models topic in Fundamentals](../../01-fundamentals/02-models/), where model capabilities and context sizes are covered in depth.

@@ -1,5 +1,7 @@
 # EU AI Act, GDPR & Accessibility Compliance
 
+[← Previous: Cutting Token Cost with Open-Source Models](../05-open-source-models/readme.md) | [Back to Governance](../readme.md)
+
 Governance is not only about what an agent may do inside your tools; it is also about what the law requires of the software your agents help you ship. Three regimes matter for most teams building with Copilot: the EU AI Act for AI features, the DSGVO/GDPR for personal data, and accessibility law for user-facing surfaces. This topic gives engineers a working orientation on each so you can classify a feature, disclose it correctly, and know when to bring in counsel. None of this is legal advice: it is engineering-team orientation, and any external compliance claim needs sign-off from counsel or your data protection officer first.
 
 ## Three regimes to check

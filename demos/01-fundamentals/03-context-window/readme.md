@@ -1,5 +1,7 @@
 # Context Window Optimization & Prompt Caching
 
+[← Previous: Selecting Models](../02-models/readme.md) | [Back to Fundamentals](../readme.md) | [Next: AI-Assisted Coding Essentials →](../04-ai-assisted-coding/readme.md)
+
 Context engineering is the practice of strategically designing what information GitHub Copilot receives to improve the quality and relevance of its responses. By understanding what fills your context window and deliberately composing it, you guide GitHub Copilot to produce results that match your project's needs, coding conventions, and architectural patterns.
 
 The benefit is immediate and tangible: first-draft code that fits your style, better suggestions aligned with your stack, and reduced iteration cycles. Rather than GitHub Copilot guessing at conventions, smart context engineering ensures it understands how you build.

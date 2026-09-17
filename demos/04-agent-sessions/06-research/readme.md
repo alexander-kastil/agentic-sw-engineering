@@ -1,5 +1,7 @@
 # Deep Research with /research
 
+[← Previous: Session Persistence & /chronicle](../05-persistence/readme.md) | [Back to Agent Sessions](../readme.md) | [Next: Troubleshooting Agent Sessions →](../07-troubleshooting/readme.md)
+
 The `/research` command runs a read-only deep-research agent. It gathers information across your codebase and available sources, then produces a cited Markdown report that links each claim back to where it came from. The point is not to change anything but to understand something well enough to plan the change that comes next.
 
 Because the research agent never writes to your repository, it needs no elevated permissions. That makes it the lowest-risk agent in the course and the ideal first hands-on exercise: you get the full experience of driving an agent session, reading its output, and judging its citations, with zero chance of an unwanted edit. Reach for it to scope a change, compare two approaches, or get oriented in an unfamiliar codebase before any code is touched.

@@ -1,5 +1,7 @@
 # Getting Started with Copilot & Vision
 
+[← Back to Fundamentals](../readme.md) | [Next: Selecting Models →](../02-models/readme.md)
+
 Get started with GitHub Copilot — understand its capabilities, installation options, latest releases, and available extensions This module establishes the foundation for using AI-assisted coding in VS Code and GitHub workflows.
 
 GitHub Copilot operates in two complementary modes. AI Assisted Coding provides real-time completions and suggestions as you type, allowing you to accept or modify highlighted code snippets directly. In contrast, Agentic Software Engineering employs specialized agents that autonomously work toward assigned goals, orchestrating multiple tools and decisions to deliver complete solutions.

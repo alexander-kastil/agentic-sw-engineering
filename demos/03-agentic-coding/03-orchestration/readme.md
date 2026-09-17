@@ -1,5 +1,7 @@
 # Multi-Agent Orchestration with Subagents
 
+[← Previous: Delegating Tasks to Cloud Agents](../02-cloud/readme.md) | [Back to Agentic Coding](../readme.md) | [Next: Agentic Browser Automation →](../04-browser-tools/readme.md)
+
 Subagents let a primary agent delegate a focused slice of work to a helper that runs its own turns. The primary agent stays in charge of the overall task and hands off a bounded job, while the subagent works in its own transcript, which keeps the primary context clean. The real power is not the generic helper: it is that the helper can be a subject-matter expert with its own instructions, tools, and model.
 
 Orchestration is what happens when you put several of those experts behind one coordinator. Instead of researching requirements, planning architecture, implementing code, and designing UI sequentially, an Orchestrator coordinates these activities in parallel phases, with later phases dependent only on critical outputs from earlier ones. That is the advantage worth learning: parallel execution at scale, without context bloat.

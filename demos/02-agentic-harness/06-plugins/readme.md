@@ -1,5 +1,7 @@
 # Distributing Capabilities with Plugins
 
+[← Previous: Custom Agents](../05-agents/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: Giving Copilot Memory →](../07-memory/readme.md)
+
 ## Agent Plugins 1.0
 
 Agent plugins are prepackaged bundles of chat customizations that you can discover and install from plugin marketplaces in Visual Studio Code. A single plugin can provide any combination of slash commands, agent skills, custom agents, hooks, and MCP servers. With Agent Plugins 1.0 (VS Code 1.133) the format is an open standard rather than a VS Code feature, so the portable parts of a plugin run in any host that implements the spec.

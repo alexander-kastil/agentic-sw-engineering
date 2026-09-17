@@ -1,5 +1,7 @@
 # AI-Assisted Coding Essentials
 
+[← Previous: Shaping the Context Window](../03-context-window/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Agent Mode Basics →](../05-agent-mode-basics/readme.md)
+
 AI-assisted coding uses GitHub Copilot to accelerate your workflow through intelligent code suggestions, real-time completions, and on-demand explanations. This topic teaches you to guide Copilot with clear context and intent so it produces the exact code you need. It folds three closely related skills into one place: prompting techniques, inline suggestions, the chat slash commands that route your intent, and the context variables that ground a request in your workspace.
 
 ## Prompting

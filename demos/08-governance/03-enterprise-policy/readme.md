@@ -1,5 +1,7 @@
 # Enterprise Policy & Managed Settings
 
+[← Previous: Cost Model & AI Credits](../02-cost/readme.md) | [Back to Governance](../readme.md) | [Next: Observability with OpenTelemetry →](../04-observability/readme.md)
+
 Once agents run across a whole engineering org, per-user settings stop being enough; the posture has to be delivered from the top and made hard to override. Copilot supports two delivery channels for managed settings. Since VS Code 1.125 they can be pushed natively through MDM, so a device-management platform applies them the same way it applies any other managed configuration. Since 1.127 they can also be delivered as a file-based `managed-settings.json` at a well-known per-OS path, which suits teams that provision machines with configuration files rather than an MDM stack.
 
 Managed settings sit above user and workspace settings in precedence, which is the entire point: a value an admin sets there cannot be edited away by an individual developer. That precedence is what turns the governance topics in this module into enforceable policy rather than advice. Plugin governance and network access are the two surfaces most teams lock down first, because they define what third-party code the agent can load and where the agent is allowed to reach.

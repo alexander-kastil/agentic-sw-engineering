@@ -1,5 +1,7 @@
 # Observability with OpenTelemetry
 
+[← Previous: Enterprise Policy & Managed Settings](../03-enterprise-policy/readme.md) | [Back to Governance](../readme.md) | [Next: Cutting Token Cost with Open-Source Models →](../05-open-source-models/readme.md)
+
 You cannot govern what you cannot see, so the final governance surface is telemetry. Since VS Code 1.119, GitHub Copilot emits OpenTelemetry traces that follow the GenAI semantic conventions, which means the spans use standard names and attributes rather than a Copilot-only format. That standardization is what lets the same traces flow into whatever OTel-aware backend your org already runs. For teams on Azure, a prebuilt Azure Managed Grafana dashboard, available since 1.121, turns those signals into charts without you building the visualization from scratch.
 
 A session shows up as a span tree, and reading that tree is how you reconstruct what an agent actually did. The root is an `invoke_agent` span, and nested under it are `chat` spans for model turns, `execute_tool` spans for tool calls, and `execute_hook` spans for hook runs. When the agent delegates, each subagent's spans are parented to the `execute_tool` span that spawned it, so a fan-out stays attributable to the exact call that triggered it. The result is a trace where cost, latency, and failures all line up against the specific action that caused them.

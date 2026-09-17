@@ -1,5 +1,7 @@
 # Remote Agent Sessions over SSH & Dev Tunnels
 
+[← Previous: Agent Host Protocol (AHP vs ACP)](../02-host-protocol/readme.md) | [Back to Agent Sessions](../readme.md) | [Next: Session Management →](../04-session-management/readme.md)
+
 Remote agent sessions, available since VS Code 1.121, run over SSH and dev tunnels so an agent executes in a consistent, cloud-backed environment rather than on your local machine. This is the reproducible-environment story that replaces GitHub Codespaces and Dev Containers in this course. You get isolation and consistent tooling without maintaining a local container setup, and the agent runs against the toolchain that lives on the remote host.
 
 Two transports carry the session. SSH connects the agent to a machine you already reach that way, such as a build server or a cloud VM, so the agent inherits that host's runtimes and credentials. Dev tunnels connect through a secure tunnel without you opening inbound firewall ports, which suits machines behind NAT or a corporate network. In both cases the agent's work happens on the remote side, and your editor is the control surface.

@@ -1,5 +1,7 @@
 # GitHub Copilot Hooks
 
+[← Previous: Giving Copilot Memory](../07-memory/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: Agent Interop: One Repository, Several Harnesses →](../09-agent-interop/readme.md)
+
 GitHub Copilot hooks allow you to extend and customize agent behavior by executing custom shell commands at key points during agent execution. Hooks run in response to specific events in the agent lifecycle, enabling you to implement logging, validation, notifications, and custom integrations without modifying the agent code.
 
 ## Hook Types

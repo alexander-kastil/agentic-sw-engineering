@@ -1,5 +1,7 @@
 # Delegating Tasks to Cloud Agents
 
+[← Previous: Using Local Agents and Agent Mode](../01-local-agents/readme.md) | [Back to Agentic Coding](../readme.md) | [Next: Multi-Agent Orchestration with Subagents →](../03-orchestration/readme.md)
+
 Cloud agents execute in remote Azure Container Apps environments, offloading resource-intensive work from your local machine. Execution is asynchronous, keeping your editor responsive while the agent works independently. This model is designed for large-scale tasks, parallel operations, and resource-intensive workloads.
 
 | Aspect           | Details                                                                                                                                                                                                                                                              |

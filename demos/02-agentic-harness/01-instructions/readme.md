@@ -1,5 +1,7 @@
 # Shaping Copilot with Instructions
 
+[← Back to Agentic Harness](../readme.md) | [Next: Reusable Prompt Workflows →](../02-prompts/readme.md)
+
 Copilot uses two layers of instructions to shape AI behavior: **general repository rules** that apply everywhere, and **stack-specific guidelines** that activate based on the technologies you're working with. Understanding how these are loaded and managed is essential for optimizing your LLM context window and ensuring consistent code quality across different domains.
 
 ## Enable Instructions in VS Code

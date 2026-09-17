@@ -1,5 +1,7 @@
 # Custom Agents
 
+[← Previous: Reusable Domain Knowledge with Skills](../04-skills/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: Distributing Capabilities with Plugins →](../06-plugins/readme.md)
+
 Agents are specialized AI personas configured with specific tools, instructions, and handoffs to handle targeted development tasks. Learn about agent concepts, then explore the custom agents this repository ships.
 
 ## Topics

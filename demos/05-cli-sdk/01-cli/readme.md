@@ -1,5 +1,7 @@
 # GitHub Copilot CLI
 
+[← Back to CLI & SDK](../readme.md) | [Next: GitHub Copilot SDK →](../02-sdk/readme.md)
+
 ## AI-Powered Terminal Development
 
 GitHub Copilot CLI brings the agent to your terminal, so command discovery, code generation, and multi-step automation happen without leaving the shell. You install it with `npm install -g @github/copilot` (or WinGet on Windows), launch the interactive `copilot` shell, and authenticate with `/login`. Inside the shell you drive work with slash commands and natural-language prompts, switch models with `/model`, and press Shift+Tab for Autopilot mode when you want it to handle a multi-step task on its own.

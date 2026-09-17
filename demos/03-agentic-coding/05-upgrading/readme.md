@@ -1,5 +1,7 @@
 # Upgrading & Modernization
 
+[← Previous: Agentic Browser Automation](../04-browser-tools/readme.md) | [Back to Agentic Coding](../readme.md)
+
 This module demonstrates both the Semantic Kernel version (sk-students-ai) and the modernized Microsoft Agent Framework version (maf-students-ai), showing side-by-side how the same RAG-based student roster application evolves with the new framework.
 
 ## Migration Implementations

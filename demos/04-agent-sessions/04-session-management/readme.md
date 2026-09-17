@@ -1,5 +1,7 @@
 # Session Management
 
+[← Previous: Remote Agent Sessions over SSH & Dev Tunnels](../03-remote-sessions/readme.md) | [Back to Agent Sessions](../readme.md) | [Next: Session Persistence & /chronicle →](../05-persistence/readme.md)
+
 Once agents run across several windows, the bottleneck stops being the agent and becomes your ability to manage many sessions at once. The Agents window grew a management surface across VS Code 1.123 through 1.135 for exactly this: arrange sessions side by side, switch between them fast, isolate risky work, send it to the background, and act on signals like failing CI without leaving the chat input. This topic is the hands-on core of the module, and the exercise below builds the lab.
 
 The features arrived incrementally, so it helps to know which version introduced what. Layout and navigation came first, then background and restore, then multi-chat and server-side code review, then grouping and actionable banners. Worktree isolation, side chats, and in-conversation search followed, and the layout was finally consolidated into a single detail pane. Treat the table below as the reference for what your version supports.

@@ -1,5 +1,7 @@
 # Reusable Domain Knowledge with Skills
 
+[← Previous: Model Context Protocol & MCP Registry](../03-mcp/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: Custom Agents →](../05-agents/readme.md)
+
 Instructions files shape how Copilot writes code, and prompt files package a request you fire on demand. Neither carries a procedure: the ordered, fiddly, project-specific sequence that a colleague would walk you through the first time and that you would otherwise re-explain in every chat. Agent Skills are that missing layer, packaged as a folder you commit next to the code it describes.
 
 A skill is a directory containing a `SKILL.md` file and, optionally, the scripts, references, and templates it needs. Copilot reads only the skill's name and description at startup, then pulls the rest in when your request matches. That single design choice is why you can install forty skills without paying forty skills' worth of context on every turn.

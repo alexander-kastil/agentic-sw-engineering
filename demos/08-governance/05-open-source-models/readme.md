@@ -1,5 +1,7 @@
 # Cutting Token Cost with Open-Source Models
 
+[← Previous: Observability with OpenTelemetry](../04-observability/readme.md) | [Back to Governance](../readme.md) | [Next: EU AI Act, GDPR & Accessibility Compliance →](../06-compliance/readme.md)
+
 Usage-based AI credits make model choice a spending decision, and the frontier models are the expensive line item. A large share of everyday agent work (routine edits, explanations, test scaffolding, commit messages) does not need a frontier model, and open-source or third-party models priced a fraction as much handle it well. This topic shows how to route GitHub Copilot to OpenAI-compatible endpoints such as DeepSeek and DeepInfra-hosted open models, keeping the frontier models for the hard problems. It sits next to the cost model because it is the most direct lever you have on per-token spend.
 
 You can do this on two surfaces, each with its own guide below. In VS Code the OAI Compatible Copilot extension adds your models to the Chat model picker, and in the terminal the GitHub Copilot CLI reads its own bring-your-own-key environment variables. The two are configured differently and do not share settings, so pick the guide for the surface you are on.

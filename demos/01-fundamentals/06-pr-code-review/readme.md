@@ -1,5 +1,7 @@
 # Pull Requests & Code Reviews
 
+[← Previous: Agent Mode Basics](../05-agent-mode-basics/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Configuring & Governing Copilot →](../07-mgmt-settings/readme.md)
+
 In this module, we will explore how to use GitHub Copilot to assist with pull requests and code reviews. We will cover how to use Copilot to generate pull request descriptions, suggest code changes, and provide feedback on code reviews.
 
 ## Pull Request Support

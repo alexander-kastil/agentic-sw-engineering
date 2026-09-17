@@ -1,5 +1,7 @@
 # Configuring & Governing Copilot
 
+[← Previous: Pull Requests & Code Reviews](../06-pr-code-review/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Working in the Terminal →](../08-terminal/readme.md)
+
 ## Management policy features
 
 Management policies allow administrators to set guardrails for how users can interact with Copilot. These policies can be configured at the organization, repository, or user level, and they provide control over features such as:

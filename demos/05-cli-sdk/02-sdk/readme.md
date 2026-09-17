@@ -1,5 +1,7 @@
 # GitHub Copilot SDK
 
+[← Previous: GitHub Copilot CLI](../01-cli/readme.md) | [Back to CLI & SDK](../readme.md)
+
 ## Embedding Agents in Your Applications
 
 Move from using Copilot to building with it. The Copilot SDK embeds AI-powered agentic workflows directly into your own applications, and it runs on the same production-tested agent runtime as the Copilot CLI and, since VS Code 1.130, the Copilot agent inside VS Code's agent host, so you define the behavior and Copilot handles planning, tool invocation, and execution. It is in Technical Preview across four first-party stacks (Python, TypeScript, Go, and .NET), with community SDKs for several more languages.

@@ -1,5 +1,7 @@
 # Session Persistence & /chronicle
 
+[← Previous: Session Management](../04-session-management/readme.md) | [Back to Agent Sessions](../readme.md) | [Next: Deep Research with /research →](../06-research/readme.md)
+
 Agent sessions are durable objects, not throwaway chats. They sync to your GitHub account, so the work you started on your laptop is waiting for you on your desktop, and a window reload no longer wipes the conversation. Persistence turns a stream of agent turns into a searchable record of what was attempted, what changed, and why.
 
 The `/chronicle` command is the query surface over that record. Instead of scrolling back through a transcript, you ask for what you need: a standup summary of yesterday's sessions, every session that touched a given file, or the session tied to a specific pull request. Because the history lives with your account rather than a single machine, a chronicle query can reach across the sessions you ran anywhere you were signed in.

@@ -1,5 +1,7 @@
 # Reusable Prompt Workflows
 
+[← Previous: Shaping Copilot with Instructions](../01-instructions/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: Model Context Protocol & MCP Registry →](../03-mcp/readme.md)
+
 ## What Are Prompt Files?
 
 Prompt files are Markdown documents (`.prompt.md` extension) that define reusable, on-demand prompts for common development tasks like generating code, performing code reviews, documenting modules, or scaffolding project components. They live in your workspace under [.github/prompts/](/.github/prompts/) or in your user profile, making them available whenever you need to run a standardized workflow. Unlike custom instructions that apply to all requests, prompt files are triggered explicitly by typing `/` followed by the prompt name in the chat input.
