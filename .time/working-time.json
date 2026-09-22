@@ -493,6 +493,97 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-22",
+      "sessionId": "a84a1014-1ed6-4adb-9a09-adee2121f19a",
+      "branch": "master",
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "from": "20:10",
+      "to": "20:40",
+      "commits": [
+        "4fc4e8a",
+        "c34451d",
+        "286ff01",
+        "5bbe239"
+      ],
+      "files": [
+        "demos/03-agentic-coding/pptx/",
+        "demos/04-agent-sessions/pptx/",
+        "demos/05-cli-sdk/pptx/",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md"
+      ],
+      "mechanism": {
+        "takes": "course module readmes, existing screenshots and a Gamma workspace template",
+        "does": "plans 14 to 22 slides per module, draws architecture diagrams as SVG, renders bright scene photos, publishes the images, generates the deck in parts of at most ten cards, merges them, regenerates only the cards that failed and strips export artifacts",
+        "returns": "one merged PPTX and PDF per module grounded entirely in its own images"
+      },
+      "portsAsIs": [
+        "the Gamma deck helper script",
+        "the slide spec format",
+        "the photo prompt register"
+      ],
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "sessionId": "a84a1014-1ed6-4adb-9a09-adee2121f19a",
+      "branch": "master",
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "from": "20:40",
+      "to": "20:52",
+      "commits": [],
+      "files": [
+        "C:/Users/AlexanderKastil/.claude/skills/media-generation/scripts/blur-background.py"
+      ],
+      "mechanism": {
+        "takes": "a real portrait photograph",
+        "does": "segments the person with a portrait matting model, keeps only the subject under an anchor point sharp and blurs everything else, then crops a square for a round hero",
+        "returns": "the original face untouched on a blurred background, as full frame, square and circle preview"
+      },
+      "portsAsIs": [
+        "the background blur script"
+      ],
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "sessionId": "a84a1014-1ed6-4adb-9a09-adee2121f19a",
+      "branch": "master",
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "from": "20:52",
+      "to": "21:20",
+      "commits": [],
+      "files": [
+        "demos/0[2-5]-*/pptx/",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/gamma_deck.py",
+        ".gitignore",
+        "tasks/lessons.md"
+      ],
+      "mechanism": {
+        "takes": "a finished deck, a fixed intro deck and the module's title and subtitle",
+        "does": "builds a module title slide in the intro's visual style with a new portrait photo and inserts the intro plus that slide at the front, keeping the export clean-up away from hand-built slides",
+        "returns": "decks that open with the trainer intro and the module name"
+      },
+      "portsAsIs": [
+        "the module-slide and prepend commands of the deck helper"
+      ],
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }

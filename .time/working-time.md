@@ -34,5 +34,8 @@
 
 | 2026-09-21 | 0.15 | 22:22 | 22:40 | Agentic workflows module brought up to the new CLI release, with a broken workflow fixed and the guide corrected |
 | 2026-09-22 | 1.03 | 19:10 | 20:12 | Slide deck for the Copilot harness module produced with custom diagrams and photos |
+| 2026-09-22 | 0.47 | 20:10 | 20:40 | Slide decks for three more course modules produced with custom diagrams and photos (overlap not re-billed) |
+| 2026-09-22 | 0.20 | 20:40 | 20:52 | Profile portrait prepared with a softly blurred background |
+| 2026-09-22 | 0.47 | 20:52 | 21:20 | Trainer intro and module title slides added to four course decks |
 
-**Total: 39.95h**
+**Total: 41.09h**

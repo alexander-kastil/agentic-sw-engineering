@@ -553,3 +553,15 @@ sceneries, dark and dirty".
 idea. Default register is modern, light, bright and friendly: high-key daylight, white and light-oak 2020s
 interiors, pastel accents, plants, screens as soft blurred colour. Add "dark or moody lighting, vintage or
 retro decor, grime" to the Avoid list.
+
+## A real person's photo is edited, not regenerated
+
+**Pattern:** Asked for a "more natural looking" round hero from the portrait on a business card, I regenerated it with Nano Banana using an identity-preserving prompt. Both results looked like a different man. The correction: "you got the job wrong ... i want my original photo with blurred bg".
+
+**Rule:** For a real person, keep the original pixels of the face and change only the surroundings (background blur via `media-generation/scripts/blur-background.py`). Ask for the full-resolution original rather than cropping a screenshot.
+
+## Gamma clean strips hand-built slides
+
+**Pattern:** After prepending `assets/ModuleIntro.pptx` and a module-name slide, `gamma_deck.py clean` removed the thin accent lines and dividers from those slides (`removed=4`), because it deletes every empty low auto-shape on every slide.
+
+**Rule:** Run `clean` before `prepend`, or pass `clean --skip <n>`. Check the removed count against what the Gamma part alone produced.

@@ -22,3 +22,5 @@ labs/09-spec-driven/meeting-cost/
 *.pem
 *.pfx
 *.p12
+
+**/pptx/
