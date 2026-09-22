@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f">
+    <rect x="80" y="120" width="640" height="180" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="115" y="192" font-size="34" font-weight="600">Server</text>
+    <text x="115" y="245" font-size="28" fill="#57606a">GitHub Server API</text>
+    <rect x="80" y="350" width="640" height="240" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="115" y="420" font-size="34" font-weight="600">Native MDM</text>
+    <text x="115" y="475" font-size="26" fill="#57606a" font-family="Consolas, monospace">HKLM\SOFTWARE\Policies\GitHubCopilot</text>
+    <text x="115" y="525" font-size="26" fill="#57606a" font-family="Consolas, monospace">com.github.copilot</text>
+    <rect x="80" y="640" width="640" height="180" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="115" y="712" font-size="34" font-weight="600">File</text>
+    <text x="115" y="765" font-size="28" fill="#57606a" font-family="Consolas, monospace">managed-settings.json</text>
+  </g>
+  <g text-anchor="middle" fill="#24292f">
+    <rect x="880" y="140" width="440" height="160" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="4"/>
+    <text x="1100" y="218" font-size="34" font-weight="600">Policy value</text>
+    <text x="1100" y="262" font-size="26" fill="#57606a">set by an admin</text>
+    <text x="1100" y="365" font-size="28" font-style="italic" fill="#57606a">wins over</text>
+    <rect x="880" y="400" width="440" height="160" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1100" y="492" font-size="34" font-weight="600">User settings</text>
+    <text x="1100" y="625" font-size="28" font-style="italic" fill="#57606a">wins over</text>
+    <rect x="880" y="660" width="440" height="160" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1100" y="752" font-size="34" font-weight="600">Application settings</text>
+
+    <rect x="1480" y="360" width="360" height="240" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1660" y="450" font-size="36" font-weight="600">Effective value</text>
+    <text x="1660" y="500" font-size="26" fill="#57606a">a developer cannot</text>
+    <text x="1660" y="538" font-size="26" fill="#57606a">edit it away</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="720" y1="210" x2="872" y2="210"/>
+    <line x1="720" y1="440" x2="872" y2="250"/>
+    <line x1="720" y1="700" x2="872" y2="285"/>
+    <line x1="1320" y1="220" x2="1472" y2="420"/>
+    <line x1="1320" y1="480" x2="1472" y2="480"/>
+    <line x1="1320" y1="740" x2="1472" y2="540"/>
+  </g>
+  <text x="960" y="930" font-size="28" fill="#57606a" text-anchor="middle">Copilot diagnostics names the active channel</text>
+</svg>

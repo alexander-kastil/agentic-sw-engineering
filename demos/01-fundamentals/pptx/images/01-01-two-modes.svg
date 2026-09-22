@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <line x1="960" y1="80" x2="960" y2="1000" stroke="#d0d7de" stroke-width="3"/>
+  <g text-anchor="middle" fill="#24292f">
+    <text x="480" y="130" font-size="38" font-weight="600">AI Assisted Coding</text>
+    <text x="1440" y="130" font-size="38" font-weight="600">Agentic Software Engineering</text>
+  </g>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="160" y="180" width="640" height="170" rx="22" fill="#eaf2ff"/>
+    <rect x="160" y="420" width="640" height="170" rx="22" fill="#eaf2ff"/>
+    <rect x="160" y="660" width="640" height="170" rx="22" fill="#eaf2ff"/>
+    <rect x="1120" y="180" width="640" height="170" rx="22" fill="#e9f7ef"/>
+    <rect x="1120" y="420" width="640" height="170" rx="22" fill="#e9f7ef"/>
+    <rect x="1120" y="660" width="640" height="170" rx="22" fill="#e9f7ef"/>
+  </g>
+  <g text-anchor="middle" font-size="34" font-weight="600" fill="#24292f">
+    <text x="480" y="255">You type</text>
+    <text x="480" y="495">Copilot suggests</text>
+    <text x="480" y="735">You accept or modify</text>
+    <text x="1440" y="255">You assign a goal</text>
+    <text x="1440" y="495">Agents orchestrate</text>
+    <text x="1440" y="735">A complete solution</text>
+  </g>
+  <g text-anchor="middle" font-size="28" fill="#57606a">
+    <text x="480" y="305">as you work in the editor</text>
+    <text x="480" y="545">real-time completions</text>
+    <text x="480" y="785">the highlighted snippet</text>
+    <text x="1440" y="305">to specialized agents</text>
+    <text x="1440" y="545">multiple tools and decisions</text>
+    <text x="1440" y="785">delivered autonomously</text>
+  </g>
+  <g stroke="#57606a" stroke-width="3" marker-end="url(#a)">
+    <line x1="480" y1="354" x2="480" y2="414"/>
+    <line x1="480" y1="594" x2="480" y2="654"/>
+    <line x1="1440" y1="354" x2="1440" y2="414"/>
+    <line x1="1440" y1="594" x2="1440" y2="654"/>
+  </g>
+  <text x="480" y="935" text-anchor="middle" font-size="30" fill="#57606a">introduced quickly</text>
+  <rect x="1210" y="885" width="460" height="80" rx="40" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+  <text x="1440" y="936" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">the focus of this class</text>
+</svg>

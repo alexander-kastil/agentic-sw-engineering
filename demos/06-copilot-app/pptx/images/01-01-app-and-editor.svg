@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="480" y="60" width="660" height="170" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="810" y="160" font-size="40" font-weight="600">Copilot app</text>
+    <rect x="1180" y="60" width="660" height="170" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1510" y="135" font-size="40" font-weight="600">Editor</text>
+    <text x="1510" y="185" font-size="28" fill="#57606a">VS Code, Visual Studio, JetBrains</text>
+
+    <rect x="80" y="270" width="360" height="175" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="368" font-size="30" font-weight="600">Primary view</text>
+    <rect x="480" y="270" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="810" y="351" font-size="30">An agents view</text>
+    <text x="810" y="391" font-size="30">outside the editor</text>
+    <rect x="1180" y="270" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1510" y="351" font-size="30">Inline coding with</text>
+    <text x="1510" y="391" font-size="30">agent chat alongside</text>
+
+    <rect x="80" y="467" width="360" height="175" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="565" font-size="30" font-weight="600">Platforms</text>
+    <rect x="480" y="467" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="810" y="548" font-size="30">macOS, Windows,</text>
+    <text x="810" y="588" font-size="30">Linux desktop</text>
+    <rect x="1180" y="467" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1510" y="565" font-size="30">Wherever the IDE runs</text>
+
+    <rect x="80" y="664" width="360" height="175" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="762" font-size="30" font-weight="600">Licensing</text>
+    <rect x="480" y="664" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="810" y="745" font-size="30">Any Copilot plan,</text>
+    <text x="810" y="785" font-size="30">or no plan with BYOK</text>
+    <rect x="1180" y="664" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1510" y="745" font-size="30">Per the IDE's</text>
+    <text x="1510" y="785" font-size="30">Copilot setup</text>
+
+    <rect x="80" y="861" width="360" height="175" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="959" font-size="30" font-weight="600">Strength</text>
+    <rect x="480" y="861" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="810" y="942" font-size="30">Parallel work across</text>
+    <text x="810" y="982" font-size="30">issues, PRs, and prompts</text>
+    <rect x="1180" y="861" width="660" height="175" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1510" y="942" font-size="30">Tight edit-and-run loop</text>
+    <text x="1510" y="982" font-size="30">on a single task</text>
+  </g>
+</svg>

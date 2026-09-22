@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g text-anchor="middle" fill="#24292f">
+    <rect x="120" y="140" width="780" height="580" rx="26" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="510" y="230" font-size="38" font-weight="600">Instructions files</text>
+    <text x="510" y="320" font-size="30" font-family="Consolas, monospace">.github/instructions/</text>
+    <text x="510" y="380" font-size="28" font-family="Consolas, monospace" fill="#57606a">documentation.instructions.md</text>
+    <text x="510" y="490" font-size="30">apply automatically</text>
+    <text x="510" y="540" font-size="30">to every request</text>
+    <text x="510" y="640" font-size="28" fill="#57606a">today: frontmatter only</text>
+
+    <rect x="1020" y="140" width="780" height="580" rx="26" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1410" y="230" font-size="38" font-weight="600">Prompt files</text>
+    <text x="1410" y="320" font-size="30" font-family="Consolas, monospace">.github/prompts/</text>
+    <text x="1410" y="380" font-size="28" font-family="Consolas, monospace" fill="#57606a">describe-module.prompt.md</text>
+    <text x="1410" y="425" font-size="28" font-family="Consolas, monospace" fill="#57606a">update-toc.prompt.md</text>
+    <text x="1410" y="520" font-size="30">jobs you run repeatedly,</text>
+    <text x="1410" y="570" font-size="30">invoked as slash commands</text>
+  </g>
+
+  <g stroke="#8c959f" stroke-width="2" stroke-dasharray="6 6">
+    <line x1="510" y1="720" x2="510" y2="820"/>
+    <line x1="1410" y1="720" x2="1410" y2="820"/>
+  </g>
+
+  <g text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">
+    <rect x="310" y="820" width="400" height="84" rx="42" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="510" y="872">VS Code and CLI</text>
+    <rect x="1210" y="820" width="400" height="84" rx="42" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1410" y="872">VS Code only</text>
+  </g>
+</svg>

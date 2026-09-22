@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f">
+    <rect x="200" y="80" width="920" height="100" rx="20" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="141" font-size="30" font-family="Consolas, monospace">/speckit-constitution</text>
+    <text x="630" y="141" font-size="28" fill="#57606a">principles and constraints</text>
+    <rect x="200" y="220" width="920" height="100" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="281" font-size="30" font-family="Consolas, monospace">/speckit-specify</text>
+    <text x="630" y="281" font-size="28" fill="#57606a">description to <tspan font-family="Consolas, monospace">spec.md</tspan></text>
+    <rect x="200" y="360" width="920" height="100" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="421" font-size="30" font-family="Consolas, monospace">/speckit-plan</text>
+    <text x="630" y="421" font-size="28" fill="#57606a">spec to architectural approach</text>
+    <rect x="200" y="500" width="920" height="100" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="561" font-size="30" font-family="Consolas, monospace">/speckit-tasks</text>
+    <text x="630" y="561" font-size="28" fill="#57606a">plan to sequenced work items</text>
+    <rect x="200" y="640" width="920" height="100" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="701" font-size="30" font-family="Consolas, monospace">/speckit-implement</text>
+    <text x="630" y="701" font-size="28" fill="#57606a">code, task by task</text>
+    <rect x="200" y="780" width="920" height="100" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="841" font-size="30" font-family="Consolas, monospace">/speckit-converge</text>
+    <text x="630" y="841" font-size="28" fill="#57606a">remaining work as tasks</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="660" y1="180" x2="660" y2="212"/>
+    <line x1="660" y1="320" x2="660" y2="352"/>
+    <line x1="660" y1="460" x2="660" y2="492"/>
+    <line x1="660" y1="600" x2="660" y2="632"/>
+    <line x1="660" y1="740" x2="660" y2="772"/>
+  </g>
+  <path d="M200,830 L130,830 L130,270 L192,270" fill="none" stroke="#e0a534" stroke-width="4" marker-end="url(#a)"/>
+  <text x="95" y="550" transform="rotate(-90 95 550)" text-anchor="middle" font-size="28" font-weight="600" fill="#9a6700">requirements change</text>
+  <rect x="1220" y="80" width="620" height="800" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <text x="1270" y="160" font-size="32" font-weight="600" fill="#24292f">Beyond the intro</text>
+  <g font-size="30" font-family="Consolas, monospace" fill="#24292f">
+    <text x="1270" y="270">/speckit-clarify</text>
+    <text x="1270" y="430">/speckit-analyze</text>
+    <text x="1270" y="590">/speckit-checklist</text>
+    <text x="1270" y="750">/speckit-taskstoissues</text>
+  </g>
+  <g font-size="28" fill="#57606a">
+    <text x="1270" y="315">gap analysis</text>
+    <text x="1270" y="475">cross-artifact consistency</text>
+    <text x="1270" y="635">quality validation</text>
+    <text x="1270" y="795">task list to GitHub issues</text>
+  </g>
+</svg>

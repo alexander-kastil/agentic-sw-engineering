@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="60" y="420" width="340" height="220" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="230" y="520" font-size="30" font-weight="700" font-family="Consolas, monospace">src/food-app</text>
+    <text x="230" y="570" font-size="28" fill="#57606a">source code</text>
+
+    <rect x="480" y="420" width="380" height="220" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="670" y="505" font-size="36" font-weight="600">Copilot</text>
+    <text x="670" y="555" font-size="28" fill="#57606a">reads services</text>
+    <text x="670" y="595" font-size="28" fill="#57606a">and bindings</text>
+
+    <rect x="1000" y="150" width="380" height="270" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1190" y="205" font-size="34" font-weight="600">Bicep</text>
+    <g font-size="26" font-family="Consolas, monospace">
+      <text x="1190" y="255">main.bicep</text>
+      <text x="1190" y="295">modules/</text>
+      <text x="1190" y="335">main.parameters.json</text>
+      <text x="1190" y="385" fill="#57606a">az bicep build</text>
+    </g>
+
+    <rect x="1000" y="640" width="380" height="230" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1190" y="695" font-size="34" font-weight="600">Terraform</text>
+    <g font-size="26" font-family="Consolas, monospace">
+      <text x="1190" y="745">main.tf</text>
+      <text x="1190" y="785">variables.tf</text>
+      <text x="1190" y="835" fill="#57606a">terraform validate</text>
+    </g>
+
+    <rect x="1520" y="420" width="340" height="220" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1690" y="515" font-size="40" font-weight="600">azd</text>
+    <text x="1690" y="565" font-size="28" fill="#57606a">provisions Azure</text>
+  </g>
+
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="400" y1="530" x2="472" y2="530"/>
+    <line x1="860" y1="480" x2="992" y2="330"/>
+    <line x1="860" y1="580" x2="992" y2="730"/>
+    <line x1="1380" y1="330" x2="1512" y2="480"/>
+    <line x1="1380" y1="730" x2="1512" y2="580"/>
+  </g>
+
+  <text x="1190" y="935" text-anchor="middle" font-size="28" fill="#57606a"><tspan font-family="Consolas, monospace">azure.yaml</tspan> picks the engine; Bicep is the default</text>
+  <rect x="890" y="960" width="600" height="70" rx="35" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <text x="1190" y="1005" text-anchor="middle" font-size="28" font-family="Consolas, monospace" fill="#24292f">infra: provider: terraform</text>
+</svg>

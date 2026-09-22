@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="80" width="380" height="240" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="270" y="170" font-size="32" font-weight="600">BYOK providers</text>
+    <text x="270" y="220" font-size="26" fill="#57606a">beside the</text>
+    <text x="270" y="256" font-size="26" fill="#57606a">GitHub-hosted models</text>
+
+    <rect x="80" y="420" width="380" height="260" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="540" font-size="36" font-weight="600">Composer</text>
+    <text x="270" y="585" font-size="36" font-weight="600">control</text>
+
+    <rect x="620" y="80" width="620" height="300" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="930" y="150" font-size="34" font-weight="600">Model or Auto tier</text>
+    <rect x="650" y="190" width="180" height="80" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="740" y="239" font-size="26">Efficiency</text>
+    <rect x="840" y="190" width="180" height="80" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="930" y="239" font-size="26">Balance</text>
+    <rect x="1030" y="190" width="180" height="80" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1120" y="239" font-size="26">Intelligence</text>
+    <text x="930" y="340" font-size="26" fill="#57606a">new sessions start on GPT-5.6 Sol</text>
+
+    <rect x="620" y="430" width="620" height="190" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="930" y="510" font-size="34" font-weight="600">Reasoning effort</text>
+    <text x="930" y="560" font-size="26" fill="#57606a">new sessions start at medium</text>
+
+    <rect x="620" y="670" width="620" height="190" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="930" y="775" font-size="34" font-weight="600">Context window</text>
+
+    <rect x="1440" y="380" width="400" height="300" rx="28" fill="#e9f7ef" stroke="#8c959f" stroke-width="3"/>
+    <text x="1640" y="515" font-size="34" font-weight="600">Session runs</text>
+    <text x="1640" y="560" font-size="34" font-weight="600">with these three</text>
+
+    <text x="930" y="950" font-size="28" fill="#57606a">a session inherits whatever you last picked</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="460" y1="200" x2="612" y2="200"/>
+    <line x1="460" y1="480" x2="612" y2="300"/>
+    <line x1="460" y1="550" x2="612" y2="525"/>
+    <line x1="460" y1="620" x2="612" y2="765"/>
+    <line x1="1240" y1="230" x2="1432" y2="470"/>
+    <line x1="1240" y1="525" x2="1432" y2="530"/>
+    <line x1="1240" y1="765" x2="1432" y2="590"/>
+  </g>
+</svg>

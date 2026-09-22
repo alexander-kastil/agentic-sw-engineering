@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <text x="90" y="160" font-size="34" font-weight="600" fill="#57606a">AI-assisted</text>
+  <text x="90" y="650" font-size="34" font-weight="600" fill="#57606a">Agentic</text>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="90" y="190" width="390" height="240" rx="24" fill="#eaf2ff"/>
+    <rect x="540" y="190" width="390" height="240" rx="24" fill="#eaf2ff"/>
+    <rect x="990" y="190" width="390" height="240" rx="24" fill="#eaf2ff"/>
+    <rect x="1440" y="190" width="390" height="240" rx="24" fill="#eaf2ff"/>
+    <rect x="90" y="680" width="390" height="240" rx="24" fill="#e9f7ef"/>
+    <rect x="540" y="680" width="390" height="240" rx="24" fill="#e9f7ef"/>
+    <rect x="990" y="680" width="390" height="240" rx="24" fill="#e9f7ef"/>
+    <rect x="1440" y="680" width="390" height="240" rx="24" fill="#e9f7ef"/>
+  </g>
+  <g text-anchor="middle" font-size="40" font-weight="700" fill="#57606a">
+    <text x="285" y="262">01</text>
+    <text x="735" y="262">02</text>
+    <text x="1185" y="262">03</text>
+    <text x="1635" y="262">04</text>
+    <text x="285" y="752">05</text>
+    <text x="735" y="752">06</text>
+    <text x="1185" y="752">07</text>
+    <text x="1635" y="752">08</text>
+  </g>
+  <g text-anchor="middle" font-size="32" font-weight="600" fill="#24292f">
+    <text x="285" y="330">Getting Started</text><text x="285" y="372">&amp; Vision</text>
+    <text x="735" y="330">Selecting</text><text x="735" y="372">Models</text>
+    <text x="1185" y="330">Shaping the</text><text x="1185" y="372">Context Window</text>
+    <text x="1635" y="330">AI-Assisted</text><text x="1635" y="372">Coding</text>
+    <text x="285" y="820">Agent Mode</text><text x="285" y="862">Basics</text>
+    <text x="735" y="820">Pull Requests &amp;</text><text x="735" y="862">Code Reviews</text>
+    <text x="1185" y="820">Configuring &amp;</text><text x="1185" y="862">Governing</text>
+    <text x="1635" y="820">Working in the</text><text x="1635" y="862">Terminal</text>
+  </g>
+  <g stroke="#57606a" stroke-width="3" fill="none" marker-end="url(#a)">
+    <line x1="484" y1="310" x2="534" y2="310"/>
+    <line x1="934" y1="310" x2="984" y2="310"/>
+    <line x1="1384" y1="310" x2="1434" y2="310"/>
+    <line x1="484" y1="800" x2="534" y2="800"/>
+    <line x1="934" y1="800" x2="984" y2="800"/>
+    <line x1="1384" y1="800" x2="1434" y2="800"/>
+    <path d="M1635,434 L1635,535 L285,535 L285,674"/>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g text-anchor="middle" fill="#24292f">
+    <rect x="80" y="420" width="320" height="240" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="528" font-size="32" font-weight="600">Agent proposes</text>
+    <text x="240" y="572" font-size="32" font-weight="600">a tool call</text>
+
+    <rect x="480" y="420" width="400" height="240" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="680" y="510" font-size="32" font-weight="600">Small model</text>
+    <text x="680" y="554" font-size="32" font-weight="600">rates it</text>
+    <text x="680" y="608" font-size="26" fill="#57606a" font-family="Consolas, monospace">copilot-utility-small</text>
+
+    <rect x="980" y="140" width="380" height="180" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1170" y="220" font-size="36" font-weight="600">Safe</text>
+    <text x="1170" y="268" font-size="26" fill="#57606a">low-impact, reversible</text>
+    <rect x="980" y="450" width="380" height="180" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1170" y="530" font-size="36" font-weight="600">Caution</text>
+    <text x="1170" y="578" font-size="26" fill="#57606a">potentially impactful</text>
+    <rect x="980" y="760" width="380" height="180" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="1170" y="840" font-size="34" font-weight="600">Review carefully</text>
+    <text x="1170" y="888" font-size="26" fill="#57606a">high-impact, hard to undo</text>
+
+    <rect x="1460" y="165" width="380" height="130" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1650" y="242" font-size="30" font-weight="600">Cheap to approve</text>
+    <rect x="1460" y="590" width="380" height="210" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1650" y="670" font-size="30" font-weight="600">Read the command,</text>
+    <text x="1650" y="712" font-size="30" font-weight="600">then allow</text>
+    <text x="1650" y="754" font-size="30" font-weight="600">or reject</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)" fill="none">
+    <line x1="400" y1="540" x2="472" y2="540"/>
+    <line x1="880" y1="500" x2="972" y2="240"/>
+    <line x1="880" y1="540" x2="972" y2="540"/>
+    <line x1="880" y1="580" x2="972" y2="840"/>
+    <line x1="1360" y1="230" x2="1452" y2="230"/>
+    <line x1="1360" y1="560" x2="1452" y2="650"/>
+    <line x1="1360" y1="830" x2="1452" y2="740"/>
+  </g>
+</svg>

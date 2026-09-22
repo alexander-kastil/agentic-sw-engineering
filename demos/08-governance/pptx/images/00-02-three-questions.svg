@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g text-anchor="middle" fill="#24292f">
+    <rect x="80" y="80" width="560" height="130" rx="65" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="158" font-size="36" font-weight="600">What may the agent do?</text>
+    <rect x="680" y="80" width="560" height="130" rx="65" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="960" y="158" font-size="36" font-weight="600">What does it cost?</text>
+    <rect x="1280" y="80" width="560" height="130" rx="65" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="158" font-size="36" font-weight="600">What happened?</text>
+
+    <rect x="80" y="270" width="560" height="190" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="352" font-size="36" font-weight="600">Permissions</text>
+    <text x="360" y="402" font-size="28" fill="#57606a">levels, risk badges, sandbox</text>
+    <rect x="80" y="500" width="560" height="190" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="582" font-size="36" font-weight="600">Enterprise policy</text>
+    <text x="360" y="632" font-size="28" fill="#57606a" font-family="Consolas, monospace">managed-settings.json</text>
+
+    <rect x="680" y="270" width="560" height="190" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="352" font-size="36" font-weight="600">Cost model</text>
+    <text x="960" y="402" font-size="28" fill="#57606a">AI credits per turn</text>
+    <rect x="680" y="500" width="560" height="190" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="582" font-size="36" font-weight="600">Open-source models</text>
+    <text x="960" y="632" font-size="28" fill="#57606a">DeepSeek and DeepInfra</text>
+
+    <rect x="1280" y="270" width="560" height="420" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="440" font-size="36" font-weight="600">Observability</text>
+    <text x="1560" y="492" font-size="28" fill="#57606a">OpenTelemetry span trees</text>
+    <text x="1560" y="532" font-size="28" fill="#57606a">into your own collector</text>
+
+    <rect x="80" y="770" width="1760" height="170" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="842" font-size="36" font-weight="600">Compliance</text>
+    <text x="960" y="892" font-size="28" fill="#57606a">EU AI Act, GDPR and accessibility: what the law requires of the software your agents ship</text>
+  </g>
+</svg>

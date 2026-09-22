@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <text x="320" y="110" text-anchor="middle" font-size="32" font-weight="600" fill="#57606a">route intent</text>
+  <text x="1600" y="90" text-anchor="middle" font-size="32" font-weight="600" fill="#57606a">ground in the workspace</text>
+  <rect x="760" y="390" width="400" height="300" rx="26" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+  <text x="960" y="530" text-anchor="middle" font-size="40" font-weight="600" fill="#24292f">Copilot</text>
+  <text x="960" y="582" text-anchor="middle" font-size="40" font-weight="600" fill="#24292f">Chat</text>
+  <g fill="#eaf2ff" stroke="#8c959f" stroke-width="2">
+    <rect x="120" y="150" width="400" height="90" rx="45"/>
+    <rect x="120" y="280" width="400" height="90" rx="45"/>
+    <rect x="120" y="410" width="400" height="90" rx="45"/>
+    <rect x="120" y="540" width="400" height="90" rx="45"/>
+    <rect x="120" y="670" width="400" height="90" rx="45"/>
+    <rect x="120" y="800" width="400" height="90" rx="45"/>
+  </g>
+  <g text-anchor="middle" font-size="32" font-family="Consolas, monospace" fill="#24292f">
+    <text x="320" y="206">/explain</text>
+    <text x="320" y="336">/fix</text>
+    <text x="320" y="466">/tests</text>
+    <text x="320" y="596">/optimize</text>
+    <text x="320" y="726">/generate</text>
+    <text x="320" y="856">/clear</text>
+  </g>
+  <g fill="#e9f7ef" stroke="#8c959f" stroke-width="2">
+    <rect x="1400" y="120" width="400" height="80" rx="40"/>
+    <rect x="1400" y="230" width="400" height="80" rx="40"/>
+    <rect x="1400" y="340" width="400" height="80" rx="40"/>
+    <rect x="1400" y="450" width="400" height="80" rx="40"/>
+    <rect x="1400" y="560" width="400" height="80" rx="40"/>
+    <rect x="1400" y="670" width="400" height="80" rx="40"/>
+    <rect x="1400" y="780" width="400" height="80" rx="40"/>
+  </g>
+  <g text-anchor="middle" font-size="30" font-family="Consolas, monospace" fill="#24292f">
+    <text x="1600" y="170">#file</text>
+    <text x="1600" y="280">#selection</text>
+    <text x="1600" y="390">#codebase</text>
+    <text x="1600" y="500">#terminalLastCommand</text>
+    <text x="1600" y="610">#fetch</text>
+    <text x="1600" y="720">@terminal</text>
+    <text x="1600" y="830">@vscode</text>
+  </g>
+  <g stroke="#57606a" stroke-width="3" marker-end="url(#a)">
+    <line x1="524" y1="195" x2="754" y2="420"/>
+    <line x1="524" y1="325" x2="754" y2="470"/>
+    <line x1="524" y1="455" x2="754" y2="520"/>
+    <line x1="524" y1="585" x2="754" y2="570"/>
+    <line x1="524" y1="715" x2="754" y2="620"/>
+    <line x1="524" y1="845" x2="754" y2="670"/>
+    <line x1="1396" y1="160" x2="1166" y2="410"/>
+    <line x1="1396" y1="270" x2="1166" y2="450"/>
+    <line x1="1396" y1="380" x2="1166" y2="490"/>
+    <line x1="1396" y1="490" x2="1166" y2="530"/>
+    <line x1="1396" y1="600" x2="1166" y2="570"/>
+    <line x1="1396" y1="710" x2="1166" y2="610"/>
+    <line x1="1396" y1="820" x2="1166" y2="650"/>
+  </g>
+  <text x="960" y="1000" text-anchor="middle" font-size="30" fill="#57606a">fix #terminalLastCommand</text>
+</svg>

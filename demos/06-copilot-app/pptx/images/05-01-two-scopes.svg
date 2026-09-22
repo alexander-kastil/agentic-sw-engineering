@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="110" width="520" height="330" rx="28" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="340" y="185" font-size="36" font-weight="600">Repository</text>
+    <text x="340" y="240" font-size="28">MCP servers, skills,</text>
+    <text x="340" y="280" font-size="28">instructions</text>
+    <text x="340" y="375" font-size="26" fill="#57606a">travels with the repo</text>
+
+    <rect x="80" y="640" width="520" height="330" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="340" y="715" font-size="36" font-weight="600">Customize</text>
+    <text x="340" y="770" font-size="28">personal plugins, skills,</text>
+    <text x="340" y="810" font-size="28">MCP servers, canvases</text>
+    <text x="340" y="905" font-size="26" fill="#57606a">follows you</text>
+
+    <rect x="760" y="340" width="420" height="400" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="3"/>
+    <text x="970" y="525" font-size="38" font-weight="600">A session</text>
+    <text x="970" y="580" font-size="28" fill="#57606a">the union</text>
+    <text x="970" y="620" font-size="28" fill="#57606a">of both</text>
+
+    <rect x="1340" y="110" width="500" height="190" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1590" y="216" font-size="32" font-weight="600">Editor session</text>
+    <rect x="1340" y="445" width="500" height="190" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1590" y="551" font-size="32" font-weight="600">App interactive session</text>
+    <rect x="1340" y="780" width="500" height="190" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1590" y="886" font-size="32" font-weight="600">App automation</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="600" y1="275" x2="752" y2="470"/>
+    <line x1="600" y1="805" x2="752" y2="610"/>
+    <line x1="1180" y1="470" x2="1332" y2="205"/>
+    <line x1="1180" y1="540" x2="1332" y2="540"/>
+    <line x1="1180" y1="610" x2="1332" y2="875"/>
+  </g>
+</svg>

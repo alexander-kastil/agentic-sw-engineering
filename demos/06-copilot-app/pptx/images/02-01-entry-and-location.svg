@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="110" width="400" height="190" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="280" y="195" font-size="32" font-weight="600">GitHub issue</text>
+    <text x="280" y="240" font-size="26" fill="#57606a">acceptance criteria</text>
+    <rect x="80" y="445" width="400" height="190" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="280" y="530" font-size="32" font-weight="600">Freeform prompt</text>
+    <text x="280" y="575" font-size="26" fill="#57606a">a blank task</text>
+    <rect x="80" y="780" width="400" height="190" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="280" y="865" font-size="32" font-weight="600">Pull request</text>
+    <text x="280" y="910" font-size="26" fill="#57606a">branch, diff, comments</text>
+
+    <rect x="600" y="445" width="300" height="190" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="750" y="530" font-size="32" font-weight="600">Choose</text>
+    <text x="750" y="572" font-size="32" font-weight="600">location</text>
+
+    <rect x="1020" y="110" width="440" height="190" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1240" y="195" font-size="32" font-weight="600">New working tree</text>
+    <text x="1240" y="240" font-size="26" fill="#57606a">own branch and files</text>
+    <rect x="1020" y="445" width="440" height="190" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1240" y="530" font-size="32" font-weight="600">Local repository</text>
+    <text x="1240" y="575" font-size="26" fill="#57606a">your checkout, in place</text>
+    <rect x="1020" y="780" width="440" height="190" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1240" y="865" font-size="32" font-weight="600">Cloud sandbox</text>
+    <text x="1240" y="910" font-size="26" fill="#57606a">GitHub-hosted, preview</text>
+
+    <rect x="1580" y="110" width="280" height="860" rx="28" fill="#ffffff" stroke="#8c959f" stroke-width="3"/>
+    <text x="1720" y="470" font-size="32" font-weight="600">Agent runs</text>
+    <text x="1720" y="515" font-size="32" font-weight="600">isolated</text>
+    <text x="1720" y="580" font-size="26" fill="#57606a">from other</text>
+    <text x="1720" y="615" font-size="26" fill="#57606a">sessions</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="480" y1="205" x2="592" y2="490"/>
+    <line x1="480" y1="540" x2="592" y2="540"/>
+    <line x1="480" y1="875" x2="592" y2="590"/>
+    <line x1="900" y1="490" x2="1012" y2="205"/>
+    <line x1="900" y1="540" x2="1012" y2="540"/>
+    <line x1="900" y1="590" x2="1012" y2="875"/>
+    <line x1="1460" y1="205" x2="1572" y2="205"/>
+    <line x1="1460" y1="540" x2="1572" y2="540"/>
+    <line x1="1460" y1="875" x2="1572" y2="875"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <line x1="130" y1="130" x2="130" y2="890" stroke="#57606a" stroke-width="4" marker-end="url(#a)"/>
+  <text x="0" y="0" transform="translate(96 510) rotate(-90)" text-anchor="middle" font-size="28" font-weight="600" fill="#57606a">less asking, more autonomy</text>
+
+  <g fill="#24292f">
+    <rect x="200" y="110" width="1640" height="170" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="250" y="182" font-size="36" font-weight="600">Default Permissions</text>
+    <text x="250" y="236" font-size="28" fill="#57606a">Uses your approval settings, asks when they do not apply</text>
+    <rect x="1420" y="155" width="380" height="80" rx="40" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1610" y="205" font-size="30" text-anchor="middle" font-family="Consolas, monospace">default</text>
+
+    <rect x="200" y="310" width="1640" height="170" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="250" y="382" font-size="36" font-weight="600">Assisted permissions</text>
+    <text x="250" y="436" font-size="28" fill="#57606a">An LLM judge approves some calls, the rest still ask you</text>
+    <rect x="1420" y="355" width="380" height="80" rx="40" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="1610" y="405" font-size="28" text-anchor="middle" fill="#57606a">not a startup default</text>
+
+    <rect x="200" y="510" width="1640" height="170" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="250" y="582" font-size="36" font-weight="600">Bypass Approvals</text>
+    <text x="580" y="582" font-size="30" fill="#57606a" font-family="Consolas, monospace">/yolo</text>
+    <text x="250" y="636" font-size="28" fill="#57606a">Runs every tool call without asking, retries on errors</text>
+    <rect x="1420" y="555" width="380" height="80" rx="40" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1610" y="605" font-size="30" text-anchor="middle" font-family="Consolas, monospace">autoApprove</text>
+
+    <rect x="200" y="710" width="1640" height="170" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="250" y="782" font-size="36" font-weight="600">Autopilot (Preview)</text>
+    <text x="630" y="782" font-size="30" fill="#57606a" font-family="Consolas, monospace">/autopilot</text>
+    <text x="250" y="836" font-size="28" fill="#57606a">Auto-approves every tool call and keeps going until done</text>
+    <rect x="1420" y="755" width="380" height="80" rx="40" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1610" y="805" font-size="30" text-anchor="middle" font-family="Consolas, monospace">autopilot</text>
+  </g>
+  <text x="1610" y="950" font-size="28" text-anchor="middle" fill="#57606a"><tspan font-family="Consolas, monospace">chat.permissions.default</tspan> value</text>
+</svg>

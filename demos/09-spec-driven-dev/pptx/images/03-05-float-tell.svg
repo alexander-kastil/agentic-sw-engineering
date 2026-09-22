@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c24141"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="100" y="200" width="520" height="260" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="360" y="300" font-size="38" font-weight="600" font-family="Consolas, monospace">plan.md</text>
+    <text x="360" y="360" font-size="30">names <tspan font-family="Consolas, monospace" font-weight="600">float</tspan></text>
+    <text x="360" y="402" font-size="30">for the total</text>
+    <rect x="740" y="200" width="440" height="260" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="300" font-size="34" font-weight="600">Implementation</text>
+    <text x="960" y="360" font-size="28" fill="#57606a">every figure in the brief</text>
+    <text x="960" y="402" font-size="28" fill="#57606a">is exact in binary</text>
+    <rect x="1300" y="200" width="520" height="260" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="290" font-size="32" font-family="Consolas, monospace">Total: 240.00</text>
+    <text x="1560" y="340" font-size="32" font-family="Consolas, monospace">Total: 45.00</text>
+    <text x="1560" y="408" font-size="30" font-weight="600">25 passed</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="620" y1="330" x2="732" y2="330"/>
+    <line x1="1180" y1="330" x2="1292" y2="330"/>
+  </g>
+  <line x1="360" y1="460" x2="360" y2="632" stroke="#c24141" stroke-width="4" marker-end="url(#r)"/>
+  <text x="385" y="560" font-size="28" font-weight="600" fill="#c24141">violates</text>
+  <line x1="1560" y1="460" x2="1560" y2="640" stroke="#8c959f" stroke-width="3" stroke-dasharray="10 8"/>
+  <g text-anchor="middle">
+    <rect x="100" y="640" width="520" height="260" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="360" y="715" font-size="32" font-weight="600" fill="#c24141">Principle 4</text>
+    <text x="360" y="765" font-size="28" fill="#24292f">monetary amounts are</text>
+    <text x="360" y="805" font-size="28" fill="#24292f">never binary floats</text>
+    <text x="360" y="860" font-size="28" font-weight="600" fill="#c24141">caught at the plan checkpoint</text>
+    <rect x="1300" y="640" width="520" height="260" rx="24" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="1560" y="752" font-size="30" fill="#57606a">invisible in the output,</text>
+    <text x="1560" y="798" font-size="30" fill="#57606a">visible only in <tspan font-family="Consolas, monospace">plan.md</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g font-size="28" font-weight="600" fill="#57606a">
+    <text x="60" y="95">Checkpoint</text>
+    <text x="460" y="95">The question you ask</text>
+    <text x="1240" y="95">What it typically catches</text>
+  </g>
+  <g fill="#24292f" text-anchor="middle" font-size="34" font-weight="600">
+    <rect x="60" y="130" width="360" height="200" rx="20" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="242">Constitution</text>
+    <rect x="60" y="360" width="360" height="200" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="472">Specification</text>
+    <rect x="60" y="590" width="360" height="200" rx="20" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="240" y="702">Plan</text>
+    <rect x="60" y="820" width="360" height="200" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="240" y="932">Tasks</text>
+  </g>
+  <g fill="#ffffff" stroke="#8c959f" stroke-width="2">
+    <rect x="460" y="130" width="740" height="200" rx="20"/>
+    <rect x="460" y="360" width="740" height="200" rx="20"/>
+    <rect x="460" y="590" width="740" height="200" rx="20"/>
+    <rect x="460" y="820" width="740" height="200" rx="20"/>
+  </g>
+  <g fill="#fdecec" stroke="#c24141" stroke-width="2">
+    <rect x="1240" y="130" width="620" height="200" rx="20"/>
+    <rect x="1240" y="360" width="620" height="200" rx="20"/>
+    <rect x="1240" y="590" width="620" height="200" rx="20"/>
+    <rect x="1240" y="820" width="620" height="200" rx="20"/>
+  </g>
+  <g stroke="#d0d7de" stroke-width="3">
+    <line x1="420" y1="230" x2="460" y2="230"/>
+    <line x1="420" y1="460" x2="460" y2="460"/>
+    <line x1="420" y1="690" x2="460" y2="690"/>
+    <line x1="420" y1="920" x2="460" y2="920"/>
+    <line x1="1200" y1="230" x2="1240" y2="230"/>
+    <line x1="1200" y1="460" x2="1240" y2="460"/>
+    <line x1="1200" y1="690" x2="1240" y2="690"/>
+    <line x1="1200" y1="920" x2="1240" y2="920"/>
+  </g>
+  <g font-size="28" fill="#24292f">
+    <text x="495" y="220">Did every principle survive, or did one</text>
+    <text x="495" y="260">get softened into a suggestion?</text>
+    <text x="495" y="430">Is every acceptance criterion and edge</text>
+    <text x="495" y="470">case present, and is this still</text>
+    <text x="495" y="510">requirements rather than design?</text>
+    <text x="495" y="660">Does it verify itself against the</text>
+    <text x="495" y="700">constitution, and give reasons for</text>
+    <text x="495" y="740">its technology choices?</text>
+    <text x="495" y="910">Is the sequence right, and does every</text>
+    <text x="495" y="950">acceptance criterion map to a task?</text>
+  </g>
+  <g font-size="28" fill="#24292f">
+    <text x="1275" y="220">A dropped constraint, then</text>
+    <text x="1275" y="260">never enforced downstream</text>
+    <text x="1275" y="430">Silently dropped criteria;</text>
+    <text x="1275" y="470">implementation detail</text>
+    <text x="1275" y="510">leaking into the spec</text>
+    <text x="1275" y="680">A violated principle, caught</text>
+    <text x="1275" y="720">before any code exists</text>
+    <text x="1275" y="890">Untestable tasks such as</text>
+    <text x="1275" y="930">"handle errors"; criteria</text>
+    <text x="1275" y="970">with no work behind them</text>
+  </g>
+</svg>

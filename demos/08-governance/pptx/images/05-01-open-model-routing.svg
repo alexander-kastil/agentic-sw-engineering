@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f">
+    <rect x="80" y="90" width="360" height="220" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="190" font-size="34" font-weight="600" text-anchor="middle">VS Code Chat</text>
+    <text x="260" y="238" font-size="28" fill="#57606a" text-anchor="middle">model picker</text>
+    <rect x="560" y="90" width="1280" height="220" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="600" y="160" font-size="34" font-weight="600">OAI Compatible Copilot extension</text>
+    <text x="600" y="214" font-size="26" fill="#57606a" font-family="Consolas, monospace">oaicopilot.baseUrl  +  per-model baseUrl</text>
+    <text x="600" y="264" font-size="28" fill="#57606a">keys in VS Code secret storage</text>
+
+    <rect x="80" y="430" width="360" height="220" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="260" y="520" font-size="32" font-weight="600" text-anchor="middle">Frontier models</text>
+    <text x="260" y="566" font-size="28" fill="#57606a" text-anchor="middle">stay for the</text>
+    <text x="260" y="604" font-size="28" fill="#57606a" text-anchor="middle">hard problems</text>
+
+    <rect x="560" y="430" width="580" height="220" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="850" y="525" font-size="36" font-weight="600" text-anchor="middle">DeepSeek</text>
+    <text x="850" y="578" font-size="28" fill="#57606a" text-anchor="middle" font-family="Consolas, monospace">api.deepseek.com</text>
+    <rect x="1260" y="430" width="580" height="220" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1550" y="525" font-size="36" font-weight="600" text-anchor="middle">DeepInfra</text>
+    <text x="1550" y="578" font-size="28" fill="#57606a" text-anchor="middle" font-family="Consolas, monospace">api.deepinfra.com</text>
+
+    <rect x="80" y="770" width="360" height="220" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="870" font-size="34" font-weight="600" text-anchor="middle">Copilot CLI</text>
+    <text x="260" y="918" font-size="28" fill="#57606a" text-anchor="middle">terminal agent</text>
+    <rect x="560" y="770" width="1280" height="220" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="600" y="840" font-size="34" font-weight="600">Native bring-your-own-key variables</text>
+    <text x="600" y="894" font-size="26" fill="#57606a" font-family="Consolas, monospace">COPILOT_PROVIDER_BASE_URL  COPILOT_PROVIDER_TYPE  COPILOT_MODEL</text>
+    <text x="600" y="944" font-size="28" fill="#57606a">keys in your shell environment</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="440" y1="200" x2="552" y2="200"/>
+    <line x1="440" y1="880" x2="552" y2="880"/>
+    <line x1="850" y1="310" x2="850" y2="422"/>
+    <line x1="1550" y1="310" x2="1550" y2="422"/>
+    <line x1="850" y1="770" x2="850" y2="658"/>
+    <line x1="1550" y1="770" x2="1550" y2="658"/>
+  </g>
+  <g font-size="26" fill="#57606a">
+    <text x="872" y="376">default endpoint</text>
+    <text x="1572" y="376">per-model endpoint</text>
+    <text x="872" y="724"><tspan font-family="Consolas, monospace">anthropic</tspan> type</text>
+    <text x="1572" y="724"><tspan font-family="Consolas, monospace">openai</tspan> type</text>
+  </g>
+</svg>

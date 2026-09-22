@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="80" y="100" width="840" height="400" rx="26" fill="#eaf2ff"/>
+    <rect x="1000" y="100" width="840" height="400" rx="26" fill="#e9f7ef"/>
+    <rect x="80" y="580" width="840" height="400" rx="26" fill="#f3edff"/>
+    <rect x="1000" y="580" width="840" height="400" rx="26" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+  </g>
+  <g text-anchor="middle" font-size="42" font-weight="600" fill="#24292f">
+    <text x="500" y="250">Few-Shot</text>
+    <text x="1420" y="250">Chain-of-Thought</text>
+    <text x="500" y="730">Context-Based</text>
+    <text x="1420" y="730">Instruction-Based</text>
+  </g>
+  <g text-anchor="middle" font-size="30" fill="#57606a">
+    <text x="500" y="330">Provide example snippets of the pattern,</text>
+    <text x="500" y="375">then ask for similar code for new scenarios</text>
+    <text x="1420" y="330">Break complex problems into sequential</text>
+    <text x="1420" y="375">steps and explain your reasoning</text>
+    <text x="500" y="810">Include schema definitions, configuration</text>
+    <text x="500" y="855">files or existing code</text>
+    <text x="1420" y="810">Clear, structured instructions with</text>
+    <text x="1420" y="855">specifications for predictable results</text>
+  </g>
+</svg>

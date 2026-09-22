@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="120" y="100" width="440" height="190" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="340" y="165" font-size="34" font-weight="600">ssh-ops skill</text>
+    <text x="340" y="215" font-size="28" fill="#57606a">configure, find the key,</text>
+    <text x="340" y="255" font-size="28" fill="#57606a">deploy</text>
+
+    <rect x="120" y="380" width="440" height="220" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="340" y="475" font-size="34" font-weight="600">Raspi SSH agent</text>
+    <text x="340" y="530" font-size="26" font-family="Consolas, monospace" fill="#57606a">ssh-mcp/*</text>
+
+    <rect x="720" y="380" width="480" height="220" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="440" font-size="34" font-weight="600">ssh-mcp server</text>
+    <text x="960" y="490" font-size="26" font-family="Consolas, monospace" fill="#57606a">.vscode/mcp.json</text>
+    <text x="960" y="535" font-size="28" fill="#57606a">host, user, key</text>
+    <text x="960" y="575" font-size="28" fill="#57606a">one open session</text>
+
+    <rect x="1360" y="380" width="440" height="220" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1580" y="475" font-size="34" font-weight="600">Raspberry Pi</text>
+    <text x="1580" y="525" font-size="28" fill="#57606a">or any Linux host</text>
+  </g>
+
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="340" y1="290" x2="340" y2="372"/>
+    <line x1="560" y1="490" x2="712" y2="490"/>
+    <line x1="1200" y1="490" x2="1352" y2="490"/>
+  </g>
+  <g font-size="28" font-weight="600" fill="#57606a" text-anchor="middle">
+    <text x="636" y="466">stdio</text>
+    <text x="1276" y="466">SSH :22</text>
+  </g>
+
+  <rect x="120" y="720" width="1680" height="190" rx="18" fill="#ffffff" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+  <g font-size="28" fill="#57606a">
+    <text x="170" y="795"><tspan font-family="Consolas, monospace" fill="#24292f">--timeout=120000</tspan>: a first docker build on a Pi runs past two minutes</text>
+    <text x="170" y="855">The Copilot CLI registers the same server with <tspan font-family="Consolas, monospace" fill="#24292f">copilot mcp add</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g font-size="30" font-weight="600" fill="#57606a">
+    <text x="80" y="115">Target</text>
+    <text x="760" y="115" text-anchor="middle">Verbose output</text>
+    <text x="1505" y="115" text-anchor="middle">What compression keeps</text>
+  </g>
+  <g font-size="34" font-weight="600" fill="#24292f">
+    <text x="80" y="232">Test runners</text>
+    <text x="80" y="402">Build tools</text>
+    <text x="80" y="572">Linters</text>
+    <text x="80" y="742">Docker</text>
+    <text x="80" y="912">Package managers</text>
+  </g>
+  <g fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8">
+    <rect x="440" y="150" width="640" height="140" rx="20"/>
+    <rect x="440" y="320" width="640" height="140" rx="20"/>
+    <rect x="440" y="490" width="640" height="140" rx="20"/>
+    <rect x="440" y="660" width="640" height="140" rx="20"/>
+    <rect x="440" y="830" width="640" height="140" rx="20"/>
+  </g>
+  <g text-anchor="middle" font-size="30" fill="#57606a">
+    <text x="760" y="231">Per-test pass lines, timing noise</text>
+    <text x="760" y="401">Per-file compile logs</text>
+    <text x="760" y="571">One line per checked file</text>
+    <text x="760" y="741">Layer pull and build progress</text>
+    <text x="760" y="911">Download and resolution chatter</text>
+  </g>
+  <g fill="#e9f7ef" stroke="#8c959f" stroke-width="2">
+    <rect x="1170" y="150" width="670" height="140" rx="20"/>
+    <rect x="1170" y="320" width="670" height="140" rx="20"/>
+    <rect x="1170" y="490" width="670" height="140" rx="20"/>
+    <rect x="1170" y="660" width="670" height="140" rx="20"/>
+    <rect x="1170" y="830" width="670" height="140" rx="20"/>
+  </g>
+  <g text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">
+    <text x="1505" y="231">Failures, error messages, final summary</text>
+    <text x="1505" y="401">Errors, warnings, the build result</text>
+    <text x="1505" y="571">Rule violations and their locations</text>
+    <text x="1505" y="741">Final image status and any failed step</text>
+    <text x="1505" y="911">Installed versions and resolution errors</text>
+  </g>
+  <g stroke="#57606a" stroke-width="3" marker-end="url(#a)">
+    <line x1="1086" y1="220" x2="1164" y2="220"/>
+    <line x1="1086" y1="390" x2="1164" y2="390"/>
+    <line x1="1086" y1="560" x2="1164" y2="560"/>
+    <line x1="1086" y1="730" x2="1164" y2="730"/>
+    <line x1="1086" y1="900" x2="1164" y2="900"/>
+  </g>
+</svg>

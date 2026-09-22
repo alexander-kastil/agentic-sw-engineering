@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="90" y="70" width="540" height="110" rx="22" fill="#eaf2ff"/>
+    <rect x="690" y="70" width="540" height="110" rx="22" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <rect x="1290" y="70" width="540" height="110" rx="22" fill="#e9f7ef"/>
+  </g>
+  <g text-anchor="middle" font-size="36" font-weight="600" fill="#24292f">
+    <text x="360" y="138">Scaffold .NET API</text>
+    <text x="960" y="138">Fix errors</text>
+    <text x="1560" y="138">Update Agent Framework</text>
+  </g>
+  <g fill="#ffffff" stroke="#8c959f" stroke-width="2">
+    <rect x="90" y="230" width="540" height="130" rx="20"/>
+    <rect x="90" y="400" width="540" height="130" rx="20"/>
+    <rect x="90" y="570" width="540" height="130" rx="20"/>
+    <rect x="90" y="740" width="540" height="130" rx="20"/>
+    <rect x="690" y="230" width="540" height="130" rx="20"/>
+    <rect x="690" y="400" width="540" height="130" rx="20"/>
+    <rect x="690" y="570" width="540" height="130" rx="20"/>
+    <rect x="690" y="740" width="540" height="130" rx="20"/>
+    <rect x="1290" y="230" width="540" height="130" rx="20"/>
+    <rect x="1290" y="400" width="540" height="130" rx="20"/>
+    <rect x="1290" y="570" width="540" height="130" rx="20"/>
+    <rect x="1290" y="740" width="540" height="130" rx="20"/>
+  </g>
+  <g text-anchor="middle" font-size="30" fill="#24292f">
+    <text x="360" y="306" font-family="Consolas, monospace">dotnet new webapi</text>
+    <text x="360" y="455">Apply conventions,</text><text x="360" y="495">remove weather code</text>
+    <text x="360" y="625" font-family="Consolas, monospace">InstructionsController</text><text x="360" y="665">and Scalar UI</text>
+    <text x="360" y="795">Build, run, check with</text><text x="360" y="835">Chrome DevTools MCP</text>
+    <text x="960" y="306" font-family="Consolas, monospace">#terminalLastCommand</text>
+    <text x="960" y="455">Keyless auth with</text><text x="960" y="495" font-family="Consolas, monospace">DefaultAzureCredential</text>
+    <text x="960" y="625">Check packages</text><text x="960" y="665">for upgrades</text>
+    <text x="960" y="795">dotnet CLI for package</text><text x="960" y="835">management and cleaning</text>
+    <text x="1560" y="306">Examine the <tspan font-family="Consolas, monospace">agentfw_</tspan> files</text>
+    <text x="1560" y="455">Pin libraries to</text><text x="1560" y="495">the latest version</text>
+    <text x="1560" y="625" font-family="Consolas, monospace">pyproject.toml</text><text x="1560" y="665">and <tspan font-family="Consolas, monospace">requirements.txt</tspan></text>
+    <text x="1560" y="795">Create the environment,</text><text x="1560" y="835">write <tspan font-family="Consolas, monospace">upgrade-report.md</tspan></text>
+  </g>
+  <g stroke="#57606a" stroke-width="3" marker-end="url(#a)">
+    <line x1="360" y1="184" x2="360" y2="224"/>
+    <line x1="360" y1="364" x2="360" y2="394"/>
+    <line x1="360" y1="534" x2="360" y2="564"/>
+    <line x1="360" y1="704" x2="360" y2="734"/>
+    <line x1="960" y1="184" x2="960" y2="224"/>
+    <line x1="960" y1="364" x2="960" y2="394"/>
+    <line x1="960" y1="534" x2="960" y2="564"/>
+    <line x1="960" y1="704" x2="960" y2="734"/>
+    <line x1="1560" y1="184" x2="1560" y2="224"/>
+    <line x1="1560" y1="364" x2="1560" y2="394"/>
+    <line x1="1560" y1="534" x2="1560" y2="564"/>
+    <line x1="1560" y1="704" x2="1560" y2="734"/>
+  </g>
+  <rect x="90" y="920" width="1740" height="100" rx="50" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+  <text x="960" y="982" text-anchor="middle" font-size="32" fill="#24292f"><tspan font-weight="600">Microsoft Learn MCP</tspan> in every prompt: plan, check packages, find the latest libraries</text>
+</svg>

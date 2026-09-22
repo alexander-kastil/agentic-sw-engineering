@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="120" y="100" width="480" height="880" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="520" font-size="44" font-weight="600">Copilot app</text>
+    <text x="360" y="580" font-size="32" fill="#57606a">My Work</text>
+  </g>
+  <g fill="#24292f" text-anchor="start">
+    <rect x="900" y="105" width="900" height="150" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="950" y="170" font-size="36" font-weight="600">Sessions</text>
+    <text x="950" y="217" font-size="28" fill="#57606a">issue, prompt, or pull request</text>
+    <rect x="900" y="295" width="900" height="150" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="950" y="360" font-size="36" font-weight="600">Validation loop</text>
+    <text x="950" y="407" font-size="28" fill="#57606a">diffs, browser, terminal</text>
+    <rect x="900" y="485" width="900" height="150" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="950" y="550" font-size="36" font-weight="600">Automations</text>
+    <text x="950" y="597" font-size="28" fill="#57606a">schedule and events</text>
+    <rect x="900" y="675" width="900" height="150" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="950" y="740" font-size="36" font-weight="600">Sync</text>
+    <text x="950" y="787" font-size="28" fill="#57606a">MCP servers, skills, canvases</text>
+    <rect x="900" y="865" width="900" height="150" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="950" y="930" font-size="36" font-weight="600">Configuration</text>
+    <text x="950" y="977" font-size="28" fill="#57606a">Customize, permissions, models</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="600" y1="180" x2="892" y2="180"/>
+    <line x1="600" y1="370" x2="892" y2="370"/>
+    <line x1="600" y1="560" x2="892" y2="560"/>
+    <line x1="600" y1="750" x2="892" y2="750"/>
+    <line x1="600" y1="940" x2="892" y2="940"/>
+  </g>
+</svg>

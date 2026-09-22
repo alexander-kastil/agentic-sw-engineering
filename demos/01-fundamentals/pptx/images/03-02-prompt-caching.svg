@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g font-size="34" font-weight="600" fill="#24292f">
+    <text x="80" y="318">Turn 1</text>
+    <text x="80" y="648">Turn 2</text>
+  </g>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="260" y="230" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="540" y="230" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="820" y="230" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="1100" y="230" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="1380" y="230" width="230" height="150" fill="#fff6e5"/>
+    <rect x="1610" y="230" width="230" height="150" fill="#fff6e5"/>
+    <rect x="260" y="560" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="540" y="560" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="820" y="560" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="1100" y="560" width="280" height="150" fill="#e9f7ef"/>
+    <rect x="1380" y="560" width="230" height="150" fill="#fff6e5"/>
+    <rect x="1610" y="560" width="230" height="150" fill="#fff6e5"/>
+  </g>
+  <g text-anchor="middle" font-size="28" fill="#24292f">
+    <text x="400" y="298">System</text><text x="400" y="336">instructions</text>
+    <text x="680" y="298">Tool</text><text x="680" y="336">definitions</text>
+    <text x="960" y="298">Custom</text><text x="960" y="336">instructions</text>
+    <text x="1240" y="298">Large attached</text><text x="1240" y="336">files</text>
+    <text x="1495" y="298">Current</text><text x="1495" y="336">selection</text>
+    <text x="1725" y="298">Latest</text><text x="1725" y="336">question</text>
+    <text x="400" y="628">System</text><text x="400" y="666">instructions</text>
+    <text x="680" y="628">Tool</text><text x="680" y="666">definitions</text>
+    <text x="960" y="628">Custom</text><text x="960" y="666">instructions</text>
+    <text x="1240" y="628">Large attached</text><text x="1240" y="666">files</text>
+    <text x="1495" y="628">New</text><text x="1495" y="666">selection</text>
+    <text x="1725" y="628">Next</text><text x="1725" y="666">question</text>
+  </g>
+  <g fill="none" stroke-width="4">
+    <path d="M262,210 L262,190 L1378,190 L1378,210" stroke="#2f7d4f"/>
+    <path d="M1382,210 L1382,190 L1838,190 L1838,210" stroke="#e0a534"/>
+    <path d="M262,730 L262,750 L1378,750 L1378,730" stroke="#2f7d4f"/>
+    <path d="M1382,730 L1382,750 L1838,750 L1838,730" stroke="#e0a534"/>
+  </g>
+  <g text-anchor="middle" font-size="30" font-weight="600">
+    <text x="820" y="170" fill="#2f7d4f">stable prefix, first</text>
+    <text x="1610" y="170" fill="#b07a12">volatile, last</text>
+    <text x="820" y="795" fill="#2f7d4f">cached: reused on this turn, billed at a lower rate</text>
+    <text x="1610" y="795" fill="#b07a12">processed fresh</text>
+  </g>
+  <line x1="820" y1="384" x2="820" y2="554" stroke="#57606a" stroke-width="3" marker-end="url(#a)"/>
+  <text x="845" y="480" font-size="28" fill="#57606a">next turn</text>
+  <rect x="260" y="870" width="1120" height="130" rx="22" fill="#fdecec" stroke="#c24141" stroke-width="3"/>
+  <text x="820" y="925" text-anchor="middle" font-size="32" font-weight="600" fill="#c24141">Edit or reorder near the top:</text>
+  <text x="820" y="970" text-anchor="middle" font-size="30" fill="#24292f">the whole prefix is reprocessed</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="90" width="1040" height="250" rx="28" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="130" y="160" font-size="34" font-weight="600" text-anchor="start">Manual</text>
+    <rect x="130" y="210" width="520" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="390" y="265" font-size="28">play button on its card</text>
+
+    <rect x="80" y="415" width="1040" height="250" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="130" y="485" font-size="34" font-weight="600" text-anchor="start">Schedule</text>
+    <rect x="130" y="535" width="190" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="225" y="590" font-size="28">Hourly</text>
+    <rect x="340" y="535" width="190" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="435" y="590" font-size="28">Daily</text>
+    <rect x="550" y="535" width="190" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="645" y="590" font-size="28">Weekly</text>
+    <rect x="760" y="535" width="320" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="920" y="590" font-size="28"><tspan font-family="Consolas, monospace">CRON</tspan>, local only</text>
+
+    <rect x="80" y="740" width="1040" height="250" rx="28" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="130" y="810" font-size="34" font-weight="600" text-anchor="start">Event</text>
+    <rect x="130" y="860" width="280" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="915" font-size="28">Issue</text>
+    <rect x="430" y="860" width="320" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="590" y="915" font-size="28">Pull request</text>
+    <rect x="770" y="860" width="310" height="90" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="925" y="915" font-size="28">with filters</text>
+
+    <rect x="1400" y="300" width="440" height="480" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="3"/>
+    <text x="1620" y="510" font-size="38" font-weight="600">One automation</text>
+    <text x="1620" y="570" font-size="28" fill="#57606a">several triggers</text>
+    <text x="1620" y="610" font-size="28" fill="#57606a">allowed</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="1120" y1="215" x2="1392" y2="400"/>
+    <line x1="1120" y1="540" x2="1392" y2="540"/>
+    <line x1="1120" y1="865" x2="1392" y2="680"/>
+  </g>
+</svg>

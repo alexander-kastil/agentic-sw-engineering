@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c24141"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2da44e"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="60" y="180" width="300" height="220" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="210" y="280" font-size="32" font-weight="600">Agent produces</text>
+    <text x="210" y="322" font-size="32" font-weight="600">a change</text>
+    <rect x="430" y="180" width="300" height="220" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="580" y="280" font-size="32" font-weight="600">Inspect diff</text>
+    <text x="580" y="325" font-size="26" fill="#57606a">what changed</text>
+    <rect x="800" y="180" width="300" height="220" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="950" y="280" font-size="32" font-weight="600">Terminal</text>
+    <text x="950" y="325" font-size="26" fill="#57606a">build and tests</text>
+    <rect x="1170" y="180" width="300" height="220" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1320" y="280" font-size="32" font-weight="600">In-app browser</text>
+    <text x="1320" y="325" font-size="26" fill="#57606a">does it behave</text>
+    <rect x="1540" y="180" width="300" height="220" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1690" y="302" font-size="32" font-weight="600">Checks pass?</text>
+
+    <rect x="1540" y="560" width="300" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1690" y="650" font-size="32" font-weight="600">Merge PR</text>
+    <text x="1690" y="695" font-size="26" fill="#57606a">from the session</text>
+
+    <rect x="60" y="560" width="670" height="200" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="395" y="648" font-size="32" font-family="Consolas, monospace">/security-review</text>
+    <text x="395" y="698" font-size="26" fill="#57606a">scans the working changes</text>
+    <rect x="800" y="560" width="670" height="200" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1135" y="648" font-size="32" font-weight="600">Agent Merge</text>
+    <text x="1135" y="698" font-size="26" fill="#57606a">works the threads, merges once GitHub allows</text>
+
+    <text x="950" y="92" font-size="28" fill="#c24141">no: steer the agent with another instruction</text>
+    <text x="1720" y="490" font-size="28" fill="#2da44e" text-anchor="start">yes</text>
+
+    <rect x="60" y="850" width="1780" height="150" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="260" y="938" font-size="32" font-family="Consolas, monospace">/sandbox</text>
+    <text x="1080" y="938" font-size="28" fill="#57606a">shell commands stay in the workspace: containment, not correctness</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="360" y1="290" x2="422" y2="290"/>
+    <line x1="730" y1="290" x2="792" y2="290"/>
+    <line x1="1100" y1="290" x2="1162" y2="290"/>
+    <line x1="1470" y1="290" x2="1532" y2="290"/>
+  </g>
+  <line x1="1690" y1="400" x2="1690" y2="552" stroke="#2da44e" stroke-width="4" marker-end="url(#g)"/>
+  <path d="M1690,180 V120 H210 V172" fill="none" stroke="#c24141" stroke-width="4" marker-end="url(#r)"/>
+</svg>

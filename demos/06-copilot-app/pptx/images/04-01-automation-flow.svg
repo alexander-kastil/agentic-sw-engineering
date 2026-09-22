@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="100" y="150" width="440" height="230" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="320" y="240" font-size="34" font-weight="600">Skill or prompt</text>
+    <text x="320" y="290" font-size="26" fill="#57606a">a skill folder or</text>
+    <text x="320" y="326" font-size="26" fill="#57606a">a reusable prompt</text>
+    <rect x="740" y="150" width="440" height="230" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="960" y="240" font-size="34" font-weight="600">Attach trigger</text>
+    <text x="960" y="290" font-size="26" fill="#57606a">schedule, event,</text>
+    <text x="960" y="326" font-size="26" fill="#57606a">or manual</text>
+    <rect x="1380" y="150" width="440" height="230" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1600" y="240" font-size="34" font-weight="600">Model, agent, tools</text>
+    <text x="1600" y="290" font-size="26" fill="#57606a">set on the</text>
+    <text x="1600" y="326" font-size="26" fill="#57606a">automation itself</text>
+
+    <rect x="1380" y="560" width="440" height="230" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1600" y="650" font-size="34" font-weight="600">App runs a session</text>
+    <text x="1600" y="700" font-size="26" fill="#57606a">when the trigger fires</text>
+    <rect x="740" y="560" width="440" height="230" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="650" font-size="34" font-weight="600">Pull request</text>
+    <text x="960" y="700" font-size="26" fill="#57606a">a normal, reviewable PR</text>
+    <rect x="100" y="560" width="440" height="230" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="320" y="650" font-size="34" font-weight="600">You review</text>
+    <text x="320" y="700" font-size="26" fill="#57606a">and merge</text>
+
+    <text x="960" y="920" font-size="28" fill="#57606a">Automation moves the starting of the work off your plate, not the reviewing of it.</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="540" y1="265" x2="732" y2="265"/>
+    <line x1="1180" y1="265" x2="1372" y2="265"/>
+    <line x1="1600" y1="380" x2="1600" y2="552"/>
+    <line x1="1380" y1="675" x2="1188" y2="675"/>
+    <line x1="740" y1="675" x2="548" y2="675"/>
+  </g>
+</svg>

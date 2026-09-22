@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="60" y="440" width="360" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+  <text x="240" y="530" text-anchor="middle" font-size="34" font-weight="600" fill="#24292f">Copilot runs</text>
+  <text x="240" y="578" text-anchor="middle" font-size="34" font-weight="600" fill="#24292f">a command</text>
+  <rect x="480" y="440" width="400" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+  <text x="680" y="530" text-anchor="middle" font-size="32" font-weight="700" font-family="Consolas, monospace" fill="#24292f">VSCODE_AGENT</text>
+  <text x="680" y="578" text-anchor="middle" font-size="28" fill="#57606a">set in the environment</text>
+  <polygon points="1160,370 1380,540 1160,710 940,540" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+  <text x="1160" y="530" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">CLI checks</text>
+  <text x="1160" y="572" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">the variable?</text>
+  <rect x="1500" y="190" width="360" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+  <text x="1680" y="280" text-anchor="middle" font-size="32" font-weight="600" fill="#24292f">Machine-readable</text>
+  <text x="1680" y="328" text-anchor="middle" font-size="28" fill="#57606a">JSON, plain lines</text>
+  <rect x="1500" y="690" width="360" height="200" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <text x="1680" y="780" text-anchor="middle" font-size="32" font-weight="600" fill="#24292f">Default human</text>
+  <text x="1680" y="828" text-anchor="middle" font-size="28" fill="#57606a">colours, spinners</text>
+  <g stroke="#57606a" stroke-width="3" marker-end="url(#a)">
+    <line x1="424" y1="540" x2="474" y2="540"/>
+    <line x1="884" y1="540" x2="934" y2="540"/>
+    <line x1="1300" y1="478" x2="1494" y2="320"/>
+    <line x1="1300" y1="602" x2="1494" y2="760"/>
+  </g>
+  <text x="1360" y="380" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">Yes</text>
+  <text x="1375" y="730" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">No</text>
+  <text x="960" y="990" text-anchor="middle" font-size="30" fill="#57606a">Spinners, ANSI colour codes and interactive prompts are noise to a model</text>
+</svg>

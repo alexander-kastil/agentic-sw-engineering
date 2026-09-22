@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle" font-size="36" font-weight="600">
+    <rect x="150" y="220" width="440" height="200" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="370" y="333">Vague prompt</text>
+    <rect x="740" y="220" width="440" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="960" y="310">Agent guesses</text>
+    <text x="960" y="358">the requirements</text>
+    <rect x="1330" y="220" width="440" height="200" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="1550" y="333" fill="#c24141">Rework</text>
+    <rect x="150" y="620" width="440" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="370" y="733">Specification</text>
+    <rect x="740" y="620" width="440" height="200" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="710">Agent satisfies</text>
+    <text x="960" y="758">a stated contract</text>
+    <rect x="1330" y="620" width="440" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1550" y="733">Reviewable change</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="590" y1="320" x2="732" y2="320"/>
+    <line x1="1180" y1="320" x2="1322" y2="320"/>
+    <line x1="590" y1="720" x2="732" y2="720"/>
+    <line x1="1180" y1="720" x2="1322" y2="720"/>
+  </g>
+  <line x1="150" y1="520" x2="1770" y2="520" stroke="#d0d7de" stroke-width="3" stroke-dasharray="14 10"/>
+</svg>

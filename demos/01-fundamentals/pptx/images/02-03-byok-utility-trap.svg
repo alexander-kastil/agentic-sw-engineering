@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c24141"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="80" y="470" width="320" height="140" rx="22" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+  <text x="240" y="552" text-anchor="middle" font-size="34" font-weight="600" fill="#24292f">Chat request</text>
+  <rect x="620" y="150" width="480" height="160" rx="22" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+  <text x="860" y="220" text-anchor="middle" font-size="34" font-weight="600" fill="#24292f">Main model</text>
+  <text x="860" y="268" text-anchor="middle" font-size="28" fill="#57606a">answers the prompt</text>
+  <polygon points="860,490 1100,640 860,790 620,640" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+  <text x="860" y="630" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">Utility model</text>
+  <text x="860" y="672" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">configured?</text>
+  <rect x="1300" y="400" width="540" height="150" rx="22" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+  <text x="1570" y="465" text-anchor="middle" font-size="32" font-weight="600" fill="#24292f">Titles, commit</text>
+  <text x="1570" y="510" text-anchor="middle" font-size="32" font-weight="600" fill="#24292f">messages, intent</text>
+  <rect x="1300" y="730" width="540" height="150" rx="22" fill="#fdecec" stroke="#c24141" stroke-width="3"/>
+  <text x="1570" y="795" text-anchor="middle" font-size="32" font-weight="600" fill="#c24141">Utility tasks</text>
+  <text x="1570" y="840" text-anchor="middle" font-size="32" font-weight="600" fill="#c24141">silently skipped</text>
+  <g stroke="#57606a" stroke-width="3" marker-end="url(#a)">
+    <line x1="404" y1="505" x2="614" y2="245"/>
+    <line x1="404" y1="580" x2="614" y2="636"/>
+    <line x1="1104" y1="628" x2="1294" y2="490"/>
+  </g>
+  <line x1="1104" y1="652" x2="1294" y2="790" stroke="#c24141" stroke-width="3" marker-end="url(#r)"/>
+  <text x="1175" y="530" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">Yes</text>
+  <text x="1170" y="850" text-anchor="end" font-size="30" font-weight="600" fill="#c24141">No (BYOK trap)</text>
+  <rect x="580" y="945" width="760" height="80" rx="40" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+  <text x="960" y="996" text-anchor="middle" font-size="30" fill="#24292f">Fix: set <tspan font-family="Consolas, monospace" font-weight="600">chat.byokUtilityModelDefault</tspan></text>
+</svg>

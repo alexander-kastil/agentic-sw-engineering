@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="430" width="380" height="220" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="525" font-size="34" font-weight="600">Component</text>
+    <text x="270" y="572" font-size="34" font-weight="600">code</text>
+
+    <rect x="640" y="190" width="480" height="240" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="880" y="250" font-size="34" font-weight="600">Unit test</text>
+    <text x="880" y="300" font-size="26" font-family="Consolas, monospace" fill="#57606a">Vitest + jsdom</text>
+    <text x="880" y="345" font-size="28" fill="#57606a">milliseconds</text>
+    <text x="880" y="390" font-size="28">behaves in isolation?</text>
+
+    <rect x="640" y="650" width="480" height="240" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="880" y="710" font-size="34" font-weight="600">End-to-end test</text>
+    <text x="880" y="760" font-size="26" font-family="Consolas, monospace" fill="#57606a">Playwright</text>
+    <text x="880" y="805" font-size="28" fill="#57606a">real browser, seconds</text>
+    <text x="880" y="850" font-size="28">survives bundle and backend?</text>
+
+    <rect x="1300" y="230" width="540" height="160" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1570" y="300" font-size="32" font-weight="600">Fails at one file</text>
+    <text x="1570" y="348" font-size="28" fill="#57606a">stack trace</text>
+
+    <rect x="1300" y="690" width="540" height="160" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1570" y="760" font-size="32" font-weight="600">Fails with a screenshot</text>
+    <text x="1570" y="808" font-size="28" fill="#57606a">screenshot and video</text>
+  </g>
+
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="460" y1="500" x2="632" y2="320"/>
+    <line x1="460" y1="580" x2="632" y2="760"/>
+    <line x1="1120" y1="310" x2="1292" y2="310"/>
+    <line x1="1120" y1="770" x2="1292" y2="770"/>
+  </g>
+</svg>

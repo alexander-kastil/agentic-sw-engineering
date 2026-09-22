@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="40" width="1760" height="130" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="960" y="95" font-size="28" fill="#57606a"><tspan font-weight="600" fill="#24292f">Session mode:</tspan> how much the agent decides for itself</text>
+    <text x="960" y="140" font-size="28" fill="#57606a"><tspan font-weight="600" fill="#24292f">Permission mode:</tspan> which of its tool calls need your approval</text>
+
+    <rect x="80" y="380" width="380" height="260" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="500" font-size="34" font-weight="600">Agent plans</text>
+    <text x="270" y="545" font-size="34" font-weight="600">a tool call</text>
+
+    <rect x="560" y="380" width="380" height="260" rx="28" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="750" y="500" font-size="34" font-weight="600">Permission</text>
+    <text x="750" y="545" font-size="34" font-weight="600">mode</text>
+
+    <rect x="1120" y="210" width="720" height="190" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="1480" y="290" font-size="36" font-weight="600" font-family="Consolas, monospace">manual</text>
+    <text x="1480" y="345" font-size="28" fill="#57606a">every tool call waits for approval</text>
+    <rect x="1120" y="445" width="720" height="190" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1480" y="525" font-size="36" font-weight="600" font-family="Consolas, monospace">assisted</text>
+    <text x="1480" y="580" font-size="28" fill="#57606a">reads run freely, writes and commands ask</text>
+    <rect x="1120" y="680" width="720" height="190" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1480" y="760" font-size="36" font-weight="600" font-family="Consolas, monospace">allow-all</text>
+    <text x="1480" y="815" font-size="28" fill="#57606a">nothing prompts</text>
+
+    <rect x="80" y="920" width="1760" height="120" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="420" y="992" font-size="30" font-family="Consolas, monospace">/permissions show</text>
+    <text x="960" y="992" font-size="30" font-family="Consolas, monospace">/reset-allowed-tools</text>
+    <text x="1500" y="992" font-size="30" font-family="Consolas, monospace">/sandbox</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="460" y1="510" x2="552" y2="510"/>
+    <line x1="940" y1="450" x2="1112" y2="305"/>
+    <line x1="940" y1="510" x2="1112" y2="540"/>
+    <line x1="940" y1="570" x2="1112" y2="775"/>
+  </g>
+</svg>

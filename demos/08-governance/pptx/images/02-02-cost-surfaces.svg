@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g text-anchor="middle" font-size="34" font-weight="600" fill="#24292f">
+    <rect x="80" y="100" width="400" height="90" rx="45" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="280" y="158">Before</text>
+    <rect x="560" y="100" width="800" height="90" rx="45" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="158">During</text>
+    <rect x="1440" y="100" width="400" height="90" rx="45" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1640" y="158">After</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="480" y1="145" x2="552" y2="145"/>
+    <line x1="1360" y1="145" x2="1432" y2="145"/>
+  </g>
+  <g fill="#24292f">
+    <rect x="80" y="260" width="400" height="540" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="280" y="330" font-size="34" font-weight="600" text-anchor="middle">Model picker</text>
+    <text x="280" y="385" font-size="28" text-anchor="middle">Credits per 1M Tokens</text>
+    <g font-size="28" fill="#57606a" text-anchor="middle">
+      <text x="280" y="470">input</text>
+      <text x="280" y="530">output</text>
+      <text x="280" y="590">cache read</text>
+      <text x="280" y="650">cache write</text>
+    </g>
+
+    <rect x="560" y="260" width="800" height="150" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="600" y="322" font-size="34" font-weight="600">Session Info</text>
+    <text x="600" y="372" font-size="28" fill="#57606a">Session Cost and the context-window breakdown</text>
+    <rect x="560" y="440" width="800" height="150" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="600" y="502" font-size="34" font-weight="600">Response details hover</text>
+    <text x="600" y="552" font-size="28" fill="#57606a">model, input, cached input and output tokens</text>
+    <rect x="560" y="620" width="800" height="180" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="600" y="682" font-size="34" font-weight="600">Subagent duration label</text>
+    <text x="600" y="730" font-size="28" fill="#57606a" font-family="Consolas, monospace">chat.subagents.showCreditUsage</text>
+    <text x="600" y="772" font-size="28" fill="#c24141">off by default</text>
+
+    <rect x="1440" y="260" width="400" height="540" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1640" y="330" font-size="34" font-weight="600" text-anchor="middle">Copilot</text>
+    <text x="1640" y="374" font-size="34" font-weight="600" text-anchor="middle">status menu</text>
+    <g font-size="28" fill="#57606a" text-anchor="middle">
+      <text x="1640" y="470">credits used</text>
+      <text x="1640" y="510">against your</text>
+      <text x="1640" y="550">allowance for the</text>
+      <text x="1640" y="590">billing cycle</text>
+    </g>
+  </g>
+  <text x="960" y="900" font-size="28" fill="#57606a" text-anchor="middle">Cost is visible at the moment you choose a model, while the work runs, and after it</text>
+</svg>

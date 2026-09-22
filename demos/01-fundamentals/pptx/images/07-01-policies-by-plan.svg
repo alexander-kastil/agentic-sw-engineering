@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <g id="y"><circle r="26" fill="#e9f7ef" stroke="#2f7d4f" stroke-width="3"/><path d="M-12,1 L-3,10 L13,-9" fill="none" stroke="#2f7d4f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g id="n"><line x1="-18" y1="0" x2="18" y2="0" stroke="#9da7b3" stroke-width="5" stroke-linecap="round"/></g>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="1010" y="70" width="260" height="90" rx="18" fill="#f6f8fa"/>
+    <rect x="1310" y="70" width="260" height="90" rx="18" fill="#eaf2ff"/>
+    <rect x="1610" y="70" width="260" height="90" rx="18" fill="#f3edff"/>
+  </g>
+  <g text-anchor="middle" font-size="32" font-weight="600" fill="#24292f">
+    <text x="1140" y="127">Free &amp; Pro</text>
+    <text x="1440" y="127">Business</text>
+    <text x="1740" y="127">Enterprise</text>
+  </g>
+  <g fill="#f6f8fa">
+    <rect x="60" y="190" width="1810" height="88" rx="12"/>
+    <rect x="60" y="366" width="1810" height="88" rx="12"/>
+    <rect x="60" y="542" width="1810" height="88" rx="12"/>
+    <rect x="60" y="718" width="1810" height="88" rx="12"/>
+    <rect x="60" y="894" width="1810" height="88" rx="12"/>
+  </g>
+  <g font-size="30" fill="#24292f">
+    <text x="90" y="245">Public code filter</text>
+    <text x="90" y="333">User management</text>
+    <text x="90" y="421">Data excluded from training by default</text>
+    <text x="90" y="509">IP indemnity</text>
+    <text x="90" y="597">Content exclusions</text>
+    <text x="90" y="685">SAML SSO authentication</text>
+    <text x="90" y="773">Usage metrics</text>
+    <text x="90" y="861">Require GitHub Enterprise Cloud</text>
+    <text x="90" y="949">Attach knowledge bases to chat</text>
+  </g>
+  <use href="#y" x="1140" y="234"/><use href="#y" x="1440" y="234"/><use href="#y" x="1740" y="234"/>
+  <use href="#n" x="1140" y="322"/><use href="#y" x="1440" y="322"/><use href="#y" x="1740" y="322"/>
+  <use href="#n" x="1140" y="410"/><use href="#y" x="1440" y="410"/><use href="#y" x="1740" y="410"/>
+  <use href="#n" x="1140" y="498"/><use href="#y" x="1440" y="498"/><use href="#y" x="1740" y="498"/>
+  <use href="#n" x="1140" y="586"/><use href="#y" x="1440" y="586"/><use href="#y" x="1740" y="586"/>
+  <use href="#n" x="1140" y="674"/><use href="#y" x="1440" y="674"/><use href="#y" x="1740" y="674"/>
+  <use href="#n" x="1140" y="762"/><use href="#y" x="1440" y="762"/><use href="#y" x="1740" y="762"/>
+  <use href="#n" x="1140" y="850"/><use href="#n" x="1440" y="850"/><use href="#y" x="1740" y="850"/>
+  <use href="#n" x="1140" y="938"/><use href="#n" x="1440" y="938"/><use href="#y" x="1740" y="938"/>
+</svg>

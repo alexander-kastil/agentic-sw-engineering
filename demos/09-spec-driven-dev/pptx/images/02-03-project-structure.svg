@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <text x="80" y="110" font-size="34" font-weight="600" font-family="Consolas, monospace" fill="#24292f">my-project/</text>
+  <g font-size="30" font-family="Consolas, monospace" fill="#24292f">
+    <rect x="80" y="150" width="920" height="90" rx="16" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="120" y="206">.github/skills/speckit-&lt;cmd&gt;/SKILL.md</text>
+    <rect x="80" y="260" width="920" height="90" rx="16" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="120" y="316">.specify/memory/constitution.md</text>
+    <rect x="80" y="370" width="920" height="90" rx="16" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="120" y="426">.specify/scripts/&lt;flavour&gt;/</text>
+    <rect x="80" y="480" width="920" height="90" rx="16" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="120" y="536">.specify/templates/</text>
+    <rect x="80" y="590" width="920" height="90" rx="16" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="120" y="646">specs/001-document-upload-feature/</text>
+    <rect x="80" y="700" width="920" height="90" rx="16" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="120" y="756">specs/002-authentication-feature/</text>
+    <rect x="80" y="810" width="920" height="90" rx="16" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="120" y="866">src/</text>
+  </g>
+  <g font-size="28" fill="#24292f">
+    <rect x="1060" y="150" width="780" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1095" y="206">the /speckit-* commands</text>
+    <rect x="1060" y="260" width="780" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1095" y="316">project principles, a template until filled</text>
+    <rect x="1060" y="370" width="780" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1095" y="426">bash, powershell, or powershell plus python</text>
+    <rect x="1060" y="480" width="780" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1095" y="536">artifact templates</text>
+    <rect x="1060" y="590" width="780" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1095" y="646"><tspan font-family="Consolas, monospace">spec.md  plan.md  tasks.md</tspan></text>
+    <rect x="1060" y="700" width="780" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1095" y="756">one numbered folder per feature</text>
+    <rect x="1060" y="810" width="780" height="90" rx="16" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="1095" y="866" fill="#57606a">implementation code</text>
+  </g>
+  <g stroke="#d0d7de" stroke-width="3">
+    <line x1="1000" y1="195" x2="1060" y2="195"/>
+    <line x1="1000" y1="305" x2="1060" y2="305"/>
+    <line x1="1000" y1="415" x2="1060" y2="415"/>
+    <line x1="1000" y1="525" x2="1060" y2="525"/>
+    <line x1="1000" y1="635" x2="1060" y2="635"/>
+    <line x1="1000" y1="745" x2="1060" y2="745"/>
+    <line x1="1000" y1="855" x2="1060" y2="855"/>
+  </g>
+  <g font-size="28" fill="#57606a">
+    <rect x="80" y="975" width="40" height="40" rx="8" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="135" y="1005">written by specify init</text>
+    <rect x="560" y="975" width="40" height="40" rx="8" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="615" y="1005">created by the first <tspan font-family="Consolas, monospace">/speckit-specify</tspan></text>
+    <rect x="1260" y="975" width="40" height="40" rx="8" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="1315" y="1005">appears when you implement</text>
+  </g>
+</svg>

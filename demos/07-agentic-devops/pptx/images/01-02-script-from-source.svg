@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <text x="350" y="170" text-anchor="middle" font-size="28" font-family="Consolas, monospace" fill="#57606a">picture-optimizer</text>
+  <rect x="80" y="200" width="540" height="700" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <g font-family="Consolas, monospace" fill="#24292f" text-anchor="middle">
+    <rect x="120" y="240" width="460" height="80" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="350" y="291" font-size="28">Program.cs</text>
+    <rect x="120" y="345" width="460" height="80" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="350" y="396" font-size="28">Options.cs</text>
+    <rect x="120" y="450" width="460" height="80" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="350" y="501" font-size="28">ImageOptimizerService.cs</text>
+    <rect x="120" y="555" width="460" height="305" rx="14" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="350" y="615" font-size="28" font-weight="700">appsettings.json</text>
+    <text x="350" y="685" font-size="26" fill="#57606a">Folders:InputPath</text>
+    <text x="350" y="735" font-size="26" fill="#57606a">Folders:OutputPath</text>
+    <text x="350" y="785" font-size="26" fill="#57606a">Processing</text>
+  </g>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="740" y="430" width="360" height="220" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="920" y="515" font-size="36" font-weight="600">Copilot</text>
+    <text x="920" y="568" font-size="28" fill="#57606a">derives names</text>
+    <text x="920" y="608" font-size="28" fill="#57606a">from configuration</text>
+  </g>
+
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="620" y1="540" x2="732" y2="540"/>
+    <line x1="1100" y1="540" x2="1212" y2="540"/>
+  </g>
+
+  <rect x="1220" y="200" width="620" height="700" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+  <text x="1530" y="275" text-anchor="middle" font-size="30" font-weight="700" font-family="Consolas, monospace" fill="#24292f">create-bindings-app.azcli</text>
+  <line x1="1260" y1="315" x2="1800" y2="315" stroke="#8c959f" stroke-width="2"/>
+  <g font-size="30" fill="#24292f">
+    <rect x="1270" y="378" width="16" height="16" rx="3" fill="#57606a"/>
+    <text x="1306" y="396">Resource group</text>
+    <rect x="1270" y="468" width="16" height="16" rx="3" fill="#57606a"/>
+    <text x="1306" y="486">Storage account</text>
+    <rect x="1270" y="558" width="16" height="16" rx="3" fill="#57606a"/>
+    <text x="1306" y="576">Input and output containers</text>
+    <rect x="1270" y="648" width="16" height="16" rx="3" fill="#57606a"/>
+    <text x="1306" y="666">Upload <tspan font-family="Consolas, monospace">./food-pictures</tspan></text>
+    <rect x="1270" y="738" width="16" height="16" rx="3" fill="#57606a"/>
+    <text x="1306" y="756">Print the connection string</text>
+  </g>
+
+  <text x="960" y="1000" text-anchor="middle" font-size="28" fill="#57606a">Then: translate <tspan font-family="Consolas, monospace">create-fooddb.azcli</tspan> to PowerShell</text>
+</svg>

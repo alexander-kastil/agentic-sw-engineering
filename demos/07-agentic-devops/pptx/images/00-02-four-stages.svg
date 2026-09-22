@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="60" y="300" width="400" height="300" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="420" font-size="32" font-weight="600">IaC &amp; Configuration</text>
+    <text x="260" y="480" font-size="28" fill="#57606a">Azure CLI, SSH,</text>
+    <text x="260" y="522" font-size="28" fill="#57606a">Bicep, Terraform</text>
+
+    <rect x="520" y="300" width="400" height="300" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="720" y="420" font-size="32" font-weight="600">CI/CD</text>
+    <text x="720" y="480" font-size="28" fill="#57606a">GitHub Actions,</text>
+    <text x="720" y="522" font-size="28" fill="#57606a">secrets, OIDC</text>
+
+    <rect x="980" y="300" width="400" height="300" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1180" y="420" font-size="32" font-weight="600">Testing</text>
+    <text x="1180" y="480" font-size="28" fill="#57606a">Unit tests,</text>
+    <text x="1180" y="522" font-size="28" fill="#57606a">Playwright E2E</text>
+
+    <rect x="1440" y="300" width="400" height="300" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1640" y="420" font-size="32" font-weight="600">Documentation</text>
+    <text x="1640" y="480" font-size="28" fill="#57606a">Inline, API reference,</text>
+    <text x="1640" y="522" font-size="28" fill="#57606a">README</text>
+  </g>
+
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="460" y1="450" x2="512" y2="450"/>
+    <line x1="920" y1="450" x2="972" y2="450"/>
+    <line x1="1380" y1="450" x2="1432" y2="450"/>
+  </g>
+
+  <g stroke="#8c959f" stroke-width="2" stroke-dasharray="6 6">
+    <line x1="260" y1="600" x2="260" y2="700"/>
+    <line x1="720" y1="600" x2="720" y2="700"/>
+    <line x1="1180" y1="600" x2="1180" y2="700"/>
+    <line x1="1640" y1="600" x2="1640" y2="700"/>
+  </g>
+
+  <g font-size="28" fill="#57606a" text-anchor="middle">
+    <rect x="60" y="700" width="400" height="190" rx="18" fill="#ffffff" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="260" y="756" font-weight="600" fill="#24292f">Copilot</text>
+    <text x="260" y="802">derives resources</text>
+    <text x="260" y="844">from source code</text>
+
+    <rect x="520" y="700" width="400" height="190" rx="18" fill="#ffffff" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="720" y="756" font-weight="600" fill="#24292f">Copilot</text>
+    <text x="720" y="802">writes and fixes</text>
+    <text x="720" y="844">workflows</text>
+
+    <rect x="980" y="700" width="400" height="190" rx="18" fill="#ffffff" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="1180" y="756" font-weight="600" fill="#24292f">Copilot</text>
+    <text x="1180" y="802">generates and</text>
+    <text x="1180" y="844">translates tests</text>
+
+    <rect x="1440" y="700" width="400" height="190" rx="18" fill="#ffffff" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="1640" y="756" font-weight="600" fill="#24292f">Copilot</text>
+    <text x="1640" y="802">documents from</text>
+    <text x="1640" y="844">the code</text>
+  </g>
+</svg>

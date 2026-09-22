@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="560" y="70" width="800" height="200" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="138" font-size="38" font-weight="600" font-family="Consolas, monospace">constitution.md</text>
+    <text x="960" y="190" font-size="30">Non-negotiable project principles</text>
+    <text x="960" y="236" font-size="26" fill="#57606a">changes rarely, once established</text>
+  </g>
+  <path d="M560,170 C330,170 330,300 330,472" fill="none" stroke="#57606a" stroke-width="4" stroke-dasharray="12 8" marker-end="url(#a)"/>
+  <text x="370" y="370" font-size="30" font-weight="600" fill="#57606a">constrains</text>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="480" width="500" height="320" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="330" y="550" font-size="36" font-weight="600" font-family="Consolas, monospace">spec.md</text>
+    <text x="330" y="610" font-size="28">What the software must do</text>
+    <text x="330" y="652" font-size="28">Requirements only,</text>
+    <text x="330" y="694" font-size="28">no implementation</text>
+    <text x="330" y="764" font-size="26" fill="#57606a">changes per feature</text>
+    <rect x="710" y="480" width="500" height="320" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="960" y="550" font-size="36" font-weight="600" font-family="Consolas, monospace">plan.md</text>
+    <text x="960" y="610" font-size="28">How it will be built</text>
+    <text x="960" y="652" font-size="28">Architecture, stack</text>
+    <text x="960" y="694" font-size="28">decisions with rationale</text>
+    <text x="960" y="764" font-size="26" fill="#57606a">changes per feature</text>
+    <rect x="1340" y="480" width="500" height="320" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1590" y="550" font-size="36" font-weight="600" font-family="Consolas, monospace">tasks.md</text>
+    <text x="1590" y="610" font-size="28">Discrete work items</text>
+    <text x="1590" y="652" font-size="28">each independently</text>
+    <text x="1590" y="694" font-size="28">implementable and verifiable</text>
+    <text x="1590" y="764" font-size="26" fill="#57606a">changes throughout implementation</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="580" y1="640" x2="702" y2="640"/>
+    <line x1="1210" y1="640" x2="1332" y2="640"/>
+  </g>
+  <line x1="80" y1="880" x2="1840" y2="880" stroke="#d0d7de" stroke-width="2"/>
+  <text x="960" y="950" text-anchor="middle" font-size="32" fill="#57606a">Plain Markdown, versioned in Git next to the code</text>
+</svg>

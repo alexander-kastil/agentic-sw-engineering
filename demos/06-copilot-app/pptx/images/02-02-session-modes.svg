@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="660" y="70" width="600" height="90" rx="45" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="126" font-size="32" font-family="Consolas, monospace">Cmd/Ctrl+Shift+M</text>
+    <text x="1290" y="126" font-size="28" fill="#57606a" text-anchor="start">switch mode</text>
+
+    <rect x="100" y="210" width="520" height="620" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="300" font-size="40" font-weight="600">Interactive</text>
+    <text x="360" y="380" font-size="28" fill="#57606a">proposes changes</text>
+    <text x="360" y="422" font-size="28" fill="#57606a">and works with you</text>
+    <text x="360" y="464" font-size="28" fill="#57606a">turn by turn</text>
+    <rect x="160" y="600" width="400" height="190" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="652" font-size="26" fill="#57606a">use when</text>
+    <text x="360" y="702" font-size="28">normal</text>
+    <text x="360" y="742" font-size="28">collaborative work</text>
+
+    <rect x="700" y="210" width="520" height="620" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="300" font-size="40" font-weight="600">Plan</text>
+    <text x="960" y="380" font-size="28" fill="#57606a">writes a plan and</text>
+    <text x="960" y="422" font-size="28" fill="#57606a">waits for your approval</text>
+    <text x="960" y="464" font-size="28" fill="#57606a">before executing</text>
+    <rect x="760" y="600" width="400" height="190" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="652" font-size="26" fill="#57606a">use when</text>
+    <text x="960" y="702" font-size="28">the task is large or</text>
+    <text x="960" y="742" font-size="28">the approach unclear</text>
+
+    <rect x="1300" y="210" width="520" height="620" rx="28" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="300" font-size="40" font-weight="600">Autopilot</text>
+    <text x="1560" y="380" font-size="28" fill="#57606a">writes, runs, and</text>
+    <text x="1560" y="422" font-size="28" fill="#57606a">tests on its own</text>
+    <text x="1560" y="464" font-size="28" fill="#57606a">until the task is done</text>
+    <rect x="1360" y="530" width="400" height="80" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="1560" y="581" font-size="28" font-family="Consolas, monospace">/goal  /autopilot</text>
+    <rect x="1360" y="640" width="400" height="150" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="700" font-size="28" font-weight="600">Goal pill</text>
+    <text x="1560" y="745" font-size="26" fill="#57606a">status, turns, AI Credits</text>
+
+    <text x="1820" y="1000" font-size="28" fill="#57606a" text-anchor="end">more autonomy</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="100" y1="930" x2="1812" y2="930"/>
+  </g>
+</svg>

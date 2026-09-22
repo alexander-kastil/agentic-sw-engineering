@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="70" y="420" width="260" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="200" y="510" font-size="38" font-weight="600">Specify</text>
+    <text x="200" y="560" font-size="28" fill="#57606a">what and why</text>
+    <polygon points="580,380 730,520 580,660 430,520" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="580" y="508" font-size="32" font-weight="600">Read</text>
+    <text x="580" y="552" font-size="30" font-family="Consolas, monospace">spec.md</text>
+    <rect x="830" y="420" width="260" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="510" font-size="38" font-weight="600">Plan</text>
+    <text x="960" y="560" font-size="28" fill="#57606a">how</text>
+    <polygon points="1340,380 1490,520 1340,660 1190,520" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="1340" y="508" font-size="32" font-weight="600">Read</text>
+    <text x="1340" y="552" font-size="30" font-family="Consolas, monospace">plan.md</text>
+    <rect x="1590" y="420" width="260" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1720" y="510" font-size="38" font-weight="600">Implement</text>
+    <text x="1720" y="560" font-size="28" fill="#57606a">the code</text>
+  </g>
+  <g font-size="28" fill="#57606a" text-anchor="middle">
+    <text x="580" y="720">checkpoint</text>
+    <text x="1340" y="720">checkpoint</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="330" y1="520" x2="422" y2="520"/>
+    <line x1="730" y1="520" x2="822" y2="520"/>
+    <line x1="1090" y1="520" x2="1182" y2="520"/>
+    <line x1="1490" y1="520" x2="1582" y2="520"/>
+  </g>
+  <line x1="70" y1="820" x2="1850" y2="820" stroke="#d0d7de" stroke-width="2"/>
+  <text x="960" y="890" text-anchor="middle" font-size="32" fill="#24292f">Each phase is checked before the next one starts</text>
+</svg>
