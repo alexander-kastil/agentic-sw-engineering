@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle" font-family="Consolas, monospace">
+    <rect x="120" y="70" width="700" height="72" rx="36" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="470" y="118" font-size="32" font-weight="600">sk-students-ai</text>
+    <rect x="1100" y="70" width="700" height="72" rx="36" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1450" y="118" font-size="32" font-weight="600">maf-students-ai</text>
+    <g font-size="30">
+      <rect x="120" y="190" width="700" height="130" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/><text x="470" y="265">Microsoft.SemanticKernel</text>
+      <rect x="1100" y="190" width="700" height="130" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/><text x="1450" y="265">Microsoft.Agents.AI</text>
+      <rect x="120" y="360" width="700" height="130" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/><text x="470" y="435">Kernel.CreateBuilder()</text>
+      <rect x="1100" y="360" width="700" height="130" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/><text x="1450" y="435">chatClient.AsAIAgent()</text>
+      <rect x="120" y="530" width="700" height="130" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/><text x="470" y="605">Plugins/</text>
+      <rect x="1100" y="530" width="700" height="130" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/><text x="1450" y="605">Tools/ + AIFunctionFactory.Create()</text>
+      <rect x="120" y="700" width="700" height="130" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/><text x="470" y="775">API key config</text>
+      <rect x="1100" y="700" width="700" height="130" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/><text x="1450" y="775">DefaultAzureCredential</text>
+      <rect x="120" y="870" width="700" height="130" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/><text x="470" y="945">kernel service</text>
+      <rect x="1100" y="870" width="700" height="130" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/><text x="1450" y="945">AddSingleton&lt;AIAgent&gt;()</text>
+    </g>
+  </g>
+  <g text-anchor="middle" font-size="26" fill="#57606a">
+    <text x="960" y="238">packages</text><text x="960" y="408">creation</text><text x="960" y="578">tools</text><text x="960" y="748">auth</text><text x="960" y="918">DI</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="840" y1="272" x2="1088" y2="272"/><line x1="840" y1="442" x2="1088" y2="442"/>
+    <line x1="840" y1="612" x2="1088" y2="612"/><line x1="840" y1="782" x2="1088" y2="782"/>
+    <line x1="840" y1="952" x2="1088" y2="952"/>
+  </g>
+</svg>

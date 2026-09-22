@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="380" width="300" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="230" y="468" font-size="32" font-weight="600">Agent edits</text>
+    <text x="230" y="512" font-size="28" fill="#57606a">web app code</text>
+    <rect x="440" y="380" width="300" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="590" y="468" font-size="32" font-weight="600">Requests to</text>
+    <text x="590" y="512" font-size="28" fill="#57606a">share a tab</text>
+    <rect x="800" y="380" width="300" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="950" y="468" font-size="32" font-weight="600">You approve</text>
+    <text x="950" y="512" font-size="28" fill="#57606a">site permission</text>
+    <rect x="1160" y="380" width="320" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1320" y="448" font-size="32" font-weight="600">Opens page</text>
+    <text x="1320" y="492" font-size="28" fill="#57606a">reads console,</text>
+    <text x="1320" y="530" font-size="28" fill="#57606a">screenshots</text>
+    <polygon points="1690,360 1840,480 1690,600 1540,480" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1690" y="472" font-size="30" font-weight="600">Change</text>
+    <text x="1690" y="510" font-size="30" font-weight="600">correct?</text>
+    <rect x="1540" y="760" width="300" height="160" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1690" y="832" font-size="32" font-weight="600">Reports with</text>
+    <text x="1690" y="876" font-size="28" fill="#57606a">screenshot</text>
+    <text x="1710" y="690" font-size="28" fill="#57606a" text-anchor="start">Yes</text>
+    <text x="1710" y="320" font-size="28" fill="#57606a" text-anchor="start">No</text>
+    <text x="770" y="700" font-size="30" fill="#57606a">two gates: tab sharing, per-site consent</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" fill="none" marker-end="url(#a)">
+    <line x1="380" y1="480" x2="432" y2="480"/>
+    <line x1="740" y1="480" x2="792" y2="480"/>
+    <line x1="1100" y1="480" x2="1152" y2="480"/>
+    <line x1="1480" y1="480" x2="1532" y2="480"/>
+    <line x1="1690" y1="600" x2="1690" y2="752"/>
+    <path d="M1690,360 V260 H230 V372"/>
+  </g>
+  <path d="M440,615 V640 H1100 V615" fill="none" stroke="#e0a534" stroke-width="4"/>
+</svg>
