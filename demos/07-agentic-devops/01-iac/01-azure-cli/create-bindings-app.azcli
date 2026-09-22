@@ -1,0 +1,22 @@
+env=dev
+grp=rg-ase-optimizer-$env
+loc=westeurope
+storage=picprocessor$env
+path='./food-pictures'
+source=drop
+target=processed
+
+az group create -n $grp -l $loc
+
+az storage account create -l $loc -n $storage -g $grp --sku Standard_LRS
+key=$(az storage account keys list -n $storage -g $grp --query "[0].value" -o tsv)
+conStr=$(az storage account show-connection-string -n $storage -g $grp --query connectionString -o tsv)
+
+az storage container create -n $source --account-name $storage --account-key $key
+az storage container create -n $target --account-name $storage --account-key $key
+
+# Upload pictures so the containers hold sample data
+az storage blob upload-batch --account-name $storage --account-key $key -s $path -d $source
+
+echo "storage-acct: $storage"
+echo "storage-connectionString: " $conStr

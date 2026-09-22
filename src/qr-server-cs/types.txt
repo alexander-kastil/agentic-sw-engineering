@@ -1,0 +1,106 @@
+
+        <member name="T:Microsoft.Extensions.DependencyInjection.DefaultMcpServerBuilder">
+            Default implementation of <see cref="T:Microsoft.Extensions.DependencyInjection.IMcpServerBuilder"/> that enables fluent configuration
+            Initializes a new instance of the <see cref="T:Microsoft.Extensions.DependencyInjection.DefaultMcpServerBuilder"/> class.
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="services"/> is null.</exception>
+        <member name="T:Microsoft.Extensions.DependencyInjection.IMcpServerBuilder">
+            Provides a builder for configuring <see cref="T:ModelContextProtocol.Server.McpServer"/> instances.
+            The <see cref="T:Microsoft.Extensions.DependencyInjection.IMcpServerBuilder"/> interface provides a fluent API for configuring Model Context Protocol (MCP) servers
+        <member name="T:Microsoft.Extensions.DependencyInjection.McpServerBuilderExtensions">
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerTool"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            type, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerToolAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerTool"/>
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerTool"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="target"/> is <see langword="null"/>.</exception>
+            type, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerToolAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerTool"/>
+            However, if <typeparamref name="TToolType"/> is itself an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:ModelContextProtocol.Server.McpServerTool"/>,
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerTool"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <param name="tools">The <see cref="T:ModelContextProtocol.Server.McpServerTool"/> instances to add to the server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="tools"/> is <see langword="null"/>.</exception>
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerTool"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <param name="toolTypes">Types with <see cref="T:ModelContextProtocol.Server.McpServerToolAttribute"/>-attributed methods to add as tools to the server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="toolTypes"/> is <see langword="null"/>.</exception>
+            types, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerToolAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerTool"/>
+            Adds types marked with the <see cref="T:ModelContextProtocol.Server.McpServerToolTypeAttribute"/> attribute from the given assembly as tools to the server.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            marked with the <see cref="T:ModelContextProtocol.Server.McpServerToolTypeAttribute"/>. It then discovers all methods within those
+            classes that are marked with the <see cref="T:ModelContextProtocol.Server.McpServerToolAttribute"/> and registers them as <see cref="T:ModelContextProtocol.Server.McpServerTool"/>s
+            in the <paramref name="builder"/>'s <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            type, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerPromptAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/>
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="target"/> is <see langword="null"/>.</exception>
+            type, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerPromptAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/>
+            However, if <typeparamref name="TPromptType"/> is itself an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/>,
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <param name="prompts">The <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> instances to add to the server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="prompts"/> is <see langword="null"/>.</exception>
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="promptTypes"/> is <see langword="null"/>.</exception>
+            types, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerPromptAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/>
+            Adds types marked with the <see cref="T:ModelContextProtocol.Server.McpServerPromptTypeAttribute"/> attribute from the given assembly as prompts to the server.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            marked with the <see cref="T:ModelContextProtocol.Server.McpServerPromptTypeAttribute"/>. It then discovers all methods within those
+            classes that are marked with the <see cref="T:ModelContextProtocol.Server.McpServerPromptAttribute"/> and registers them as <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/>s
+            in the <paramref name="builder"/>'s <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerResource"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            type, where the members are attributed as <see cref="T:ModelContextProtocol.Server.McpServerResourceAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerResource"/>
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerResource"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="target"/> is <see langword="null"/>.</exception>
+            type, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerResourceAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerResource"/>
+            However, if <typeparamref name="TResourceType"/> is itself an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:ModelContextProtocol.Server.McpServerResource"/>,
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerResource"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <param name="resourceTemplates">The <see cref="T:ModelContextProtocol.Server.McpServerResource"/> instances to add to the server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="resourceTemplates"/> is <see langword="null"/>.</exception>
+            <summary>Adds <see cref="T:ModelContextProtocol.Server.McpServerResource"/> instances to the service collection backing <paramref name="builder"/>.</summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="resourceTemplateTypes"/> is <see langword="null"/>.</exception>
+            types, where the methods are attributed as <see cref="T:ModelContextProtocol.Server.McpServerResourceAttribute"/>, and adds an <see cref="T:ModelContextProtocol.Server.McpServerResource"/>
+            Adds types marked with the <see cref="T:ModelContextProtocol.Server.McpServerResourceTypeAttribute"/> attribute from the given assembly as resources to the server.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            marked with the <see cref="T:ModelContextProtocol.Server.McpServerResourceTypeAttribute"/>. It then discovers all members within those
+            classes that are marked with the <see cref="T:ModelContextProtocol.Server.McpServerResourceAttribute"/> and registers them as <see cref="T:ModelContextProtocol.Server.McpServerResource"/>s
+            in the <paramref name="builder"/>'s <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            When tools are also defined using <see cref="T:ModelContextProtocol.Server.McpServerTool"/> collection, both sets of tools
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            When prompts are also defined using <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> collection, both sets of prompts
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            Regardless of whether a handler is provided, an <see cref="T:ModelContextProtocol.Server.McpServer"/> should itself handle
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            This filter works alongside any tools defined in the <see cref="T:ModelContextProtocol.Server.McpServerTool"/> collection.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            This filter wraps handlers that are invoked when a client makes a call to a tool that isn't found in the <see cref="T:ModelContextProtocol.Server.McpServerTool"/> collection.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            This filter works alongside any prompts defined in the <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> collection.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            This filter wraps handlers that are invoked when a client requests details for a specific prompt that isn't found in the <see cref="T:ModelContextProtocol.Server.McpServerPrompt"/> collection.
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <see langword="null"/>.</exception>
+            <param name="inputStream">The input <see cref="T:System.IO.Stream"/> to use as standard input.</param>
+            <param name="outputStream">The output <see cref="T:System.IO.Stream"/> to use as standard output.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> or <paramref name="inputStream"/> or <paramref name="outputStream"/> is <see langword="null"/>.</exception>
+        <member name="T:Microsoft.Extensions.DependencyInjection.McpServerServiceCollectionExtensions">
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add the server to.</param>
+            <param name="configureOptions">An optional callback to configure the <see cref="T:ModelContextProtocol.Server.McpServerOptions"/>.</param>
+            <returns>An <see cref="T:Microsoft.Extensions.DependencyInjection.IMcpServerBuilder"/> that can be used to further configure the MCP server.</returns>
+        <member name="T:ModelContextProtocol.McpServerOptionsSetup">
+        <member name="T:ModelContextProtocol.SingleSessionMcpServerHostedService">
+        <member name="T:ModelContextProtocol.Throw">
+

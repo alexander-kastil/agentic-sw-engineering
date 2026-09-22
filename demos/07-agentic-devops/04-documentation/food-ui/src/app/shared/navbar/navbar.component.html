@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="hamburgerMenu" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </div>
+    @for (item of navItems | async; track item) {
+    <div
+      class="menuItem"
+      routerLink="{{ '/' + item.url }}"
+      routerLinkActive="navLinkActive"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ item.title }}
+    </div>
+    }
+  </mat-toolbar-row>
+</mat-toolbar>

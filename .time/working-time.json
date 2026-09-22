@@ -1,0 +1,435 @@
+{
+  "repo": "agentic-sw-engineering",
+  "origin": "https://github.com/alexander-kastil/agentic-sw-engineering",
+  "sessions": [
+    {
+      "date": "2026-09-21",
+      "from": "20:07",
+      "to": "20:26",
+      "sessionId": "64e1ee17-bf21-4821-8d6a-732b33ff66f0",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/06-copilot-app/readme.md",
+        "demos/06-copilot-app/06-configuration/readme.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/refresh-module.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/scripts/link-rot.sh",
+        ".claude/skills/brand-voice-gh-copilot/scripts/check-rules.py"
+      ],
+      "mechanism": {
+        "takes": "a training module pinned to an old release of a fast-moving product, plus the vendor's current documentation, changelog and release-note posts",
+        "does": "re-establishes which sources exist now rather than trusting the ones the module cites, diffs only the pinned version range out of the changelog, reads the docs for the conceptual model the changelog cannot express, classifies each finding as new, renamed, widened, conceptual error or unchanged, then rewrites prose and hands-on steps together and gates the result on internal links, external link rot and the repo's countable style caps",
+        "returns": "a module whose every factual claim matches the current release, with the corrections reported as claims and the deferred decisions named"
+      },
+      "portsAsIs": [
+        "the external link-rot checker",
+        "the countable-style-rule checker",
+        "the changelog-versus-docs source ranking",
+        "the five-way finding classification"
+      ],
+      "perCustomer": [
+        "the product being taught",
+        "the repo's own style ruleset",
+        "the module layout and nav conventions"
+      ],
+      "evidence": [
+        "demos/06-copilot-app/",
+        "tasks/todo.md",
+        "link-rot proof: files=7 urls=18 ok=18 broken=0 exit 0, and BROKEN 404 exit 1 on a fixture",
+        "check-rules proof: files=7 violations=0 on the fixed module, files=1 violations=9 on an eight-rule fixture"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "brand-voice-gh-copilot",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "professional training and technical education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "from": "19:47",
+      "to": "20:28",
+      "sessionId": "0b9ef576-0f1b-414a-9114-61b2d233e6e4",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "labs/readme.md",
+        "labs/02-assisted-coding/",
+        "labs/03-harness/",
+        "labs/04-orchestration/",
+        "labs/05-agent-sessions/",
+        "labs/06-copilot-sdk/",
+        "labs/07-copilot-app/",
+        "labs/08-devops/",
+        "src/food-app/food-shop/angular.json",
+        "src/food-app/food-shop/src/app/logger/ai-logger.service.ts",
+        "tasks/todo.md"
+      ],
+      "mechanism": {
+        "takes": "a set of hands-on course labs whose guides have only ever been read, some pointing at third-party starter repositories and some at apps in the course repo itself",
+        "does": "runs one specialist agent per lab against a real toolchain rather than reviewing the prose: clones each starter, builds and tests it, executes every command and code block the guide prints, and separates what is mechanically runnable from what needs a vendor UI; each lab then ships a reference solution folder beside its guide carrying the finished artifacts and a record of the exact commands and their output, and every defect execution exposed is fixed in the guide, in the code, or in both",
+        "returns": "labs a student can follow end to end, each with a checked-in reference solution and an execution record, plus the repository's own sample app repaired where a lab depended on it"
+      },
+      "portsAsIs": [
+        "one agent per lab with a shared deliverable contract fixed before fan-out",
+        "the reference-solution folder convention with an execution record inside it",
+        "the separation of mechanically runnable steps from vendor-UI-only steps",
+        "verifying every delegate's completion claim against the disk rather than its report"
+      ],
+      "perCustomer": [
+        "the course subject and its toolchain",
+        "which starter repositories the labs import",
+        "the repo's own style and layout conventions"
+      ],
+      "evidence": [
+        "labs/02-assisted-coding/assisted-coding-solution/ through labs/08-devops/devops-solution/, each with test-results.md",
+        "lab 06: five defects in the guide's printed SDK code, all confirmed against the real package and then run end to end against the live CLI",
+        "lab 08: dotnet test 5/5 and a dotnet run whose output greps clean of the card numbers, CVVs and the simulated SQL query",
+        "src/food-app/food-shop: npm test from a build that failed before any spec ran to TOTAL 4 SUCCESS"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "claude-orchestration"
+        ],
+        "mcpServers": [],
+        "agents": [
+          "net-agent",
+          "angular-agent",
+          "general-purpose"
+        ]
+      },
+      "industry": "professional training and technical education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "from": "20:28",
+      "to": "20:38",
+      "sessionId": "0b9ef576-0f1b-414a-9114-61b2d233e6e4",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "tasks/lessons.md",
+        ".claude/skills/create-class/SKILL.md",
+        ".claude/skills/create-class/scripts/fence-lang.py",
+        "C:/Users/AlexanderKastil/.claude/skills/claude-orchestration/references/delegation-brief.md",
+        "C:/Users/AlexanderKastil/.claude/skills/claude-orchestration/references/delegation-corrections.md",
+        ".time/working-time.md"
+      ],
+      "mechanism": {
+        "takes": "a finished multi-agent session plus the corrections and dead ends inside it",
+        "does": "separates the learnings that generalize from the ones tied to the repo, writes each as a pattern and a rule, extends the existing skill sections that already own the topic instead of adding near-duplicates, turns the one check the session ran by hand three times into a script with a mode that judges a pass on the lines it added rather than on inherited debt, then reconciles the local and global copies of every skill touched and closes the time ledger without double-billing minutes another session already recorded",
+        "returns": "rules a later session inherits automatically, a checker for a written convention that had none, and both skill copies in agreement"
+      },
+      "portsAsIs": [
+        "the pattern-and-rule lessons format",
+        "extending an owning section rather than creating a near-duplicate skill",
+        "the diff-aware convention checker",
+        "the no-double-bill ledger invariant"
+      ],
+      "perCustomer": [
+        "the repo's conventions",
+        "which skills are shared and which stay repo-local"
+      ],
+      "evidence": [
+        "tasks/lessons.md: six entries",
+        ".claude/skills/create-class/scripts/fence-lang.py: demos returns 24 over all lines against 0 over added lines",
+        "create-class local and global: 0 differing files",
+        ".time/working-time.md: day hours 9.90 against a 9.90 union"
+      ],
+      "toolchain": {
+        "skills": [
+          "claude-learn",
+          "create-class",
+          "claude-orchestration",
+          "track-time"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "professional training and technical education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "from": "20:24",
+      "to": "20:43",
+      "sessionId": "21d36aa4-1377-4dbf-b617-386b73a0feb9",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "C:/Users/AlexanderKastil/.claude/skills/copilot-model/references/copilot-app.md",
+        "C:/Users/AlexanderKastil/.claude/skills/copilot-model/scripts/add-app-models.py",
+        "C:/Users/AlexanderKastil/.claude/skills/copilot-model/SKILL.md",
+        "C:/Users/AlexanderKastil/.claude/skills/copilot-register-provider/SKILL.md",
+        "tasks/lessons.md",
+        ".time/working-time.md"
+      ],
+      "mechanism": {
+        "takes": "a desktop AI client whose model configuration is reachable only through its own settings dialog, plus a model list already curated for a different client",
+        "does": "locates the client's real configuration store by enumerating the databases in its data directory instead of its JSON files, recovers the table shapes and their CHECK constraints by grepping the shipped binary for its embedded SQL, establishes which part of the configuration is a secret the operating system's credential store owns and therefore has to stay a human step, ports the model list into the store's own shape including the uniqueness constraint that forbids one identifier appearing twice, and leaves a script that replays the port from either shape with a dry run and an automatic backup",
+        "returns": "the client running on the operator's own models, a reference note that survives the next app update because it records how to re-derive itself from the binary, and a one-argument script for the next machine"
+      },
+      "portsAsIs": [
+        "finding a desktop app's configuration by listing its SQLite tables rather than its JSON files",
+        "recovering schema and CHECK constraints from a shipped binary with grep when no strings tool is present",
+        "the split between the secret step a human must do in the UI and the data step a script can do",
+        "the upsert-on-natural-key porting script with a dry run and an automatic backup"
+      ],
+      "perCustomer": [
+        "the client being configured",
+        "the model provider endpoints and their OpenAI-compatible roots",
+        "which models the operator wants in the picker"
+      ],
+      "evidence": [
+        "7 provider_models rows across two providers, listed back by the script",
+        "script dry run reproduced the 3 hand-written rows including the configId to wire_model conversion",
+        "copilot-model leaf: 173 lines, 10 sections, inside the 275/12 budget; global skill lint clean",
+        "tasks/lessons.md: two entries"
+      ],
+      "toolchain": {
+        "skills": [
+          "copilot-model",
+          "copilot-register-provider",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "professional training and technical education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "from": "21:52",
+      "to": "22:26",
+      "sessionId": "495543c2-4926-43da-942a-9b357797fc03",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/05-cli-sdk/01-cli/02-mcp-skills/readme.md",
+        "demos/05-cli-sdk/01-cli/02-mcp-skills/mcp-skills-solution/.vscode/mcp.json",
+        "demos/05-cli-sdk/01-cli/02-mcp-skills/mcp-skills-solution/.github/skills/learn-docs-lookup/SKILL.md",
+        "demos/05-cli-sdk/01-cli/03-business-case/readme.md",
+        "demos/05-cli-sdk/01-cli/03-business-case/business-case-solution/.vscode/mcp.json",
+        "demos/05-cli-sdk/01-cli/03-business-case/business-case-solution/.github/skills/hr-doc-report/SKILL.md",
+        "demos/05-cli-sdk/01-cli/03-business-case/business-case-solution/register-mcp.ps1",
+        "demos/05-cli-sdk/01-cli/03-business-case/business-case-solution/update-report.ps1",
+        "CLAUDE.md",
+        "tasks/lessons.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/execution-defect-taxonomy.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/verify-by-execution.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/run-demo.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/SKILL.md"
+      ],
+      "mechanism": {
+        "takes": "a training guide that teaches a vendor agent CLI by command, and a machine where that CLI is broken and its own help text misdescribes where it reads configuration from",
+        "does": "repairs and version-pins the toolchain, separating the parts the operator's endpoint protection must clear from the parts an install order fixes, then executes every command and flag the guide claims against the live CLI, builds candidate harness layouts and probes each one until the loading mechanism is observed rather than inferred, falls back to the repository's own working configuration as primary evidence when the vendor help disagrees, and rewrites the guide and its runnable reference folder to the mechanism that was actually seen to work",
+        "returns": "a guide whose every step was run, a self-contained solution folder the tool demonstrably discovers, and an explicit split between what was verified, what was blocked and why"
+      },
+      "portsAsIs": [
+        "probing every command and flag of a vendor CLI against its own help before trusting a guide",
+        "treating a repository that runs the product daily as primary evidence over the vendor's help text",
+        "the stop rule that a second silently-failing config location means the file is never read, not misplaced",
+        "separating an endpoint-protection blocker into one diagnosis plus a hand-back instead of retried installs",
+        "the verified / preconditions-verified / not-executed reporting split"
+      ],
+      "perCustomer": [
+        "the CLI being taught and its version",
+        "the harness layout that CLI actually honours",
+        "the security product on the operator's machine",
+        "the course's own style and link rules"
+      ],
+      "evidence": [
+        "Copilot CLI 1.0.87 installed and running after three endpoint-protection exclusions",
+        "both solution skills listed under Project skills by copilot skill list from their own folders",
+        "four candidate MCP config layouts built and probed, none loaded by the CLI; .vscode/mcp.json confirmed as the editor registry",
+        "both rewritten guides pass the repo brand-voice checker, every relative link resolves",
+        "execution-defect-taxonomy.md split out at 275 lines / 1 section, inside the 275/12 budget; repo config lint clean",
+        "tasks/lessons.md: five entries"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "brand-voice-gh-copilot",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [
+          "microsoft-learn"
+        ],
+        "agents": []
+      },
+      "industry": "professional training and technical education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "from": "21:41",
+      "to": "22:31",
+      "sessionId": "71a15c59-6c21-4b0d-bc74-4b382da742db",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/02-agentic-harness/06-plugins/demo-quality-plugin/plugin.json",
+        "demos/02-agentic-harness/06-plugins/demo-quality-plugin/mcp.json",
+        "demos/02-agentic-harness/06-plugins/demo-quality-plugin/scripts/validate-manifests.py",
+        "demos/02-agentic-harness/06-plugins/demo-quality-plugin/scripts/brand-guard.ps1",
+        "demos/02-agentic-harness/06-plugins/demo-quality-plugin/skills/demo-readme-check/check-readme.ps1",
+        "demos/05-cli-sdk/02-sdk/02-sdk-demos/sdk-demos-solution/security-analyzer.ts",
+        "demos/05-cli-sdk/02-sdk/03-deploy-azure/deploy-azure-solution/server.ts"
+      ],
+      "mechanism": {
+        "takes": "a written how-to guide and the toolchain it instructs the reader to install",
+        "does": "runs every step as printed and treats a step that merely appears to succeed as a failure: it asserts the guide's own artifact in the output rather than the exit code, validates each config file against the schema that file itself declares, drives each server over its own protocol instead of through a client, and feeds each gate known-bad input to prove it can fail; then rewrites the guide from what actually ran and ships the finished code beside it as a reference copy",
+        "returns": "a corrected guide, one runnable reference implementation per topic pinned to the versions it was verified against, and a table naming every step as verified, preconditions-verified or not-executed with its blocker"
+      },
+      "portsAsIs": [
+        "the defect taxonomy of failures only execution finds, now eighteen classes",
+        "assert the artifact the work produces, never the exit code, because a gated capability fails open into plausible prose",
+        "validate every manifest against the schema it declares rather than against a neighbouring example",
+        "the verified / preconditions-verified / not-executed reporting contract",
+        "the SKILL.md frontmatter repair, where an unquoted colon makes a harness skip the skill in silence"
+      ],
+      "perCustomer": [
+        "the product or toolchain the guide teaches",
+        "the guide tree, its numbering and its cross-references",
+        "the house writing rules the prose must pass"
+      ],
+      "evidence": [
+        "demos/05-cli-sdk/02-sdk/02-sdk-demos/sdk-demos-solution/readme.md",
+        "demos/05-cli-sdk/02-sdk/03-deploy-azure/deploy-azure-solution/readme.md",
+        "demos/05-cli-sdk/02-sdk/04-multi-agent/multi-agent-solution/readme.md",
+        "four blockers found by running the SDK demos guide, none visible to a reader: tool calls denied without skipPermission, a handler that does not compile under tsc, a prompt loop that dies at end of input, and built-in tools shadowing the custom tool the demo exists to teach",
+        "two fabricated mechanisms removed from the Azure guide: a hosting library that does not exist and three COPILOT_PROVIDER_* variables that are not real",
+        "the plugins guide's manifest example failed its own published schema with 2 errors; the replacement validates clean",
+        "plugin load proven over the CLI: plugin list shows it under External Plugins, skill list shows its skill, mcp list does not, which is the surface split the guide now teaches",
+        "8 SKILL.md files in this repo were being silently refused by the harness loader; after repair the loader reports 0 parse failures",
+        "brand-voice checker: 0 violations across all five edited topic guides",
+        "relative-link resolver: 150 links in the edited files, 0 dead"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "claude-learn",
+          "brand-voice-gh-copilot",
+          "track-time"
+        ],
+        "mcpServers": [],
+        "agents": [
+          "guide-validator",
+          "general-purpose"
+        ]
+      },
+      "industry": "technical training and developer education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "from": "22:22",
+      "to": "22:40",
+      "sessionId": "065c6865-9fc6-48b3-9a02-ebf8caa6ccbe",
+      "branch": "master",
+      "commits": [
+        "4f08031"
+      ],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/05-cli-sdk/01-cli/04-agentic-wf/readme.md",
+        ".github/workflows/web-performance-monitor.md",
+        ".github/workflows/web-performance-monitor.lock.yml",
+        ".github/workflows/daily-repo-status.lock.yml",
+        ".github/workflows/markdown-table-validator.lock.yml",
+        ".github/aw/actions-lock.json",
+        "tasks/lessons.md"
+      ],
+      "mechanism": {
+        "takes": "a course module that teaches a command-line tool, and a new release of that tool",
+        "does": "snapshots the new release's real surface, then runs the product's own VALIDATOR over every artifact the module ships rather than the vendor's migration command, because a codemod reporting clean does not mean the product accepts the file; repairs whatever the validator refuses against the vendor's reference docs rather than against whatever silences the error, regenerates the compiled outputs, diffs the whole tree for files the compile touched outside its stated output folder, drives every server the module registers over its own protocol to confirm the tool names, and re-runs each command the guide instructs the reader to run because one subcommand accepting a file is not the CLI accepting it",
+        "returns": "a module whose artifacts compile on the current release, a guide whose snippets match the shipped files byte for byte, the retired syntax documented so a reader on the old version recognises the error, and a named list of what was verified versus what still needs a live run"
+      },
+      "portsAsIs": [
+        "run the command that rejects bad input before the one that offers to fix it",
+        "a vendor's own codemod misses its own release's breaking changes, so treat a clean migration report as untested",
+        "a compile step can rewrite files outside the folder it is named for, so diff the whole tree",
+        "two subcommands of one CLI can disagree about the same file, so run every command the guide prints",
+        "confirm a server's tool names over stdio JSON-RPC instead of trusting the guide's claimed list"
+      ],
+      "perCustomer": [
+        "the tool the course teaches and its release cadence",
+        "the module tree and which artifacts each topic ships",
+        "the house writing rules the prose must pass"
+      ],
+      "evidence": [
+        "gh aw fix reported 'No workflow fixes needed' while gh aw validate failed the same workflow with 'Unknown property: chrome-devtools'",
+        "the retired tools: chrome-devtools shorthand replaced by a top-level mcp-servers: key, confirmed against the vendor's own reference/tools.md and not merely by what compiled",
+        "3 of 3 workflows compile with 0 warnings after the fix, from 2 of 3 before",
+        "chrome-devtools MCP driven over stdio JSON-RPC: 29 tools returned, including the performance and lighthouse tools the module claims",
+        "gh aw compile also rewrote 7 unrelated .github/skills/*/SKILL.md frontmatter lines, found only by a whole-tree status check",
+        "all 5 external links in the guide return 200; all 15 documented commands still exist on the new release",
+        "guide snippet verified byte-identical to the shipped workflow frontmatter"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "mermaid-expert",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "technical training and developer education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    }
+  ]
+}

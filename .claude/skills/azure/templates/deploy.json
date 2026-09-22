@@ -1,0 +1,18 @@
+{
+    "ResourceGroup": "rg-claude-code",
+    "Location": "westeurope",
+    "WIF": "wi-claude-code",
+    "GitHubRepo": "org/repo",
+    "SWA": {
+        "Name": "swa-myapp",
+        "AppLocation": "src/ui",
+        "OutputLocation": "dist/my-ui/browser"
+    },
+    "AppService": {
+        "Name": "app-myapi",
+        "Plan": "asp-myapp",
+        "Sku": "F1",
+        "Runtime": "DOTNETCORE:10.0",
+        "Source": "src/api"
+    }
+}

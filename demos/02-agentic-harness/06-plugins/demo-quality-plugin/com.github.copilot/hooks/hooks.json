@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "powershell": ".\brand-guard.ps1",
+        "bash": "pwsh -NoProfile -File ./brand-guard.ps1",
+        "cwd": "scripts",
+        "matcher": "create_file|apply_patch|replace_string_in_file|multi_replace_string_in_file",
+        "timeoutSec": 15
+      }
+    ]
+  }
+}

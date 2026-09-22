@@ -1,0 +1,96 @@
+{
+	"mcpServers": {
+		"qr-code": {
+			"type": "stdio",
+			"command": "uv",
+			"args": [
+				"run",
+				"src/qr-server/server.py",
+				"--stdio"
+			]
+		},
+		"playwright": {
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest",
+				"--vision"
+			],
+			"type": "stdio"
+		},
+		"angular-cli": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@angular/cli",
+				"mcp"
+			]
+		},
+		"azure-deploy": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure/mcp@latest",
+				"server",
+				"start"
+			],
+			"type": "stdio"
+		},
+		"github": {
+			"type": "http",
+			"url": "https://api.githubcopilot.com/mcp/"
+		},
+		"microsoft-learn": {
+			"type": "http",
+			"url": "https://learn.microsoft.com/api/mcp"
+		},
+		"work-iq": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@microsoft/workiq",
+				"mcp"
+			]
+		},
+		"chrome-devtools": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"chrome-devtools-mcp@latest"
+			],
+			"type": "stdio"
+		},
+		"Microsoft Foundry MCP Server": {
+			"type": "http",
+			"url": "https://mcp.ai.azure.com",
+			"headersHelper": "az account get-access-token --tenant ${AZURE_TENANT_ID} --resource https://mcp.ai.azure.com --query \"{Authorization: join(' ', ['Bearer', accessToken])}\" -o json"
+		},
+		"pdf": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"--silent",
+				"--registry=https://registry.npmjs.org/",
+				"@modelcontextprotocol/server-pdf",
+				"--stdio"
+			],
+			"type": "stdio"
+		},
+		"ssh-mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"ssh-mcp",
+				"--",
+				"--host=${SSH_HOST}",
+				"--port=22",
+				"--user=${SSH_USER}",
+				"--password=${SSH_PASSWORD}",
+				"--sudoPassword=${SSH_PASSWORD}",
+				"--timeout=120000",
+				"--maxChars=none"
+			]
+		}
+	},
+	"inputs": []
+}

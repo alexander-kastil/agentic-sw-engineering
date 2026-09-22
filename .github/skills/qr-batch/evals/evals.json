@@ -1,0 +1,36 @@
+{
+  "skill_name": "qr-batch",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need scannable images for the six session links in links.json for the printed handout, put them in ./handout",
+      "expected_output": "Six PNG files in ./handout, one per link, generated at a print-suitable box size.",
+      "files": ["evals/files/links.json"],
+      "assertions": [
+        "Exactly six PNG files exist in ./handout",
+        "The file names match the slug values in links.json",
+        "The script was run with --dry-run before the real run",
+        "The reported box size is 12 or greater"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "qr codes for these two urls please, they go on t-shirts",
+      "expected_output": "Two PNG files generated with error correction H, and a prompt for the output directory.",
+      "assertions": [
+        "The run used --error-correction H",
+        "The agent asked for an output directory rather than inventing one",
+        "The final message reports the file paths from the script output"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "make me a qr code for https://example.com/a and one for https://example.com/a in ./out",
+      "expected_output": "The duplicate slug is detected and disambiguated instead of one file overwriting the other.",
+      "assertions": [
+        "Two distinct file names are produced",
+        "No file is silently overwritten"
+      ]
+    }
+  ]
+}

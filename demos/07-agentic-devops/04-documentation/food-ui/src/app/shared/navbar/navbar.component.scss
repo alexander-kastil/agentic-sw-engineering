@@ -1,0 +1,28 @@
+.menu {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding: 1rem;
+}
+
+.menuItem {
+  margin-right: 0.5rem;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.navLinkActive{
+  text-decoration: underline;
+}
+
+.hamburgerMenu{
+  cursor: pointer;
+  padding-top: 0.5rem;
+  margin-right: 1rem;
+;
+  @media (min-width: 960px) {
+    display: none;
+  }
+}

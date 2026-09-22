@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS build
+WORKDIR /build
+COPY . .
+RUN dotnet restore "af-students-ai.csproj"
+RUN dotnet publish -c Release -o /app
+
+# Runtime Image
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
+WORKDIR /app
+COPY --from=build /app .
+ENTRYPOINT ["dotnet", "af-students-ai.dll"]
+
+# Build Image
+# podman build --rm -f dockerfile -t af-students-ai .
+
+# Run Image
+# podman run -it --rm -p 5051:8080 af-students-ai

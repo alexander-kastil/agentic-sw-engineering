@@ -1,0 +1,20 @@
+{
+  "localConnectionString": "Server=.;Database=<db-name>-dev;Trusted_Connection=True;TrustServerCertificate=True;",
+  "database": "<db-name>",
+  "target": "azure",
+  "authMode": "ActiveDirectoryDefault",
+  "targetServer": "<server-fqdn>",
+  "targetConnectionString": "Server=tcp:<server-fqdn>,1433;Initial Catalog=<db-name>;Authentication=Active Directory Default;Encrypt=True;Connect Timeout=60",
+  "sqlServer": "<server-fqdn>",
+  "serverResourceGroup": "rg-sql",
+  "subscription": "<subscription-id>",
+  "managedIdentityUsers": [
+    { "name": "<app-name>-api", "roles": ["db_owner"] }
+  ],
+  "serviceObjective": "GP_S_Gen5_1",
+  "autoPauseDelay": 60,
+  "minCapacity": 0.5,
+  "maxSizeGb": 2,
+  "deployedApiBaseUrl": "https://<app-name>-api.azurewebsites.net",
+  "backupDir": ".tools/db-backups"
+}

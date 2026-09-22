@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "picture-optimizer": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

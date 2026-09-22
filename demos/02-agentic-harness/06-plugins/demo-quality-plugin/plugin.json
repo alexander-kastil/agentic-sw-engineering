@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "demo-quality",
+  "version": "1.0.0",
+  "description": "Quality gate for the demo and lab guides in this masterclass: a readme checker skill, a topic-index MCP server, a review agent, and a hook that catches brand-voice violations as they are written.",
+  "author": {
+    "name": "Alexander Kastil"
+  },
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "brand-voice",
+    "markdown",
+    "course-authoring"
+  ]
+}

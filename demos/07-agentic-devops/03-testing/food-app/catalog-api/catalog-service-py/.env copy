@@ -1,0 +1,8 @@
+FLASK_ENV=development
+FLASK_DEBUG=False
+FLASK_APP=app.py
+SECRET_KEY=dev-secret-key-change-in-production
+DATABASE_URL=sqlite:///./food.db
+AUTH_ENABLED=False
+USE_SQLITE=True
+PORT=5000

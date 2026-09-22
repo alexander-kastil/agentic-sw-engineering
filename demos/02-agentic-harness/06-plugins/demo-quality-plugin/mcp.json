@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "topic-index": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp/topic_index.py"]
+    }
+  }
+}

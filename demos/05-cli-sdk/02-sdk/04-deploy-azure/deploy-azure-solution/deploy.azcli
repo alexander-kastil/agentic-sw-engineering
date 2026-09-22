@@ -1,0 +1,37 @@
+# Deploy the agent service to Azure Container Apps.
+# Run the lines one at a time; each is independent.
+
+RG=rg-copilot-agent
+LOCATION=westeurope
+APP=copilot-agent-api
+ENVNAME=cae-copilot-agent
+
+az group create --name $RG --location $LOCATION
+
+az containerapp env create --name $ENVNAME --resource-group $RG --location $LOCATION
+
+# Build the image from this folder and create the app in one step.
+# --ingress external publishes it; --target-port must match PORT in the Dockerfile.
+az containerapp up \
+  --name $APP \
+  --resource-group $RG \
+  --environment $ENVNAME \
+  --source . \
+  --ingress external \
+  --target-port 8080
+
+# The agent needs a GitHub identity at runtime. Keep the token in Key Vault and
+# reference it as a secret rather than passing it on the command line.
+az containerapp secret set \
+  --name $APP \
+  --resource-group $RG \
+  --secrets github-token=keyvaultref:https://<vault>.vault.azure.net/secrets/copilot-github-token,identityref:system
+
+az containerapp update \
+  --name $APP \
+  --resource-group $RG \
+  --set-env-vars COPILOT_GITHUB_TOKEN=secretref:github-token COPILOT_MODEL=gpt-5-mini
+
+# Confirm the health probe answers through the public ingress.
+FQDN=$(az containerapp show --name $APP --resource-group $RG --query properties.configuration.ingress.fqdn -o tsv)
+curl -s https://$FQDN/health

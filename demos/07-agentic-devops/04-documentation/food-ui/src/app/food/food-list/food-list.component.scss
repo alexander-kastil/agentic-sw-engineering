@@ -1,0 +1,38 @@
+mat-card {
+  margin-bottom: 1rem;
+}
+
+mat-toolbar {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+mat-icon {
+  cursor: pointer;
+  margin-top: 0.6rem;
+}
+
+.cmdCell {
+  width: 60px;
+  text-align: right;
+}
+
+.mat-mdc-header-cell {
+  padding-top: 0.8rem;
+}
+
+.mat-mdc-outlined-button {
+  margin-top: 0.5rem;
+  background-color: #673AB7;
+  padding-left: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+mat-icon{
+  color: white;
+}

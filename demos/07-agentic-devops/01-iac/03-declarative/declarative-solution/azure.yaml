@@ -1,0 +1,13 @@
+name: food-app
+metadata:
+  template: food-app@1.0.0
+services:
+  catalog-service:
+    project: ../../../../../src/food-app/catalog-service/api
+    language: dotnet
+    host: containerapp
+  food-shop:
+    project: ../../../../../src/food-app/food-shop
+    language: js
+    dist: dist/food-shop/browser
+    host: staticwebapp

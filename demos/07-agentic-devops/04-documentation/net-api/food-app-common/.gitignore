@@ -1,0 +1,40 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.o
+*.so
+*.dylib
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+
+# Rider cache/options
+.idea/
+*.sln.iml
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+*.nupkg.sha512
+packages/
+.nuget/
+
+# Local environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
