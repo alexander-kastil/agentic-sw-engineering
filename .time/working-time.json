@@ -430,6 +430,69 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-22",
+      "from": "19:10",
+      "to": "20:12",
+      "sessionId": "c957c5f1-ab42-41e9-970f-2e522fe25b27",
+      "branch": "master",
+      "commits": [
+        "da58c2f",
+        "e85f0ea"
+      ],
+      "surfaces": [
+        "agentic-sw-engineering",
+        "create-pptx skill"
+      ],
+      "files": [
+        "demos/02-agentic-harness/readme.md",
+        "demos/02-agentic-harness/pptx/",
+        "demos/02-agentic-harness/pptx/images/",
+        "demos/02-agentic-harness/pptx/02-agentic-harness.pptx",
+        "tasks/lessons.md",
+        "~/.claude/skills/create-pptx/references/gamma-deck.md",
+        "~/.claude/skills/create-pptx/scripts/gamma_deck.py"
+      ],
+      "mechanism": {
+        "takes": "a course module's topic readmes, a Gamma workspace template, and a slide budget",
+        "does": "plans one slide spec per slide with its image source decided up front, draws the architectural diagrams by hand as SVG in the module's existing visual language, renders the scene photos with an image model in a bright on-topic register, publishes both as public raw repository URLs, generates the deck from the template in parts of at most ten cards with every image pinned to its card, forces diagrams into an uncropped inline layout, regenerates only the cards that came back wrong, merges the parts and strips the export's artifacts before checking a contact sheet",
+        "returns": "a merged PPTX and PDF deck in the template's design where every visual is the team's own, plus the reusable specs and images"
+      },
+      "portsAsIs": [
+        "decide each slide's image source before writing any prompt: diagrams drawn, scenes rendered, screenshots reused",
+        "a layout tool left to itself crops a wide diagram into a narrow side panel, so ask for an inline image that is never cropped",
+        "regenerate only the failed cards and swap them in by position instead of rerunning the deck",
+        "a generated PPTX can carry empty shapes on top of text, so inspect a rendered contact sheet rather than the extracted text"
+      ],
+      "perCustomer": [
+        "the deck template and its design",
+        "the course modules and their topics",
+        "the visual register the audience expects"
+      ],
+      "evidence": [
+        "first photo set rejected as unrelated metaphors, then as dark retro scenery; the bright on-topic rerun was accepted",
+        "ten diagram cards came back cropped to portrait accent panels and were fixed by one regeneration with an inline no-crop layout",
+        "19 empty code-highlight rectangles removed from the merged export; a second clean pass reports removed=0"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-pptx",
+          "create-class",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [
+          "media-creator",
+          "Gamma"
+        ],
+        "agents": []
+      },
+      "industry": "technical training and developer education",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }

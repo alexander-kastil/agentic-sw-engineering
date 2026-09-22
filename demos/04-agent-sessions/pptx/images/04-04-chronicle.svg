@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="80" y="80" width="1760" height="120" rx="60" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <text x="960" y="152" text-anchor="middle" font-size="32" fill="#24292f">synced to your GitHub account: survives reload, follows you across machines</text>
+  <line x1="750" y1="200" x2="750" y2="352" stroke="#8c959f" stroke-width="4" stroke-dasharray="12 8" marker-end="url(#g)"/>
+  <g fill="#24292f" text-anchor="middle" font-size="36" font-weight="600">
+    <rect x="80" y="360" width="380" height="260" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="475">You ask</text>
+    <text x="270" y="525" font-family="Consolas, monospace">/chronicle</text>
+    <rect x="560" y="360" width="380" height="260" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="750" y="475">Reads synced</text>
+    <text x="750" y="525">session history</text>
+    <rect x="1040" y="360" width="380" height="260" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="1230" y="475">Filters by date,</text>
+    <text x="1230" y="525">file, or PR</text>
+    <rect x="1520" y="360" width="320" height="260" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1680" y="475">Summary with</text>
+    <text x="1680" y="525">links</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="460" y1="490" x2="552" y2="490"/>
+    <line x1="940" y1="490" x2="1032" y2="490"/>
+    <line x1="1420" y1="490" x2="1512" y2="490"/>
+  </g>
+  <g fill="#24292f" text-anchor="middle" font-size="32" font-family="Consolas, monospace">
+    <rect x="180" y="740" width="360" height="90" rx="45" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="796">standup</text>
+    <rect x="580" y="740" width="360" height="90" rx="45" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="760" y="796">search</text>
+    <rect x="980" y="740" width="360" height="90" rx="45" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1160" y="796">tips</text>
+    <rect x="1380" y="740" width="360" height="90" rx="45" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="796">reindex</text>
+  </g>
+  <text x="960" y="940" text-anchor="middle" font-size="30" fill="#57606a">a read over the record: it never changes code</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c24141"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="140" y="110" width="480" height="190" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="380" y="195" font-size="40" font-weight="600">Interactive</text>
+    <text x="380" y="248" font-size="28" fill="#57606a">you approve each action</text>
+    <rect x="720" y="110" width="480" height="190" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="195" font-size="40" font-weight="600">Plan</text>
+    <text x="960" y="248" font-size="28" fill="#57606a">a plan before any code</text>
+    <rect x="1300" y="110" width="480" height="190" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="1540" y="195" font-size="40" font-weight="600">Autopilot</text>
+    <text x="1540" y="248" font-size="28" fill="#57606a">no pause per action</text>
+    <text x="960" y="468" font-size="30" font-weight="600" fill="#57606a">Shift+Tab cycles the modes</text>
+    <rect x="140" y="580" width="480" height="220" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="380" y="668" font-size="38" font-weight="600" font-family="Consolas, monospace">copilot</text>
+    <text x="380" y="725" font-size="28" fill="#57606a">the interactive shell</text>
+    <rect x="720" y="580" width="480" height="220" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="668" font-size="38" font-weight="600" font-family="Consolas, monospace">copilot -i</text>
+    <text x="960" y="725" font-size="28" fill="#57606a">shell with a prompt running</text>
+    <rect x="1300" y="580" width="480" height="220" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1540" y="668" font-size="38" font-weight="600" font-family="Consolas, monospace">copilot -p</text>
+    <text x="1540" y="725" font-size="28" fill="#57606a">one headless run, then exit</text>
+    <rect x="1330" y="835" width="420" height="64" rx="32" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="1540" y="878" font-size="28" font-weight="600" fill="#c24141" font-family="Consolas, monospace">--allow-all-tools</text>
+    <text x="700" y="985" font-size="28" fill="#57606a"><tspan font-family="Consolas, monospace" fill="#24292f">copilot --continue</tspan>  or  <tspan font-family="Consolas, monospace" fill="#24292f">--resume</tspan>  picks a session back up</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" fill="none" marker-end="url(#a)">
+    <line x1="620" y1="205" x2="712" y2="205"/>
+    <line x1="1200" y1="205" x2="1292" y2="205"/>
+    <path d="M1540,300 C1540,420 380,420 380,308"/>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="500" y="250" width="300" height="60" rx="30" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="650" y="290" font-size="26" font-weight="600">59 minute limit</text>
+    <rect x="80" y="360" width="280" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="220" y="452" font-size="34" font-weight="600">Local session</text>
+    <text x="220" y="498" font-size="26" fill="#57606a">with context</text>
+    <rect x="510" y="360" width="280" height="200" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="650" y="452" font-size="34" font-weight="600">Cloud agent</text>
+    <text x="650" y="498" font-size="26" fill="#57606a">ephemeral env</text>
+    <rect x="860" y="360" width="280" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1000" y="452" font-size="34" font-weight="600">Commits to</text>
+    <text x="1000" y="498" font-size="26" fill="#57606a">its own branch</text>
+    <rect x="1210" y="360" width="280" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1350" y="452" font-size="34" font-weight="600">Pull request</text>
+    <text x="1350" y="498" font-size="26" fill="#57606a">with session log</text>
+    <rect x="1560" y="360" width="280" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1700" y="452" font-size="34" font-weight="600">You review</text>
+    <text x="1700" y="498" font-size="26" fill="#57606a">locally</text>
+    <text x="435" y="440" font-size="28" font-weight="600" font-family="Consolas, monospace">/delegate</text>
+    <text x="1175" y="830" font-size="28" fill="#57606a">iterate with a PR comment</text>
+    <text x="960" y="980" font-size="30" fill="#57606a">the local session stays the hub you return to</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" fill="none" marker-end="url(#a)">
+    <line x1="364" y1="470" x2="502" y2="470"/>
+    <line x1="794" y1="460" x2="852" y2="460"/>
+    <line x1="1144" y1="460" x2="1202" y2="460"/>
+    <line x1="1494" y1="460" x2="1552" y2="460"/>
+    <path d="M1700,560 V760 H650 V568" stroke-dasharray="12 8"/>
+  </g>
+</svg>

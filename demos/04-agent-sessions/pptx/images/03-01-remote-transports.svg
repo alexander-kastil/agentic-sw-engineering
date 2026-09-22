@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="340" width="460" height="300" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="310" y="425" font-size="42" font-weight="600">Local VS Code</text>
+    <text x="310" y="475" font-size="28" fill="#57606a">control surface</text>
+    <rect x="130" y="530" width="360" height="70" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="310" y="576" font-size="28" font-family="Consolas, monospace">~/.ssh/config</text>
+
+    <rect x="760" y="300" width="400" height="96" rx="48" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="362" font-size="38" font-weight="600">SSH</text>
+    <text x="960" y="270" font-size="28" fill="#57606a">a host you already reach</text>
+
+    <rect x="760" y="584" width="400" height="96" rx="48" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="960" y="646" font-size="38" font-weight="600">Dev tunnel</text>
+    <text x="960" y="728" font-size="28" fill="#57606a">behind NAT, no inbound ports</text>
+
+    <rect x="1380" y="340" width="460" height="300" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1610" y="470" font-size="42" font-weight="600">Remote host</text>
+    <text x="1610" y="520" font-size="28" fill="#57606a">agent runs here</text>
+
+    <rect x="1380" y="780" width="460" height="180" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1610" y="860" font-size="32" font-weight="600">Consistent toolchain</text>
+    <text x="1610" y="905" font-size="32" font-weight="600">and workspace</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="540" y1="420" x2="752" y2="348"/>
+    <line x1="1160" y1="348" x2="1372" y2="420"/>
+    <line x1="540" y1="560" x2="752" y2="632"/>
+    <line x1="1160" y1="632" x2="1372" y2="560"/>
+    <line x1="1610" y1="640" x2="1610" y2="772"/>
+  </g>
+  <text x="310" y="870" text-anchor="middle" font-size="28" fill="#57606a">editor stays local</text>
+  <text x="310" y="910" text-anchor="middle" font-size="28" fill="#57606a">nothing to install here</text>
+</svg>

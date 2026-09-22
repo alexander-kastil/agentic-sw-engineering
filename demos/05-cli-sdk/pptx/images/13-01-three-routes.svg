@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c24141"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="90" width="560" height="900" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="165" font-size="36" font-weight="600">Sessions from code</text>
+    <rect x="160" y="220" width="400" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="277" font-size="28" font-family="Consolas, monospace">coordinator.ts</text>
+    <rect x="160" y="380" width="400" height="90" rx="16" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="437" font-size="30">Researcher</text>
+    <rect x="160" y="540" width="400" height="90" rx="16" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="597" font-size="30">Builder</text>
+    <rect x="160" y="700" width="400" height="90" rx="16" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="757" font-size="30">Reviewer</text>
+    <text x="360" y="880" font-size="26" fill="#57606a">you decompose</text>
+    <text x="360" y="918" font-size="26" fill="#57606a">one transcript each</text>
+
+    <rect x="680" y="90" width="560" height="900" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="165" font-size="36" font-weight="600" font-family="Consolas, monospace">customAgents</text>
+    <rect x="740" y="220" width="440" height="600" rx="20" fill="#ffffff" stroke="#8c959f" stroke-width="2" stroke-dasharray="12 8"/>
+    <text x="960" y="277" font-size="28" fill="#57606a">one session</text>
+    <rect x="780" y="380" width="360" height="90" rx="16" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="437" font-size="30">Researcher</text>
+    <rect x="780" y="540" width="360" height="90" rx="16" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="597" font-size="30">Builder</text>
+    <rect x="780" y="700" width="360" height="90" rx="16" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="757" font-size="30">Reviewer</text>
+    <text x="960" y="880" font-size="26" fill="#57606a">you select per turn</text>
+    <text x="960" y="918" font-size="26" fill="#57606a">one shared transcript</text>
+
+    <rect x="1280" y="90" width="560" height="900" rx="28" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1560" y="165" font-size="36" font-weight="600">Fleet mode</text>
+    <rect x="1360" y="220" width="400" height="90" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="277" font-size="28" font-family="Consolas, monospace">--fleet</text>
+    <rect x="1310" y="450" width="160" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1390" y="498" font-size="26">sub-</text><text x="1390" y="532" font-size="26">agent</text>
+    <rect x="1480" y="450" width="160" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="498" font-size="26">sub-</text><text x="1560" y="532" font-size="26">agent</text>
+    <rect x="1650" y="450" width="160" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1730" y="498" font-size="26">sub-</text><text x="1730" y="532" font-size="26">agent</text>
+    <rect x="1360" y="700" width="400" height="90" rx="16" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="757" font-size="30">merged report</text>
+    <text x="1560" y="880" font-size="26" fill="#57606a">the model decomposes</text>
+    <text x="1560" y="918" font-size="26" fill="#57606a">subagents in parallel</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="360" y1="310" x2="360" y2="372"/>
+    <line x1="360" y1="470" x2="360" y2="532"/>
+    <line x1="360" y1="630" x2="360" y2="692"/>
+    <line x1="1500" y1="310" x2="1400" y2="442"/>
+    <line x1="1560" y1="310" x2="1560" y2="442"/>
+    <line x1="1620" y1="310" x2="1720" y2="442"/>
+    <line x1="1400" y1="560" x2="1500" y2="692"/>
+    <line x1="1560" y1="560" x2="1560" y2="692"/>
+    <line x1="1720" y1="560" x2="1620" y2="692"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <line x1="150" y1="90" x2="150" y2="512" stroke="#8c959f" stroke-width="4" marker-end="url(#a)"/>
+  <text transform="rotate(-90 110 300)" x="110" y="300" text-anchor="middle" font-size="26" fill="#57606a">more autonomy, less you see</text>
+  <g fill="#24292f">
+    <rect x="220" y="80" width="1620" height="130" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="157" font-size="36" font-weight="600">Manual permissions</text>
+    <text x="740" y="157" font-size="28" fill="#57606a">Default: anything not auto-approved asks for confirmation</text>
+    <rect x="220" y="240" width="1620" height="130" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="317" font-size="36" font-weight="600">Assisted permissions</text>
+    <text x="740" y="317" font-size="28" fill="#57606a">Experimental: an LLM judge assesses each tool call</text>
+    <rect x="220" y="400" width="1620" height="130" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="260" y="477" font-size="36" font-weight="600">Allow all</text>
+    <text x="740" y="477" font-size="28" fill="#57606a">Every tool call runs without confirmation</text>
+    <rect x="220" y="610" width="1000" height="320" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="260" y="680" font-size="30" font-weight="600" font-family="Consolas, monospace">chat.tools.terminal.autoApprove</text>
+    <g font-size="28" font-family="Consolas, monospace">
+      <text x="260" y="760">true</text><text x="260" y="820">false</text><text x="260" y="880">/regex/</text>
+    </g>
+    <g font-size="28" fill="#57606a">
+      <text x="520" y="760">auto-approve</text><text x="520" y="820">always ask</text><text x="520" y="880">pattern match</text>
+    </g>
+    <rect x="1280" y="690" width="560" height="80" rx="40" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="1560" y="742" text-anchor="middle" font-size="28" font-weight="600" fill="#c24141">convenience, not a security boundary</text>
+    <text x="1560" y="830" text-anchor="middle" font-size="28" fill="#57606a">keep delete, deploy and push out</text>
+  </g>
+</svg>

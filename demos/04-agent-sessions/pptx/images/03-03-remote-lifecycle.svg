@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="200" width="380" height="260" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="290" font-size="40" font-weight="600">1 Start</text>
+    <text x="270" y="355" font-size="28" font-family="Consolas, monospace">setsid nohup</text>
+    <text x="270" y="397" font-size="28" font-family="Consolas, monospace">... &lt; /dev/null &amp;</text>
+
+    <rect x="560" y="200" width="380" height="260" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="750" y="290" font-size="40" font-weight="600">2 Change</text>
+    <text x="750" y="355" font-size="28" fill="#57606a">pkill first,</text>
+    <text x="750" y="397" font-size="28" fill="#57606a">then restart</text>
+
+    <rect x="1040" y="200" width="380" height="260" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1230" y="290" font-size="40" font-weight="600">3 Reattach</text>
+    <text x="1230" y="355" font-size="28" fill="#57606a">server still serving,</text>
+    <text x="1230" y="397" font-size="28" fill="#57606a">conversation intact</text>
+
+    <rect x="1520" y="200" width="380" height="260" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="1710" y="290" font-size="40" font-weight="600">4 Clean up</text>
+    <text x="1710" y="355" font-size="28" fill="#57606a">stop the process,</text>
+    <text x="1710" y="397" font-size="28" fill="#57606a">then delete</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="460" y1="330" x2="552" y2="330"/>
+    <line x1="940" y1="330" x2="1032" y2="330"/>
+    <line x1="1420" y1="330" x2="1512" y2="330"/>
+  </g>
+  <g stroke="#c24141" stroke-width="3">
+    <line x1="270" y1="460" x2="270" y2="560"/>
+    <line x1="750" y1="460" x2="750" y2="560"/>
+    <line x1="1710" y1="460" x2="1710" y2="560"/>
+  </g>
+  <line x1="1230" y1="460" x2="1230" y2="560" stroke="#2f7d4f" stroke-width="3"/>
+  <g text-anchor="middle" font-size="28" font-weight="600">
+    <rect x="80" y="560" width="380" height="130" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="270" y="615" fill="#c24141">prevents: dies with</text>
+    <text x="270" y="655" fill="#c24141">the shell turn</text>
+    <rect x="560" y="560" width="380" height="130" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="750" y="615" fill="#c24141">prevents: Address</text>
+    <text x="750" y="655" fill="#c24141">already in use</text>
+    <rect x="1040" y="560" width="380" height="130" rx="24" fill="#e9f7ef" stroke="#2f7d4f" stroke-width="2"/>
+    <text x="1230" y="615" fill="#2f7d4f">the host owns</text>
+    <text x="1230" y="655" fill="#2f7d4f">the session</text>
+    <rect x="1520" y="560" width="380" height="130" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="1710" y="615" fill="#c24141">prevents: a stray</text>
+    <text x="1710" y="655" fill="#c24141">server on port 8000</text>
+  </g>
+  <rect x="280" y="820" width="1360" height="100" rx="50" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <text x="960" y="882" text-anchor="middle" font-size="30" fill="#24292f">check that the PID and <tspan font-family="Consolas, monospace" font-weight="600">Content-Length</tspan> changed: a 200 alone proves nothing</text>
+</svg>

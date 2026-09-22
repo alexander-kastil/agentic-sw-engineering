@@ -33,5 +33,6 @@
 | 2026-09-21 | 0.57 | 21:52 | 22:26 | Two Copilot CLI demos verified end to end and shipped with working reference solutions |
 
 | 2026-09-21 | 0.15 | 22:22 | 22:40 | Agentic workflows module brought up to the new CLI release, with a broken workflow fixed and the guide corrected |
+| 2026-09-22 | 1.03 | 19:10 | 20:12 | Slide deck for the Copilot harness module produced with custom diagrams and photos |
 
-**Total: 38.92h**
+**Total: 39.95h**

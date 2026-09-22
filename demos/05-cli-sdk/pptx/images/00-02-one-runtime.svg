@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c24141"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="120" width="540" height="200" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="350" y="205" font-size="40" font-weight="600">Terminal</text>
+    <text x="350" y="260" font-size="28" fill="#57606a" font-family="Consolas, monospace">copilot  ·  copilot -p</text>
+    <rect x="80" y="420" width="540" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="350" y="505" font-size="40" font-weight="600">GitHub Actions</text>
+    <text x="350" y="560" font-size="28" fill="#57606a" font-family="Consolas, monospace">gh aw workflow</text>
+    <rect x="80" y="740" width="540" height="200" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="350" y="825" font-size="40" font-weight="600">Your application</text>
+    <text x="350" y="880" font-size="28" fill="#57606a">Copilot SDK, six stacks</text>
+    <rect x="820" y="160" width="480" height="780" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1060" y="440" font-size="44" font-weight="600">Copilot agent</text>
+    <text x="1060" y="498" font-size="44" font-weight="600">runtime</text>
+    <rect x="900" y="540" width="320" height="64" rx="12" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1060" y="583" font-size="28" font-family="Consolas, monospace">Copilot CLI</text>
+    <text x="1060" y="690" font-size="28" fill="#57606a">plans</text>
+    <text x="1060" y="735" font-size="28" fill="#57606a">calls tools</text>
+    <text x="1060" y="780" font-size="28" fill="#57606a">executes</text>
+    <rect x="1480" y="180" width="360" height="240" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1660" y="315" font-size="40" font-weight="600">Model</text>
+    <rect x="1480" y="620" width="360" height="300" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1660" y="720" font-size="40" font-weight="600">Tools</text>
+    <text x="1660" y="780" font-size="28" fill="#57606a">MCP servers</text>
+    <text x="1660" y="822" font-size="28" fill="#57606a">skills</text>
+    <text x="1660" y="864" font-size="28" fill="#57606a">custom tools</text>
+    <text x="716" y="820" font-size="26" font-weight="600" fill="#57606a">JSON-RPC</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="620" y1="220" x2="812" y2="220"/>
+    <line x1="620" y1="520" x2="812" y2="520"/>
+    <line x1="620" y1="850" x2="812" y2="850"/>
+    <line x1="1300" y1="300" x2="1472" y2="300"/>
+    <line x1="1300" y1="770" x2="1472" y2="770"/>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="620" width="300" height="260" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="230" y="720" font-size="36" font-weight="600">Agent Mode</text>
+    <text x="230" y="775" font-size="26" fill="#57606a">local, on your</text>
+    <text x="230" y="812" font-size="26" fill="#57606a">own machine</text>
+    <rect x="440" y="520" width="300" height="260" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="590" y="620" font-size="36" font-weight="600">Cloud agent</text>
+    <text x="590" y="675" font-size="26" fill="#57606a" font-family="Consolas, monospace">/delegate</text>
+    <text x="590" y="712" font-size="26" fill="#57606a">ephemeral env</text>
+    <rect x="800" y="420" width="300" height="260" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="950" y="520" font-size="36" font-weight="600">Orchestration</text>
+    <text x="950" y="575" font-size="26" fill="#57606a">expert subagents</text>
+    <text x="950" y="612" font-size="26" fill="#57606a">in parallel phases</text>
+    <rect x="1160" y="320" width="300" height="260" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="1310" y="420" font-size="36" font-weight="600">Browser tools</text>
+    <text x="1310" y="475" font-size="26" fill="#57606a">verify your own</text>
+    <text x="1310" y="512" font-size="26" fill="#57606a">web change</text>
+    <rect x="1520" y="220" width="320" height="260" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1680" y="320" font-size="36" font-weight="600">Modernization</text>
+    <text x="1680" y="375" font-size="26" fill="#57606a">Semantic Kernel to</text>
+    <text x="1680" y="412" font-size="26" fill="#57606a">Agent Framework</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="384" y1="700" x2="434" y2="700"/>
+    <line x1="744" y1="600" x2="794" y2="600"/>
+    <line x1="1104" y1="500" x2="1154" y2="500"/>
+    <line x1="1464" y1="400" x2="1514" y2="400"/>
+  </g>
+  <line x1="80" y1="945" x2="1830" y2="945" stroke="#8c959f" stroke-width="4" marker-end="url(#a)"/>
+  <text x="960" y="1010" text-anchor="middle" font-size="30" fill="#57606a">more scale, more autonomy: pick the model that fits the job</text>
+</svg>
