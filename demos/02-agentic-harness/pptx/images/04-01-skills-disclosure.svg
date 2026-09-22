@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f">
+    <rect x="120" y="620" width="560" height="280" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="160" y="690" font-size="26" fill="#57606a" font-weight="600">LEVEL 1</text>
+    <text x="160" y="745" font-size="38" font-weight="600">Metadata</text>
+    <text x="160" y="795" font-size="30" fill="#57606a">name + description</text>
+    <text x="160" y="845" font-size="28" fill="#57606a">at startup, every skill</text>
+    <rect x="470" y="645" width="180" height="56" rx="28" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="560" y="683" text-anchor="middle" font-size="26" font-weight="600">~100 tok</text>
+
+    <rect x="680" y="400" width="560" height="500" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="720" y="470" font-size="26" fill="#57606a" font-weight="600">LEVEL 2</text>
+    <text x="720" y="525" font-size="38" font-weight="600">SKILL.md body</text>
+    <text x="720" y="575" font-size="28" fill="#57606a">when a request matches</text>
+    <text x="720" y="615" font-size="28" fill="#57606a">the description</text>
+    <rect x="720" y="650" width="480" height="56" rx="28" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="688" text-anchor="middle" font-size="26" font-weight="600">&lt; 500 lines / 5000 tokens</text>
+
+    <rect x="1240" y="180" width="560" height="720" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1280" y="250" font-size="26" fill="#57606a" font-weight="600">LEVEL 3</text>
+    <text x="1280" y="305" font-size="38" font-weight="600">Resources</text>
+    <text x="1280" y="355" font-size="28" fill="#57606a">scripts/  references/  assets/</text>
+    <text x="1280" y="405" font-size="28" fill="#57606a">only when the body says so</text>
+    <rect x="1280" y="440" width="300" height="56" rx="28" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1430" y="478" text-anchor="middle" font-size="26" font-weight="600">no fixed limit</text>
+  </g>
+  <g font-family="Consolas, monospace" font-size="28" fill="#57606a">
+    <rect x="120" y="150" width="520" height="340" rx="18" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2"/>
+    <text x="150" y="210">dotnet-conventions/</text>
+    <text x="180" y="260">SKILL.md</text>
+    <text x="180" y="310">references/</text>
+    <text x="180" y="360">scripts/</text>
+    <text x="180" y="410">evals/</text>
+    <text x="180" y="460">assets/</text>
+  </g>
+  <rect x="120" y="950" width="1680" height="80" rx="40" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+  <text x="960" y="1002" text-anchor="middle" font-size="32" font-weight="600" fill="#24292f">40 skills installed, about 4,000 tokens idle</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e0a534"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g font-size="34" fill="#24292f">
+    <text x="470" y="150" text-anchor="middle" font-size="38" font-weight="600">Editing app.component.ts</text>
+    <text x="1450" y="150" text-anchor="middle" font-size="38" font-weight="600">Editing Service.cs</text>
+
+    <rect x="170" y="200" width="600" height="190" rx="22" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="470" y="290" text-anchor="middle" font-weight="600">General instructions</text>
+    <text x="470" y="340" text-anchor="middle" font-size="30" fill="#57606a">~1 KB</text>
+    <rect x="170" y="420" width="600" height="190" rx="22" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="470" y="510" text-anchor="middle" font-weight="600">Angular instructions</text>
+    <text x="470" y="560" text-anchor="middle" font-size="30" fill="#57606a">~1.5 KB</text>
+    <rect x="170" y="640" width="600" height="190" rx="22" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="470" y="730" text-anchor="middle" font-weight="600">Current file</text>
+    <text x="470" y="780" text-anchor="middle" font-size="30" fill="#57606a">~2-5 KB</text>
+
+    <rect x="1150" y="200" width="600" height="190" rx="22" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1450" y="290" text-anchor="middle" font-weight="600">General instructions</text>
+    <text x="1450" y="340" text-anchor="middle" font-size="30" fill="#57606a">~1 KB, unchanged</text>
+    <rect x="1150" y="420" width="600" height="190" rx="22" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1450" y="510" text-anchor="middle" font-weight="600">.NET instructions</text>
+    <text x="1450" y="560" text-anchor="middle" font-size="30" fill="#57606a">~1 KB</text>
+    <rect x="1150" y="640" width="600" height="190" rx="22" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1450" y="730" text-anchor="middle" font-weight="600">Current file</text>
+    <text x="1450" y="780" text-anchor="middle" font-size="30" fill="#57606a">~3-6 KB</text>
+  </g>
+  <path d="M790,515 C900,400 1030,400 1135,505" fill="none" stroke="#e0a534" stroke-width="7" marker-end="url(#a)"/>
+  <rect x="800" y="560" width="320" height="70" rx="35" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+  <text x="960" y="606" text-anchor="middle" font-size="30" font-weight="600" fill="#24292f">swap, not accumulate</text>
+  <g font-size="28" fill="#57606a">
+    <rect x="170" y="890" width="1580" height="140" rx="18" fill="#ffffff" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="220" y="948">Blue layer: .github/copilot-instructions.md</text>
+    <text x="220" y="998">Green and purple layers: .github/instructions/*.instructions.md, loaded by applyTo glob</text>
+  </g>
+</svg>

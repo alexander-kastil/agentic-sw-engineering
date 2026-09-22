@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f">
+    <rect x="80" y="410" width="400" height="260" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="280" y="500" text-anchor="middle" font-size="38" font-weight="600">plugin root</text>
+    <text x="280" y="550" text-anchor="middle" font-size="30" fill="#57606a">demo-quality</text>
+    <rect x="165" y="580" width="230" height="56" rx="12" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="280" y="618" text-anchor="middle" font-size="26" font-family="Consolas, monospace">plugin.json</text>
+
+    <rect x="620" y="100" width="760" height="380" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="660" y="170" font-size="38" font-weight="600">Portable core</text>
+    <rect x="660" y="210" width="680" height="100" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="690" y="250" font-size="26" fill="#57606a">skill</text>
+    <text x="690" y="290" font-size="26" font-family="Consolas, monospace">skills/demo-readme-check/SKILL.md</text>
+    <rect x="660" y="340" width="680" height="100" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="690" y="380" font-size="26" fill="#57606a">MCP server</text>
+    <text x="690" y="420" font-size="26" font-family="Consolas, monospace">mcp.json: topic-index</text>
+
+    <rect x="620" y="560" width="760" height="460" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="660" y="630" font-size="36" font-weight="600" font-family="Consolas, monospace">com.github.copilot/</text>
+    <rect x="660" y="670" width="680" height="90" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="690" y="727" font-size="26" font-family="Consolas, monospace">agents/demo-reviewer.agent.md</text>
+    <rect x="660" y="785" width="680" height="90" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="690" y="842" font-size="26" font-family="Consolas, monospace">hooks/hooks.json</text>
+    <rect x="660" y="900" width="680" height="90" rx="14" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="690" y="957" font-size="26" font-family="Consolas, monospace">commands/</text>
+
+    <rect x="1500" y="200" width="340" height="180" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="3"/>
+    <text x="1670" y="280" text-anchor="middle" font-size="34" font-weight="600">Any compliant</text>
+    <text x="1670" y="325" text-anchor="middle" font-size="34" font-weight="600">host</text>
+    <rect x="1500" y="700" width="340" height="180" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="3"/>
+    <text x="1670" y="780" text-anchor="middle" font-size="34" font-weight="600">Copilot</text>
+    <text x="1670" y="825" text-anchor="middle" font-size="34" font-weight="600">harness only</text>
+  </g>
+  <g stroke="#57606a" stroke-width="3" fill="none" marker-end="url(#a)">
+    <path d="M480,500 C550,450 560,300 615,290"/>
+    <path d="M480,580 C550,630 560,780 615,790"/>
+    <line x1="1380" y1="290" x2="1495" y2="290"/>
+    <line x1="1380" y1="790" x2="1495" y2="790"/>
+  </g>
+</svg>

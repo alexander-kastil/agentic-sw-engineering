@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="80" y="170" width="1760" height="100" rx="50" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+  <text x="960" y="232" text-anchor="middle" font-size="34" fill="#24292f"><tspan font-family="Consolas, monospace" font-weight="600">.github/hooks/hooks.json</tspan>: a matcher regex scopes each hook to the tools it cares about</text>
+  <line x1="120" y1="540" x2="1800" y2="540" stroke="#8c959f" stroke-width="6" marker-end="url(#a)"/>
+  <g font-size="28" font-weight="600" fill="#24292f" text-anchor="middle">
+    <rect x="80" y="440" width="210" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="185" y="530">Session</text><text x="185" y="568">Start</text>
+    <rect x="320" y="440" width="210" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="425" y="512">User</text><text x="425" y="550">Prompt</text><text x="425" y="588">Submit</text>
+    <rect x="560" y="440" width="210" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="5"/>
+    <text x="665" y="530">Pre-Tool</text><text x="665" y="568">Use</text>
+    <rect x="800" y="460" width="190" height="160" rx="24" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="895" y="530" fill="#57606a">Tool</text><text x="895" y="568" fill="#57606a">runs</text>
+    <rect x="1020" y="440" width="210" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="5"/>
+    <text x="1125" y="530">Post-Tool</text><text x="1125" y="568">Use</text>
+    <rect x="1260" y="440" width="250" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="1385" y="530">Subagent</text><text x="1385" y="568">Start / Stop</text>
+    <rect x="1540" y="440" width="210" height="200" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="3"/>
+    <text x="1645" y="555">Stop</text>
+  </g>
+  <line x1="665" y1="640" x2="665" y2="730" stroke="#c24141" stroke-width="3"/>
+  <rect x="440" y="730" width="450" height="130" rx="24" fill="#fdecec" stroke="#c24141" stroke-width="3"/>
+  <text x="665" y="788" text-anchor="middle" font-size="34" font-weight="600" fill="#c24141">exit 2 = deny</text>
+  <text x="665" y="832" text-anchor="middle" font-size="26" fill="#57606a">the call never runs</text>
+  <line x1="1125" y1="640" x2="1125" y2="730" stroke="#2f7d4f" stroke-width="3"/>
+  <rect x="930" y="730" width="560" height="130" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="3"/>
+  <text x="1210" y="788" text-anchor="middle" font-size="32" font-weight="600" fill="#24292f" font-family="Consolas, monospace">additionalContext</text>
+  <text x="1210" y="832" text-anchor="middle" font-size="26" fill="#57606a">findings go back to the agent</text>
+  <text x="960" y="960" text-anchor="middle" font-size="28" fill="#57606a">logging · validation · blocking · notifications</text>
+</svg>

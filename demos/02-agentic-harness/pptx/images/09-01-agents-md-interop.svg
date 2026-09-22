@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d4f"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="710" y="40" width="500" height="130" rx="24" fill="#e9f7ef" stroke="#2f7d4f" stroke-width="3"/>
+  <text x="960" y="105" text-anchor="middle" font-size="42" font-weight="600" fill="#24292f" font-family="Consolas, monospace">AGENTS.md</text>
+  <text x="960" y="148" text-anchor="middle" font-size="24" fill="#57606a">also read by Codex, Cursor</text>
+  <path d="M710,110 C560,110 500,150 500,205" fill="none" stroke="#2f7d4f" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M1210,110 C1360,110 1420,150 1420,205" fill="none" stroke="#2f7d4f" stroke-width="4" marker-end="url(#a)"/>
+  <g fill="#24292f">
+    <rect x="100" y="215" width="800" height="100" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="500" y="280" text-anchor="middle" font-size="38" font-weight="600">GitHub Copilot</text>
+    <rect x="1020" y="215" width="800" height="100" rx="20" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1420" y="280" text-anchor="middle" font-size="38" font-weight="600">Claude Code</text>
+  </g>
+  <g font-size="28" font-family="Consolas, monospace" fill="#24292f">
+    <rect x="100" y="350" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="140" y="418">.github/copilot-instructions.md</text>
+    <rect x="1020" y="350" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1060" y="418">CLAUDE.md</text>
+
+    <rect x="100" y="485" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="140" y="553">.github/instructions/*.instructions.md</text>
+    <rect x="1020" y="485" width="800" height="110" rx="16" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="1060" y="553" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#57606a">no equivalent</text>
+
+    <rect x="100" y="620" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="140" y="688">.github/agents/*.agent.md</text>
+    <rect x="1020" y="620" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1060" y="688">.claude/agents/*.md</text>
+
+    <rect x="100" y="755" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="140" y="823">.github/prompts/*.prompt.md</text>
+    <rect x="1020" y="755" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1060" y="823">.claude/skills/*/SKILL.md</text>
+
+    <rect x="100" y="890" width="800" height="110" rx="16" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="140" y="958">.github/hooks/hooks.json</text>
+    <rect x="1020" y="890" width="800" height="110" rx="16" fill="#f6f8fa" stroke="#9da7b3" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="1060" y="958" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#57606a">no hooks in this repository</text>
+  </g>
+  <g stroke="#d0d7de" stroke-width="3">
+    <line x1="910" y1="405" x2="1010" y2="405"/>
+    <line x1="910" y1="675" x2="1010" y2="675"/>
+    <line x1="910" y1="810" x2="1010" y2="810"/>
+  </g>
+</svg>

@@ -541,3 +541,15 @@ boundary and the body. It printed `1 repaired` while doing it. The peer's own wo
 exists. Construct the boundary case specifically: first element, last element, empty, one item. For a
 script that rewrites files, the last-key and only-key cases are where the off-by-one lives, and a script
 that reports success while corrupting its input is worse than one that crashes.
+
+## Slide photography shows the class topic, modern and bright
+
+**Pattern:** Nano Banana prompts for the module 02 deck were written as abstract metaphors (climbing
+harness, letterpress stamps, canal locks, a dusty binder in a server room) with dusk light and weathered,
+retro settings. The user rejected them twice: first as unrelated to the class, then as "70ies and 80ies
+sceneries, dark and dirty".
+
+**Rule:** Photos for this class show software engineers and their work, each scene carrying the slide's
+idea. Default register is modern, light, bright and friendly: high-key daylight, white and light-oak 2020s
+interiors, pastel accents, plants, screens as soft blurred colour. Add "dark or moody lighting, vintage or
+retro decor, grime" to the Avoid list.

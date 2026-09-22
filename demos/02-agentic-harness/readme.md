@@ -4,6 +4,8 @@
 
 Copilot customization enables you to tailor AI behavior for your specific workflows, team standards, and project requirements. VS Code provides multiple layers of customization, from general repository rules to reusable prompts, model context protocols, custom agents, and specialized skills, that work together to optimize both LLM context window efficiency and consistency across your organization.
 
+![agentic-harness-architecture](../../assets/agentic-harness-architecture.svg)
+
 ## Customization Features
 
 | Feature | Purpose |
