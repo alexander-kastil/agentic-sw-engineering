@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ContosoInventory.Client/ContosoInventory.Client.csproj" />
+  <Project Path="ContosoInventory.Server/ContosoInventory.Server.csproj" />
+  <Project Path="ContosoInventory.Shared/ContosoInventory.Shared.csproj" />
+</Solution>

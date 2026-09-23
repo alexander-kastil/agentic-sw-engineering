@@ -1,0 +1,50 @@
+﻿@inherits LayoutComponentBase
+@inject CookieAuthStateProvider AuthProvider
+@inject NavigationManager Navigation
+
+<div class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">ContosoInventory</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <AuthorizeView>
+                    <Authorized>
+                        <NavMenu />
+                        <div class="navbar-nav ms-auto align-items-center">
+                            <span class="navbar-text me-2">
+                                @context.User.Identity?.Name
+                            </span>
+                            <span class="badge bg-light text-primary me-3">
+                                @(context.User.IsInRole("Admin") ? "Admin" : "Viewer")
+                            </span>
+                            <button class="btn btn-outline-light btn-sm" @onclick="LogoutAsync">
+                                Logout
+                            </button>
+                        </div>
+                    </Authorized>
+                </AuthorizeView>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container flex-grow-1 py-4">
+        @Body
+    </main>
+
+    <footer class="bg-light text-center py-3 mt-auto">
+        <div class="container">
+            <span class="text-muted">&copy; @DateTime.Now.Year Contoso Ltd. All rights reserved.</span>
+        </div>
+    </footer>
+</div>
+
+@code {
+    private async Task LogoutAsync()
+    {
+        await AuthProvider.LogoutAsync();
+        Navigation.NavigateTo("/login", forceLoad: true);
+    }
+}

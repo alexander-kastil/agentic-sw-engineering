@@ -1,0 +1,351 @@
+@page "/categories"
+@attribute [Authorize]
+@inject CategoryApiService CategoryService
+
+<PageTitle>Categories - ContosoInventory</PageTitle>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Categories</h1>
+    <AuthorizeView Roles="Admin">
+        <Authorized>
+            <button class="btn btn-primary" @onclick="ShowAddModal">
+                Add Category
+            </button>
+        </Authorized>
+    </AuthorizeView>
+</div>
+
+@if (isLoading)
+{
+    <div class="d-flex justify-content-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+}
+else if (categories == null || !categories.Any())
+{
+    <div class="alert alert-info">No categories found.</div>
+}
+else
+{
+    @if (!string.IsNullOrEmpty(statusMessage))
+    {
+        <div class="alert @(isError ? "alert-danger" : "alert-success") alert-dismissible fade show" role="alert">
+            @statusMessage
+            <button type="button" class="btn-close" @onclick="() => statusMessage = null"></button>
+        </div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Display Order</th>
+                    <th>Status</th>
+                    <AuthorizeView Roles="Admin">
+                        <Authorized>
+                            <th>Actions</th>
+                        </Authorized>
+                    </AuthorizeView>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in categories)
+                {
+                    <tr>
+                        <td class="fw-semibold">@category.Name</td>
+                        <td>@category.Description</td>
+                        <td>@category.DisplayOrder</td>
+                        <td>
+                            @if (category.IsActive)
+                            {
+                                <span class="badge bg-success">Active</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Inactive</span>
+                            }
+                        </td>
+                        <AuthorizeView Roles="Admin">
+                            <Authorized>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary me-1" @onclick="() => ShowEditModal(category)">
+                                        Edit
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-warning me-1" @onclick="() => ToggleActive(category)">
+                                        @(category.IsActive ? "Deactivate" : "Activate")
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" @onclick="() => ShowDeleteConfirm(category)">
+                                        Delete
+                                    </button>
+                                </td>
+                            </Authorized>
+                        </AuthorizeView>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@* Add/Edit Modal *@
+@if (showModal)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@(isEditing ? "Edit Category" : "Add Category")</h5>
+                    <button type="button" class="btn-close" @onclick="CloseModal"></button>
+                </div>
+                <EditForm Model="formModel" OnValidSubmit="SaveCategory" FormName="categoryForm">
+                    <DataAnnotationsValidator />
+                    <div class="modal-body">
+                        @if (!string.IsNullOrEmpty(modalError))
+                        {
+                            <div class="alert alert-danger">@modalError</div>
+                        }
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <InputText id="name" class="form-control" @bind-Value="formModel.Name" />
+                            <ValidationMessage For="@(() => formModel.Name)" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <InputTextArea id="description" class="form-control" rows="3" @bind-Value="formModel.Description" />
+                            <ValidationMessage For="@(() => formModel.Description)" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="displayOrder" class="form-label">Display Order</label>
+                            <InputNumber id="displayOrder" class="form-control" @bind-Value="formModel.DisplayOrder" />
+                            <ValidationMessage For="@(() => formModel.DisplayOrder)" />
+                        </div>
+                        @if (isEditing)
+                        {
+                            <div class="form-check mb-3">
+                                <InputCheckbox id="isActive" class="form-check-input" @bind-Value="formModel.IsActive" />
+                                <label for="isActive" class="form-check-label">Active</label>
+                            </div>
+                        }
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" @onclick="CloseModal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" disabled="@isSaving">
+                            @if (isSaving)
+                            {
+                                <span class="spinner-border spinner-border-sm me-1"></span>
+                            }
+                            Save
+                        </button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+}
+
+@* Delete Confirmation Modal *@
+@if (showDeleteModal)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Delete</h5>
+                    <button type="button" class="btn-close" @onclick="() => showDeleteModal = false"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete the category "<strong>@categoryToDelete?.Name</strong>"?</p>
+                    <p class="text-danger">This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="() => showDeleteModal = false">Cancel</button>
+                    <button type="button" class="btn btn-danger" @onclick="DeleteCategory" disabled="@isSaving">
+                        @if (isSaving)
+                        {
+                            <span class="spinner-border spinner-border-sm me-1"></span>
+                        }
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<CategoryResponseDto>? categories;
+    private bool isLoading = true;
+    private string? statusMessage;
+    private bool isError;
+
+    // Modal state
+    private bool showModal;
+    private bool isEditing;
+    private int editingId;
+    private UpdateCategoryDto formModel = new();
+    private string? modalError;
+    private bool isSaving;
+
+    // Delete confirmation
+    private bool showDeleteModal;
+    private CategoryResponseDto? categoryToDelete;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCategories();
+    }
+
+    private async Task LoadCategories()
+    {
+        isLoading = true;
+        try
+        {
+            categories = await CategoryService.GetAllCategoriesAsync();
+        }
+        catch
+        {
+            statusMessage = "Failed to load categories.";
+            isError = true;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void ShowAddModal()
+    {
+        isEditing = false;
+        editingId = 0;
+        formModel = new UpdateCategoryDto
+        {
+            Name = string.Empty,
+            Description = string.Empty,
+            DisplayOrder = (categories?.Count ?? 0) + 1,
+            IsActive = true
+        };
+        modalError = null;
+        showModal = true;
+    }
+
+    private void ShowEditModal(CategoryResponseDto category)
+    {
+        isEditing = true;
+        editingId = category.Id;
+        formModel = new UpdateCategoryDto
+        {
+            Name = category.Name,
+            Description = category.Description,
+            DisplayOrder = category.DisplayOrder,
+            IsActive = category.IsActive
+        };
+        modalError = null;
+        showModal = true;
+    }
+
+    private void CloseModal()
+    {
+        showModal = false;
+        modalError = null;
+    }
+
+    private async Task SaveCategory()
+    {
+        isSaving = true;
+        modalError = null;
+
+        try
+        {
+            if (isEditing)
+            {
+                await CategoryService.UpdateCategoryAsync(editingId, formModel);
+                statusMessage = $"Category '{formModel.Name}' updated successfully.";
+            }
+            else
+            {
+                var createDto = new CreateCategoryDto
+                {
+                    Name = formModel.Name,
+                    Description = formModel.Description,
+                    DisplayOrder = formModel.DisplayOrder
+                };
+                await CategoryService.CreateCategoryAsync(createDto);
+                statusMessage = $"Category '{formModel.Name}' created successfully.";
+            }
+
+            isError = false;
+            showModal = false;
+            await LoadCategories();
+        }
+        catch (Exception ex)
+        {
+            modalError = ex.Message;
+        }
+        finally
+        {
+            isSaving = false;
+        }
+    }
+
+    private void ShowDeleteConfirm(CategoryResponseDto category)
+    {
+        categoryToDelete = category;
+        showDeleteModal = true;
+    }
+
+    private async Task DeleteCategory()
+    {
+        if (categoryToDelete == null) return;
+
+        isSaving = true;
+        try
+        {
+            var deleted = await CategoryService.DeleteCategoryAsync(categoryToDelete.Id);
+            if (deleted)
+            {
+                statusMessage = $"Category '{categoryToDelete.Name}' deleted successfully.";
+                isError = false;
+            }
+            else
+            {
+                statusMessage = "Failed to delete category.";
+                isError = true;
+            }
+
+            showDeleteModal = false;
+            await LoadCategories();
+        }
+        catch
+        {
+            statusMessage = "An error occurred while deleting the category.";
+            isError = true;
+        }
+        finally
+        {
+            isSaving = false;
+        }
+    }
+
+    private async Task ToggleActive(CategoryResponseDto category)
+    {
+        try
+        {
+            var result = await CategoryService.ToggleActiveAsync(category.Id);
+            if (result != null)
+            {
+                statusMessage = $"Category '{category.Name}' is now {(result.IsActive ? "active" : "inactive")}.";
+                isError = false;
+                await LoadCategories();
+            }
+        }
+        catch
+        {
+            statusMessage = "Failed to toggle category status.";
+            isError = true;
+        }
+    }
+}

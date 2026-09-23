@@ -1,0 +1,115 @@
+@page "/login"
+@layout MainLayout
+@inject CookieAuthStateProvider AuthProvider
+@inject NavigationManager Navigation
+
+<PageTitle>Sign In - ContosoInventory</PageTitle>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-body p-4">
+                <div class="text-center mb-4">
+                    <h3 class="fw-bold text-primary">ContosoInventory</h3>
+                    <p class="text-muted">Sign in to manage your inventory</p>
+                </div>
+
+                @if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @errorMessage
+                    </div>
+                }
+
+                <EditForm Model="loginModel" OnValidSubmit="HandleLogin" FormName="login">
+                    <DataAnnotationsValidator />
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <InputText id="email" class="form-control" @bind-Value="loginModel.Email" placeholder="name@contoso.com" />
+                        <ValidationMessage For="@(() => loginModel.Email)" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <InputText id="password" type="password" class="form-control" @bind-Value="loginModel.Password" />
+                        <ValidationMessage For="@(() => loginModel.Password)" />
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary" disabled="@isLoading">
+                            @if (isLoading)
+                            {
+                                <span class="spinner-border spinner-border-sm me-1" role="status"></span>
+                            }
+                            Sign in
+                        </button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+
+        <div class="card mt-3 border-info">
+            <div class="card-header bg-info bg-opacity-10 text-info-emphasis">
+                <i class="bi bi-info-circle me-1"></i> <strong>Lab Exercise — Test Accounts</strong>
+            </div>
+            <div class="card-body p-3">
+                <p class="text-muted small mb-2">Use these credentials to sign in during the lab:</p>
+                <table class="table table-sm table-borderless mb-0 small">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge bg-primary">Admin</span></td>
+                            <td><code>mateo@contoso.com</code></td>
+                            <td><code>Password123!</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-secondary">Viewer</span></td>
+                            <td><code>megan@contoso.com</code></td>
+                            <td><code>Password123!</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginDto loginModel = new();
+    private string? errorMessage;
+    private bool isLoading;
+
+    private async Task HandleLogin()
+    {
+        isLoading = true;
+        errorMessage = null;
+
+        try
+        {
+            var result = await AuthProvider.LoginAsync(loginModel);
+            if (result != null)
+            {
+                Navigation.NavigateTo("/", forceLoad: true);
+            }
+            else
+            {
+                errorMessage = "Invalid email or password.";
+            }
+        }
+        catch
+        {
+            errorMessage = "An error occurred. Please try again.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

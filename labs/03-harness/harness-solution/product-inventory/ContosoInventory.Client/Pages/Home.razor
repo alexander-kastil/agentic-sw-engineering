@@ -1,0 +1,83 @@
+﻿@page "/"
+@attribute [Authorize]
+@inject CategoryApiService CategoryService
+@inject AuthenticationStateProvider AuthStateProvider
+
+<PageTitle>Home - ContosoInventory</PageTitle>
+
+<div class="mb-4">
+    <h1>Welcome, @displayName!</h1>
+    <p class="text-muted">Contoso IT Inventory Management System</p>
+</div>
+
+@if (isLoading)
+{
+    <div class="d-flex justify-content-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Total Categories</h5>
+                    <p class="display-4 fw-bold text-primary">@totalCategories</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Active Categories</h5>
+                    <p class="display-4 fw-bold text-success">@activeCategories</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Inactive Categories</h5>
+                    <p class="display-4 fw-bold text-secondary">@inactiveCategories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a href="/categories" class="btn btn-primary btn-lg">Manage Categories</a>
+    </div>
+}
+
+@code {
+    private string displayName = string.Empty;
+    private int totalCategories;
+    private int activeCategories;
+    private int inactiveCategories;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        displayName = authState.User.Identity?.Name ?? "User";
+
+        try
+        {
+            var categories = await CategoryService.GetAllCategoriesAsync();
+            totalCategories = categories.Count;
+            activeCategories = categories.Count(c => c.IsActive);
+            inactiveCategories = categories.Count(c => !c.IsActive);
+        }
+        catch
+        {
+            // Handle error gracefully
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

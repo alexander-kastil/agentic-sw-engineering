@@ -17,7 +17,7 @@ Your lab environment MUST include the following resources:
 - Access to a GitHub account with GitHub Copilot enabled.
 - Visual Studio Code (version 1.116 or later) with the C# Dev Kit extension.
 
-A reference solution for the customization files and the Product Inventory feature is checked in at [harness-solution/](harness-solution/readme.md). Your own run still produces them in your own ContosoInventory clone; the solution folder is there to compare against, not to copy from.
+A reference solution is checked in at [harness-solution/](harness-solution/readme.md): the customization files, plus a complete ContosoInventory solution on .NET 10 with the Product Inventory feature in `harness-solution/product-inventory/`. To run it, go to `harness-solution/product-inventory/ContosoInventory.Server` and enter `dotnet run`. Your own run still produces these files in your own ContosoInventory clone; the solution folder is there to compare against, not to copy from.
 
 ## Exercise scenario
 
