@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Temperature Converter</h1>
+    <p class="description">Type a temperature in either field, then press the Convert button under it.</p>
+    <form class="converter" method="get" action="/" aria-label="Temperature input fields">
+      <div class="field">
+        <label for="celsius-input">Celsius</label>
+        <input type="text" id="celsius-input" name="celsius" value="$celsius">
+        <button type="submit" name="convert" value="celsius">Convert to Fahrenheit</button>
+      </div>
+      <div class="field">
+        <label for="fahrenheit-input">Fahrenheit</label>
+        <input type="text" id="fahrenheit-input" name="fahrenheit" value="$fahrenheit">
+        <button type="submit" name="convert" value="fahrenheit">Convert to Celsius</button>
+      </div>
+    </form>
+    <p class="status"><span id="message" aria-live="polite">$message</span></p>
+  </main>
+</body>
+</html>

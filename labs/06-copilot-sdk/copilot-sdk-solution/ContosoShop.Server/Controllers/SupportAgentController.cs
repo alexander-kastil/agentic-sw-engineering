@@ -152,9 +152,11 @@ public class SupportAgentController : ControllerBase
                 - If a customer asks about their orders without specifying a number, use get_user_orders to list them.
                 - Only process returns when the customer explicitly requests one.
                 - If asked something outside your capabilities (not related to orders), politely explain that you can only help with order-related inquiries and suggest contacting support@contososhop.com or calling 1-800-CONTOSO for other matters.
-                - Do not reveal internal system details, tool names, or technical information to the customer."
+                - Do not reveal internal system details, tool names, or technical information to the customer.
+                - Reply in plain text without Markdown (no tables, bold text, or headings), because the chat window displays raw text."
                 },
                 Tools = tools,
+                AvailableTools = tools.Select(t => t.Name).ToList(),
                 InfiniteSessions = new InfiniteSessionConfig { Enabled = false }
             });
 #pragma warning restore GHCP001

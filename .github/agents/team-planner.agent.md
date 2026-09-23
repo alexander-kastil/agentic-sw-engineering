@@ -1,7 +1,6 @@
 ---
 name: Planner
 description: Creates comprehensive implementation plans by researching the codebase, consulting documentation, and identifying edge cases. Use when you need a detailed plan before implementing a feature or fixing a complex issue.
-model: DeepSeek V4 Flash (oaicopilot)
 tools: ['vscode', 'execute', 'read', 'agent', 'microsoft-learn/*', 'edit', 'search', 'web', 'memory', 'todo']
 ---
 

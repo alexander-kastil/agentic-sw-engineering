@@ -1,0 +1,4 @@
+fastapi>=0.115
+uvicorn>=0.30
+itsdangerous>=2.2
+github-copilot-sdk>=1.0.14

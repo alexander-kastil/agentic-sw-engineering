@@ -100,3 +100,15 @@ The repo-wide brand-voice backlog: 111 demo readmes, 112 violations, almost all 
 mermaid diagram) and rule 10 (no Links & Resources section) on index pages. Four of those sit in
 files touched this session, in `03-mcp/readme.md` and `02-sdk/readme.md`, both of which are index
 pages that were already non-compliant. Not expanded into a repo-wide sweep.
+
+## 2026-09-23: Python variant of the harness solution
+
+- [x] Port `.github/` customization files to Python in `labs/03-harness/harness-solution/product-inventory-py/.github/`
+- [x] Build a runnable FastAPI ContosoInventory API (auth, categories baseline, Product feature) with SQL delta scripts
+- [x] Write `labs/03-harness/harness-solution/readme-py.md`
+- [x] Run every command in `readme-py.md` from a clean venv and fix what fails
+- [x] Validate the guide (fence languages, links, guide-validator)
+
+### Review
+
+All 8 Run and verify blocks in `readme-py.md` executed from a clean venv and database; outputs match every Expected line. Fixed during the run: responses pasted as one block printed blank rows until each call was piped to `Format-List`.

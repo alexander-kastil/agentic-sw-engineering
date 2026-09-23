@@ -17,7 +17,7 @@ Final, verified working versions of every file that [`labs/06-copilot-sdk/readme
 
 ## What changed relative to the guide's printed code
 
-The guide's code as printed does not compile against the real `GitHub.Copilot.SDK` 1.0.15-preview.0 package. Every difference between the files here and the guide's original snippets is listed with its compiler error in [`test-results.md`](test-results.md) and has already been applied to [`../readme.md`](../readme.md) in place. The two changes worth calling out because they are not simple renames:
+The guide's original code does not compile against the real `GitHub.Copilot.SDK` package (found on 1.0.15-preview.0; the solution now builds and runs on 1.0.15-preview.1). Every difference between the files here and the guide's original snippets is listed with its compiler error in [`test-results.md`](test-results.md) and has already been applied to [`../readme.md`](../readme.md) in place. The two changes worth calling out because they are not simple renames:
 
 - `SupportAgentController.cs` sets `OnPermissionRequest` on the `SessionConfig` to auto-approve tool calls. Without it, the SDK's default permission gate blocks every custom tool call and the agent falls back to an "unable to access order details due to a permission issue" answer instead of real data.
 - The `OnPermissionRequest` assignment and the `CreateSessionAsync` call are wrapped in `#pragma warning disable GHCP001` / `restore` because `GitHub.Copilot.Rpc.PermissionDecision` is marked experimental by the SDK and the compiler rejects its use otherwise.
