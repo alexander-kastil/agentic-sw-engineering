@@ -17,7 +17,7 @@ pip install -r requirements.txt
 2. Switch to **Agent** mode
 3. Ask: `Generate a QR code for https://www.integrations.at`
 
-The MCP server is configured in [`.vscode/mcp.json`](./.vscode/mcp.json) and becomes available once you start it from that file.
+The MCP server is configured in [`.vscode/mcp.json`](../../../../../.vscode/mcp.json) and becomes available once you start it from that file.
 
 > Note: To reach the same server from the Copilot CLI instead, register it with `copilot mcp add qr-code -- uv run server.py --stdio` from this folder.
 
