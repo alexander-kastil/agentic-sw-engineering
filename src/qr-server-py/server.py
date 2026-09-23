@@ -2,7 +2,7 @@
 # /// script
 # requires-python = ">=3.10"
 # dependencies = [
-#     "mcp>=1.26.0",
+#     "mcp>=2,<3",
 #     "qrcode[pil]>=8.0",
 #     "uvicorn>=0.34.0",
 #     "starlette>=0.46.0",
@@ -20,7 +20,7 @@ import logging
 
 import qrcode
 import uvicorn
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from mcp import types
 from starlette.middleware.cors import CORSMiddleware
 
@@ -30,7 +30,7 @@ VIEW_URI = "ui://qr-server/view.html"
 HOST = os.environ.get("HOST", "0.0.0.0")  # 0.0.0.0 for Docker compatibility
 PORT = int(os.environ.get("PORT", "3001"))
 
-mcp = FastMCP("QR Code Server", stateless_http=True)
+mcp = MCPServer("QR Code Server")
 
 # Embedded View HTML for self-contained usage (uv run <url> or unbundled)
 EMBEDDED_VIEW_HTML = """<!DOCTYPE html>
@@ -151,7 +151,7 @@ def generate_qr(
     buffer = io.BytesIO()
     img.save(buffer, format="PNG")
     b64 = base64.b64encode(buffer.getvalue()).decode()
-    return [types.ImageContent(type="image", data=b64, mimeType="image/png")]
+    return [types.ImageContent(type="image", data=b64, mime_type="image/png")]
 
 
 # IMPORTANT: all the external domains used by app must be listed
@@ -167,13 +167,13 @@ def view() -> str:
 
 if __name__ == "__main__":
     use_stdio = "--stdio" in sys.argv
-    
+
     if use_stdio:
         # stdio mode for GitHub Copilot, Claude Desktop, and other MCP clients
         mcp.run(transport="stdio")
     else:
         # HTTP mode for web-based clients
-        app = mcp.streamable_http_app()
+        app = mcp.streamable_http_app(stateless_http=True)
         app.add_middleware(
             CORSMiddleware,
             allow_origins=["*"],

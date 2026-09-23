@@ -565,3 +565,21 @@ retro decor, grime" to the Avoid list.
 **Pattern:** After prepending `assets/ModuleIntro.pptx` and a module-name slide, `gamma_deck.py clean` removed the thin accent lines and dividers from those slides (`removed=4`), because it deletes every empty low auto-shape on every slide.
 
 **Rule:** Run `clean` before `prepend`, or pass `clean --skip <n>`. Check the removed count against what the Gamma part alone produced.
+
+## Gamma module lists and tall screenshots need a local fix
+
+**Pattern:** The 00 class deck's two Gamma module-list slides rendered in Source Serif and read as tangled, unreadable text on an iPad. On module 01, two tall-screenshot cards came back with 10 to 12pt body text, and a redo with an explicit 60/40 layout came back the same.
+
+**Rule:** Build list slides locally with python-pptx in Arial. For tall-screenshot cards, set the text sizes (35 / 17.5 / 14.5pt) and restack the boxes after the merge instead of paying for another Gamma redo.
+
+## Final decks go to the OneDrive class folder
+
+**Pattern:** Asked at the end of the run: copy every PPTX to the OneDrive Classes folder, PDFs into a `pdf` subfolder, the folder named after the class slug.
+
+**Rule:** Delivery for this class is `E:\Onedrive\OneDrive - Integrations IT Solutions\Classes\agentic-sw-engineering`, PPTX at the root, PDF in `pdf/`. Render photos at Google Batch pricing once media-creator supports it (media-creation-team#25).
+
+## A cost total is one currency with a total column
+
+**Pattern:** Asked what the decks cost, I reported photos in dollars and Gamma in credits side by side and called it a total. The correction: "What kind of total is this ... I want photo cost and gamma cost and overall total".
+
+**Rule:** Convert everything to one currency, state the rate, and give photos, Gamma and total per row plus an overall total. `create-pptx/scripts/deck_cost.py` produces exactly that.

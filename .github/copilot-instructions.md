@@ -20,6 +20,7 @@ The exercises live in `labs/`, not inside the demo readmes. Lab numbers follow t
 ## Hard Rules
 
 - Issue independent tool calls, reads, searches, and subagent tasks in one parallel batch. Sequential execution of independent work is a bug.
+- Whenever a subagent is used, even a single one, create a task ledger first and record every spawn, correction, and report in it.
 - Never commit or push without an explicit request.
 - Internal links are relative paths (`demos/01-fundamentals/readme.md`); anchors are `#heading-name`.
 - Every code fence declares a language.

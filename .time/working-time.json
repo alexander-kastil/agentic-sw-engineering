@@ -584,6 +584,39 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-22",
+      "sessionId": "85aee768-36e8-4b71-8755-1503e7ae6c77",
+      "branch": "master",
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "from": "21:28",
+      "to": "23:00",
+      "commits": [
+        "2b5c45a"
+      ],
+      "files": [
+        "demos/0[16789]-*/pptx/",
+        "demos/pptx/00-agentic-sw-engineering.pptx",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md",
+        "tasks/lessons.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/deck_cost.py"
+      ],
+      "mechanism": {
+        "takes": "a course module's readmes and existing screenshots",
+        "does": "fans out one spec-and-diagram agent per module, renders scene photos, publishes the images, lays the slides out in a Gamma template in parts, merges, fixes shrunk cards locally, and prepends the trainer intro and a module slide",
+        "returns": "a finished PPTX and PDF per module plus a class overview deck, copied to the class folder"
+      },
+      "portsAsIs": [
+        "the deck helper script",
+        "the Gamma template"
+      ],
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }
