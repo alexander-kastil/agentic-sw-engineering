@@ -1297,6 +1297,7 @@ Use the following steps to complete this task:
                 - DO NOT ask for quantity if the customer already specified it (e.g., 'return 1 lamp', 'return 2 items')
                 - DO NOT ask for quantity if there's only 1 of that item available
                 - Pass item IDs and quantities as comma-separated strings to process_return
+                - When the customer asks to return a whole order (e.g., 'return order #1008'), call process_return with empty orderItemIds to return every remaining item, without asking for confirmation
                 - After processing return, remind customer: 'Please visit the Order Details page to see the updated return status.'
                 
                 EXAMPLE WORKFLOW:
@@ -1575,6 +1576,7 @@ Use the following steps to complete this task:
                     - DO NOT ask for quantity if the customer already specified it (e.g., 'return 1 lamp', 'return 2 items')
                     - DO NOT ask for quantity if there's only 1 of that item available
                     - Pass item IDs and quantities as comma-separated strings to process_return
+                    - When the customer asks to return a whole order (e.g., 'return order #1008'), call process_return with empty orderItemIds to return every remaining item, without asking for confirmation
                     - After processing return, remind customer: 'Please visit the Order Details page to see the updated return status.'
                     
                     EXAMPLE WORKFLOW:

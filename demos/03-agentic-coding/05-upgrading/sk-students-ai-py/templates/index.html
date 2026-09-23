@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Students AI</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+        .reply { background: #d1e7dd; border: 1px solid #a3cfbb; border-radius: 6px; padding: 1rem; white-space: pre-wrap; }
+        .instructions p { margin: 0.25rem 0; }
+    </style>
+</head>
+<body>
+    <h2>Be informed about students:</h2>
+    <form method="post">
+        <input type="text" name="prompt" size="80" required />
+        <input type="submit" value="Submit" />
+    </form>
+    <div class="instructions">
+        <h4>Example prompts:</h4>
+        <p>Which school does Mat Tan go to?</p>
+        <p>Which school has the most students?</p>
+        <p>Which school has the least students?</p>
+        <p>Get the count of students in each school.</p>
+        <p>How many students are there in the school of Mining?</p>
+        <p>What is the ID of Jan Fry and which school does she go to?</p>
+        <p>Which students belong to the school of Business? Respond only in JSON format.</p>
+        <p>Which students in the school of Nursing have their first or last name start with the letter 'J'?</p>
+    </div>
+    $reply
+</body>
+</html>

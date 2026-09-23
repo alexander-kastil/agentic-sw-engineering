@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Fresh Food, Fast</h1>
+<div class="box">
+  {% for f in food %}
+  <article class="shop-item">
+    <h2>{{ f.name }}</h2>
+    <p class="price">€ {{ "%.2f"|format(f.price) }}</p>
+    <p class="calories">{{ f.calories }} kcal</p>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -46,7 +46,7 @@ Open [constitution.md](./constitution.md) in this folder, copy its Principles se
 /speckit-constitution Use these principles for this project: <paste the principles here>
 ```
 
-Read the generated `.specify/memory/constitution.md`. Check that all six principles survived the generation and that none were softened into suggestions. Principle 4, that money is never a float, is the one the agent is most likely to drop; if it is missing, add it back by hand before continuing.
+Read the generated `.specify/memory/constitution.md`. Check that all six principles survived the generation as principles and that none were softened into suggestions. The constitution template has five principle slots, so the agent tends to demote principle 6, offline by default, into a `Technical Constraints` section; if it did, add it back by hand as `### VI. Offline by Default`. Principle 4, that money is never a float, is the other one to confirm before continuing.
 
 ## Step 3: Specify the feature (10 minutes)
 
@@ -64,16 +64,17 @@ This is the longest checkpoint and the one that pays for itself. Open the genera
 | Edge cases | All four edge cases from the brief have stated behavior | "Handled gracefully" with no defined outcome |
 | The two gaps | Rounding rule and currency are now written down | The agent picked one and never told you |
 | No implementation | No class names, no file layout, no library choices | The spec has quietly become a plan |
+| No invented input | Attendees are a list of hourly rates, nothing more | A name or label per attendee that the brief never asked for |
 
-Edit `spec.md` directly to fix anything the table catches. The two unstated items in the brief are your decision to make: write down a rounding rule such as "round the total half up to two decimal places, breakdown values unrounded" and state that amounts are currency-agnostic decimals.
+Edit `spec.md` directly to fix anything the table catches. The two unstated items in the brief are your decision to make: write down a rounding rule such as "round the total half up to two decimal places, breakdown values unrounded" and state that amounts are currency-agnostic decimals. Expect the agent to have resolved both already, typically by fixing the currency to US dollars and rounding every value at display time: that is the agent deciding for you, so overwrite it with your rule.
 
 ## Step 4: Plan the implementation (5 minutes)
 
 ```text
-/speckit-plan Use Python 3.11 with pytest, standard library only. Two modules: the calculation logic and a CLI wrapper using argparse.
+/speckit-plan Use Python 3.11 with pytest, standard library only. Two modules: the calculation logic and a CLI wrapper using argparse. The CLI runs as python -m meeting_cost <minutes> <rate> [<rate> ...].
 ```
 
-Read `plan.md` and confirm it does three things: names the modules and their boundary, gives a rationale for each technology choice, and explicitly verifies the plan against the constitution. That last section is the one worth reading twice, because a plan that proposes `float` for the total has violated principle 4 and the agent should say so itself.
+Read `plan.md` and confirm it does three things: names the modules and their boundary, gives a rationale for each technology choice, and explicitly verifies the plan against the constitution. That last section is the one worth reading twice, because a plan that proposes `float` for the total has violated principle 4 and the agent should say so itself. Then open `contracts/cli.md` next to `spec.md` and compare its error table with the spec's edge cases: a contract that lists `python -m meeting_cost 60` as an error contradicts the zero attendees rule, and `/speckit-implement` will build and test the contract, not the spec.
 
 ## Step 5: Break it into tasks (5 minutes)
 
@@ -81,7 +82,7 @@ Read `plan.md` and confirm it does three things: names the modules and their bou
 /speckit-tasks
 ```
 
-Open `tasks.md` and check the sequence rather than the wording. Data types and the logic module come before the CLI, and the CLI comes before its tests. Every acceptance criterion in `spec.md` should map to at least one task, per principle 5. Delete or merge any task that is too vague to verify, such as "handle errors".
+Open `tasks.md` and check the sequence rather than the wording. Data types and the logic module come before the CLI, and within each user story the tests come first, written to fail before the implementation task that makes them pass. Every acceptance criterion in `spec.md` should map to at least one task, per principle 5. Delete or merge any task that is too vague to verify, such as "handle errors".
 
 ## Step 6: Implement (10 minutes)
 
@@ -122,6 +123,7 @@ Then run the check that matters more than the tests: open `spec.md` and `tasks.m
 | The spec contains file names and class names | The brief was pasted along with your own implementation ideas | Remove the implementation detail from `spec.md`; it belongs in `plan.md` |
 | `/speckit-implement` rewrites files it already wrote | The task list has overlapping tasks | Merge the duplicates in `tasks.md` and re-run |
 | The totals are right but money is stored in `float` | Constitution principle 4 was dropped or ignored | This is the intended catch: fix `plan.md`, then re-run implement |
+| `python -m meeting_cost 60` exits non-zero with `at least one rate is required` | `contracts/cli.md` requires one or more rates, contradicting the zero attendees rule in `spec.md`, and the tests were written against the contract | Correct the contract, then delete the rate check in `meeting_cost/cli.py` and change its CLI test to expect `Total: 0.00` with exit code 0 |
 
 ## Summary
 

@@ -1,0 +1,543 @@
+name: Create ContosoShopEasy Training Issues
+permissions:
+  issues: write
+  contents: read
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "CREATE" to confirm issue creation'
+        required: true
+        default: ''
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'CREATE'
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Create Issue 1 - SQL Injection Vulnerability
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Fix SQL Injection Vulnerability in Product Search',
+            body: `## Security Issue: SQL Injection Vulnerability
+
+          **Severity:** High
+          **Location:** contoso_shop_easy/services/product_service.py
+          **Method:** search_products(search_term)
+
+          ### Description
+          The product search functionality is vulnerable to SQL injection attacks. User input is directly concatenated into SQL queries without proper parameterization or sanitization.
+
+          ### Vulnerable Code
+          \`\`\`python
+          simulated_query = f"SELECT * FROM Products WHERE Name LIKE '%{search_term}%' OR Description LIKE '%{search_term}%'"
+          print(f"[DEBUG] SQL Query: {simulated_query}")
+          \`\`\`
+
+          ### Security Risk
+          - Attackers can manipulate database queries
+          - Potential for data extraction, modification, or deletion
+          - Bypassing application security controls
+
+          ### Expected Fix
+          1. Use parameterized queries or prepared statements
+          2. Implement proper input validation and sanitization
+          3. Remove debug logging of SQL queries
+          4. Add input length restrictions
+
+          ### Testing
+          Try searching for: \`'; DROP TABLE Products; --\`
+
+          ### Acceptance Criteria
+          - [ ] User input is properly parameterized
+          - [ ] No raw SQL construction with user input
+          - [ ] Input validation prevents malicious characters
+          - [ ] Debug logging removed or sanitized`,
+            labels: ['security', 'high-priority', 'bug', 'training']
+          });
+
+    - name: Create Issue 2 - Weak Password Hashing
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Replace MD5 Password Hashing with Secure Alternative',
+            body: `## Security Issue: Weak Password Hashing
+
+          **Severity:** High
+          **Location:** contoso_shop_easy/services/user_service.py
+          **Method:** _get_md5_hash(value)
+
+          ### Description
+          The application uses MD5 for password hashing, which is cryptographically insecure and vulnerable to rainbow table attacks.
+
+          ### Vulnerable Code
+          \`\`\`python
+          def _get_md5_hash(self, value: str) -> str:
+              return hashlib.md5(value.encode("utf-8")).hexdigest().upper()
+          \`\`\`
+
+          ### Security Risk
+          - MD5 is cryptographically broken
+          - Vulnerable to rainbow table attacks
+          - Fast computation allows brute force attacks
+          - No salt usage increases vulnerability
+
+          ### Expected Fix
+          1. Replace MD5 with bcrypt, Argon2, or PBKDF2 (hashlib.pbkdf2_hmac)
+          2. Implement proper salt generation
+          3. Use appropriate work factors/iterations
+          4. Update password verification logic
+
+          ### Acceptance Criteria
+          - [ ] MD5 hashing completely removed
+          - [ ] Secure password hashing algorithm implemented
+          - [ ] Each password uses unique salt
+          - [ ] Password verification updated accordingly`,
+            labels: ['security', 'high-priority', 'bug', 'training']
+          });
+
+    - name: Create Issue 3 - Sensitive Data Exposure in Logs
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Remove Sensitive Data from Debug Logging',
+            body: `## Security Issue: Sensitive Data Exposure in Logs
+
+          **Severity:** High
+          **Locations:** Multiple files with debug logging
+
+          ### Description
+          The application logs sensitive information including passwords, credit card numbers, CVV codes, and personal information in debug output.
+
+          ### Vulnerable Code Examples
+
+          **services/user_service.py - Password Logging:**
+          \`\`\`python
+          print(f"[DEBUG] Registering user: {username}, Email: {email}, Password: {password}")
+          print(f"[DEBUG] Login attempt for user: {username} with password: {password}")
+          \`\`\`
+
+          **services/payment_service.py - Credit Card Logging:**
+          \`\`\`python
+          print(f"[DEBUG] Processing payment for card: {card_number}")
+          print(f"[DEBUG] Expiry: {expiry_date}, CVV: {cvv}")
+          \`\`\`
+
+          ### Security Risk
+          - Sensitive data stored in application logs
+          - Potential compliance violations (PCI DSS, GDPR)
+          - Information disclosure to unauthorized parties
+          - Log files become high-value targets
+
+          ### Expected Fix
+          1. Remove all sensitive data from logging
+          2. Implement log sanitization
+          3. Use masking for necessary debugging (e.g., ****1234 for cards)
+          4. Configure appropriate log levels for production
+
+          ### Acceptance Criteria
+          - [ ] No passwords logged in plaintext
+          - [ ] No full credit card numbers in logs
+          - [ ] No CVV codes in logs
+          - [ ] Sensitive fields masked or omitted`,
+            labels: ['security', 'high-priority', 'bug', 'training']
+          });
+
+    - name: Create Issue 4 - Hardcoded Credentials
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Remove Hardcoded Admin Credentials',
+            body: `## Security Issue: Hardcoded Admin Credentials
+
+          **Severity:** Critical
+          **Location:** contoso_shop_easy/security/security_validator.py
+
+          ### Description
+          Admin credentials are hardcoded in the source code, creating a significant security vulnerability.
+
+          ### Vulnerable Code
+          \`\`\`python
+          class SecurityValidator:
+              ADMIN_USERNAME = "admin"
+              ADMIN_PASSWORD = "password123"
+              SESSION_PREFIX = "session"
+          \`\`\`
+
+          ### Security Risk
+          - Credentials exposed in source code
+          - Anyone with repository access has admin access
+          - Impossible to rotate credentials without code changes
+          - Credentials may be leaked through version control
+
+          ### Expected Fix
+          1. Remove hardcoded credentials from source code
+          2. Implement environment variable configuration (os.environ)
+          3. Use secure credential management system
+          4. Implement proper authentication mechanism
+
+          ### Acceptance Criteria
+          - [ ] Hardcoded credentials completely removed
+          - [ ] Environment variable configuration implemented
+          - [ ] Default credentials changed from admin/password123
+          - [ ] Configuration documentation updated`,
+            labels: ['security', 'critical', 'bug', 'training']
+          });
+
+    - name: Create Issue 5 - Credit Card Data Storage
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Fix Credit Card Data Storage Violations',
+            body: `## Security Issue: Credit Card Data Storage Violations
+
+          **Severity:** Critical
+          **Locations:** models/order.py, services/payment_service.py
+
+          ### Description
+          The application stores full credit card numbers and CVV codes, violating PCI DSS compliance requirements.
+
+          ### Vulnerable Code
+
+          **models/order.py - Full Card Storage:**
+          \`\`\`python
+          card_number: str = ""  # This will be a security vulnerability - storing full card numbers
+          cvv: str = ""  # Another security vulnerability - storing CVV
+          \`\`\`
+
+          ### PCI DSS Violations
+          - **Requirement 3.2.1:** Do not store sensitive authentication data after authorization
+          - **Requirement 3.2.2:** Do not store card verification code (CVV/CVC)
+          - **Requirement 3.4:** Render cardholder data unreadable anywhere it is stored
+
+          ### Security Risk
+          - PCI DSS compliance violations
+          - Potential fines and penalties
+          - Increased breach impact
+          - Legal and regulatory consequences
+
+          ### Expected Fix
+          1. **Never store CVV codes** - Remove CVV storage completely
+          2. **Tokenize card numbers** - Store tokens instead of actual card numbers
+          3. **Mask display values** - Show only last 4 digits (e.g., ****1234)
+          4. **Implement proper encryption** - If card data must be stored temporarily
+
+          ### Acceptance Criteria
+          - [ ] CVV storage completely removed
+          - [ ] Full card numbers replaced with tokens
+          - [ ] Only last 4 digits stored for display
+          - [ ] Card type detection implemented`,
+            labels: ['security', 'critical', 'bug', 'training']
+          });
+
+    - name: Create Issue 6 - Input Validation Bypass
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Fix Input Validation Security Bypass',
+            body: `## Security Issue: Input Validation Security Bypass
+
+          **Severity:** High
+          **Location:** contoso_shop_easy/security/security_validator.py
+          **Method:** validate_input(value, field_name)
+
+          ### Description
+          The input validation method detects dangerous characters and XSS attempts but still returns \`True\`, allowing malicious input to pass through.
+
+          ### Vulnerable Code
+          \`\`\`python
+          # Security vulnerability: No proper sanitization for SQL injection
+          if "'" in value or '"' in value or ";" in value:
+              print(f"[WARNING] Potentially dangerous characters detected in {field_name}: {value}")
+              # But still return True - vulnerability!
+
+          return True  # Always returns True - major vulnerability
+          \`\`\`
+
+          ### Security Risk
+          - XSS (Cross-Site Scripting) attacks possible
+          - SQL injection attempts pass validation
+          - Malicious script execution in web contexts
+          - Data integrity and security compromised
+
+          ### Expected Fix
+          1. **Reject dangerous input** - Return \`False\` when threats detected
+          2. **Implement proper sanitization** - Clean input rather than just detecting
+          3. **Use allowlist validation** - Allow only safe characters
+          4. **Add comprehensive XSS protection**
+
+          ### Acceptance Criteria
+          - [ ] Validation method rejects dangerous input
+          - [ ] SQL injection patterns properly blocked
+          - [ ] XSS patterns properly blocked
+          - [ ] Appropriate error handling for rejected input`,
+            labels: ['security', 'high-priority', 'bug', 'training']
+          });
+
+    - name: Create Issue 7 - Predictable Token Generation
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Fix Predictable Session Token Generation',
+            body: `## Security Issue: Predictable Session Token Generation
+
+          **Severity:** Medium
+          **Location:** contoso_shop_easy/security/security_validator.py
+          **Method:** generate_session_token(username)
+
+          ### Description
+          Session tokens are generated using predictable patterns based on username and timestamp, making them vulnerable to session hijacking.
+
+          ### Vulnerable Code
+          \`\`\`python
+          def generate_session_token(self, username: str) -> str:
+              # Security vulnerability: Predictable token based on username and timestamp
+              timestamp = datetime.now().strftime("%Y%m%d%H%M")
+              token = f"{self.SESSION_PREFIX}_{username}_{timestamp}"
+
+              # Security vulnerability: Log the generated token
+              print(f"[DEBUG] Generated token: {token}")
+
+              return token
+          \`\`\`
+
+          ### Security Risk
+          - Predictable token patterns enable brute force attacks
+          - Session hijacking through token prediction
+          - Timestamp-based tokens are easily guessable
+          - Logging tokens exposes them to unauthorized access
+
+          ### Expected Fix
+          1. **Use cryptographically secure random generation** (the secrets module)
+          2. **Implement sufficient token entropy**
+          3. **Remove token logging**
+          4. **Add token expiration**
+          5. **Consider JWT or similar standards**
+
+          ### Acceptance Criteria
+          - [ ] Cryptographically secure token generation
+          - [ ] Sufficient entropy (minimum 128 bits)
+          - [ ] Token logging removed
+          - [ ] Token expiration implemented`,
+            labels: ['security', 'medium-priority', 'bug', 'training']
+          });
+
+    - name: Create Issue 8 - Weak Email Validation
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Improve Email Validation Security',
+            body: `## Security Issue: Weak Email Validation
+
+          **Severity:** Medium
+          **Location:** contoso_shop_easy/security/security_validator.py
+          **Method:** validate_email(email)
+
+          ### Description
+          The email validation is extremely weak, only checking for the presence of "@" and "." characters, allowing malicious input to pass through.
+
+          ### Vulnerable Code
+          \`\`\`python
+          def validate_email(self, email: str) -> bool:
+              if not email:
+                  return False
+
+              # Security vulnerability: Log email addresses
+              print(f"[DEBUG] Validating email: {email}")
+
+              # Security vulnerability: Weak email validation
+              return "@" in email and "." in email
+          \`\`\`
+
+          ### Security Risk
+          - Invalid email formats accepted
+          - Potential for email injection attacks
+          - Bypasses proper email format validation
+          - May allow XSS through email fields
+
+          ### Examples of Invalid Emails That Pass
+          - \`test@.com\` (invalid domain)
+          - \`@example.com\` (missing local part)
+          - \`test.@example.com\` (trailing dot)
+          - \`test<script>@example.com\` (XSS attempt)
+
+          ### Expected Fix
+          1. **Implement proper regex validation**
+          2. **Use a well-tested email validation approach**
+          3. **Remove email logging**
+          4. **Add length restrictions**
+          5. **Sanitize email input**
+
+          ### Acceptance Criteria
+          - [ ] Proper email format validation implemented
+          - [ ] Invalid email formats rejected
+          - [ ] Email length restrictions enforced
+          - [ ] Email logging removed or anonymized`,
+            labels: ['security', 'medium-priority', 'bug', 'training']
+          });
+
+    - name: Create Issue 9 - Insufficient Password Requirements
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Strengthen Password Security Requirements',
+            body: `## Security Issue: Insufficient Password Requirements
+
+          **Severity:** Medium
+          **Location:** contoso_shop_easy/security/security_validator.py
+          **Method:** validate_password_strength(password)
+
+          ### Description
+          Password validation only requires 4 characters minimum with no complexity requirements, making accounts vulnerable to brute force attacks.
+
+          ### Vulnerable Code
+          \`\`\`python
+          def validate_password_strength(self, password: str) -> bool:
+              if not password:
+                  return False
+
+              # Security vulnerability: Log password in plaintext
+              print(f"[DEBUG] Checking password strength: {password}")
+
+              # Security vulnerability: Very weak password requirements
+              if len(password) < 4:
+                  print("[WARNING] Password too short (minimum 4 characters)")
+                  return False
+
+              # Security vulnerability: No complexity requirements
+              return True
+          \`\`\`
+
+          ### Security Risk
+          - Extremely weak passwords accepted (1234, test)
+          - No complexity requirements
+          - Vulnerable to dictionary attacks
+          - Brute force attacks easily successful
+
+          ### Expected Fix
+          1. **Increase minimum length** to 8-12 characters
+          2. **Require character complexity** (uppercase, lowercase, numbers, symbols)
+          3. **Remove password logging**
+          4. **Add common password blocklist**
+          5. **Implement password strength scoring**
+
+          ### Password Strength Guidelines
+          - **Minimum 8 characters**
+          - **At least 3 of 4 character types:**
+            - Uppercase letters (A-Z)
+            - Lowercase letters (a-z)
+            - Numbers (0-9)
+            - Special characters (!@#$%^&*)
+
+          ### Acceptance Criteria
+          - [ ] Minimum 8 character requirement
+          - [ ] Character complexity requirements
+          - [ ] Common password blocklist
+          - [ ] Password logging completely removed`,
+            labels: ['security', 'medium-priority', 'bug', 'training']
+          });
+
+    - name: Create Issue 10 - Information Disclosure
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔐 Reduce Information Disclosure in Error Messages (Console Output)',
+            body: `## Security Issue: Information Disclosure in Error Messages (Console Output)
+
+          **Severity:** Low-Medium
+          **Locations:** Multiple service files
+
+          ### Description
+          The application provides verbose error messages and debug information (simulated using messages printed to the console in this training app) that could help attackers understand the system architecture and identify vulnerabilities.
+
+          ### Examples of Information Disclosure
+
+          **security/security_validator.py - System Configuration:**
+          \`\`\`python
+          def display_known_vulnerabilities(self) -> None:
+              print("=== Known Security Vulnerabilities ===")
+              print(f"Admin Username: {self.ADMIN_USERNAME}")
+              print(f"Admin Password: {self.ADMIN_PASSWORD}")
+              print("Input validation: ENABLED (but vulnerable)")
+              print("Password encryption: MD5 (WEAK)")
+              print("SQL injection protection: DISABLED")
+          \`\`\`
+
+          **services/payment_service.py - Configuration Details:**
+          \`\`\`python
+          print(f"[DEBUG] Using payment gateway: {self.PAYMENT_GATEWAY_URL}")
+          print(f"[DEBUG] Merchant: {self.MERCHANT_NAME}")
+          \`\`\`
+
+          ### Security Risk
+          - **Reconnaissance assistance** for attackers
+          - **Architecture disclosure** reveals system design
+          - **Configuration exposure** shows security weaknesses
+          - **Version information** helps identify known vulnerabilities
+
+          ### Expected Fix
+          1. **Remove vulnerability display method** or restrict to admin-only
+          2. **Sanitize error messages** for production
+          3. **Implement proper logging levels** (the logging module)
+          4. **Create user-friendly error messages**
+          5. **Hide system implementation details**
+
+          ### Acceptance Criteria
+          - [ ] Vulnerability display method removed or restricted
+          - [ ] Configuration details not exposed in logs
+          - [ ] Generic error messages for users
+          - [ ] Detailed logging only in development mode
+          - [ ] Sensitive system information protected`,
+            labels: ['security', 'low-priority', 'bug', 'training']
+          });
+
+    - name: Workflow Completion
+      run: |
+        echo "✅ Successfully created 10 security training issues!"
+        echo ""
+        echo "🎯 Issues created:"
+        echo "  1. SQL Injection Vulnerability (High)"
+        echo "  2. Weak Password Hashing (High)"
+        echo "  3. Sensitive Data in Logs (High)"
+        echo "  4. Hardcoded Credentials (Critical)"
+        echo "  5. Credit Card Storage (Critical)"
+        echo "  6. Input Validation Bypass (High)"
+        echo "  7. Predictable Tokens (Medium)"
+        echo "  8. Weak Email Validation (Medium)"
+        echo "  9. Insufficient Password Requirements (Medium)"
+        echo "  10. Information Disclosure (Low)"
