@@ -583,3 +583,57 @@ retro decor, grime" to the Avoid list.
 **Pattern:** Asked what the decks cost, I reported photos in dollars and Gamma in credits side by side and called it a total. The correction: "What kind of total is this ... I want photo cost and gamma cost and overall total".
 
 **Rule:** Convert everything to one currency, state the rate, and give photos, Gamma and total per row plus an overall total. `create-pptx/scripts/deck_cost.py` produces exactly that.
+
+## "No extra topic" means do not add one, never remove an existing one
+
+**Pattern:** Told "i dont want an extra sample case topic but you fold it in the existing topics as example" while about to expand the lab walkthrough, I read it as dropping topic 03-sample-case and unlinked it from topic 02. The correction: "who asked you to drop topic 3?".
+
+**Rule:** "Extra" qualifies what I was about to add. Fold the new material into the named existing topics and leave every existing topic, its index row and its nav links exactly as they were.
+
+## After one anomalous agent run, check the environment before editing the prompt
+
+**Pattern:** Verifying the planning demo, the Copilot CLI ignored the subagent and ledger instructions and looped on file reads. I rewrote the prompt and flags four times before looking at which model ran, then twice more before learning the `copilot` on PATH truncated multi-line prompts. Ten runs; the user asked "what is the issue here? 10 runs?!".
+
+**Rule:** When a run misbehaves, the next step is reading its receipt (model per call, the prompt as delivered, denied permissions), not a new prompt. Run guide prompts through `~/.claude/skills/create-class/scripts/run-copilot-headless.sh` and read `models=` first.
+
+## Use the class's own inference stack before picking a provider
+
+**Pattern:** Building the chat evals for module 07, I defaulted to GitHub Models and scouted it with a curl that checked only the status code. The endpoint answered `200 text/plain OK` to every call, so the build agent shipped against a dead provider. The correction: "Why not use the copilot sdk for inference", which module 05 already teaches.
+
+**Rule:** For any demo that calls a model, grep the class for its existing inference stack first (`GitHub.Copilot.SDK`, `github-copilot-sdk`) and reuse it. A reachability probe checks the response body, never just the status code.
+
+## A Copilot SDK session inherits every MCP server the user configured
+
+**Pattern:** The eval suite created a fresh Copilot SDK session per question. Each session started the MCP servers from `~/.copilot/mcp-config.json`, and `work-iq` asked for a sign-in every time: the user saw "an auth loop". `EnableConfigDiscovery = false` did not stop it.
+
+**Rule:** A Copilot SDK session used for inference runs isolated: `ConfigDirectory` (Python `config_directory`) set to an empty temp folder, `DisabledMcpServers = ["github-mcp-server"]`, `EnableSkills = false`, built-in tools excluded, system message in `replace` mode. Probe a new session config once with an `on_event` hook that prints `SESSION_MCP_SERVERS_LOADED` before running a suite.
+
+## A flaky eval case is a finding about the case
+
+**Pattern:** The vegetarian golden question failed intermittently. The judge's own explanation showed the answer was right: the menu never said "vegetarian", so every vegetarian claim scored 3 of 5 as an inference. The user: "this needs to be fixed".
+
+**Rule:** Read the judge's reasoning before touching a threshold, and fix the ambiguous side (question, ground truth or system prompt). Here the catalog got an explicit vegetarian flag; the case then passed 20 of 20 runs across two models and both languages. Calibrate every new case with five baseline runs.
+
+## Never chain a delivery onto the step that produces what it delivers
+
+**Pattern:** I ran `gamma_deck.py notes ... | head -1 && ... deliver`. The notes step crashed, the pipe swallowed the exit code, and deliver copied the unchanged deck to OneDrive.
+
+**Rule:** Run the producing step alone, read its summary line (`notes=N unmatched=0`), then deliver as a separate command. Never pipe a step whose exit code gates the next one.
+
+## Rename a folder only after its agent finishes, and rebuild its venv
+
+**Pattern:** The user renamed `chat-evals` to `evals-copilot-sdk-cs` and the Python folder to `evals-copilot-sdk-py` while agents were still writing there. The first `mv` failed with "Device or resource busy" from a reused MSBuild node, and a moved `.venv` kept absolute paths to the old folder.
+
+**Rule:** Move after the agent reports, run `dotnet build-server shutdown` before moving a .NET folder, and recreate a Python `.venv` after a move instead of carrying it along.
+
+## A slide correction includes the readme it was built from
+
+**Pattern:** Asked to correct the GitHub Agentic Workflows slide, I fixed the diagram and bullet, then offered to fix the topic readme that still carried the same false claim (`actions-lock.json` "pins" the SHAs) and the same wrong Mermaid arrows. The answer was "Of course".
+
+**Rule:** A factual correction to a slide covers the same claim in the spec's `source:` readme, diagram included, in the same pass. Do not offer it as a follow-up; a fixed slide beside an unfixed readme teaches both versions.
+
+## Render an edited Mermaid diagram before reporting it
+
+**Pattern:** I rewrote the readme's Mermaid block and closed with "I haven't rendered the updated Mermaid diagram to check it." The user quoted the sentence back.
+
+**Rule:** An edited Mermaid block is rendered with the Mermaid Chart validator before the reply, and the PNG looked at. The result exceeds the tool-output limit, so extract `valid` and `renderedPNG` from the saved JSON with Python. An unverified caveat is not a substitute for a check a tool can run.

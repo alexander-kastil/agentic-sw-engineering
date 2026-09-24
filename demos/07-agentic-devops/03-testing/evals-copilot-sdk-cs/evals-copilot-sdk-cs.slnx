@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="menu-chat.evals/menu-chat.evals.csproj" />
+  <Project Path="menu-chat/menu-chat.csproj" />
+</Solution>

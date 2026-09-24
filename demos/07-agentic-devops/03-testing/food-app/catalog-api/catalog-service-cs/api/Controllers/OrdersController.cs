@@ -16,12 +16,12 @@ namespace FoodApp
         {
             try
             {
-                logger.LogEvent("CreateOrder", $"Creating order with {request.Items.Count} items");
-
                 if (request.Items == null || request.Items.Count == 0)
                 {
                     return BadRequest("Order must contain at least one item");
                 }
+
+                logger.LogEvent("CreateOrder", $"Creating order with {request.Items.Count} items");
 
                 var order = new Order
                 {

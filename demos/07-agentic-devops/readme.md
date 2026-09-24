@@ -8,5 +8,5 @@ Integrate AI-assisted development with enterprise DevOps practices. This module 
 | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | **[IaC & Configuration](./01-iac/)**       | Provision Azure with CLI automation, Bicep, and Terraform, and configure remote Linux hosts over SSH, all driven by Copilot. |
 | **[CI/CD with GitHub Actions](./02-cicd/)**              | Build workflows that test, build, and deploy to Azure using OpenID Connect instead of stored secrets.          |
-| **[Testing using Copilot](./03-testing/)**               | Generate unit tests and end-to-end Playwright suites for agentic implementations.                              |
+| **[Testing using Copilot](./03-testing/)**               | Generate xUnit, Vitest and Playwright suites with agents, and evaluate chat answers across model changes.                              |
 | **[Documentation using Copilot](./04-documentation/)**   | Produce docs with Mermaid diagrams rendered in Markdown preview, notebooks, and chat.                          |

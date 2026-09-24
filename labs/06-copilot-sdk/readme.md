@@ -1,5 +1,7 @@
 # Integrate an AI Agent into existing apps using GitHub Copilot SDK
 
+[Python version](./readme-py.md)
+
 The GitHub Copilot SDK exposes the same engine behind GitHub Copilot CLI as a programmable SDK. It allows you to embed agentic AI workflows in your applications, including custom tools that let the AI call your code.
 
 In this exercise, you integrate an AI-powered customer support agent into the ContosoShop E-commerce Support Portal. By the end, the "Contact Support" page allows a user to ask questions (for example, "Where is my order?" or "I need to return an item") and receive helpful, automated answers from an AI agent. The agent uses backend tools (like checking order status or initiating a return) to resolve queries.

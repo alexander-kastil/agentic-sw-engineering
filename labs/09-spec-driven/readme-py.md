@@ -50,7 +50,7 @@ Read the generated `.specify/memory/constitution.md`. Check that all six princip
 
 ## Step 3: Specify the feature (10 minutes)
 
-Copy the whole of [requirements.md](./requirements.md) and run:
+Copy the Request, User stories, Acceptance criteria, Constraints and Edge cases sections of [requirements.md](./requirements.md), leaving out the opening paragraph and the Deliberately unstated section, and run:
 
 ```text
 /speckit-specify <paste the feature brief here>
@@ -66,12 +66,12 @@ This is the longest checkpoint and the one that pays for itself. Open the genera
 | No implementation | No class names, no file layout, no library choices | The spec has quietly become a plan |
 | No invented input | Attendees are a list of hourly rates, nothing more | A name or label per attendee that the brief never asked for |
 
-Edit `spec.md` directly to fix anything the table catches. The two unstated items in the brief are your decision to make: write down a rounding rule such as "round the total half up to two decimal places, breakdown values unrounded" and state that amounts are currency-agnostic decimals. Expect the agent to have resolved both already, typically by fixing the currency to US dollars and rounding every value at display time: that is the agent deciding for you, so overwrite it with your rule.
+Edit `spec.md` directly to fix anything the table catches. The two unstated items in the brief are your decision to make: write down a rounding rule such as "round the total half up to two decimal places, breakdown values unrounded", say what "the breakdown sums to the total" means once only the total is rounded (it sums to the total before rounding), and state that amounts are currency-agnostic decimals. Expect the agent to have resolved both already, typically by fixing the currency to US dollars and rounding every value at display time: that is the agent deciding for you, so overwrite it with your rule.
 
 ## Step 4: Plan the implementation (5 minutes)
 
 ```text
-/speckit-plan Use Python 3.11 with pytest, standard library only. Two modules: the calculation logic and a CLI wrapper using argparse. The CLI runs as python -m meeting_cost <minutes> <rate> [<rate> ...].
+/speckit-plan Use Python 3.11 with pytest, standard library only. A flat package meeting_cost with two modules, the calculation logic and a CLI wrapper using argparse, plus a __main__.py so it runs as python -m meeting_cost <minutes> <rate> [<rate> ...].
 ```
 
 Read `plan.md` and confirm it does three things: names the modules and their boundary, gives a rationale for each technology choice, and explicitly verifies the plan against the constitution. That last section is the one worth reading twice, because a plan that proposes `float` for the total has violated principle 4 and the agent should say so itself. Then open `contracts/cli.md` next to `spec.md` and compare its error table with the spec's edge cases: a contract that lists `python -m meeting_cost 60` as an error contradicts the zero attendees rule, and `/speckit-implement` will build and test the contract, not the spec.
@@ -90,7 +90,7 @@ Open `tasks.md` and check the sequence rather than the wording. Data types and t
 /speckit-implement
 ```
 
-Let it work through the task list. Watch which files it touches: work outside the two modules and their tests means it has drifted from `plan.md`. If it stops partway, run the command again and it will resume from the first unfinished task.
+Let it work through the task list. Watch which files it touches: anything outside the layout in `plan.md` (the two modules, the package's `__init__.py` and `__main__.py`, `pyproject.toml` and the tests) means it has drifted. If it stops partway, run the command again and it will resume from the first unfinished task.
 
 ## Step 7: Verify (2 minutes)
 
@@ -106,9 +106,9 @@ python -m meeting_cost -30 90
 
 | Input | Expected result |
 | --- | --- |
-| 60 minutes, rates 100 / 80 / 60 | 240 |
-| 30 minutes, rate 90 | 45 |
-| 0 attendees | 0, exit code 0 |
+| 60 minutes, rates 100 / 80 / 60 | `Total: 240.00` |
+| 30 minutes, rate 90 | `Total: 45.00` |
+| 0 attendees | `Total: 0.00`, exit code 0 |
 | -30 minutes | non-zero exit, message naming `duration` |
 
 Then run the check that matters more than the tests: open `spec.md` and `tasks.md` side by side and confirm every acceptance criterion has code behind it. A green test suite that only covers the happy path means the task list was incomplete, not that the feature is done.

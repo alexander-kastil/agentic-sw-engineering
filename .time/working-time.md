@@ -38,5 +38,10 @@
 | 2026-09-22 | 0.20 | 20:40 | 20:52 | Profile portrait prepared with a softly blurred background |
 | 2026-09-22 | 0.47 | 20:52 | 21:20 | Trainer intro and module title slides added to four course decks |
 | 2026-09-22 | 1.53 | 21:28 | 23:00 | Slide decks for five more course modules and a class overview deck produced with custom diagrams and photos, with a cost breakdown |
+| 2026-09-24 | 1.58 | 18:12 | 19:47 | Spec-driven development module expanded with a planning topic, a real-world sample case and a run-verified lab, with updated slides |
+| 2026-09-24 | 0.30 | 19:22 | 20:44 | Catalog API test suite with two bug fixes, and chat evaluations in C# and Python that catch answer changes after a model switch |
+| 2026-09-24 | 0.17 | 19:47 | 19:56 | Speaker notes written for every content slide of the spec-driven development deck |
+| 2026-09-24 | 0.13 | 19:56 | 20:04 | Slide authoring standard extended so every future deck ships with speaker notes |
+| 2026-09-24 | 0.37 | 20:19 | 20:41 | Speaker notes added to seven course decks, and the agentic workflows slide and lesson corrected and republished |
 
-**Total: 42.62h**
+**Total: 45.17h**

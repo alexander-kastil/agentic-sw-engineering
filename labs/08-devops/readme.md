@@ -1,5 +1,7 @@
 # Resolve GitHub issues using GitHub Copilot
 
+[Python version](./readme-py.md)
+
 GitHub issues are a powerful way to track bugs, enhancements, and tasks for a project.
 
 In this exercise, you use GitHub Copilot to help you analyze and resolve GitHub issues that relate to security vulnerabilities in an e-commerce application.

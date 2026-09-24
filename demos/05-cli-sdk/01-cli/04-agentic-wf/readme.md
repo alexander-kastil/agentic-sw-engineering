@@ -18,7 +18,9 @@ When you create or compile an agentic workflow, the `.md` file is compiled into 
 
 #### The .github/aw Folder
 
-The `.github/aw` folder contains `actions-lock.json`, which is a dependency lock file for your agentic workflows. Similar to `package-lock.json`, it pins specific versions and commit SHAs of GitHub Actions dependencies to ensure reproducible workflow runs. This file is auto-managed by the `gh-aw` tools.
+The `.github/aw` folder contains `actions-lock.json`, a cache that only `gh aw compile` reads and writes. It stores which commit SHA each `action@version` resolved to, checked before the GitHub API and the pins embedded in `gh aw`, so a restricted token such as the Copilot coding agent's still compiles to the same SHAs. The pins themselves end up in the `.lock.yml`: every `uses:` line carries the full SHA with the version as a comment, and the runner never reads `actions-lock.json`.
+
+Commit `actions-lock.json` so every contributor compiles to the same pins, and refresh it with `gh aw upgrade`. Deleting it breaks no running workflow; it only affects the next compile.
 
 Both files feed one pipeline. The compile step turns your markdown into the Actions workflow that runs, and the run itself is split across jobs so the agent never holds a write token:
 
@@ -27,26 +29,29 @@ flowchart TD
     MD["web-performance-monitor.md<br/>frontmatter + prompt"]
     COMPILE["gh aw compile"]
     LOCK["web-performance-monitor.lock.yml<br/>the executable Actions workflow"]
-    PINS[".github/aw/actions-lock.json<br/>action versions pinned to SHAs"]
+    PINS[".github/aw/actions-lock.json<br/>compile-time SHA cache"]
 
     MD --> COMPILE
     COMPILE --> LOCK
-    COMPILE --> PINS
-    PINS -.->|"pins consumed by"| LOCK
+    COMPILE <-->|"read + update"| PINS
 
-    LOCK --> ACT["activation<br/>schedule or manual dispatch"]
+    LOCK --> PRE["pre_activation<br/>role and trigger checks"]
+    PRE --> ACT["activation<br/>schedule or manual dispatch"]
     ACT --> AGENT["agent<br/>read-only token"]
 
     GH["github MCP"] --> AGENT
     CDT["chrome-devtools MCP"] --> AGENT
-    AGENT --> SO["safeoutputs MCP<br/>agent requests create_issue"]
+    SO["safeoutputs MCP<br/>agent requests create_issue"] --> AGENT
+    AGENT --> ART["agent_output.json<br/>artifact"]
 
-    SO --> DET["detection<br/>sanitize and validate the request"]
+    ART --> DET["detection<br/>validates, emits success"]
     DET --> WRITE["safe_outputs<br/>write token, creates the issue"]
+    ART -.->|"downloaded only if approved"| WRITE
     WRITE --> ISSUE["GitHub Issue"]
+    WRITE --> CONC["conclusion<br/>logs errors, missing tools"]
 ```
 
-The `safe-outputs` frontmatter is what produces that split. The agent cannot call the GitHub API to open an issue; it writes the request to a `safeoutputs` MCP server, a separate `detection` job validates and sanitizes it, and only the final job holds the permission to create the issue. A prompt injected through a page the agent visits therefore cannot escalate into a write.
+The `safe-outputs` frontmatter is what produces that split. The agent cannot call the GitHub API to open an issue; it sends the request to the `safeoutputs` MCP server running inside the agent job, which writes it to the `agent_output.json` artifact. A separate `detection` job validates it, and only the `safe_outputs` job holds the permission to create the issue. They are separate jobs rather than steps because a shared filesystem would let the agent tamper with its output between phases. A prompt injected through a page the agent visits therefore cannot escalate into a write.
 
 ### Basic Commands
 

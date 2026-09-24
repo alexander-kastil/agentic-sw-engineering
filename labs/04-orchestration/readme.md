@@ -1,5 +1,7 @@
 # Orchestrate a Multi-Agent Build with One Prompt
 
+[Python version](./readme-py.md)
+
 Orchestration is the difference between one agent doing everything in sequence and a lead agent that plans, splits the work, and runs specialists in parallel. This lab puts that behavior under test with a single prompt: a planning phase before any file is written, a parallel phase where two specialists own disjoint files, and a trace that proves the orchestrator actually invoked them. By the end you hold a working temperature converter in `src/scratch/delegation-test/` and a pass-or-fail audit you can run in under a minute.
 
 > Note: The trace examples in this guide come from a workspace session with agent mode and custom agents configured. On GitHub.com, subagents follow the same automatic-delegation rules described in the Copilot documentation.

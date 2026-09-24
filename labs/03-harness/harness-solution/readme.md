@@ -1,5 +1,7 @@
 # Harness Solution
 
+[Python version](./readme-py.md)
+
 This folder is the reference solution for [the lab](../readme.md). The lab has the reader drive GitHub Copilot's chat UI, agents dropdown, and handoff buttons interactively, so the artifacts here are the parts that can be authored and verified mechanically: the customization files GitHub Copilot reads, and the Product Inventory feature those chained agents were supposed to produce.
 
 ## `.github/`

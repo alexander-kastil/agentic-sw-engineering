@@ -617,6 +617,215 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-24",
+      "sessionId": "487758af-2ed8-4f80-863b-4184436da008",
+      "branch": "master",
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "from": "18:12",
+      "to": "19:47",
+      "commits": [
+        "b209751",
+        "6f0cbad"
+      ],
+      "files": [
+        "demos/09-spec-driven-dev/",
+        "labs/09-spec-driven/readme.md",
+        "labs/09-spec-driven/readme-py.md",
+        ".github/skills/create-issue/SKILL.md",
+        "demos/readme.md",
+        "tasks/lessons.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/scripts/run-copilot-headless.sh",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/verify-by-execution.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/gamma_deck.py",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md"
+      ],
+      "mechanism": {
+        "takes": "a thin course module, its lab, and a real service in the repo to plan against",
+        "does": "rewrites the topic teaching around the lab as a running example, builds and tests a separate real-world sample feature with its spec, plan and tasks, runs the lab and a planning demo headless through the Copilot CLI with parallel subagents sharing a ledger, files the resulting plan as a GitHub parent issue with sub-issues, and inserts matching slides into the module deck",
+        "returns": "run-verified topic readmes and demo guide, a corrected lab guide, GitHub issues with sub-issues, and an updated PPTX and PDF in the class folder"
+      },
+      "portsAsIs": [
+        "the headless Copilot CLI runner",
+        "the create-issue Copilot skill",
+        "the deck helper script"
+      ],
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "sessionId": "487758af-2ed8-4f80-863b-4184436da008",
+      "branch": "master",
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "from": "19:47",
+      "to": "19:56",
+      "commits": [],
+      "files": [
+        "demos/09-spec-driven-dev/pptx/",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/gamma_deck.py",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/SKILL.md"
+      ],
+      "mechanism": {
+        "takes": "a module's slide specs and its finished deck",
+        "does": "writes trainer speaker notes as paragraphs, an intro and one explained paragraph per point, into each spec, then matches every spec to its slide by title and writes the notes into the deck",
+        "returns": "a deck with presenter notes on every content slide, delivered to the class folder"
+      },
+      "portsAsIs": [
+        "the deck helper script"
+      ],
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "sessionId": "487758af-2ed8-4f80-863b-4184436da008",
+      "branch": "master",
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "from": "19:56",
+      "to": "20:04",
+      "commits": [],
+      "files": [
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/create-slides.md"
+      ],
+      "mechanism": {
+        "takes": "the course slide-spec standard",
+        "does": "adds a mandatory speaker-notes section, written as an intro plus one explained paragraph per point, and ties it to the deck tool that writes it into the slides",
+        "returns": "a slide-spec format that produces presenter notes for every future module deck"
+      },
+      "portsAsIs": [
+        "the slide-spec standard"
+      ],
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "20:19",
+      "to": "20:41",
+      "sessionId": "b43b43ff-043e-45b7-b3fd-9f74a729b933",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/05-cli-sdk/pptx/images/04-01-agentic-workflow.svg",
+        "demos/05-cli-sdk/01-cli/04-agentic-wf/readme.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/gamma_deck.py",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md"
+      ],
+      "mechanism": {
+        "takes": "finished slide decks whose slide specs carry only short presenter hints, plus a reviewer's factual corrections to one diagram slide",
+        "does": "fans out one writer per module to draft presenter scripts grounded in each topic's source text, writes them into the matching slides by title, and patches a corrected diagram and bullet into the finished deck without regenerating it",
+        "returns": "decks with presenter notes on every content slide, a corrected diagram slide and source lesson, redelivered to the class folder"
+      },
+      "portsAsIs": [
+        "per-module parallel note writing from slide specs",
+        "in-place diagram swap at the embedded pixel size",
+        "bullet glyph font normalization for code-first bullets"
+      ],
+      "perCustomer": [
+        "the course content",
+        "the deck template"
+      ],
+      "evidence": [
+        "notes dry-run unmatched=0 missing=0 on modules 01-06 and 08",
+        "swap-image swapped=1 slide=13 size=1996x1124",
+        "clean bullets=18 then bullets=0 on a scratch copy",
+        "Mermaid Chart validator valid=true"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-pptx",
+          "track-time",
+          "claude-learn"
+        ],
+        "mcpServers": [
+          "claude_ai_Mermaid_Chart"
+        ],
+        "agents": [
+          "general-purpose"
+        ]
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "19:22",
+      "to": "20:44",
+      "sessionId": "42f37806-f214-4414-9512-1a9ab32d9dd6",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/07-agentic-devops/03-testing/food-app/catalog-api/catalog-service-cs/tests/",
+        "demos/07-agentic-devops/03-testing/evals-copilot-sdk-cs/",
+        "demos/07-agentic-devops/03-testing/evals-copilot-sdk-py/",
+        "demos/07-agentic-devops/03-testing/readme.md",
+        "demos/07-agentic-devops/pptx/",
+        "C:/Users/AlexanderKastil/.claude/skills/copilot-sdk/references/isolated-inference.md",
+        "C:/Users/AlexanderKastil/.claude/skills/agentic-eval/references/flaky-eval-case.md"
+      ],
+      "mechanism": {
+        "takes": "an untested web API and a chat feature whose answers can drift when the underlying model changes",
+        "does": "has agents generate and run an integration test suite until real defects surface and get fixed, and builds a golden-question evaluation suite with exact checks plus an independent judge model that runs on the developer's existing AI subscription, in two languages",
+        "returns": "a green API test suite with the defects it found fixed, and a repeatable model-change regression check with offline unit tests for its own helpers"
+      },
+      "portsAsIs": [
+        "agent-generated integration tests with a never-weaken-a-test rule",
+        "golden-question evals with deterministic checks and a fixed judge",
+        "isolated per-call AI sessions that load no user tools or sign-ins"
+      ],
+      "perCustomer": [
+        "the application under test",
+        "the golden questions and ground truth"
+      ],
+      "evidence": [
+        "catalog tests 23/23",
+        "C# evals 5/5 on gpt-5-mini, gpt-4.1, claude-haiku-4.5",
+        "Python evals 5/5, unit 102/102",
+        "vegetarian case 20/20 after the ground-truth fix"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-pptx",
+          "claude-learn",
+          "workflow-authoring"
+        ],
+        "mcpServers": [],
+        "agents": [
+          "net-agent",
+          "angular-agent",
+          "guide-validator",
+          "general-purpose"
+        ]
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }

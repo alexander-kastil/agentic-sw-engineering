@@ -1,5 +1,7 @@
 # Ship a Verified Pull Request from the Copilot Desktop App
 
+[Python version](./readme-py.md)
+
 Agent work that lives in an editor sidebar competes with the file you are reading, and reviewing it means leaving the session for a terminal, a browser, and the pull request page. The Copilot desktop app collapses that into one surface: the agent runs in its own worktree, and the diff, the terminal, the browser, and the merge button are all in the window where you watched it work. This lab walks one small change through that surface from an empty prompt to a merged pull request, then schedules the same work to repeat without you.
 
 By the end you hold a merged pull request in your own fork that changes the Food Shop heading, carries a `docs/agent-runbook.md` recording the session settings that produced it, and has screenshot evidence the agent attached itself.

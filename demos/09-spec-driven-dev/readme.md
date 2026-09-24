@@ -1,10 +1,10 @@
 # Spec-Driven Development & Delivery
 
-## Overview
+## From Prompt to Checked Contract
 
-Coding agents generate new functionality well, but left unconstrained they refactor or break code that already worked. Spec-driven development (SDD) answers that with executable contracts: a written specification the agent must satisfy, checked at each phase before the next one starts.
+Coding agents generate new functionality well, but left unconstrained they fill every gap in a request with a guess and refactor code that already worked. Spec-driven development (SDD) answers that with executable contracts: a written specification the agent must satisfy, checked at each phase before the next one starts. The intent that usually lives in a chat scrollback becomes versioned Markdown next to the code, reviewed in the same pull request.
 
-This module is an introduction, not a deep dive. It covers why SDD exists, the phases of the GitHub Spec Kit workflow, the artifacts and commands that drive it, and points at a standalone lab for anyone who wants to run the full loop on a real feature.
+The module opens with planning, the lightest form of the discipline: how Copilot plans on every surface, how subagents research in parallel through a shared ledger, and how a plan becomes GitHub issues with sub-issues. It then teaches the full method through GitHub Spec Kit 1.0.9 running inside GitHub Copilot. You learn why a specification beats a longer prompt, what the four artifacts (constitution, spec, plan, tasks) each contain and who owns them, and which `/speckit-*` command produces and checks each one. The lab you run next, a meeting cost calculator with two gaps and one planted constitution violation, is the running example in the two spec-driven topics that follow; the last topic takes a second, real-world feature (a leave days preview for an HR portal) through the same four checkpoints.
 
 ```mermaid
 flowchart TD
@@ -14,10 +14,34 @@ flowchart TD
     C2 --> I["Implement"]
 ```
 
-## Module Structure
-
 | Topic | Description |
 | --- | --- |
-| [Why Spec-Driven Development](./01-introduction/) | The case for SDD, the four phases, and installing GitHub Spec Kit |
-| [The Spec-Driven Workflow](./02-spec-driven-workflow/) | Artifacts, project structure, and the core `/speckit-*` commands |
-| [Sample Case: Implement a Product Feature](./03-sample-case/) | Optional take-home lab implementing a complete feature with Spec Kit |
+| [Planning with Agents](./01-planning/) | The planning loop on every Copilot surface, custom planner agents, parallel research with subagents and a shared ledger, and filing a plan as issues with sub-issues |
+| [Why Spec-Driven Development](./02-introduction/) | Why agents guess, what a specification is, the four phases with their checkpoints, and installing GitHub Spec Kit |
+| [The Spec-Driven Workflow](./03-spec-driven-workflow/) | What each artifact contains, the project structure, the core commands, and the quality commands that check the artifacts |
+| [Sample Case: Implement a Product Feature](./04-sample-case/) | A real HR portal feature, a leave days preview, taken through all four checkpoints with its artifacts, code and executed tests |
+
+## Helpful Copilot Slash Commands
+
+Spec Kit registers its commands as agent skills under `.github/skills/` in the generated project, so Copilot Chat offers them only when that project is the workspace root. The first five produce artifacts; the last three check them without writing code.
+
+| Command | Usage |
+| --- | --- |
+| `/speckit-constitution` | Write the project principles every later phase is checked against |
+| `/speckit-specify` | Turn a feature brief into `spec.md`: user stories, requirements, edge cases, success criteria |
+| `/speckit-plan` | Turn the spec plus your stack choice into `plan.md`, with an explicit constitution check |
+| `/speckit-tasks` | Break the plan into ordered, verifiable work items in `tasks.md` |
+| `/speckit-implement` | Work through `tasks.md` task by task, resuming at the first unfinished one |
+| `/speckit-clarify` | Ask up to five targeted questions about the spec and write the answers back into it |
+| `/speckit-analyze` | Read-only consistency report across spec, plan and tasks; a constitution conflict is always critical |
+| `/speckit-converge` | Compare the code against the artifacts and append the unbuilt work to `tasks.md` |
+
+## Key Topics covered in this module
+
+- [Planning with Agents](./01-planning/)
+- [Why Spec-Driven Development](./02-introduction/)
+- [The Spec-Driven Workflow](./03-spec-driven-workflow/)
+- [Sample Case: Implement a Product Feature](./04-sample-case/)
+- [Lab 09: Ship a feature with GitHub Spec Kit](../../labs/09-spec-driven/readme.md)
+- [GitHub Spec Kit](https://github.com/github/spec-kit) - the toolkit repository and the agents it supports
+- [Spec Kit documentation](https://github.github.io/spec-kit/) - the method and what each artifact must contain

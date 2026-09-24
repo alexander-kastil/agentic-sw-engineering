@@ -75,3 +75,5 @@ if (cfg.App.AuthEnabled)
 
 app.MapControllers();
 app.Run();
+
+public partial class Program { }

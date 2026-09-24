@@ -1,0 +1,4 @@
+github-copilot-sdk==1.0.14
+pytest
+pytest-asyncio
+pytest-cov

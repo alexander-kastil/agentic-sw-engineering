@@ -107,7 +107,7 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
 
 - [IaC & Configuration (Azure CLI, SSH, Bicep & Terraform)](07-agentic-devops/01-iac/)
 - [CI/CD with GitHub Actions](07-agentic-devops/02-cicd/)
-- [Testing using Copilot](07-agentic-devops/03-testing/)
+- [Testing using Copilot (xUnit, Vitest, Playwright & Evaluations)](07-agentic-devops/03-testing/)
 - [Documentation using Copilot](07-agentic-devops/04-documentation/)
 
 ## [Module 8: Governance, Cost & Observability](./08-governance/)
@@ -123,9 +123,10 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
 
 ## [Module 9: Spec-Driven Development & Delivery](./09-spec-driven-dev/)
 
-- [Why Spec-Driven Development](09-spec-driven-dev/01-introduction/)
-- [The Spec-Driven Workflow](09-spec-driven-dev/02-spec-driven-workflow/)
-- [Sample Case: Implement a Product Feature](09-spec-driven-dev/03-sample-case/)
+- [Planning with Agents](09-spec-driven-dev/01-planning/)
+- [Why Spec-Driven Development](09-spec-driven-dev/02-introduction/)
+- [The Spec-Driven Workflow](09-spec-driven-dev/03-spec-driven-workflow/)
+- [Sample Case: Implement a Product Feature](09-spec-driven-dev/04-sample-case/)
 
 ---
 
@@ -194,7 +195,7 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 | 12:15-13:00 | 0.75h | Lunch |                                                                                                                                                                            |
 | 13:00-14:30 |  1.5h | Demos | [M8](08-governance/) Permission Model · Cost & AI Credits · Enterprise Policy · Observability with OpenTelemetry · Open-Source Models · EU AI Act, GDPR & Accessibility     |
 | 14:30-14:45 | 0.25h | Break |                                                                                                                                                                            |
-| 14:45-16:15 |  1.5h | Demos | [M9](09-spec-driven-dev/) Why Spec-Driven Development · The Spec-Driven Workflow · Sample Case: Implement a Product Feature                                                 |
+| 14:45-16:15 |  1.5h | Demos | [M9](09-spec-driven-dev/) Planning with Agents · Why Spec-Driven Development · The Spec-Driven Workflow · Sample Case: Implement a Product Feature                          |
 | 16:15-17:15 |  1.0h | Lab   | [Lab 09: Ship a feature with GitHub Spec Kit](../labs/09-spec-driven/)                                                                                                      |
 
 > Labs live in [`labs/`](../labs/) and run at the point in the schedule shown above. The lowest-risk first lab is the read-only `/research` session in Lab 05; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.

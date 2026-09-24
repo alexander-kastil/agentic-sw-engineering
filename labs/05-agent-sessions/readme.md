@@ -1,5 +1,7 @@
 # Run Two Isolated Agent Sessions and Reconstruct What They Did
 
+[Python version](./readme-py.md)
+
 One agent in one sidebar chat is easy to supervise. Four agents across two projects, one of them rewriting files while another reads them, is where teams lose work and stop trusting the tool. This lab puts you in that situation on purpose, in a controlled way, and hands you the four habits that make it safe: isolate the writing session in a worktree, keep the reading session visible beside it, review the run with a different model before you accept it, and reconstruct afterwards what actually happened.
 
 By the end you hold a `handover.md` in `src/scratch/session-lab/` that was assembled from four different session surfaces, not from your memory of the afternoon.
