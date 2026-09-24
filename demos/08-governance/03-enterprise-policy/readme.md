@@ -80,6 +80,15 @@ Draft a managed policy that survives a user's attempt to override it.
    }
    ```
 
+   The policy ships in this folder as [managed-settings.json](managed-settings.json). Nothing reads it here: Copilot only honours the file at the per-OS path, and that path sits in a machine-wide folder only an administrator can write. To apply it on Windows, copy it from an elevated PowerShell in this folder:
+
+   ```powershell
+   New-Item -ItemType Directory -Force "$env:ProgramFiles\GitHubCopilot" | Out-Null
+   Copy-Item .\managed-settings.json "$env:ProgramFiles\GitHubCopilot\managed-settings.json"
+   ```
+
+   At fleet scale the same file is pushed by the provisioning tool (Intune, Group Policy, a configuration management script) to that path on every machine. Delete the copied file to lift the policy again.
+
 3. Restart VS Code and open user settings. Confirm `chat.plugins.enabledPlugins` and `chat.plugins.strictMarketplaces` show as managed and cannot be edited.
 4. Open the permissions picker and confirm Bypass Approvals is gone.
 5. Try to install a plugin from a marketplace outside the allow-list and confirm it is blocked.

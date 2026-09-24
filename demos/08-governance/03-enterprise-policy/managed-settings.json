@@ -1,0 +1,17 @@
+{
+  "enabledPlugins": {
+    "team-lint@internal": true,
+    "team-security@internal": true
+  },
+  "extraKnownMarketplaces": {
+    "internal": {
+      "source": { "source": "github", "repo": "acme/copilot-plugins" }
+    }
+  },
+  "strictKnownMarketplaces": [
+    { "source": "github", "repo": "acme/copilot-plugins" }
+  ],
+  "permissions": {
+    "disableBypassPermissionsMode": true
+  }
+}
