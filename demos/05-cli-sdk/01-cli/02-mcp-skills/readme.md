@@ -52,11 +52,13 @@ copilot mcp get microsoft-learn
 
 Expected result: `mcp list` prints `microsoft-learn (http)` under `User servers`. If you have run this demo before, the `add` exits 1 with `Server "microsoft-learn" already exists`; run `copilot mcp remove microsoft-learn` and add it again.
 
-### Step 2: See why the editor already had it
+### Step 2: See where the CLI stored it
 
-Open [.vscode/mcp.json](../../../../.vscode/mcp.json) in this repository and find the same `microsoft-learn` entry.
+```bash
+cat ~/.copilot/mcp-config.json
+```
 
-Expected result: the server was available in VS Code all along, under a `servers` key, and the CLI still knew nothing about it until Step 1. Two hosts, two registries, one server definition worth keeping in both.
+Expected result: a `microsoft-learn` entry under the top-level `mcpServers` key, with `type` set to `http`, the `url`, and `tools` set to `["*"]`. This file lives in your user profile, not in the repository, which is why nothing checked into the repo reaches the CLI.
 
 ### Step 3: Confirm the CLI sees the project skill
 

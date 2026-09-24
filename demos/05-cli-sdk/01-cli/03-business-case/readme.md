@@ -43,6 +43,17 @@ flowchart LR
 
 The finished harness and scripts for every step below live in [business-case-solution](./business-case-solution/), verified against Copilot CLI 1.0.87 and Work IQ 1.0.0. Build them yourself as you read; go there when a step misbehaves.
 
+To run the solution instead, work from its folder so the CLI discovers the `hr-doc-report` skill:
+
+```powershell
+cd demos/05-cli-sdk/01-cli/03-business-case/business-case-solution
+./register-mcp.ps1
+Connect-MgGraph -Scopes Mail.Send
+./update-report.ps1
+```
+
+`register-mcp.ps1` is Step 2: it registers `work-iq` and `microsoft-learn` with the CLI and signs you in to Work IQ. `Connect-MgGraph` is the one-time mail consent from Step 5 Option B. `update-report.ps1` is Step 6: one unattended `copilot -p` run that queries the library, builds the table, and sends it. For the interactive Steps 3 to 5, run `copilot` from the same folder instead of the last script.
+
 ## Implementation
 
 ### Prerequisites
@@ -202,17 +213,36 @@ Option C, Power Automate with a manual setup:
 
 An unattended run uses `-p`, not `-i`. The `-i` flag opens the interactive shell and waits for a human, which never returns in a scheduled task. Pair `-p` with `--allow-all-tools` so tool calls are approved without a prompt, and add `-s` when a script reads the output.
 
-Using Windows Task Scheduler, create a PowerShell script file `update-report.ps1`:
+Using Windows Task Scheduler, run the whole business case from one PowerShell script, [update-report.ps1](./business-case-solution/update-report.ps1):
 
 ```powershell
-copilot -p "Query the HR-Documents library at https://integrationsonline.sharepoint.com/sites/copilot-demo and find all documents where Needs Update is marked. Format as an HTML table and send it to alexander.kastil@integrations.at with subject 'HR-Documents Update Status Report'" --allow-all-tools
+Set-Location $PSScriptRoot
+
+$site = 'https://integrationsonline.sharepoint.com/sites/copilot-demo'
+$recipient = 'alexander.kastil@integrations.at'
+$subject = 'HR-Documents Update Status Report'
+
+$prompt = @"
+Use the hr-doc-report skill.
+Query the HR-Documents library at $site using the work-iq MCP server.
+Return only the documents where the boolean field NeedsUpdate is true.
+Include the document name, modified date, and modified by fields.
+Format the result as an HTML table with a summary line giving the count.
+In PowerShell, run Connect-MgGraph -Scopes Mail.Send -NoWelcome first,
+then send the table to $recipient with the subject '$subject' by calling Send-MgUserMail,
+passing -BodyParameter @{ Message = @{ Subject; Body = @{ ContentType = 'HTML'; Content }; ToRecipients = @(@{ EmailAddress = @{ Address } }) } }.
+"@
+
+copilot -p $prompt --allow-all-tools -s
 ```
+
+`Set-Location $PSScriptRoot` matters because Task Scheduler starts in `C:\Windows\System32`, where the CLI finds no project skill. `Connect-MgGraph` has to run in every new session, even with a cached token; it is silent after the first sign-in, and without it `Send-MgUserMail` fails asking you to connect.
 
 Then create the task:
 
 - Name: Update HR-Documents Report
 - Trigger: Daily at 8:00 AM (or your preferred time)
-- Action: Run `powershell.exe -File C:\path\to\update-report.ps1`
+- Action: Run `powershell.exe -File <repo>\demos\05-cli-sdk\01-cli\03-business-case\business-case-solution\update-report.ps1`
 - Conditions: Run only if user is logged in
 
 That last condition is not a preference. Work IQ and the Graph SDK both cache their tokens in your Windows user profile, and the task can only read that cache while your session is loaded. "Run whether user is logged on or not" makes the task fire into a profile with no tokens and the run dies at the first tool call.

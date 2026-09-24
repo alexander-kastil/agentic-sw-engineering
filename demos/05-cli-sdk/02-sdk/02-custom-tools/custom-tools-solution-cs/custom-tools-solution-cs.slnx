@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="interactive-agent/interactive-agent.csproj" />
+  <Project Path="security-analyzer/security-analyzer.csproj" />
+  <Project Path="weather-agent/weather-agent.csproj" />
+</Solution>

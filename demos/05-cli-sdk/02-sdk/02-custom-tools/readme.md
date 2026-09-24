@@ -2,7 +2,7 @@
 
 The GitHub Copilot SDK enables you to embed AI-powered agentic workflows directly into your applications. These demos show how to build intelligent agents that understand code context and execute complex tasks autonomously, from code review and security auditing to weather lookup and document analysis. The SDK handles planning, tool invocation, and code execution: you define the behavior using TypeScript and Node.js, and Copilot handles the rest. Whether you are creating development tools, security auditors, documentation generators, or specialized analysis agents, the SDK provides a straightforward way to define custom tools and let AI decide when to use them.
 
-The finished code for every step below lives in [sdk-demos-solution](./sdk-demos-solution/), verified against `@github/copilot-sdk` 1.0.14 and Copilot CLI 1.0.87. Build the files yourself as you read; go there when a step misbehaves.
+The finished code for every step below lives in [custom-tools-solution-node](./custom-tools-solution-node/), verified against `@github/copilot-sdk` 1.0.14 and Copilot CLI 1.0.87. Build the files yourself as you read; go there when a step misbehaves. The same three programs are ported to Python in [custom-tools-solution-py](./custom-tools-solution-py/) and to C# in [custom-tools-solution-cs](./custom-tools-solution-cs/).
 
 ## Building a Weather Assistant Agent (5 minutes)
 

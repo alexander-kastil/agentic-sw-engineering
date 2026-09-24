@@ -2,7 +2,7 @@
 
 A local SDK agent becomes a product when it runs as a hosted service. This topic takes an agent built with the Copilot SDK from your machine to Azure Container Apps, so it can serve requests behind your own API.
 
-The finished service lives in [deploy-azure-solution](./deploy-azure-solution/), verified against `@github/copilot-sdk` 1.0.14 and Copilot CLI 1.0.87: it builds, containerizes, and answers a real agent call locally.
+The finished service lives in [deploy-azure-solution-node](./deploy-azure-solution-node/), verified against `@github/copilot-sdk` 1.0.14 and Copilot CLI 1.0.87: it builds, containerizes, and answers a real agent call locally. The same service in C# lives in [deploy-azure-solution-cs](./deploy-azure-solution-cs/).
 
 ## The hosting pattern
 
@@ -88,7 +88,7 @@ const session = await client.createSession({
 
 ## Demo
 
-Run these from [deploy-azure-solution](./deploy-azure-solution/).
+Run these from [deploy-azure-solution-node](./deploy-azure-solution-node/).
 
 ### Step 1: Run it locally
 

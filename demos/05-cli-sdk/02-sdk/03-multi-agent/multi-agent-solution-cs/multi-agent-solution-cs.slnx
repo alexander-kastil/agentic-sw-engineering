@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="coordinator/coordinator.csproj" />
+  <Project Path="specialists/specialists.csproj" />
+  <Project Path="fleet/fleet.csproj" />
+  <Project Path="factory-probe/factory-probe.csproj" />
+</Solution>

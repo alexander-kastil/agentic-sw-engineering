@@ -67,9 +67,10 @@ For a complete tutorial with examples, see the [Getting Started Guide](https://g
 
 ## Demo
 
-| Name                                                   | Description                                                                                 |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| **[Copilot SDK Console Demo](./copilot-sdk-console/)** | Simple .NET 10 console application demonstrating the GitHub Copilot SDK with OpenAI models. |
+| Name | Description |
+| ---- | ----------- |
+| **[Copilot SDK Console Demo (C#)](./copilot-sdk-console-cs/)** | Simple .NET 10 console application demonstrating the GitHub Copilot SDK with OpenAI models. |
+| **[Copilot SDK Console Demo (Python)](./copilot-sdk-console-py/)** | The same console application in Python. |
 
 ## Links & Resources
 

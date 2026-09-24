@@ -1,0 +1,22 @@
+{
+  "name": "deploy-azure-solution-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Worked solution: a Copilot SDK agent behind an HTTP service, ready for Azure Container Apps",
+  "scripts": {
+    "start": "tsx server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@github/copilot-sdk": "1.0.14"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}

@@ -2,7 +2,7 @@
 
 One agent handles one job well; hard problems need several agents that each own a part and hand work to each other. The Copilot SDK gives you three ways to build that, and they differ in who does the orchestrating. You can drive several sessions from your own code, you can register specialists on one session and select them per turn, or you can hand the decomposition to the CLI's built-in fleet mode.
 
-The finished code for every step below lives in [multi-agent-solution](./multi-agent-solution/), verified against `@github/copilot-sdk` 1.0.14 and Copilot CLI 1.0.87. Build the files yourself as you read; go there when a step misbehaves.
+The finished code for every step below lives in [multi-agent-solution-node](./multi-agent-solution-node/), verified against `@github/copilot-sdk` 1.0.14 and Copilot CLI 1.0.87. Build the files yourself as you read; go there when a step misbehaves. The same programs are ported to Python in [multi-agent-solution-py](./multi-agent-solution-py/) and to C# in [multi-agent-solution-cs](./multi-agent-solution-cs/).
 
 ## The pattern
 
@@ -271,7 +271,7 @@ async function main() {
 main();
 ```
 
-Copy `listChanges` from `coordinator.ts`, or take the whole file from [multi-agent-solution/specialists.ts](./multi-agent-solution/specialists.ts).
+Copy `listChanges` from `coordinator.ts`, or take the whole file from [multi-agent-solution-node/specialists.ts](./multi-agent-solution-node/specialists.ts).
 
 ```bash
 npx tsx specialists.ts

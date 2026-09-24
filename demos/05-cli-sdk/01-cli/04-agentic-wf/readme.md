@@ -135,7 +135,7 @@ Earlier `gh aw` releases accepted a bare `chrome-devtools: {}` entry under `tool
 Login to GitHub CLI:
 
 ```bash
-gh auth login
+gh auth login --scopes repo,workflow
 ```
 
 Installation:
@@ -164,11 +164,32 @@ The output will be shown as [Issue](https://github.com/alexander-kastil/agentic-
 
 ### Add a custom workflow
 
-You can create your own workflow using the [GitHub Agentic Workflows Wizard](https://raw.githubusercontent.com/github/gh-aw/main/create.md). The wizard will guide you through the process of creating a workflow and will help you with the configuration.
+Initialize the repository for agentic authoring once. This adds the skills, instructions, and custom agent that let a coding agent create and edit workflows:
+
+```bash
+gh aw init
+```
+
+Start Copilot CLI in the repository:
+
+```bash
+copilot
+```
+
+Then, at the prompt, mention the `agentic-workflows` skill and describe the workflow:
 
 ```text
-Create a workflow for GitHub Agentic Workflows using https://raw.githubusercontent.com/github/gh-aw/main/create.md
-The purpose of the workflow is to check all markdown files under demos and make sure that all tables with links reflect the modules in the file system. If there are any discrepancies, the workflow should update the tables in the markdown files to reflect the current state of the file system and make sure there are no broken links.
+/agentic-workflows Create a new workflow that creates a daily report on
+recent activity in the repository, delivered as
+an issue.
+```
+
+Expected result: the agent creates the workflow under `.github/workflows/` and compiles it with `gh aw compile`. Review it, then ask the agent to commit and push the files.
+
+Trigger it from the Actions tab, or from the GitHub CLI:
+
+```bash
+gh aw run YOUR-WORKFLOW-NAME
 ```
 
 ## Links & Resources
