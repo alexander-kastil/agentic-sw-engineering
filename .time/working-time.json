@@ -1016,6 +1016,134 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "22:45",
+      "to": "23:06",
+      "sessionId": "05509bd6-914f-4338-a7f3-494195827c28",
+      "branch": "master",
+      "commits": [
+        "21a26a3"
+      ],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/01-fundamentals/01-intro/readme.md",
+        "demos/01-fundamentals/04-ai-assisted-coding/readme.md",
+        "demos/readme.md",
+        "demos/01-fundamentals/pptx/01-fundamentals.pptx",
+        "demos/01-fundamentals/pptx/topics.json",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md",
+        "C:/Users/AlexanderKastil/.claude/commands/claude-push.md"
+      ],
+      "mechanism": {
+        "takes": "a course module of topic readmes, starter code and a finished slide deck, plus a target reduction",
+        "does": "audits the module for stale product facts, duplicated sections and material another module already owns, merges overlapping topics, renumbers the tree with every table of contents and navigation link kept in sync, then carries the same merge into the deck locally by moving, dropping and relabelling slides and rebuilding the topic dividers without regenerating anything",
+        "returns": "a shorter module with consistent titles across contents, readmes and slides, a republished deck and PDF, and a commit that leaves a concurrent session's work untouched"
+      },
+      "portsAsIs": [
+        "module content audit for outdated and duplicated material",
+        "topic merge with contents and link resync",
+        "local deck edit that follows a topic merge without regeneration",
+        "commit through a temporary index on a shared checkout"
+      ],
+      "perCustomer": [
+        "the course subject and its product facts",
+        "the deck template and class folder"
+      ],
+      "evidence": [
+        "link-check: broken=0 prefix_defects=0 on demos/01-fundamentals",
+        "teaching readmes 7199 to 4420 words",
+        "deck 34 to 32 slides, topics overview=1 dividers=7 missing=0, notes unmatched=0 missing=0"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "brand-voice-gh-copilot",
+          "claude-push",
+          "claude-learn",
+          "track-time",
+          "create-pptx"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "22:51",
+      "to": "23:12",
+      "sessionId": "56e5a5b9-93c5-4ceb-b110-557144495743",
+      "branch": "master",
+      "commits": [
+        "4bd040b"
+      ],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/06-copilot-app/readme.md",
+        "demos/06-copilot-app/01-overview/readme.md",
+        "demos/06-copilot-app/02-setup/readme.md",
+        "demos/06-copilot-app/03-my-work/readme.md",
+        "demos/06-copilot-app/04-sessions/readme.md",
+        "demos/06-copilot-app/05-validation-loop/readme.md",
+        "demos/06-copilot-app/06-automations/readme.md",
+        "demos/06-copilot-app/07-automation-runs/readme.md",
+        "demos/readme.md",
+        "demos/06-copilot-app/pptx/06-copilot-app.pptx",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/permute-topic-specs.py",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md"
+      ],
+      "mechanism": {
+        "takes": "a course module of topic readmes and its slide deck, the product's current changelog, and a growth target",
+        "does": "reorders the module's topics into the order a learner uses the product, moves every existing section to the step where it is used, adds the new features from the changelog into those steps, permutes slide specs and images to the new topic numbers, generates only the new cards and rebuilds the deck order, dividers and speaker notes locally",
+        "returns": "a larger module that reads as one working day, a republished deck and PDF, and a commit limited to that module"
+      },
+      "portsAsIs": [
+        "flow-of-use module restructure that keeps all existing content",
+        "changelog-driven content extension",
+        "slide spec permutation after a topic reorder",
+        "generate-only-new-cards deck update"
+      ],
+      "perCustomer": [
+        "the course subject and its product changelog",
+        "the deck template and class folder"
+      ],
+      "evidence": [
+        "module readmes 473 to 619 lines",
+        "relative links broken=0",
+        "deck 35 slides, topics overview=1 dividers=7 missing=0, notes unmatched=0 missing=0",
+        "permute round trip identical on a scratch copy"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "brand-voice-gh-copilot",
+          "create-pptx",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [
+          "media-creator",
+          "gamma"
+        ],
+        "agents": [
+          "guide-validator"
+        ]
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }
