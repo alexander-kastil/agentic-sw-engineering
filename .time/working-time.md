@@ -48,5 +48,6 @@
 | 2026-09-24 | 0.43 | 21:49 | 22:15 | Course overview deck restyled, slide titles rewritten across all nine module decks, and decks published |
 | 2026-09-24 | 0.35 | 22:45 | 23:06 | Fundamentals module shortened by about 40%, outdated and duplicate content removed, and its slide deck updated and republished |
 | 2026-09-24 | 0.10 | 22:51 | 23:12 | GitHub Copilot app module reorganised around a working day, extended by about 30% with automations in the app, and its slide deck updated and republished |
+| 2026-09-24 | 0.08 | 23:15 | 23:20 | Animated learning-loop diagram added to the Copilot harness deck, a hard-to-read slide fixed, and the deck republished |
 
-**Total: 46.71h**
+**Total: 46.79h**

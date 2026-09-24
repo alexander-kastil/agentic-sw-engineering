@@ -1144,6 +1144,58 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "23:15",
+      "to": "23:20",
+      "sessionId": "dc0a0064-1e75-4e96-8cb4-8f53d59ad8cf",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/02-agentic-harness/pptx/02-agentic-harness.pptx",
+        "demos/02-agentic-harness/pptx/02-agentic-harness.pdf",
+        "tasks/lessons.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/gamma_deck.py",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/SKILL.md",
+        "C:/Users/AlexanderKastil/.claude/skills/claude-learn/harvest-registry.md"
+      ],
+      "mechanism": {
+        "takes": "an SMIL-animated SVG diagram and a finished slide deck with a named target slide",
+        "does": "records the SVG animation frame by frame into a looping GIF by pausing it and stepping its clock, inserts a picture-only slide before the named slide, raises the text contrast on a photo slide, re-exports the PDF and copies deck and PDF to the class folder",
+        "returns": "a deck whose architecture diagram animates in the slideshow, a matching PDF, and both files delivered"
+      },
+      "portsAsIs": [
+        "animated SVG to PowerPoint GIF slide",
+        "photo slide text contrast fix"
+      ],
+      "perCustomer": [
+        "the diagram and its loop length",
+        "the deck and class folder"
+      ],
+      "evidence": [
+        "svg-gif frames=160",
+        "image-slide inserted=1 position=6 slides=35 on a scratch copy",
+        "delivered pptx=7713876 pdf=3170589"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-pptx",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }

@@ -697,3 +697,15 @@ retro decor, grime" to the Avoid list.
 **Pattern:** Asked for 30% more module 06 content "structured functionally", the first proposal added new topics beside the old ones. The correction was "keep content but fold it in to the flow of use where it fits": sync and configuration dissolved into setup and sessions, My Work became its own step, automations split into create and run.
 
 **Rule:** When a module grows, order its topics by the order a learner uses the product and move each existing section to the step where it is used; new material joins those steps. Keep every existing paragraph, and let only the folders that lost all their content go away.
+
+## Text over a photo needs a near-opaque wash
+
+**Pattern:** Slide 5 of the module 02 deck set its bullets over a photo behind a 45% white overlay; the user marked the lines running across the people and the screen as a visibility defect.
+
+**Rule:** A full-bleed photo behind body text gets a wash of at least 80% white, and the check is a rendered page, not the overlay's alpha value.
+
+## Deck work opens create-pptx before the first render
+
+**Pattern:** Asked to put an animated SVG into a deck, the render check reached for `soffice` and `pdftoppm`, neither installed, while `gamma_deck.py` already exports the PDF through PowerPoint COM and rasterises with PyMuPDF, and `deliver` already knew the OneDrive target.
+
+**Rule:** Any deck change reads `create-pptx` and `references/gamma-deck.md` first and runs its subcommands; an animated SVG goes in with `svg-gif` and `image-slide`.
