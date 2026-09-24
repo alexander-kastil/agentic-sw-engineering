@@ -39,12 +39,12 @@ Agent-scoped hooks were introduced in VS Code 1.111 (Preview). They use the same
 
 ## Hooks, Assisted Approvals, and the Sandbox
 
-Hooks are not the only gate between an agent and your machine, and knowing the other two keeps you from writing a `preToolUse` hook for something the harness already handles. Assisted tool approvals (`chat.assistedPermissions.enabled`, VS Code 1.130) let a language model judge the risk of each tool call and auto-approve the low-risk ones, which cuts the approval interruptions during a long agent run. Local harness sandboxing confines the agent at the process level, and it was rolled back to a 0% default in VS Code 1.135, so it is an opt-in toggle rather than something you can assume is on.
+Hooks are not the only gate between an agent and your machine, and knowing the other two keeps you from writing a `preToolUse` hook for something the harness already handles. Assisted tool approvals (`chat.assistedPermissions.enabled`) let a language model judge the risk of each tool call and auto-approve the low-risk ones, which cuts the approval interruptions during a long agent run. Local harness sandboxing confines the agent at the process level, and it was rolled back to a 0% default in VS Code 1.135, so it is an opt-in toggle rather than something you can assume is on.
 
 | Gate | Decides | Configured by |
 |---|---|---|
 | Sandbox | What the agent process can touch at all | Opt-in through the UI, off by default as of 1.135 |
-| Assisted approvals | Which tool calls still need your confirmation | `chat.assistedPermissions.enabled` (1.130) |
+| Assisted approvals | Which tool calls still need your confirmation | `chat.assistedPermissions.enabled` |
 | Hooks | What runs before and after a tool call, and whether it is blocked | `hooks.json`, with `preToolUse` exit code `2` to deny |
 
 Use the sandbox for containment, assisted approvals for noise reduction, and hooks for the policy only you can express: your repository's conventions, your audit trail, your integrations.
@@ -113,7 +113,6 @@ Skills bloat the same way instructions do, and their `description` is the part t
 
 ## Links & Resources
 
-- [VS Code 1.130 release notes](https://code.visualstudio.com/updates/v1_130) - assisted tool approvals and `chat.assistedPermissions.enabled`
 - [VS Code 1.135 release notes](https://code.visualstudio.com/updates/v1_135) - local agent harness sandboxing rolled back to an opt-in default
 - [Using hooks with GitHub Copilot agents](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/use-hooks)
 - [Hooks configuration reference](https://docs.github.com/en/copilot/reference/hooks-configuration)
