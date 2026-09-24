@@ -14,6 +14,8 @@ export const FoodShopContainer: React.FC<FoodShopContainerProps> = ({
   const [cart, setCart] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutMessage, setCheckoutMessage] = useState<string | null>(null);
 
   const fetchCatalog = useCallback(async () => {
     try {
@@ -63,6 +65,54 @@ export const FoodShopContainer: React.FC<FoodShopContainerProps> = ({
     });
   };
 
+  const handleCheckout = async () => {
+    try {
+      setCheckoutLoading(true);
+      setCheckoutMessage(null);
+
+      if (cart.length === 0) {
+        setCheckoutMessage('Cart is empty');
+        setCheckoutLoading(false);
+        return;
+      }
+
+      const orderRequest = {
+        items: cart.map(item => ({
+          id: item.id,
+          name: item.name,
+          quantity: item.quantity,
+          price: item.price,
+        })),
+      };
+
+      console.log('Sending order to API:', orderRequest);
+
+      const response = await fetch(`${catalogApiUrl}/orders`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderRequest),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('Order created:', result);
+      setCheckoutMessage(`Order #${result.id} created successfully!`);
+      setCart([]);
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to create order';
+      console.error('Error creating order:', err);
+      setCheckoutMessage(`Error: ${errorMessage}`);
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
+
   if (loading) {
     return <div className='loading'>Loading catalog...</div>;
   }
@@ -95,9 +145,18 @@ export const FoodShopContainer: React.FC<FoodShopContainerProps> = ({
             Sum Total €{getTotalPrice().toFixed(2)}
           </div>
         </div>
-        <button className='checkout-btn' disabled>
-          Checkout
+        <button
+          className='checkout-btn'
+          disabled={cart.length === 0 || checkoutLoading}
+          onClick={handleCheckout}
+        >
+          {checkoutLoading ? 'Processing...' : 'Checkout'}
         </button>
+        {checkoutMessage && (
+          <div className='checkout-message' data-testid='checkout-message'>
+            {checkoutMessage}
+          </div>
+        )}
       </aside>
       <main className='items-container'>
         <div className='shop-list'>

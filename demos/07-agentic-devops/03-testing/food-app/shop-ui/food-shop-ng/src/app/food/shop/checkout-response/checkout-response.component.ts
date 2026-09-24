@@ -1,6 +1,6 @@
 import { Component, Input, SimpleChanges, inject, ChangeDetectionStrategy } from '@angular/core';
 
-import { OrderEventResponse } from '../order/order-event-response';
+import { Order } from '../order/order.model';
 import { MatCardModule } from '@angular/material/card';
 import { AILoggerService } from 'src/app/logger/ai-logger.service';
 
@@ -13,7 +13,7 @@ import { AILoggerService } from 'src/app/logger/ai-logger.service';
   styleUrls: ['./checkout-response.component.scss']
 })
 export class CheckoutResponseComponent {
-  @Input() response: OrderEventResponse | null = null;
+  @Input() response: Order | null = null;
   logger = inject(AILoggerService);
 
   ngOnChanges(changes: SimpleChanges): void {

@@ -1,13 +1,11 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
-import { Subscription } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AILoggerService implements OnDestroy {
-  private routerSubscription!: Subscription;
+export class AILoggerService {
   private static logger: ApplicationInsights;
 
   constructor() {
@@ -42,10 +40,6 @@ export class AILoggerService implements OnDestroy {
       }
       );
     }
-  }
-
-  ngOnDestroy(): void {
-    this.routerSubscription.unsubscribe();
   }
 
   logEvent(name: string, properties?: { [key: string]: any }) {

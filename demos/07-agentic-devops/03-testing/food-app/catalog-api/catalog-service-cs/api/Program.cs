@@ -37,7 +37,6 @@ if (cfg.App.AuthEnabled)
     .AddInMemoryTokenCaches();
     builder.Services.AddAuthorization();
 
-    //Add auth policy instead of Authorize Attribute on Controllers
     builder.Services.AddControllers(obj =>
     {
         var policy = new AuthorizationPolicyBuilder()
@@ -55,13 +54,21 @@ builder.AddEndpointsApiExplorer();
 builder.AddNoCors();
 var app = builder.Build();
 
+// Initialize database with schema
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<FoodDBContext>();
+    context.Database.EnsureDeleted();
+    context.Database.EnsureCreated();
+}
+
 app.UseAzureAppConfiguration();
 app.UseSwaggerUI();
 app.UseNoCors();
 
 if (cfg.App.AuthEnabled)
 {
-    Console.WriteLine($"Using auth with App Reg: {cfg.Azure.ClientId}");
+    Console.WriteLine("Using auth with App Reg: " + cfg.Azure.ClientId);
     app.UseAuthentication();
     app.UseAuthorization();
 }

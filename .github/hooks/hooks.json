@@ -4,8 +4,8 @@
     "postToolUse": [
       {
         "type": "command",
-        "powershell": ".\\instructions-guard.ps1",
-        "bash": "pwsh -NoProfile -File ./instructions-guard.ps1",
+        "powershell": ".\\copilot-instructions-guard.ps1",
+        "bash": "pwsh -NoProfile -File ./copilot-instructions-guard.ps1",
         "cwd": ".github/hooks",
         "matcher": "create_file|apply_patch|replace_string_in_file|multi_replace_string_in_file",
         "timeoutSec": 10

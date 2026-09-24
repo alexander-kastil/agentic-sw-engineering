@@ -7,7 +7,6 @@ import { Order } from '../order/order.model';
 import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 
 import { OrdersService } from '../order/orders.service';
-import { OrderEventResponse } from '../order/order-event-response';
 import { CheckoutResponseComponent } from '../checkout-response/checkout-response.component';
 
 @Component({
@@ -23,7 +22,7 @@ export class CheckoutComponent {
   cart = inject(CartFacade);
   os = inject(OrdersService)
   order: Order = new Order();
-  response: OrderEventResponse | null = null
+  response: Order | null = null
 
   constructor() {
     combineLatest([this.cart.getItems(), this.cart.getSumTotal()]).pipe(

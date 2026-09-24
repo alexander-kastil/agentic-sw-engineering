@@ -1,28 +1,29 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodApp
 {
-    //To manage Migrations & create the DB go to console:
-    //Add EF Core Tools: dotnet tool install --global dotnet-ef
-    //dotnet restore
-    //dotnet-ef migrations add MIGRATION-NAME
-    //dotnet-ef database update
-
     public class FoodDBContext(DbContextOptions<FoodDBContext> options) : DbContext(options)
     {
-        public FoodDBContext() : this(new DbContextOptionsBuilder<FoodDBContext>().Options)
-        {
-            Database.EnsureCreated();
-        }
-
         public DbSet<CatalogItem> Food { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<CatalogItem>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(18,4)");
+
+            modelBuilder.Entity<Order>()
+                .HasMany(o => o.Items)
+                .WithOne(oi => oi.Order)
+                .HasForeignKey(oi => oi.OrderID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<OrderItem>()
                 .Property(p => p.Price)
                 .HasColumnType("decimal(18,4)");
 

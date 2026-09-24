@@ -1,8 +1,10 @@
+using System.Text.Json;
 using GitHub.Copilot;
 
 const string Model = "gpt-5-mini";
 const string FactoryName = "audit-pipeline";
 var phases = new[] { "Audit", "Merge" };
+var factoryArgs = JsonSerializer.SerializeToElement(new { files = new[] { "coordinator/Program.cs" } });
 
 try
 {
@@ -14,10 +16,7 @@ try
 
     try
     {
-        var run = await session.Rpc.Factory.RunAsync(
-            FactoryName,
-            new { files = new[] { "coordinator/Program.cs" } },
-            options: null);
+        var run = await session.Rpc.Factory.RunAsync(FactoryName, factoryArgs, options: null);
         Console.WriteLine($"run status: {run.Status}");
     }
     catch (Exception ex)
