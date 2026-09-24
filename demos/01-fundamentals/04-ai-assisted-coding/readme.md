@@ -1,105 +1,141 @@
 # AI-Assisted Coding Essentials
 
-
-AI-assisted coding uses GitHub Copilot to accelerate your workflow through intelligent code suggestions, real-time completions, and on-demand explanations. This topic teaches you to guide Copilot with clear context and intent so it produces the exact code you need. It folds three closely related skills into one place: prompting techniques, inline suggestions, the chat slash commands that route your intent, and the context variables that ground a request in your workspace.
+AI-assisted coding uses GitHub Copilot to accelerate your workflow through code suggestions, real-time completions, and on-demand explanations. This topic teaches you to guide Copilot with clear context and intent: prompting techniques, inline suggestions, the chat slash commands that route your intent, and the context variables that ground a request in your workspace.
 
 ## Prompting
 
-Effective prompting is the foundation of quality results. By structuring requests with clear context and specific instructions, you guide Copilot to generate code that matches your requirements and patterns.
+Structuring a request with clear context and specific instructions guides Copilot to code that matches your requirements and patterns.
 
-Prompting techniques:
-
-- Few-Shot Prompting: provide example snippets showing the desired pattern, then ask Copilot to generate similar code for new scenarios
-- Chain-of-Thought: break complex problems into sequential steps and explain your reasoning for more logical solutions
-- Context-Based Prompting: include schema definitions, configuration files, or existing code to give Copilot a complete picture
-- Instruction-Based Prompting: use clear, structured instructions with specifications for consistent, predictable results
+- Few-Shot Prompting: provide example snippets showing the desired pattern, then ask for similar code for new scenarios
+- Chain-of-Thought: break complex problems into sequential steps and explain your reasoning
+- Context-Based Prompting: include schema definitions, configuration files, or existing code
+- Instruction-Based Prompting: use clear, structured instructions for consistent, predictable results
 
 ## Inline Suggestions
 
-Inline suggestions appear as you type, offering completions tailored to your context. They are essential for rapid development, and you steer them by providing meaningful context through comments and clear patterns.
-
-Add to your VS Code settings:
-
-```json
-{
-  "editor.inlineSuggest.enabled": true,
-  "github.copilot.enable": {
-    "*": true,
-    "markdown": false,
-    "plaintext": false
-  }
-}
-```
+Inline suggestions appear as you type, offering completions tailored to your context. You steer them with meaningful comments and clear patterns. The settings that enable them are in [Getting Started](../01-intro/readme.md#copilot-settings).
 
 ## Slash Commands
 
-Slash commands are quick shortcuts for common tasks in Copilot Chat, letting you route intent directly to the right capability without typing a full natural-language prompt. They work in VS Code, GitHub.com, and JetBrains IDEs, and combine well with a code selection for context-aware assistance.
+Slash commands route intent directly to the right capability without a full natural-language prompt. They combine well with a code selection for context-aware assistance.
 
-Ensure Copilot Chat is enabled in VS Code:
-
-```json
-{
-  "chat.agent.enabled": true,
-  "github.copilot.chat.codesearch.enabled": true
-}
-```
-
-| Command     | Description                                                       |
-| ----------- | ----------------------------------------------------------------- |
-| `/help`     | Get usage help for Copilot Chat.                                  |
-| `/doc`      | Add documentation comments for the selected code (Visual Studio). |
-| `/explain`  | Explain the selected or referenced code.                          |
-| `/fix`      | Propose a fix for problems in the selected code.                  |
-| `/tests`    | Generate unit tests for selected code.                            |
-| `/optimize` | Analyze and propose performance optimizations.                    |
-| `/generate` | Generate code based on your request.                              |
-| `/clear`    | Start a new session and clear the conversation.                   |
+| Command     | Description                                                   |
+| ----------- | ------------------------------------------------------------- |
+| `/help`     | Get usage help for Copilot Chat.                              |
+| `/explain`  | Explain the selected or referenced code.                      |
+| `/fix`      | Propose a fix for problems in the selected code.              |
+| `/tests`    | Generate unit tests for selected code.                        |
+| `/doc`      | Add documentation comments for the selected code.             |
+| `/optimize` | Analyze and propose performance optimizations (Visual Studio). |
+| `/clear`    | Start a new session and clear the conversation.               |
 
 ## Context Variables
 
-Context variables let you explicitly reference files, code, documentation, and other workspace elements in a chat request. Using symbols like `#` and `@`, you give Copilot precise context, which reduces ambiguity and improves accuracy. Use them to ground a question in specific code, docs, or terminal output.
+Context variables reference files, code, documentation, and other workspace elements explicitly, which reduces ambiguity and improves accuracy.
 
-Enable context features in VS Code:
-
-```json
-{
-  "chat.codebase.enabled": true,
-  "github.copilot.chat.codesearch.enabled": true,
-  "chat.detectParticipant.enabled": true
-}
-```
-
-| Variable               | Description                                                                |
-| ---------------------- | -------------------------------------------------------------------------- |
-| `#file`                | Reference a specific file in your workspace for focused analysis.          |
-| `#selection`           | Reference the currently selected code in your editor.                      |
-| `#codebase`            | Provide codebase-wide context for architecture and patterns.              |
-| `#terminalLastCommand` | Reference the last command executed in the terminal.                       |
-| `#fetch`               | Fetch and include content from URLs or external sources.                   |
-| `@terminal`            | Include output or errors from your active terminal session.                |
-| `@vscode`              | Reference VS Code settings, extensions, or configuration context.          |
-
-## Topics
-
-| Topic                                                 | Description                                                                                  |
-| ----------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **[Inline Suggestions](./01-inline-suggestions/)**    | Master real-time code completion by leveraging inline suggestions with meaningful context.   |
-| **[Prompts with Samples](./02-prompt-with-samples/)** | Learn how providing code samples helps Copilot understand intent and generate precise code.  |
-| **[Using Copilot for Databases](./03-database/)**     | Leverage Copilot to generate database code, schemas, and queries across different platforms. |
+| Variable               | Description                                                       |
+| ---------------------- | ----------------------------------------------------------------- |
+| `#file`                | Reference a specific file in your workspace for focused analysis. |
+| `#selection`           | Reference the currently selected code in your editor.             |
+| `#codebase`            | Provide codebase-wide context for architecture and patterns.      |
+| `#terminalLastCommand` | Reference the last command executed in the terminal.              |
+| `#fetch`               | Fetch and include content from URLs or external sources.          |
+| `@terminal`            | Include output or errors from your active terminal session.       |
+| `@vscode`              | Reference VS Code settings, extensions, or configuration context. |
 
 ## Demos
 
-### Using `#terminalLastCommand` to Fix Errors
+### Inline suggestions in three languages
 
-Run [tasks-api](./tasks-api) using `dotnet run` and notice the error in the terminal. Then ask Copilot Chat to fix it using `#terminalLastCommand` to reference the error message.
+Open [password-validator.js](./01-inline-suggestions/password-validator.js) and run:
+
+```text
+Generate a password validator that will check the following rules: min 6 characters, one uppercase letter or special character.
+```
+
+```text
+#codebase how can i run #file:password-validator.js
+```
+
+Open [food.model.ts](./01-inline-suggestions/food.model.ts), then repeat the same three prompts in [math.java](./01-inline-suggestions/math.java) with Math and Spring in place of food and Angular:
+
+```text
+Create a food model with the following properties: name, description, price, and in-stock. Use the constructor to initialize the properties of the class
+```
+
+```text
+Explain the different uses cases for classes and literal types for typescript projects like angular
+```
+
+```text
+Convert the food model to a literal type
+```
+
+A reference result is in [food.model-result.ts](./01-inline-suggestions/food.model-result.ts).
+
+### Few-shot prompts with samples
+
+In [prompts.js](./02-prompt-with-samples/01-java-script/prompts.js), give Copilot the data shape by example, then build on it:
+
+```text
+create an array of users:
+name: 'John Doe', age: 30, city: 'New York'
+name: 'Jane Fonda', age: 25, city: 'Los Angeles'
+name: 'Jim the cat', age: 40, city: 'Chicago'
+```
+
+```text
+Create a function to filter one of the users by name, call it with 'Jane Fonda' and log it to the console
+```
+
+In [greetings.py](./02-prompt-with-samples/02-python/greetings.py), paste input/output examples as comments and let Copilot infer the rule:
+
+```python
+# generate a python code that takes the current time as input using the datetime module
+# and returns the appropriate greeting message based on the current time.
+# Input: 9 AM  Output: "Good Morning!"
+# Input: 2 PM  Output: "Good Afternoon!"
+# Input: 9 PM  Output: "Good Evening!"
+```
+
+Reference results: [prompts-result.js](./02-prompt-with-samples/01-java-script/prompts-result.js), [greetings-result.py](./02-prompt-with-samples/02-python/greetings-result.py).
+
+### SQL from a type definition
+
+With the [MSSQL extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql) installed, run these prompts in order:
+
+```text
+create a table for microsoft sql server azure to store the data of the following type:
+
+export type Food = {
+    name: string;
+    price: number;
+    description: string;
+    category: string;
+};
+```
+
+```text
+create a view to get the food items with price less than 10, a stored procedure to get all food items in a certain category, and a stored procedure to insert a new food item
+```
+
+```text
+generate some sample data to insert into the table using the stored procedure
+```
+
+The [MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) extension adds an `@MongoDB` participant with `/docs`, `/query`, and `/schema` for the same flow against a MongoDB cluster.
+
+### Fix an error with `#terminalLastCommand`
+
+Run [tasks-api](./tasks-api) using `dotnet run` and notice the error in the terminal. Then ask Copilot Chat:
 
 ```text
 fix #terminalLastCommand
 ```
 
-### Scaffold a project from an article using `#fetch`
+### Scaffold a project from an article with `#fetch`
 
-Build a working Microsoft Agent Framework application in Python 3.12 using slash commands and the `#fetch` tool. The `#fetch` tool retrieves official documentation from URLs so you can reference current docs while scaffolding code.
+Build a Microsoft Agent Framework application in Python 3.12. The `#fetch` tool retrieves the official documentation so you scaffold against current docs:
 
 ```text
 In this topic folder create a folder maf-starter and use it
@@ -121,5 +157,6 @@ A solution is available in the [maf-starter-solution](./maf-starter-solution) fo
 
 - [GitHub Copilot Slash Commands](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide#using-slash-commands)
 - [GitHub Copilot Context Variables](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide#using-context-variables)
+- [Prompt Engineering Guide](https://www.promptingguide.ai/)
 
 [← Previous: Shaping the Context Window](../03-context-window/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Agent Mode Basics →](../05-agent-mode-basics/readme.md)

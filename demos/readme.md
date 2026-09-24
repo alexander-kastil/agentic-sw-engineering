@@ -2,7 +2,7 @@
 
 A four-day journey into agentic software engineering with GitHub Copilot, and how AI-powered tools reshape coding productivity and architectural decisions. Software engineers, architects, and technical leaders get the hands-on experience to leverage AI in modern software development.
 
-Your journey begins with Fundamentals and Agent Mode Basics: prompting, inline suggestions, slash commands, context variables, and code review on pull requests. You configure models from hosted frontier to bring-your-own-key endpoints, and Copilot Vision brings images and PDFs into chat. Agent Mode arrives early, driving a local agent through multi-step work and the terminal.
+Your journey begins with Fundamentals and Agent Mode Basics: prompting, inline suggestions, slash commands, context variables, and code review on pull requests. You configure models from hosted frontier to bring-your-own-key endpoints. Agent Mode arrives early, driving a local agent through multi-step work and the terminal.
 
 You then assemble the GitHub Copilot Harness: instructions, prompt files, and the Model Context Protocol, with the MCP Registry as your discovery surface. It adds custom agents, skills, memory, and hooks, optimizes the context window with prompt caching, and installs Agent Plugins 1.0 packages that work across CLI and editor from one install.
 
@@ -39,14 +39,13 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
 
 ## [Module 1: GitHub Copilot Fundamentals & Agent Mode Basics](./01-fundamentals/)
 
-- [Getting Started with Copilot & Vision](01-fundamentals/01-intro/)
-- [Selecting & Configuring Models](01-fundamentals/02-models/)
+- [Getting Started & Configuring Copilot](01-fundamentals/01-intro/)
+- [Selecting Models](01-fundamentals/02-models/)
 - [Shaping the Context Window](01-fundamentals/03-context-window/)
 - [AI-Assisted Coding Essentials](01-fundamentals/04-ai-assisted-coding/)
 - [Agent Mode Basics](01-fundamentals/05-agent-mode-basics/)
 - [Pull Requests & Code Reviews](01-fundamentals/06-pr-code-review/)
-- [Configuring & Governing Copilot](01-fundamentals/07-mgmt-settings/)
-- [Working in the Terminal](01-fundamentals/08-terminal/)
+- [Working in the Terminal](01-fundamentals/07-terminal/)
 
 ## [Module 2: GitHub Copilot Harness](./02-agentic-harness/)
 
@@ -149,9 +148,9 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 
 | Time        |  Dur. | Type  | Content                                                                                                                                                            |
 | ----------- | ----: | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 09:00-10:30 |  1.5h | Demos | [M1](01-fundamentals/) Getting Started with Copilot & Vision · Selecting & Configuring Models · Shaping the Context Window                                          |
+| 09:00-10:30 |  1.5h | Demos | [M1](01-fundamentals/) Getting Started & Configuring Copilot · Selecting Models · Shaping the Context Window                                          |
 | 10:30-10:45 | 0.25h | Break |                                                                                                                                                                    |
-| 10:45-11:45 |  1.0h | Demos | [M1](01-fundamentals/) AI-Assisted Coding Essentials · Agent Mode Basics · Pull Requests & Code Reviews · Configuring & Governing Copilot · Working in the Terminal |
+| 10:45-11:45 |  1.0h | Demos | [M1](01-fundamentals/) AI-Assisted Coding Essentials · Agent Mode Basics · Pull Requests & Code Reviews · Working in the Terminal |
 | 11:45-12:45 |  1.0h | Labs  | [Lab 01: Getting started](../labs/01-get-started/) · [Lab 02: Update a web API with Copilot](../labs/02-assisted-coding/)                                           |
 | 12:45-13:30 | 0.75h | Lunch |                                                                                                                                                                    |
 | 13:30-15:00 |  1.5h | Demos | [M2](02-agentic-harness/) Copilot Instructions · Prompt Files · MCP Basics & the MCP Registry · Implementing MCP Servers                                            |

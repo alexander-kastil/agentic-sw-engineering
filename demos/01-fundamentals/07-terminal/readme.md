@@ -21,8 +21,6 @@ flowchart LR
 
 Some commands produce far more output than a model needs. A full test run, a clean build, or a large dependency install can emit thousands of lines, most of which repeat the same signal. Terminal output compression condenses this verbose output before it enters the context window, keeping the parts that carry meaning and dropping the padding.
 
-Compression is tuned for the tools that most often flood the terminal. The goal is to preserve failures, warnings, and summary lines while collapsing progress bars, repeated success lines, and download chatter.
-
 | Target | Verbose output | What compression keeps |
 |---|---|---|
 | Test runners | Per-test pass lines, timing noise | Failures, error messages, the final summary |
@@ -30,8 +28,6 @@ Compression is tuned for the tools that most often flood the terminal. The goal 
 | Linters | One line per checked file | Rule violations and their locations |
 | Docker | Layer pull and build progress | Final image status and any failed step |
 | Package managers | Download and resolution chatter | Installed versions and resolution errors |
-
-Compression keeps the terminal readable for the agent without you having to add flags or redirect output. The model sees a tight summary, spends fewer tokens on boilerplate, and reaches the real signal faster.
 
 ## Demo
 
@@ -45,6 +41,5 @@ Compression keeps the terminal readable for the agent without you having to add 
 ## Links & Resources
 
 - [Agent mode in VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat-agent-mode) - how Copilot runs terminal commands during an agent session
-- [Visual Studio Code release notes](https://code.visualstudio.com/updates) - agent terminal integration and output handling across versions 1.119 to 1.128
 
-[← Previous: Configuring & Governing Copilot](../07-mgmt-settings/readme.md) | [Back to Fundamentals](../readme.md)
+[← Previous: Pull Requests & Code Reviews](../06-pr-code-review/readme.md) | [Back to Fundamentals](../readme.md)

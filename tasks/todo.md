@@ -126,3 +126,19 @@ All 8 Run and verify blocks in `readme-py.md` executed from a clean venv and dat
 ### Review
 
 link-check demos: no broken link under module 08 (24 pre-existing elsewhere); labs clean. Fences 0 untagged. Brand voice clean on new and rewritten files; pre-existing rule 5/6/10 hits left in untouched files. Deck: 27 slides, clean `removed=0 bullets=0`, notes `unmatched=0 missing=0`. Not delivered to OneDrive.
+
+# Shorten demos/01-fundamentals by 30%
+
+- [x] Rename 08-terminal to 07-terminal
+- [x] Merge 07-mgmt-settings into 01-intro, drop duplicated settings and outdated Extensions
+- [x] Trim 02-models release-note history and duplicated cost section
+- [x] Trim 03-context-window outdated model sizes
+- [x] Fold 04 sub-readmes into one Demos section; fix outdated slash commands, @workspace, settings
+- [x] Remove 05 steering note; fix Microsoft Foundry naming, stale paths, hooks wording
+- [x] Trim 07-terminal; update module readme, master TOC, schedule, nav links
+- [x] Deletions run by the user (auto mode denied rm)
+- [x] Deck: specs renumbered, secrets slide moved into topic 01, policies slides dropped, overview diagram redrawn, delivered to OneDrive
+
+## Review
+
+Teaching readmes went from 7,199 to 4,420 words. Links and fences are clean; the brand-voice checker flags only gaps that were already there (no Mermaid diagram, no Links section in the sub-demos).

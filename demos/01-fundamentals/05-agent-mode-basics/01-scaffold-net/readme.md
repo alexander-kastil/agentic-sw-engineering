@@ -1,10 +1,8 @@
 # Scaffold a .NET Instructions API with Scalar UI
 
-This example shows how hooks track a comprehensive development workflow—from project scaffolding through code refactoring, dependency injection setup, API documentation integration, build validation, and browser-based verification of a running .NET service.
+A single prompt drives a local agent from project scaffolding through refactoring, API documentation, build validation, and browser-based verification of the running .NET service.
 
-Here's the prompt that generated this recorded conversation:
-
-```
+```text
 Navigate to src/ and execute: dotnet new webapi -n copilot-api
 Navigate to src/copilot-api and execute: dotnet new .gitignore
 In src/copilot-api i want you to apply my coding conventions for .NET and then remove all weather (controller) related data. 

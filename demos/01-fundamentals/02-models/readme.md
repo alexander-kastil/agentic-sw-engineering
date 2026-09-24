@@ -34,7 +34,7 @@ The tradeoff is that only the interactive surfaces work without sign-in. Inline 
 
 ## Custom Endpoint provider
 
-The Custom Endpoint provider reached Stable in VS Code 1.122 and replaces the legacy OpenAI-compatible provider. It understands three request shapes, so you can front most self-hosted or proxied models without a shim. Pick the shape your endpoint speaks and Copilot formats requests accordingly.
+The Custom Endpoint provider replaces the legacy OpenAI-compatible provider and understands three request shapes, so you can front most self-hosted or proxied models without a shim. Pick the shape your endpoint speaks and Copilot formats requests accordingly.
 
 | Request shape | Typical backend |
 |---|---|
@@ -70,19 +70,13 @@ flowchart TD
 
 Supported Anthropic and OpenAI models offer 1M-token context windows, enough to hold a large codebase, long conversation history, and detailed instructions at once. A wider window costs more per request, so it is a budget decision as much as a capability one. VS Code surfaces both dials in a unified picker: you choose the context size and the reasoning effort (thinking effort) for a model in the same place. Raise reasoning effort for hard debugging or design work, and keep it low for routine edits to save cost and latency.
 
-## Switching providers between turns
+## Switching providers and cost
 
-Since VS Code 1.133 the model picker shows Copilot models and Anthropic models in one unified list, and you can switch providers between turns without reconfiguring the session. A turn that needs deep reasoning can run on one provider while the follow-up cleanup runs on a cheaper model from another, inside the same conversation. BYOK models are also available in the Agents window when it runs the Copilot harness (1.129), so a bring-your-own-key model is no longer confined to the sidebar chat.
+The model picker lists Copilot and Anthropic models in one list, and you can switch providers between turns inside the same conversation. It also shows each model's cost beside its name, so choosing a model is a budget decision at the point of choice. Hovering the footer of a chat response shows per-model input, cached input, and output tokens. Credit accounting and per-session cost are covered in [Governance: Cost](../../08-governance/02-cost-byok/).
 
 ## Marketplace providers and Ollama
 
-New model providers install from the Marketplace, so adding a provider Copilot does not ship by default is the same one-click flow as installing any extension. The previously built-in Ollama provider is deprecated in favor of the official Ollama extension, which you install from the Marketplace like any other provider. If you relied on the built-in Ollama integration, move to the extension to keep receiving updates.
-
-## Cost in the model picker
-
-The model picker surfaces the cost of each model alongside its name, so the budget impact of your choice is visible at the moment you make it. Because context size and reasoning effort both raise cost, the picker is where model selection becomes a spending decision. Governance, credit accounting, and per-session cost are covered in [Governance: Cost](../../08-governance/02-cost-byok/).
-
-Two readouts make the spend concrete after the fact. Hovering the footer of a chat response shows a per-model breakdown of input, cached input, and output tokens (1.135), which is where you find out whether prompt caching is actually working for you. The status menu shows aggregate credit usage for the current billing cycle on Copilot Business and Enterprise plans (1.130).
+New model providers install from the Marketplace like any other extension. The built-in Ollama provider is deprecated in favor of the official Ollama extension.
 
 ## Demo
 
@@ -97,12 +91,7 @@ Two readouts make the spend concrete after the fact. Hovering the footer of a ch
 
 ## Links & Resources
 
-- [Visual Studio Code 1.122 release notes](https://code.visualstudio.com/updates/v1_122) - Custom Endpoint provider reaching Stable and the request shapes it supports
-- [Visual Studio Code 1.129 release notes](https://code.visualstudio.com/updates/v1_129) - BYOK models in the Agents window with the Copilot harness
-- [Visual Studio Code 1.130 release notes](https://code.visualstudio.com/updates/v1_130) - aggregate credit usage in the status menu
-- [Visual Studio Code 1.133 release notes](https://code.visualstudio.com/updates/v1_133) - switching providers between turns and the unified model picker
-- [Visual Studio Code 1.135 release notes](https://code.visualstudio.com/updates/v1_135) - detailed per-model token usage on the response footer
 - [Language models in VS Code](https://code.visualstudio.com/docs/copilot/language-models) - configuring BYOK, custom endpoints, and per-model options
 - [Changing the AI model for Copilot Chat](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat) - selecting and comparing models across supported IDEs
 
-[← Previous: Getting Started with Copilot & Vision](../01-intro/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Shaping the Context Window →](../03-context-window/readme.md)
+[← Previous: Getting Started & Configuring Copilot](../01-intro/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Shaping the Context Window →](../03-context-window/readme.md)
