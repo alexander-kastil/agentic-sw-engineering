@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="60" y="150" width="420" height="180" rx="24" fill="#eaf2ff"/>
+    <rect x="560" y="150" width="460" height="180" rx="24" fill="#fff6e5" stroke="#e0a534"/>
+    <rect x="1100" y="60" width="760" height="440" rx="24" fill="#f6f8fa"/>
+    <rect x="1100" y="600" width="360" height="160" rx="24" fill="#fff6e5" stroke="#e0a534"/>
+    <rect x="1500" y="600" width="360" height="160" rx="24" fill="#e9f7ef"/>
+    <rect x="560" y="600" width="460" height="160" rx="24" fill="#f3edff"/>
+    <rect x="60" y="860" width="1800" height="150" rx="24" fill="#f6f8fa"/>
+  </g>
+  <g text-anchor="middle" fill="#24292f" font-size="30" font-weight="600">
+    <text x="270" y="228">Agent edits</text>
+    <text x="270" y="268" font-family="Consolas, monospace" font-size="26" font-weight="400">copilot-instructions.md</text>
+    <text x="790" y="215">postToolUse hook</text>
+    <text x="790" y="258" font-family="Consolas, monospace" font-size="26" font-weight="400">copilot-instructions-guard.ps1</text>
+    <text x="790" y="296" font-size="26" font-weight="400" fill="#57606a">edit tools only, via matcher</text>
+    <text x="1480" y="115">Router check</text>
+    <text x="1280" y="665">Fails</text>
+    <text x="1280" y="708" font-family="Consolas, monospace" font-size="26" font-weight="400">additionalContext</text>
+    <text x="1680" y="665">Passes</text>
+    <text x="1680" y="708" font-size="26" font-weight="400" fill="#57606a">silent, exit 0</text>
+    <text x="790" y="665">Agent moves the detail</text>
+    <text x="790" y="708" font-size="26" font-weight="400" fill="#57606a">to the skill or doc that owns it</text>
+  </g>
+  <g fill="#24292f" font-size="28">
+    <text x="1150" y="185">at most 90 non-empty lines</text>
+    <text x="1150" y="240">at most 30 words per bullet</text>
+    <text x="1150" y="295">headings no deeper than ##</text>
+    <text x="1150" y="350">six sections in a fixed order</text>
+    <text x="1150" y="405">no inventories: agent tables,</text>
+    <text x="1150" y="445">MCP server lists, dev commands</text>
+  </g>
+  <g text-anchor="middle" font-size="28" fill="#24292f">
+    <text x="960" y="925" font-weight="600">Same pattern for skills</text>
+    <text x="960" y="970" fill="#57606a">filter on SKILL.md, loop over .github/skills/*/SKILL.md, keep each description to one trigger line</text>
+  </g>
+  <g stroke="#57606a" stroke-width="3" fill="none" marker-end="url(#a)">
+    <line x1="484" y1="240" x2="554" y2="240"/>
+    <line x1="1024" y1="240" x2="1094" y2="240"/>
+    <line x1="1280" y1="504" x2="1280" y2="594"/>
+    <line x1="1680" y1="504" x2="1680" y2="594"/>
+    <line x1="1096" y1="680" x2="1026" y2="680"/>
+    <path d="M556,680 L270,680 L270,336"/>
+  </g>
+</svg>

@@ -668,6 +668,30 @@ retro decor, grime" to the Avoid list.
 
 **Rule:** Reframe a slide as outcomes and decisions in its title, subtitle, bullets and SVG together, then re-render and `swap-image`. Real tool output stays verbatim.
 
+## Course restructuring routes through create-class before the first read
+
+**Pattern:** "Shorten demos/01-fundamentals by 30%" started as a main-thread file inventory; the user interrupted with "use /create-class".
+
+**Rule:** Any change to a module's shape (shorten, merge, renumber, retitle) opens `create-class` first and reads `module-toc-conception` and `restructure-execute` before the inventory, so the one-title-three-places sweep and the link and prefix checks are part of the plan rather than an afterthought.
+
+## Renumbered modules leave gitignored ghost folders
+
+**Pattern:** "It even has duplicates": `03-ai-assisted-coding/` and `04-agent-mode-basics/` survived an old renumber as `obj/` output plus tracked `.env` files, so `link-check.sh` reported prefix defects and the tree showed two topic 03s and 04s.
+
+**Rule:** After any renumber, and at the start of any module audit, run `git status --porcelain --ignored <module>` and list folders whose prefix collides with a live topic. Diff their `.env` against the live copy before proposing removal, so no credential value is lost.
+
+## A denied delete goes to the user as one `!` command
+
+**Pattern:** Auto mode denied `git rm` plus `rm -rf` of files the user had approved removing. The rest of the edits went ahead and the deletions were handed back as a single `!` block, which the user ran as pasted.
+
+**Rule:** Do every non-destructive edit first, keep the link check scoped so the files awaiting deletion are the only hits, then hand the exact `git rm` and `rm -rf` lines back in one block and re-run the checks after the user runs them.
+
+## A shared file with another session's hunks is committed through a temporary index
+
+**Pattern:** `demos/readme.md` held this session's module 01 TOC edits and another session's module 06 restructure, while that session also had renames staged. A pathspec commit would have swept its hunks in; a plain commit would have swept its staged renames in.
+
+**Rule:** Build the commit in a throwaway index: `GIT_INDEX_FILE=<tmp> git read-tree HEAD`, add this session's blobs with `update-index --cacheinfo` (the mixed file as HEAD plus only this session's replacements, via `hash-object -w`), `write-tree`, `commit-tree -p HEAD`, `update-ref HEAD`, then set the same blobs in the real index so the other session's staged work and working-tree hunks are untouched. Confirm with `git diff -- <mixed file>` that only the foreign hunks remain.
+
 ## Growing a module means folding into the flow of use, not appending topics
 
 **Pattern:** Asked for 30% more module 06 content "structured functionally", the first proposal added new topics beside the old ones. The correction was "keep content but fold it in to the flow of use where it fits": sync and configuration dissolved into setup and sessions, My Work became its own step, automations split into create and run.

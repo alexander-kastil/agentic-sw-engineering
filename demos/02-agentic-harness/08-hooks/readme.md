@@ -49,11 +49,11 @@ Hooks are not the only gate between an agent and your machine, and knowing the o
 
 Use the sandbox for containment, assisted approvals for noise reduction, and hooks for the policy only you can express: your repository's conventions, your audit trail, your integrations.
 
-## Guarding the Instructions File
+## Keeping Instructions Lean with a Hook
 
-A `postToolUse` hook can keep `.github/copilot-instructions.md` from drifting into prose. The instructions file is reloaded on every turn, so every sentence added to it is paid for on every request. This hook lints the file after any edit tool touches it and hands the findings back to the agent.
+`.github/copilot-instructions.md` is loaded into every request, so everything added to it is paid for on every turn. It also bloats in a predictable way: an agent asked to "document what we just did" appends a background paragraph, an MCP server list, the dev commands and a table of agents, and none of that belongs in a file whose job is to route. [copilot-instructions-guard.ps1](/.github/hooks/copilot-instructions-guard.ps1) is a `postToolUse` hook that holds the file to that job: repo purpose, folder layout, one-line rules, and where the detail lives.
 
-Registration in [.github/hooks/hooks.json](/.github/hooks/hooks.json) scopes the hook to the edit tools via a `matcher` regex, so read and search calls never pay for it:
+[.github/hooks/hooks.json](/.github/hooks/hooks.json) registers it for the edit tools only, so read and search calls never pay for it:
 
 ```json
 {
@@ -62,8 +62,8 @@ Registration in [.github/hooks/hooks.json](/.github/hooks/hooks.json) scopes the
     "postToolUse": [
       {
         "type": "command",
-        "powershell": ".\instructions-guard.ps1",
-        "bash": "pwsh -NoProfile -File ./instructions-guard.ps1",
+        "powershell": ".\\copilot-instructions-guard.ps1",
+        "bash": "pwsh -NoProfile -File ./copilot-instructions-guard.ps1",
         "cwd": ".github/hooks",
         "matcher": "create_file|apply_patch|replace_string_in_file|multi_replace_string_in_file",
         "timeoutSec": 10
@@ -73,30 +73,43 @@ Registration in [.github/hooks/hooks.json](/.github/hooks/hooks.json) scopes the
 }
 ```
 
-[instructions-guard.ps1](/.github/hooks/instructions-guard.ps1) reads the hook payload from stdin, exits silently unless the payload mentions `copilot-instructions.md`, then lints the file on disk:
+The script reads the hook payload from stdin, exits silently unless the payload mentions `copilot-instructions.md`, then checks the file as it ends up on disk:
 
-| Rule                  | Limit     | Rationale                                          |
-| --------------------- | --------- | -------------------------------------------------- |
-| Non-empty lines       | 60        | Caps the whole file, not just each edit            |
-| Total words           | 400       | Catches growth that stays under the line cap       |
-| Sentences per paragraph | 3       | Prose blocks are the main bloat vector             |
-| Words per bullet      | 25        | Keeps rules scannable                              |
-| Heading depth         | 2         | Matches the repo rule on doc depth                 |
+| Check | Limit | What it keeps out |
+|---|---|---|
+| Non-empty lines | 90 (`-MaxLines`) | Growth of the whole file, not just one edit |
+| Words per bullet | 30 (`-MaxBulletWords`) | Explanations disguised as rules |
+| Heading depth | 2 (`-MaxHeadingDepth`) | Sub-sections that turn a router into a manual |
+| Section order | `Project`, `Where the detail lives`, `Skills`, `Agents`, `Hard Rules`, `Working Method` | New sections that collect whatever did not fit elsewhere |
+| Inventories | An agent/tool table, an MCP server list, dev commands | Lists that already live in the skill, agent or README that owns them |
 
-Code fences and table rows are skipped so structured content is never flagged.
+Code fences are skipped. When the file passes, the hook prints nothing and exits `0`.
 
-The exit code stays `0` and the findings go back on stdout as `additionalContext`, which appends them to the agent's context instead of blocking the edit. The agent sees its own violation and rewrites the section on the next turn:
+## Watching the Guard Push Back
+
+```mermaid
+flowchart LR
+    A["Agent edits<br/>copilot-instructions.md"] --> B["postToolUse<br/>guard runs"]
+    B --> C{"Router<br/>check passes?"}
+    C -->|"Yes"| D["Silent, exit 0"]
+    C -->|"No"| E["additionalContext<br/>lists the findings"]
+    E --> F["Agent moves the detail<br/>to its owning skill or doc"]
+    F --> A
+```
+
+Add a background paragraph under a `###` heading, an `## MCP Servers` list and a `dotnet watch run` line, and the next edit returns this as `additionalContext` (output from a real run):
 
 ```json
 {
-  "additionalContext": "copilot-instructions.md failed the anti-bloat check. Rewrite the offending parts as terse rules, tables, or bullets before continuing:
-Line 3: paragraph has 4 sentences, limit is 3. Cut it to a table row or a bullet.
-Line 5: heading depth 3, limit is 2.
-Instructions are context loaded on every turn. They carry rules, not explanations."
+  "additionalContext": "copilot-instructions.md failed the router check. Fix these before continuing:\nLine 36: heading depth 3, limit is 2.\nLine 38: bullet is 34 words, limit is 30.\nSections are out of order or renamed.\nexpected: Project|Where the detail lives|Skills|Agents|Hard Rules|Working Method\nfound:    Project|Where the detail lives|Skills|Agents|Hard Rules|Working Method|MCP Servers\nFile carries an inventory again: an MCP server list, dev commands. Keep the rule, drop the list.\nThis file is a router: repo purpose, folder layout, one-line rules, where the detail lives."
 }
 ```
 
-Use `preToolUse` with exit code `2` instead when the edit should be denied outright. `postToolUse` is the right event here because the check needs the file as it ends up on disk, which patch and multi-replace payloads do not reveal in advance.
+The exit code stays `0`, so the edit is not blocked. The findings land in the agent's context, and the agent moves the detail to where it belongs on its next turn, without a reviewer catching it. Use `preToolUse` with exit code `2` when an edit should be denied outright; `postToolUse` fits here because the check needs the final file, which a patch payload does not show in advance.
+
+## Guarding Skills the Same Way
+
+Skills bloat the same way instructions do, and their `description` is the part that costs on every turn: every skill description loads so the agent can decide which skill to open. The same pattern carries over with three changes: point the payload filter at `SKILL.md` instead of `copilot-instructions.md`, loop over `.github/skills/*/SKILL.md` instead of one fixed file, and swap the rules for the ones a skill needs, such as a one-line `description` that names triggers rather than explaining the skill, a body cap that pushes detail into `references/`, and no copied inventories. The registration and the `additionalContext` feedback stay exactly as they are.
 
 ## Links & Resources
 
