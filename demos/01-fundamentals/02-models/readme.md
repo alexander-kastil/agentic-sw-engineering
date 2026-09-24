@@ -80,7 +80,7 @@ New model providers install from the Marketplace, so adding a provider Copilot d
 
 ## Cost in the model picker
 
-The model picker surfaces the cost of each model alongside its name, so the budget impact of your choice is visible at the moment you make it. Because context size and reasoning effort both raise cost, the picker is where model selection becomes a spending decision. Governance, credit accounting, and per-session cost are covered in [Governance: Cost](../../08-governance/02-cost/).
+The model picker surfaces the cost of each model alongside its name, so the budget impact of your choice is visible at the moment you make it. Because context size and reasoning effort both raise cost, the picker is where model selection becomes a spending decision. Governance, credit accounting, and per-session cost are covered in [Governance: Cost](../../08-governance/02-cost-byok/).
 
 Two readouts make the spend concrete after the fact. Hovering the footer of a chat response shows a per-model breakdown of input, cached input, and output tokens (1.135), which is where you find out whether prompt caching is actually working for you. The status menu shows aggregate credit usage for the current billing cycle on Copilot Business and Enterprise plans (1.130).
 

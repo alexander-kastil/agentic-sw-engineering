@@ -29,7 +29,7 @@ flowchart TD
 - Python with `openpyxl` installed (`pip install openpyxl`), because the agent reads the workbook with a script it writes
 - `hr-data.db` present in `src/hr-mcp-server`; if the server has never run, start it once with `dotnet run` in that folder
 
-> Note: If you routed the CLI to your own model provider in [Cutting Token Cost with Open-Source Models](../../../demos/08-governance/05-open-source-models/readme.md), remove the `COPILOT_PROVIDER_*` variables for this session so the subagents run on a hosted Copilot model.
+> Note: If you routed the CLI to your own model provider in [Bring Your Own Key in the Copilot CLI](../../../demos/08-governance/02-cost-byok/02-byok-copilot-cli/readme.md), remove the `COPILOT_PROVIDER_*` variables for this session so the subagents run on a hosted Copilot model.
 
 ## Step 1: Harvest four sources in parallel (10 minutes)
 

@@ -35,7 +35,7 @@ The diagram shows how System Instructions and Tool Definitions form the foundati
 
 Many of the models behind GitHub Copilot now cache the stable prefix of a request. The system instructions, tool definitions, custom instructions, and large attached files that lead your context are processed once and reused on the next turn, so a repeated prefix costs less and returns faster. This turns context engineering from a one-time composition into a decision about ordering.
 
-To benefit, keep the cacheable part stable and up front: put instructions and big reference files first, and let the volatile part (your latest question, the current selection) come last. Editing or reordering early context invalidates the cache, so a small change near the top can force the whole prefix to be reprocessed. Cached tokens are also billed at a lower rate, so a stable prefix is a budget decision as much as a quality one, which ties directly to the cost model in the [Governance module](../../08-governance/02-cost/).
+To benefit, keep the cacheable part stable and up front: put instructions and big reference files first, and let the volatile part (your latest question, the current selection) come last. Editing or reordering early context invalidates the cache, so a small change near the top can force the whole prefix to be reprocessed. Cached tokens are also billed at a lower rate, so a stable prefix is a budget decision as much as a quality one, which ties directly to the cost model in the [Governance module](../../08-governance/02-cost-byok/).
 
 ## Strategies for Effective Context Engineering
 

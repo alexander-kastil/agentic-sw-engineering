@@ -643,3 +643,27 @@ retro decor, grime" to the Avoid list.
 **Pattern:** Asked for a topics overview "aligned to the style" of the class deck's module list, I copied its structure literally: a "Topics of this module" heading, a "Topics 1 to 5" subline, and a "Topic N" label on every row and every divider. The user wanted a premium slide and called out the word "topic" repeated everywhere.
 
 **Rule:** A section overview needs no heading that restates what the slide obviously is, and no label word repeated per row: a two-digit number carries the sequence. Build the overview and dividers in the palette and fonts of the neighbouring module slide, and look at the rendered slide as a designer would before reporting it.
+
+## An exercise the learner runs is a lab, not a demo
+
+**Pattern:** Asked for the hands-on part of the new brownfield analysis topic, I wrote `demo-harvest-current-state.md` in the topic folder with a starter and a `-solution` folder. The user moved it: the topic readme explains the theory, and the exercise is "the actual second lab" under `labs/`.
+
+**Rule:** In this class a sequence of prompts the learner runs against starter inputs, with a reference solution beside it, is a lab and lives in `labs/NN-<module>/`, one numbered subfolder per lab when a module has more than one. The topic readme carries the theory and links the lab under Hands-On; the demo folder never holds the exercise.
+
+## "Update the presentation" means the look, and a byline describes the content
+
+**Pattern:** Asked to align the class deck with the module decks, I fixed only the Module 9 text. The user repeated "update the presentation", then asked for a better byline without repeating "Module". I restyled the module list as the topics card grid but put each readme's `## ` tagline under the title ("GitHub Copilot Essentials"). They wanted a one-liner saying what each module covers.
+
+**Rule:** An overview slide aligned to the module decks uses their card grid (number, title, one-liner) and never repeats a label word. The one-liner lists what the module covers in topic-subtitle style ("Instructions, prompts, MCP, skills, agents and hooks"), not the readme's tagline.
+
+## A title rewrite covers every deck, and the concept comes before the edit
+
+**Pattern:** "For all titles of all slides use /humanizer ... most titles in all presentation are AI slop" was read as one deck. I rewrote its titles in place before the user asked to see a concept, then learned the scope was every module deck.
+
+**Rule:** "All presentations" means every deck under `demos/`. For a sweeping copy change, show the before/after list first and edit after the go. Titles name the subject in plain words, per `create-pptx/references/slide-titles.md`. Sync the new titles into each spec's `title:`, `# ` heading and `gamma_prompt`, or the next regeneration brings the old ones back.
+
+## Positive framing reaches the diagrams
+
+**Pattern:** "We want positive presentation" for the sample-case slides covered the bullets and also the diagrams, where red "Left to a guess" and "Why the alternative fails" boxes carried the negative story.
+
+**Rule:** Reframe a slide as outcomes and decisions in its title, subtitle, bullets and SVG together, then re-render and `swap-image`. Real tool output stays verbatim.

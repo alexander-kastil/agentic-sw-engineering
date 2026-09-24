@@ -49,7 +49,7 @@ Permission choices are a governance decision as much as a convenience one, and [
 
 ## Choosing the model for a session
 
-Model, reasoning effort, and context window are chosen together in one combined composer control, so the three settings that decide cost and quality are no longer scattered. New sessions start on GPT-5.6 Sol at medium reasoning, and a session then inherits whatever you last picked rather than resetting to a default. Raising reasoning effort buys deliberation on a hard refactor and wastes credits on a docstring, which makes this control the lever the [cost model](../../08-governance/02-cost/) topic argues about.
+Model, reasoning effort, and context window are chosen together in one combined composer control, so the three settings that decide cost and quality are no longer scattered. New sessions start on GPT-5.6 Sol at medium reasoning, and a session then inherits whatever you last picked rather than resetting to a default. Raising reasoning effort buys deliberation on a hard refactor and wastes credits on a docstring, which makes this control the lever the [cost model](../../08-governance/02-cost-byok/) topic argues about.
 
 **Auto** is the option for when you do not want to decide per task, and since September 2026 it takes a stance rather than a guess. Its Efficiency, Balance, and Intelligence tiers say how Copilot should weigh cost against quality and response time, and when Auto switches the model mid-conversation a notice tells you, with the model that produced each reply shown in the hover metadata.
 

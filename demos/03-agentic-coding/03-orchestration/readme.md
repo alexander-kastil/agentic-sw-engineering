@@ -78,7 +78,7 @@ Each agent is defined in a markdown file in the `.github/agents` directory with 
 
 ## Observe and Account for Delegated Work
 
-As of VS Code 1.128 you can open a subagent's transcript as a read-only peer chat: you follow its reasoning and tool calls as they happen, but you cannot inject messages, so you never steer an expert mid-task and corrupt its focus. Each subagent also surfaces its own credit cost on hover, because a delegated turn spends credits just like a primary turn. Model choice and delegation depth are therefore budget decisions, which ties directly to the cost model in the [Governance module](../../08-governance/02-cost/).
+As of VS Code 1.128 you can open a subagent's transcript as a read-only peer chat: you follow its reasoning and tool calls as they happen, but you cannot inject messages, so you never steer an expert mid-task and corrupt its focus. Each subagent also surfaces its own credit cost on hover, because a delegated turn spends credits just like a primary turn. Model choice and delegation depth are therefore budget decisions, which ties directly to the cost model in the [Governance module](../../08-governance/02-cost-byok/).
 
 VS Code 1.131 adds an at-a-glance view in the Agents window: for each running subagent you see its model, its elapsed time, and the tool call it is making right now, without opening its conversation. That is the difference between checking on five delegated experts and reading five transcripts. Session activity pills (1.132) sit above the chat input and show live counts for Changes, Previews, Subagents, and Browsers, so a stalled or runaway delegation is visible from the primary session.
 

@@ -112,3 +112,17 @@ pages that were already non-compliant. Not expanded into a repo-wide sweep.
 ### Review
 
 All 8 Run and verify blocks in `readme-py.md` executed from a clean venv and database; outputs match every Expected line. Fixed during the run: responses pasted as one block printed blank rows until each call was piped to `Format-List`.
+
+## 2026-09-24: Module 08 consolidation (cost + BYOK, enterprise control)
+
+- [x] Move `02-cost` to `02-cost-byok`, nest the two BYOK guides under it, renumber `06-compliance` to `05-compliance`
+- [x] Repair nav links, module table, master TOC, schedule row, module 9 and lab 09 references
+- [x] Merge the old topic 05 readme into `02-cost-byok/readme.md`, reframed to bring your own key
+- [x] Retitle and reframe the two BYOK guides; add `03-byok-copilot-app` from the local app config, keys excluded
+- [ ] Reframe `03-enterprise-control/readme.md` to Business and Enterprise controls, architect view
+- [x] Link check, fence check, brand voice
+- [x] Slides: specs renumbered, three cards rewritten, two diagrams redrawn, deck patched in place, dividers, clean, notes
+
+### Review
+
+link-check demos: no broken link under module 08 (24 pre-existing elsewhere); labs clean. Fences 0 untagged. Brand voice clean on new and rewritten files; pre-existing rule 5/6/10 hits left in untouched files. Deck: 27 slides, clean `removed=0 bullets=0`, notes `unmatched=0 missing=0`. Not delivered to OneDrive.

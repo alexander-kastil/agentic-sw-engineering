@@ -18,7 +18,7 @@ The GitHub Copilot app is the desktop agents view for macOS, Windows, and Linux.
 
 Agentic DevOps applies these techniques to cloud automation and infrastructure as code: Azure CLI, Bicep, Terraform, and the Azure Developer CLI in agentic mode, plus CI/CD with GitHub Actions. The quality loop closes here too, with generated tests including end-to-end Playwright suites and Mermaid-diagrammed documentation.
 
-Governance, Cost and Observability is written for architects, team leads, and managers: the permission model from Autopilot and assisted approvals to risk badges, sensitive-prompt interception, and opt-in sandboxing, model choice as a budget decision under usage-based credits, open-source models to cut that cost, enterprise managed settings via MDM, OpenTelemetry traces feeding an Azure Managed Grafana dashboard, and the compliance obligations attaching to the software your agents ship.
+Governance, Cost and Observability is written for architects, team leads, and managers: the permission model from Autopilot and assisted approvals to risk badges, sensitive-prompt interception, and opt-in sandboxing, model choice as a budget decision under usage-based credits, bring your own key to route work to the provider you choose, the Business and Enterprise controls that govern the harness for a whole organization, OpenTelemetry traces feeding an Azure Managed Grafana dashboard, and the compliance obligations attaching to the software your agents ship.
 
 The course closes with Spec-Driven Development and Delivery: a constitution, specification, and technical plan, complex requirements decomposed into tasks with GitHub Spec Kit, and a product feature implemented end to end from its specification. You leave able to architect AI-assisted solutions that accelerate delivery and strengthen your team.
 
@@ -113,13 +113,13 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
 ## [Module 8: Governance, Cost & Observability](./08-governance/)
 
 - [Trust, Safety & the Permission Model](08-governance/01-permissions/)
-- [Cost Model & AI Credits](08-governance/02-cost/)
-- [Enterprise Policy & Managed Settings](08-governance/03-enterprise-policy/)
-- [Observability with OpenTelemetry](08-governance/04-observability/)
-- [Cutting Token Cost with Open-Source Models](08-governance/05-open-source-models/)
-  - [Using Open-Source Models in VS Code](08-governance/05-open-source-models/01-vscode/)
-  - [Using Open-Source Models in the Copilot CLI](08-governance/05-open-source-models/02-copilot-cli/)
-- [EU AI Act, GDPR & Accessibility Compliance](08-governance/06-compliance/)
+- [Cost, AI Credits & Bring Your Own Key](08-governance/02-cost-byok/)
+  - [Bring Your Own Key in VS Code](08-governance/02-cost-byok/01-byok-vscode/)
+  - [Bring Your Own Key in the Copilot CLI](08-governance/02-cost-byok/02-byok-copilot-cli/)
+  - [Bring Your Own Key in the GitHub Copilot App](08-governance/02-cost-byok/03-byok-copilot-app/)
+- [Enterprise Control of the Harness](08-governance/03-enterprise-control/)
+  - [Observability with OpenTelemetry](08-governance/03-enterprise-control/01-observability/)
+- [EU AI Act, GDPR & Accessibility Compliance](08-governance/04-compliance/)
 
 ## [Module 9: Plan, Specify, Deliver](./09-plan-spec-deliver/)
 
@@ -194,7 +194,7 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 | 10:45-11:15 |  0.5h | Demos | [M7](07-agentic-devops/) Testing using Copilot · Documentation using Copilot                                                                                                |
 | 11:15-12:15 |  1.0h | Lab   | [Lab 08: Resolve GitHub issues using Copilot](../labs/08-devops/)                                                                                                           |
 | 12:15-13:00 | 0.75h | Lunch |                                                                                                                                                                            |
-| 13:00-14:30 |  1.5h | Demos | [M8](08-governance/) Permission Model · Cost & AI Credits · Enterprise Policy · Observability with OpenTelemetry · Open-Source Models · EU AI Act, GDPR & Accessibility     |
+| 13:00-14:30 |  1.5h | Demos | [M8](08-governance/) Permission Model · Cost & Bring Your Own Key · Enterprise Control · Observability with OpenTelemetry · EU AI Act, GDPR & Accessibility     |
 | 14:30-14:45 | 0.25h | Break |                                                                                                                                                                            |
 | 14:45-16:15 |  1.5h | Demos | [M9](09-plan-spec-deliver/) Brownfield Analysis · Planning with Agents · Why Spec-Driven Development · The Spec-Driven Workflow · Sample Case: Implement a Product Feature                          |
 | 16:15-17:15 |  1.0h | Lab   | [Lab 09: Harvest the current state · Ship a feature with GitHub Spec Kit](../labs/09-plan-spec-deliver/)                                                                     |

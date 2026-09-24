@@ -12,15 +12,15 @@
     <text x="360" y="352" font-size="36" font-weight="600">Permissions</text>
     <text x="360" y="402" font-size="28" fill="#57606a">levels, risk badges, sandbox</text>
     <rect x="80" y="500" width="560" height="190" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
-    <text x="360" y="582" font-size="36" font-weight="600">Enterprise policy</text>
-    <text x="360" y="632" font-size="28" fill="#57606a" font-family="Consolas, monospace">managed-settings.json</text>
+    <text x="360" y="582" font-size="36" font-weight="600">Enterprise control</text>
+    <text x="360" y="632" font-size="28" fill="#57606a" >Business and Enterprise controls</text>
 
     <rect x="680" y="270" width="560" height="190" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
     <text x="960" y="352" font-size="36" font-weight="600">Cost model</text>
     <text x="960" y="402" font-size="28" fill="#57606a">AI credits per turn</text>
     <rect x="680" y="500" width="560" height="190" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
-    <text x="960" y="582" font-size="36" font-weight="600">Open-source models</text>
-    <text x="960" y="632" font-size="28" fill="#57606a">DeepSeek and DeepInfra</text>
+    <text x="960" y="582" font-size="36" font-weight="600">Bring your own key</text>
+    <text x="960" y="632" font-size="28" fill="#57606a">provider billed, not AI credits</text>
 
     <rect x="1280" y="270" width="560" height="420" rx="24" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
     <text x="1560" y="440" font-size="36" font-weight="600">Observability</text>

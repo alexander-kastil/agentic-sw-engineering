@@ -1,4 +1,4 @@
-# Using Open-Source Models in the Copilot CLI
+# Bring Your Own Key in the Copilot CLI
 
 The GitHub Copilot CLI has its own bring-your-own-key path, separate from the VS Code extension. It is native GitHub functionality configured entirely through environment variables, so the same DeepSeek and DeepInfra endpoints you use in Chat can also drive the terminal agent. The `oaicopilot.*` VS Code settings do not apply here; the CLI reads only the `COPILOT_PROVIDER_*` variables below.
 

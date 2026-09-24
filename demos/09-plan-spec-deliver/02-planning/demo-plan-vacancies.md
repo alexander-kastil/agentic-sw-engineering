@@ -16,7 +16,7 @@ Start the Copilot CLI from the repository root. The run writes two files to `dem
 | [.github/skills/create-issue/SKILL.md](/.github/skills/create-issue/SKILL.md) | The skill behind `/create-issue`: parent issue, sub-issues, labels |
 | [vacancies-plan-solution/](./vacancies-plan-solution/) | A verified run: `ledger.md` written by three subagents, `plan.md` written from it |
 
-> Note: If you routed the CLI to your own model provider in [Cutting Token Cost with Open-Source Models](../../08-governance/05-open-source-models/readme.md), the `COPILOT_PROVIDER_*` variables override `--model` for every call, subagents included. Remove them for this session so the planning runs on a hosted Copilot model.
+> Note: If you routed the CLI to your own model provider in [Bring Your Own Key in the Copilot CLI](../../08-governance/02-cost-byok/02-byok-copilot-cli/readme.md), the `COPILOT_PROVIDER_*` variables override `--model` for every call, subagents included. Remove them for this session so the planning runs on a hosted Copilot model.
 
 ---
 

@@ -84,4 +84,4 @@ Route agent telemetry to an OTLP endpoint and read the span tree.
 - [VS Code for enterprise](https://code.visualstudio.com/docs/setup/enterprise) - how managed settings and policies reach a fleet
 - [Azure Managed Grafana overview](https://learn.microsoft.com/en-us/azure/managed-grafana/overview) - hosting Grafana dashboards for OpenTelemetry signals on Azure
 
-[← Previous: Enterprise Policy & Managed Settings](../03-enterprise-policy/readme.md) | [Back to Governance](../readme.md) | [Next: Cutting Token Cost with Open-Source Models →](../05-open-source-models/readme.md)
+[← Back to Enterprise Control of the Harness](../readme.md)

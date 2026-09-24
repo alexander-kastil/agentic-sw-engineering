@@ -82,4 +82,4 @@ Set and observe the permission model in a trusted workspace.
 - [AI settings reference](https://code.visualstudio.com/docs/copilot/reference/copilot-settings) - the authoritative list of `chat.*` settings and their defaults
 - [Manage policies for Copilot in your organization](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies) - the org-level switches that gate what a user may enable
 
-[← Back to Governance](../readme.md) | [Next: Cost Model & AI Credits →](../02-cost/readme.md)
+[← Back to Governance](../readme.md) | [Next: Cost, AI Credits & Bring Your Own Key →](../02-cost-byok/readme.md)

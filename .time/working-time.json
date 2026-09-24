@@ -886,6 +886,136 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "21:00",
+      "to": "21:40",
+      "sessionId": "d974d134-2787-47a1-bebf-e7f0e1482dc2",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/09-plan-spec-deliver/",
+        "labs/09-plan-spec-deliver/",
+        "labs/readme.md",
+        "demos/readme.md",
+        "readme.md",
+        ".gitignore",
+        "tasks/lessons.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/shift-topic-specs.py",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/SKILL.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/restructure-execute.md",
+        "C:/Users/AlexanderKastil/.claude/skills/claude-learn/harvest-registry.md"
+      ],
+      "mechanism": {
+        "takes": "an existing course module, a new topic idea and the business's own process notes, spreadsheet and running system",
+        "does": "inserts and renumbers the topic across folders, links and slides, and turns a brownfield current-state analysis into a lab: parallel agents harvest process, spreadsheet, database and code into one ledger and a gap list, verified by real runs",
+        "returns": "a renamed module with a new analysis topic, a run-verified lab with reference solution, and an updated slide deck with topic dividers"
+      },
+      "portsAsIs": [
+        "parallel-agent current-state harvest into a shared ledger and gap list",
+        "topic insertion with spec and image renumbering script"
+      ],
+      "perCustomer": [
+        "the process log, spreadsheet and system under analysis",
+        "module and topic titles"
+      ],
+      "evidence": [
+        "headless Copilot CLI run: 4 parallel subagents, ledger and current-state written, 0 denied",
+        "review run missed a miscount; targeted count corrected it",
+        "link-check broken=0 over demos and labs",
+        "deck 35 slides, notes unmatched=0 missing=0",
+        "shift script round-trip byte-identical"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-class",
+          "brand-voice-gh-copilot",
+          "create-pptx",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [
+          "media-creator",
+          "claude_ai_Gamma"
+        ],
+        "agents": [
+          "guide-validator"
+        ]
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "21:49",
+      "to": "22:15",
+      "sessionId": "333966f9-9804-4097-8f9f-755fbc68687e",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/pptx/00-agentic-sw-engineering.pptx",
+        "demos/pptx/00-agentic-sw-engineering.pdf",
+        "demos/01-fundamentals/pptx/",
+        "demos/02-agentic-harness/pptx/",
+        "demos/03-agentic-coding/pptx/",
+        "demos/04-agent-sessions/pptx/",
+        "demos/05-cli-sdk/pptx/",
+        "demos/06-copilot-app/pptx/",
+        "demos/07-agentic-devops/pptx/",
+        "demos/08-governance/pptx/",
+        "demos/09-plan-spec-deliver/pptx/",
+        "tasks/lessons.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/slide-titles.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/SKILL.md"
+      ],
+      "mechanism": {
+        "takes": "a set of finished course slide decks and the module readmes they were built from",
+        "does": "restyles the class overview into the module decks' card grid with a content one-liner per module, rewrites every slide title into a plain statement of its subject, reframes sample-case slides and diagrams as outcomes, keeps the Gamma slide specs in sync and republishes PPTX and PDF",
+        "returns": "ten consistent decks with plain titles, matching specs, and PPTX plus PDF copies in the class OneDrive folder"
+      },
+      "portsAsIs": [
+        "slide-title rewrite rules and patterns (humanizer by deck language)",
+        "card-grid module overview from topics-overview slides",
+        "title and spec sync script"
+      ],
+      "perCustomer": [
+        "module names and one-liners",
+        "deck language"
+      ],
+      "evidence": [
+        "135 titles rewritten across 9 decks, 133 specs synced",
+        "3 diagrams re-rendered, swap-image swapped=1 each",
+        "20 files copied to OneDrive, cmp identical",
+        "slides rendered in PowerPoint and inspected"
+      ],
+      "toolchain": {
+        "skills": [
+          "ui-ux-pro-max",
+          "humanizer",
+          "create-pptx",
+          "claude-learn",
+          "track-time"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }

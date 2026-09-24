@@ -89,4 +89,4 @@ Classify and document one AI feature you are building.
 - [European Accessibility Act](https://ec.europa.eu/social/main.jsp?catId=1202) - scope and obligations for accessible products and services
 - [WCAG 2.1 quick reference](https://www.w3.org/WAI/WCAG21/quickref/) - success criteria and techniques for level AA conformance
 
-[← Previous: Cutting Token Cost with Open-Source Models](../05-open-source-models/readme.md) | [Back to Governance](../readme.md)
+[← Previous: Enterprise Control of the Harness](../03-enterprise-control/readme.md) | [Back to Governance](../readme.md)

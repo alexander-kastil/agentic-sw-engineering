@@ -43,6 +43,8 @@
 | 2026-09-24 | 0.17 | 19:47 | 19:56 | Speaker notes written for every content slide of the spec-driven development deck |
 | 2026-09-24 | 0.13 | 19:56 | 20:04 | Slide authoring standard extended so every future deck ships with speaker notes |
 | 2026-09-24 | 0.37 | 20:19 | 20:41 | Speaker notes added to seven course decks, and the agentic workflows slide and lesson corrected and republished |
+| 2026-09-24 | 0.38 | 21:00 | 21:40 | Spec-driven module renamed to Plan, Specify, Deliver, with a new brownfield analysis topic, a run-verified analysis lab and an updated slide deck |
 | 2026-09-24 | 0.28 | 21:06 | 21:23 | Topic overview and numbered divider slides designed and added to eight course decks |
+| 2026-09-24 | 0.43 | 21:49 | 22:15 | Course overview deck restyled, slide titles rewritten across all nine module decks, and decks published |
 
-**Total: 45.45h**
+**Total: 46.26h**

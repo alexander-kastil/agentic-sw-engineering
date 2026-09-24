@@ -1,6 +1,8 @@
-# Using Open-Source Models in VS Code
+# Bring Your Own Key in VS Code
 
-The [OAI Compatible Copilot](https://marketplace.visualstudio.com/items?itemName=johnny-zhao.oai-compatible-copilot) extension registers your own OpenAI-compatible models through the VS Code Language Model Chat Provider API, so they appear under a provider named `OAI Compatible` in the model picker. Point it at DeepSeek and DeepInfra to run routine agent work on cheap open models while keeping the frontier models for the hard problems. It contributes a chat provider only, so inline ghost-text completions stay on Copilot's own models.
+Bring your own key (BYOK) puts a model from a provider you contract with into the Copilot Chat model picker, under your API key. The provider bills those tokens directly, so they do not draw on Copilot AI credits, and the data path runs to the provider you chose rather than the Copilot-hosted models. The worked example below routes routine work to cheap open models on DeepSeek and DeepInfra, but the same flow serves a company Azure OpenAI deployment, an Anthropic contract, or a local Ollama model.
+
+The [OAI Compatible Copilot](https://marketplace.visualstudio.com/items?itemName=johnny-zhao.oai-compatible-copilot) extension registers your own OpenAI-compatible models through the VS Code Language Model Chat Provider API, so they appear under a provider named `OAI Compatible` in the model picker. It contributes a chat provider only, so inline ghost-text completions stay on Copilot's own models.
 
 ## What the native picker covers first
 
@@ -59,7 +61,7 @@ Once the models are enabled, pick one from the model picker and work as usual: a
 - Cost: open and third-party models are priced far below the frontier tier, which is the single largest saving on usage-based credits.
 - Context: several of these models carry very large context windows, useful for whole-repository questions.
 - Diversity: keep a fast cheap model, a reasoning model, and a frontier model side by side and switch per task.
-- Data control: a DeepInfra call is a third-country transfer, so read [EU AI Act, GDPR & Accessibility Compliance](../../06-compliance/) before sending personal data.
+- Data control: a DeepInfra call is a third-country transfer, so read [EU AI Act, GDPR & Accessibility Compliance](../../04-compliance/) before sending personal data.
 
 ## Demo
 
