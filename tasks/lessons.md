@@ -667,3 +667,9 @@ retro decor, grime" to the Avoid list.
 **Pattern:** "We want positive presentation" for the sample-case slides covered the bullets and also the diagrams, where red "Left to a guess" and "Why the alternative fails" boxes carried the negative story.
 
 **Rule:** Reframe a slide as outcomes and decisions in its title, subtitle, bullets and SVG together, then re-render and `swap-image`. Real tool output stays verbatim.
+
+## Growing a module means folding into the flow of use, not appending topics
+
+**Pattern:** Asked for 30% more module 06 content "structured functionally", the first proposal added new topics beside the old ones. The correction was "keep content but fold it in to the flow of use where it fits": sync and configuration dissolved into setup and sessions, My Work became its own step, automations split into create and run.
+
+**Rule:** When a module grows, order its topics by the order a learner uses the product and move each existing section to the step where it is used; new material joins those steps. Keep every existing paragraph, and let only the folders that lost all their content go away.
