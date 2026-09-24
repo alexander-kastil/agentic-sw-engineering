@@ -96,16 +96,16 @@ None of these is hard to implement. Each is a sentence in a Markdown file, writt
 
 ## Running the lab
 
-The lab applies the same four checkpoints to the meeting cost calculator from the two spec-driven topics. It lives in [labs/09-spec-driven](../../../labs/09-spec-driven/), takes about 45 minutes, and needs GitHub Copilot in VS Code plus the Spec Kit CLI. The lab's own verification (its totals, the float check and its test output) is recorded in [sample-case-solution/](./sample-case-solution/readme.md).
+The lab applies the same four checkpoints to the meeting cost calculator from the two spec-driven topics. It lives in [labs/09-plan-spec-deliver/02-plan-spec-deliver](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/), takes about 45 minutes, and needs GitHub Copilot in VS Code plus the Spec Kit CLI. The lab's own verification (its totals, the float check and its test output) is recorded in [sample-case-solution/](./sample-case-solution/readme.md).
 
 ## Hands-On
 
 - Demo: [leave-days-solution/](./leave-days-solution/readme.md) holds this case's brief, constitution, spec, plan, tasks, code and executed output.
-- Lab: [Lab 09: Ship a feature with GitHub Spec Kit](../../../labs/09-spec-driven/readme.md), or the fixed-stack [Python variant](../../../labs/09-spec-driven/readme-py.md).
+- Lab: [Lab 09.2: Ship a feature with GitHub Spec Kit](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md), or the fixed-stack [Python variant](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme-py.md).
 
 ## Links & Resources
 
 - [Spec Kit documentation](https://github.github.io/spec-kit/) - reference for every `/speckit-*` command and the artifact templates
 - [GitHub Spec Kit](https://github.com/github/spec-kit) - the toolkit repository and CLI install instructions
 
-[← Previous: The Spec-Driven Workflow](../03-spec-driven-workflow/readme.md) | [Back to Spec-Driven Development](../readme.md)
+[← Previous: The Spec-Driven Workflow](../04-spec-driven-workflow/readme.md) | [Back to Plan, Specify, Deliver](../readme.md)

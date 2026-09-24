@@ -43,5 +43,6 @@
 | 2026-09-24 | 0.17 | 19:47 | 19:56 | Speaker notes written for every content slide of the spec-driven development deck |
 | 2026-09-24 | 0.13 | 19:56 | 20:04 | Slide authoring standard extended so every future deck ships with speaker notes |
 | 2026-09-24 | 0.37 | 20:19 | 20:41 | Speaker notes added to seven course decks, and the agentic workflows slide and lesson corrected and republished |
+| 2026-09-24 | 0.28 | 21:06 | 21:23 | Topic overview and numbered divider slides designed and added to eight course decks |
 
-**Total: 45.17h**
+**Total: 45.45h**

@@ -12,7 +12,7 @@ Companion Material for Class Delivery by [Alexander Kastil](https://www.integrat
 6. [GitHub Copilot App](demos/06-copilot-app/readme.md)
 7. [Agentic DevOps](demos/07-agentic-devops/readme.md)
 8. [Governance, Cost & Observability](demos/08-governance/readme.md)
-9. [Spec-Driven Development & Delivery](demos/09-spec-driven-dev/readme.md)
+9. [Plan, Specify, Deliver](demos/09-plan-spec-deliver/readme.md)
 
 ## License & Re-Use
 

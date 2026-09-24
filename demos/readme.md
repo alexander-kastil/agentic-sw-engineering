@@ -121,12 +121,13 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
   - [Using Open-Source Models in the Copilot CLI](08-governance/05-open-source-models/02-copilot-cli/)
 - [EU AI Act, GDPR & Accessibility Compliance](08-governance/06-compliance/)
 
-## [Module 9: Spec-Driven Development & Delivery](./09-spec-driven-dev/)
+## [Module 9: Plan, Specify, Deliver](./09-plan-spec-deliver/)
 
-- [Planning with Agents](09-spec-driven-dev/01-planning/)
-- [Why Spec-Driven Development](09-spec-driven-dev/02-introduction/)
-- [The Spec-Driven Workflow](09-spec-driven-dev/03-spec-driven-workflow/)
-- [Sample Case: Implement a Product Feature](09-spec-driven-dev/04-sample-case/)
+- [Brownfield Analysis: Harvest the Current State](09-plan-spec-deliver/01-analysis/)
+- [Planning with Agents](09-plan-spec-deliver/02-planning/)
+- [Why Spec-Driven Development](09-plan-spec-deliver/03-introduction/)
+- [The Spec-Driven Workflow](09-plan-spec-deliver/04-spec-driven-workflow/)
+- [Sample Case: Implement a Product Feature](09-plan-spec-deliver/05-sample-case/)
 
 ---
 
@@ -195,7 +196,7 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 | 12:15-13:00 | 0.75h | Lunch |                                                                                                                                                                            |
 | 13:00-14:30 |  1.5h | Demos | [M8](08-governance/) Permission Model · Cost & AI Credits · Enterprise Policy · Observability with OpenTelemetry · Open-Source Models · EU AI Act, GDPR & Accessibility     |
 | 14:30-14:45 | 0.25h | Break |                                                                                                                                                                            |
-| 14:45-16:15 |  1.5h | Demos | [M9](09-spec-driven-dev/) Planning with Agents · Why Spec-Driven Development · The Spec-Driven Workflow · Sample Case: Implement a Product Feature                          |
-| 16:15-17:15 |  1.0h | Lab   | [Lab 09: Ship a feature with GitHub Spec Kit](../labs/09-spec-driven/)                                                                                                      |
+| 14:45-16:15 |  1.5h | Demos | [M9](09-plan-spec-deliver/) Brownfield Analysis · Planning with Agents · Why Spec-Driven Development · The Spec-Driven Workflow · Sample Case: Implement a Product Feature                          |
+| 16:15-17:15 |  1.0h | Lab   | [Lab 09: Harvest the current state · Ship a feature with GitHub Spec Kit](../labs/09-plan-spec-deliver/)                                                                     |
 
 > Labs live in [`labs/`](../labs/) and run at the point in the schedule shown above. The lowest-risk first lab is the read-only `/research` session in Lab 05; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.

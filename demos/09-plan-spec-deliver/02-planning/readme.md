@@ -100,7 +100,7 @@ The endpoint takes the child's database id, not its issue number, which is the o
 ## Hands-On
 
 - Demo: [Plan the Vacancies Feature and File It as Issues](./demo-plan-vacancies.md) researches the HR MCP server with three subagents and a shared ledger, writes the plan, and files it as a parent issue with sub-issues.
-- Lab: [Lab 09](../../../labs/09-spec-driven/readme.md) takes planning one step further, turning a brief into a checked spec, plan and task list.
+- Lab: [Lab 09.2](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md) takes planning one step further, turning a brief into a checked spec, plan and task list.
 
 ## Links & Resources
 
@@ -109,4 +109,4 @@ The endpoint takes the child's database id, not its issue number, which is the o
 - [Copilot CLI best practices](https://docs.github.com/en/copilot/how-tos/copilot-cli/cli-best-practices) - plan mode, the session plan file, autopilot and `/fleet`
 - [Sub-issues REST API](https://docs.github.com/en/rest/issues/sub-issues) - adding and listing sub-issues, and the `sub_issue_id` field
 
-[Back to Spec-Driven Development](../readme.md) | [Next: Why Spec-Driven Development →](../02-introduction/readme.md)
+[← Previous: Brownfield Analysis: Harvest the Current State](../01-analysis/readme.md) | [Back to Plan, Specify, Deliver](../readme.md) | [Next: Why Spec-Driven Development →](../03-introduction/readme.md)

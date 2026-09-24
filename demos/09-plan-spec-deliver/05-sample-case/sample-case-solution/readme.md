@@ -1,6 +1,6 @@
 # Solution: The Sample Case, Run
 
-[The topic page](../readme.md) describes the run without doing it. The run itself is checked in at [labs/09-spec-driven/meeting-cost-solution/](../../../../labs/09-spec-driven/meeting-cost-solution/readme.md): the four artifacts, the code, the tests and their real output. This folder records the two claims on the topic page that are worth checking before you teach them.
+[The topic page](../readme.md) describes the run without doing it. The run itself is checked in at [labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/](../../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/readme.md): the four artifacts, the code, the tests and their real output. This folder records the two claims on the topic page that are worth checking before you teach them.
 
 Environment: Windows 11, Python 3.12.10, pytest 9.0.3, executed 2026-09-21.
 
@@ -45,6 +45,6 @@ python -m pytest -q
 25 passed in 0.16s
 ```
 
-Run from [meeting-cost-solution/](../../../../labs/09-spec-driven/meeting-cost-solution/readme.md). Five acceptance criteria and four edge cases, each with a test behind it, which is principle 5 holding.
+Run from [meeting-cost-solution/](../../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/readme.md). Five acceptance criteria and four edge cases, each with a test behind it, which is principle 5 holding.
 
 [← Back to Sample Case: Implement a Product Feature](../readme.md)

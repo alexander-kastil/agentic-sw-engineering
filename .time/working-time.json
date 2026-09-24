@@ -826,6 +826,66 @@
       "catalogue": {
         "action": "none"
       }
+    },
+    {
+      "date": "2026-09-24",
+      "from": "21:06",
+      "to": "21:23",
+      "sessionId": "86a8685e-ec1f-4865-8776-0eb479d3e084",
+      "branch": "master",
+      "commits": [],
+      "surfaces": [
+        "agentic-sw-engineering"
+      ],
+      "files": [
+        "demos/01-fundamentals/pptx/",
+        "demos/02-agentic-harness/pptx/",
+        "demos/03-agentic-coding/pptx/",
+        "demos/04-agent-sessions/pptx/",
+        "demos/05-cli-sdk/pptx/",
+        "demos/06-copilot-app/pptx/",
+        "demos/07-agentic-devops/pptx/",
+        "demos/08-governance/pptx/",
+        "tasks/lessons.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/scripts/gamma_deck.py",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/references/gamma-deck.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-pptx/SKILL.md",
+        "C:/Users/AlexanderKastil/.claude/skills/create-class/references/create-slides.md"
+      ],
+      "mechanism": {
+        "takes": "a finished AI-generated course deck per module and the module's list of topics",
+        "does": "adds a designed topics overview slide and a numbered divider before each topic, built locally in the deck's own palette and fonts at no generation cost, and re-runs cleanly when topics change",
+        "returns": "module decks that open with a numbered map of the topics and mark every topic start, consistent across all modules"
+      },
+      "portsAsIs": [
+        "one-slide numbered topic overview grid",
+        "numbered topic divider with a progress strip",
+        "idempotent slide insertion into a generated deck"
+      ],
+      "perCustomer": [
+        "the topic titles and subtitles",
+        "the brand palette and fonts"
+      ],
+      "evidence": [
+        "8 decks rebuilt: overview=1 dividers=8,9,5,4,11,6,4,6 missing=0",
+        "second run identical counts",
+        "speaker notes still matched"
+      ],
+      "toolchain": {
+        "skills": [
+          "create-pptx",
+          "create-class",
+          "ui-ux-pro-max",
+          "claude-learn"
+        ],
+        "mcpServers": [],
+        "agents": []
+      },
+      "industry": "technical training",
+      "status": "Built and running in-house",
+      "catalogue": {
+        "action": "none"
+      }
     }
   ]
 }

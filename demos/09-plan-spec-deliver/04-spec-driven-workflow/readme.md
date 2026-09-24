@@ -88,7 +88,7 @@ flowchart TD
 
 A task list is judged by two properties, not by its wording. Its order must let each task build on finished ones, and every acceptance criterion in the spec must have at least one task behind it.
 
-The lab's reference [tasks.md](../../../labs/09-spec-driven/meeting-cost-solution/tasks.md) runs T001 to T027 across six phases and ends with two coverage tables, one mapping each acceptance criterion to its tasks and one doing the same for each edge case. That is principle 5 made checkable:
+The lab's reference [tasks.md](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/tasks.md) runs T001 to T027 across six phases and ends with two coverage tables, one mapping each acceptance criterion to its tasks and one doing the same for each edge case. That is principle 5 made checkable:
 
 | Criterion | Tasks |
 | --- | --- |
@@ -178,7 +178,7 @@ python -m meeting_cost -30 90
 
 The two decimal places are the rounding rule you wrote into `spec.md` at step 3, arriving in the output. The reference solution passes 25 tests: five acceptance criteria and four edge cases, each with a test behind it.
 
-The check that matters more than a green run is `spec.md` and `tasks.md` side by side. A suite that covers only the happy path passes just as green, and it means the task list was incomplete, not that the feature is done; that failure mode is what the whole lab is built around. When your run is finished, compare it with [meeting-cost-solution/](../../../labs/09-spec-driven/meeting-cost-solution/readme.md): the wording will differ because the agent generated it, but the structure and the coverage should not.
+The check that matters more than a green run is `spec.md` and `tasks.md` side by side. A suite that covers only the happy path passes just as green, and it means the task list was incomplete, not that the feature is done; that failure mode is what the whole lab is built around. When your run is finished, compare it with [meeting-cost-solution/](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/readme.md): the wording will differ because the agent generated it, but the structure and the coverage should not.
 
 ## Commands that check the artifacts
 
@@ -213,7 +213,7 @@ The tree above is drawn from a real `specify init`. The full file listing, the t
 ## Hands-On
 
 - Demo: [project-structure-solution/](./project-structure-solution/readme.md) lists every file `specify init` writes, the ten command skills, and what each `--script` value generates.
-- Lab: [Lab 09, steps 3 to 7](../../../labs/09-spec-driven/readme.md#step-3-specify-the-feature-10-minutes) have you read a generated spec, plan, contract and task list against the checks on this page, implement, and verify against the spec. The [Python variant](../../../labs/09-spec-driven/readme-py.md) fixes the stack and calls out the traps above step by step.
+- Lab: [Lab 09.2, steps 3 to 7](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md#step-3-specify-the-feature-10-minutes) have you read a generated spec, plan, contract and task list against the checks on this page, implement, and verify against the spec. The [Python variant](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme-py.md) fixes the stack and calls out the traps above step by step.
 
 ## Links & Resources
 
@@ -221,4 +221,4 @@ The tree above is drawn from a real `specify init`. The full file listing, the t
 - [GitHub Spec Kit](https://github.com/github/spec-kit) - the toolkit repository, the implement and converge loop, and its `.specify/` directory conventions
 - [Diving into Spec-Driven Development with GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit/) - the specify, plan and tasks split, the constitution, and customizing the templates
 
-[← Previous: Why Spec-Driven Development](../02-introduction/readme.md) | [Back to Spec-Driven Development](../readme.md) | [Next: Sample Case: Implement a Product Feature →](../04-sample-case/readme.md)
+[← Previous: Why Spec-Driven Development](../03-introduction/readme.md) | [Back to Plan, Specify, Deliver](../readme.md) | [Next: Sample Case: Implement a Product Feature →](../05-sample-case/readme.md)

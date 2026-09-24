@@ -1,6 +1,6 @@
 # Labs
 
-Nine hands-on exercises for [Agentic Software Engineering using GitHub Copilot](../demos/readme.md). Lab numbers follow the schedule, not the module numbers: Lab 03 belongs to Module 2, Lab 04 to Module 3, and so on.
+Ten hands-on exercises for [Agentic Software Engineering using GitHub Copilot](../demos/readme.md). Lab numbers follow the schedule, not the module numbers: Lab 03 belongs to Module 2, Lab 04 to Module 3, and so on.
 
 Each lab folder holds a `readme.md` with the exercise. Labs 02 through 09 also carry a `*-solution/` folder: a reference copy of the finished artifacts plus a `test-results.md` recording the commands that were run against them. Compare against it, do not copy from it.
 
@@ -14,7 +14,8 @@ Each lab folder holds a `readme.md` with the exercise. Labs 02 through 09 also c
 | [06](06-copilot-sdk/) | Integrate an AI agent into an existing app with the Copilot SDK | [M5 CLI & SDK](../demos/05-cli-sdk/) | 3 | 1.0h | [copilot-sdk-solution/](06-copilot-sdk/copilot-sdk-solution/readme.md) |
 | [07](07-copilot-app/) | Ship a verified pull request from the Copilot desktop app | [M6 Copilot App](../demos/06-copilot-app/) | 3 | 1.0h | [copilot-app-solution/](07-copilot-app/copilot-app-solution/readme.md) |
 | [08](08-devops/) | Resolve GitHub issues using GitHub Copilot | [M7 Agentic DevOps](../demos/07-agentic-devops/) | 4 | 1.0h | [devops-solution/](08-devops/devops-solution/readme.md) |
-| [09](09-spec-driven/) | Ship a feature with GitHub Spec Kit | [M9 Spec-Driven Delivery](../demos/09-spec-driven-dev/) | 4 | 1.0h | [meeting-cost-solution/](09-spec-driven/meeting-cost-solution/readme.md) |
+| [09.1](09-plan-spec-deliver/01-analyze/) | Harvest the current state of vacancy tracking | [M9 Plan, Specify, Deliver](../demos/09-plan-spec-deliver/) | 4 | shared with Lab 09.2 | [hr-current-state-solution/](09-plan-spec-deliver/01-analyze/hr-current-state-solution/) |
+| [09.2](09-plan-spec-deliver/02-plan-spec-deliver/) | Ship a feature with GitHub Spec Kit | [M9 Plan, Specify, Deliver](../demos/09-plan-spec-deliver/) | 4 | 1.0h | [meeting-cost-solution/](09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/readme.md) |
 
 ## Before you start
 

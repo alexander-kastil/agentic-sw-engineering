@@ -24,7 +24,7 @@ Every example in this topic and the next comes from the lab you run at the end o
 
 The feature is deliberately small. A feature you can hold in your head is the only kind where you can see what the process added, rather than attributing the result to the size of the problem.
 
-You start from two files that already exist in [labs/09-spec-driven](../../../labs/09-spec-driven/): [requirements.md](../../../labs/09-spec-driven/requirements.md), a feature brief written the way a product owner writes one, and [constitution.md](../../../labs/09-spec-driven/constitution.md), six project principles. Neither names a class, a file layout or a data type; the agent generates everything downstream and you review it.
+You start from two files that already exist in [labs/09-plan-spec-deliver/02-plan-spec-deliver](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/): [requirements.md](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/requirements.md), a feature brief written the way a product owner writes one, and [constitution.md](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/constitution.md), six project principles. Neither names a class, a file layout or a data type; the agent generates everything downstream and you review it.
 
 ```mermaid
 flowchart TD
@@ -59,7 +59,7 @@ It is deliberately not a design. A spec that names a class, a file, a library, o
 | Invalid input names the offending field | `calculate` raises `InvalidInputError` carrying a `field` attribute |
 | The calculation is usable without the command line | Two modules, `calculator` and `cli`, and `cli` imports `calculator` |
 
-The rows are taken from the lab's [reference solution](../../../labs/09-spec-driven/meeting-cost-solution/readme.md). The left column survives a switch from Python to Node unchanged; the right column is rewritten entirely.
+The rows are taken from the lab's [reference solution](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/readme.md). The left column survives a switch from Python to Node unchanged; the right column is rewritten entirely.
 
 ## The four phases
 
@@ -144,7 +144,7 @@ Every command on this page was executed against Spec Kit 1.0.9, and the output i
 ## Hands-On
 
 - Demo: [spec-kit-cli-solution/](./spec-kit-cli-solution/readme.md) records the install, `specify init`, and the command names it registers, so you can tell a broken install from a changed tool.
-- Lab: [Lab 09, steps 1 and 2](../../../labs/09-spec-driven/readme.md#step-1-initialize-the-project-8-minutes) install Spec Kit, initialize the `meeting-cost` project, and turn six principles into its constitution.
+- Lab: [Lab 09.2, steps 1 and 2](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md#step-1-initialize-the-project-8-minutes) install Spec Kit, initialize the `meeting-cost` project, and turn six principles into its constitution.
 
 ## Links & Resources
 
@@ -153,4 +153,4 @@ Every command on this page was executed against Spec Kit 1.0.9, and the output i
 - [Spec Kit documentation](https://github.github.io/spec-kit/) - the method and what each artifact must contain
 - [Diving into Spec-Driven Development with GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit/) - why the codebase should not be the specification, and how the constitution, spec, plan and tasks fit together
 
-[← Previous: Planning with Agents](../01-planning/readme.md) | [Back to Spec-Driven Development](../readme.md) | [Next: The Spec-Driven Workflow →](../03-spec-driven-workflow/readme.md)
+[← Previous: Planning with Agents](../02-planning/readme.md) | [Back to Plan, Specify, Deliver](../readme.md) | [Next: The Spec-Driven Workflow →](../04-spec-driven-workflow/readme.md)

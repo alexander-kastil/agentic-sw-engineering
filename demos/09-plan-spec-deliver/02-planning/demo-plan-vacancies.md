@@ -4,7 +4,7 @@ HR wants to track open positions in the HR MCP server, and the fastest way to ge
 
 ------
 
-Start the Copilot CLI from the repository root. The run writes two files to `demos/09-spec-driven-dev/01-planning/vacancies-plan/` and creates issues on your GitHub repository; delete the folder and close the issues to reset.
+Start the Copilot CLI from the repository root. The run writes two files to `demos/09-plan-spec-deliver/02-planning/vacancies-plan/` and creates issues on your GitHub repository; delete the folder and close the issues to reset.
 
 ---
 
@@ -35,14 +35,14 @@ copilot --fleet
 ```text
 Plan adding vacancies (open positions) to the HR MCP server in src/hr-mcp-server. HR wants to record a vacancy with a title, required skills, required languages and a status of open or filled, list and close vacancies, and find existing employees whose skills match a vacancy.
 
-First create the shared ledger demos/09-spec-driven-dev/01-planning/vacancies-plan/ledger.md with three empty headings: MCP tools, Data, Verification.
+First create the shared ledger demos/09-plan-spec-deliver/02-planning/vacancies-plan/ledger.md with three empty headings: MCP tools, Data, Verification.
 
 Then use your task tool to run three general-purpose subagents in parallel (not explore agents, which cannot write files). Research only inside src/hr-mcp-server; ignore bin, obj and publish. Tell each subagent the ledger path and to write its findings under its own heading in that file, and nothing else:
 1. MCP tools: how Tools/HRTools.cs declares tools, names parameters and returns results.
 2. Data: Tools/Models.cs, Data/EmployeeDbContext.cs and Data/EmployeeDbInitializer.cs, and how the SQLite schema is created and seeded.
 3. Verification: the smoke test in readme.md and inspector.config.json, and how a new tool would be checked.
 
-When all three are done, read the ledger and write the plan to demos/09-spec-driven-dev/01-planning/vacancies-plan/plan.md: a one-paragraph summary, then numbered tasks, each with the files it touches, the tasks it depends on, and acceptance criteria. The ledger and the plan are the only files written: do not change any code and do not write tasks/todo.md.
+When all three are done, read the ledger and write the plan to demos/09-plan-spec-deliver/02-planning/vacancies-plan/plan.md: a one-paragraph summary, then numbered tasks, each with the files it touches, the tasks it depends on, and acceptance criteria. The ledger and the plan are the only files written: do not change any code and do not write tasks/todo.md.
 ```
 
 **Expected Outcome:** The session reports three `general-purpose` subagents dispatched in parallel, then two files. `ledger.md` has the three headings, each filled by a different subagent with file paths and findings; `plan.md` has a summary and numbered tasks, each with Files, Depends on and Acceptance criteria. The verified run produced 176 ledger lines and eight tasks, from the `Vacancy` model through a manual Inspector verification pass, and changed no code; its files are in [vacancies-plan-solution/](./vacancies-plan-solution/).
@@ -58,7 +58,7 @@ When all three are done, read the ledger and write the plan to demos/09-spec-dri
 **Research / Planning / Discussion:**
 
 ```text
-Review demos/09-spec-driven-dev/01-planning/vacancies-plan/plan.md against ledger.md in the same folder. For every acceptance criterion, quote the ledger line that supports it. List each criterion the ledger does not support, and each assumption the plan makes about how the running server behaves that nobody verified.
+Review demos/09-plan-spec-deliver/02-planning/vacancies-plan/plan.md against ledger.md in the same folder. For every acceptance criterion, quote the ledger line that supports it. List each criterion the ledger does not support, and each assumption the plan makes about how the running server behaves that nobody verified.
 ```
 
 **Finding:** A good review quotes ledger lines rather than restating the plan. The criterion to look for is the database one: the plan expects `EnsureCreatedAsync` to create a `Vacancies` table, but `EnsureCreated` only builds a database that does not exist yet, so an existing `hr-data.db` never gets the new table. The server's readme says to delete `hr-data.db` to reseed; if the review does not raise this, ask it directly how the new table reaches a database that already exists.
@@ -66,7 +66,7 @@ Review demos/09-spec-driven-dev/01-planning/vacancies-plan/plan.md against ledge
 **Recipe:**
 
 ```text
-Update demos/09-spec-driven-dev/01-planning/vacancies-plan/plan.md so every acceptance criterion is supported by ledger.md. Where the plan relies on EnsureCreatedAsync to add the Vacancies table, state that an existing src/hr-mcp-server/hr-data.db must be deleted so the schema is recreated and reseeded, and add that step to the verification task. Change nothing else.
+Update demos/09-plan-spec-deliver/02-planning/vacancies-plan/plan.md so every acceptance criterion is supported by ledger.md. Where the plan relies on EnsureCreatedAsync to add the Vacancies table, state that an existing src/hr-mcp-server/hr-data.db must be deleted so the schema is recreated and reseeded, and add that step to the verification task. Change nothing else.
 ```
 
 **Expected Outcome:** `plan.md` still has the same numbered tasks. In the verified run the diff touched exactly two lines: the DbContext task's acceptance criteria now explain that `EnsureCreatedAsync` never alters an existing database, and the verification task now opens with deleting `hr-data.db`.
@@ -80,7 +80,7 @@ Update demos/09-spec-driven-dev/01-planning/vacancies-plan/plan.md so every acce
 **Recipe:**
 
 ```text
-/create-issue Turn demos/09-spec-driven-dev/01-planning/vacancies-plan/plan.md into GitHub issues: one parent issue for the vacancies feature and one sub-issue per numbered task, all labeled planning. Create the planning label if it does not exist. Show me the issue tree before creating anything, then list every issue URL and confirm the sub-issue links.
+/create-issue Turn demos/09-plan-spec-deliver/02-planning/vacancies-plan/plan.md into GitHub issues: one parent issue for the vacancies feature and one sub-issue per numbered task, all labeled planning. Create the planning label if it does not exist. Show me the issue tree before creating anything, then list every issue URL and confirm the sub-issue links.
 ```
 
 **Expected Outcome:** Copilot shows the tree first: one parent titled for the vacancies feature and one child per plan task. After you approve, `gh label list` shows `planning`, the parent issue on GitHub shows a Sub-issues panel with every task in plan order, and the closing check lists the child numbers. The verified run created parent #60 with sub-issues #61 to #68:

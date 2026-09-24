@@ -7,7 +7,7 @@ Router for this repo. Rules live one line each; the detail lives in the skill or
 Companion material for **"Agentic Software Engineering using GitHub Copilot"**, a 4-day, 9-module masterclass by Alexander Kastil. GitHub Copilot is the subject of the class, so the `.github/` Copilot-facing config is deliberate content, not dead weight.
 
 ```text
-demos/    9-module curriculum in learning order (01-fundamentals -> 09-spec-driven-dev)
+demos/    9-module curriculum in learning order (01-fundamentals -> 09-plan-spec-deliver)
 labs/     Hands-on exercises, 01- ... 09-, one folder per lab
 src/      Standalone runnable projects the modules reference
 docs/     Specs and architecture documents

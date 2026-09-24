@@ -637,3 +637,9 @@ retro decor, grime" to the Avoid list.
 **Pattern:** I rewrote the readme's Mermaid block and closed with "I haven't rendered the updated Mermaid diagram to check it." The user quoted the sentence back.
 
 **Rule:** An edited Mermaid block is rendered with the Mermaid Chart validator before the reply, and the PNG looked at. The result exceeds the tool-output limit, so extract `valid` and `renderedPNG` from the saved JSON with Python. An unverified caveat is not a substitute for a check a tool can run.
+
+## A matched style copies the look, not the scaffolding
+
+**Pattern:** Asked for a topics overview "aligned to the style" of the class deck's module list, I copied its structure literally: a "Topics of this module" heading, a "Topics 1 to 5" subline, and a "Topic N" label on every row and every divider. The user wanted a premium slide and called out the word "topic" repeated everywhere.
+
+**Rule:** A section overview needs no heading that restates what the slide obviously is, and no label word repeated per row: a two-digit number carries the sequence. Build the overview and dividers in the palette and fonts of the neighbouring module slide, and look at the rendered slide as a designer would before reporting it.
