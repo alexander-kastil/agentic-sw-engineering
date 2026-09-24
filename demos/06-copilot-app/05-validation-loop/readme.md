@@ -15,6 +15,7 @@ The loop is iterative. If a diff looks wrong or a test fails, you steer the agen
 | Terminal checks | Does it build and pass tests? | Run the build, run the test suite |
 | In-app browser | Does the running app behave? | Open the local URL and click through |
 | `/security-review` | Did the change introduce a vulnerability? | Scan the working changes before review |
+| Insights | How did the agent get there? | Read the tool timeline and context-window graph |
 | Agent Merge | Are the review comments and failing checks actually resolved? | Let the agent work the threads and the CI failures |
 | Merge the PR | Is it ready to ship? | Merge from inside the session |
 
@@ -52,6 +53,12 @@ The diff view carries its own visual evidence. Changed PNG, JPG, and SVG files s
 
 The review surface keeps its own state honest as the code moves under it. A comment written against a line that has since changed is badged **Outdated**, and you can delete stale local review comments from the Changes view rather than carrying them into the merge. Reading a review thread without those signals is how a resolved-looking pull request turns out to have unaddressed feedback.
 
+## Insights: where the session spent its time
+
+The **Insights** tab in the session panel answers a question the diff cannot: how the agent got there. It shows a timeline of tool calls and sub-agent activity with a summary of time spent per tool, and a context-window graph that tracks how much of the window was in use over the run, with zoom and pan synced to the tool timeline. A run that spent twenty minutes re-reading the same files, or filled its context window before the real work started, is visible here long before it shows up as a strange diff.
+
+Read Insights when a session was slow or its result was odd, not after every run. It is the evidence you want before rewriting a prompt or a skill, because it tells you whether the agent lacked information or wasted the information it had.
+
 ## Demo
 
 Run a full validation loop on a small change inside the Copilot desktop app.
@@ -63,7 +70,8 @@ Run a full validation loop on a small change inside the Copilot desktop app.
 5. Capture a screenshot of the changed page from the browser preview, annotate it with the pencil tool, undo one mark to prove undo works, and ask the agent to attach it to the pull request description.
 6. Run `/security-review` over the working changes and read what it reports, even when you expect nothing.
 7. Leave a review comment on a line, then use the fix button's **Fix with instructions** option to tell the agent how you want it addressed; watch the original comment pick up the **Outdated** badge and delete it if it no longer applies.
-8. If any check fails, give the agent a follow-up instruction and repeat steps 2 through 4; once everything passes, **merge the pull request** from inside the session, or enable Agent Merge and let it land once GitHub allows.
+8. Open the **Insights** tab and find the tool that took the most time and the point where the context window filled fastest.
+9. If any check fails, give the agent a follow-up instruction and repeat steps 2 through 4; once everything passes, **merge the pull request** from inside the session, or enable Agent Merge and let it land once GitHub allows.
 
 ## Links & Resources
 
@@ -72,4 +80,4 @@ Run a full validation loop on a small change inside the Copilot desktop app.
 - [Reviewing proposed changes in a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request) - how to read a diff and handle outdated review comments before merging
 - [Merging a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) - what happens when you merge the PR from the session
 
-[← Previous: Sessions from Issues, Prompts & Pull Requests](../02-sessions/readme.md) | [Back to Copilot App](../readme.md) | [Next: Automations: Scheduled, Triggered & On Demand →](../04-automations/readme.md)
+[← Previous: Sessions from Issues, Prompts & Pull Requests](../04-sessions/readme.md) | [Back to Copilot App](../readme.md) | [Next: Automations: Creating Them in the UI →](../06-automations/readme.md)

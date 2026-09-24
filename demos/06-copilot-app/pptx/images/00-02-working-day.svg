@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="120" y="170" width="480" height="260" rx="28" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="360" y="285" font-size="44" font-weight="600">Setup</text>
+    <text x="360" y="340" font-size="28" fill="#57606a">projects, Customize, sync</text>
+    <rect x="720" y="170" width="480" height="260" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="960" y="285" font-size="44" font-weight="600">My Work</text>
+    <text x="960" y="340" font-size="28" fill="#57606a">issues and pull requests</text>
+    <rect x="1320" y="170" width="480" height="260" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1560" y="285" font-size="44" font-weight="600">Sessions</text>
+    <text x="1560" y="340" font-size="28" fill="#57606a">location, mode, model</text>
+    <rect x="1020" y="650" width="480" height="260" rx="28" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1260" y="765" font-size="44" font-weight="600">Validation loop</text>
+    <text x="1260" y="820" font-size="28" fill="#57606a">diffs, browser, terminal</text>
+    <rect x="420" y="650" width="480" height="260" rx="28" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="660" y="765" font-size="44" font-weight="600">Automations</text>
+    <text x="660" y="820" font-size="28" fill="#57606a">create, run, maintain</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" fill="none" marker-end="url(#a)">
+    <line x1="600" y1="300" x2="712" y2="300"/>
+    <line x1="1200" y1="300" x2="1312" y2="300"/>
+    <path d="M1560,430 L1560,540 L1260,540 L1260,642"/>
+    <line x1="1020" y1="780" x2="908" y2="780"/>
+  </g>
+</svg>

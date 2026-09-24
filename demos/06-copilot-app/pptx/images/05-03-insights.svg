@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g font-size="28" fill="#57606a" text-anchor="end">
+    <text x="300" y="150">read</text>
+    <text x="300" y="250">edit</text>
+    <text x="300" y="350">shell</text>
+    <text x="300" y="450">sub-agent</text>
+  </g>
+  <g stroke="#d0d7de" stroke-width="2">
+    <line x1="330" y1="95" x2="1380" y2="95"/>
+    <line x1="330" y1="495" x2="1380" y2="495"/>
+  </g>
+  <g stroke="#8c959f" stroke-width="2">
+    <rect x="340" y="120" width="220" height="44" rx="10" fill="#eaf2ff"/>
+    <rect x="620" y="120" width="140" height="44" rx="10" fill="#eaf2ff"/>
+    <rect x="1000" y="120" width="120" height="44" rx="10" fill="#eaf2ff"/>
+    <rect x="570" y="220" width="160" height="44" rx="10" fill="#e9f7ef"/>
+    <rect x="1130" y="220" width="200" height="44" rx="10" fill="#e9f7ef"/>
+    <rect x="780" y="320" width="200" height="44" rx="10" fill="#fff6e5" stroke="#e0a534"/>
+    <rect x="1340" y="320" width="30" height="44" rx="8" fill="#fff6e5" stroke="#e0a534"/>
+    <rect x="760" y="420" width="360" height="44" rx="10" fill="#f3edff"/>
+  </g>
+  <line x1="340" y1="1000" x2="1380" y2="1000" stroke="#8c959f" stroke-width="2"/>
+  <text x="340" y="1045" font-size="28" fill="#57606a">time</text>
+  <text x="340" y="570" font-size="28" fill="#57606a">context window</text>
+  <path d="M340,1000 L340,960 L560,930 L760,880 L980,760 L1120,700 L1380,640 L1380,1000 Z" fill="#e9f7ef" stroke="#2da44e" stroke-width="3"/>
+  <line x1="980" y1="364" x2="980" y2="760" stroke="#57606a" stroke-width="3" stroke-dasharray="12 10"/>
+  <rect x="1480" y="120" width="360" height="400" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <g font-size="28" fill="#24292f">
+    <text x="1510" y="180" font-weight="600">time per tool</text>
+    <text x="1510" y="250">read</text><rect x="1650" y="226" width="160" height="28" rx="6" fill="#d0d7de"/>
+    <text x="1510" y="310">sub-agent</text><rect x="1695" y="286" width="115" height="28" rx="6" fill="#d0d7de"/>
+    <text x="1510" y="370">edit</text><rect x="1725" y="346" width="85" height="28" rx="6" fill="#d0d7de"/>
+    <text x="1510" y="430">shell</text><rect x="1745" y="406" width="65" height="28" rx="6" fill="#d0d7de"/>
+  </g>
+</svg>

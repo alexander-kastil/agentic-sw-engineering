@@ -96,11 +96,12 @@ The course closes with Spec-Driven Development and Delivery: a constitution, spe
 ## [Module 6: GitHub Copilot App](./06-copilot-app/)
 
 - [Meet the Desktop Agents App](06-copilot-app/01-overview/)
-- [Sessions from Issues, Prompts & Pull Requests](06-copilot-app/02-sessions/)
-- [The Validation Loop](06-copilot-app/03-validation-loop/)
-- [Automations: Scheduled, Triggered & On Demand](06-copilot-app/04-automations/)
-- [Syncing Skills & MCP Servers](06-copilot-app/05-sync/)
-- [Configuring the App: Customize, Permissions & Models](06-copilot-app/06-configuration/)
+- [Set Up Your Workspace: Projects, Customize & Sync](06-copilot-app/02-setup/)
+- [My Work: Picking Up the Day](06-copilot-app/03-my-work/)
+- [Sessions from Issues, Prompts & Pull Requests](06-copilot-app/04-sessions/)
+- [The Validation Loop](06-copilot-app/05-validation-loop/)
+- [Automations: Creating Them in the UI](06-copilot-app/06-automations/)
+- [Automations: Running & Maintaining Them](06-copilot-app/07-automation-runs/)
 
 ## [Module 7: Agentic DevOps](./07-agentic-devops/)
 
@@ -181,7 +182,7 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 | 12:45-13:30 | 0.75h | Lunch |                                                                                                                                                                                 |
 | 13:30-14:30 |  1.0h | Lab   | [Lab 06: Integrate an AI agent using the Copilot SDK](../labs/06-copilot-sdk/)                                                                                                   |
 | 14:30-14:45 | 0.25h | Break |                                                                                                                                                                                 |
-| 14:45-16:15 |  1.5h | Demos | [M6](06-copilot-app/) Desktop Agents App · Sessions from Issues, Prompts & PRs · Validation Loop · Automations · Syncing Skills & MCP Servers · Configuration           |
+| 14:45-16:15 |  1.5h | Demos | [M6](06-copilot-app/) Desktop Agents App · Workspace Setup · My Work · Sessions · Validation Loop · Creating Automations · Running Automations             |
 | 16:15-17:15 |  1.0h | Lab   | [Lab 07: Ship a verified pull request from the desktop app](../labs/07-copilot-app/)                                                                                             |
 
 ### Day 4: DevOps, Governance and Spec-Driven Delivery

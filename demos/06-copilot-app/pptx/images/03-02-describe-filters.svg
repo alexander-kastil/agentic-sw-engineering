@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="80" y="420" width="420" height="240" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="290" y="525" font-size="36" font-weight="600">Describe the</text>
+    <text x="290" y="575" font-size="36" font-weight="600">results</text>
+    <text x="290" y="625" font-size="28" fill="#57606a">in plain words</text>
+    <path d="M800,370 L990,540 L800,710 L610,540 Z" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="800" y="530" font-size="30" font-weight="600">Expressible</text>
+    <text x="800" y="572" font-size="30" font-weight="600">as filters?</text>
+    <rect x="1120" y="120" width="440" height="220" rx="28" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1340" y="215" font-size="36" font-weight="600">Generated filter</text>
+    <text x="1340" y="265" font-size="28" fill="#57606a">inspect, edit, revert</text>
+    <rect x="1120" y="740" width="440" height="220" rx="28" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="1340" y="835" font-size="36" font-weight="600">Continue in</text>
+    <text x="1340" y="880" font-size="36" font-weight="600">a session</text>
+    <text x="1340" y="925" font-size="28" fill="#57606a">request prefilled</text>
+    <rect x="1640" y="120" width="220" height="220" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1750" y="220" font-size="32" font-weight="600">Custom</text>
+    <text x="1750" y="262" font-size="32" font-weight="600">view</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" fill="none" marker-end="url(#a)">
+    <line x1="500" y1="540" x2="602" y2="540"/>
+    <path d="M800,370 L800,230 L1112,230"/>
+    <path d="M800,710 L800,850 L1112,850"/>
+    <line x1="1560" y1="230" x2="1632" y2="230"/>
+  </g>
+  <g font-size="28" font-weight="600" fill="#57606a">
+    <text x="820" y="310">Yes</text>
+    <text x="820" y="800">No</text>
+  </g>
+</svg>

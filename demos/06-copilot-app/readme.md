@@ -6,12 +6,13 @@ The GitHub Copilot app is a desktop agents view for macOS, Windows, and Linux th
 
 | Topic | Description |
 |-------|-------------|
-| [Meet the Desktop Agents App](./01-overview/) | What the desktop app is, which plans and platforms it reaches, and how My Work frames the day. |
-| [Sessions from Issues, Prompts & Pull Requests](./02-sessions/) | Three entry points, three places a session can run, and the Interactive, Plan, and Autopilot modes. |
-| [The Validation Loop](./03-validation-loop/) | Review diffs, use the in-app browser and terminal, open the pull request, and merge it. |
-| [Automations: Scheduled, Triggered & On Demand](./04-automations/) | Turn skills and prompts into recurring, event-triggered, or on-demand work. |
-| [Syncing Skills & MCP Servers](./05-sync/) | How repository skills, MCP servers, and canvases reach every session. |
-| [Configuring the App: Customize, Permissions & Models](./06-configuration/) | Manage plugins, skills, MCP servers, and canvases, set the permission mode, and pick the model. |
+| [Meet the Desktop Agents App](./01-overview/) | What the desktop app is, which plans and platforms it reaches, and a tour of the sidebar. |
+| [Set Up Your Workspace: Projects, Customize & Sync](./02-setup/) | How repository skills and MCP servers sync, and the plugins, skills, MCP servers, and canvases Customize adds. |
+| [My Work: Picking Up the Day](./03-my-work/) | Sections, custom views, filters you describe in plain words, and the Session column. |
+| [Sessions from Issues, Prompts & Pull Requests](./04-sessions/) | Three entry points, three places a session can run, the session modes, permission modes, and the model. |
+| [The Validation Loop](./05-validation-loop/) | Review diffs, use the in-app browser and terminal, read Insights, open the pull request, and merge it. |
+| [Automations: Creating Them in the UI](./06-automations/) | Local and cloud automations, schedules, CRON, event triggers, session automations, and shareable links. |
+| [Automations: Running & Maintaining Them](./07-automation-runs/) | Recent runs, run cost, answering a run that needs you, disabling, and session cleanup. |
 
 ## Links & Resources
 

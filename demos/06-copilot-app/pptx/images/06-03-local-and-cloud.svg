@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="120" y="80" width="800" height="740" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+  <rect x="1000" y="80" width="800" height="740" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+  <g fill="#24292f">
+    <text x="170" y="170" font-size="48" font-weight="600">Local</text>
+    <text x="1050" y="170" font-size="48" font-weight="600">Cloud</text>
+  </g>
+  <g fill="#24292f" font-size="30">
+    <text x="170" y="280">Your machine, app running</text>
+    <text x="170" y="390">Manual, Hourly, Daily, Weekly</text>
+    <text x="170" y="500">CRON editor with preview</text>
+    <text x="170" y="610">Your Settings and</text>
+    <text x="170" y="650">project instructions</text>
+    <text x="170" y="760">Permission mode</text>
+    <text x="1050" y="280">GitHub-hosted, computer off</text>
+    <text x="1050" y="390">Quarter-hour schedules</text>
+    <text x="1050" y="500">Events grouped by subject</text>
+    <text x="1050" y="610">Tools dropdown</text>
+    <text x="1050" y="720">Write-access check</text>
+  </g>
+  <g stroke="#8c959f" stroke-width="2">
+    <line x1="170" y1="325" x2="870" y2="325"/><line x1="170" y1="435" x2="870" y2="435"/>
+    <line x1="170" y1="545" x2="870" y2="545"/><line x1="170" y1="700" x2="870" y2="700"/>
+    <line x1="1050" y1="325" x2="1750" y2="325"/><line x1="1050" y1="435" x2="1750" y2="435"/>
+    <line x1="1050" y1="545" x2="1750" y2="545"/><line x1="1050" y1="655" x2="1750" y2="655"/>
+  </g>
+  <rect x="120" y="880" width="1680" height="120" rx="28" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+  <text x="960" y="955" font-size="36" font-weight="600" fill="#24292f" text-anchor="middle">One automation, several triggers</text>
+</svg>

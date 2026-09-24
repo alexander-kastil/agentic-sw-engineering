@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="160" y="60" width="620" height="960" rx="28" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <g fill="#24292f" font-size="36">
+    <text x="220" y="175">+  New</text>
+    <text x="220" y="305">My work</text>
+    <text x="220" y="435">Automations</text>
+    <text x="220" y="565">Customize</text>
+    <text x="220" y="690" font-size="28" font-weight="600" fill="#57606a">Projects</text>
+    <text x="220" y="800">Chats</text>
+    <text x="220" y="930">agentic-sw-engineering</text>
+  </g>
+  <line x1="200" y1="630" x2="740" y2="630" stroke="#d0d7de" stroke-width="2"/>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="800" y1="163" x2="1112" y2="163"/>
+    <line x1="800" y1="293" x2="1112" y2="293"/>
+    <line x1="800" y1="423" x2="1112" y2="423"/>
+    <line x1="800" y1="553" x2="1112" y2="553"/>
+    <line x1="800" y1="788" x2="1112" y2="788"/>
+    <line x1="800" y1="918" x2="1112" y2="918"/>
+  </g>
+  <g font-size="32" font-weight="600" fill="#24292f">
+    <rect x="1120" y="118" width="640" height="90" rx="45" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1160" y="175">Sessions</text>
+    <rect x="1120" y="248" width="640" height="90" rx="45" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1160" y="305">My Work</text>
+    <rect x="1120" y="378" width="640" height="90" rx="45" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1160" y="435">Automations</text>
+    <rect x="1120" y="508" width="640" height="90" rx="45" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1160" y="565">Setup: Customize</text>
+    <rect x="1120" y="743" width="640" height="90" rx="45" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1160" y="800">Sessions: chats</text>
+    <rect x="1120" y="873" width="640" height="90" rx="45" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1160" y="930">Setup: projects</text>
+  </g>
+</svg>

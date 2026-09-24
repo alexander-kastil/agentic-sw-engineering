@@ -3,7 +3,7 @@
 
 A session in the Copilot app starts from one of three entry points: a GitHub issue, a freeform prompt, or a pull request already in flight. This mirrors how real work arrives, so you open a session from the artifact you already have rather than describing the task from scratch. An issue carries the acceptance criteria, a PR carries the diff and review comments, and a prompt is the escape hatch for work that does not yet have a tracking artifact.
 
-Starting a session asks you two more questions before the agent moves. Where should it run, and how much autonomy should it have. Those two choices are independent, and getting them right is most of what separates a session you can leave alone from one that stops on every tool call.
+Starting a session asks you four more questions before the agent moves. Where should it run, how much autonomy should it have, which of its tool calls need your approval, and which model does the thinking. Those choices are independent, and getting them right is most of what separates a session you can leave alone from one that stops on every tool call.
 
 ## Session entry points
 
@@ -50,9 +50,39 @@ The mode decides how far the agent goes before it comes back to you. Switch it f
 | Plan | The agent writes a plan and waits for your approval before executing | The task is large or the approach is not obvious |
 | Autopilot | The agent writes, runs, and tests on its own until the task is done | The work is well specified and the blast radius is contained |
 
-Autopilot is worth a persistent target rather than a one-line prompt. `/goal` sets an objective the agent keeps working towards across turns, `/autopilot` now sets one the same way instead of only flipping the mode, and the Goal pill in the composer shows live status, the completion summary, the turn count, and the AI Credits the run has spent. Mode and permissions are separate axes, and [Configuring the App](../06-configuration/) covers the permission half.
+Autopilot is worth a persistent target rather than a one-line prompt. `/goal` sets an objective the agent keeps working towards across turns, `/autopilot` now sets one the same way instead of only flipping the mode, and the Goal pill in the composer shows live status, the completion summary, the turn count, and the AI Credits the run has spent. Mode and permissions are separate axes, and the next section covers the permission half.
 
-> Note: Autopilot with tool permissions set to Always ask is a contradiction the app will point out. It recommends a permission mode that lets the run continue unattended, with a one-click option to apply it.
+## Permission modes decide how far an agent goes
+
+The app's permission modes match the GitHub Copilot CLI, so the vocabulary you learned at the command line carries over. You set the mode with `/permissions` and inspect the current one with `/permissions show`. This is a separate axis from the Interactive, Plan, and Autopilot session modes above: the session mode decides how much the agent decides for itself, and the permission mode decides which of its tool calls need your approval.
+
+| Mode | Behavior | Use when |
+|---|---|---|
+| `manual` | Every tool call waits for your approval | You are auditing exactly what an agent does |
+| `assisted` | Reads run freely, writes and commands ask | Normal interactive work |
+| `allow-all` | Nothing prompts | A throwaway working tree you can discard |
+
+Three more commands sit beside it. `/allow-all-tools on|off|show` and `/yolo on|off|show` flip blanket approval, `/reset-allowed-tools` clears the per-tool approvals a session accumulated, and `/sandbox` confines the agent's shell commands to the session's workspace regardless of which permission mode is active. Turning on Autopilot while tool permissions are set to Always ask is the common trap, and the app catches it: it recommends a permission mode that lets the run continue unattended, with a one-click option to apply it.
+
+Permission choices are a governance decision as much as a convenience one, and [Trust, Safety & the Permission Model](../../08-governance/01-permissions/) treats them as such. Pick the loosest mode the blast radius justifies: a session in its own working tree tolerates far more than one pointed at your main checkout, and a cloud sandbox tolerates more still.
+
+## Choosing the model for a session
+
+Model, reasoning effort, and context window are chosen together in one combined composer control, so the three settings that decide cost and quality are no longer scattered. New sessions start on GPT-5.6 Sol at medium reasoning, and a session then inherits whatever you last picked rather than resetting to a default. Raising reasoning effort buys deliberation on a hard refactor and wastes credits on a docstring, which makes this control the lever the [cost model](../../08-governance/02-cost-byok/) topic argues about.
+
+**Auto** is the option for when you do not want to decide per task, and since September 2026 it takes a stance rather than a guess. Its Efficiency, Balance, and Intelligence tiers say how Copilot should weigh cost against quality and response time, and when Auto switches the model mid-conversation a notice tells you, with the model that produced each reply shown in the hover metadata.
+
+Bring-your-own-key endpoints are first-class here. Add a provider under Settings, then **Model providers**, then **Add provider**, supplying a display name, base URL, and API key; OpenAI, Azure OpenAI, Microsoft Foundry, Anthropic, Ollama, Foundry Local, LM Studio, and any OpenAI-compatible HTTP endpoint are supported, and Microsoft Foundry also accepts your existing `az login` session instead of a key. Those models then appear in the picker beside the GitHub-hosted ones, and you need no Copilot plan to use them.
+
+```mermaid
+flowchart LR
+    A["Composer control"] --> B["Model or Auto tier"]
+    A --> C["Reasoning effort"]
+    A --> D["Context window"]
+    B --> E["Session runs<br/>with these three"]
+    C --> E
+    D --> E
+```
 
 ## Inside a running session
 
@@ -88,16 +118,21 @@ Practice opening the three kinds of session in the Copilot desktop app and confi
 5. Start a second session from an **issue** in My Work: pick an existing issue in a repository you own, click **New session**, choose **Plan** mode, and approve or redirect the plan before any code is written.
 6. Start a third session from a **pull request** that is already in flight, and confirm the session opens on that PR's branch with its existing changes present.
 7. With all three sessions running, confirm they do not collide: each has its own branch and files, so a change in one does not appear in the others.
-8. Switch one session to **Autopilot** with `Cmd/Ctrl+Shift+M`, set a target with `/goal`, and watch the Goal pill report status and AI Credits as the run proceeds.
-9. Ask an agent to write a short Markdown report, find it in the **Files** tab under the artifacts source, and decide whether to promote it into the repository.
-10. Run `/chronicle standup` in any session and compare what it reports against what you remember doing.
-11. Turn on `chat.agentSessions.showExternal` in VS Code, find one of these app sessions in its Sessions list, and continue the conversation there.
+8. Run `/permissions show` in the prompt session, then set `manual` and give the agent a task that writes a file. Approve each call and observe how much it asks for.
+9. Switch one session to **Autopilot** with `Cmd/Ctrl+Shift+M`, accept the permission setting the app recommends, set a target with `/goal`, and watch the Goal pill report status and AI Credits as the run proceeds. Compare how many prompts you answered in each mode, and note that you changed two different settings to get there.
+10. Open the composer control and run one task twice against the same prompt: once at low reasoning effort, once at high. Compare the diffs and decide which tasks in your own backlog justify the higher setting.
+11. Switch the model to **Auto**, try the Efficiency and Intelligence tiers on the same prompt, and read the hover metadata to see which model actually answered.
+12. Ask an agent to write a short Markdown report, find it in the **Files** tab under the artifacts source, and decide whether to promote it into the repository.
+13. Run `/chronicle standup` in any session and compare what it reports against what you remember doing.
+14. Turn on `chat.agentSessions.showExternal` in VS Code, find one of these app sessions in its Sessions list, and continue the conversation there.
 
 ## Links & Resources
 
 - [Working with agent sessions in the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions) - entry points, the working tree, local repository, and cloud sandbox locations, and the Interactive, Plan, and Autopilot modes
 - [Working with GitHub issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) - the issues that seed a session's task and acceptance criteria
 - [About pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) - the in-flight PRs a session can continue
+- [Using your own LLM models in the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/use-byok-models) - the supported providers and the Model providers settings page
+- [GitHub Copilot CLI permission modes](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli) - the `manual`, `assisted`, and `allow-all` vocabulary the app shares with the CLI
 - [VS Code 1.135 release notes](https://code.visualstudio.com/updates/v1_135) - external agent sessions surfaced and continued in VS Code
 
-[← Previous: Meet the Desktop Agents App](../01-overview/readme.md) | [Back to Copilot App](../readme.md) | [Next: The Validation Loop →](../03-validation-loop/readme.md)
+[← Previous: My Work: Picking Up the Day](../03-my-work/readme.md) | [Back to Copilot App](../readme.md) | [Next: The Validation Loop →](../05-validation-loop/readme.md)

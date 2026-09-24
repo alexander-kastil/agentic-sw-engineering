@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <g fill="#24292f" text-anchor="middle">
+    <rect x="60" y="340" width="340" height="180" rx="28" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="230" y="425" font-size="34" font-weight="600">Trigger</text>
+    <text x="230" y="470" font-size="34" font-weight="600">fires</text>
+    <rect x="490" y="340" width="360" height="180" rx="28" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="670" y="425" font-size="34" font-weight="600">Preparing</text>
+    <text x="670" y="470" font-size="34" font-weight="600">automation</text>
+    <rect x="940" y="340" width="360" height="180" rx="28" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1120" y="425" font-size="34" font-weight="600">Run in</text>
+    <text x="1120" y="470" font-size="34" font-weight="600">progress</text>
+    <rect x="940" y="650" width="360" height="160" rx="28" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1120" y="720" font-size="30" font-weight="600">Answer in</text>
+    <text x="1120" y="762" font-size="30" font-weight="600">the composer</text>
+    <rect x="1440" y="120" width="420" height="200" rx="28" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1650" y="200" font-size="34" font-weight="600">Succeeded</text>
+    <text x="1650" y="250" font-size="26" fill="#57606a">open session, review, merge</text>
+    <rect x="1440" y="560" width="420" height="200" rx="28" fill="#fdecec" stroke="#c24141" stroke-width="2"/>
+    <text x="1650" y="640" font-size="34" font-weight="600">Failed</text>
+    <text x="1650" y="690" font-size="26" fill="#57606a">copy error, fix prompt</text>
+  </g>
+  <g stroke="#57606a" stroke-width="4" fill="none" marker-end="url(#a)">
+    <line x1="400" y1="430" x2="482" y2="430"/>
+    <line x1="850" y1="430" x2="932" y2="430"/>
+    <line x1="1060" y1="520" x2="1060" y2="642"/>
+    <line x1="1180" y1="650" x2="1180" y2="528"/>
+    <path d="M1300,400 L1370,400 L1370,220 L1432,220"/>
+    <path d="M1300,460 L1370,460 L1370,660 L1432,660"/>
+  </g>
+  <rect x="60" y="900" width="1800" height="110" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+  <text x="960" y="968" font-size="32" fill="#24292f" text-anchor="middle">Duration, tokens and AI credits per run</text>
+</svg>
