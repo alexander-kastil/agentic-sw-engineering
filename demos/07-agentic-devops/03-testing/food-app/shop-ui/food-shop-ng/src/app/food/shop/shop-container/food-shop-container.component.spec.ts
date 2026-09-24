@@ -16,7 +16,7 @@ describe('FoodShopContainerComponent', () => {
       imports: [FoodShopContainerComponent],
       providers: [
         { provide: FoodEntityService, useValue: { entities$: of(food), loaded$: of(true) } },
-        { provide: CartFacade, useValue: { getItems: () => of([]), set: () => {} } },
+        { provide: CartFacade, useValue: { getItems: () => of([]), set: () => { } } },
       ],
     }).compileComponents();
 
