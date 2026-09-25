@@ -19,8 +19,6 @@ The module is split into two parts, each with its own readme. Part 1 works from 
   - [Business Case: HR Document Updates Automation](./01-cli/03-business-case/)
   - [GitHub Agentic Workflows](./01-cli/04-agentic-wf/)
   - [Codebase Q&A and Onboarding (optional)](./01-cli/05-codebase-qa/)
-  - [Deep Research with /research (optional)](./01-cli/06-research/)
-  - [A Second Opinion with /rubber-duck (optional)](./01-cli/07-rubber-duck/)
 - [GitHub Copilot SDK](./02-sdk/)
   - [SDK Fundamentals](./02-sdk/01-intro/)
   - [Building Agents with Custom Tools](./02-sdk/02-custom-tools/)

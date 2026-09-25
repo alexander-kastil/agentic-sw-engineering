@@ -13,3 +13,5 @@ You start small and local with Agent Mode, then scale to cloud delegation and mu
 | [Multi-Agent Orchestration with Subagents](./03-orchestration/) | Delegate to subject-matter-expert subagents and coordinate them in parallel phases through an orchestrator. |
 | [Agentic Browser Automation](./04-browser-tools/) | Built-in browser tools that let agents open pages, read console errors, and verify their own web changes. |
 | [Upgrading & Modernization](./05-upgrading/) | Agent-led framework migration, such as Semantic Kernel to the Microsoft Agent Framework. |
+| [Deep Research with /research](./06-research/) (optional) | Run the read-only research agent over GitHub search and web sources, then judge the citations behind what it reports. |
+| [A Second Opinion with /rubber-duck](./07-rubber-duck/) (optional) | Hand a plan or a finished run to the critic agent and read what it says was missed, without changing any code. |

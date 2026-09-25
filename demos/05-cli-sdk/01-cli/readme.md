@@ -14,8 +14,6 @@ The module moves from the basics through extending the CLI with MCP servers and 
 | **[Business Case: HR Document Updates Automation](./03-business-case/)** | A production-style automation where the CLI queries a SharePoint HR-Documents library through Work IQ and SharePoint MCP servers, collects every document flagged "Needs Update" with its metadata, and emails a formatted summary to HR leadership on demand or on a schedule. |
 | **[GitHub Agentic Workflows](./04-agentic-wf/)** | Install the `gh aw` extension and turn a prompt into a versioned Markdown workflow that runs on a schedule or trigger; scaffold one with `gh aw add-wizard` and let it open a pull request with the results. |
 | **[Codebase Q&A and Onboarding (optional)](./05-codebase-qa/)** | Point the CLI at an unfamiliar repo to trace how a feature works, find where behavior lives, and generate a grounded onboarding overview from the terminal. |
-| **[Deep Research with /research (optional)](./06-research/)** | Run the read-only research agent over GitHub search and web sources, then judge the citations behind what it reports. |
-| **[A Second Opinion with /rubber-duck (optional)](./07-rubber-duck/)** | Hand a plan or a finished run to the critic agent and read what it says was missed, without changing any code. |
 
 ## Helpful Copilot CLI Commands
 
