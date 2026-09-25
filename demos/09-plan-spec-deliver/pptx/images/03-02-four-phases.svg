@@ -3,46 +3,57 @@
     <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
   </defs>
   <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="80" y="30" width="840" height="130" rx="20" fill="#f6f8fa" stroke="#8c959f" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="500" y="85" text-anchor="middle" font-size="32" font-weight="600" font-family="Consolas, monospace" fill="#24292f">current-state.md</text>
+  <text x="500" y="132" text-anchor="middle" font-size="28" fill="#57606a">from the analysis: inventory and gap list</text>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
+    <line x1="270" y1="160" x2="270" y2="222"/>
+    <line x1="730" y1="160" x2="730" y2="222"/>
+  </g>
+  <g font-size="26" font-weight="600" fill="#57606a">
+    <text x="290" y="203">the gaps</text>
+    <text x="750" y="203">what exists</text>
+  </g>
   <g fill="#24292f" text-anchor="middle" font-size="40" font-weight="600">
-    <rect x="80" y="170" width="380" height="140" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
-    <text x="270" y="254">Specify</text>
-    <rect x="540" y="170" width="380" height="140" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
-    <text x="730" y="254">Plan</text>
-    <rect x="1000" y="170" width="380" height="140" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
-    <text x="1190" y="254">Tasks</text>
-    <rect x="1460" y="170" width="380" height="140" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
-    <text x="1650" y="254">Implement</text>
+    <rect x="80" y="230" width="380" height="120" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="304">Specify</text>
+    <rect x="540" y="230" width="380" height="120" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="730" y="304">Plan</text>
+    <rect x="1000" y="230" width="380" height="120" rx="24" fill="#fff6e5" stroke="#e0a534" stroke-width="2"/>
+    <text x="1190" y="304">Tasks</text>
+    <rect x="1460" y="230" width="380" height="120" rx="24" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
+    <text x="1650" y="304">Implement</text>
   </g>
   <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
-    <line x1="460" y1="240" x2="532" y2="240"/>
-    <line x1="920" y1="240" x2="992" y2="240"/>
-    <line x1="1380" y1="240" x2="1452" y2="240"/>
+    <line x1="460" y1="290" x2="532" y2="290"/>
+    <line x1="920" y1="290" x2="992" y2="290"/>
+    <line x1="1380" y1="290" x2="1452" y2="290"/>
   </g>
   <g stroke="#d0d7de" stroke-width="3">
-    <line x1="270" y1="310" x2="270" y2="370"/>
-    <line x1="730" y1="310" x2="730" y2="370"/>
-    <line x1="1190" y1="310" x2="1190" y2="370"/>
-    <line x1="1650" y1="310" x2="1650" y2="370"/>
-    <line x1="270" y1="630" x2="270" y2="690"/>
-    <line x1="730" y1="630" x2="730" y2="690"/>
-    <line x1="1190" y1="630" x2="1190" y2="690"/>
-    <line x1="1650" y1="630" x2="1650" y2="690"/>
+    <line x1="270" y1="350" x2="270" y2="400"/>
+    <line x1="730" y1="350" x2="730" y2="400"/>
+    <line x1="1190" y1="350" x2="1190" y2="400"/>
+    <line x1="1650" y1="350" x2="1650" y2="400"/>
+    <line x1="270" y1="640" x2="270" y2="690"/>
+    <line x1="730" y1="640" x2="730" y2="690"/>
+    <line x1="1190" y1="640" x2="1190" y2="690"/>
+    <line x1="1650" y1="640" x2="1650" y2="690"/>
   </g>
   <g fill="#24292f" text-anchor="middle" font-size="30">
-    <rect x="80" y="370" width="380" height="260" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
-    <text x="270" y="460">What should the</text>
-    <text x="270" y="505">software do,</text>
-    <text x="270" y="550">and why?</text>
-    <rect x="540" y="370" width="380" height="260" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
-    <text x="730" y="485">How will we</text>
-    <text x="730" y="530">build it?</text>
-    <rect x="1000" y="370" width="380" height="260" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
-    <text x="1190" y="460">What are the concrete</text>
-    <text x="1190" y="505">work items, in</text>
-    <text x="1190" y="550">what order?</text>
-    <rect x="1460" y="370" width="380" height="260" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
-    <text x="1650" y="485">Does the code</text>
-    <text x="1650" y="530">match the spec?</text>
+    <rect x="80" y="400" width="380" height="240" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="270" y="480">What should the</text>
+    <text x="270" y="525">software do,</text>
+    <text x="270" y="570">and why?</text>
+    <rect x="540" y="400" width="380" height="240" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="730" y="505">How will we</text>
+    <text x="730" y="550">build it?</text>
+    <rect x="1000" y="400" width="380" height="240" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1190" y="480">What are the concrete</text>
+    <text x="1190" y="525">work items, in</text>
+    <text x="1190" y="570">what order?</text>
+    <rect x="1460" y="400" width="380" height="240" rx="18" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1650" y="505">Does the code</text>
+    <text x="1650" y="550">match the spec?</text>
   </g>
   <g fill="#24292f" text-anchor="middle" font-size="32">
     <rect x="80" y="690" width="380" height="110" rx="18" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>

@@ -6,22 +6,22 @@
   <g fill="#24292f">
     <rect x="200" y="80" width="920" height="100" rx="20" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
     <text x="240" y="141" font-size="30" font-family="Consolas, monospace">/speckit-constitution</text>
-    <text x="630" y="141" font-size="28" fill="#57606a">principles and constraints</text>
+    <text x="610" y="141" font-size="28" fill="#57606a">principles and constraints</text>
     <rect x="200" y="220" width="920" height="100" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
     <text x="240" y="281" font-size="30" font-family="Consolas, monospace">/speckit-specify</text>
-    <text x="630" y="281" font-size="28" fill="#57606a">description to <tspan font-family="Consolas, monospace">spec.md</tspan></text>
+    <text x="610" y="281" font-size="28" fill="#57606a">brief and gap list to <tspan font-family="Consolas, monospace">spec.md</tspan></text>
     <rect x="200" y="360" width="920" height="100" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
     <text x="240" y="421" font-size="30" font-family="Consolas, monospace">/speckit-plan</text>
-    <text x="630" y="421" font-size="28" fill="#57606a">spec to architectural approach</text>
+    <text x="610" y="421" font-size="28" fill="#57606a">spec and current state to design</text>
     <rect x="200" y="500" width="920" height="100" rx="20" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
     <text x="240" y="561" font-size="30" font-family="Consolas, monospace">/speckit-tasks</text>
-    <text x="630" y="561" font-size="28" fill="#57606a">plan to sequenced work items</text>
+    <text x="610" y="561" font-size="28" fill="#57606a">plan to sequenced work items</text>
     <rect x="200" y="640" width="920" height="100" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
     <text x="240" y="701" font-size="30" font-family="Consolas, monospace">/speckit-implement</text>
-    <text x="630" y="701" font-size="28" fill="#57606a">code, task by task</text>
+    <text x="610" y="701" font-size="28" fill="#57606a">code, task by task</text>
     <rect x="200" y="780" width="920" height="100" rx="20" fill="#e9f7ef" stroke="#8c959f" stroke-width="2"/>
     <text x="240" y="841" font-size="30" font-family="Consolas, monospace">/speckit-converge</text>
-    <text x="630" y="841" font-size="28" fill="#57606a">remaining work as tasks</text>
+    <text x="610" y="841" font-size="28" fill="#57606a">remaining work as tasks</text>
   </g>
   <g stroke="#57606a" stroke-width="4" marker-end="url(#a)">
     <line x1="660" y1="180" x2="660" y2="212"/>

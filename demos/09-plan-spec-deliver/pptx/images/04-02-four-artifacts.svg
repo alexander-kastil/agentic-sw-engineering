@@ -4,13 +4,25 @@
   </defs>
   <rect width="1920" height="1080" fill="#ffffff"/>
   <g fill="#24292f" text-anchor="middle">
-    <rect x="560" y="70" width="800" height="200" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
-    <text x="960" y="138" font-size="38" font-weight="600" font-family="Consolas, monospace">constitution.md</text>
-    <text x="960" y="190" font-size="30">Non-negotiable project principles</text>
-    <text x="960" y="236" font-size="26" fill="#57606a">changes rarely, once established</text>
+    <rect x="80" y="70" width="700" height="200" rx="24" fill="#f6f8fa" stroke="#8c959f" stroke-width="2" stroke-dasharray="10 6"/>
+    <text x="430" y="138" font-size="38" font-weight="600" font-family="Consolas, monospace">current-state.md</text>
+    <text x="430" y="190" font-size="30">Result of the brownfield analysis</text>
+    <text x="430" y="236" font-size="26" fill="#57606a">inventory and gap list, written once</text>
+    <rect x="1140" y="70" width="700" height="200" rx="24" fill="#f3edff" stroke="#8c959f" stroke-width="2"/>
+    <text x="1490" y="138" font-size="38" font-weight="600" font-family="Consolas, monospace">constitution.md</text>
+    <text x="1490" y="190" font-size="30">Non-negotiable project principles</text>
+    <text x="1490" y="236" font-size="26" fill="#57606a">changes rarely, once established</text>
   </g>
-  <path d="M560,170 C330,170 330,300 330,472" fill="none" stroke="#57606a" stroke-width="4" stroke-dasharray="12 8" marker-end="url(#a)"/>
-  <text x="370" y="370" font-size="30" font-weight="600" fill="#57606a">constrains</text>
+  <g stroke="#57606a" stroke-width="4" marker-end="url(#a)" fill="none">
+    <line x1="330" y1="270" x2="330" y2="472"/>
+    <line x1="640" y1="270" x2="860" y2="472"/>
+  </g>
+  <path d="M1340,270 C1340,380 1110,380 1070,472" fill="none" stroke="#57606a" stroke-width="4" stroke-dasharray="12 8" marker-end="url(#a)"/>
+  <g font-size="28" font-weight="600" fill="#57606a">
+    <text x="350" y="390">missing: a requirement</text>
+    <text x="790" y="350">exists: wiring</text>
+    <text x="1300" y="420">constrains</text>
+  </g>
   <g fill="#24292f" text-anchor="middle">
     <rect x="80" y="480" width="500" height="320" rx="24" fill="#eaf2ff" stroke="#8c959f" stroke-width="2"/>
     <text x="330" y="550" font-size="36" font-weight="600" font-family="Consolas, monospace">spec.md</text>
