@@ -1,5 +1,6 @@
 ---
 name: playwright-agent
+color: green
 description: >-
   QA and verification specialist. Uses Playwright and Chrome DevTools to take screenshots,
   run Lighthouse audits, verify layout at multiple viewports, check accessibility, and
