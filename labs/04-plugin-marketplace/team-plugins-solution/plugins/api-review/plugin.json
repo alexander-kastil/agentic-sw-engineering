@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "api-review",
+  "version": "1.1.0",
+  "description": "Reviews HTTP endpoints against the team's API guidelines.",
+  "author": {
+    "name": "Contoso Platform Team"
+  },
+  "license": "MIT",
+  "keywords": ["api", "rest", "review"]
+}

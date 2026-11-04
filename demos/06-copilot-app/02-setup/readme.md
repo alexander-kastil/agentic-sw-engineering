@@ -42,6 +42,8 @@ Customize is the single management view for plugins, skills, MCP servers, and ca
 
 Capabilities arrive in Customize from marketplaces you configure as sources, added with the settings icon next to the marketplace dropdown. The Featured sections carry ready-to-install extensions, skills, MCP servers, and canvases, so a team on Azure Boards and Repos gets the same one-click path as a team on GitHub. An MCP server can also arrive through a deep link, which opens a prefilled review form and adds nothing until you confirm it, so a teammate can share a server as a single link.
 
+To build a marketplace of your own for that list, see [Publishing Plugins through Your Own Marketplace](../../02-agentic-harness/06-plugins/02-marketplaces/readme.md).
+
 | Item | What it gives the agent | Scope |
 |---|---|---|
 | Plugins | Packaged capabilities installed from a marketplace | Personal, updated individually or in bulk |

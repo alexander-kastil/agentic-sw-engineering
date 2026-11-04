@@ -1,0 +1,14 @@
+{
+  "name": "class-plugins",
+  "owner": {
+    "name": "Alexander Kastil"
+  },
+  "plugins": [
+    {
+      "name": "demo-quality",
+      "description": "Quality gate for the demo and lab guides in this masterclass: a readme checker skill, a topic-index MCP server, a review agent, and a brand-voice hook.",
+      "version": "1.0.0",
+      "source": "./01-authoring/demo-quality-plugin"
+    }
+  ]
+}

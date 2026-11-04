@@ -46,6 +46,8 @@ Central control turns the harness from a personal setup into part of the platfor
 
 The enterprise managed settings file is the most direct form of that control. It lives at `copilot/managed-settings.json` in the `.github-private` repository of a designated organization, and the CLI, VS Code, the Copilot app, JetBrains, and the cloud agent pick up changes within about an hour. It carries permissions, the default model, plugins and marketplaces, MCP allow and deny lists, sandboxing, and the telemetry block. A managed value wins over user and workspace settings when the effective value is resolved.
 
+Building the internal marketplace such a setting allows is covered in [Publishing Plugins through Your Own Marketplace](../../02-agentic-harness/06-plugins/02-marketplaces/readme.md).
+
 ```mermaid
 flowchart TD
     A["Managed settings<br/>policy value"] --> D["Effective value"]

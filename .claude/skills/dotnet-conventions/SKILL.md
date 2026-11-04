@@ -63,7 +63,7 @@ reference. Loading several defeats the point — each leaf is short so the match
 | Design the tool surface a model calls: parameter shape, natural keys over ids, descriptions, return payloads, propose/confirm pairs | [`dotnet-mcp-tool-design`](references/dotnet-mcp-tool-design.md) |
 | Secure an MCP server: `[Authorize]` per tool, dual auth on `/mcp`, reverse-proxy `X-Forwarded-Proto` | [`dotnet-mcp-auth`](references/dotnet-mcp-auth.md) |
 | Verify a running MCP server over HTTP and log every tool call | [`dotnet-mcp-verify`](references/dotnet-mcp-verify.md) |
-| Call an Azure AI Foundry hosted or prompt-based agent (Microsoft Agent Framework) | [`dotnet-maf`](references/dotnet-maf.md) |
+| Call an Azure AI Foundry hosted or prompt-based agent (Microsoft Agent Framework) | `microsoft-agents:maf-dotnet` skill |
 | Call the app's own DB-configured AI model (`AiModel.IsDefault`) to draft customer-facing copy; normalise a provider `BaseUrl`; turn any provider failure into one safe 503 | [`dotnet-db-configured-ai-model`](references/dotnet-db-configured-ai-model.md) |
 | Set up an A2UI generative-UI endpoint (no .NET SDK; protocol-level JSON): what it is, protocol version, packages, config, registration | [`dotnet-a2ui`](references/dotnet-a2ui.md) |
 | Define or validate the C# message types that cross the A2UI wire | [`dotnet-a2ui-messages`](references/dotnet-a2ui-messages.md) |

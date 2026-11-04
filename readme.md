@@ -1,4 +1,4 @@
-# Master Class: Agentic Software Engineering using GitHub Copilot
+# Master Class: Agentic Software Engineering with GitHub Copilot
 
 Companion Material for Class Delivery by [Alexander Kastil](https://www.integrations.at/kontakt-impressum.aspx)
 

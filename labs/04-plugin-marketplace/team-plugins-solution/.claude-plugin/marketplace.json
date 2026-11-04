@@ -1,0 +1,20 @@
+{
+  "name": "team-plugins",
+  "owner": {
+    "name": "Contoso Platform Team"
+  },
+  "plugins": [
+    {
+      "name": "commit-conventions",
+      "description": "Writes a Conventional Commits message for the staged changes.",
+      "version": "1.0.0",
+      "source": "./plugins/commit-conventions"
+    },
+    {
+      "name": "api-review",
+      "description": "Reviews HTTP endpoints against the team's API guidelines.",
+      "version": "1.1.0",
+      "source": "./plugins/api-review"
+    }
+  ]
+}

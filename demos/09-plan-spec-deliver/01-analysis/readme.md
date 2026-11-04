@@ -76,7 +76,7 @@ The gap list is what the next topic plans against. A capability marked as existi
 
 ## Hands-On
 
-- Lab: [Lab 09.1: Harvest the Current State of Vacancy Tracking](../../../labs/09-plan-spec-deliver/01-analyze/readme.md) runs four subagents over a process log, a vacancies workbook, the HR MCP server's database and its code, writes a current-state document with a gap list, and checks it against the sources.
+- Lab: [Lab 10.1: Harvest the Current State of Vacancy Tracking](../../../labs/10-plan-spec-deliver/01-analyze/readme.md) runs four subagents over a process log, a vacancies workbook, the HR MCP server's database and its code, writes a current-state document with a gap list, and checks it against the sources.
 
 ## Links & Resources
 

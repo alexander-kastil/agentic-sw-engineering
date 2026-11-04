@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## 2026-11-04
+
+### Added
+
+- Plugin marketplaces subtopic in the class: I sent the team lead a reply
+
+## 2026-10-30
+
+- The Claude `dotnet-conventions` copy drops its `dotnet-maf` index in favour of the `microsoft-agents:maf-dotnet` skill; the GitHub Copilot copy in `.github` keeps it.
+
+## [Unreleased]
+
+### Added
+
+- Marketplace for the plugins demo (`demos/02-agentic-harness/06-plugins`), so the class can add the demo plugins from a local marketplace.
+- Lab 04 on the plugin marketplace, with a team-plugins solution
+
+### Changed
+
+- Git ignores the time ledger (`.time/`), personal Claude settings and the scheduler lock, and no longer tracks the ledger.
+- The labs after the new Lab 04 are renumbered
+
 ## 17.3.0 (2024-01-24)
 
 

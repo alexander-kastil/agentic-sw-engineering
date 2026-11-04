@@ -24,7 +24,7 @@ Every example in this topic and the next comes from the lab you run at the end o
 
 The feature is deliberately small. A feature you can hold in your head is the only kind where you can see what the process added, rather than attributing the result to the size of the problem.
 
-You start from two files that already exist in [labs/09-plan-spec-deliver/02-plan-spec-deliver](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/): [requirements.md](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/requirements.md), a feature brief written the way a product owner writes one, and [constitution.md](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/constitution.md), six project principles. Neither names a class, a file layout or a data type; the agent generates everything downstream and you review it.
+You start from two files that already exist in [labs/10-plan-spec-deliver/02-plan-spec-deliver](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/): [requirements.md](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/requirements.md), a feature brief written the way a product owner writes one, and [constitution.md](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/constitution.md), six project principles. Neither names a class, a file layout or a data type; the agent generates everything downstream and you review it.
 
 ```mermaid
 flowchart TD
@@ -59,7 +59,7 @@ It is deliberately not a design. A spec that names a class, a file, a library, o
 | Invalid input names the offending field | `calculate` raises `InvalidInputError` carrying a `field` attribute |
 | The calculation is usable without the command line | Two modules, `calculator` and `cli`, and `cli` imports `calculator` |
 
-The rows are taken from the lab's [reference solution](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/readme.md). The left column survives a switch from Python to Node unchanged; the right column is rewritten entirely.
+The rows are taken from the lab's [reference solution](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/meeting-cost-solution/readme.md). The left column survives a switch from Python to Node unchanged; the right column is rewritten entirely.
 
 ## The four phases
 
@@ -144,7 +144,7 @@ Every command on this page was executed against Spec Kit 1.0.9, and the output i
 ## Hands-On
 
 - Demo: [spec-kit-cli-solution/](./spec-kit-cli-solution/readme.md) records the install, `specify init`, and the command names it registers, so you can tell a broken install from a changed tool.
-- Lab: [Lab 09.2, steps 1 and 2](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md#step-1-initialize-the-project-8-minutes) install Spec Kit, initialize the `meeting-cost` project, and turn six principles into its constitution.
+- Lab: [Lab 10.2, steps 1 and 2](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/readme.md#step-1-initialize-the-project-8-minutes) install Spec Kit, initialize the `meeting-cost` project, and turn six principles into its constitution.
 
 ## Links & Resources
 

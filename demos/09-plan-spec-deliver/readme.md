@@ -46,7 +46,7 @@ Spec Kit registers its commands as agent skills under `.github/skills/` in the g
 - [Why Spec-Driven Development](./03-introduction/)
 - [The Spec-Driven Workflow](./04-spec-driven-workflow/)
 - [Sample Case: Implement a Product Feature](./05-sample-case/)
-- [Lab 09.1: Harvest the current state of vacancy tracking](../../labs/09-plan-spec-deliver/01-analyze/readme.md)
-- [Lab 09.2: Ship a feature with GitHub Spec Kit](../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md)
+- [Lab 10.1: Harvest the current state of vacancy tracking](../../labs/10-plan-spec-deliver/01-analyze/readme.md)
+- [Lab 10.2: Ship a feature with GitHub Spec Kit](../../labs/10-plan-spec-deliver/02-plan-spec-deliver/readme.md)
 - [GitHub Spec Kit](https://github.com/github/spec-kit) - the toolkit repository and the agents it supports
 - [Spec Kit documentation](https://github.github.io/spec-kit/) - the method and what each artifact must contain

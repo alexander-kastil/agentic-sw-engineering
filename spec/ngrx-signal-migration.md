@@ -179,5 +179,5 @@ Phased so the app compiles after each step.
 - **The `debug` metaReducer telemetry is silently dropped** — it is already disabled (`features.logging: false`). Flag before removal if action-level AI logging was ever enabled in a deployed slot.
 - **`AuthInterceptor` is dead code** and can be deleted regardless of the auth decision.
 - **`ChangeDetectionStrategy.Eager`** is used on every component; converting to `OnPush` is a natural companion to signal binding but is out of scope for this NgRx migration (separate, optional follow-up).
-- **`labs/07-copilot-app/copilot-app-solution/src/food-app/food-shop/`** is a duplicate copy of this app. It is out of scope here; leave it unless separately requested.
+- **`labs/08-copilot-app/copilot-app-solution/src/food-app/food-shop/`** is a duplicate copy of this app. It is out of scope here; leave it unless separately requested.
 - **jsdom `matchMedia`** — once `withSidenav` runs `withHooks(onInit)` with `window.matchMedia`, add a guarded `matchMedia` polyfill to the test setup, mirroring the signal-store-design note.

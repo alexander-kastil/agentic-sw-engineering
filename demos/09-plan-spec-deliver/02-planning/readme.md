@@ -100,7 +100,7 @@ The endpoint takes the child's database id, not its issue number, which is the o
 ## Hands-On
 
 - Demo: [Plan the Vacancies Feature and File It as Issues](./demo-plan-vacancies.md) researches the HR MCP server with three subagents and a shared ledger, writes the plan, and files it as a parent issue with sub-issues.
-- Lab: [Lab 09.2](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md) takes planning one step further, turning a brief into a checked spec, plan and task list.
+- Lab: [Lab 10.2](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/readme.md) takes planning one step further, turning a brief into a checked spec, plan and task list.
 
 ## Links & Resources
 

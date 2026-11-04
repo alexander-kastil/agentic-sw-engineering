@@ -96,12 +96,12 @@ None of these is hard to implement. Each is a sentence in a Markdown file, writt
 
 ## Running the lab
 
-The lab applies the same four checkpoints to the meeting cost calculator from the two spec-driven topics. It lives in [labs/09-plan-spec-deliver/02-plan-spec-deliver](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/), takes about 45 minutes, and needs GitHub Copilot in VS Code plus the Spec Kit CLI. The lab's own verification (its totals, the float check and its test output) is recorded in [sample-case-solution/](./sample-case-solution/readme.md).
+The lab applies the same four checkpoints to the meeting cost calculator from the two spec-driven topics. It lives in [labs/10-plan-spec-deliver/02-plan-spec-deliver](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/), takes about 45 minutes, and needs GitHub Copilot in VS Code plus the Spec Kit CLI. The lab's own verification (its totals, the float check and its test output) is recorded in [sample-case-solution/](./sample-case-solution/readme.md).
 
 ## Hands-On
 
 - Demo: [leave-days-solution/](./leave-days-solution/readme.md) holds this case's brief, constitution, spec, plan, tasks, code and executed output.
-- Lab: [Lab 09.2: Ship a feature with GitHub Spec Kit](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme.md), or the fixed-stack [Python variant](../../../labs/09-plan-spec-deliver/02-plan-spec-deliver/readme-py.md).
+- Lab: [Lab 10.2: Ship a feature with GitHub Spec Kit](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/readme.md), or the fixed-stack [Python variant](../../../labs/10-plan-spec-deliver/02-plan-spec-deliver/readme-py.md).
 
 ## Links & Resources
 

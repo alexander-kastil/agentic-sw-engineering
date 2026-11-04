@@ -15,4 +15,4 @@ Agents are specialized AI personas configured with specific tools, instructions,
 - [VS Code Custom Agents Documentation](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
 - [Third-party agents in Visual Studio Code](https://code.visualstudio.com/docs/copilot/agents/third-party-agents)
 
-[← Previous: Reusable Domain Knowledge with Skills](../04-skills/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: Distributing Capabilities with Plugins →](../06-plugins/readme.md)
+[← Previous: Reusable Domain Knowledge with Skills](../04-skills/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: Agent Plugins →](../06-plugins/readme.md)

@@ -58,4 +58,4 @@ Use: Code generation and refactoring automatically apply camelCase naming to new
 - [GitHub Copilot Memory Concepts](https://docs.github.com/en/copilot/concepts/agents/copilot-memory)
 - [Enabling and Curating Copilot Memory](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/copilot-memory)
 
-[← Previous: Distributing Capabilities with Plugins](../06-plugins/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: GitHub Copilot Hooks →](../08-hooks/readme.md)
+[← Previous: Agent Plugins](../06-plugins/readme.md) | [Back to Agentic Harness](../readme.md) | [Next: GitHub Copilot Hooks →](../08-hooks/readme.md)

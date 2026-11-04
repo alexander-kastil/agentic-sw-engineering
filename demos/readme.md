@@ -1,4 +1,4 @@
-# Agentic Software Engineering using GitHub Copilot
+# Agentic Software Engineering with GitHub Copilot
 
 A four-day journey into agentic software engineering with GitHub Copilot, and how AI-powered tools change coding productivity and architectural decisions. Software engineers, architects, and technical leaders get hands-on experience, with samples in C# and Python and sometimes other stacks.
 
@@ -6,7 +6,7 @@ Your journey starts with the fundamentals: prompting, inline suggestions, code r
 
 Next you assemble the GitHub Copilot Harness. Instructions and prompt files come first, then the Model Context Protocol, from the MCP Registry to your own servers and MCP Apps. Skills, custom agents, memory, and hooks follow, and Agent Plugins 1.0 packs them into one install.
 
-In Implementing Agentic Coding you put agents to work. A local agent runs in Agent Mode, heavy jobs go to cloud agents, and an orchestrator runs expert subagents in parallel. Browser tools let an agent check its own web changes, a migration to the Microsoft Agent Framework shows an agent modernizing real code, and `/research` and `/rubber-duck` add cited research and a second opinion.
+In Implementing Agentic Coding you put agents to work. A local agent runs in Agent Mode, heavy jobs go to cloud agents, and an orchestrator runs expert subagents in parallel. Browser tools let an agent check its own web changes, a migration to the Microsoft Agent Framework shows an agent modernizing real code.
 
 Agent Sessions covers the machinery under those runs. You work across projects in the Agents window, see how the Agent Host Protocol keeps session state on a long-lived host, and drive remote sessions over SSH and dev tunnels. Groups, background sends, and one-click banners keep many sessions moving at once.
 
@@ -60,6 +60,8 @@ The course closes with Plan, Specify, Deliver. An agent harvests the current sta
   - [Agents Overview](02-agentic-harness/05-agents/01-agents-overview/)
   - [Repository Agents](02-agentic-harness/05-agents/02-repo-agents/)
 - [Agent Plugins](02-agentic-harness/06-plugins/)
+  - [Authoring Agent Plugins](02-agentic-harness/06-plugins/01-authoring/)
+  - [Publishing Plugins through Your Own Marketplace](02-agentic-harness/06-plugins/02-marketplaces/)
 - [Copilot Memory](02-agentic-harness/07-memory/)
 - [GitHub Copilot Hooks](02-agentic-harness/08-hooks/)
 - [Agent Interop](02-agentic-harness/09-agent-interop/)
@@ -102,8 +104,8 @@ The course closes with Plan, Specify, Deliver. An agent harvests the current sta
 - [My Work: Picking Up the Day](06-copilot-app/03-my-work/)
 - [Sessions from Issues, Prompts & Pull Requests](06-copilot-app/04-sessions/)
 - [The Validation Loop](06-copilot-app/05-validation-loop/)
-- [Automations: Creating Them in the UI](06-copilot-app/06-automations/)
-- [Automations: Running & Maintaining Them](06-copilot-app/07-automation-runs/)
+- [Planning & Creating Automations](06-copilot-app/06-automations/)
+- [Running & Maintaining Automations](06-copilot-app/07-automation-runs/)
 
 ## [Module 7: Agentic DevOps](./07-agentic-devops/)
 
@@ -164,13 +166,13 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 
 | Time        |  Dur. | Type  | Content                                                                                                                         |
 | ----------- | ----: | ----- | ------------------------------------------------------------------------------------------------------------------------------- |
-| 09:00-10:30 |  1.5h | Lab   | [Lab 03: Copilot instructions & custom agents](../labs/03-harness/)                                                             |
+| 09:00-10:30 |  1.5h | Lab   | [Lab 03: Copilot instructions & custom agents](../labs/03-harness/) · [Lab 04: Publish a team plugin marketplace](../labs/04-plugin-marketplace/)                                                             |
 | 10:30-10:45 | 0.25h | Break |                                                                                                                                 |
 | 10:45-12:45 |  2.0h | Demos | [M3](03-agentic-coding/) Local Agents & Agent Mode · Delegating Tasks to Cloud Agents · Multi-Agent Orchestration with Subagents |
 | 12:45-13:30 | 0.75h | Lunch |                                                                                                                                 |
 | 13:30-14:30 |  1.0h | Demos | [M3](03-agentic-coding/) Agentic Browser Automation · Upgrading & Modernization                                                  |
 | 14:30-14:45 | 0.25h | Break |                                                                                                                                 |
-| 14:45-15:45 |  1.0h | Lab   | [Lab 04: Orchestrate a multi-agent build with one prompt](../labs/04-orchestration/)                                            |
+| 14:45-15:45 |  1.0h | Lab   | [Lab 05: Orchestrate a multi-agent build with one prompt](../labs/05-orchestration/)                                            |
 | 15:45-17:15 |  1.5h | Demos | [M4](04-agent-sessions/) The Agents Window · Agent Host Protocol (AHP vs ACP) · Remote Agent Sessions over SSH & Dev Tunnels     |
 
 ### Day 3: CLI, SDK and the Copilot App
@@ -178,14 +180,14 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 | Time        |  Dur. | Type  | Content                                                                                                                                                                         |
 | ----------- | ----: | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 09:00-09:30 |  0.5h | Demos | [M4](04-agent-sessions/) Managing Sessions in the Agents Window              |
-| 09:30-10:30 |  1.0h | Lab   | [Lab 05: Run two isolated agent sessions](../labs/05-agent-sessions/)                                                                                                            |
+| 09:30-10:30 |  1.0h | Lab   | [Lab 06: Run two isolated agent sessions](../labs/06-agent-sessions/)                                                                                                            |
 | 10:30-10:45 | 0.25h | Break |                                                                                                                                                                                 |
 | 10:45-12:45 |  2.0h | Demos | [M5](05-cli-sdk/) CLI · HR Automation Business Case · Agentic Workflows · MCP Servers & Skills · Codebase Q&A · SDK · SDK Demos · MCP Apps · Deploy to Azure · Multi-Agent System |
 | 12:45-13:30 | 0.75h | Lunch |                                                                                                                                                                                 |
-| 13:30-14:30 |  1.0h | Lab   | [Lab 06: Integrate an AI agent using the Copilot SDK](../labs/06-copilot-sdk/)                                                                                                   |
+| 13:30-14:30 |  1.0h | Lab   | [Lab 07: Integrate an AI agent using the Copilot SDK](../labs/07-copilot-sdk/)                                                                                                   |
 | 14:30-14:45 | 0.25h | Break |                                                                                                                                                                                 |
 | 14:45-16:15 |  1.5h | Demos | [M6](06-copilot-app/) Desktop Agents App · Workspace Setup · My Work · Sessions · Validation Loop · Creating Automations · Running Automations             |
-| 16:15-17:15 |  1.0h | Lab   | [Lab 07: Ship a verified pull request from the desktop app](../labs/07-copilot-app/)                                                                                             |
+| 16:15-17:15 |  1.0h | Lab   | [Lab 08: Ship a verified pull request from the desktop app](../labs/08-copilot-app/)                                                                                             |
 
 ### Day 4: DevOps, Governance and Spec-Driven Delivery
 
@@ -194,11 +196,11 @@ Each day runs 09:00 to 17:15 with a 15-minute morning break, a 45-minute lunch, 
 | 09:00-10:30 |  1.5h | Demos | [M7](07-agentic-devops/) IaC & Configuration (Azure CLI, SSH, Bicep & Terraform) · CI/CD with GitHub Actions                                                                |
 | 10:30-10:45 | 0.25h | Break |                                                                                                                                                                            |
 | 10:45-11:15 |  0.5h | Demos | [M7](07-agentic-devops/) Testing using Copilot · Documentation using Copilot                                                                                                |
-| 11:15-12:15 |  1.0h | Lab   | [Lab 08: Resolve GitHub issues using Copilot](../labs/08-devops/)                                                                                                           |
+| 11:15-12:15 |  1.0h | Lab   | [Lab 09: Resolve GitHub issues using Copilot](../labs/09-devops/)                                                                                                           |
 | 12:15-13:00 | 0.75h | Lunch |                                                                                                                                                                            |
 | 13:00-14:30 |  1.5h | Demos | [M8](08-governance/) Permission Model · Cost & Bring Your Own Key · Enterprise Control · Observability with OpenTelemetry · EU AI Act, GDPR & Accessibility     |
 | 14:30-14:45 | 0.25h | Break |                                                                                                                                                                            |
 | 14:45-16:15 |  1.5h | Demos | [M9](09-plan-spec-deliver/) Brownfield Analysis · Planning with Agents · Why Spec-Driven Development · The Spec-Driven Workflow · Sample Case: Implement a Product Feature                          |
-| 16:15-17:15 |  1.0h | Lab   | [Lab 09: Harvest the current state · Ship a feature with GitHub Spec Kit](../labs/09-plan-spec-deliver/)                                                                     |
+| 16:15-17:15 |  1.0h | Lab   | [Lab 10: Harvest the current state · Ship a feature with GitHub Spec Kit](../labs/10-plan-spec-deliver/)                                                                     |
 
-> Labs live in [`labs/`](../labs/) and run at the point in the schedule shown above. The lowest-risk first lab is the read-only `/research` session in Lab 05; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.
+> Labs live in [`labs/`](../labs/) and run at the point in the schedule shown above. The lowest-risk first lab is the read-only `/research` session in Lab 06; labs that write to a repository state the permission level they require, and all labs assume Autopilot is the default permission level.

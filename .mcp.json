@@ -90,6 +90,13 @@
 				"--timeout=120000",
 				"--maxChars=none"
 			]
+		},
+		"worktime-mcp": {
+			"type": "http",
+			"url": "https://worktime-mcp.integrations.at/mcp",
+			"headers": {
+				"X-API-Key": "${WORKTIME_MCP_KEY}"
+			}
 		}
 	},
 	"inputs": []

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "commit-conventions",
+  "version": "1.0.0",
+  "description": "Writes a Conventional Commits message for the staged changes.",
+  "author": {
+    "name": "Contoso Platform Team"
+  },
+  "license": "MIT",
+  "keywords": ["git", "commits", "conventional-commits"]
+}

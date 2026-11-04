@@ -1,0 +1,18 @@
+{
+  "name": "class-plugins",
+  "owner": {
+    "name": "Alexander Kastil"
+  },
+  "metadata": {
+    "description": "Plugins built in the Agentic Software Engineering with GitHub Copilot class",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "demo-quality",
+      "description": "Quality gate for the demo and lab guides in this masterclass: a readme checker skill, a topic-index MCP server, a review agent, and a brand-voice hook.",
+      "version": "1.0.0",
+      "source": "./01-authoring/demo-quality-plugin"
+    }
+  ]
+}

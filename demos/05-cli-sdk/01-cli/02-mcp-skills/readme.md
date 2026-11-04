@@ -103,6 +103,8 @@ copilot plugin marketplace browse awesome-copilot
 
 Expected result: `marketplace list` shows `copilot-plugins` and `awesome-copilot` under `Included with GitHub Copilot`, and `browse` prints that marketplace's catalog. `browse` shells out to `git`, so it fails with `Failed to spawn git: Access is denied` when endpoint protection blocks the CLI from starting child processes; trust the Copilot CLI executable in your security product rather than working around the error.
 
+To publish a marketplace of your own, see [Publishing Plugins through Your Own Marketplace](../../../02-agentic-harness/06-plugins/02-marketplaces/readme.md).
+
 ### Step 7: Clean up
 
 ```bash

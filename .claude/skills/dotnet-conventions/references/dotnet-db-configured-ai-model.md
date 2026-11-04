@@ -2,7 +2,7 @@
 
 Reference for endpoints that call an OpenAI-compatible chat-completions API whose provider, key and
 parameters are **rows in the application's own database**, not `appsettings.json`, and that use the
-completion to draft text a human will send to a real customer. This differs from `dotnet-maf.md`
+completion to draft text a human will send to a real customer. This differs from the `microsoft-agents:maf-dotnet` skill
 (Azure AI Foundry agents): here the model is one of several customer-managed OpenAI-compatible
 providers (DeepSeek, DeepInfra, ...) selected at runtime from an `AiModel` table that an admin
 maintains through the app's own UI.

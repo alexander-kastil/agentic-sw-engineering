@@ -12,8 +12,8 @@ __pycache__/
 # .NET
 bin/
 obj/
-# Spec Kit lab scratch project (labs/09-plan-spec-deliver/02-plan-spec-deliver)
-labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost/
+# Spec Kit lab scratch project (labs/10-plan-spec-deliver/02-plan-spec-deliver)
+labs/10-plan-spec-deliver/02-plan-spec-deliver/meeting-cost/
 
 # Secrets
 .env
@@ -24,3 +24,8 @@ labs/09-plan-spec-deliver/02-plan-spec-deliver/meeting-cost/
 *.p12
 
 **/pptx/
+
+# Claude Code session files: time ledger, personal settings, scheduler lock
+.time/
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
