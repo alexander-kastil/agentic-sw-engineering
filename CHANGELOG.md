@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. See [commit
 ### Added
 
 - Plugin marketplaces subtopic in the class: I sent the team lead a reply
+- Update .claude, .gitignore, .mcp.json
 
 ## 2026-10-30
 
