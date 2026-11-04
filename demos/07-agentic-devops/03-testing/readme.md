@@ -20,8 +20,9 @@ flowchart LR
 
 | Sample | What it provides |
 |--------|------------------|
-| [`src/angular/angular-devops`](../../../src/angular/angular-devops/) | Angular 22 on Vitest and jsdom, with Playwright configured against `http://localhost:4200`. Both layers are wired and both have a worked example. |
-| [`src/react/react-devops`](../../../src/react/react-devops/) | React 19 on Vitest with Testing Library, and the same Playwright setup against a Vite preview on port 4173. |
+| [`src/devops-app/devops-ng`](../../../src/devops-app/devops-ng/) | Angular 22 on Vitest and jsdom, with Playwright configured against `http://localhost:4200`. Both layers are wired and both have a worked example. |
+| [`src/devops-app/devops-react`](../../../src/devops-app/devops-react/) | React 19 on Vitest with Testing Library, and the same Playwright setup against a Vite preview on port 4173. |
+| [`src/devops-app/devops-py`](../../../src/devops-app/devops-py/) | The same app in Python: FastAPI with Jinja2 pages, pytest unit tests, and Python Playwright end-to-end tests against port 4300, run in CI by `.github/workflows/devops-py-ci.yml`. |
 | [`food-app`](./food-app/) | The polyglot catalog: four backends (C#, Java, Python, TypeScript) and two frontends. The C# catalog API carries a generated xUnit suite in [`catalog-service-cs/tests`](./food-app/catalog-api/catalog-service-cs/tests/); the others ship without tests on purpose, so generating them is the exercise. |
 | [`evals-copilot-sdk-cs`](./evals-copilot-sdk-cs/) | A menu chat assistant grounded in the catalog, running on the GitHub Copilot SDK, plus an xUnit evaluation suite that catches unexpected answers after a model change. |
 | [`evals-copilot-sdk-py`](./evals-copilot-sdk-py/) | The same assistant and the same five golden questions in Python, on pytest. |
@@ -120,7 +121,7 @@ await fixture.whenStable();
 Run them:
 
 ```bash
-cd src/angular/angular-devops
+cd src/devops-app/devops-ng
 npm install
 npm test
 ```
@@ -128,7 +129,7 @@ npm test
 The React sample has a Vitest config and `src/App.test.tsx` but no `test` script, so it runs through the binary directly:
 
 ```bash
-cd src/react/react-devops
+cd src/devops-app/devops-react
 npm install
 npx vitest run
 ```
@@ -176,11 +177,13 @@ test('increments count on button click', async ({ page }) => {
 Run them, then open the trace when one fails:
 
 ```bash
-cd src/angular/angular-devops
+cd src/devops-app/devops-ng
 npx playwright install chromium
 npm run e2e
 npm run e2e:report
 ```
+
+> Note: The React stack of the same app in `src/devops-app/devops-react` runs the same suite with `npm run test:e2e` and `npm run test:e2e:report`, against the Vite preview on port 4173.
 
 The React sample uses `npm run test:e2e` for the same thing, against the Vite preview on port 4173.
 
@@ -312,7 +315,7 @@ Wire the same command into the pipeline from [CI/CD with GitHub Actions](../02-c
 1. Open `food-app/catalog-api/catalog-service-cs/api` and walk through the four controllers the suite has to cover.
 2. In agent mode, paste the xUnit prompt from [.NET with xUnit](#net-with-xunit) and let the agent create, run, and fix the suite.
 3. Point at the two API fixes in the diff (`FoodController.DeleteFood`, `OrdersController.CreateOrder`) as defects the tests found, then run `dotnet test tests`.
-4. Switch to `src/angular/angular-devops`, generate unit tests with the Vitest prompt, and run `npm test`.
+4. Switch to `src/devops-app/devops-ng`, generate unit tests with the Vitest prompt, and run `npm test`. For the React stack, use `src/devops-app/devops-react` and `npx vitest run`.
 5. Translate `src/app/app.spec.ts` into Playwright with the end-to-end prompt, and run `npm run e2e`.
 6. Open `evals-copilot-sdk-cs`, ask the assistant a question with `dotnet run --project menu-chat -- "Do you have sushi?"`, then run `dotnet test` on the baseline model.
 7. Set `CHAT_MODEL` to another model, run `dotnet test` again, and read which golden questions flipped.

@@ -1,7 +1,7 @@
 # Remote Agent Sessions over SSH & Dev Tunnels
 
 
-Remote agent sessions run over SSH and dev tunnels so an agent executes in a consistent, cloud-backed environment rather than on your local machine. This is the reproducible-environment story that replaces GitHub Codespaces and Dev Containers in this course. You get isolation and consistent tooling without maintaining a local container setup, and the agent runs against the toolchain that lives on the remote host.
+Remote agent sessions run over SSH and dev tunnels so an agent executes in a consistent, cloud-backed environment away from your local machine. This is the reproducible-environment story of this course, and a session can also run inside a folder's Dev Container. You get isolation and consistent tooling without maintaining a local container setup, and the agent runs against the toolchain that lives on the remote host.
 
 Two transports carry the session. SSH connects the agent to a machine you already reach that way, such as a build server or a cloud VM, so the agent inherits that host's runtimes and credentials. Dev tunnels connect through a secure tunnel without you opening inbound firewall ports, which suits machines behind NAT or a corporate network. In both cases the agent's work happens on the remote side, and your editor is the control surface.
 
@@ -24,7 +24,7 @@ flowchart LR
     R --> W["Consistent toolchain<br/>and workspace"]
 ```
 
-> Note: Remote agent sessions replace the Codespaces and Dev Container workflow used earlier in this course. If you have existing container definitions, treat the remote host as the equivalent reproducible target rather than re-creating the container locally.
+> Note: Remote agent sessions and Dev Container sessions work together. If you have existing container definitions, a session can run inside the folder's Dev Container, as described in the Dev Container sessions section below.
 
 ## Prerequisites
 
@@ -44,6 +44,29 @@ Host raspi-4
 - `python3` on the remote host, which Raspberry Pi OS ships by default
 - A free port on the host for the demo server, `8000` below
 - Optional: `chat.agentHost.forwardSSHAgent` if the session needs to reach your Git remotes from the remote host
+
+## Dev Container Sessions and Remote Browsing
+
+Since VS Code 1.138, a session can run inside a folder's Dev Container, so the agent uses the project's configured tools and dependencies. This closes the gap between "works on my machine" and "works for the agent". The container definition you already keep for the project becomes the environment the agent works in.
+
+A teammate who opens the same folder gets the same tools and dependencies, so the agent's results are comparable from one machine to the next. Reach for it whenever the project documents a setup that a plain host would not match.
+
+You turn it on with the setting `chat.agentHost.devContainer.enabled`, which applies to the Agents window only and is rolling out gradually, so it may not be available to every account yet. Then select **Use Dev Container** from the folder menu. Docker must be installed: on the local machine for local folders, and on the remote host for SSH, Tunnel and WSL hosts.
+
+| Where the folder lives | Docker required on | Since |
+|---|---|---|
+| Local folder | Your machine | VS Code 1.138 |
+| SSH host | The remote host | VS Code 1.139 |
+| Tunnel host | The remote host | VS Code 1.139 |
+| WSL distribution | The remote host | VS Code 1.139 |
+
+Remote work raises a second question: how do you look at what the agent built? Since VS Code 1.145 (Preview), the setting `workbench.browser.enableRemoteProxy` makes the integrated browser in the Agents window load pages through the remote agent host. A dev server the agent starts on the remote machine then opens in the Agents window, where you can preview it and give feedback in the same place.
+
+Canvases follow the same rule. When `chat.canvases.enabled` is also on, canvases hosted on a remote agent host work as well, so a board or a preview that lives on the Pi or the build server appears beside your chat.
+
+Pick the pieces by need. Use a Dev Container session when the project defines its toolchain, SSH or a tunnel when the target machine has the resources, and the remote browser when you want to see a running result.
+
+Two limits are worth remembering. Dev Container sessions are an Agents window feature, the remote browser is a Preview, and the Compare Models feature is not supported in Dev Containers.
 
 ## Demo
 

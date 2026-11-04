@@ -14,7 +14,7 @@ The permission level answers one question: when does the agent act on its own, a
 | Bypass Approvals | `autoApprove` | Runs every tool call without asking and retries on errors |
 | Autopilot (Preview) | `autopilot` | Auto-approves every tool call and keeps going until the task is done |
 
-Assisted permissions appears in the picker only when `chat.assistedPermissions.enabled` is on, and that setting is experimental and off in stable builds. In the Agents window the level is also switchable mid-session with `/autopilot`, which sets permissions to autopilot mode, and `/yolo`, which sets permissions to bypass approvals.
+Assisted permissions is generally available for Copilot sessions since VS Code 1.144: select it in the permissions picker. It requires Folder isolation, and your organization can restrict it. In the Agents window the level is also switchable mid-session with `/autopilot`, which sets permissions to autopilot mode, and `/yolo`, which sets permissions to bypass approvals.
 
 ## Governing settings
 
@@ -48,9 +48,9 @@ flowchart TD
 
 ## Assisted permissions
 
-A risk badge rates a command in isolation. Assisted permissions adds a judge that evaluates each tool call in its actual context and auto-approves the ones it is confident about, which cuts approval interruptions during a long agent task. Tools the judge does not approve still stop and wait for you, so it narrows the prompts rather than removing them.
+A risk badge rates a command in isolation. Assisted permissions adds a judge that evaluates each tool call in its actual context and auto-approves the ones it is confident about, which cuts approval interruptions during a long agent task. Tools the judge does not approve still stop and wait for you, so it narrows the prompts and keeps the ones that matter.
 
-Judge it the way you judge Bypass Approvals rather than as a pure convenience. It widens what runs unattended, so turn it on deliberately and review what it let through before you roll it out across a team.
+Judge it the way you judge Bypass Approvals: it is a widening of autonomy. It widens what runs unattended, so turn it on deliberately and review what it let through before you roll it out across a team.
 
 ## Sandboxing and sensitive-prompt interception
 
@@ -58,9 +58,9 @@ Terminal sandboxing narrows what an approved command can reach by running it und
 
 Agent Host sessions that use the Copilot SDK's built-in shell tool are sandboxed by a second pair, `chat.agentHost.sdkSandbox.enabled` and `chat.agentHost.sdkSandbox.enabledWindows`, and those apply only while `chat.agentHost.customTerminalTool.enabled` is `false`. The permissions picker also carries a per-session Sandboxing for terminal toggle, shown when `chat.experimental.permissionsSandboxToggle.enabled` is on.
 
-Sensitive-prompt interception is the second guard. When a terminal command prompts for a password or another secret, the agent cancels it rather than letting auto-approval or autopilot answer, and tells you to run it interactively instead.
+Sensitive-prompt interception is the second guard. When a terminal command prompts for a password or another secret, the agent cancels it so that auto-approval and autopilot never answer it, and tells you to run it interactively.
 
-> Note: Read the sandbox as three settings, not one. Turning `chat.agent.sandbox.enabled` to `on` while leaving `allowNetwork` and `allowUnsandboxedCommands` at their defaults gives you filesystem confinement and nothing else.
+> Note: Read the sandbox as three settings that work together. Turning `chat.agent.sandbox.enabled` to `on` while leaving `allowNetwork` and `allowUnsandboxedCommands` at their defaults gives you filesystem confinement and nothing else.
 
 ## Demo
 
@@ -73,7 +73,7 @@ Set and observe the permission model in a trusted workspace.
 5. Open the permissions picker in the chat input and switch the session to Autopilot (Preview). Repeat steps 3 and 4 and note which approvals disappeared.
 6. Search settings for `chat.tools.global.autoApprove`, read its description in full, and leave it off.
 7. Set `chat.agent.sandbox.enabledWindows` to `on`, then inspect `chat.agent.sandbox.allowNetwork` and `chat.agent.sandbox.allowUnsandboxedCommands` and decide whether your threat model tolerates their defaults.
-8. Ask the agent to run a command that prompts for a password, and confirm it cancels the command instead of answering the prompt.
+8. Ask the agent to run a command that prompts for a password, and confirm it cancels the command and leaves the prompt unanswered.
 
 ## Links & Resources
 

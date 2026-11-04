@@ -95,6 +95,22 @@ flowchart LR
 
 VS Code stores the marketplaces you add in the `chat.plugins.marketplaces` user setting. It accepts the same `owner/repo` shorthand, a Git URL, or a `file:///` URI for a folder on disk, and it asks you to trust the source before the first install, because a plugin can run code on your machine.
 
+## Browse: The Customizations Home Page
+
+A marketplace only helps when people can see what it offers. Since VS Code 1.144, **Browse** is the home page for Customizations, available as a Preview. It combines the GitHub Feed with the plugins from the marketplaces you or your enterprise configured, so one page answers "what can I add to my agent?"
+
+Open it by selecting **Browse** in the Customizations editor or by running **Chat: Open Customizations** from the Command Palette. The page is organized in three sections: **Editor's picks**, **Plan, build, and ship** and **Connect your work**. A search box finds a customization by name, and you can filter by source or by type.
+
+A README or a team guide can link straight to Browse, optionally with a search term, for example Browse filtered to MCP servers. A new colleague then lands directly on the right list. Every marketplace you register, such as the `class-plugins` catalog of this topic, shows up as a source in the same page.
+
+| Aspect | What to know |
+| ------ | ------------ |
+| Content | GitHub Feed plus plugins from configured marketplaces |
+| Sections | **Editor's picks**, **Plan, build, and ship**, **Connect your work** |
+| Narrowing | Search, and filter by source or type |
+| GitHub Feed | Requires a supported harness; not available in Local sessions |
+| Business and Enterprise | An administrator must enable Editor preview features |
+
 ## Demo: Publish demo-quality through the Class Marketplace
 
 The catalog already ships in [`06-plugins/`](../), so this demo registers it, installs from it and watches what each surface does. Run the commands from the root of your clone of this repository.
@@ -172,6 +188,18 @@ Expected: **Browse** gains a section named after the folder path with `demo-qual
 ### Step 5: Prove the inventories are separate
 
 Run `copilot plugin list` again. It still shows only the live `demo-quality@class-plugins` entry from Step 2: the install you just made in VS Code lives in VS Code's own inventory, so each surface has to be cleaned up on its own.
+
+### Step 6: Read the Browse home page
+
+Open the Command Palette and run:
+
+```text
+Chat: Open Customizations
+```
+
+Select **Browse**, then type `MCP` in the search box and filter by type.
+
+Expected result: Browse lists the sections **Editor's picks**, **Plan, build, and ship** and **Connect your work**, and the search narrows the list to MCP servers. `class-plugins` appears as a source next to the other marketplaces.
 
 ### Cleanup
 

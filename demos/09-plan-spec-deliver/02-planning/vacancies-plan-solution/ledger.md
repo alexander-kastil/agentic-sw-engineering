@@ -128,7 +128,7 @@
     - otherwise `AddRangeAsync(...)` + `SaveChangesAsync()`
 
 - **Status/enum and querying patterns**
-  - No existing enum or status field pattern was found in `src/hr-mcp-server`; there are no `enum` declarations or `Status` properties to mirror for vacancy `open/filled`.
+  - No existing enum or status field pattern was found in `src/hr-mcp-server/hr-mcp-server-cs`; there are no `enum` declarations or `Status` properties to mirror for vacancy `open/filled`.
   - Employee search logic lives in `Services/EmployeeService.cs` and currently does **in-memory matching after loading all employees**:
     ```csharp
     var employees = await _dbContext.Employees.AsNoTracking().ToListAsync();
@@ -140,7 +140,7 @@
   - Because `Skills`/`SpokenLanguages` are `[NotMapped]` list wrappers over JSON `TEXT`, current skills/language matching is **not translated into SQL**.
 
 ## Verification
-- Manual verification in `src/hr-mcp-server` is documented in `readme.md` and uses the MCP Inspector against the local HTTP endpoint.
+- Manual verification in `src/hr-mcp-server/hr-mcp-server-cs` is documented in `readme.md` and uses the MCP Inspector against the local HTTP endpoint.
 - Run the local server:
   ```powershell
   dotnet run
@@ -173,4 +173,4 @@
   npx @modelcontextprotocol/inspector --config inspector.config.json --server hr-mcp-azure-dev
   ```
   The readme notes this Azure App Service target is currently not provisioned, so the working verification path is the local `hr-mcp` entry.
-- No automated unit or integration tests were found under `src/hr-mcp-server`: no test project, no `Microsoft.NET.Test.Sdk`, xUnit/NUnit/MSTest references, and no dedicated test folders. The only VS Code tasks present are `clean` and `publish-release`, not test runners.
+- No automated unit or integration tests were found under `src/hr-mcp-server/hr-mcp-server-cs`: no test project, no `Microsoft.NET.Test.Sdk`, xUnit/NUnit/MSTest references, and no dedicated test folders. The only VS Code tasks present are `clean` and `publish-release`, not test runners.

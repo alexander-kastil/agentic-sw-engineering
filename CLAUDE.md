@@ -20,7 +20,7 @@ tasks/                               todo.md, lessons.md
 
 - `demos/01-` to `demos/09-` are the modules in learning order: fundamentals, agentic-harness, agentic-coding, agent-sessions, cli-sdk, copilot-app, agentic-devops, governance, plan-spec-deliver. Do not reorganize or renumber.
 - Lab numbers follow the schedule in `demos/readme.md`, not the module numbers (Lab 03 belongs to module `02-agentic-harness`). Demo topic readmes teach and demonstrate; they do not carry the exercises.
-- `src/` holds `angular`, `copilot-api`, `copilot-api-ui`, `doubler-api`, `food-app`, `hr-mcp-server`, `qr-server-cs`, `qr-server-py` and `react`.
+- `src/` holds `copilot-api`, `devops-app` (Angular and React), `doubler-api`, `food-app` (polyglot), `hr-mcp-server`, `qr-server-cs`, `qr-server-py` and `qr-server-ts`.
 
 ## Brand Voice
 

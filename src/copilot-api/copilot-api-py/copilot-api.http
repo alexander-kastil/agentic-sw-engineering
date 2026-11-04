@@ -1,0 +1,16 @@
+@copilot_api_HostAddress = http://localhost:5166
+
+GET {{copilot_api_HostAddress}}/api/instructions
+Accept: application/json
+
+###
+
+GET {{copilot_api_HostAddress}}/api/instructions/Coding
+Accept: application/json
+
+###
+
+GET {{copilot_api_HostAddress}}/api/instructions/Unknown
+Accept: application/json
+
+###

@@ -4,10 +4,10 @@ version = "0.1.0"
 description = "A simple API that returns the double of an input value"
 requires-python = ">=3.11"
 dependencies = [
-    "fastapi>=0.115.0",
-    "uvicorn>=0.34.0",
+    "fastapi==0.162.0",
+    "uvicorn==0.54.0",
 ]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.33.0"]
 build-backend = "hatchling.build"

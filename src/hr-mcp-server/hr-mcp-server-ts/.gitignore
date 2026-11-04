@@ -1,0 +1,4 @@
+dist/
+hr-data.db
+hr-data.db-shm
+hr-data.db-wal

@@ -21,3 +21,4 @@ The class teaches the GitHub Copilot harness and runs on it, so `.github/` and `
 - The two MCP homes are the trap: the CLI never loads a server from a file in the repository (not `.mcp.json`, not `.github/mcp.json`, not a plugin's `mcp.json`); only `copilot mcp add` and an installed plugin register one, so a demo that checks a server into the workspace and then demonstrates it on the command line demonstrates nothing. `demos/02-agentic-harness/03-mcp/01-basics/readme.md` already teaches this.
 - A demo's `*-solution/` folder mirrors this layout so the CLI discovers it when launched from that folder.
 - Verify with `copilot skill list` run from the solution folder: the skill appears under `Project skills` or it is not wired.
+- The `.github/` harness stays on BYOK DeepSeek (`model: DeepSeek V4 Flash (oaicopilot)`) by the owner's decision: a model refresh of the class leaves `.github/` untouched.

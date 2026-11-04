@@ -43,6 +43,27 @@ What you can configure is which harnesses and hosts are available, not the proto
 | `chat.agentHost.forwardSSHAgent` | Forwards your SSH agent to a remote host, so a session there can reach your Git remotes |
 | `chat.agentHost.devContainer.enabled` | Lets a session run inside a dev container rather than on the host directly |
 
+## Agent Host Protocol 1.0 and Delegation to Remote Hosts
+
+Since VS Code 1.144 the first version of the Agent Host Protocol is published. It is the protocol VS Code uses to talk to its agents, locally and on remote machines, and cloud automations use it as well. Because it is open and extensible, you can build custom UIs for agents, or agent platforms that plug into any UI that speaks it, and libraries exist in six languages.
+
+To connect a second machine, run **Agents: Add Remote Agent Host...** in the Agents window, which adds a websocket-based agent host. To see where your own editor's running agent host listens, run `code agent endpoints` in a terminal; it prints the endpoints. Once hosts are connected, one session can hand work to another, which is the delegation this topic adds on top of attaching more clients.
+
+Since VS Code 1.140 (Experimental), the settings `chat.remoteAgentHostsEnabled` and `chat.remoteSessions.tools.enabled` give the agent four tools for that delegation.
+
+| Tool | What it does |
+|---|---|
+| `list_agent_hosts` | Lists hosts with their models, capacity, and session load |
+| `create_remote_session` | Starts a session on a named host, or places it automatically by OS, minimum memory, logical CPUs, and optional model; it favors the host with the fewest running sessions |
+| `get_remote_session` | Returns a session's status and latest response |
+| `send_remote_message` | Sends follow-up work to the remote session, or results and questions back to the originating chat |
+
+A few rules shape how you use them. A remote session has no workspace unless you name one: an existing trusted folder on the host, either directly or in a new Git worktree. The tools do not clone or copy the originating workspace, so the code must already be on the target host. Normal approvals apply, and you keep the coordinating Agents window open.
+
+Remote agents report back through `send_remote_message`, and their final answers are not forwarded automatically. Ask for the report in your prompt, as the demo below does. Name a host when the work needs a specific toolchain, and let automatic placement choose when any machine that fits will do. The coordinating chat stays the place where you read results and decide what happens next.
+
+Together the pieces turn the host from a place where state lives into a pool of machines an agent can choose from.
+
 ## Demo
 
 Prove that the session, not the window, owns the work.
@@ -53,11 +74,28 @@ Prove that the session, not the window, owns the work.
 4. Reopen the Agents window. The session is in the Sessions list, still running, carrying the turns that completed while no client was attached.
 5. Open the same session in a second window and confirm both views track one session rather than forking into two.
 6. Switch the harness chip in the composer from Copilot to Claude or Codex and start another session, confirming the host is shared infrastructure rather than a Copilot-only feature.
+7. Enable the delegation tools in your user settings.
+
+   ```json
+   {
+     "chat.remoteAgentHostsEnabled": true,
+     "chat.remoteSessions.tools.enabled": true
+   }
+   ```
+
+   Run **Agents: Add Remote Agent Host...** to connect a host, then start a session with this prompt.
+
+   ```text
+   Start a remote session on a connected Linux host with at least 16 GiB of memory and eight logical CPUs. Check the installed Node.js and Python versions and report back to this chat.
+   ```
+
+   Expected result: the agent lists the hosts, creates a remote session on a host that fits, and the versions come back to this chat through `send_remote_message`.
 
 ## Links & Resources
 
 - [Understand the VS Code Agent Host](https://code.visualstudio.com/docs/agents/concepts/agent-host) - the host process, its lifetime, and what attaches to it
 - [Understand agent sessions and handoff](https://code.visualstudio.com/docs/agents/concepts/sessions) - what a session owns and how it moves between clients
+- [Agent Host Protocol](https://microsoft.github.io/agent-host-protocol/) - the open specification and its libraries
 - [Introducing the Agent Host](https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture) - why state moved off the client
 
 [← Previous: The Agents Window](../01-agents-window/readme.md) | [Back to Agent Sessions](../readme.md) | [Next: Remote Agent Sessions over SSH & Dev Tunnels →](../03-remote-sessions/readme.md)

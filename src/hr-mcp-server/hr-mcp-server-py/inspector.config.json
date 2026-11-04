@@ -1,0 +1,9 @@
+{
+    "mcpServers": {
+        "hr-mcp": {
+            "type": "http",
+            "url": "http://localhost:47002",
+            "note": "Local HR MCP Server running on port 47002"
+        }
+    }
+}

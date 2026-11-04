@@ -80,7 +80,7 @@ Copilot's instruction loading follows a **layered, on-demand approach**:
 
 ### Example Context Window Flow
 
-When you're working on an Angular component in `src/angular/food-shop/app.component.ts`:
+When you're working on an Angular component in `src/food-app/shop-ui/food-shop-ng/src/app/app.component.ts`:
 
 ```
 ┌─ General Instructions (~1 KB)

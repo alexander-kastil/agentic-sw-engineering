@@ -65,7 +65,7 @@ convention. Name the dependency manifest each project type carries.
 
 3. When the report arrives, open two of its citations and check that each one actually supports the claim attached to it.
 
-Expected: a Markdown report whose claims carry links, with no approval prompt for a write action at any point. A report that names `src/qr-server-py` and `src/hr-mcp-server` and points at their manifests is a good one. A report that describes conventions without naming a single path has failed its own citation test, so re-ask with a narrower question.
+Expected: a Markdown report whose claims carry links, with no approval prompt for a write action at any point. A report that names `src/qr-server/qr-server-py` and `src/hr-mcp-server` and points at their manifests is a good one. A report that describes conventions without naming a single path has failed its own citation test, so re-ask with a narrower question.
 
 4. Create the folder, then save the report into it as `research.md`.
 

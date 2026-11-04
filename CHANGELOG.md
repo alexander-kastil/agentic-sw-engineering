@@ -9,14 +9,23 @@ All notable changes to this project will be documented in this file. See [commit
 - Plugin marketplaces subtopic in the class: I sent the team lead a reply
 - Update .claude, .gitignore, .mcp.json
 - Polyglot food app in `src/food-app`: Angular, React and Vue shops in `shop-ui/`, .NET, Java, Python, TypeScript and Go catalog APIs in `catalog-api/`, the Go API new.
-- TypeScript QR code MCP server in `src/qr-server-ts`.
+- TypeScript QR code MCP server in `src/qr-server/qr-server-ts`.
+- Python and TypeScript ports of the HR MCP server in `src/hr-mcp-server`, and a Python FastAPI port of the instructions API in `src/copilot-api`.
+- VS Code 1.136 to 1.145 teachings, 120 minutes in modules 01 to 04: Copilot Fusion, model and harness comparison, agent merge, Copilot connectors, MCP app tools, Browse, Copilot Memory in the Copilot harness, cloud sessions and automations, mixed harnesses with `send_message`, computer use, the Copilot harness as the default, canvases, Agent Host Protocol 1.0, Dev Container sessions and Agents window automations, each with a demo step where budgeted and one new slide with a diagram.
 
 ### Changed
 
+- Assisted permissions is generally available (module 08) and Copilot Memory is on by default in Copilot harness sessions (module 02), in the readmes, the slide specs and the decks.
+- Every card in the decks of modules 01 to 04 and 08 carries the airy bullet spacing.
 - Demos and labs that use the food app point at the Angular shop and the .NET API by default, with a note on the other stacks; lab 08's solution follows the new Angular shop, whose test suite passes again.
 - hr-mcp-server and qr-server-cs run on the latest packages; qr-server-cs pads QR codes with SkiaSharp and drops ImageSharp.
 - qr-server-py pins every package to an exact version.
 - Git no longer tracks `tasks/` and `agent-instructions/`.
+- Every multi-stack sample in `src` groups its stacks under one folder with a readme, like `src/food-app`: `devops-app` (`devops-ng`, `devops-react` and a new `devops-py` with its own GitHub Actions CI), `qr-server` and `hr-mcp-server` (C#, Python, TypeScript), `copilot-api` (C#, Python); demos, labs, MCP configs and workflows point at the new paths and name the other stacks.
+- The empty `src/copilot-api-ui` and the unused `food-shop-ng-solution` and `food-shop-react-solution` are gone, and the Angular environment files no longer carry the Application Insights key.
+- Every Python project in `src` pins its packages exactly, installs, compiles and passes its tests, with its `.gitignore` covering the virtual environment, caches and runtime databases.
+- The context window topic teaches token caching: what cached input and cache writes cost, what breaks the cache, and where VS Code and Copilot CLI show cache reuse.
+- Retired models in demos and labs move to their direct successors: GPT-5 mini and GPT-4.1 to GPT-6 Luna, GPT-5, GPT-5.2 and GPT-5.5 to GPT-6.1 Terra, Claude 4.x to Claude 5.5, and the Azure OpenAI samples to gpt-5.1 and gpt-5-mini.
 
 ## 2026-10-30
 

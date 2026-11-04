@@ -2,21 +2,24 @@
 
 Building on the protocol basics in [MCP Basics & the MCP Registry](../01-basics/), this topic moves from consuming MCP servers to writing them. Consuming means wiring an existing server into a workspace and calling its tools from chat; implementing means exposing your own functions over the protocol so Copilot can reach them. This repository ships three working servers under [/src](/src/) so you can read real code instead of a spec.
 
-The servers are deliberately different in shape. One is Python, one is the same tool rewritten in C#, and one is a stateful line-of-business server backed by a database. Together they cover the decisions you face every time you build one: language and SDK, transport, state, and how you debug the thing before a client ever sees it.
+The servers are deliberately different in shape. One is Python, one is the same tool rewritten in C# and TypeScript, and one is a stateful line-of-business server backed by a database. Together they cover the decisions you face every time you build one: language and SDK, transport, state, and how you debug the thing before a client ever sees it.
 
 ## The reference servers in `src/`
 
 | Server | Stack | Transport | What it teaches |
 |--------|-------|-----------|-----------------|
-| [qr-server](/src/qr-server/) | Python, `FastMCP` from the `mcp` SDK | stdio and Streamable HTTP | The smallest useful server: one decorator turns a function into a tool |
-| [qr-server-cs](/src/qr-server-cs/) | C# / .NET, `ModelContextProtocol` SDK | stdio and Streamable HTTP | The same tool contract expressed with attributes instead of decorators |
-| [hr-mcp-server](/src/hr-mcp-server/) | C# / .NET, EF Core, SQLite | Streamable HTTP | A stateful server with dependency injection, five CRUD tools, and seeded data |
+| [qr-server-py](/src/qr-server/qr-server-py/) | Python, `FastMCP` from the `mcp` SDK | stdio and Streamable HTTP | The smallest useful server: one decorator turns a function into a tool |
+| [qr-server-cs](/src/qr-server/qr-server-cs/) | C# / .NET, `ModelContextProtocol` SDK | stdio and Streamable HTTP | The same tool contract expressed with attributes instead of decorators |
+| [qr-server-ts](/src/qr-server/qr-server-ts/) | TypeScript / Node.js, `@modelcontextprotocol/sdk` | stdio and Streamable HTTP | The same tool contract declared with a Zod input schema |
+| [hr-mcp-server-cs](/src/hr-mcp-server/hr-mcp-server-cs/) | C# / .NET, EF Core, SQLite | Streamable HTTP | A stateful server with dependency injection, five CRUD tools, and seeded data |
+| [hr-mcp-server-py](/src/hr-mcp-server/hr-mcp-server-py/) | Python, `mcp` SDK, SQLite | Streamable HTTP | The same five HR tools and seed data in Python |
+| [hr-mcp-server-ts](/src/hr-mcp-server/hr-mcp-server-ts/) | TypeScript / Node.js, `@modelcontextprotocol/sdk`, SQLite | Streamable HTTP | The same five HR tools and seed data in TypeScript |
 
-Read them in that order. The QR pair isolates the protocol mechanics by keeping the business logic trivial, and the HR server then shows what changes when real data and a service layer arrive.
+Read them in that order. The QR servers isolate the protocol mechanics by keeping the business logic trivial, and the HR server then shows what changes when real data and a service layer arrive.
 
 ## Anatomy of a Python server
 
-[src/qr-server/server.py](/src/qr-server/server.py) is the shortest path from a Python function to a Copilot tool. You create a `FastMCP` instance, decorate a function with `@mcp.tool()`, and the SDK derives the tool schema from the signature and the docstring. Parameter names, type hints, and defaults become the JSON schema the client sees; the docstring becomes the description the model reads when deciding whether to call it.
+[src/qr-server/qr-server-py/server.py](/src/qr-server/qr-server-py/server.py) is the shortest path from a Python function to a Copilot tool. You create a `FastMCP` instance, decorate a function with `@mcp.tool()`, and the SDK derives the tool schema from the signature and the docstring. Parameter names, type hints, and defaults become the JSON schema the client sees; the docstring becomes the description the model reads when deciding whether to call it.
 
 ```python
 from mcp.server.fastmcp import FastMCP
@@ -61,7 +64,7 @@ flowchart LR
 
 ## The same contract in C#
 
-[src/qr-server-cs](/src/qr-server-cs/) implements the identical `generate_qr` tool on .NET, which makes the SDK differences easy to see side by side. Python infers the schema from type hints and the docstring; C# declares it with attributes. A class carries `[McpServerToolType]`, each method carries `[McpServerTool]`, and every parameter carries a `[Description]` that plays exactly the role the Python docstring played.
+[src/qr-server/qr-server-cs](/src/qr-server/qr-server-cs/) implements the identical `generate_qr` tool on .NET, which makes the SDK differences easy to see side by side. Python infers the schema from type hints and the docstring; C# declares it with attributes. A class carries `[McpServerToolType]`, each method carries `[McpServerTool]`, and every parameter carries a `[Description]` that plays exactly the role the Python docstring played.
 
 ```csharp
 [McpServerToolType]
@@ -88,7 +91,7 @@ app.MapMcp();
 
 ## Adding state: the HR server
 
-[src/hr-mcp-server](/src/hr-mcp-server/) is the step from a pure function to a real system. Its tools do not compute an answer, they read and write an employee table through EF Core against a local SQLite file, so the server needs a `DbContext`, a service layer, and seeding on startup. The five tools are `list_employees`, `add_employee`, `update_employee`, `remove_employee`, and `search_employees`.
+[src/hr-mcp-server/hr-mcp-server-cs](/src/hr-mcp-server/hr-mcp-server-cs/) is the step from a pure function to a real system. Its tools do not compute an answer, they read and write an employee table through EF Core against a local SQLite file, so the server needs a `DbContext`, a service layer, and seeding on startup. The five tools are `list_employees`, `add_employee`, `update_employee`, `remove_employee`, and `search_employees`.
 
 Two design points carry over to any stateful server you write. First, tools are constructor-injected like any other service, so `HRTools` takes an `IEmployeeService` and an `ILogger` and stays free of data-access code. Second, tools return typed objects rather than hand-built strings, and the SDK serializes them, which keeps the response shape stable for the model.
 
@@ -116,7 +119,7 @@ A server nobody registered is invisible. Workspace-level servers go in [.vscode/
     "qr-code": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "src/qr-server/server.py", "--stdio"]
+      "args": ["run", "src/qr-server/qr-server-py/server.py", "--stdio"]
     },
     "hr-mcp": {
       "type": "http",
@@ -144,10 +147,10 @@ flowchart LR
 Launch it against a stdio server by passing the exact command the client would run:
 
 ```powershell
-npx @modelcontextprotocol/inspector uv run src/qr-server/server.py --stdio
+npx @modelcontextprotocol/inspector uv run src/qr-server/qr-server-py/server.py --stdio
 ```
 
-For an HTTP server, point the inspector at a config file instead. Both C# servers ship one: [src/hr-mcp-server/inspector.config.json](/src/hr-mcp-server/inspector.config.json) defines a local `hr-mcp` entry and a remote `hr-mcp-azure-dev` entry, and `--server` selects which one to connect to.
+For an HTTP server, point the inspector at a config file instead. Both C# servers ship one: [src/hr-mcp-server/hr-mcp-server-cs/inspector.config.json](/src/hr-mcp-server/hr-mcp-server-cs/inspector.config.json) defines a local `hr-mcp` entry and a remote `hr-mcp-azure-dev` entry, and `--server` selects which one to connect to.
 
 ```powershell
 npx @modelcontextprotocol/inspector --config inspector.config.json --server hr-mcp
@@ -164,7 +167,7 @@ The command prints a URL carrying a session token; open it to get the inspector 
 ## Hands-On Demo: Inspect and call the QR server
 
 1. Open a terminal in the repository root.
-2. Run `npx @modelcontextprotocol/inspector uv run src/qr-server/server.py --stdio` and open the printed URL.
+2. Run `npx @modelcontextprotocol/inspector uv run src/qr-server/qr-server-py/server.py --stdio` and open the printed URL.
 3. Click Connect, then open the Tools tab and click List Tools. Expected result: `generate_qr` appears with six parameters and their defaults.
 4. Select `generate_qr`, set `text` to `https://www.integrations.at`, and click Run. Expected result: a base64 PNG image block comes back in the result pane.
 5. Open the Resources tab and read `ui://qr-server/view.html`. Expected result: the embedded HTML that renders the code in a client supporting MCP apps.
@@ -172,7 +175,7 @@ The command prints a URL carrying a session token; open it to get the inspector 
 
 ## Demo: Add a tool and prove it works
 
-Extend [src/qr-server/server.py](/src/qr-server/server.py) with a second tool, `decode_qr`, that accepts a base64 PNG and returns the text it encodes.
+Extend [src/qr-server/qr-server-py/server.py](/src/qr-server/qr-server-py/server.py) with a second tool, `decode_qr`, that accepts a base64 PNG and returns the text it encodes.
 
 1. Write the function and decorate it with `@mcp.tool()`. Give it a docstring that names the expected encoding and what it returns on an unreadable image.
 2. Add the decoding dependency to the inline script block at the top of the file and to `requirements.txt`.

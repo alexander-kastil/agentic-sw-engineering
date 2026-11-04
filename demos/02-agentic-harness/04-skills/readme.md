@@ -287,7 +287,7 @@ The [.github/skills](/.github/skills/) folder ships the skills this class uses. 
 ## Hands-On Demo: Route a Request Through dotnet-conventions
 
 1. Confirm the setting `chat.useAgentSkills` is `true` in VS Code, then reload the window so the skills directory is rescanned.
-2. Open Copilot Chat in agent mode with [src/hr-mcp-server](/src/hr-mcp-server/) in the workspace and ask: `Add a GET endpoint that returns one employee by id`. Expected result: the skill loads without you naming it, because the description covers a request that never says "convention".
+2. Open Copilot Chat in agent mode with [src/hr-mcp-server/hr-mcp-server-cs](/src/hr-mcp-server/hr-mcp-server-cs/) in the workspace and ask: `Add a GET endpoint that returns one employee by id`. Expected result: the skill loads without you naming it, because the description covers a request that never says "convention".
 3. Watch which files it opens. Expected result: `SKILL.md` plus `references/dotnet-controllers.md`, and nothing else from `references/`.
 4. Ask a second question in the same chat: `Why would a field come back undefined in the Angular client after a 200?`. Expected result: it now opens `references/json-casing-contract.md`, which proves the router picks per request rather than per session.
 5. Ask it to add a NuGet package. Expected result: it runs `dotnet add package` instead of editing the `.csproj`, because that rule sits in the router body above the routing tables.

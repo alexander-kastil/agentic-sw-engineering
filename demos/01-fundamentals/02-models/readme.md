@@ -78,6 +78,36 @@ The model picker lists Copilot and Anthropic models in one list, and you can swi
 
 New model providers install from the Marketplace like any other extension. The built-in Ollama provider is deprecated in favor of the official Ollama extension.
 
+## Copilot Fusion: let Copilot choose the models
+
+Picking a model by hand works when you know the task, but many requests are mixed: a quick rename next to a risky refactor. Copilot Fusion removes that decision. Select **Copilot Fusion** in the model picker and Copilot routes each request and orchestrates models for you. Fusion has been generally available since VS Code 1.144; it combines the multi-model orchestration of Project HydraFusion, a Research Preview in VS Code 1.140, with the task-aware selection of Copilot auto model selection.
+
+For every request Fusion chooses three things: the models, the reasoning effort, and the execution pattern. A simple task is completed by one model. For a harder task, one model drafts the answer and other models review or critique it before you see the result. You never configure this pattern; you only choose how much effort you want to spend.
+
+The effort level is your one control. It decides how much orchestration a request gets, so it also decides how much the request costs.
+
+| Effort level | Use it for |
+|---|---|
+| Standard | Everyday coding |
+| High | More demanding tasks |
+| Max | The most complex tasks |
+
+Fusion High and Max are offered on Copilot Pro+, Max, Business and Enterprise plans. Standard is the right default for routine edits, and High or Max earn their cost on work where a second opinion from another model catches mistakes, such as a cross-service refactor or a subtle concurrency bug.
+
+Fusion is transparent after the fact. Hover over the effort level below a response to see which models were used, so you can learn which of your tasks really needed more than one. That feedback loop is the practical value: after a week you know which kinds of work deserve High or Max, and you stop paying for orchestration on the tasks that never needed it. Compare this with choosing a model by hand, where you only learn that a cheaper model would have sufficed after the bill arrives.
+
+Billing follows the models: every model Fusion uses is billed at its standard rate, so a drafted-and-reviewed answer costs more than a single-model answer. Through November 30, 2026, paid Copilot plans get a 30% discount on Fusion.
+
+> Note: Fusion is a VS Code model picker entry. Visual Studio and JetBrains IDEs keep their own model lists, so check the picker there for an equivalent.
+
+## Comparing models and harnesses side by side
+
+Sometimes you want to decide yourself by running one prompt on several models. Since VS Code 1.143 (Preview) the Agents window can do this, and since 1.144 it is on by default for eligible new sessions through the setting `sessions.chat.compareAgents.enabled`. Select **Compare Models** in the model picker, or press Ctrl+Alt+M (macOS ⌥⌘M) from an eligible chat input.
+
+You pick two or more models, and you can mix Copilot, Claude and Codex harnesses and set the reasoning level per attempt. One prompt starts every attempt, and each attempt runs in its own session with its own worktree . An optional **Judge** model scores the attempts with time and token usage, a rationale, validation evidence and links. **Synthesize** builds on the recommended attempt with ideas from the others, on request.
+
+Since 1.144 comparison also works from a folderless chat (without judge or synthesizer) and from a local or empty repository. It is not supported in Dev Containers.
+
 ## Demo
 
 1. Open the Command Palette and run `Preferences: Open User Settings (JSON)`.
@@ -88,10 +118,26 @@ New model providers install from the Marketplace like any other extension. The b
 6. Temporarily remove the utility model setting, repeat the commit-message step, and observe that the title and commit message no longer generate. This is the BYOK utility trap.
 7. Restore the utility model setting and confirm background tasks resume.
 8. Send a chat request, then hover the footer of the response to read the per-model input, cached input, and output token counts.
+9. Select **Copilot Fusion** in the model picker, choose the **High** effort level, and send the prompt below. Hover over the effort level below the response to see which models were used.
+
+   ```text
+   Review src/ for functions with more than three nested conditions and propose a refactor for the worst one.
+   ```
+
+   Expected result: the response arrives and the hover lists the models Fusion used; a harder prompt shows more than one model, a simple one shows one.
+10. In the Agents window, press Ctrl+Alt+M (macOS ⌥⌘M) from the chat input, pick two models, and send the prompt below. Compare the attempts, each in its own session and worktree.
+
+    ```text
+    Add input validation to the signup form and explain which checks you added.
+    ```
+
+    Expected result: two attempts run side by side, one per model; with a Judge model selected, a scorecard shows time and token usage for each attempt.
 
 ## Links & Resources
 
 - [Language models in VS Code](https://code.visualstudio.com/docs/copilot/language-models) - configuring BYOK, custom endpoints, and per-model options
+- [Copilot Fusion in VS Code](https://aka.ms/vscode-copilot-fusion) - how Fusion routes requests, its effort levels, and billing
+- [Compare models in VS Code](https://code.visualstudio.com/docs/agents/run/compare-models) - running one prompt across models and harnesses, with Judge and Synthesize
 - [Changing the AI model for Copilot Chat](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat) - selecting and comparing models across supported IDEs
 
 [← Previous: Getting Started & Configuring Copilot](../01-intro/readme.md) | [Back to Fundamentals](../readme.md) | [Next: Shaping the Context Window →](../03-context-window/readme.md)

@@ -21,8 +21,8 @@ Use the Azure Terraform IaC Implementation Specialist agent to generate infrastr
 
 Sample prompt for the agent:
 
-```
-Create a Terraform module for deploying the src/copilot-api application to Azure. The module should:
+```text
+Create a Terraform module for deploying the src/copilot-api/copilot-api-cs application to Azure. The module should:
 
 1. Create an Azure App Service Plan with B2 SKU
 2. Create an App Service to host the .NET API
@@ -32,6 +32,8 @@ Create a Terraform module for deploying the src/copilot-api application to Azure
 
 Place the module in infra/terraform/ following standard Terraform project structure with main.tf, variables.tf, outputs.tf, and terraform.tfvars.
 ```
+
+> Note: For the Python stack, point the prompt at `src/copilot-api/copilot-api-py` and ask for an App Service running the FastAPI app on a Python runtime.
 
 ### Raspberry Pi Agent
 

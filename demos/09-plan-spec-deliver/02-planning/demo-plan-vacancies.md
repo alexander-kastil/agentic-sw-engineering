@@ -12,7 +12,7 @@ Start the Copilot CLI from the repository root. The run writes two files to `dem
 
 | File | What it represents |
 |------|--------------------|
-| [src/hr-mcp-server](/src/hr-mcp-server/readme.md) | The server being planned: five employee tools over MCP, SQLite storage |
+| [src/hr-mcp-server/hr-mcp-server-cs](/src/hr-mcp-server/hr-mcp-server-cs/readme.md) | The server being planned: five employee tools over MCP, SQLite storage. Python and TypeScript ports of the same server sit beside it in `src/hr-mcp-server` |
 | [.github/skills/create-issue/SKILL.md](/.github/skills/create-issue/SKILL.md) | The skill behind `/create-issue`: parent issue, sub-issues, labels |
 | [vacancies-plan-solution/](./vacancies-plan-solution/) | A verified run: `ledger.md` written by three subagents, `plan.md` written from it |
 
@@ -33,11 +33,11 @@ copilot --fleet
 **Recipe:**
 
 ```text
-Plan adding vacancies (open positions) to the HR MCP server in src/hr-mcp-server. HR wants to record a vacancy with a title, required skills, required languages and a status of open or filled, list and close vacancies, and find existing employees whose skills match a vacancy.
+Plan adding vacancies (open positions) to the HR MCP server in src/hr-mcp-server/hr-mcp-server-cs. HR wants to record a vacancy with a title, required skills, required languages and a status of open or filled, list and close vacancies, and find existing employees whose skills match a vacancy.
 
 First create the shared ledger demos/09-plan-spec-deliver/02-planning/vacancies-plan/ledger.md with three empty headings: MCP tools, Data, Verification.
 
-Then use your task tool to run three general-purpose subagents in parallel (not explore agents, which cannot write files). Research only inside src/hr-mcp-server; ignore bin, obj and publish. Tell each subagent the ledger path and to write its findings under its own heading in that file, and nothing else:
+Then use your task tool to run three general-purpose subagents in parallel (not explore agents, which cannot write files). Research only inside src/hr-mcp-server/hr-mcp-server-cs; ignore bin, obj and publish. Tell each subagent the ledger path and to write its findings under its own heading in that file, and nothing else:
 1. MCP tools: how Tools/HRTools.cs declares tools, names parameters and returns results.
 2. Data: Tools/Models.cs, Data/EmployeeDbContext.cs and Data/EmployeeDbInitializer.cs, and how the SQLite schema is created and seeded.
 3. Verification: the smoke test in readme.md and inspector.config.json, and how a new tool would be checked.
@@ -66,7 +66,7 @@ Review demos/09-plan-spec-deliver/02-planning/vacancies-plan/plan.md against led
 **Recipe:**
 
 ```text
-Update demos/09-plan-spec-deliver/02-planning/vacancies-plan/plan.md so every acceptance criterion is supported by ledger.md. Where the plan relies on EnsureCreatedAsync to add the Vacancies table, state that an existing src/hr-mcp-server/hr-data.db must be deleted so the schema is recreated and reseeded, and add that step to the verification task. Change nothing else.
+Update demos/09-plan-spec-deliver/02-planning/vacancies-plan/plan.md so every acceptance criterion is supported by ledger.md. Where the plan relies on EnsureCreatedAsync to add the Vacancies table, state that an existing src/hr-mcp-server/hr-mcp-server-cs/hr-data.db must be deleted so the schema is recreated and reseeded, and add that step to the verification task. Change nothing else.
 ```
 
 **Expected Outcome:** `plan.md` still has the same numbered tasks. In the verified run the diff touched exactly two lines: the DbContext task's acceptance criteria now explain that `EnsureCreatedAsync` never alters an existing database, and the verification task now opens with deleting `hr-data.db`.

@@ -2,7 +2,7 @@
 
 HR already fills open positions today, just not in the HR MCP server: a manager keeps a vacancies workbook, re-copies staff from the HR assistant into a second sheet, and types candidate names by hand. Planning a vacancies feature without that picture builds the wrong thing. In this lab four Copilot subagents harvest the process log, the workbook, the database and the code in parallel into one ledger, the agent writes a current-state document with a gap list, and you catch the claim a friendly review lets through.
 
-The theory behind each step is in [Brownfield Analysis: Harvest the Current State](../../../demos/09-plan-spec-deliver/01-analysis/readme.md). Everything the lab reads is in [hr-sources/](./hr-sources/) and [src/hr-mcp-server](/src/hr-mcp-server/readme.md); nothing else needs to be cloned.
+The theory behind each step is in [Brownfield Analysis: Harvest the Current State](../../../demos/09-plan-spec-deliver/01-analysis/readme.md). Everything the lab reads is in [hr-sources/](./hr-sources/) and [src/hr-mcp-server/hr-mcp-server-cs](/src/hr-mcp-server/hr-mcp-server-cs/readme.md); nothing else needs to be cloned.
 
 > Note: Budget 20 minutes. The run writes two files to `labs/10-plan-spec-deliver/01-analyze/hr-current-state/` and changes no code; delete that folder to start over.
 
@@ -21,13 +21,13 @@ flowchart TD
 | --- | --- |
 | [hr-sources/process-notes.md](./hr-sources/process-notes.md) | One week of the restaurant manager recording each hiring step, the tool used and the minutes spent |
 | [hr-sources/vacancies-tracker.xlsx](./hr-sources/vacancies-tracker.xlsx) | The workbook HR runs today: a `Vacancies` sheet with a `Days Open` formula and a hand-copied `Staff Copy` sheet |
-| [src/hr-mcp-server](/src/hr-mcp-server/readme.md) | The system the feature lands in: five employee tools over MCP, SQLite storage in `hr-data.db` |
+| [src/hr-mcp-server/hr-mcp-server-cs](/src/hr-mcp-server/hr-mcp-server-cs/readme.md) | The system the feature lands in: five employee tools over MCP, SQLite storage in `hr-data.db`. Python and TypeScript ports of the same server sit beside it in `src/hr-mcp-server` |
 
 ## Prerequisites
 
 - GitHub Copilot CLI signed in, started from the repository root
 - Python with `openpyxl` installed (`pip install openpyxl`), because the agent reads the workbook with a script it writes
-- `hr-data.db` present in `src/hr-mcp-server`; if the server has never run, start it once with `dotnet run` in that folder
+- `hr-data.db` present in `src/hr-mcp-server/hr-mcp-server-cs`; if the server has never run, start it once with `dotnet run` in that folder
 
 > Note: If you routed the CLI to your own model provider in [Bring Your Own Key in the Copilot CLI](../../../demos/08-governance/02-cost-byok/02-byok-copilot-cli/readme.md), remove the `COPILOT_PROVIDER_*` variables for this session so the subagents run on a hosted Copilot model.
 
@@ -44,7 +44,7 @@ copilot --fleet
 Paste the prompt:
 
 ```text
-Analyze the current state of how HR fills open positions today, before we plan a vacancies feature for the HR MCP server. The sources are src/hr-mcp-server (ignore bin, obj and publish), the workbook labs/10-plan-spec-deliver/01-analyze/hr-sources/vacancies-tracker.xlsx and the process log labs/10-plan-spec-deliver/01-analyze/hr-sources/process-notes.md.
+Analyze the current state of how HR fills open positions today, before we plan a vacancies feature for the HR MCP server. The sources are src/hr-mcp-server/hr-mcp-server-cs (ignore bin, obj and publish), the workbook labs/10-plan-spec-deliver/01-analyze/hr-sources/vacancies-tracker.xlsx and the process log labs/10-plan-spec-deliver/01-analyze/hr-sources/process-notes.md.
 
 First create the shared ledger labs/10-plan-spec-deliver/01-analyze/hr-current-state/ledger.md with four empty headings: Process, Excel, Data structure, Implementation.
 
@@ -88,7 +88,7 @@ Expected result: one line of `current-state.md` changes, from `Vacancies` (4 row
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
 | The Excel subagent reports `ModuleNotFoundError: openpyxl` | `openpyxl` is not installed for the `python` on PATH | Run `pip install openpyxl`, then ask the agent to rerun only the Excel subagent |
-| The Data structure section has no schema | `hr-data.db` does not exist yet | Run `dotnet run` in `src/hr-mcp-server` once, stop it, and rerun that subagent |
+| The Data structure section has no schema | `hr-data.db` does not exist yet | Run `dotnet run` in `src/hr-mcp-server/hr-mcp-server-cs` once, stop it, and rerun that subagent |
 | Only one heading in the ledger is filled | The agent used explore agents, which cannot write files | Rerun with the prompt as written; it asks for `general-purpose` subagents |
 
 ## Summary

@@ -25,6 +25,25 @@ MCP Apps are built on standardized specifications and SDKs maintained at the off
 
 The MCP Apps specification is maintained in the official `modelcontextprotocol/ext-apps` repository and provides SDKs for multiple roles. App developers build interactive Views while host developers embed those Views in chat clients, and MCP server authors register tools with UI metadata. Supported frameworks include React, Vue, Svelte, and vanilla JavaScript.
 
+## MCP Apps Register Tools the Model Can Call
+
+The flow above has one direction for the model: it calls a tool, and the host renders the result in the app. The app could show data and call other tools through the host, but the language model never saw anything the app itself offered. Since VS Code 1.145, an MCP app can register tools that the language model can call in its next request. The interface and the model now work on the same thing.
+
+The user clicks and types in the interface, and the model works through tools. When the app registers tools, the model gets a handle on the state the user is looking at.
+
+| Aspect | Before VS Code 1.145 | Since VS Code 1.145 |
+| ------ | -------------------- | ------------------- |
+| Who defines the tools | The MCP server | The MCP server, and now the app registers tools too |
+| What the model can call | The server's tools | The server's tools plus the tools the app registers |
+| When the model can use them | Once the server lists them | In the model's next request |
+| Role of the interface | Displays a result and calls tools through the host | Displays a result and offers tools to the model |
+
+The reference example is the ShaderToy server from the `ext-apps` repository. The app renders a shader in the chat, and the model can iterate on that shader in real time. You ask for a change in plain words, the model uses the tools the app registered, and the picture on screen follows. 
+
+The QR code server in this topic is the display-only case: its interface shows the PNG it receives and registers no tools of its own. A useful design exercise is to ask which tools a QR interface could register if it needed a conversation with the model, such as changing the colors of the code you are looking at. Every app author faces that decision: which part of the interface state should the model act on?
+
+Keep the same care you apply to any tool. A registered tool needs a clear name, a description the model can use to decide when to call it, and a narrow effect.
+
 ## QR Code MCP Server Example
 
 The [qr-server](./qr-server) demonstration shows a practical MCP App that generates QR codes from URLs and text. The server is written in Python using the FastMCP framework and the qrcode library, making it lightweight and easy to run.

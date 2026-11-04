@@ -100,6 +100,27 @@ flowchart LR
 | Tool call fails | Surfaces the failing tool and its error |
 | A run ends with no visible reason | Reads the record behind the transcript, including the calls that never returned |
 
+## Automations in the Agents Window
+
+Since VS Code 1.137 (Preview) the Agents window can run agents on a schedule, so recurring work no longer depends on you remembering to start it. Automations have been on by default since VS Code 1.138, controlled by the setting `chat.automations.enabled`. Open the Agents window and select **Automations** in the sidebar to see them.
+
+You start from a template or from your own prompt. The templates cover catching up on changes, triaging issues, and finding bugs, which are the chores that benefit most from a regular run. An automation can run on demand, or hourly, daily or weekly. Since VS Code 1.138 you can also export and import automations, which is how a team shares a good one across environments.
+
+VS Code 1.145 adds finer control. Select **Cron** to enter a five-field cron expression; the dialog validates it and describes the schedule in words, so a typo shows up before the first run. For a local automation you can choose a custom agent from the selected workspace, which ties the schedule to the agent you already tuned for that repository. Disabled automations collapse into a **Disabled automations** section, so the list shows only what is active.
+
+Automations come in two kinds, and the difference matters when you plan one.
+
+| Aspect | Local automation | Cloud automation |
+|---|---|---|
+| Where it runs | On your machine, in the Agents window | On GitHub infrastructure |
+| Runs when your computer is off | No | Yes |
+| Triggers | On demand, hourly, daily, weekly, or Cron | A schedule, or issue and pull request events |
+| Cron expression | Available (VS Code 1.145) | Not available |
+| Sharing | Export and import (VS Code 1.138) | Everyone with repository access, and it acts as Copilot |
+| Setting | `chat.automations.enabled` | `chat.automations.cloud.enabled`, on by default |
+
+Cloud automations are created in the same **Automations** view with **Create Automation**, or by asking an agent. Because they act as Copilot and everyone with access can see them, limit the allowed tools and add filters, for example an issue assigned to you with a specific label. Cloud automations are a Preview. Start with a local automation to learn the dialog, and move a task to the cloud once it should run while you are away.
+
 ## Demo
 
 1. Update to a current VS Code release, and confirm the Agents window opens. Check the account menu in the Activity Bar to confirm you are signed in to GitHub Copilot with your GitHub account.
@@ -118,6 +139,19 @@ flowchart LR
 14. Start a fresh session and give the agent a task that is certain to hit a wall, such as running a build for a toolchain that is not installed, or reading a file at a path that does not exist. Watch it fail or stall, and resist reading the raw logs yourself first.
 15. Run `/troubleshoot` and ask it to analyze that session. Read how it names the failing step and a likely cause rather than echoing the error text back at you, then act on the diagnosis, rerun the task, and confirm the session now succeeds.
 16. Run the same failing task in a Copilot CLI session and `/troubleshoot` it there, confirming the diagnosis travels with the session rather than with the window.
+17. Create a local automation. Open the Agents window, select **Automations** in the sidebar, start from your own prompt, and paste this prompt.
+
+    ```text
+    Summarize the commits merged since yesterday and list any open pull requests that need my review.
+    ```
+
+    Select **Cron** and enter this five-field expression, which means 09:00 on weekdays.
+
+    ```text
+    0 9 * * 1-5
+    ```
+
+    Expected result: the dialog accepts the expression and describes the schedule in words. Save the automation, run it on demand once, and confirm the result appears as a session.
 
 ## Links & Resources
 

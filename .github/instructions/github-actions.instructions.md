@@ -111,7 +111,7 @@ env:
   DOTNET_VERSION: "10.0.x"
   PROJECT_PATH: src/services/catalog-service/api/catalog-service.csproj
   BUILD_OUTPUT: ${{ github.workspace }}/build-output
-  APP_LOCATION: src/react/react-devops
+  APP_LOCATION: src/devops-app/devops-react
   OUTPUT_LOCATION: dist
 ```
 

@@ -4,7 +4,7 @@ Five sections, one per surface the lab draws from. Sections 3 and 5 name a Copil
 
 ## 1. Research findings (Step 2)
 
-`research.md` in this folder. The short version: `src/` holds one folder per sample project, split between leaf projects whose manifest sits at the folder root (`src/qr-server/requirements.txt`, `src/hr-mcp-server/hr-mcp-server.csproj`, `src/doubler-api/pyproject.toml`) and container folders whose runnable app is one level down (`src/angular/angular-devops/angular.json`, `src/react/react-devops/package.json`, `src/food-app/` holding two apps). Manifest per type: `requirements.txt` or `pyproject.toml` for Python, one `.csproj` per .NET project, `package.json` plus `angular.json` for Angular, `package.json` for React. Two things the convention does not cover: `src/readme.md` is zero bytes, and `src/copilot-api-ui` holds three empty folders and no manifest.
+`research.md` in this folder. The short version: `src/` holds one folder per sample project, split between leaf projects whose manifest sits at the folder root (`src/qr-server/qr-server-py/requirements.txt`, `src/hr-mcp-server/hr-mcp-server-cs/hr-mcp-server.csproj`, `src/doubler-api/pyproject.toml`) and container folders whose runnable app is one level down (`src/devops-app/devops-ng/angular.json`, `src/devops-app/devops-react/package.json`, `src/food-app/` holding two apps). Manifest per type: `requirements.txt` or `pyproject.toml` for Python, one `.csproj` per .NET project, `package.json` plus `angular.json` for Angular, `package.json` for React. One thing the convention does not cover: `src/readme.md` is zero bytes.
 
 ## 2. What the writing session built (Steps 3 and 7)
 

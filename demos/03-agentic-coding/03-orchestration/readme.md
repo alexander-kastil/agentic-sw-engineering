@@ -92,6 +92,27 @@ Model selection for a subagent resolves by exact CAPI model ID first and falls b
 | Live status | The session in front of you | Model, elapsed time, and current tool call in the Agents window |
 | Cost | Its own credits | Its own credits, shown on hover |
 
+## Mixed Harnesses and send_message
+
+A harness is the agent runtime behind a chat, such as Copilot, Claude, or Codex. Nested sessions keep related chats together inside one main session. Since VS Code 1.145 (Preview) a nested session can use a different harness than its parent, once you turn on `chat.agentHost.multipleChatProviders.enabled`. You pick the harness with the harness picker when you create the nested session.
+
+That makes cross-checking cheap. You can ask Claude to review the plan a Copilot chat wrote, or give Codex the same task side by side. Each chat keeps its own model, agent, and permission level from its harness. A moved chat keeps its history and harness, and a forked nested session keeps its configuration. Because each harness brings its own model and permission level, a review from another harness is a genuine second opinion.
+
+You do not have to guess which harness a chat uses. Hover over a chat tab, or over its row in the sessions list, and the harness is named. This matters when two chats look alike but run on different runtimes.
+
+Agents also talk to each other through the `send_message` session tool. Since VS Code 1.137, a message sent to a busy chat is queued and runs after the active turn completes. Since VS Code 1.141 the sender chooses what the message does, and the four actions differ in effect.
+
+| Action | What it does |
+|---|---|
+| steer | Redirects the active conversation |
+| queue | Adds a follow-up as a separate turn |
+| replace | Swaps a queued message and keeps its place in the queue |
+| cancel | Removes a queued message before it starts |
+
+Queued messages run in order. Once processing starts, a message can no longer be replaced or cancelled. Use steer sparingly, because it changes a turn that is already running, and prefer queue when the follow-up can wait.
+
+This builds on the subagents above, which hand a slice of work to an expert and wait for the result. Nested sessions and `send_message` are for chats that stay alive side by side and need to coordinate. The first is delegation inside one harness; the second is a team of chats, possibly on different harnesses, that talk to each other.
+
 ## Demo
 
 Goal: delegate to a subject-matter expert, watch the team work read-only, and read its cost.
@@ -103,6 +124,20 @@ Goal: delegate to a subject-matter expert, watch the team work read-only, and re
 5. When an expert subagent appears, open its read-only peer chat and confirm it is applying that agent's specialized instructions and tools.
 6. Hover over the subagent to read its credit cost, and note how cost is attributed to the delegated expert work specifically.
 7. In the Agents window, read each running subagent's model, elapsed time, and current tool call without opening its conversation, and watch the Subagents activity pill above the chat input change as the phase progresses.
+
+8. Mix harnesses: enable the setting below, create a nested session with the harness picker set to a different harness than its parent, and paste the prompt into the parent chat.
+
+   ```json
+   {
+     "chat.agentHost.multipleChatProviders.enabled": true
+   }
+   ```
+
+   ```text
+   Ask the other chat to review the plan you just wrote, and use send_message with the queue action to hand it the plan.
+   ```
+
+   Expected result: the second chat runs on the other harness, hovering its tab names that harness, and the queued message runs after the active turn completes.
 
 ## Links & Resources
 

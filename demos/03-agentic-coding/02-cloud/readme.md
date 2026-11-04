@@ -39,6 +39,26 @@ A cloud task is a written brief, not a conversation, because nobody is there to 
 
 That shape favors well-defined work: increasing test coverage, fixing a reproducible bug, updating config files or documentation, and mechanical refactors across many files. Exploratory work, anything needing your judgment turn by turn, and anything short enough that startup overhead dominates all belong in the local session instead.
 
+## Cloud Sessions and Cloud Automations
+
+Since VS Code 1.144 you can start a cloud session straight from the Chat view or the Agents window. Select **Cloud**, choose a GitHub repository, and the repository and its tools run in a managed environment on GitHub's infrastructure. Your machine does not have to stay online. You send follow-ups, answer approval requests, and review changes as you would in a local session, and you reopen a cloud session from the sessions list.
+
+A cloud session works in a separate workspace, so local uncommitted changes are not copied into it. Commit or push what the task needs before you start. Cloud sessions require a paid Copilot plan, and organization policies apply. Because the session lives on GitHub, other Copilot clients such as GitHub.com and GitHub Mobile can reach it too.
+
+Running work in several places raises a bookkeeping question. **Manage Remote Environments**, at the bottom of the Environment picker, lists GitHub Environments, Dev Tunnels, WSL distributions, and SSH hosts together with their status. Use it to see where a session can run before you pick a target.
+
+Cloud automations apply the same idea to recurring work. They run on GitHub infrastructure on a schedule or in response to issue or pull request events, even when your computer is off. The setting `chat.automations.cloud.enabled` controls them and is enabled by default; cloud automations are in Preview.
+
+You create an automation in the **Automations** view of the Agents window with **Create Automation**, or by asking an agent to create one. An automation is visible to everyone with access to the repository and acts as Copilot, so treat it like a shared teammate. Limit its allowed tools, and add filters so it fires only when it should, for example for an issue assigned to you with a specific label.
+
+| Option | Where it runs | Needs your machine on | Typical use |
+|---|---|---|---|
+| Local session | Your machine | Yes | Exploration with turn-by-turn judgment |
+| Cloud session | GitHub infrastructure | No | A bounded task you hand off |
+| Cloud automation | GitHub infrastructure | No | Work triggered by a schedule or an issue or pull request event |
+
+> Note: Cloud sessions and cloud automations are reached from VS Code here. GitHub.com and GitHub Mobile show the same cloud sessions, so a task you start at your desk can be checked from your phone.
+
 ## Demo
 
 Goal: delegate a bounded task, watch it run remotely, and review what comes back.
@@ -49,11 +69,19 @@ Goal: delegate a bounded task, watch it run remotely, and review what comes back
 4. While it runs, keep working locally and note that your editor is never blocked.
 5. When the pull request appears, review the diff and the session log, then iterate with a comment on the PR rather than starting a new task.
 6. Compare the run against the same task done locally, and note which context the cloud agent had to be told instead of being able to see.
+7. Create a cloud automation: open the Agents window, select **Automations** in the sidebar, then **Create Automation**, and paste this prompt.
+
+   ```text
+   Every time an issue assigned to me is labeled bug, read the issue and add a comment that lists the files most likely involved. Do not change any code.
+   ```
+
+   Expected result: the automation appears in the list, scoped to the repository, with the tools you allowed.
 
 ## Links & Resources
 
 - [About Copilot coding agent](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent) - the ephemeral environment, branch and pull request model, and execution limits
 - [Choose and use an agent harness](https://code.visualstudio.com/docs/copilot/agents/cloud-agents) - `/delegate`, session targets, and what cloud sessions can access
+- [Automations in the Agents window](https://code.visualstudio.com/docs/agents/run/automations) - creating cloud automations, schedules, events, and filters
 - [Best practices for using Copilot to work on tasks](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/best-practices-for-using-copilot-to-work-on-tasks) - scoping issues and choosing the right tasks to delegate
 
 [← Previous: Using Local Agents and Agent Mode](../01-local-agents/readme.md) | [Back to Agentic Coding](../readme.md) | [Next: Multi-Agent Orchestration with Subagents →](../03-orchestration/readme.md)
