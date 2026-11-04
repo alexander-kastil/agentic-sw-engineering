@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "qr-code": {
+            "type": "stdio",
+            "command": "node",
+            "args": [
+                "dist/index.js",
+                "--stdio"
+            ]
+        }
+    }
+}

@@ -11,7 +11,7 @@ from fastapi.responses import HTMLResponse
 from page import render
 from tools.student_tools import student_tools
 
-model = os.environ.get("AZURE_OPENAI_MODEL", "gpt-4o")
+model = os.environ.get("AZURE_OPENAI_MODEL", "gpt-5.1")
 endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
 
 

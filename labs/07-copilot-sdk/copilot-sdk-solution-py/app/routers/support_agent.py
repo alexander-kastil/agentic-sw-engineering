@@ -142,7 +142,7 @@ async def ask_question(
         tools = [get_order_details, get_user_orders, process_return, send_customer_email]
 
         session = await copilot_client.create_session(
-            model="gpt-4.1",
+            model="gpt-6-luna",
             on_permission_request=PermissionHandler.approve_all,
             system_message={"mode": "replace", "content": SYSTEM_PROMPT},
             tools=tools,

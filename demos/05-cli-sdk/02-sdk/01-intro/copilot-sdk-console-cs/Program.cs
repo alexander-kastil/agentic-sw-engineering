@@ -5,7 +5,7 @@ var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .Build();
 
-var model = config["model"] ?? "gpt-5-mini";
+var model = config["model"] ?? "gpt-6-luna";
 var prompt = config["prompt"] ?? "What are the use cases for Copilot SDK?";
 
 Console.WriteLine($"Model: {model}");

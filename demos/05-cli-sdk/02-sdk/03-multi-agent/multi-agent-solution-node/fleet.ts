@@ -1,6 +1,6 @@
 import { CopilotClient, approveAll, type SessionEvent } from "@github/copilot-sdk";
 
-const MODEL = "gpt-5-mini";
+const MODEL = "gpt-6-luna";
 
 async function main() {
   const client = new CopilotClient();

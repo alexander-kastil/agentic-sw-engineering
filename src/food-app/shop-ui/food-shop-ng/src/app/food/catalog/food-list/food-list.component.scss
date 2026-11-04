@@ -1,0 +1,179 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 20px 24px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-control);
+  background-color: var(--color-primary-soft);
+  color: var(--color-on-primary-soft);
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.count {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.add {
+  margin-left: auto;
+  --mat-button-filled-container-shape: var(--radius-control);
+  --mat-button-outlined-container-shape: var(--radius-control);
+  border-radius: var(--radius-control);
+  height: 44px;
+  padding: 0 18px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card {
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.scroller {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 560px;
+  font-size: 15px;
+  background-color: transparent;
+  --mat-table-row-item-container-height: 56px;
+  --mat-table-header-container-height: 44px;
+}
+
+th.mat-mdc-header-cell {
+  padding: 12px 20px;
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+td.mat-mdc-cell {
+  padding: 6px 20px;
+  white-space: nowrap;
+  height: auto;
+  border-bottom-color: var(--color-border);
+}
+
+tr.mat-mdc-row:last-child td.mat-mdc-cell {
+  border-bottom: none;
+}
+
+tr.mat-mdc-row {
+  cursor: pointer;
+}
+
+tr.selected td.mat-mdc-cell {
+  background-color: var(--color-row-selected);
+}
+
+tr.selected .rowAction:not(.danger) {
+  background-color: var(--color-primary-soft);
+  color: var(--color-on-primary-soft);
+}
+
+tr.selected .nameCol {
+  font-weight: 600;
+}
+
+.idCol {
+  width: 72px;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.priceCol {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.nameCol {
+  font-weight: 500;
+}
+
+.actionCol {
+  width: 56px;
+  padding: 6px 4px;
+  text-align: right;
+}
+
+th.actionCol {
+  padding: 12px 4px;
+}
+
+.actionCol:last-child {
+  padding-right: 12px;
+}
+
+.rowAction {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  color: var(--color-text-muted);
+}
+
+.rowAction.danger {
+  color: var(--color-danger);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.badge.ok {
+  background-color: var(--color-success-soft);
+  color: var(--color-on-success-soft);
+}
+
+.badge.low {
+  background-color: var(--color-warning-soft);
+  color: var(--color-on-warning-soft);
+}

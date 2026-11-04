@@ -94,7 +94,7 @@ public class SupportAgentController : ControllerBase
 #pragma warning disable GHCP001
             await using var session = await _copilotClient.CreateSessionAsync(new SessionConfig
             {
-                Model = "gpt-4.1",
+                Model = "gpt-6-luna",
                 OnPermissionRequest = (request, invocation) =>
                     Task.FromResult(GitHub.Copilot.Rpc.PermissionDecision.ApproveOnce()),
                 SystemMessage = new SystemMessageConfig

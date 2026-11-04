@@ -261,12 +261,12 @@ The model under test and the judge are separate settings, so swapping the first 
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `CHAT_MODEL` | `gpt-5-mini` | The model under test |
-| `JUDGE_MODEL` | `gpt-5` | The model that scores groundedness; keep it fixed |
+| `CHAT_MODEL` | `gpt-6-luna` | The model under test |
+| `JUDGE_MODEL` | `gpt-6.1-terra` | The model that scores groundedness; keep it fixed |
 
 ### When the Baseline Fails
 
-The vegetarian case was flaky: `gpt-5-mini` offered the Hand pulled Noodles because they come "with your choice of meat, vegetables", and `gpt-4.1` failed two runs out of six with a correct answer. The judge's reasoning explained both. The menu never used the word vegetarian, so the judge scored every vegetarian claim 3 of 5 as an inference. The fix went into the ground truth, not into the assertion: the catalog now states the flag for every dish, and the case passed 20 runs out of 20 across two models and both languages.
+The vegetarian case was flaky: the small baseline model offered the Hand pulled Noodles because they come "with your choice of meat, vegetables", and a second model failed two runs out of six with a correct answer. The judge's reasoning explained both. The menu never used the word vegetarian, so the judge scored every vegetarian claim 3 of 5 as an inference. The fix went into the ground truth, not into the assertion: the catalog now states the flag for every dish, and the case passed 20 runs out of 20 across two models and both languages.
 
 A flaky case is a finding about the case. Read the judge's explanation before touching a threshold, and fix whichever side is ambiguous: the question, the ground truth, or the system prompt.
 
@@ -289,7 +289,7 @@ Run the suite on the baseline, then run the same suite on the candidate model. A
 ```powershell
 cd evals-copilot-sdk-cs
 dotnet test
-$env:CHAT_MODEL = "claude-haiku-4.5"
+$env:CHAT_MODEL = "claude-haiku-5.5"
 dotnet test
 ```
 
@@ -301,7 +301,7 @@ python -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python -m pytest tests/unit
 .venv\Scripts\python -m pytest -m eval
-$env:CHAT_MODEL = "claude-haiku-4.5"
+$env:CHAT_MODEL = "claude-haiku-5.5"
 .venv\Scripts\python -m pytest -m eval
 ```
 

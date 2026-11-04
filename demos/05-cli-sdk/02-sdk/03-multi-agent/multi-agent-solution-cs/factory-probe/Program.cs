@@ -1,7 +1,7 @@
 using System.Text.Json;
 using GitHub.Copilot;
 
-const string Model = "gpt-5-mini";
+const string Model = "gpt-6-luna";
 const string FactoryName = "audit-pipeline";
 var phases = new[] { "Audit", "Merge" };
 var factoryArgs = JsonSerializer.SerializeToElement(new { files = new[] { "coordinator/Program.cs" } });

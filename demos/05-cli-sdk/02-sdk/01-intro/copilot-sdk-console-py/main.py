@@ -7,7 +7,7 @@ from copilot import CopilotClient
 
 async def main() -> None:
     config = json.loads((Path(__file__).parent / "appsettings.json").read_text())
-    model = config.get("model", "gpt-5-mini")
+    model = config.get("model", "gpt-6-luna")
     prompt = config.get("prompt", "What are the use cases for Copilot SDK?")
 
     print(f"Model: {model}")

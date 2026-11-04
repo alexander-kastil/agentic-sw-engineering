@@ -33,7 +33,7 @@ async function main() {
   try {
     const client = new CopilotClient();
     const session = await client.createSession({
-      model: "gpt-5-mini",
+      model: "gpt-6-luna",
       streaming: true,
       tools: [getWeather],
     });

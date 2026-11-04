@@ -67,9 +67,9 @@ VERDICT: PASS
 ```text
 | File | Model string | SDK sessions created |
 |------|--------------|----------------------|
-| coordinator.py | "gpt-5-mini" | 3 |
-| specialists.py | "gpt-5-mini" | 1 |
-| fleet.py | "gpt-5-mini" | 2 |
+| coordinator.py | "gpt-6-luna" | 3 |
+| specialists.py | "gpt-6-luna" | 1 |
+| fleet.py | "gpt-6-luna" | 2 |
 
 fleet started: True
 ```
@@ -135,4 +135,4 @@ Each row was found by executing the code or reading the installed package, not b
 
 ## Model names
 
-`gpt-5-mini` is what these files use and what was verified. Run `/model` in the CLI, or `await client.list_models()` in code, to see what your account and organization policy allow.
+`gpt-6-luna` is what these files use. Run `/model` in the CLI, or `await client.list_models()` in code, to see what your account and organization policy allow.

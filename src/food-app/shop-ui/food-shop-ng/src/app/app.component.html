@@ -1,0 +1,25 @@
+@if ((authenticated | async) === false && (publicRoute | async) === false) {
+<div class="loginsplash">
+  <app-login></app-login>
+</div>
+} @if ((authenticated | async) === true || (publicRoute | async) === true) {
+<div class="maingrid">
+  <div class="gdNavbar"><app-navbar></app-navbar></div>
+  <div class="gdMainrow">
+    <main class="layout">
+      @if ((sidenavVisible | async) && (isHome | async) === false) {
+        <app-sidebar class="aside"></app-sidebar>
+      }
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>
+} @if (authEnabled) {
+<div style="display: none">
+  @if (!isIframe) {
+  <router-outlet></router-outlet>
+  }
+</div>
+}

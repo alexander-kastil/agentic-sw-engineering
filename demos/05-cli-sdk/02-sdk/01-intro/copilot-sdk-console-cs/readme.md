@@ -27,7 +27,7 @@ This application creates a Copilot session, sends a user prompt, and displays th
 
 Edit `appsettings.json` to customize:
 
-- `model`: AI model to use (default: gpt-5-mini). Which models you can pick depends on your Copilot plan and organization policy; call `client.ListModelsAsync()` or run `/model` in the CLI to see the list for your account.
+- `model`: AI model to use (default: gpt-6-luna). Which models you can pick depends on your Copilot plan and organization policy; call `client.ListModelsAsync()` or run `/model` in the CLI to see the list for your account.
 - `prompt`: User prompt to send (default: "What are the use cases for Copilot SDK?")
 
 ## Running the Application

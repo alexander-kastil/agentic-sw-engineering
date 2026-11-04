@@ -2,7 +2,7 @@ import { createServer, IncomingMessage, ServerResponse } from "node:http";
 import { CopilotClient, RuntimeConnection, defineTool } from "@github/copilot-sdk";
 
 const PORT = Number(process.env.PORT ?? 8080);
-const MODEL = process.env.COPILOT_MODEL ?? "gpt-5-mini";
+const MODEL = process.env.COPILOT_MODEL ?? "gpt-6-luna";
 const RUNTIME_URL = process.env.COPILOT_RUNTIME_URL;
 
 const getServiceStatus = defineTool<{ service: string }>("get_service_status", {

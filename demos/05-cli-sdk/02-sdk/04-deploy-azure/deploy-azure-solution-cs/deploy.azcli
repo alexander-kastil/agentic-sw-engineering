@@ -30,7 +30,7 @@ az containerapp secret set \
 az containerapp update \
   --name $APP \
   --resource-group $RG \
-  --set-env-vars COPILOT_GITHUB_TOKEN=secretref:github-token COPILOT_MODEL=gpt-5-mini
+  --set-env-vars COPILOT_GITHUB_TOKEN=secretref:github-token COPILOT_MODEL=gpt-6-luna
 
 # Confirm the health probe answers through the public ingress.
 FQDN=$(az containerapp show --name $APP --resource-group $RG --query properties.configuration.ingress.fqdn -o tsv)

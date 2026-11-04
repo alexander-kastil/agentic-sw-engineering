@@ -1,0 +1,117 @@
+.shop-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 16px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.shop-item.in-cart {
+  border-color: var(--color-primary-border);
+}
+
+.item-image {
+  flex: 0 0 176px;
+  width: 176px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.text-section {
+  flex: 999 1 260px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.item-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.description {
+  margin: 0;
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--color-text-muted);
+}
+
+.side-section {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.number-picker {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--color-surface-muted);
+  border-radius: var(--radius-pill);
+}
+
+.picker-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: none;
+  cursor: pointer;
+}
+
+.picker-remove {
+  color: var(--color-text);
+}
+
+.picker-remove:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.picker-add {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.quantity-input {
+  width: 24px;
+  border: none;
+  background: none;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

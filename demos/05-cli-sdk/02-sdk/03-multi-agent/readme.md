@@ -74,7 +74,7 @@ import {
   type SessionConfig,
 } from "@github/copilot-sdk";
 
-const MODEL = "gpt-5-mini";
+const MODEL = "gpt-6-luna";
 
 const listChanges = defineTool<{ since: string }>("list_changes", {
   description: "List the merged changes in the repository since a given tag",
@@ -209,7 +209,7 @@ The same three roles can live on one session as `customAgents`, selected per tur
 ```typescript
 import { CopilotClient, defineTool, type CustomAgentConfig } from "@github/copilot-sdk";
 
-const MODEL = "gpt-5-mini";
+const MODEL = "gpt-6-luna";
 
 const agents: CustomAgentConfig[] = [
   {
@@ -305,7 +305,7 @@ The trade-off is context. All turns share one transcript, which is why the revie
 Fleet mode is the CLI's own parallel orchestration. It decomposes a prompt, runs subagents concurrently, and merges their reports, so you write the task instead of the coordinator. From the terminal:
 
 ```bash
-copilot --fleet -p "Audit coordinator.ts, specialists.ts and fleet.ts in this directory. Give each file to its own subagent and report the model string each one uses as a markdown table." --allow-all-tools --model gpt-5-mini
+copilot --fleet -p "Audit coordinator.ts, specialists.ts and fleet.ts in this directory. Give each file to its own subagent and report the model string each one uses as a markdown table." --allow-all-tools --model gpt-6-luna
 ```
 
 That command is the one verified for this guide, run exactly as printed. `--fleet` combines with `-i`, `-p`, or piped stdin, and the CLI also carries a `/fleet` slash command for the same thing from inside an interactive session. The same orchestration is reachable from code as `session.rpc.fleet.start`. Create `fleet.ts`:
@@ -313,7 +313,7 @@ That command is the one verified for this guide, run exactly as printed. `--flee
 ```typescript
 import { CopilotClient, approveAll, type SessionEvent } from "@github/copilot-sdk";
 
-const MODEL = "gpt-5-mini";
+const MODEL = "gpt-6-luna";
 
 async function main() {
   const client = new CopilotClient();
@@ -357,9 +357,9 @@ The tail of a healthy run is the merged table:
 ```text
 | File | Model string | SDK sessions created |
 |---|---:|---:|
-| coordinator.ts | gpt-5-mini | 3 |
-| specialists.ts | gpt-5-mini | 1 |
-| fleet.ts | gpt-5-mini | 1 |
+| coordinator.ts | gpt-6-luna | 3 |
+| specialists.ts | gpt-6-luna | 1 |
+| fleet.ts | gpt-6-luna | 1 |
 
 fleet started: true
 ```
@@ -415,7 +415,7 @@ const auditPipeline = defineFactory<{ files: string[] }>({
 
 async function main() {
   const client = new CopilotClient();
-  const session = await client.createSession({ model: "gpt-5-mini", streaming: false });
+  const session = await client.createSession({ model: "gpt-6-luna", streaming: false });
 
   console.log(`factory defined: ${auditPipeline.meta.name}`);
   console.log(`phases: ${auditPipeline.meta.phases.map((phase) => phase.title).join(", ")}`);

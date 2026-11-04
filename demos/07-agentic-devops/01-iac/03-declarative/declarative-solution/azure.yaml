@@ -3,11 +3,11 @@ metadata:
   template: food-app@1.0.0
 services:
   catalog-service:
-    project: ../../../../../src/food-app/catalog-service/api
+    project: ../../../../../src/food-app/catalog-api/catalog-service-cs
     language: dotnet
     host: containerapp
   food-shop:
-    project: ../../../../../src/food-app/food-shop
+    project: ../../../../../src/food-app/shop-ui/food-shop-ng
     language: js
     dist: dist/food-shop/browser
     host: staticwebapp

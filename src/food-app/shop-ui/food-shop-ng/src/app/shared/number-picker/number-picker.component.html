@@ -1,0 +1,21 @@
+<div class="container" role="group" [attr.aria-label]="itemName ? 'Quantity of ' + itemName : 'Quantity'">
+  <button
+    mat-icon-button
+    type="button"
+    class="remove"
+    [attr.aria-label]="'Remove one ' + itemName"
+    [disabled]="disabled || quantity <= 0"
+    (click)="onRemove()">
+    <mat-icon>remove</mat-icon>
+  </button>
+  <span class="quantity" aria-live="polite">{{ quantity }}</span>
+  <button
+    mat-icon-button
+    type="button"
+    class="add"
+    [attr.aria-label]="'Add one ' + itemName"
+    [disabled]="disabled"
+    (click)="onAdd()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

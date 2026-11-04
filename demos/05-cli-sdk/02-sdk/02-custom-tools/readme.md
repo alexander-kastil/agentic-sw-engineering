@@ -93,7 +93,7 @@ async function main() {
   try {
     const client = new CopilotClient();
     const session = await client.createSession({
-      model: "gpt-5-mini",
+      model: "gpt-6-luna",
       streaming: true,
       tools: [getWeather],
     });
@@ -130,7 +130,7 @@ main();
 import { approveAll } from "@github/copilot-sdk";
 
 const session = await client.createSession({
-  model: "gpt-5-mini",
+  model: "gpt-6-luna",
   tools: [getWeather],
   onPermissionRequest: approveAll,
 });
@@ -187,7 +187,7 @@ const getWeather = defineTool("get_weather", {
 async function main() {
   const client = new CopilotClient();
   const session = await client.createSession({
-    model: "gpt-5-mini",
+    model: "gpt-6-luna",
     streaming: true,
     tools: [getWeather],
   });
@@ -317,7 +317,7 @@ async function main() {
   try {
     const client = new CopilotClient();
     const session = await client.createSession({
-      model: "gpt-5-mini",
+      model: "gpt-6-luna",
       streaming: true,
       tools: [analyzeCode, getFileContent],
       availableTools: ["custom:*"],
@@ -384,7 +384,7 @@ Always wrap your code in try-catch and ensure cleanup:
 const client = new CopilotClient();
 
 try {
-  const session = await client.createSession({ model: "gpt-5-mini" });
+  const session = await client.createSession({ model: "gpt-6-luna" });
   // ... use session ...
 } catch (error) {
   if ((error as any).code === "ENOENT") {

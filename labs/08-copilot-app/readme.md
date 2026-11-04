@@ -8,10 +8,12 @@ By the end you hold a merged pull request in your own fork that changes the Food
 
 > Note: Budget 35 minutes. The app ships fast and this lab tracks release v1.1.14, so when a menu has moved, the changelog in the `github/app` repository is the authoritative record of what changed.
 
+> Note: The lab uses the Angular shop at `src/food-app/shop-ui/food-shop-ng` by default. `src/food-app/shop-ui` also holds a React shop (`food-shop-react`) and a Vue shop (`food-shop-vue`) you can run the same steps against.
+
 ## What you'll build
 
 - A prompt session running in its own worktree, with the isolation proven from your own terminal rather than assumed from a checkbox
-- A validated change to `src/food-app/food-shop`, checked as a diff, as a test run, and as a rendered page
+- A validated change to `src/food-app/shop-ui/food-shop-ng`, checked as a diff, as a test run, and as a rendered page
 - A pull request whose description carries a screenshot the agent produced, not one you pasted
 - `docs/agent-runbook.md`, the settings record that lets a teammate reproduce the run
 - A scheduled automation that re-runs the work weekly, with session cleanup configured before it starts filling the list
@@ -68,11 +70,11 @@ A session starts from a GitHub issue, a freeform prompt, or a pull request alrea
 3. Paste this prompt and send it:
 
 ```text
-In src/food-app/food-shop, change the main heading of the shop landing
+In src/food-app/shop-ui/food-shop-ng, change the main heading of the shop landing
 page to "Fresh Food, Fast" and add one unit test that asserts the new
 heading text renders. Also create docs/agent-runbook.md recording the
 model, reasoning effort, and permission mode this session is running
-with. Do not touch anything outside src/food-app/food-shop and docs/.
+with. Do not touch anything outside src/food-app/shop-ui/food-shop-ng and docs/.
 ```
 
 4. Open the **Plan** tab before the first file is written and read the steps. If the plan proposes touching files outside those two paths, say so in one sentence and let it re-plan.
@@ -82,7 +84,7 @@ with. Do not touch anything outside src/food-app/food-shop and docs/.
 /btw Which component file actually owns the heading you are changing?
 ```
 
-Expected: the Plan tab lists concrete steps naming `src/food-app/food-shop` before any diff appears, the `/btw` answer arrives in its own thread, and the main turn is neither cancelled nor restarted by asking. A plan that names no file paths is too vague to steer, so push back and ask for one.
+Expected: the Plan tab lists concrete steps naming `src/food-app/shop-ui/food-shop-ng` before any diff appears, the `/btw` answer arrives in its own thread, and the main turn is neither cancelled nor restarted by asking. A plan that names no file paths is too vague to steer, so push back and ask for one.
 
 ## Step 3: Prove the isolation from your own terminal (3 minutes)
 
@@ -105,9 +107,9 @@ The diff answers the first question you have about any agent's work: what actual
 
 1. Open the **Files** tab and then the diff view for the session.
 2. Read every changed hunk in order, and confirm the heading change, the new test, and `docs/agent-runbook.md` are the only things touched.
-3. If a file outside `src/food-app/food-shop` or `docs/` appears, tell the agent to revert that file and re-check.
+3. If a file outside `src/food-app/shop-ui/food-shop-ng` or `docs/` appears, tell the agent to revert that file and re-check.
 
-Expected: three changed files and no more. The shop landing page carries no heading before this change, so the diff shows `Fresh Food, Fast` only as an added line inside `food-shop-container.component.html`, not as a replacement of an old heading line. A diff that also touches configuration or lockfiles is scope creep, and catching it here is cheaper than catching it in review.
+Expected: three changed files and no more. The shop landing page titles itself `Food` before this change, so the diff shows `Fresh Food, Fast` replacing the text of the `<h1>` inside `food-shop-container.component.html`. A diff that also touches configuration or lockfiles is scope creep, and catching it here is cheaper than catching it in review.
 
 ## Step 5: Run the checks in the terminal and drive the in-app browser (4 minutes)
 
@@ -116,7 +118,7 @@ The diff tells you what changed, not whether it works. The terminal answers "doe
 1. Open the **terminal** in the session and install and test:
 
 ```bash
-cd src/food-app/food-shop
+cd src/food-app/shop-ui/food-shop-ng
 npm install
 npm test
 ```
@@ -129,7 +131,7 @@ npm start
 
 3. Open the **in-app browser** at the local URL the dev server prints, and look at the landing page.
 
-Expected: the test run reports the new heading test passing, the dev server prints a `localhost` URL, and the page in the in-app browser shows `Fresh Food, Fast` above the food items, where no heading rendered before. If the test passes but the page still shows no heading or the old catalog page, the agent edited a template that is not the one rendered, so send it back with the URL and what you see.
+Expected: the test run reports the new heading test passing, the dev server prints a `localhost` URL, and the page in the in-app browser shows `Fresh Food, Fast` above the food items, where the heading read `Food` before. If the test passes but the page still shows `Food` or the old catalog page, the agent edited a template that is not the one rendered, so send it back with the URL and what you see.
 
 ## Step 6: Have the agent attach its own evidence (2 minutes)
 
@@ -201,7 +203,7 @@ A prompt that was worth running once is often worth running weekly, and attachin
 2. Create a **scheduled automation** from a prompt, on a weekly interval:
 
 ```text
-Check src/food-app/food-shop for headings that no longer match the
+Check src/food-app/shop-ui/food-shop-ng for headings that no longer match the
 title-case convention, fix any you find, update docs/agent-runbook.md
 with what changed, and open a pull request.
 ```
@@ -251,7 +253,7 @@ Expected: an empty status, `git worktree list` showing only your main checkout, 
 | `git worktree list` shows only one entry in Step 3 | The session was created as a local repository clone rather than a worktree | Start a new session and pick **New worktree** before sending the first prompt |
 | The agent's files appear in your main checkout | The all-repositories worktree toggle is off and the session inherited your working tree | Turn it on in Sessions settings and rerun from Step 2 |
 | Every tool call stops for approval | The permission mode is `manual` | Set `assisted` with `/permissions` and resend the prompt |
-| `npm test` passes but the browser shows no heading, or the catalog page, instead of `Fresh Food, Fast` | The agent edited a template the running page does not render | Send it the URL and the text you see, and ask which template the route actually uses |
+| `npm test` passes but the browser shows `Food`, or the catalog page, instead of `Fresh Food, Fast` | The agent edited a template the running page does not render | Send it the URL and the text you see, and ask which template the route actually uses |
 | The pull request description has no screenshot | The in-app browser was closed before the attach request | Reopen the local URL, then repeat the Step 6 prompt |
 | The session lists no repository skills or MCP servers | The session is attached to a repository without `.vscode/mcp.json` and `.github/skills/` | Confirm which repository the session is open against and reopen it against your fork |
 | The automation never fires | It was saved without an interval, or session cleanup deleted its output before you looked | Reopen the automation, confirm the interval, and widen the archival window |

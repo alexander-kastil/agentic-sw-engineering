@@ -60,7 +60,7 @@ def on_event(event):
 async def main():
     client = CopilotClient()
     session = await client.create_session(
-        model="gpt-5-mini",
+        model="gpt-6-luna",
         streaming=True,
         tools=[analyze_code, get_file_content],
         available_tools=["custom:*"],

@@ -2,7 +2,7 @@ using GitHub.Copilot;
 using MenuChat;
 using Microsoft.Extensions.AI;
 
-string model = Environment.GetEnvironmentVariable("CHAT_MODEL") ?? "gpt-5-mini";
+string model = Environment.GetEnvironmentVariable("CHAT_MODEL") ?? "gpt-6-luna";
 await using CopilotClient copilot = new();
 IChatClient chatClient = new CopilotChatClient(copilot, model);
 MenuAssistant assistant = new(chatClient);

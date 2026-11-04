@@ -1,0 +1,32 @@
+<aside class="panel" aria-label="Actions">
+  <h2 class="heading">Actions</h2>
+
+  @if (this.cart.getItems() | async; as items) {
+    <div class="cartInfo">
+      <span class="cartIcon"><mat-icon>shopping_cart</mat-icon></span>
+      <span class="cartCount">{{ ct | async }} items in cart</span>
+    </div>
+    <div class="sum">
+      <span class="sumLabel">Sum Total</span>
+      <span class="sumValue">{{ total | async | toEuro }}</span>
+    </div>
+    @if (persistCart) {
+      <mat-slide-toggle [formControl]="fcSaveCart">Keep cart</mat-slide-toggle>
+    }
+    <button
+      mat-flat-button
+      class="checkout"
+      (click)="doCheckout()"
+      [disabled]="items.length === 0">
+      <mat-icon>shopping_cart</mat-icon>Checkout
+    </button>
+  }
+  @if (authEnabled | async) {
+    <div class="user">
+      <app-current-user></app-current-user>
+      <button mat-stroked-button class="logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>Logout
+      </button>
+    </div>
+  }
+</aside>

@@ -1,0 +1,9 @@
+<section class="box" aria-labelledby="food-title">
+  <div class="title">
+    <span class="tile"><mat-icon>local_dining</mat-icon></span>
+    <h1 id="food-title" class="pageTitle">Fresh Food, Fast</h1>
+  </div>
+  @for (f of food | async; track f) {
+    <app-shop-item [food]="f" [inCart]="getItemsInCart(f.id) | async" (amountChange)="updateCart($event)" ></app-shop-item>
+  }
+</section>

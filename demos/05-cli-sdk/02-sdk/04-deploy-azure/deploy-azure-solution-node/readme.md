@@ -29,7 +29,7 @@ curl -X POST -H "content-type: application/json" \
 Healthy responses:
 
 ```json
-{"status":"ok","model":"gpt-5-mini","runtime":"bundled"}
+{"status":"ok","model":"gpt-6-luna","runtime":"bundled"}
 {"answer":"The checkout service is currently running (revision: local, region: local)."}
 ```
 
@@ -49,7 +49,7 @@ The image builds and `/health` answers 200 with no credentials at all, because t
 | Variable | Default | What it does |
 |----------|---------|--------------|
 | `PORT` | `8080` | The port the HTTP server binds |
-| `COPILOT_MODEL` | `gpt-5-mini` | The model each session requests |
+| `COPILOT_MODEL` | `gpt-6-luna` | The model each session requests |
 | `COPILOT_GITHUB_TOKEN` | none | The GitHub identity for unattended runs. Required in a container |
 | `COPILOT_RUNTIME_URL` | unset | Connect to an already-running `copilot --headless` instead of spawning the bundled runtime |
 | `CONTAINER_APP_REVISION`, `AZURE_REGION` | `local` | Surfaced by the sample tool so you can see which revision answered |

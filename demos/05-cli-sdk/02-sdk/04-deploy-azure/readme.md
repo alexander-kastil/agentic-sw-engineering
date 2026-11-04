@@ -72,7 +72,7 @@ For data-control or cost reasons you can back the hosted agent with your own Azu
 
 ```typescript
 const session = await client.createSession({
-  model: "gpt-5-mini",
+  model: "gpt-6-luna",
   provider: {
     type: "openai",
     baseUrl: "https://<resource-name>.openai.azure.com/openai/v1/",
@@ -108,7 +108,7 @@ curl -X POST -H "content-type: application/json" \
 ```
 
 ```text
-{"status":"ok","model":"gpt-5-mini","runtime":"bundled"}
+{"status":"ok","model":"gpt-6-luna","runtime":"bundled"}
 {"answer":"The checkout service is currently running (revision: local, region: local)."}
 ```
 

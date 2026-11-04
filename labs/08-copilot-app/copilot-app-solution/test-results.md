@@ -1,74 +1,43 @@
 # Test Results
 
-All commands were run against `src/food-app/food-shop` (Node v24, npm on PATH, Windows). The suite in the checked-in repository is green; the heading change and its test were verified by applying this folder's `food-shop-container.component.html` and `food-shop-container.component.spec.ts` on top of the real project, running the suite, then restoring both files by hand (never with `git restore`, `git checkout`, or `git stash`, since another session shares the checkout).
+All commands were run against `src/food-app/shop-ui/food-shop-ng` (Node v24, npm on PATH, Windows, Chrome Headless 156). The heading change and its test were verified by copying this folder's `food-shop-container.component.html` and `food-shop-container.component.spec.ts` over the real files, running the suite, then restoring both files byte for byte (never with `git restore`, `git checkout`, or `git stash`, since another session shares the checkout).
 
-## Baseline (unmodified `src/food-app/food-shop`)
-
-```bash
-cd src/food-app/food-shop
-npm install
-```
-
-```text
-up to date, audited 680 packages in 2s
-140 packages are looking for funding
-22 vulnerabilities (1 low, 6 moderate, 13 high, 2 critical)
-```
+## Baseline (unmodified `src/food-app/shop-ui/food-shop-ng`)
 
 ```bash
+cd src/food-app/shop-ui/food-shop-ng
 npm test -- --watch=false --browsers=ChromeHeadless
 ```
 
 ```text
-Chrome Headless 153.0.0.0 (Windows 10): Executed 0 of 4 SUCCESS (0 secs / 0 secs)
-Chrome Headless 153.0.0.0 (Windows 10): Executed 4 of 4 SUCCESS (0.063 secs / 0.058 secs)
-TOTAL: 4 SUCCESS
-```
-
-**Baseline suite: PASS.** All four spec files (`NavbarComponent`, `CurrentUserComponent`, `CheckoutResponseComponent`, `FoodShopContainerComponent`) pass on a clean checkout.
-
-## Verifying the change (applied to the real project, then reverted by hand)
-
-`food-shop-container.component.html` and `food-shop-container.component.spec.ts` from this folder were copied over the real files at:
-
-```text
-src/food-app/food-shop/src/app/food/shop/shop-container/food-shop-container.component.html
-src/food-app/food-shop/src/app/food/shop/shop-container/food-shop-container.component.spec.ts
-```
-
-```bash
-npm test -- --watch=false --browsers=ChromeHeadless
-```
-
-```text
-Chrome Headless 153.0.0.0 (Windows 10): Executed 0 of 5 SUCCESS (0 secs / 0 secs)
-Chrome Headless 153.0.0.0 (Windows 10): Executed 5 of 5 SUCCESS (0.069 secs / 0.062 secs)
+Chrome Headless 156.0.0.0 (Windows 10): Executed 5 of 5 SUCCESS (0.069 secs / 0.059 secs)
 TOTAL: 5 SUCCESS
 ```
 
-**New heading test: PASS.** The added spec, `FoodShopContainerComponent should render the "Fresh Food, Fast" heading`, passes alongside the existing `should create` test and the other three spec files, which are unaffected. Both changed files were then restored to their exact prior content in `src/food-app/food-shop`, confirmed with `git status --short -- src/food-app/` showing no diff beyond the pre-existing test-suite fix.
+**Baseline suite: PASS.** Four spec files (`NavbarComponent`, `CurrentUserComponent`, `CheckoutResponseComponent`, `FoodShopContainerComponent`) give five passing tests.
 
-```bash
-npm start
+## Verifying the change (copied over the real files, then restored)
+
+```text
+src/food-app/shop-ui/food-shop-ng/src/app/food/shop/shop-container/food-shop-container.component.html
+src/food-app/shop-ui/food-shop-ng/src/app/food/shop/shop-container/food-shop-container.component.spec.ts
 ```
 
 ```text
-Application bundle generation complete. [4.234 seconds]
-Local:   http://localhost:4200/
+Chrome Headless 156.0.0.0 (Windows 10): Executed 6 of 6 SUCCESS (0.068 secs / 0.059 secs)
+TOTAL: 6 SUCCESS
 ```
 
-**Dev server: PASS.** Serves without error.
+**New heading test: PASS.** `FoodShopContainerComponent should render the "Fresh Food, Fast" heading` passes alongside the existing tests, which are unaffected. Both files were then restored, confirmed with `cmp` showing identical bytes.
 
 ## Pass/fail summary
 
 | Check | Result |
 |---|---|
-| Baseline suite (`npm test`, unmodified checkout) | PASS - 4 of 4 specs |
+| Baseline suite (`npm test`, unmodified checkout) | PASS - 5 of 5 tests |
 | New heading test (`FoodShopContainerComponent` heading spec) | PASS |
-| No other test broken by this change | PASS - suite goes from 4 to 5 passing, no regressions |
-| `npm install` | PASS |
-| `npm start` | PASS |
+| No other test broken by this change | PASS - suite goes from 5 to 6 passing, no regressions |
 
 ## Desktop-app-only steps (not executable here)
 
-Steps 1, 2 (composer/Plan tab), 3 (worktree isolation from the app), 6 (agent-attached screenshot), 7 (review-comment resolution and Agent Merge), 8 (session capability listing), 9 (scheduled automation), and 10 (VS Code external sessions list) all require the GitHub Copilot desktop app UI and were not run. The MCP/skills claim in Step 8 and the links in the Links & Resources section were checked directly against the repository instead.
+Steps 1, 2 (composer/Plan tab), 3 (worktree isolation from the app), 6 (agent-attached screenshot), 7 (review-comment resolution and Agent Merge), 8 (session capability listing), 9 (scheduled automation), and 10 (VS Code external sessions list) all require the GitHub Copilot desktop app UI and were not run.

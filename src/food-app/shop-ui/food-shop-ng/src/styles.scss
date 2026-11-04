@@ -1,0 +1,119 @@
+@use "@angular/material" as mat;
+@use "tokens.scss";
+@use "reset.scss";
+@use "mat-overrides.scss";
+
+@include mat.core();
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$orange-palette,
+      ),
+      typography: (
+        plain-family: "Plus Jakarta Sans",
+        brand-family: "Plus Jakarta Sans",
+        bold-weight: 700,
+        medium-weight: 500,
+        regular-weight: 400,
+      ),
+      density: 0,
+    )
+  );
+}
+
+:root {
+  --layout-max-width: 1360px;
+  --layout-pad-x: 24px;
+  --mat-sys-primary: var(--color-primary);
+  --mat-sys-on-primary: var(--color-on-primary);
+  --mat-sys-primary-container: var(--color-primary-soft);
+  --mat-sys-on-primary-container: var(--color-on-primary-soft);
+  --mat-sys-secondary: var(--color-primary);
+  --mat-sys-on-secondary: var(--color-on-primary);
+  --mat-sys-secondary-container: var(--color-primary-soft);
+  --mat-sys-on-secondary-container: var(--color-on-primary-soft);
+  --mat-sys-tertiary: var(--color-primary);
+  --mat-sys-on-tertiary: var(--color-on-primary);
+  --mat-sys-tertiary-container: var(--color-primary-soft);
+  --mat-sys-on-tertiary-container: var(--color-on-primary-soft);
+  --mat-sys-error: var(--color-danger);
+  --mat-sys-on-error: var(--color-on-primary);
+  --mat-sys-error-container: var(--color-warning-soft);
+  --mat-sys-on-error-container: var(--color-on-warning-soft);
+  --mat-sys-background: var(--color-bg);
+  --mat-sys-on-background: var(--color-text);
+  --mat-sys-surface: var(--color-surface);
+  --mat-sys-surface-dim: var(--color-bg);
+  --mat-sys-surface-bright: var(--color-surface);
+  --mat-sys-surface-container-lowest: var(--color-surface);
+  --mat-sys-surface-container-low: var(--color-surface);
+  --mat-sys-surface-container: var(--color-surface);
+  --mat-sys-surface-container-high: var(--color-surface-muted);
+  --mat-sys-surface-container-highest: var(--color-surface-muted);
+  --mat-sys-on-surface: var(--color-text);
+  --mat-sys-surface-variant: var(--color-surface-muted);
+  --mat-sys-on-surface-variant: var(--color-text-muted);
+  --mat-sys-outline: var(--color-border-strong);
+  --mat-sys-outline-variant: var(--color-border);
+  --mat-sys-inverse-surface: var(--color-text);
+  --mat-sys-inverse-on-surface: var(--color-surface);
+  --mat-sys-inverse-primary: var(--color-primary);
+  --mat-sys-surface-tint: transparent;
+  --mat-sys-shadow: transparent;
+  --mat-sys-scrim: #000000;
+  --mat-sys-corner-extra-large: var(--radius-card);
+  --mat-sys-corner-large: var(--radius-card);
+  --mat-sys-corner-medium: var(--radius-control);
+  --mat-sys-corner-small: var(--radius-control);
+  --mat-sys-corner-extra-small: var(--radius-control);
+  --mat-sys-corner-full: var(--radius-pill);
+}
+
+body,
+body.mat-typography {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+.mat-mdc-button-base:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.mat-mdc-form-field:focus-within .mdc-notched-outline > * {
+  border-color: var(--color-primary) !important;
+  border-width: 1px !important;
+}
+
+.mat-mdc-form-field:focus-within .mdc-notched-outline {
+  border-radius: var(--radius-control);
+  box-shadow: 0 0 0 3px var(--color-focus-halo);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .mat-toolbar,
+  .mat-mdc-card,
+  .mat-sidenav,
+  .mat-sidenav-container {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --layout-pad-x: 16px;
+  }
+}

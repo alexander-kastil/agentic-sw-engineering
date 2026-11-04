@@ -1,10 +1,10 @@
 # Agent Runbook
 
-Settings this session ran with when it produced the `Fresh Food, Fast` heading change in `src/food-app/food-shop`.
+Settings this session ran with when it produced the `Fresh Food, Fast` heading change in `src/food-app/shop-ui/food-shop-ng`.
 
 | Setting | Value |
 |---|---|
-| Model | Claude Sonnet 4.5 |
+| Model | Claude Sonnet 5.5 |
 | Reasoning effort | Low |
 | Permission mode | assisted |
 | Worktree | New worktree (isolated from the main checkout) |

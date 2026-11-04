@@ -8,6 +8,15 @@ All notable changes to this project will be documented in this file. See [commit
 
 - Plugin marketplaces subtopic in the class: I sent the team lead a reply
 - Update .claude, .gitignore, .mcp.json
+- Polyglot food app in `src/food-app`: Angular, React and Vue shops in `shop-ui/`, .NET, Java, Python, TypeScript and Go catalog APIs in `catalog-api/`, the Go API new.
+- TypeScript QR code MCP server in `src/qr-server-ts`.
+
+### Changed
+
+- Demos and labs that use the food app point at the Angular shop and the .NET API by default, with a note on the other stacks; lab 08's solution follows the new Angular shop, whose test suite passes again.
+- hr-mcp-server and qr-server-cs run on the latest packages; qr-server-cs pads QR codes with SkiaSharp and drops ImageSharp.
+- qr-server-py pins every package to an exact version.
+- Git no longer tracks `tasks/` and `agent-instructions/`.
 
 ## 2026-10-30
 

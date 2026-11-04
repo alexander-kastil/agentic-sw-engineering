@@ -4,7 +4,9 @@ The two topics before this one provision imperatively: an `az` script runs comma
 
 Azure has two such engines in common use. Bicep is Microsoft's own domain-specific language, compiled to ARM templates and scoped to Azure. Terraform is HashiCorp's, uses HCL, and reaches Azure through the `azurerm` provider alongside every other provider in its ecosystem. Both plug into the Azure Developer CLI, which is what lets one application ship with either.
 
-This demo generates both sets of templates for the same application, `src/food-app`, so the difference is the language rather than the workload.
+This demo generates both sets of templates for the same application, `src/food-app`, so the workload stays fixed and only the language changes. The food-app ships each tier in several stacks; the demo uses the Angular shop in `src/food-app/shop-ui/food-shop-ng` and the .NET API in `src/food-app/catalog-api/catalog-service-cs`.
+
+> Note: To template another stack, swap the path in the prompts: `src/food-app/shop-ui` also holds React and Vue shops, and `src/food-app/catalog-api` also holds Java, Python, TypeScript, and Go APIs.
 
 The finished templates live in [declarative-solution](./declarative-solution/), verified against Bicep CLI 0.44.1 and Terraform 1.14.5. Build the files yourself as you read; go there when a step misbehaves.
 
@@ -30,10 +32,10 @@ Terraform also needs its state kept somewhere. For remote state, add a `provider
 
 ## Bicep
 
-This part creates the Azure resources for the food-app as Bicep modules following azd conventions, with parameterization for environment-specific values. The scope is `src/food-app` and nothing else under `src/`.
+This part creates the Azure resources for the food-app as Bicep modules following azd conventions, with parameterization for environment-specific values. The scope is the two food-app projects and nothing else under `src/`.
 
 ```prompt
-Create Azure Infrastructure as Code bicep files for src/food-app following azd conventions.
+Create Azure Infrastructure as Code bicep files for src/food-app/catalog-api/catalog-service-cs and src/food-app/shop-ui/food-shop-ng following azd conventions.
 
 Include:
 - Main bicep file (main.bicep) with module references
@@ -65,7 +67,7 @@ az deployment sub what-if --location westeurope --template-file infra/main.bicep
 The same application, the same azd layout, expressed in HCL. This part narrows to hosting the food-shop frontend on an Azure Static Web App, which keeps the generated files small enough to read in one sitting.
 
 ```prompt
-Create Terraform files for src/food-app following azd conventions:
+Create Terraform files for src/food-app/shop-ui/food-shop-ng following azd conventions:
 - main.tf with Azure Static Web App for food-shop frontend
 - variables.tf for environment configuration
 - outputs.tf for deployment results

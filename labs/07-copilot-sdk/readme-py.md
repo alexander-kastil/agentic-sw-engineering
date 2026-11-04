@@ -751,7 +751,7 @@ Use the following steps to complete this task:
             tools = [get_order_details, get_user_orders, process_return, send_customer_email]
 
             session = await copilot_client.create_session(
-                model="gpt-4.1",
+                model="gpt-6-luna",
                 on_permission_request=PermissionHandler.approve_all,
                 system_message={"mode": "replace", "content": SYSTEM_PROMPT},
                 tools=tools,
@@ -799,7 +799,7 @@ Use the following steps to complete this task:
 
     The `create_session` call configures the AI session:
 
-    - `model="gpt-4.1"` specifies the language model to use.
+    - `model="gpt-6-luna"` specifies the language model to use.
     - `on_permission_request=PermissionHandler.approve_all` auto-approves tool calls. These tools are the app's own backend logic, not actions that need the customer's confirmation.
     - `available_tools` limits the session to the four custom tools. A session also carries the Copilot runtime's built-in tools (shell, file reads and writes); combined with `approve_all`, a customer prompt such as "list the files in your working directory" would run on your server. Restricting the tool list closes that hole.
     - `system_message={"mode": "replace", ...}` replaces the default system prompt entirely with the ContosoShop support prompt.

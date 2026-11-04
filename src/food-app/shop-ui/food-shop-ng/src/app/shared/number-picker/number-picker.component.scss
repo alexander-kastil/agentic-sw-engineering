@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--color-surface-muted);
+  border-radius: var(--radius-pill);
+}
+
+.container button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-pill);
+}
+
+.remove {
+  color: var(--color-text);
+}
+
+.remove:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.add {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.add:hover {
+  background-color: var(--color-primary);
+}
+
+.quantity {
+  min-width: 24px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}

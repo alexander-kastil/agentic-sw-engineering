@@ -4,7 +4,7 @@ Settings this session ran with when it produced the `Fresh Food, Fast` heading c
 
 | Setting | Value |
 |---|---|
-| Model | Claude Sonnet 4.5 |
+| Model | Claude Sonnet 5.5 |
 | Reasoning effort | Low |
 | Permission mode | assisted |
 | Worktree | New worktree (isolated from the main checkout) |

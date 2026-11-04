@@ -23,7 +23,7 @@ handoffs:
     agent: implementation
     prompt: Now implement the plan outlined above.
     send: false
-    model: GPT-5.2 (copilot)
+    model: GPT-6.1 Terra (copilot)
 ---
 ```
 

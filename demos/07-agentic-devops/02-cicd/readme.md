@@ -61,7 +61,7 @@ Scoping a job to an `environment` gates it behind that environment's protection 
 Ask the GitHub Actions agent to build the workflow that provisions and deploys the food-app infrastructure created in the IaC topic:
 
 ```prompt
-Create a GitHub Actions workflow that deploys src/food-app to Azure.
+Create a GitHub Actions workflow that deploys src/food-app/catalog-api/catalog-service-cs and src/food-app/shop-ui/food-shop-ng to Azure.
 
 Requirements:
 - Trigger on push to main and on workflow_dispatch
@@ -74,6 +74,8 @@ Requirements:
 
 Read demos/07-agentic-devops/01-iac for the infrastructure layout before writing the YAML.
 ```
+
+> Note: The prompt deploys the Angular shop and the .NET API. To deploy another stack, swap the paths: `src/food-app/shop-ui` also holds React and Vue shops, and `src/food-app/catalog-api` also holds Java, Python, TypeScript, and Go APIs.
 
 ## Demo: Troubleshoot a Failing Run
 

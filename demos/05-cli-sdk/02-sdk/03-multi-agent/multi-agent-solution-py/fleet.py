@@ -4,7 +4,7 @@ import os
 from copilot import CopilotClient, PermissionHandler, SessionEvent, SessionEventType
 from copilot.rpc import FleetStartRequest
 
-MODEL = "gpt-5-mini"
+MODEL = "gpt-6-luna"
 
 
 async def main():

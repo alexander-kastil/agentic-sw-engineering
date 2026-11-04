@@ -65,7 +65,7 @@ try
     await using var client = new CopilotClient();
     await using var session = await client.CreateSessionAsync(new SessionConfig
     {
-        Model = "gpt-5-mini",
+        Model = "gpt-6-luna",
         Streaming = true,
         Tools = [analyzeCode, readCodeFile],
         AvailableTools = new ToolSet().AddCustom("*"),

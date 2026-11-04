@@ -1,0 +1,58 @@
+.loginsplash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.maingrid {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "navbar"
+    "mainrow";
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.gdNavbar {
+  grid-area: navbar;
+}
+
+.gdMainrow {
+  grid-area: mainrow;
+  min-width: 0;
+  background-color: var(--color-bg);
+}
+
+.layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 32px var(--layout-pad-x) 40px;
+  padding-bottom: max(40px, env(safe-area-inset-bottom));
+}
+
+.aside {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.content {
+  flex: 999 1 560px;
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .layout {
+    padding: 20px var(--layout-pad-x) 32px;
+    gap: 20px;
+  }
+}

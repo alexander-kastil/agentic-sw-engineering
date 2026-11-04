@@ -1,6 +1,6 @@
 using GitHub.Copilot;
 
-const string Model = "gpt-5-mini";
+const string Model = "gpt-6-luna";
 
 var solutionRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", ".."));
 

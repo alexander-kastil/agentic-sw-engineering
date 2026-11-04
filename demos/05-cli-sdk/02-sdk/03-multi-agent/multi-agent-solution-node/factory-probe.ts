@@ -1,6 +1,6 @@
 import { CopilotClient, defineFactory } from "@github/copilot-sdk";
 
-const MODEL = "gpt-5-mini";
+const MODEL = "gpt-6-luna";
 
 const auditPipeline = defineFactory<{ files: string[] }>({
   meta: {

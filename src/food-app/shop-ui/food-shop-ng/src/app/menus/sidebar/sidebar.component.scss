@@ -1,0 +1,76 @@
+.panel {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.heading {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.cartInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cartIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  color: var(--color-on-primary-soft);
+}
+
+.cartCount {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sum {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.sumLabel {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.sumValue {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.checkout,
+.logout {
+  --mat-button-filled-container-shape: var(--radius-control);
+  --mat-button-outlined-container-shape: var(--radius-control);
+  border-radius: var(--radius-control);
+  width: 100%;
+  height: 48px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}

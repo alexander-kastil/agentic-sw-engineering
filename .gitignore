@@ -29,3 +29,7 @@ labs/10-plan-spec-deliver/02-plan-spec-deliver/meeting-cost/
 .time/
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
+
+# Owner-local working notes
+/tasks/
+/agent-instructions/

@@ -1,0 +1,89 @@
+$small-gap: 0.5rem;
+$medium-gap: 0.8rem;
+$big-gap: 1rem;
+
+.mat-toolbar {
+  margin-bottom: 1.5rem;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mat-mdc-card {
+  margin-bottom: $big-gap;
+  padding: 0 !important;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.mat-mdc-card-header {
+  background-color: transparent;
+  color: var(--color-text);
+  padding-top: $small-gap;
+}
+
+.mat-mdc-card-content {
+  padding: $medium-gap;
+  margin-bottom: 0 !important;
+}
+
+.mat-mdc-card-actions {
+  padding: $medium-gap;
+  margin-left: $medium-gap !important;
+  margin-right: $medium-gap !important;
+  padding-bottom: $medium-gap !important;
+}
+
+.mat-sidenav {
+  width: 220px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding: 0 1rem;
+}
+
+.mat-sidenav-container {
+  height: 100%;
+  margin-left: 0;
+  padding-left: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.mat-mdc-table,
+.mat-mdc-table .mat-mdc-row {
+  background-color: var(--color-surface);
+}
+
+.mat-mdc-table .mat-mdc-header-row,
+mat-header-row {
+  background-color: var(--color-surface-muted);
+}
+
+.mat-mdc-header-cell,
+mat-header-cell {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mat-mdc-cell,
+mat-cell {
+  color: var(--color-text);
+}
+
+.mat-mdc-row,
+mat-row {
+  background-color: var(--color-surface);
+}
+
+.mat-mdc-table {
+  --mat-table-row-item-outline-color: var(--color-border);
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+  border-bottom-color: var(--color-border);
+}

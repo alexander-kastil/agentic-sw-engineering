@@ -1,0 +1,42 @@
+<form class="card" [formGroup]="form" (ngSubmit)="saveForm(form)" novalidate aria-labelledby="edit-title">
+  <div class="heading">
+    <h2 id="edit-title" class="title">Edit</h2>
+    <span class="subject">{{ food.name }}</span>
+  </div>
+  <div class="fields">
+    <div class="field name">
+      <label for="edit-name">Name</label>
+      <mat-form-field appearance="outline" subscriptSizing="dynamic">
+        <input matInput id="edit-name" type="text" formControlName="name" />
+        @if (
+          form.controls['name'].touched &&
+          form.controls['name'].errors !== null
+        ) {
+          <mat-error>Name is required & must be more than 3 chars</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="field">
+      <label for="edit-price">Price</label>
+      <mat-form-field appearance="outline" subscriptSizing="dynamic">
+        <input matInput id="edit-price" type="number" formControlName="price" />
+        <span matTextSuffix>€</span>
+        @if (
+          form.controls['price'].touched &&
+          form.controls['price'].errors !== null
+        ) {
+          <mat-error>Price must be greater than 1€</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="field">
+      <label for="edit-stock">In stock</label>
+      <mat-form-field appearance="outline" subscriptSizing="dynamic">
+        <input matInput id="edit-stock" type="number" formControlName="inStock" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-flat-button type="submit">Save</button>
+  </div>
+</form>

@@ -50,4 +50,4 @@ Each of these was reproduced by running the code.
 
 ## Model names
 
-`gpt-5-mini` is what these files use and what was verified. Run `/model` in the CLI, or `await client.list_models()` in code, to see what your account and organization policy allow.
+`gpt-6-luna` is what these files use. Run `/model` in the CLI, or `await client.list_models()` in code, to see what your account and organization policy allow.

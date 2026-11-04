@@ -4,7 +4,7 @@ import copilot
 from copilot import CopilotClient
 from copilot.rpc import FactoryRunRequest
 
-MODEL = "gpt-5-mini"
+MODEL = "gpt-6-luna"
 
 
 async def main():

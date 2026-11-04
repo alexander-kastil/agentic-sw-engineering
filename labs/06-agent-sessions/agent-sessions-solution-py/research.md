@@ -20,7 +20,7 @@ Those folders come in two shapes.
 
 - `src/angular/angular-devops/` with `src/angular/angular-devops/angular.json` and `src/angular/readme.md` above it
 - `src/react/react-devops/` with `src/react/react-devops/package.json` and `src/react/readme.md` above it
-- `src/food-app/` holds two apps: `src/food-app/food-shop/angular.json` and `src/food-app/catalog-service/api/catalog-service.csproj`
+- `src/food-app/` holds the shop UI and the catalog API in several stacks: the Angular `src/food-app/shop-ui/food-shop-ng/angular.json` and the .NET `src/food-app/catalog-api/catalog-service-cs/catalog-service.csproj` are the defaults, with React and Vue shops in `src/food-app/shop-ui/` and Java, Python, TypeScript and Go APIs in `src/food-app/catalog-api/`
 
 ## The manifest each project type carries
 
@@ -28,17 +28,17 @@ Those folders come in two shapes.
 |--------------|----------|-----------------|
 | Python, pinned requirements | `requirements.txt` | `src/qr-server-py/requirements.txt` |
 | Python, PEP 621 project | `pyproject.toml` | `src/doubler-api/pyproject.toml` |
-| .NET | one `.csproj` named after its folder | `src/hr-mcp-server/hr-mcp-server.csproj`, `src/copilot-api/copilot-api.csproj`, `src/qr-server-cs/qr-server-cs.csproj`, `src/food-app/catalog-service/api/catalog-service.csproj` |
-| Angular | `package.json` plus `angular.json` | `src/angular/angular-devops/angular.json`, `src/food-app/food-shop/angular.json` |
+| .NET | one `.csproj` named after its folder | `src/hr-mcp-server/hr-mcp-server.csproj`, `src/copilot-api/copilot-api.csproj`, `src/qr-server-cs/qr-server-cs.csproj`, `src/food-app/catalog-api/catalog-service-cs/catalog-service.csproj` |
+| Angular | `package.json` plus `angular.json` | `src/angular/angular-devops/angular.json`, `src/food-app/shop-ui/food-shop-ng/angular.json` |
 | React | `package.json` | `src/react/react-devops/package.json` |
 
 There is no solution file and no workspace file above these projects. Each manifest stands alone, which is what lets a module reference a single folder without pulling the rest of `src/` in.
 
-Containerized projects add a Dockerfile beside the manifest rather than centralizing them: `src/hr-mcp-server/Dockerfile`, `src/qr-server-cs/Dockerfile`, `src/angular/angular-devops/dockerfile`, `src/react/react-devops/dockerfile`, `src/food-app/food-shop/dockerfile`, `src/food-app/catalog-service/api/dockerfile`. The casing is inconsistent across those six.
+Containerized projects add a Dockerfile beside the manifest rather than centralizing them: `src/hr-mcp-server/Dockerfile`, `src/qr-server-cs/Dockerfile`, `src/angular/angular-devops/dockerfile`, `src/react/react-devops/dockerfile`, `src/food-app/shop-ui/food-shop-ng/dockerfile`, `src/food-app/catalog-api/catalog-service-cs/dockerfile`. The casing is inconsistent across those six.
 
 ## Two facts the convention does not hold up
 
 - `src/readme.md` exists but is zero bytes, so the index the layout implies is not actually written.
 - `src/copilot-api-ui` carries no manifest and no files at all. It contains three empty folders: `src/copilot-api-ui/src/api`, `src/copilot-api-ui/src/components`, `src/copilot-api-ui/src/types`. It is a placeholder, not a runnable project, so a count of "runnable projects under `src/`" is eight, not nine.
 
-Per-project readmes are present for `src/qr-server-py`, `src/hr-mcp-server`, `src/angular`, `src/react`, `src/food-app/catalog-service`, and the two scaffolded ones at `src/angular/angular-devops/README.md` and `src/react/react-devops/README.md`. They are absent for `src/copilot-api`, `src/copilot-api-ui`, `src/doubler-api` and `src/qr-server-cs`.
+Per-project readmes are present for `src/qr-server-py`, `src/hr-mcp-server`, `src/angular`, `src/react`, `src/food-app/catalog-api/catalog-service-cs`, and the two scaffolded ones at `src/angular/angular-devops/README.md` and `src/react/react-devops/README.md`. They are absent for `src/copilot-api`, `src/copilot-api-ui`, `src/doubler-api` and `src/qr-server-cs`.

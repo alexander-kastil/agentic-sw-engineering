@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
-var model = builder.Configuration["Model"] ?? "gpt-4o";
+var model = builder.Configuration["Model"] ?? "gpt-5.1";
 var endpoint = builder.Configuration["Endpoint"]
     ?? throw new InvalidOperationException("Endpoint configuration is missing");
 

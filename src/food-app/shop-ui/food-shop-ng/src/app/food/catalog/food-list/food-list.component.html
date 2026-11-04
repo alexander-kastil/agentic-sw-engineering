@@ -1,0 +1,80 @@
+<div class="card">
+  <div class="header">
+    <div class="title">
+      <span class="tile"><mat-icon>restaurant_menu</mat-icon></span>
+      <h1 id="catalog-title" class="pageTitle">Catalog</h1>
+      <span class="count" [attr.aria-label]="(food?.length ?? 0) + ' items'">{{ food?.length ?? 0 }}</span>
+    </div>
+    <button mat-flat-button class="add" (click)="addFood()">
+      <mat-icon>add</mat-icon>Add Food
+    </button>
+  </div>
+  <div class="scroller">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="idCol">Id</th>
+        <td mat-cell *matCellDef="let element" class="idCol">{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element" class="nameCol">{{ element.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef class="priceCol">Price</th>
+        <td mat-cell *matCellDef="let element" class="priceCol">{{ element.price | toEuro }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="instock">
+        <th mat-header-cell *matHeaderCellDef>In Stock</th>
+        <td mat-cell *matCellDef="let element">
+          @if (element.inStock < 5) {
+            <span class="badge low" [attr.aria-label]="element.inStock + ', low stock'">{{ element.inStock }}</span>
+          } @else {
+            <span class="badge ok">{{ element.inStock }}</span>
+          }
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="editItem">
+        <th mat-header-cell *matHeaderCellDef class="actionCol"></th>
+        <td mat-cell *matCellDef="let element" class="actionCol">
+          <button
+            mat-icon-button
+            type="button"
+            class="rowAction"
+            [attr.aria-label]="'Edit ' + element.name"
+            matTooltip="Select"
+            (click)="selectFood(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="deleteItem">
+        <th mat-header-cell *matHeaderCellDef class="actionCol"></th>
+        <td mat-cell *matCellDef="let element" class="actionCol">
+          <button
+            mat-icon-button
+            type="button"
+            class="rowAction danger"
+            [attr.aria-label]="'Delete ' + element.name"
+            matTooltip="Delete"
+            (click)="deleteFood(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        [class.selected]="row.id === selected?.id"
+        [attr.aria-selected]="row.id === selected?.id"
+        (click)="selectFood(row)"
+      ></tr>
+    </table>
+  </div>
+</div>

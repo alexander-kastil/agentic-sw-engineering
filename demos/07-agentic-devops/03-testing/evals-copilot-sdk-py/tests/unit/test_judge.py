@@ -22,12 +22,12 @@ def test_pass_threshold_is_four():
 
 def test_judge_model_default(monkeypatch):
     monkeypatch.delenv("JUDGE_MODEL", raising=False)
-    assert GroundednessJudge().model == "gpt-5"
+    assert GroundednessJudge().model == "gpt-6.1-terra"
 
 
 def test_judge_model_env_override(monkeypatch):
-    monkeypatch.setenv("JUDGE_MODEL", "claude-opus-4.5")
-    assert GroundednessJudge().model == "claude-opus-4.5"
+    monkeypatch.setenv("JUDGE_MODEL", "claude-opus-5.5")
+    assert GroundednessJudge().model == "claude-opus-5.5"
 
 
 def test_judge_explicit_model_wins(monkeypatch):

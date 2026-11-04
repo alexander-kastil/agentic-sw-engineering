@@ -75,7 +75,7 @@ Every row below says which of three things happened: Verified means it was execu
 | `specialists.ts` end to end: `agent.list`, `agent.getCurrent`, `agent.select`, two turns on one session | Verified with real model calls |
 | `fleet.ts`: `session.rpc.fleet.start({ wait: true })` resolves and the merged table arrives | Verified with real model calls |
 | `factory-probe.ts`: the factory run is rejected | Verified; the rejection is the expected result here, not a workaround for a broken program |
-| `copilot --fleet -p "..." --allow-all-tools --model gpt-5-mini`, exactly as the guide prints it | Verified: run through the bare `copilot` launcher in this folder, 1m46s, one subagent per file, merged table returned |
+| `copilot --fleet -p "..." --allow-all-tools --model gpt-6-luna`, exactly as the guide prints it | Verified: run through the bare `copilot` launcher in this folder, 1m46s, one subagent per file, merged table returned |
 | `--fleet` is documented by the CLI itself | Verified: `copilot --help` with stdout redirected to a file emitted 13527 bytes including the `--fleet` entry, byte-identical to the 1.0.87 bundle's own help |
 | `/fleet` from inside an interactive session | Preconditions verified: `/fleet` is in the CLI's slash-command table and `copilot -p "/fleet ..."` is accepted and answers; no interactive TTY session was driven |
 | `defineFactory` registered through `joinSession({ factories })` in a CLI extension | Not executed: Agent Factories are off for this account (`agent_factories: false` in the session init), so no `run_factory` tool reaches the model |
@@ -83,4 +83,4 @@ Every row below says which of three things happened: Verified means it was execu
 
 ## Model names
 
-`gpt-5-mini` is what these files use and what was verified. Run `/model` in the CLI, or `client.listModels()` in code, to see what your account and organization policy allow.
+`gpt-6-luna` is what these files use. Run `/model` in the CLI, or `client.listModels()` in code, to see what your account and organization policy allow.

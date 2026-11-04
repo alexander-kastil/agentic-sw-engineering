@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 from copilot import CopilotClient, CopilotSession, Tool, define_tool
 
-MODEL = "gpt-5-mini"
+MODEL = "gpt-6-luna"
 
 
 class ListChangesParams(BaseModel):

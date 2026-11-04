@@ -44,7 +44,7 @@ Create a client, start a session, and send your first message. Here's a minimal 
 import { CopilotClient } from "@github/copilot-sdk";
 
 const client = new CopilotClient();
-const session = await client.createSession({ model: "gpt-5-mini" });
+const session = await client.createSession({ model: "gpt-6-luna" });
 const response = await session.sendAndWait({ prompt: "What is 2 + 2?" });
 console.log(response?.data.content);
 await client.stop();

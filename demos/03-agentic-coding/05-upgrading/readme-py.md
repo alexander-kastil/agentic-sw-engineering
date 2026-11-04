@@ -37,7 +37,7 @@ Both apps read their settings from environment variables and ship the same `app.
 cd sk-students-ai-py
 python -m venv .venv
 .\.venv\Scripts\pip install -r requirements.txt
-$env:AZURE_OPENAI_MODEL = "gpt-4.1"
+$env:AZURE_OPENAI_MODEL = "gpt-5.1"
 $env:AZURE_OPENAI_ENDPOINT = "https://<your-resource>.openai.azure.com/"
 $env:AZURE_OPENAI_API_KEY = "<your-key>"
 .\.venv\Scripts\python -m uvicorn main:app --port 8001
@@ -48,7 +48,7 @@ cd maf-students-ai-py
 python -m venv .venv
 .\.venv\Scripts\pip install -r requirements.txt
 az login
-$env:AZURE_OPENAI_MODEL = "gpt-4o"
+$env:AZURE_OPENAI_MODEL = "gpt-5.1"
 $env:AZURE_OPENAI_ENDPOINT = "https://<your-resource>.openai.azure.com/"
 .\.venv\Scripts\python -m uvicorn main:app --port 8002
 ```

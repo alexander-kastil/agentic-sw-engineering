@@ -5,7 +5,7 @@ import {
   type SessionConfig,
 } from "@github/copilot-sdk";
 
-const MODEL = "gpt-5-mini";
+const MODEL = "gpt-6-luna";
 
 const listChanges = defineTool<{ since: string }>("list_changes", {
   description: "List the merged changes in the repository since a given tag",

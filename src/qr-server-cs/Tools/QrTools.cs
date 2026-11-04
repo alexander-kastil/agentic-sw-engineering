@@ -1,9 +1,7 @@
 using ModelContextProtocol.Protocol;
 using ModelContextProtocol.Server;
 using QRCoder;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using SkiaSharp;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
@@ -45,17 +43,17 @@ internal class QrTools
         if (safeBorder > 0)
         {
             var pad = safeBorder * safeBoxSize;
-            using var source = Image.Load<Rgba32>(pngBytes);
-            using var canvas = new Image<Rgba32>(
-                source.Width + (pad * 2),
-                source.Height + (pad * 2),
-                new Rgba32(lightBytes[0], lightBytes[1], lightBytes[2], lightBytes[3]));
+            using var source = SKBitmap.Decode(pngBytes);
+            using var canvas = new SKBitmap(source.Width + (pad * 2), source.Height + (pad * 2));
+            using (var skCanvas = new SKCanvas(canvas))
+            {
+                skCanvas.Clear(new SKColor(lightBytes[0], lightBytes[1], lightBytes[2], lightBytes[3]));
+                skCanvas.DrawBitmap(source, pad, pad);
+            }
 
-            canvas.Mutate(ctx => ctx.DrawImage(source, new Point(pad, pad), 1f));
-
-            using var output = new MemoryStream();
-            canvas.SaveAsPng(output);
-            pngBytes = output.ToArray();
+            using var image = SKImage.FromBitmap(canvas);
+            using var encoded = image.Encode(SKEncodedImageFormat.Png, 100);
+            pngBytes = encoded.ToArray();
         }
 
         var b64 = Convert.ToBase64String(pngBytes);

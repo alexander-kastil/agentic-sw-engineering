@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:5020
+
+### Config Controller Tests
+
+### Get Config
+GET {{baseUrl}}/config
+Content-Type: application/json
+
+### Get Environment Variables
+GET {{baseUrl}}/config/getEnvVars
+Content-Type: application/json
+
+### Food Controller Tests
+
+### Get All Food Items
+GET {{baseUrl}}/food
+Content-Type: application/json
+
+### Get Food by ID (e.g., ID 1)
+GET {{baseUrl}}/food/1
+Content-Type: application/json
+
+### Create Food Item
+POST {{baseUrl}}/food
+Content-Type: application/json
+
+{
+  "name": "Pizza",
+  "description": "Delicious cheese pizza",
+  "price": 12.99,
+  "inStock": 5
+}
+
+### Update Food Item
+PUT {{baseUrl}}/food
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Margherita Pizza",
+  "description": "Classic Italian pizza with fresh mozzarella",
+  "price": 14.99,
+  "inStock": 3
+}
+
+### Delete Food Item (e.g., ID 1)
+DELETE {{baseUrl}}/food/1
+Content-Type: application/json
+

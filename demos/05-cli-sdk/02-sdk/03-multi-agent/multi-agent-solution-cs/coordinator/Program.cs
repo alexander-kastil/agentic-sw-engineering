@@ -2,7 +2,7 @@ using System.ComponentModel;
 using GitHub.Copilot;
 using Microsoft.Extensions.AI;
 
-const string Model = "gpt-5-mini";
+const string Model = "gpt-6-luna";
 
 var listChanges = CopilotTool.DefineTool(
     ([Description("The tag to list changes since")] string since) =>

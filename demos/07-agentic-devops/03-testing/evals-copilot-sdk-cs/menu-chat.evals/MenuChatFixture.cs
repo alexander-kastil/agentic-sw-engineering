@@ -15,8 +15,8 @@ public sealed class MenuChatFixture : IAsyncLifetime
 
     public Task InitializeAsync()
     {
-        string chatModel = Environment.GetEnvironmentVariable("CHAT_MODEL") ?? "gpt-5-mini";
-        string judgeModel = Environment.GetEnvironmentVariable("JUDGE_MODEL") ?? "gpt-5";
+        string chatModel = Environment.GetEnvironmentVariable("CHAT_MODEL") ?? "gpt-6-luna";
+        string judgeModel = Environment.GetEnvironmentVariable("JUDGE_MODEL") ?? "gpt-6.1-terra";
 
         Assistant = new MenuAssistant(new CopilotChatClient(client, chatModel));
         JudgeChatConfiguration = new ChatConfiguration(new CopilotChatClient(client, judgeModel));

@@ -1259,7 +1259,7 @@ Use the following steps to complete this task:
 #pragma warning disable GHCP001
     await using var session = await _copilotClient.CreateSessionAsync(new SessionConfig
     {
-        Model = "gpt-4.1",
+        Model = "gpt-6-luna",
         OnPermissionRequest = (request, invocation) =>
             Task.FromResult(GitHub.Copilot.Rpc.PermissionDecision.ApproveOnce()),
         SystemMessage = new SystemMessageConfig
@@ -1333,7 +1333,7 @@ Use the following steps to complete this task:
 
     The `SessionConfig` object configures the AI session:
 
-    - `Model = "gpt-4.1"` specifies the language model to use.
+    - `Model = "gpt-6-luna"` specifies the language model to use.
     - `OnPermissionRequest` auto-approves every tool call. Without it, the SDK's default permission gate silently blocks all four custom tools and the agent falls back to a generic "I'm unable to access order details right now due to a permission issue" answer instead of real data, because these tools are the app's own backend logic rather than an action that needs the customer's confirmation. `GitHub.Copilot.Rpc.PermissionDecision` is marked experimental by the SDK, so referencing it requires suppressing diagnostic `GHCP001`.
     - `SystemMessageMode.Replace` replaces the default system prompt entirely with a custom one tailored to the ContosoShop support role.
     - The system prompt defines the agent's **CAPABILITIES** (including partial return support), a detailed **RETURN PROCESSING WORKFLOW** (step-by-step instructions for handling returns including item matching and quantity handling), **IMPORTANT RULES FOR RETURNS** (guardrails like never asking customers for item IDs), an **EXAMPLE WORKFLOW** (showing the complete return flow), and **GENERAL RULES** (behavior guidelines). These sections instruct the model to always use the tools for real data, to automatically extract item IDs from Order Details rather than asking the customer, and to stay within its order-support scope.
@@ -1538,7 +1538,7 @@ Use the following steps to complete this task:
 #pragma warning disable GHCP001
                 await using var session = await _copilotClient.CreateSessionAsync(new SessionConfig
                 {
-                    Model = "gpt-4.1",
+                    Model = "gpt-6-luna",
                     OnPermissionRequest = (request, invocation) =>
                         Task.FromResult(GitHub.Copilot.Rpc.PermissionDecision.ApproveOnce()),
                     SystemMessage = new SystemMessageConfig

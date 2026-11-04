@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 var port = int.Parse(Environment.GetEnvironmentVariable("PORT") ?? "8080");
-var model = Environment.GetEnvironmentVariable("COPILOT_MODEL") ?? "gpt-5-mini";
+var model = Environment.GetEnvironmentVariable("COPILOT_MODEL") ?? "gpt-6-luna";
 var runtimeUrl = Environment.GetEnvironmentVariable("COPILOT_RUNTIME_URL");
 
 object GetServiceStatus([Description("The service name")] string service) => new

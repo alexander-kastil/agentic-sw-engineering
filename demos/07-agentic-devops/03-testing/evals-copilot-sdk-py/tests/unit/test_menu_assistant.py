@@ -103,13 +103,13 @@ def test_isolated_config_directory_is_under_temp():
 def test_menu_assistant_defaults(monkeypatch):
     monkeypatch.delenv("CHAT_MODEL", raising=False)
     assistant = MenuAssistant()
-    assert assistant.model == "gpt-5-mini"
+    assert assistant.model == "gpt-6-luna"
     assert assistant.system_prompt == build_system_prompt()
 
 
 def test_menu_assistant_chat_model_env_override(monkeypatch):
-    monkeypatch.setenv("CHAT_MODEL", "claude-sonnet-4.5")
-    assert MenuAssistant().model == "claude-sonnet-4.5"
+    monkeypatch.setenv("CHAT_MODEL", "claude-sonnet-5.5")
+    assert MenuAssistant().model == "claude-sonnet-5.5"
 
 
 def test_menu_assistant_explicit_model_wins_over_env(monkeypatch):

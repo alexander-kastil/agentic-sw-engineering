@@ -6,7 +6,7 @@ from copilot import CopilotClient, define_tool
 from copilot.rpc import AgentSelectRequest
 from copilot.session import CustomAgentConfig
 
-MODEL = "gpt-5-mini"
+MODEL = "gpt-6-luna"
 
 
 class ListChangesParams(BaseModel):

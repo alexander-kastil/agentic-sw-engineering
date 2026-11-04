@@ -25,7 +25,7 @@ async def complete(model: str, system_prompt: str, prompt: str) -> str:
 
 class MenuAssistant:
     def __init__(self, model: str | None = None) -> None:
-        self.model = model or os.environ.get("CHAT_MODEL", "gpt-5-mini")
+        self.model = model or os.environ.get("CHAT_MODEL", "gpt-6-luna")
         self.system_prompt = build_system_prompt()
 
     async def ask(self, question: str) -> str:

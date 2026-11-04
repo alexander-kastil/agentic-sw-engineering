@@ -1,0 +1,15 @@
+<article class="card" [class.inCart]="(inCart ?? 0) > 0">
+  <img class="image" src="assets/images/{{ food.pictureUrl }}" [alt]="food.name" />
+  <div class="text">
+    <h2 class="title">{{ food.name }}</h2>
+    <p class="description">{{ food.description }}</p>
+  </div>
+  <div class="side">
+    <span class="price">{{ food.price | toEuro }}</span>
+    <app-number-picker
+      [itemName]="food.name"
+      (amountChanged)="handleAmountChange($event)"
+      [formControl]="nbrPicker"
+    ></app-number-picker>
+  </div>
+</article>

@@ -37,7 +37,7 @@ SCORE_PATTERN = re.compile(r"<S2>\s*([1-5])\s*</S2>")
 
 class GroundednessJudge:
     def __init__(self, model: str | None = None) -> None:
-        self.model = model or os.environ.get("JUDGE_MODEL", "gpt-5")
+        self.model = model or os.environ.get("JUDGE_MODEL", "gpt-6.1-terra")
 
     async def score(self, query: str, response: str, context: str) -> tuple[int, str]:
         output = await complete(

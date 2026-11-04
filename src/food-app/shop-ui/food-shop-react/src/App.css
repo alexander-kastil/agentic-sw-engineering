@@ -1,0 +1,12 @@
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main-row {
+  min-width: 0;
+  background-color: var(--color-bg);
+}
